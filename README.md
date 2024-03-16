@@ -1,2 +1,2 @@
-# davutpasa-api-client
+# DavutPasa API Client
 Golang client for the DavutPasa API
