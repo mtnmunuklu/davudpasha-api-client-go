@@ -123,17 +123,6 @@ func (c *APIClient) shouldRetryRequest(response *http.Response, retryCount int) 
 	return nil, false
 }
 
-// Copy the original request so it doesn't get lost when retrying
-func copyRequest(r *http.Request, rawBody *[]byte) *http.Request {
-	newRequest := *r
-
-	if r.Body == nil || r.Body == http.NoBody {
-		return &newRequest
-	}
-	newRequest.Body = io.NopCloser(bytes.NewBuffer(*rawBody))
-	return &newRequest
-}
-
 // PrepareRequest build the request.
 func (c *APIClient) PrepareRequest(
 	ctx context.Context,
@@ -325,16 +314,45 @@ func (c *APIClient) PrepareRequest(
 	return localVarRequest, nil
 }
 
-// FormFile holds parameters for a file in multipart/form-data request.
-type FormFile struct {
-	FormFileName string
-	FileName     string
-	FileBytes    []byte
+// Decode unmarshall bytes into an interface
+func (c *APIClient) Decode(v interface{}, b []byte, contentType string) (err error) {
+	if len(b) == 0 {
+		return nil
+	}
+	if s, ok := v.(*string); ok {
+		*s = string(b)
+		return nil
+	}
+	if xmlCheck.MatchString(contentType) {
+		if err = xml.Unmarshal(b, v); err != nil {
+			return err
+		}
+		return nil
+	}
+	if actualObj, ok := v.(interface{ GetActualInstance() interface{} }); ok { // oneOf, anyOf schemas
+		if unmarshalObj, ok := actualObj.(interface{ UnmarshalJSON([]byte) error }); ok { // make sure it has UnmarshalJSON defined
+			if err = unmarshalObj.UnmarshalJSON(b); err != nil {
+				return err
+			}
+		} else {
+			return errors.New("unknown type with GetActualInstance but no unmarshalObj.UnmarsahlJSON defined")
+		}
+	} else if err = json.Unmarshal(b, v); err != nil { // simple model
+		return err
+	}
+	return nil
 }
 
 // Service holds APIClient.
 type Service struct {
 	Client *APIClient
+}
+
+// FormFile holds parameters for a file in multipart/form-data request.
+type FormFile struct {
+	FormFileName string
+	FileName     string
+	FileBytes    []byte
 }
 
 // SetAuthKeys sets the appropriate values in the headers parameter.
