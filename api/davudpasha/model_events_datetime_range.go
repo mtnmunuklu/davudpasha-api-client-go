@@ -160,8 +160,11 @@ func (o *EventsDateTimeRange) UnMarshalJSON(bytes []byte) (err error) {
 	} else {
 		o.DateTimeType = *all.DateTimeType
 	}
-	o.StartDate = all.StartDate
-	o.EndDate = all.EndDate
+
+	if all.DateTimeType == EVENTSDATETIMETYPE_DATERANGE.Ptr() {
+		o.StartDate = all.StartDate
+		o.EndDate = all.EndDate
+	}
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
