@@ -376,6 +376,24 @@ func ReadBody(response *http.Response) ([]byte, error) {
 	return body, err
 }
 
+// NewAPIClient creates a new API client. Requires a userAgent string describing your application.
+// optionally a custom http.Client to allow for advanced features such as caching.
+func NewAPIClient(cfg *Configuration) *APIClient {
+	if cfg.HTTPClient == nil {
+		cfg.HTTPClient = http.DefaultClient
+	}
+
+	if cfg.RetryConfiguration.BackOffBase < 2 {
+		cfg.RetryConfiguration.BackOffBase = 2
+		log.Printf("WARNING: BackOffBase value is smaller than 2. Setting it to 2.")
+	}
+
+	c := &APIClient{}
+	c.Cfg = cfg
+
+	return c
+}
+
 // Add a file to multipart request.
 func addFile(w *multipart.Writer, fieldName, path string) error {
 	file, err := os.Open(path)
