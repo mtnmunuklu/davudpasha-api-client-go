@@ -1,10 +1,10 @@
-package davutpasa
+package davudpasha
 
 import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/mtnmunuklu/davutpasa-api-client-go/api/common"
+	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
 // EventsQueryFilter The search and filter query settings

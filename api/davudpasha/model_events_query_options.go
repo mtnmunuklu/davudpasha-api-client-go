@@ -1,9 +1,8 @@
-package davutpasa
+package davudpasha
 
-type EventsDateTimeRange struct {
-	DateTimeType *string `json:"DateTimeType,omitempty"`
-	StartDate    *string `json:"StartDate,omitempty"`
-	EndDate      *string `json:"EndDate,omitempty"`
+// EventsQueryOptions The global query options tha are used.
+type EventsQueryOptions struct {
+	ShowHighlight *bool `json:"ShowHighlight,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct
 	UnparsedObject       map[string]interface{} `json:"-"`
 	AdditionalProperties map[string]interface{}

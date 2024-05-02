@@ -1,10 +1,10 @@
-package davutpasa
+package davudpasha
 
 import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/mtnmunuklu/davutpasa-api-client-go/api/common"
+	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
 // EventListRequest The object sent with request to retrieve a list of event from your organization.

@@ -1,4 +1,4 @@
-package davutpasa
+package davudpasha
 
 import "encoding/json"
 

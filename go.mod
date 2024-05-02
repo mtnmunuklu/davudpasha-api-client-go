@@ -1,4 +1,4 @@
-module github.com/mtnmunuklu/davutpasa-api-client-go
+module github.com/mtnmunuklu/davudpasha-api-client-go
 
 go 1.20
 

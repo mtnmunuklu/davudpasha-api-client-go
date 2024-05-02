@@ -1,11 +1,11 @@
-package davutpasa
+package davudpasha
 
 import (
 	_context "context"
 	_nethttp "net/http"
 	_neturl "net/url"
 
-	"github.com/mtnmunuklu/davutpasa-api-client-go/api/common"
+	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
 // EventsApi service type.
