@@ -4,11 +4,20 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 
+	"github.com/joho/godotenv"
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/davudpasha"
 )
+
+func init() {
+	// loads values from .env into the system
+	if err := godotenv.Load(); err != nil {
+		log.Print("No .env file found")
+	}
+}
 
 func main() {
 	body := davudpasha.EventsListRequest{

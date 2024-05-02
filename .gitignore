@@ -27,3 +27,6 @@ go.work
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+
+# .env files
+.env
