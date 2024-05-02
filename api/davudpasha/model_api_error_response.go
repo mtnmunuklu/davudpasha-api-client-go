@@ -12,7 +12,7 @@ type APIErrorResponse struct {
 	// A list of errors
 	Errors []string `json:"errors"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-	UnparsedObjects      map[string]interface{} `json:"-"`
+	UnparsedObject       map[string]interface{} `json:"-"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -60,8 +60,8 @@ func (o *APIErrorResponse) SetErrors(v []string) {
 // MarshalJSON serializes the struct using spec logic.
 func (o APIErrorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.UnparsedObjects != nil {
-		return json.Marshal(o.UnparsedObjects)
+	if o.UnparsedObject != nil {
+		return json.Marshal(o.UnparsedObject)
 	}
 	toSerialize["errors"] = o.Errors
 
@@ -77,7 +77,7 @@ func (o *APIErrorResponse) UnMarshalJSON(bytes []byte) (err error) {
 		Errors *[]string `json:"errors"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
-		return json.Unmarshal(bytes, &o.UnparsedObjects)
+		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 	if all.Errors == nil {
 		return fmt.Errorf("requiered field errors missing")
