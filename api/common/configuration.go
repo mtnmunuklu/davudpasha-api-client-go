@@ -2,6 +2,7 @@ package common
 
 import (
 	"context"
+	"crypto/tls"
 	"fmt"
 	"log"
 	"net/http"
@@ -196,6 +197,15 @@ func (c *Configuration) IsUnstableOperationEnabled(operation string) bool {
 	return false
 }
 
+// SetHTTPClientWithInsecureSkipVerify is a custom function for Configuration structure, it sets the HTTP client with TLS certificate verification disabled.
+func (c *Configuration) SetHTTPClientWithInsecureSkipVerify() {
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+
+	c.HTTPClient = &http.Client{Transport: tr}
+}
+
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
@@ -203,6 +213,20 @@ func NewConfiguration() *Configuration {
 		Debug:         false,
 		Compress:      true,
 		Servers: ServerConfigurations{
+			{
+				URL:         "https://{site}/{api_path}",
+				Description: "No description provided",
+				Variables: map[string]ServerVariable{
+					"site": {
+						Description:  "The web site for Davutpasa customers.",
+						DefaultValue: "davutpasa.com",
+					},
+					"api_path": {
+						Description:  "The path where the api is deploeyed",
+						DefaultValue: "api/DpConnection/CallByInterfaceApi",
+					},
+				},
+			},
 			{
 				URL:         "https://{site}/{api_path}",
 				Description: "No description provided",
@@ -219,7 +243,7 @@ func NewConfiguration() *Configuration {
 					},
 					"api_path": {
 						Description:  "The path where the api is deploeyed",
-						DefaultValue: "/api/DpConnection/CallByInterfaceApi",
+						DefaultValue: "api/DpConnection/CallByInterfaceApi",
 					},
 				},
 			},
@@ -234,20 +258,6 @@ func NewConfiguration() *Configuration {
 					"protocol": {
 						Description:  "The protocol  for accessing the API",
 						DefaultValue: "https",
-					},
-				},
-			},
-			{
-				URL:         "https://{site}/{api_path}",
-				Description: "No description provided",
-				Variables: map[string]ServerVariable{
-					"site": {
-						Description:  "The web site for Davutpasa customers.",
-						DefaultValue: "davutpasa.com",
-					},
-					"api_path": {
-						Description:  "The path where the api is deploeyed",
-						DefaultValue: "/api/DpConnection/CallByInterfaceApi",
 					},
 				},
 			},

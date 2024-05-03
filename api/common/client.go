@@ -422,6 +422,8 @@ func setBody(body interface{}, contentType string) (bodyBuf *bytes.Buffer, err e
 		return nil, nil
 	}
 
+	bodyBuf = &bytes.Buffer{}
+
 	if reader, ok := body.(io.Reader); ok {
 		_, err = bodyBuf.ReadFrom(reader)
 	} else if fp, ok := body.(**os.File); ok {

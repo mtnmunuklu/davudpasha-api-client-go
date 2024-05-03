@@ -26,8 +26,6 @@ func main() {
 			QuerySQL: common.PtrString("sourcetype=\"paloalto\" eql select * from _source_ where _condition_ limit 1"),
 			DateTimeRange: &davudpasha.EventsDateTimeRange{
 				DateTimeType: davudpasha.EVENTSDATETIMETYPE_LAST10MINUTES,
-				StartDate:    common.PtrString(""),
-				EndDate:      common.PtrString(""),
 			},
 			Size: common.PtrInt64(10),
 			QueryOptions: &davudpasha.EventsQueryOptions{
@@ -38,6 +36,7 @@ func main() {
 	}
 	ctx := common.NewDefaultContext(context.Background())
 	configuration := common.NewConfiguration()
+	configuration.SetHTTPClientWithInsecureSkipVerify()
 	apiClient := common.NewAPIClient(configuration)
 	api := davudpasha.NewEventsApi(apiClient)
 	resp, r, err := api.SearchEvents(ctx, *davudpasha.NewSearchEventsOptionalParameters().WithBody(body))
