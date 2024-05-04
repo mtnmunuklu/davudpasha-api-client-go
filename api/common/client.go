@@ -38,6 +38,7 @@ type APIClient struct {
 	Cfg *Configuration
 }
 
+// CallAPI do the request.
 func (c *APIClient) CallAPI(request *http.Request) (*http.Response, error) {
 	var rawBody []byte
 	if request.Body != nil && request.Body != http.NoBody {
@@ -468,6 +469,32 @@ func detectContentType(body interface{}) string {
 		}
 	}
 	return contentType
+}
+
+// ParameterToString convert interface{} parameters to string, using a delimiter if format is provided.
+func ParameterToString(obj interface{}, collectionFormat string) string {
+	var delimiter string
+
+	switch collectionFormat {
+	case "pipes":
+		delimiter = "|"
+	case "ssv":
+		delimiter = " "
+	case "tsv":
+		delimiter = "\t"
+	case "csv":
+		delimiter = ","
+	}
+
+	if reflect.TypeOf(obj).Kind() == reflect.Slice {
+		return strings.Trim(strings.Replace(fmt.Sprint(obj), " ", delimiter, -1), "[]")
+	} else if t, ok := obj.(time.Time); ok {
+		if t.Nanosecond() == 0 {
+			return t.Format("2006-01-02T15:04:05Z07:00")
+		}
+		return t.Format("2006-01-02T15:04:05.000Z07:00")
+	}
+	return fmt.Sprintf("%v", obj)
 }
 
 // GenericOpenAPIError Provides access to the body, error and model on returned errors.
