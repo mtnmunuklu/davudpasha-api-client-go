@@ -12,7 +12,7 @@ This security policy applies to all aspects of our project, including the source
 
 We currently provide security updates and patches for the following versions of our project:
 
-- [Version 1.0.0](https://github.com/mtnmunuklu/davutpasa-api-client/releases/tag/v1.0.0)
+- [Version 1.0.0](https://github.com/mtnmunuklu/davudpasha-api-client/releases/tag/v1.0.0)
 
 If you are using an older version, it is highly recommended to update to one of the supported versions.
 

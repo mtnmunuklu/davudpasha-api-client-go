@@ -1,4 +1,4 @@
-# DavutPasa API Client - Code of Conduct
+# DavudPasha API Client - Code of Conduct
 
 ## Purpose
 
