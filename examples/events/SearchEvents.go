@@ -35,6 +35,7 @@ func main() {
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
 	ctx := common.NewDefaultContext(context.Background())
+	//ctx := common.NewContextWithEnvParams(context.Background(), "DP_SITE", "DP_API_KEY")
 	configuration := common.NewConfiguration()
 	configuration.SetHTTPClientWithInsecureSkipVerify()
 	apiClient := common.NewAPIClient(configuration)

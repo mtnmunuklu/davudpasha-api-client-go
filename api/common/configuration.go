@@ -361,3 +361,29 @@ func NewDefaultContext(ctx context.Context) context.Context {
 
 	return ctx
 }
+
+func NewContextWithEnvParams(ctx context.Context, siteEnvVar, apiKeyEnvVar string) context.Context {
+	if ctx == nil {
+		ctx = context.Background()
+	}
+
+	if site, ok := os.LookupEnv(siteEnvVar); ok {
+		ctx = context.WithValue(
+			ctx,
+			ContextServerVariables,
+			map[string]string{"site": site},
+		)
+	}
+
+	keys := make(map[string]APIKey)
+	if apiKey, ok := os.LookupEnv(apiKeyEnvVar); ok {
+		keys["apiKeyAuth"] = APIKey{Key: apiKey}
+	}
+	ctx = context.WithValue(
+		ctx,
+		ContextAPIKeys,
+		keys,
+	)
+
+	return ctx
+}
