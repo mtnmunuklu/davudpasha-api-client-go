@@ -336,6 +336,7 @@ func getUserAgent() string {
 	)
 }
 
+// NewDefaultContext returns a new context setup with environment variables.
 func NewDefaultContext(ctx context.Context) context.Context {
 	if ctx == nil {
 		ctx = context.Background()
@@ -362,23 +363,25 @@ func NewDefaultContext(ctx context.Context) context.Context {
 	return ctx
 }
 
+// NewContextWithEnvParams function enriches the given context using the provided environment variables for site and API key.
 func NewContextWithEnvParams(ctx context.Context, siteEnvVar, apiKeyEnvVar string) context.Context {
 	if ctx == nil {
 		ctx = context.Background()
 	}
 
-	if site, ok := os.LookupEnv(siteEnvVar); ok {
-		ctx = context.WithValue(
-			ctx,
-			ContextServerVariables,
-			map[string]string{"site": site},
-		)
-	}
+	// Use the provided environment variables directly without calling os.LookupEnv
+	ctx = context.WithValue(
+		ctx,
+		ContextServerVariables,
+		map[string]string{"site": os.Getenv(siteEnvVar)},
+	)
 
 	keys := make(map[string]APIKey)
-	if apiKey, ok := os.LookupEnv(apiKeyEnvVar); ok {
+	apiKey := os.Getenv(apiKeyEnvVar)
+	if apiKey != "" {
 		keys["apiKeyAuth"] = APIKey{Key: apiKey}
 	}
+
 	ctx = context.WithValue(
 		ctx,
 		ContextAPIKeys,
