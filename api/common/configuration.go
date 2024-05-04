@@ -218,8 +218,8 @@ func NewConfiguration() *Configuration {
 				Description: "No description provided",
 				Variables: map[string]ServerVariable{
 					"site": {
-						Description:  "The web site for Davutpasa customers.",
-						DefaultValue: "davutpasa.com",
+						Description:  "The web site for Davudpasha customers.",
+						DefaultValue: "davudpasha.com",
 					},
 					"api_path": {
 						Description:  "The path where the api is deploeyed",
@@ -232,13 +232,13 @@ func NewConfiguration() *Configuration {
 				Description: "No description provided",
 				Variables: map[string]ServerVariable{
 					"site": {
-						Description:  "The web site for Davutpasa customers.",
-						DefaultValue: "davutpasa.com",
+						Description:  "The web site for Davudpasha customers.",
+						DefaultValue: "davudpasha.com",
 						EnumValues: []string{
-							"davutpasa.com",
-							"csiem.davutpasa.com",
-							"soair.davutpasa.com",
-							"vatos.davutpasa.com",
+							"davudpasha.com",
+							"csiem.davudpasha.com",
+							"soair.davudpasha.com",
+							"vatos.davudpasha.com",
 						},
 					},
 					"api_path": {
@@ -253,7 +253,7 @@ func NewConfiguration() *Configuration {
 				Variables: map[string]ServerVariable{
 					"name": {
 						Description:  "Full site DNS name",
-						DefaultValue: "davutpasa.com",
+						DefaultValue: "davudpasha.com",
 					},
 					"protocol": {
 						Description:  "The protocol  for accessing the API",
@@ -329,7 +329,7 @@ func getServerOperationVariables(ctx context.Context, endpoint string) (map[stri
 
 func getUserAgent() string {
 	return fmt.Sprintf(
-		"davutpasa-api-client-go (go %s; os %s; arch %s)",
+		"davudpasha-api-client-go (go %s; os %s; arch %s)",
 		runtime.Version(),
 		runtime.GOOS,
 		runtime.GOARCH,
