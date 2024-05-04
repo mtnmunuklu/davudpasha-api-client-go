@@ -7,14 +7,17 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// EventListRequest The object sent with request to retrieve a list of event from your organization.
+// EventsListRequest is the object sent with a request to retrieve a list of events from your organization.
 type EventsListRequest struct {
+	// Reason represents the reason for the event list request.
 	Reason *string `json:"reason,omitempty"`
-	// The search and filter query settings.
-	Query                   *EventsQueryFilter `json:"query,omitempty"`
-	SmartRestRequestContext *string            `json:"smartRestRequestContext,omitempty"`
+	// Query specifies the search and filter query settings.
+	Query *EventsQueryFilter `json:"query,omitempty"`
+	// SmartRestRequestContext is the context for the Smart REST request.
+	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-	UnparsedObject       map[string]interface{} `json:"-"`
+	UnparsedObject map[string]interface{}
+	// AdditionalProperties stores any additional properties not explicitly defined in the struct
 	AdditionalProperties map[string]interface{}
 }
 

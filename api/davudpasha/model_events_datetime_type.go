@@ -5,8 +5,10 @@ import (
 	"fmt"
 )
 
+// EventsDateTimeType represents the type of date time range for events.
 type EventsDateTimeType string
 
+// Allowed values for EventsDateTimeType.
 const (
 	EVENTSDATETIMETYPE_LAST5MINUTES   EventsDateTimeType = "Last5Minutes"
 	EVENTSDATETIMETYPE_LAST10MINUTES  EventsDateTimeType = "Last10Minutes"
@@ -29,6 +31,7 @@ const (
 	EVENTSDATETIMETYPE_DATERANGE      EventsDateTimeType = "DateRange"
 )
 
+// allowedEventsDataTimeEnumValues contains the allowed values for EventsDateTimeType.
 var allowedEventsDataTimeEnumValues = []EventsDateTimeType{
 	EVENTSDATETIMETYPE_LAST5MINUTES,
 	EVENTSDATETIMETYPE_LAST10MINUTES,

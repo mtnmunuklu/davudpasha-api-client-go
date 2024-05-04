@@ -7,12 +7,17 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// EventsDateTimeRange represents the date time range for events.
 type EventsDateTimeRange struct {
+	// DateTimeType specifies the type of date time range
 	DateTimeType EventsDateTimeType `json:"DateTimeType"`
-	StartDate    *string            `json:"StartDate,omitempty"`
-	EndDate      *string            `json:"EndDate,omitempty"`
+	// StartDate is the start date of the range
+	StartDate *string `json:"StartDate,omitempty"`
+	// EndDate is the end date of the range
+	EndDate *string `json:"EndDate,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct
-	UnparsedObject       map[string]interface{} `json:"-"`
+	UnparsedObject map[string]interface{}
+	// AdditionalProperties stores any additional properties not explicitly defined in the struct
 	AdditionalProperties map[string]interface{}
 }
 

@@ -7,15 +7,21 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// EventsQueryFilter The search and filter query settings
+// EventsQueryFilter represents the search and filter query settings.
 type EventsQueryFilter struct {
-	QuerySQL        *string              `json:"QuerySQL,omitempty"`
-	DateTimeRange   *EventsDateTimeRange `json:"DateTimeRange,omitempty"`
-	SearchAfterKeys []string             `json:"SearchAfterKeys,omitempty"`
-	Size            *int64               `json:"Size,omitempty"`
-	QueryOptions    *EventsQueryOptions  `json:"QueryOptions,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct
-	UnparsedObject       map[string]interface{} `json:"-"`
+	// QuerySQL is the SQL query for filtering events.
+	QuerySQL *string `json:"QuerySQL,omitempty"`
+	// DateTimeRange specifies the date time range for filtering events.
+	DateTimeRange *EventsDateTimeRange `json:"DateTimeRange,omitempty"`
+	// SearchAfterKeys contains keys for searching after.
+	SearchAfterKeys []string `json:"SearchAfterKeys,omitempty"`
+	// Number of results to retrieve (default is 10).
+	Size *int64 `json:"Size,omitempty"`
+	// QueryOptions stores additional query options.
+	QueryOptions *EventsQueryOptions `json:"QueryOptions,omitempty"`
+	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

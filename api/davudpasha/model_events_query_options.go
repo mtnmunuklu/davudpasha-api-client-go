@@ -7,11 +7,13 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// EventsQueryOptions The global query options tha are used.
+// EventsQueryOptions represents the global query options that are used.
 type EventsQueryOptions struct {
+	// ShowHighlight indicates whether to show highlight.
 	ShowHighlight *bool `json:"ShowHighlight,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct
-	UnparsedObject       map[string]interface{} `json:"-"`
+	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

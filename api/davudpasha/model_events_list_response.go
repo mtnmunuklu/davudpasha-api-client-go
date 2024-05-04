@@ -6,16 +6,23 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// EventsListResponse The response object with all events matching the request.
+// EventsListResponse is the response object with all events matching the request.
 type EventsListResponse struct {
-	Data            []json.RawMessage `json:"Data,omitempty"`
-	TotalSize       *int64            `json:"TotalSize,omitempty"`
-	QueryType       *string           `json:"QueryType,omitempty"`
-	QueryFlag       *string           `json:"QueryFlag,omitempty"`
+	// Data contains the list of events.
+	Data []json.RawMessage `json:"Data,omitempty"`
+	// TotalSize is the total number of events.
+	TotalSize *int64 `json:"TotalSize,omitempty"`
+	// QueryType is the type of query used.
+	QueryType *string `json:"QueryType,omitempty"`
+	// QueryFlag indicates the query flag.
+	QueryFlag *string `json:"QueryFlag,omitempty"`
+	// SelectedColumns contains the selected columns.
 	SelectedColumns []json.RawMessage `json:"SelectedColumns,omitempty"`
-	SearchTime      *int64            `json:"SearchTime,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct
-	UnparsedObject       map[string]interface{} `json:"-"`
+	// SearchTime is the time taken for the search.
+	SearchTime *int64 `json:"SearchTime,omitempty"`
+	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

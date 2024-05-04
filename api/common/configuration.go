@@ -275,6 +275,7 @@ func NewConfiguration() *Configuration {
 	return cfg
 }
 
+// getServerIndex retrieves the server index from the context.
 func getServerIndex(ctx context.Context) (int, error) {
 	si := ctx.Value(ContextServerIndex)
 	if si != nil {
@@ -286,6 +287,7 @@ func getServerIndex(ctx context.Context) (int, error) {
 	return 0, nil
 }
 
+// getServerOperationIndex retrieves the server operation index from the context based on the provided endpoint.
 func getServerOperationIndex(ctx context.Context, endpoint string) (int, error) {
 	osi := ctx.Value(ContexOperationServerIndices)
 	if osi != nil {
@@ -301,6 +303,7 @@ func getServerOperationIndex(ctx context.Context, endpoint string) (int, error) 
 	return getServerIndex(ctx)
 }
 
+// getServerVariables retrieves the server variables from the context.
 func getServerVariables(ctx context.Context) (map[string]string, error) {
 	sv := ctx.Value(ContextServerVariables)
 	if sv != nil {
@@ -312,6 +315,7 @@ func getServerVariables(ctx context.Context) (map[string]string, error) {
 	return nil, nil
 }
 
+// getServerOperationVariables retrieves the server operation variables from the context based on the provided endpoint.
 func getServerOperationVariables(ctx context.Context, endpoint string) (map[string]string, error) {
 	osv := ctx.Value(ContextOperationServerVariables)
 	if osv != nil {
@@ -327,6 +331,7 @@ func getServerOperationVariables(ctx context.Context, endpoint string) (map[stri
 	return getServerVariables(ctx)
 }
 
+// getUserAgent returns the user agent string for the API client.
 func getUserAgent() string {
 	return fmt.Sprintf(
 		"davudpasha-api-client-go (go %s; os %s; arch %s)",

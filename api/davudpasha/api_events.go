@@ -114,6 +114,7 @@ func (a *EventsApi) SearchEvents(ctx _context.Context, o ...SearchEventsOptional
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+// NewEventsApi Returns NewEventsApi.
 func NewEventsApi(client *common.APIClient) *EventsApi {
 	return &EventsApi{
 		Client: client,
