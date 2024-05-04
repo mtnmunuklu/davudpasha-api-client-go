@@ -369,17 +369,21 @@ func NewContextWithEnvParams(ctx context.Context, siteEnvVar, apiKeyEnvVar strin
 		ctx = context.Background()
 	}
 
-	// Use the provided environment variables directly without calling os.LookupEnv
+	// Use the provided environment variables directly
+	serverVariables := make(map[string]string)
+	if siteEnvVar != "" {
+		serverVariables["site"] = siteEnvVar
+	}
+
 	ctx = context.WithValue(
 		ctx,
 		ContextServerVariables,
-		map[string]string{"site": os.Getenv(siteEnvVar)},
+		serverVariables,
 	)
 
 	keys := make(map[string]APIKey)
-	apiKey := os.Getenv(apiKeyEnvVar)
-	if apiKey != "" {
-		keys["apiKeyAuth"] = APIKey{Key: apiKey}
+	if apiKeyEnvVar != "" {
+		keys["apiKeyAuth"] = APIKey{Key: apiKeyEnvVar}
 	}
 
 	ctx = context.WithValue(
