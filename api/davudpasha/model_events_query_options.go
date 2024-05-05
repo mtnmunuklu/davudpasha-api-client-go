@@ -2,7 +2,6 @@ package davudpasha
 
 import (
 	"encoding/json"
-	"fmt"
 
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
@@ -66,9 +65,6 @@ func (o *EventsQueryOptions) UnMarshalJSON(bytes []byte) (err error) {
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
-	}
-	if all.ShowHighlight == nil {
-		return fmt.Errorf("requiered field errors missing")
 	}
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
