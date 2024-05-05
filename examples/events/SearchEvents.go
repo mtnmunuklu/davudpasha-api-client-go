@@ -27,7 +27,6 @@ func main() {
 			DateTimeRange: &davudpasha.EventsDateTimeRange{
 				DateTimeType: davudpasha.EVENTSDATETIMETYPE_LAST10MINUTES,
 			},
-			SearchAfterKeys: *common.NewNullableList(&[]string{}),
 			QueryOptions: &davudpasha.EventsQueryOptions{
 				ShowHighlight: common.PtrBool(true),
 			},
