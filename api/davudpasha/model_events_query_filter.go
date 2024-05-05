@@ -14,9 +14,7 @@ type EventsQueryFilter struct {
 	// DateTimeRange specifies the date time range for filtering events.
 	DateTimeRange *EventsDateTimeRange `json:"DateTimeRange,omitempty"`
 	// SearchAfterKeys contains keys for searching after.
-	SearchAfterKeys []string `json:"SearchAfterKeys,omitempty"`
-	// Number of results to retrieve (default is 10).
-	Size *int64 `json:"Size,omitempty"`
+	SearchAfterKeys common.NullableList[string] `json:"SearchAfterKeys,omitempty"`
 	// QueryOptions stores additional query options.
 	QueryOptions *EventsQueryOptions `json:"QueryOptions,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
@@ -33,8 +31,6 @@ func NewEventsQueryFilter() *EventsQueryFilter {
 	this := EventsQueryFilter{}
 	var querySQL string = "query"
 	this.QuerySQL = &querySQL
-	var size int64 = 10
-	this.Size = &size
 	return &this
 }
 
@@ -45,8 +41,6 @@ func NewEventsQueryFilterWithDefaults() *EventsQueryFilter {
 	this := EventsQueryFilter{}
 	var querySQL string = "query"
 	this.QuerySQL = &querySQL
-	var size int64 = 10
-	this.Size = &size
 	return &this
 }
 
@@ -108,58 +102,30 @@ func (o *EventsQueryFilter) SetDateTimeRange(v EventsDateTimeRange) {
 
 // GetSearchAfterKeys returns the SearchAfterKeys field value if set, zero value otherwise.
 func (o *EventsQueryFilter) GetSearchAfterKeys() []string {
-	if o == nil || o.SearchAfterKeys == nil {
+	if o == nil || o.SearchAfterKeys.Get() == nil {
 		var ret []string
 		return ret
 	}
-	return o.SearchAfterKeys
+	return *o.SearchAfterKeys.Get()
 }
 
 // GetSearchAfterKeysOk returns a tuple with the SearchAfterKeys field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsQueryFilter) GetSearchAfterKeysOk() (*[]string, bool) {
-	if o == nil || o.SearchAfterKeys == nil {
+	if o == nil {
 		return nil, false
 	}
-	return &o.SearchAfterKeys, true
+	return o.SearchAfterKeys.Get(), o.SearchAfterKeys.IsSet()
 }
 
 // HasSearchAfterKeys returns a boolean if a field has been set.
 func (o *EventsQueryFilter) HasSearchAfterKeys() bool {
-	return o != nil && o.SearchAfterKeys != nil
+	return o != nil && o.SearchAfterKeys.IsSet()
 }
 
 // SetSearchAfterKeys gets a reference to the given []string and assigns it to the SearchAfterKeys field.
 func (o *EventsQueryFilter) SetSearchAfterKeys(v []string) {
-	o.SearchAfterKeys = v
-}
-
-// GetSize returns the Size field value if set, zero value otherwise.
-func (o *EventsQueryFilter) GetSize() int64 {
-	if o == nil || o.Size == nil {
-		var ret int64
-		return ret
-	}
-	return *o.Size
-}
-
-// GetSizeOk returns a tuple with the Size field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EventsQueryFilter) GetSizeOk() (*int64, bool) {
-	if o == nil || o.Size == nil {
-		return nil, false
-	}
-	return o.Size, true
-}
-
-// HasSize returns a boolean if a field has been set.
-func (o *EventsQueryFilter) HasSize() bool {
-	return o != nil && o.Size != nil
-}
-
-// SetSize gets a reference to the given int64 and assigns it to the Size field.
-func (o *EventsQueryFilter) SetSize(v int64) {
-	o.Size = &v
+	o.SearchAfterKeys.Set(&v)
 }
 
 // GetQueryOptions returns the QueryOptions field value if set, zero value otherwise.
@@ -200,13 +166,10 @@ func (o EventsQueryFilter) MarshalJSON() ([]byte, error) {
 		toSerialize["QuerySQL"] = o.QuerySQL
 	}
 	if o.DateTimeRange != nil {
-		toSerialize["query"] = o.DateTimeRange
+		toSerialize["DateTimeRange"] = o.DateTimeRange
 	}
-	if o.SearchAfterKeys != nil {
-		toSerialize["SearchAfterKeys"] = o.SearchAfterKeys
-	}
-	if o.Size != nil {
-		toSerialize["Size"] = o.Size
+	if o.SearchAfterKeys.IsSet() {
+		toSerialize["SearchAfterKeys"] = o.SearchAfterKeys.Get()
 	}
 	if o.QueryOptions != nil {
 		toSerialize["QueryOptions"] = o.QueryOptions
@@ -221,11 +184,10 @@ func (o EventsQueryFilter) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *EventsQueryFilter) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		QuerySQL        *string              `json:"QuerySQL,omitempty"`
-		DateTimeRange   *EventsDateTimeRange `json:"DateTimeRange,omitempty"`
-		SearchAfterKeys []string             `json:"SearchAfterKeys,omitempty"`
-		Size            *int64               `json:"Size,omitempty"`
-		QueryOptions    *EventsQueryOptions  `json:"QueryOptions,omitempty"`
+		QuerySQL        *string                     `json:"QuerySQL,omitempty"`
+		DateTimeRange   *EventsDateTimeRange        `json:"DateTimeRange,omitempty"`
+		SearchAfterKeys common.NullableList[string] `json:"SearchAfterKeys,omitempty"`
+		QueryOptions    *EventsQueryOptions         `json:"QueryOptions,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
@@ -252,7 +214,6 @@ func (o *EventsQueryFilter) UnMarshalJSON(bytes []byte) (err error) {
 	o.QueryOptions = all.QueryOptions
 	o.QuerySQL = all.QuerySQL
 	o.SearchAfterKeys = all.SearchAfterKeys
-	o.Size = all.Size
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
