@@ -9,15 +9,13 @@ import (
 // EventsListResponse is the response object with all events matching the request.
 type EventsListResponse struct {
 	// Data contains the list of events.
-	Data []json.RawMessage `json:"Data,omitempty"`
+	Data common.NullableList[json.RawMessage] `json:"Data,omitempty"`
 	// TotalSize is the total number of events.
 	TotalSize *int64 `json:"TotalSize,omitempty"`
 	// QueryType is the type of query used.
 	QueryType *string `json:"QueryType,omitempty"`
-	// QueryFlag indicates the query flag.
-	QueryFlag *string `json:"QueryFlag,omitempty"`
 	// SelectedColumns contains the selected columns.
-	SelectedColumns []json.RawMessage `json:"SelectedColumns,omitempty"`
+	SelectedColumns common.NullableList[json.RawMessage] `json:"SelectedColumns,omitempty"`
 	// SearchTime is the time taken for the search.
 	SearchTime *int64 `json:"SearchTime,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
@@ -45,30 +43,30 @@ func NewEventsListResponseWithDefault() *EventsListResponse {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *EventsListResponse) GetData() []json.RawMessage {
-	if o == nil || o.Data == nil {
+	if o == nil || o.Data.Get() == nil {
 		var ret []json.RawMessage
 		return ret
 	}
-	return o.Data
+	return *o.Data.Get()
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsListResponse) GetDataOk() (*[]json.RawMessage, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil {
 		return nil, false
 	}
-	return &o.Data, true
+	return o.Data.Get(), o.Data.IsSet()
 }
 
 // HasData returns a boolean if a field has been set.
 func (o *EventsListResponse) HasData() bool {
-	return o != nil && o.Data != nil
+	return o != nil && o.Data.IsSet()
 }
 
 // SetData gets a reference to the given []json.RawMessage and assigns it to the Data field.
 func (o *EventsListResponse) SetData(v []json.RawMessage) {
-	o.Data = v
+	o.Data.Set(&v)
 }
 
 // GetTotalSize returns the TotalSize field value if set, zero value otherwise.
@@ -127,60 +125,32 @@ func (o *EventsListResponse) SetQueryType(v string) {
 	o.QueryType = &v
 }
 
-// GetQueryFlag returns the QueryFlag field value if set, zero value otherwise.
-func (o *EventsListResponse) GetQueryFlag() string {
-	if o == nil || o.QueryFlag == nil {
-		var ret string
-		return ret
-	}
-	return *o.QueryFlag
-}
-
-// GetQueryFlagOk returns a tuple with the QueryFlag field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EventsListResponse) GetQueryFlagOk() (*string, bool) {
-	if o == nil || o.QueryFlag == nil {
-		return nil, false
-	}
-	return o.QueryFlag, true
-}
-
-// HasQueryFlag returns a boolean if a field has been set.
-func (o *EventsListResponse) HasQueryFlag() bool {
-	return o != nil && o.QueryFlag != nil
-}
-
-// SetQueryFlag gets a reference to the given string and assigns it to the QueryFlag field.
-func (o *EventsListResponse) SetQueryFlag(v string) {
-	o.QueryFlag = &v
-}
-
 // GetSelectedColumns returns the SelectedColumns field value if set, zero value otherwise.
 func (o *EventsListResponse) GetSelectedColumns() []json.RawMessage {
-	if o == nil || o.SelectedColumns == nil {
+	if o == nil || o.SelectedColumns.Get() == nil {
 		var ret []json.RawMessage
 		return ret
 	}
-	return o.SelectedColumns
+	return *o.SelectedColumns.Get()
 }
 
 // GetSelectedColumnsOk returns a tuple with the SelectedColumns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsListResponse) GetSelectedColumnsOk() (*[]json.RawMessage, bool) {
-	if o == nil || o.SelectedColumns == nil {
+	if o == nil {
 		return nil, false
 	}
-	return &o.SelectedColumns, true
+	return o.SelectedColumns.Get(), o.SelectedColumns.IsSet()
 }
 
 // HasSelectedColumns returns a boolean if a field has been set.
 func (o *EventsListResponse) HasSelectedColumns() bool {
-	return o != nil && o.SelectedColumns != nil
+	return o != nil && o.SelectedColumns.IsSet()
 }
 
 // SetSelectedColumns gets a reference to the given []json.RawMessage and assigns it to the SelectedColumns field.
 func (o *EventsListResponse) SetSelectedColumns(v []json.RawMessage) {
-	o.SelectedColumns = v
+	o.SelectedColumns.Set(&v)
 }
 
 // GetSearchTime returns the SearchTime field value if set, zero value otherwise.
@@ -217,7 +187,7 @@ func (o EventsListResponse) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.Data != nil {
+	if o.Data.IsSet() {
 		toSerialize["Data"] = o.Data
 	}
 	if o.TotalSize != nil {
@@ -226,10 +196,7 @@ func (o EventsListResponse) MarshalJSON() ([]byte, error) {
 	if o.QueryType != nil {
 		toSerialize["QueryType"] = o.QueryType
 	}
-	if o.QueryFlag != nil {
-		toSerialize["QueryFlag"] = o.QueryFlag
-	}
-	if o.SelectedColumns != nil {
+	if o.SelectedColumns.IsSet() {
 		toSerialize["SelectedColumns"] = o.SelectedColumns
 	}
 	if o.SearchTime != nil {
@@ -245,12 +212,12 @@ func (o EventsListResponse) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *EventsListResponse) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Data            []json.RawMessage `json:"Data,omitempty"`
-		TotalSize       *int64            `json:"TotalSize,omitempty"`
-		QueryType       *string           `json:"QueryType,omitempty"`
-		QueryFlag       *string           `json:"QueryFlag,omitempty"`
-		SelectedColumns []json.RawMessage `json:"SelectedColumns,omitempty"`
-		SearchTime      *int64            `json:"SearchTime,omitempty"`
+		Data            common.NullableList[json.RawMessage] `json:"Data,omitempty"`
+		TotalSize       *int64                               `json:"TotalSize,omitempty"`
+		QueryType       *string                              `json:"QueryType,omitempty"`
+		QueryFlag       *string                              `json:"QueryFlag,omitempty"`
+		SelectedColumns common.NullableList[json.RawMessage] `json:"SelectedColumns,omitempty"`
+		SearchTime      *int64                               `json:"SearchTime,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
@@ -265,7 +232,6 @@ func (o *EventsListResponse) UnMarshalJSON(bytes []byte) (err error) {
 	o.Data = all.Data
 	o.TotalSize = all.TotalSize
 	o.QueryType = all.QueryType
-	o.QueryFlag = all.QueryFlag
 	o.SelectedColumns = all.SelectedColumns
 	o.SearchTime = all.SearchTime
 
