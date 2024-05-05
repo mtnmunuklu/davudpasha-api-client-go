@@ -167,8 +167,12 @@ func (o *EventsDateTimeRange) UnMarshalJSON(bytes []byte) (err error) {
 	}
 
 	if all.DateTimeType == EVENTSDATETIMETYPE_DATERANGE.Ptr() {
-		o.StartDate = all.StartDate
-		o.EndDate = all.EndDate
+		if all.StartDate != nil || all.EndDate != nil {
+			o.StartDate = all.StartDate
+			o.EndDate = all.EndDate
+		} else {
+			return fmt.Errorf("required field StartDate or EndDate missing")
+		}
 	}
 
 	if len(additionalProperties) > 0 {
