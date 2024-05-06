@@ -1,0 +1,127 @@
+swagger: "2.0"
+info:
+  description: "API for Davud Pasha application"
+  version: "1.0.0"
+  title: "Davud Pasha API"
+  contact:
+    email: "info@davudpasha.com"
+basePath: "/api"
+schemes:
+  - "https"
+paths:
+  /DpConnection/CallByInterfaceApi:
+    post:
+      summary: "Search events"
+      description: "Search events based on specified filters"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "query"
+          description: "Search object"
+          required: true
+          schema:
+            $ref: "#/definitions/EventsListRequest"
+        - in: "query"
+          name: "interfaceCode"
+          description: "Interface code"
+          required: true
+          type: "string"
+          default: "ISearchAct"
+        - in: "query"
+          name: "methodName"
+          description: "Method name"
+          required: true
+          type: "string"
+          default: "Execute"
+      responses:
+        200:
+          description: "Successful response"
+          schema:
+            $ref: "#/definitions/EventsListResponse"
+definitions:
+  EventsListRequest:
+    type: "object"
+    properties:
+      Reason:
+        type: "string"
+      Query:
+        $ref: "#/definitions/EventsQueryFilter"
+      SmartRestRequestContext:
+        type: "string"
+    required:
+      - Reason
+      - SmartRestRequestContext
+      - Query
+    additionalProperties: false
+  EventsQueryFilter:
+    type: "object"
+    properties:
+      QuerySQL:
+        type: "string"
+      DateTimeRange:
+        $ref: "#/definitions/EventsDateTimeRange"
+      QueryOptions:
+        $ref: "#/definitions/EventsQueryOptions"
+    required:
+      - QuerySQL
+      - DateTimeRange
+    additionalProperties: false
+  EventsDateTimeRange:
+    type: "object"
+    properties:
+      DateTimeType:
+        type: "string"
+        enum:
+          - "Last5Minutes"
+          - "Last10Minutes"
+          - "Last15Minutes"
+          - "Last30Minutes"
+          - "Last60Minutes"
+          - "Last120Minutes"
+          - "ThisHour"
+          - "Last6Hours"
+          - "Last12Hours"
+          - "Last48Hours"
+          - "Last72Hours"
+          - "Today"
+          - "Yesterday"
+          - "ThisWeek"
+          - "PrevWeek"
+          - "ThisMonth"
+          - "LastMonth"
+          - "AllTime"
+          - "DateRange"
+      StartDate:
+        type: "string"
+      EndDate:
+        type: "string"
+    required:
+      - DateTimeType
+    additionalProperties: false
+  EventsQueryOptions:
+    type: "object"
+    properties:
+      ShowHighlight:
+        type: "boolean"
+    additionalProperties: false
+  EventsListResponse:
+    type: "object"
+    properties:
+      Data:
+        type: "array"
+        items:
+          type: "string"
+      TotalSize:
+        type: "integer"
+      QueryType:
+        type: "string"
+      SelectedColumns:
+        type: "array"
+        items:
+          type: "string"
+      SearchTime:
+        type: "integer"
+    additionalProperties: false
