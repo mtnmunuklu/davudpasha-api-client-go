@@ -13,7 +13,7 @@ type EventsApi common.Service
 
 // SearchEventsOptionalParamters holds optional parameters for SearchEvents.
 type SearchEventsOptionalParameters struct {
-	Body *EventsListRequest
+	Body *EventsSearchRequest
 }
 
 // NewSearchEventsOptioanlParameters creates an empty struct for parameters.
@@ -23,18 +23,18 @@ func NewSearchEventsOptionalParameters() *SearchEventsOptionalParameters {
 }
 
 // WithBody sets the corresponding parameter name and returns the struct.
-func (r *SearchEventsOptionalParameters) WithBody(body EventsListRequest) *SearchEventsOptionalParameters {
+func (r *SearchEventsOptionalParameters) WithBody(body EventsSearchRequest) *SearchEventsOptionalParameters {
 	r.Body = &body
 	return r
 }
 
 // SearcEvents search events.
 // Returns events that match an events search query.
-func (a *EventsApi) SearchEvents(ctx _context.Context, o ...SearchEventsOptionalParameters) (EventsListResponse, *_nethttp.Response, error) {
+func (a *EventsApi) SearchEvents(ctx _context.Context, o ...SearchEventsOptionalParameters) (EventsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost
 		localVarPostBody      interface{}
-		localVarReturnValue   EventsListResponse
+		localVarReturnValue   EventsSearchResponse
 		optionalParams        SearchEventsOptionalParameters
 		localVarInterfaceCode = "ISearchAct"
 		localVarMethodName    = "Execute"

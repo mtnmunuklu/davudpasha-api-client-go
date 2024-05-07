@@ -20,7 +20,7 @@ func init() {
 }
 
 func main() {
-	body := davudpasha.EventsListRequest{
+	body := davudpasha.EventsSearchRequest{
 		Reason: common.PtrString("query"),
 		Query: &davudpasha.EventsQueryFilter{
 			QuerySQL: common.PtrString("sourcetype=\"paloalto\" eql select * from _source_ where _condition_ limit 1"),

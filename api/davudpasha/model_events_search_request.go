@@ -7,8 +7,8 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// EventsListRequest is the object sent with a request to retrieve a list of events from your organization.
-type EventsListRequest struct {
+// EventsSearchRequest is the object sent with a request to retrieve a list of events from your organization.
+type EventsSearchRequest struct {
 	// Reason represents the reason for the event list request.
 	Reason *string `json:"reason,omitempty"`
 	// Query specifies the search and filter query settings.
@@ -21,12 +21,12 @@ type EventsListRequest struct {
 	AdditionalProperties map[string]interface{}
 }
 
-// NewEventsListRequest creates a new EventsListRequest object.
+// NewEventsSearchRequest creates a new EventsSearchRequest object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewEventsListRequest() *EventsListRequest {
-	this := EventsListRequest{}
+func NewEventsSearchRequest() *EventsSearchRequest {
+	this := EventsSearchRequest{}
 	var reason string = "Query"
 	this.Reason = &reason
 	var smartRestRequestContext string = "-<SmartRestRequestContext>-"
@@ -34,11 +34,11 @@ func NewEventsListRequest() *EventsListRequest {
 	return &this
 }
 
-// NewEventsListRequestWithDefaults creates a new EventsListRequest object.
+// NewEventsSearchRequestWithDefaults creates a new EventsSearchRequest object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewEventsListRequestWithDefaults() *EventsListRequest {
-	this := EventsListRequest{}
+func NewEventsSearchRequestWithDefaults() *EventsSearchRequest {
+	this := EventsSearchRequest{}
 	var reason string = "Query"
 	this.Reason = &reason
 	var smartRestRequestContext string = "-<SmartRestRequestContext>-"
@@ -47,7 +47,7 @@ func NewEventsListRequestWithDefaults() *EventsListRequest {
 }
 
 // GetReason returns the Reason field value if set, zero value otherwise.
-func (o *EventsListRequest) GetReason() string {
+func (o *EventsSearchRequest) GetReason() string {
 	if o == nil || o.Reason == nil {
 		var ret string
 		return ret
@@ -57,7 +57,7 @@ func (o *EventsListRequest) GetReason() string {
 
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsListRequest) GetReasonOk() (*string, bool) {
+func (o *EventsSearchRequest) GetReasonOk() (*string, bool) {
 	if o == nil || o.Reason == nil {
 		return nil, false
 	}
@@ -65,17 +65,17 @@ func (o *EventsListRequest) GetReasonOk() (*string, bool) {
 }
 
 // HasReason returns a boolean if a field has been set.
-func (o *EventsListRequest) HasReason() bool {
+func (o *EventsSearchRequest) HasReason() bool {
 	return o != nil && o.Reason != nil
 }
 
 // SetReason gets a reference to the given string and assigns it to the Reason field.
-func (o *EventsListRequest) SetReason(v string) {
+func (o *EventsSearchRequest) SetReason(v string) {
 	o.Reason = &v
 }
 
 // GetQuery returns the Query field value if set, zero value otherwise.
-func (o *EventsListRequest) GetQuery() EventsQueryFilter {
+func (o *EventsSearchRequest) GetQuery() EventsQueryFilter {
 	if o == nil || o.Query == nil {
 		var ret EventsQueryFilter
 		return ret
@@ -85,7 +85,7 @@ func (o *EventsListRequest) GetQuery() EventsQueryFilter {
 
 // GetQueryOk returns a tuple with the Query field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsListRequest) GetQueryOk() (*EventsQueryFilter, bool) {
+func (o *EventsSearchRequest) GetQueryOk() (*EventsQueryFilter, bool) {
 	if o == nil || o.Query == nil {
 		return nil, false
 	}
@@ -93,17 +93,17 @@ func (o *EventsListRequest) GetQueryOk() (*EventsQueryFilter, bool) {
 }
 
 // HasQuery returns a boolean if a field has been set.
-func (o *EventsListRequest) HasQuery() bool {
+func (o *EventsSearchRequest) HasQuery() bool {
 	return o != nil && o.Query != nil
 }
 
 // SetQuery gets a reference to the given EventsQueryFilter and assigns it to the Query field.
-func (o *EventsListRequest) SetQuery(v EventsQueryFilter) {
+func (o *EventsSearchRequest) SetQuery(v EventsQueryFilter) {
 	o.Query = &v
 }
 
 // GetSmartRestRequestContext returns the SmartRestRequestContext field value if set, zero value otherwise.
-func (o *EventsListRequest) GetSmartRestRequestContext() string {
+func (o *EventsSearchRequest) GetSmartRestRequestContext() string {
 	if o == nil || o.SmartRestRequestContext == nil {
 		var ret string
 		return ret
@@ -113,7 +113,7 @@ func (o *EventsListRequest) GetSmartRestRequestContext() string {
 
 // GetSmartRestRequestContextOk returns a tuple with the SmartRestRequestContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsListRequest) GetSmartRestRequestContextOk() (*string, bool) {
+func (o *EventsSearchRequest) GetSmartRestRequestContextOk() (*string, bool) {
 	if o == nil || o.SmartRestRequestContext == nil {
 		return nil, false
 	}
@@ -121,17 +121,17 @@ func (o *EventsListRequest) GetSmartRestRequestContextOk() (*string, bool) {
 }
 
 // HasSmartRestRequestContext returns a boolean if a field has been set.
-func (o *EventsListRequest) HasSmartRestRequestContext() bool {
+func (o *EventsSearchRequest) HasSmartRestRequestContext() bool {
 	return o != nil && o.SmartRestRequestContext != nil
 }
 
 // SetSmartRestRequestContext gets a reference to the given string and assigns it to the SmartRestRequestContext field.
-func (o *EventsListRequest) SetSmartRestRequestContext(v string) {
+func (o *EventsSearchRequest) SetSmartRestRequestContext(v string) {
 	o.Reason = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o EventsListRequest) MarshalJSON() ([]byte, error) {
+func (o EventsSearchRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -153,7 +153,7 @@ func (o EventsListRequest) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *EventsListRequest) UnMarshalJSON(bytes []byte) (err error) {
+func (o *EventsSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		Reason                  *string            `json:"reason,omitempty"`
 		Query                   *EventsQueryFilter `json:"query,omitempty"`
