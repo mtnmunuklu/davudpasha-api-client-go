@@ -151,10 +151,9 @@ func (o EventsQueryFilter) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *EventsQueryFilter) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		QuerySQL        *string                     `json:"QuerySQL,omitempty"`
-		DateTimeRange   *EventsDateTimeRange        `json:"DateTimeRange,omitempty"`
-		SearchAfterKeys common.NullableList[string] `json:"SearchAfterKeys,omitempty"`
-		QueryOptions    *EventsQueryOptions         `json:"QueryOptions,omitempty"`
+		QuerySQL      *string              `json:"QuerySQL,omitempty"`
+		DateTimeRange *EventsDateTimeRange `json:"DateTimeRange,omitempty"`
+		QueryOptions  *EventsQueryOptions  `json:"QueryOptions,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
@@ -165,7 +164,7 @@ func (o *EventsQueryFilter) UnMarshalJSON(bytes []byte) (err error) {
 
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"QuerySQL", "DateTimeRange", "SearchAfterKeys", "Size", "QueryOptions"})
+		common.DeleteKeys(additionalProperties, &[]string{"QuerySQL", "DateTimeRange", "QueryOptions"})
 	} else {
 		return err
 	}

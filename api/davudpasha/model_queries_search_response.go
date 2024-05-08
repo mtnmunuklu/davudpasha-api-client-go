@@ -2,6 +2,8 @@ package davudpasha
 
 import (
 	"encoding/json"
+
+	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
 // QueriesSearchResponse is the response object with all queries matching the request.
@@ -114,4 +116,55 @@ func (o *QueriesSearchResponse) HasSuccessItems() bool {
 // SetSuccessItems gets a reference to the given []QueriesSuccessItems and assigns it to the SuccessItems field.
 func (o *QueriesSearchResponse) SetSuccessItems(v []QueriesSuccessItems) {
 	o.SuccessItems = v
+}
+
+// MarshalJSON serializes the struct using spec logic.
+func (o QueriesSearchResponse) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]interface{}{}
+	if o.UnparsedObject != nil {
+		return json.Marshal(o.UnparsedObject)
+	}
+	if o.Items != nil {
+		toSerialize["Items"] = o.Items
+	}
+	if o.FailedItems != nil {
+		toSerialize["FailedItems"] = o.FailedItems
+	}
+	if o.FailedItems != nil {
+		toSerialize["SuccessItems"] = o.SuccessItems
+	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+	return json.Marshal(toSerialize)
+}
+
+// UnMarshalJSON deserializes the given payload.
+func (o *QueriesSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
+	all := struct {
+		Items        []QueriesItems        `json:"Items,omitempty"`
+		FailedItems  []json.RawMessage     `json:"FailedItems,omitempty"`
+		SuccessItems []QueriesSuccessItems `json:"SuccessItems,omitempty"`
+	}{}
+	if err = json.Unmarshal(bytes, &all); err != nil {
+		return json.Unmarshal(bytes, &o.UnparsedObject)
+	}
+
+	additionalProperties := make(map[string]interface{})
+	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		common.DeleteKeys(additionalProperties, &[]string{"Items", "FailedItems", "SuccessItems"})
+	} else {
+		return err
+	}
+
+	o.Items = all.Items
+	o.FailedItems = all.FailedItems
+	o.SuccessItems = all.SuccessItems
+
+	if len(additionalProperties) > 0 {
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return nil
 }

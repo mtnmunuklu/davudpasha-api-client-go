@@ -68,7 +68,7 @@ func (o *EventsQueryOptions) UnMarshalJSON(bytes []byte) (err error) {
 	}
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"errors"})
+		common.DeleteKeys(additionalProperties, &[]string{"ShowHighlight"})
 	} else {
 		return err
 	}
