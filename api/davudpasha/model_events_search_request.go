@@ -127,7 +127,7 @@ func (o *EventsSearchRequest) HasSmartRestRequestContext() bool {
 
 // SetSmartRestRequestContext gets a reference to the given string and assigns it to the SmartRestRequestContext field.
 func (o *EventsSearchRequest) SetSmartRestRequestContext(v string) {
-	o.Reason = &v
+	o.SmartRestRequestContext = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
