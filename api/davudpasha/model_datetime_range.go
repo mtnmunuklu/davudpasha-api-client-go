@@ -7,26 +7,27 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// EventsDateTimeRange represents the date time range for events.
-type EventsDateTimeRange struct {
+// DateTimeRange represents the date time range for events.
+type DateTimeRange struct {
 	// DateTimeType specifies the type of date time range
-	DateTimeType EventsDateTimeType `json:"DateTimeType"`
+	DateTimeType DateTimeType `json:"DateTimeType"`
 	// StartDate is the start date of the range
 	StartDate *string `json:"StartDate,omitempty"`
 	// EndDate is the end date of the range
-	EndDate *string `json:"EndDate,omitempty"`
+	EndDate *string               `json:"EndDate,omitempty"`
+	Field   common.NullableString `json:"Field,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct
 	UnparsedObject map[string]interface{}
 	// AdditionalProperties stores any additional properties not explicitly defined in the struct
 	AdditionalProperties map[string]interface{}
 }
 
-// NewEventsDateTimeRange creates a new EventsDateTimeRange object.
+// NewDateTimeRange creates a new DateTimeRange object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewEventsDateTimeRange(dateTimeType EventsDateTimeType) *EventsDateTimeRange {
-	this := EventsDateTimeRange{}
+func NewDateTimeRange(dateTimeType DateTimeType) *DateTimeRange {
+	this := DateTimeRange{}
 	this.DateTimeType = dateTimeType
 	return &this
 }
@@ -34,16 +35,16 @@ func NewEventsDateTimeRange(dateTimeType EventsDateTimeType) *EventsDateTimeRang
 // NewDateTimeRangeWithDefaults creates a new DateTimeRange object.
 // This constructor will assign default values to properties that have it defined,
 // but it doensn't guarantee that properties requiered by API are set.
-func NewEventsDateTimeRangeWithDefault(dateTimeType EventsDateTimeType) *EventsDateTimeRange {
-	this := EventsDateTimeRange{}
+func NewDateTimeRangeWithDefault(dateTimeType DateTimeType) *DateTimeRange {
+	this := DateTimeRange{}
 	this.DateTimeType = dateTimeType
 	return &this
 }
 
 // GetDateTimeType returns the DateTimeType field value if set, zero value otherwise.
-func (o *EventsDateTimeRange) GetDateTimeType() EventsDateTimeType {
+func (o *DateTimeRange) GetDateTimeType() DateTimeType {
 	if o == nil {
-		var ret EventsDateTimeType
+		var ret DateTimeType
 		return ret
 	}
 	return o.DateTimeType
@@ -51,7 +52,7 @@ func (o *EventsDateTimeRange) GetDateTimeType() EventsDateTimeType {
 
 // GetDateTimeTypeOk returns a tuple with the DateTimeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsDateTimeRange) GetDateTimeTypeOk() (*EventsDateTimeType, bool) {
+func (o *DateTimeRange) GetDateTimeTypeOk() (*DateTimeType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -59,12 +60,12 @@ func (o *EventsDateTimeRange) GetDateTimeTypeOk() (*EventsDateTimeType, bool) {
 }
 
 // SetDateTimeType gets a reference to the given string and assigns it to the DateTimeType field.
-func (o *EventsDateTimeRange) SetDateTimeType(v EventsDateTimeType) {
+func (o *DateTimeRange) SetDateTimeType(v DateTimeType) {
 	o.DateTimeType = v
 }
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise.
-func (o *EventsDateTimeRange) GetStartDate() string {
+func (o *DateTimeRange) GetStartDate() string {
 	if o == nil || o.StartDate == nil {
 		var ret string
 		return ret
@@ -74,7 +75,7 @@ func (o *EventsDateTimeRange) GetStartDate() string {
 
 // GetStartDateOk returns a tuple with the StartDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsDateTimeRange) GetStartDateOk() (*string, bool) {
+func (o *DateTimeRange) GetStartDateOk() (*string, bool) {
 	if o == nil || o.StartDate == nil {
 		return nil, false
 	}
@@ -82,17 +83,17 @@ func (o *EventsDateTimeRange) GetStartDateOk() (*string, bool) {
 }
 
 // HasStartDate returns a boolean if a field has been set.
-func (o *EventsDateTimeRange) HasStartDate() bool {
+func (o *DateTimeRange) HasStartDate() bool {
 	return o != nil && o.StartDate != nil
 }
 
 // SetStartDate gets a reference to the given string and assigns it to the StartDate field.
-func (o *EventsDateTimeRange) SetStartDate(v string) {
+func (o *DateTimeRange) SetStartDate(v string) {
 	o.StartDate = &v
 }
 
 // GetEndDate returns the EndDate field value if set, zero value otherwise.
-func (o *EventsDateTimeRange) GetEndDate() string {
+func (o *DateTimeRange) GetEndDate() string {
 	if o == nil || o.EndDate == nil {
 		var ret string
 		return ret
@@ -102,7 +103,7 @@ func (o *EventsDateTimeRange) GetEndDate() string {
 
 // GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsDateTimeRange) GetEndDateOk() (*string, bool) {
+func (o *DateTimeRange) GetEndDateOk() (*string, bool) {
 	if o == nil || o.EndDate == nil {
 		return nil, false
 	}
@@ -110,17 +111,56 @@ func (o *EventsDateTimeRange) GetEndDateOk() (*string, bool) {
 }
 
 // HasEndDate returns a boolean if a field has been set.
-func (o *EventsDateTimeRange) HasEndDate() bool {
+func (o *DateTimeRange) HasEndDate() bool {
 	return o != nil && o.EndDate != nil
 }
 
 // SetEndDate gets a reference to the given string and assigns it to the EndDate field.
-func (o *EventsDateTimeRange) SetEndDate(v string) {
+func (o *DateTimeRange) SetEndDate(v string) {
 	o.EndDate = &v
 }
 
+// GetField returns the Field field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *DateTimeRange) GetField() string {
+	if o == nil || o.Field.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.Field.Get()
+}
+
+// GetFieldOk returns a tuple with the Field field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
+func (o *DateTimeRange) GetFieldOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Field.Get(), o.Field.IsSet()
+}
+
+// HasField returns a boolean if a field has been set.
+func (o *DateTimeRange) HasField() bool {
+	return o != nil && o.Field.IsSet()
+}
+
+// SetField gets a reference to the given datadog.NullableString and assigns it to the Field field.
+func (o *DateTimeRange) SetField(v string) {
+	o.Field.Set(&v)
+}
+
+// SetFieldNil sets the value for Field to be an explicit nil.
+func (o *DateTimeRange) SetFieldNil() {
+	o.Field.Set(nil)
+}
+
+// UnsetField ensures that no value is present for Field, not even an explicit nil.
+func (o *DateTimeRange) UnSetField() {
+	o.Field.UnSet()
+}
+
 // MarshalJSON serializes the struct using spec logic.
-func (o EventsDateTimeRange) MarshalJSON() ([]byte, error) {
+func (o DateTimeRange) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -132,7 +172,9 @@ func (o EventsDateTimeRange) MarshalJSON() ([]byte, error) {
 	if o.EndDate != nil {
 		toSerialize["EndDate"] = o.EndDate
 	}
-
+	if o.Field.IsSet() {
+		toSerialize["Field"] = o.Field.Get()
+	}
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
 	}
@@ -140,11 +182,12 @@ func (o EventsDateTimeRange) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *EventsDateTimeRange) UnMarshalJSON(bytes []byte) (err error) {
+func (o *DateTimeRange) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		DateTimeType *EventsDateTimeType `json:"DateTimeType"`
-		StartDate    *string             `json:"StartDate,omitempty"`
-		EndDate      *string             `json:"EndDate,omitempty"`
+		DateTimeType *DateTimeType         `json:"DateTimeType"`
+		StartDate    *string               `json:"StartDate,omitempty"`
+		EndDate      *string               `json:"EndDate,omitempty"`
+		Field        common.NullableString `json:"Field,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
@@ -154,7 +197,7 @@ func (o *EventsDateTimeRange) UnMarshalJSON(bytes []byte) (err error) {
 	}
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"DateTimeType", "StartDate", "EndDate"})
+		common.DeleteKeys(additionalProperties, &[]string{"DateTimeType", "StartDate", "EndDate", "Field"})
 	} else {
 		return err
 	}
@@ -166,7 +209,7 @@ func (o *EventsDateTimeRange) UnMarshalJSON(bytes []byte) (err error) {
 		o.DateTimeType = *all.DateTimeType
 	}
 
-	if all.DateTimeType == EVENTSDATETIMETYPE_DATERANGE.Ptr() {
+	if all.DateTimeType == DATETIMETYPE_DATERANGE.Ptr() {
 		if all.StartDate != nil || all.EndDate != nil {
 			o.StartDate = all.StartDate
 			o.EndDate = all.EndDate
@@ -174,6 +217,8 @@ func (o *EventsDateTimeRange) UnMarshalJSON(bytes []byte) (err error) {
 			return fmt.Errorf("required field StartDate or EndDate missing")
 		}
 	}
+
+	o.Field = all.Field
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
