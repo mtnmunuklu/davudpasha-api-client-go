@@ -56,8 +56,8 @@ func (v NullableBool) IsSet() bool {
 	return v.isSet
 }
 
-// Unset resets fields of the nullable bool.
-func (v *NullableBool) Unset() {
+// UnSet resets fields of the nullable bool.
+func (v *NullableBool) UnSet() {
 	v.value = nil
 	v.isSet = false
 }
@@ -100,7 +100,7 @@ func (v NullableInt) IsSet() bool {
 	return v.isSet
 }
 
-// Unset resets fields of the nullable int.
+// UnSet resets fields of the nullable int.
 func (v *NullableInt) UnSet() {
 	v.value = nil
 	v.isSet = false
@@ -144,7 +144,7 @@ func (v NullableInt32) IsSet() bool {
 	return v.isSet
 }
 
-// Unset resets fields of the nullable int32.
+// UnSet resets fields of the nullable int32.
 func (v *NullableInt32) UnSet() {
 	v.value = nil
 	v.isSet = false
@@ -188,7 +188,7 @@ func (v NullableInt64) IsSet() bool {
 	return v.isSet
 }
 
-// Unset resets fields of the nullable int64.
+// UnSet resets fields of the nullable int64.
 func (v *NullableInt64) UnSet() {
 	v.value = nil
 	v.isSet = false
@@ -232,7 +232,7 @@ func (v NullableFloat32) IsSet() bool {
 	return v.isSet
 }
 
-// Unset resets fields of the nullable float32.
+// UnSet resets fields of the nullable float32.
 func (v *NullableFloat32) UnSet() {
 	v.value = nil
 	v.isSet = false
@@ -276,7 +276,7 @@ func (v NullableFloat64) IsSet() bool {
 	return v.isSet
 }
 
-// Unset resets fields of the nullable float64.
+// UnSet resets fields of the nullable float64.
 func (v *NullableFloat64) UnSet() {
 	v.value = nil
 	v.isSet = false
@@ -320,7 +320,7 @@ func (v NullableString) IsSet() bool {
 	return v.isSet
 }
 
-// Unset resets fields of the nullable string.
+// UnSet resets fields of the nullable string.
 func (v *NullableString) UnSet() {
 	v.value = nil
 	v.isSet = false
@@ -364,7 +364,7 @@ func (v NullableTime) IsSet() bool {
 	return v.isSet
 }
 
-// Unset resets fields of the nullable time.Time.
+// UnSet resets fields of the nullable time.Time.
 func (v *NullableTime) UnSet() {
 	v.value = nil
 	v.isSet = false
@@ -408,8 +408,8 @@ func (v NullableList[T]) IsSet() bool {
 	return v.isSet
 }
 
-// Unset resets fields of the nullable list.
-func (v *NullableList[T]) Unset() {
+// UnSet resets fields of the nullable list.
+func (v *NullableList[T]) UnSet() {
 	v.value = nil
 	v.isSet = false
 }
