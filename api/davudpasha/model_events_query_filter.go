@@ -12,7 +12,7 @@ type EventsQueryFilter struct {
 	// QuerySQL is the SQL query for filtering events.
 	QuerySQL *string `json:"QuerySQL,omitempty"`
 	// DateTimeRange specifies the date time range for filtering events.
-	DateTimeRange *EventsDateTimeRange `json:"DateTimeRange,omitempty"`
+	DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
 	// QueryOptions stores additional query options.
 	QueryOptions *EventsQueryOptions `json:"QueryOptions,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
@@ -71,9 +71,9 @@ func (o *EventsQueryFilter) SetQuerySQL(v string) {
 }
 
 // GetDateTimeRange returns the DateTimeRange field value if set, zero value otherwise.
-func (o *EventsQueryFilter) GetDateTimeRange() EventsDateTimeRange {
+func (o *EventsQueryFilter) GetDateTimeRange() DateTimeRange {
 	if o == nil || o.DateTimeRange == nil {
-		var ret EventsDateTimeRange
+		var ret DateTimeRange
 		return ret
 	}
 	return *o.DateTimeRange
@@ -81,7 +81,7 @@ func (o *EventsQueryFilter) GetDateTimeRange() EventsDateTimeRange {
 
 // GetDateTimeRangeOk returns a tuple with the DateTimeRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsQueryFilter) GetDateTimeRangeOk() (*EventsDateTimeRange, bool) {
+func (o *EventsQueryFilter) GetDateTimeRangeOk() (*DateTimeRange, bool) {
 	if o == nil || o.DateTimeRange == nil {
 		return nil, false
 	}
@@ -93,8 +93,8 @@ func (o *EventsQueryFilter) HasDateTimeRange() bool {
 	return o != nil && o.DateTimeRange != nil
 }
 
-// SetDateTimeRange gets a reference to the given EventsDateTimeRange and assigns it to the DateTimeRange field.
-func (o *EventsQueryFilter) SetDateTimeRange(v EventsDateTimeRange) {
+// SetDateTimeRange gets a reference to the given DateTimeRange and assigns it to the DateTimeRange field.
+func (o *EventsQueryFilter) SetDateTimeRange(v DateTimeRange) {
 	o.DateTimeRange = &v
 }
 
@@ -151,9 +151,9 @@ func (o EventsQueryFilter) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *EventsQueryFilter) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		QuerySQL      *string              `json:"QuerySQL,omitempty"`
-		DateTimeRange *EventsDateTimeRange `json:"DateTimeRange,omitempty"`
-		QueryOptions  *EventsQueryOptions  `json:"QueryOptions,omitempty"`
+		QuerySQL      *string             `json:"QuerySQL,omitempty"`
+		DateTimeRange *DateTimeRange      `json:"DateTimeRange,omitempty"`
+		QueryOptions  *EventsQueryOptions `json:"QueryOptions,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
