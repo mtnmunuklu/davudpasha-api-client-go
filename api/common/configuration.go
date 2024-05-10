@@ -223,7 +223,7 @@ func NewConfiguration() *Configuration {
 					},
 					"api_path": {
 						Description:  "The path where the api is deploeyed",
-						DefaultValue: "api/DpConnection/CallByInterfaceApi",
+						DefaultValue: "api",
 					},
 				},
 			},
@@ -243,12 +243,12 @@ func NewConfiguration() *Configuration {
 					},
 					"api_path": {
 						Description:  "The path where the api is deploeyed",
-						DefaultValue: "api/DpConnection/CallByInterfaceApi",
+						DefaultValue: "api",
 					},
 				},
 			},
 			{
-				URL:         "{protocol}://{name}",
+				URL:         "{protocol}://{name}/{api_path}",
 				Description: "No description provided",
 				Variables: map[string]ServerVariable{
 					"name": {
@@ -258,6 +258,10 @@ func NewConfiguration() *Configuration {
 					"protocol": {
 						Description:  "The protocol  for accessing the API",
 						DefaultValue: "https",
+					},
+					"api_path": {
+						Description:  "The path where the api is deploeyed",
+						DefaultValue: "api",
 					},
 				},
 			},

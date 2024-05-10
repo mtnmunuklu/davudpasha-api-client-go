@@ -53,7 +53,7 @@ func (a *QueriesApi) SerchQueries(ctx _context.Context, o ...SearchQueriesOption
 		return localVarReturnValue, nil, common.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "?interfaceCode=" + localVarInterfaceCode + "&methodName=" + localVarMethodName
+	localVarPath := localBasePath + "/" + localVarInterfaceCode + "/" + localVarMethodName
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
