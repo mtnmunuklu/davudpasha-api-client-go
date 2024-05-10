@@ -39,5 +39,5 @@ func main() {
 	}
 
 	responseContent, _ := json.MarshalIndent(resp, "", " ")
-	fmt.Fprintf(os.Stdout, "Response from `EventsApi.SearchEvents`:\n%s\n", responseContent)
+	fmt.Fprintf(os.Stdout, "Response from `QueriesApi.SearchQueries`:\n%s\n", responseContent)
 }
