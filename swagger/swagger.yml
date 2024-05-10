@@ -5,11 +5,12 @@ info:
   title: "Davud Pasha API"
   contact:
     email: "info@davudpasha.com"
+host: davudpasha.com
 basePath: "/api"
 schemes:
   - "https"
 paths:
-  /DpConnection/CallByInterfaceApi:
+  /ISearchAct/Execute:
     post:
       summary: "Search events"
       description: "Search events based on specified filters"
@@ -24,18 +25,6 @@ paths:
           required: true
           schema:
             $ref: "#/definitions/EventsListRequest"
-        - in: "query"
-          name: "interfaceCode"
-          description: "Interface code"
-          required: true
-          type: "string"
-          default: "ISearchAct"
-        - in: "query"
-          name: "methodName"
-          description: "Method name"
-          required: true
-          type: "string"
-          default: "Execute"
       responses:
         200:
           description: "Successful response"
