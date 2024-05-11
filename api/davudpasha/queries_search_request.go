@@ -163,7 +163,7 @@ func (o *QueriesSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 	}
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"filter", "smartRestRequestContext"})
+		common.DeleteKeys(additionalProperties, &[]string{"Username", "filter", "smartRestRequestContext"})
 	} else {
 		return err
 	}

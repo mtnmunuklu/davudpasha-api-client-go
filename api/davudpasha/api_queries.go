@@ -41,7 +41,7 @@ func (a *QueriesApi) SerchQueries(ctx _context.Context, o ...SearchQueriesOption
 	)
 
 	if len(o) > 1 {
-		return localVarReturnValue, nil, common.ReportError("only one argument of type SearchEventsOptionalParameters is allowed")
+		return localVarReturnValue, nil, common.ReportError("only one argument of type SearchQueriesOptionalParameters is allowed")
 	}
 
 	if len(o) == 1 {
