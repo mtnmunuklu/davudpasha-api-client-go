@@ -7,8 +7,8 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// APIErrorResponse API Error response
-type APIErrorResponse struct {
+// ErrorResponse API Error response
+type ErrorResponse struct {
 	// A list of errors
 	Errors []string `json:"errors"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
@@ -16,26 +16,26 @@ type APIErrorResponse struct {
 	AdditionalProperties map[string]interface{}
 }
 
-// NewAPIErrorResponse creates a new APIErrorResponse object.
+// NewErrorResponse creates a new ErrorResponse object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewAPIErrorResponse(errors []string) *APIErrorResponse {
-	this := APIErrorResponse{}
+func NewErrorResponse(errors []string) *ErrorResponse {
+	this := ErrorResponse{}
 	this.Errors = errors
 	return &this
 }
 
-// NewAPIErrorResponseWithDefaults creates a new APIErrorResponse object.
+// NewErrorResponseWithDefaults creates a new ErrorResponse object.
 // This constructor will assign default values to properties that have it defined,
 // but it doensn't guarantee that properties requiered by API are set.
-func NewAPIErrorResponseWithDefaults() *APIErrorResponse {
-	this := APIErrorResponse{}
+func NewErrorResponseWithDefaults() *ErrorResponse {
+	this := ErrorResponse{}
 	return &this
 }
 
 // GetErrors returns the Errors field value.
-func (o *APIErrorResponse) GetErrors() []string {
+func (o *ErrorResponse) GetErrors() []string {
 	if o == nil {
 		var ret []string
 		return ret
@@ -45,7 +45,7 @@ func (o *APIErrorResponse) GetErrors() []string {
 
 // GetErrorsOk returns a tuple with the Errors field value
 // and a boolean to check if the value has been set.
-func (o *APIErrorResponse) GetErrorsOk() (*[]string, bool) {
+func (o *ErrorResponse) GetErrorsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -53,12 +53,12 @@ func (o *APIErrorResponse) GetErrorsOk() (*[]string, bool) {
 }
 
 // SetErrors sets field value
-func (o *APIErrorResponse) SetErrors(v []string) {
+func (o *ErrorResponse) SetErrors(v []string) {
 	o.Errors = v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o APIErrorResponse) MarshalJSON() ([]byte, error) {
+func (o ErrorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -72,7 +72,7 @@ func (o APIErrorResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *APIErrorResponse) UnMarshalJSON(bytes []byte) (err error) {
+func (o *ErrorResponse) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		Errors *[]string `json:"errors"`
 	}{}
