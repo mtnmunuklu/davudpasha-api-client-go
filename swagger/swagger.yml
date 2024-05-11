@@ -24,14 +24,34 @@ paths:
           description: "Search object"
           required: true
           schema:
-            $ref: "#/definitions/EventsListRequest"
+            $ref: "#/definitions/EventsSearchRequest"
       responses:
         200:
           description: "Successful response"
           schema:
-            $ref: "#/definitions/EventsListResponse"
+            $ref: "#/definitions/EventsSearchResponse"
+  /ICSiemQueryAct/GetList:
+    post:
+      summary: "Search queries"
+      description: "Search queries based on specified filters"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "query"
+          description: "Search object"
+          required: true
+          schema:
+            $ref: "#/definitions/QueriesSearchRequest"
+      responses:
+        200:
+          description: "Successful response"
+          schema:
+            $ref: "#/definitions/QueriesSearchResponse"
 definitions:
-  EventsListRequest:
+  EventsSearchRequest:
     type: "object"
     properties:
       Reason:
@@ -51,14 +71,13 @@ definitions:
       QuerySQL:
         type: "string"
       DateTimeRange:
-        $ref: "#/definitions/EventsDateTimeRange"
+        $ref: "#/definitions/DateTimeRange"
       QueryOptions:
         $ref: "#/definitions/EventsQueryOptions"
     required:
       - QuerySQL
       - DateTimeRange
-    additionalProperties: false
-  EventsDateTimeRange:
+  DateTimeRange:
     type: "object"
     properties:
       DateTimeType:
@@ -89,14 +108,12 @@ definitions:
         type: "string"
     required:
       - DateTimeType
-    additionalProperties: false
   EventsQueryOptions:
     type: "object"
     properties:
       ShowHighlight:
         type: "boolean"
-    additionalProperties: false
-  EventsListResponse:
+  EventsSearchResponse:
     type: "object"
     properties:
       Data:
@@ -110,7 +127,117 @@ definitions:
       SelectedColumns:
         type: "array"
         items:
-          type: "string"
+          $ref: "#/definitions/SelectedColumns"
       SearchTime:
         type: "integer"
-    additionalProperties: false
+  SelectedColumns:
+    type: "object"
+    properties:
+      Value:
+        type: "string"
+      DisplayText:
+        type: "string"
+      Lookup:
+        type: "string"
+  QueriesSearchRequest:
+    type: "object"
+    properties:
+      Username:
+        type: "string"
+      Filter:
+        type: "string"
+      SmartRestRequestContext:
+        type: "string"
+    required:
+      - Username
+      - Filter
+      - SmartRestRequestContext
+  QueriesSearchResponse:
+    type: "object"
+    properties:
+      Items:
+        type: "array"
+        items:
+          $ref: "#/definitions/QueriesItems"
+      FailedItems:
+        type: "array"
+        items:
+          type: "string"
+      SuccessItems:
+        type: "array"
+        items:
+          $ref: "#/definitions/QueriesSuccessItems"
+  QueriesItems:
+    type: "object"
+    properties:
+      ID:
+        type: "string"
+      Name:
+        type: "string"
+      Description:
+        type: 
+          - "string"
+          - "null"
+      Query:
+        type: "string"
+      Columns:
+        allOf:
+          - $ref: "#/definitions/SelectedColumns"
+          - type: "null"
+      Author:
+        type: "string"
+      InsertDate:
+        type: "string"
+      LastUpdateDate:
+        type: "string"
+      QueryType:
+        type: "string"
+      DateTimeRange:
+        $ref: "#/definitions/DateTimeRange"
+      Tags:
+        allOf:
+          - type: "array"
+            items:
+              type: "string"
+          - type: "null"
+      Mitre Tags:
+        allOf:
+          - type: "array"
+            items:
+              type: "string"
+          - type: "null"
+      KillChainPhase:
+        type: "string"
+      FromMarket:
+        type: "boolean"
+      FromModules:
+        type: "boolean"
+      HasUpdate:
+        type: "boolean"
+      ModuleId:
+        type: 
+          - "string"
+          - "null"
+      ModuleGuid:
+        type: 
+          - "string"
+          - "null"
+      SharedUsersAndGroups:
+        allOf:
+          - type: "array"
+            items:
+              type: "string"
+          - type: "null"
+      version:
+        type: "integer"
+  QueriesSuccessItems:
+    type: "object"
+    properties:
+      Application:
+        type: "string"
+      Keys:
+        type: "array"
+        items:
+          type: "string"
+      SourceType:
+        type: "string"
