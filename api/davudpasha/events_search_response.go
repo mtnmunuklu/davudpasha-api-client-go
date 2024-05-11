@@ -15,7 +15,7 @@ type EventsSearchResponse struct {
 	// QueryType is the type of query used.
 	QueryType *string `json:"QueryType,omitempty"`
 	// SelectedColumns contains the selected columns.
-	SelectedColumns []EventsSelectedColumns `json:"SelectedColumns,omitempty"`
+	SelectedColumns []SelectedColumns `json:"SelectedColumns,omitempty"`
 	// SearchTime is the time taken for the search.
 	SearchTime *int64 `json:"SearchTime,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
@@ -126,9 +126,9 @@ func (o *EventsSearchResponse) SetQueryType(v string) {
 }
 
 // GetSelectedColumns returns the SelectedColumns field value if set, zero value otherwise.
-func (o *EventsSearchResponse) GetSelectedColumns() []EventsSelectedColumns {
+func (o *EventsSearchResponse) GetSelectedColumns() []SelectedColumns {
 	if o == nil || o.SelectedColumns == nil {
-		var ret []EventsSelectedColumns
+		var ret []SelectedColumns
 		return ret
 	}
 	return o.SelectedColumns
@@ -136,7 +136,7 @@ func (o *EventsSearchResponse) GetSelectedColumns() []EventsSelectedColumns {
 
 // GetSelectedColumnsOk returns a tuple with the SelectedColumns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsSearchResponse) GetSelectedColumnsOk() (*[]EventsSelectedColumns, bool) {
+func (o *EventsSearchResponse) GetSelectedColumnsOk() (*[]SelectedColumns, bool) {
 	if o == nil || o.SelectedColumns != nil {
 		return nil, false
 	}
@@ -148,8 +148,8 @@ func (o *EventsSearchResponse) HasSelectedColumns() bool {
 	return o != nil && o.SelectedColumns != nil
 }
 
-// SetSelectedColumns gets a reference to the given []EventsSelectedColumns and assigns it to the SelectedColumns field.
-func (o *EventsSearchResponse) SetSelectedColumns(v []EventsSelectedColumns) {
+// SetSelectedColumns gets a reference to the given []SelectedColumns and assigns it to the SelectedColumns field.
+func (o *EventsSearchResponse) SetSelectedColumns(v []SelectedColumns) {
 	o.SelectedColumns = v
 }
 
@@ -212,12 +212,12 @@ func (o EventsSearchResponse) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *EventsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Data            []json.RawMessage       `json:"Data,omitempty"`
-		TotalSize       *int64                  `json:"TotalSize,omitempty"`
-		QueryType       *string                 `json:"QueryType,omitempty"`
-		QueryFlag       *string                 `json:"QueryFlag,omitempty"`
-		SelectedColumns []EventsSelectedColumns `json:"SelectedColumns,omitempty"`
-		SearchTime      *int64                  `json:"SearchTime,omitempty"`
+		Data            []json.RawMessage `json:"Data,omitempty"`
+		TotalSize       *int64            `json:"TotalSize,omitempty"`
+		QueryType       *string           `json:"QueryType,omitempty"`
+		QueryFlag       *string           `json:"QueryFlag,omitempty"`
+		SelectedColumns []SelectedColumns `json:"SelectedColumns,omitempty"`
+		SearchTime      *int64            `json:"SearchTime,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)

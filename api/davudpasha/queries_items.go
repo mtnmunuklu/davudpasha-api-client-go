@@ -12,7 +12,7 @@ type QueriesItems struct {
 	Name                 *string                              `json:"Name,omitempty"`
 	Description          common.NullableString                `json:"Description,omitempty"`
 	Query                *string                              `json:"Query,omitempty"`
-	Columns              common.NullableList[json.RawMessage] `json:"Columns,omitempty"`
+	Columns              common.NullableList[SelectedColumns] `json:"Columns,omitempty"`
 	Author               *string                              `json:"Author,omitempty"`
 	InsertDate           *string                              `json:"InsertDate,omitempty"`
 	LastUpdateDate       *string                              `json:"LastUpdateDate,omitempty"`
@@ -147,9 +147,9 @@ func (o *QueriesItems) UnsetDescription() {
 }
 
 // GetColumns returns the Columns field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItems) GetColumns() []json.RawMessage {
+func (o *QueriesItems) GetColumns() []SelectedColumns {
 	if o == nil || o.Columns.Get() == nil {
-		var ret []json.RawMessage
+		var ret []SelectedColumns
 		return ret
 	}
 	return *o.Columns.Get()
@@ -158,7 +158,7 @@ func (o *QueriesItems) GetColumns() []json.RawMessage {
 // GetColumnsOk returns a tuple with the Columns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItems) GetColumnsOk() (*[]json.RawMessage, bool) {
+func (o *QueriesItems) GetColumnsOk() (*[]SelectedColumns, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -170,8 +170,8 @@ func (o *QueriesItems) HasColumns() bool {
 	return o != nil && o.Columns.IsSet()
 }
 
-// SetColumns gets a reference to the given datadog.Nullable[]json.RawMessage and assigns it to the Columns field.
-func (o *QueriesItems) SetColumns(v []json.RawMessage) {
+// SetColumns gets a reference to the given datadog.Nullable[SelectedColumns] and assigns it to the Columns field.
+func (o *QueriesItems) SetColumns(v []SelectedColumns) {
 	o.Columns.Set(&v)
 }
 
@@ -754,7 +754,7 @@ func (o *QueriesItems) UnMarshalJSON(bytes []byte) (err error) {
 		Name                 *string                              `json:"Name,omitempty"`
 		Description          common.NullableString                `json:"Description,omitempty"`
 		Query                *string                              `json:"Query,omitempty"`
-		Columns              common.NullableList[json.RawMessage] `json:"Columns,omitempty"`
+		Columns              common.NullableList[SelectedColumns] `json:"Columns,omitempty"`
 		Author               *string                              `json:"Author,omitempty"`
 		InsertDate           *string                              `json:"InsertDate,omitempty"`
 		LastUpdateDate       *string                              `json:"LastUpdateDate,omitempty"`
