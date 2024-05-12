@@ -50,7 +50,9 @@ func (o EventsQueryOptions) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	toSerialize["ShowHighlight"] = o.ShowHighlight
+	if o.ShowHighlight != nil {
+		toSerialize["ShowHighlight"] = o.ShowHighlight
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
