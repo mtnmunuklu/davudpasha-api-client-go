@@ -684,13 +684,13 @@ func (o QueriesItems) MarshalJSON() ([]byte, error) {
 		toSerialize["Name"] = o.Name
 	}
 	if o.Description.IsSet() {
-		toSerialize["Description"] = o.Description
+		toSerialize["Description"] = o.Description.Get()
 	}
 	if o.Query != nil {
 		toSerialize["Query"] = o.Query
 	}
 	if o.Columns.IsSet() {
-		toSerialize["Columns"] = o.Columns
+		toSerialize["Columns"] = o.Columns.Get()
 	}
 	if o.Author != nil {
 		toSerialize["Author"] = o.Author
@@ -704,20 +704,17 @@ func (o QueriesItems) MarshalJSON() ([]byte, error) {
 	if o.QueryType != nil {
 		toSerialize["QueryType"] = o.QueryType
 	}
-	if o.QueryType != nil {
-		toSerialize["QueryType"] = o.QueryType
-	}
 	if o.DateTimeRange != nil {
 		toSerialize["DateTimeRange"] = o.DateTimeRange
 	}
 	if o.Tags.IsSet() {
-		toSerialize["Tags"] = o.Tags
+		toSerialize["Tags"] = o.Tags.Get()
 	}
 	if o.MitreTags.IsSet() {
-		toSerialize["MitreTags"] = o.MitreTags
+		toSerialize["MitreTags"] = o.MitreTags.Get()
 	}
 	if o.KillChainPhase.IsSet() {
-		toSerialize["KillChainPhase"] = o.KillChainPhase
+		toSerialize["KillChainPhase"] = o.KillChainPhase.Get()
 	}
 	if o.FromMarket != nil {
 		toSerialize["FromMarket"] = o.FromMarket
@@ -729,13 +726,13 @@ func (o QueriesItems) MarshalJSON() ([]byte, error) {
 		toSerialize["HasUpdate"] = o.HasUpdate
 	}
 	if o.ModuleId.IsSet() {
-		toSerialize["ModuleId"] = o.ModuleId
+		toSerialize["ModuleId"] = o.ModuleId.Get()
 	}
 	if o.ModuleGuid.IsSet() {
-		toSerialize["ModuleGuid"] = o.ModuleGuid
+		toSerialize["ModuleGuid"] = o.ModuleGuid.Get()
 	}
 	if o.SharedUsersAndGroups.IsSet() {
-		toSerialize["SharedUsersAndGroups"] = o.SharedUsersAndGroups
+		toSerialize["SharedUsersAndGroups"] = o.SharedUsersAndGroups.Get()
 	}
 	if o.Version != nil {
 		toSerialize["Version"] = o.Version
