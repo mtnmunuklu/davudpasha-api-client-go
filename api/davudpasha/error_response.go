@@ -63,7 +63,9 @@ func (o ErrorResponse) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	toSerialize["errors"] = o.Errors
+	if o.Errors != nil {
+		toSerialize["errors"] = o.Errors
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
