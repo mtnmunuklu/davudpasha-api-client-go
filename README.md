@@ -54,7 +54,7 @@ For more examples, you can check the [examples](examples) folder in this reposit
 
 ## Contributing
 
-Contributions to Alterix are welcome and encouraged! Please read the [contribution guidelines](CONTRIBUTING.md) before making any contributions to the project.
+Contributions are welcome and encouraged! Please read the [contribution guidelines](CONTRIBUTING.md) before making any contributions to the project.
 
 ## License
 
