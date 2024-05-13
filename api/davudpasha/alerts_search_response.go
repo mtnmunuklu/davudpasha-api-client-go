@@ -9,7 +9,7 @@ import (
 type AlertsSearchResponse struct {
 	Items        []AlertsItems     `json:"Items,omitempty"`
 	FailedItems  []json.RawMessage `json:"FailedItems,omitempty"`
-	SuccessItems []json.RawMessage `json:"SuccessItems,omitempty"`
+	SuccessItems []SuccessItems    `json:"SuccessItems,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
 	UnparsedObject map[string]interface{}
 	// AdditionalProperties stores any additional properties not explicitly defined in the struct
@@ -90,9 +90,9 @@ func (o *AlertsSearchResponse) SetFailedItems(v []json.RawMessage) {
 }
 
 // GetSuccessItems returns the SuccessItems field value if set, zero value otherwise.
-func (o *AlertsSearchResponse) GetSuccessItems() []json.RawMessage {
+func (o *AlertsSearchResponse) GetSuccessItems() []SuccessItems {
 	if o == nil || o.SuccessItems == nil {
-		var ret []json.RawMessage
+		var ret []SuccessItems
 		return ret
 	}
 	return o.SuccessItems
@@ -100,7 +100,7 @@ func (o *AlertsSearchResponse) GetSuccessItems() []json.RawMessage {
 
 // GetSuccessItemsOk returns a tuple with the SuccessItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsSearchResponse) GetSuccessItemsOk() (*[]json.RawMessage, bool) {
+func (o *AlertsSearchResponse) GetSuccessItemsOk() (*[]SuccessItems, bool) {
 	if o == nil || o.SuccessItems == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *AlertsSearchResponse) HasSuccessItems() bool {
 }
 
 // SetSuccessItems sets field value
-func (o *AlertsSearchResponse) SetSuccessItems(v []json.RawMessage) {
+func (o *AlertsSearchResponse) SetSuccessItems(v []SuccessItems) {
 	o.SuccessItems = v
 }
 
@@ -144,7 +144,7 @@ func (o *AlertsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		Items        []AlertsItems     `json:"Items,omitempty"`
 		FailedItems  []json.RawMessage `json:"FailedItems,omitempty"`
-		SuccessItems []json.RawMessage `json:"SuccessItems,omitempty"`
+		SuccessItems []SuccessItems    `json:"SuccessItems,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)

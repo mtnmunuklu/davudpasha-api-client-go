@@ -8,9 +8,9 @@ import (
 
 // QueriesSearchResponse is the response object with all queries matching the request.
 type QueriesSearchResponse struct {
-	Items        []QueriesItems        `json:"Items,omitempty"`
-	FailedItems  []json.RawMessage     `json:"FailedItems,omitempty"`
-	SuccessItems []QueriesSuccessItems `json:"SuccessItems,omitempty"`
+	Items        []QueriesItems    `json:"Items,omitempty"`
+	FailedItems  []json.RawMessage `json:"FailedItems,omitempty"`
+	SuccessItems []SuccessItems    `json:"SuccessItems,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
 	UnparsedObject map[string]interface{}
 	// AdditionalProperties stores any additional properties not explicitly defined in the struct
@@ -91,9 +91,9 @@ func (o *QueriesSearchResponse) SetFailedItems(v []json.RawMessage) {
 }
 
 // GetSuccessItems returns the SuccessItems field value if set, zero value otherwise.
-func (o *QueriesSearchResponse) GetSuccessItems() []QueriesSuccessItems {
+func (o *QueriesSearchResponse) GetSuccessItems() []SuccessItems {
 	if o == nil || o.SuccessItems == nil {
-		var ret []QueriesSuccessItems
+		var ret []SuccessItems
 		return ret
 	}
 	return o.SuccessItems
@@ -101,7 +101,7 @@ func (o *QueriesSearchResponse) GetSuccessItems() []QueriesSuccessItems {
 
 // GetSuccessItemsOk returns a tuple with the SuccessItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesSearchResponse) GetSuccessItemsOk() (*[]QueriesSuccessItems, bool) {
+func (o *QueriesSearchResponse) GetSuccessItemsOk() (*[]SuccessItems, bool) {
 	if o == nil || o.SuccessItems == nil {
 		return nil, false
 	}
@@ -113,8 +113,8 @@ func (o *QueriesSearchResponse) HasSuccessItems() bool {
 	return o != nil && o.SuccessItems != nil
 }
 
-// SetSuccessItems gets a reference to the given []QueriesSuccessItems and assigns it to the SuccessItems field.
-func (o *QueriesSearchResponse) SetSuccessItems(v []QueriesSuccessItems) {
+// SetSuccessItems gets a reference to the given []SuccessItems and assigns it to the SuccessItems field.
+func (o *QueriesSearchResponse) SetSuccessItems(v []SuccessItems) {
 	o.SuccessItems = v
 }
 
@@ -143,9 +143,9 @@ func (o QueriesSearchResponse) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *QueriesSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Items        []QueriesItems        `json:"Items,omitempty"`
-		FailedItems  []json.RawMessage     `json:"FailedItems,omitempty"`
-		SuccessItems []QueriesSuccessItems `json:"SuccessItems,omitempty"`
+		Items        []QueriesItems    `json:"Items,omitempty"`
+		FailedItems  []json.RawMessage `json:"FailedItems,omitempty"`
+		SuccessItems []SuccessItems    `json:"SuccessItems,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
