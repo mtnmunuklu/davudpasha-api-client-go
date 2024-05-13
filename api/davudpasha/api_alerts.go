@@ -113,7 +113,7 @@ func (a *AlertsApi) SearchAlerts(ctx _context.Context, o ...SearchAlertsOptional
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// NewAlertsApi Returns AlertsApi.
+// NewAlertsApi returns AlertsApi.
 func NewAlertsApi(client *common.APIClient) *AlertsApi {
 	return &AlertsApi{
 		Client: client,
