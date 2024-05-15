@@ -6,7 +6,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-type SourcesParallelOptions struct {
+type ParallelOptions struct {
 	IsActive        *bool  `json:"IsActive,omitempty"`
 	TaskCount       *int64 `json:"TaskCount,omitempty"`
 	FileBlockSizeMb *int64 `json:"FileBlockSizeMb,omitempty"`
@@ -17,25 +17,25 @@ type SourcesParallelOptions struct {
 	AdditionalProperties map[string]interface{}
 }
 
-// NewSourcesParallelOptions creates a new SourcesParallelOptions object.
+// NewParallelOptions creates a new ParallelOptions object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewSourcesParallelOptions() *SourcesParallelOptions {
-	this := SourcesParallelOptions{}
+func NewParallelOptions() *ParallelOptions {
+	this := ParallelOptions{}
 	return &this
 }
 
-// NewSourcesParallelOptionsWithDefault creates a new SourcesParallelOptions object.
+// NewParallelOptionsWithDefault creates a new ParallelOptions object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewSourcesParallelOptionsWithDefaults() *SourcesParallelOptions {
-	this := SourcesParallelOptions{}
+func NewParallelOptionsWithDefaults() *ParallelOptions {
+	this := ParallelOptions{}
 	return &this
 }
 
 // GetIsActive returns the IsActive field value if set, zero value otherwise.
-func (o *SourcesParallelOptions) GetIsActive() bool {
+func (o *ParallelOptions) GetIsActive() bool {
 	if o == nil || o.IsActive == nil {
 		var ret bool
 		return ret
@@ -45,7 +45,7 @@ func (o *SourcesParallelOptions) GetIsActive() bool {
 
 // GetIsActiveOk returns a tuple with the IsActive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesParallelOptions) GetIsActiveOk() (*bool, bool) {
+func (o *ParallelOptions) GetIsActiveOk() (*bool, bool) {
 	if o == nil || o.IsActive == nil {
 		return nil, false
 	}
@@ -53,17 +53,17 @@ func (o *SourcesParallelOptions) GetIsActiveOk() (*bool, bool) {
 }
 
 // HasIsActive returns a boolean if a field has been set.
-func (o *SourcesParallelOptions) HasIsActive() bool {
+func (o *ParallelOptions) HasIsActive() bool {
 	return o != nil && o.IsActive != nil
 }
 
 // SetIsActive gets a reference to the given bool and assigns it to the IsActive field.
-func (o *SourcesParallelOptions) SetIsActive(v bool) {
+func (o *ParallelOptions) SetIsActive(v bool) {
 	o.IsActive = &v
 }
 
 // GetTaskCount returns the TaskCount field value if set, zero value otherwise.
-func (o *SourcesParallelOptions) GetTaskCount() int64 {
+func (o *ParallelOptions) GetTaskCount() int64 {
 	if o == nil || o.TaskCount == nil {
 		var ret int64
 		return ret
@@ -73,7 +73,7 @@ func (o *SourcesParallelOptions) GetTaskCount() int64 {
 
 // GetTaskCountOk returns a tuple with the TaskCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesParallelOptions) GetTaskCountOk() (*int64, bool) {
+func (o *ParallelOptions) GetTaskCountOk() (*int64, bool) {
 	if o == nil || o.TaskCount == nil {
 		return nil, false
 	}
@@ -81,17 +81,17 @@ func (o *SourcesParallelOptions) GetTaskCountOk() (*int64, bool) {
 }
 
 // HasTaskCount returns a boolean if a field has been set.
-func (o *SourcesParallelOptions) HasTaskCount() bool {
+func (o *ParallelOptions) HasTaskCount() bool {
 	return o != nil && o.TaskCount != nil
 }
 
 // SetTaskCount gets a reference to the given int64 and assigns it to the TaskCount field.
-func (o *SourcesParallelOptions) SetTaskCount(v int64) {
+func (o *ParallelOptions) SetTaskCount(v int64) {
 	o.TaskCount = &v
 }
 
 // GetFileBlockSizeMb returns the FileBlockSizeMb field value if set, zero value otherwise.
-func (o *SourcesParallelOptions) GetFileBlockSizeMb() int64 {
+func (o *ParallelOptions) GetFileBlockSizeMb() int64 {
 	if o == nil || o.FileBlockSizeMb == nil {
 		var ret int64
 		return ret
@@ -101,7 +101,7 @@ func (o *SourcesParallelOptions) GetFileBlockSizeMb() int64 {
 
 // GetFileBlockSizeMbOk returns a tuple with the FileBlockSizeMb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesParallelOptions) GetFileBlockSizeMbOk() (*int64, bool) {
+func (o *ParallelOptions) GetFileBlockSizeMbOk() (*int64, bool) {
 	if o == nil || o.FileBlockSizeMb == nil {
 		return nil, false
 	}
@@ -109,17 +109,17 @@ func (o *SourcesParallelOptions) GetFileBlockSizeMbOk() (*int64, bool) {
 }
 
 // HasFileBlockSizeMb returns a boolean if a field has been set.
-func (o *SourcesParallelOptions) HasFileBlockSizeMb() bool {
+func (o *ParallelOptions) HasFileBlockSizeMb() bool {
 	return o != nil && o.FileBlockSizeMb != nil
 }
 
 // SetFileBlockSizeMb gets a reference to the given int64 and assigns it to the FileBlockSizeMb field.
-func (o *SourcesParallelOptions) SetFileBlockSizeMb(v int64) {
+func (o *ParallelOptions) SetFileBlockSizeMb(v int64) {
 	o.FileBlockSizeMb = &v
 }
 
 // GetTimeoutSec returns the TimeoutSec field value if set, zero value otherwise.
-func (o *SourcesParallelOptions) GetTimeoutSec() int64 {
+func (o *ParallelOptions) GetTimeoutSec() int64 {
 	if o == nil || o.TimeoutSec == nil {
 		var ret int64
 		return ret
@@ -129,7 +129,7 @@ func (o *SourcesParallelOptions) GetTimeoutSec() int64 {
 
 // GetTimeoutSecOk returns a tuple with the TimeoutSec field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesParallelOptions) GetTimeoutSecOk() (*int64, bool) {
+func (o *ParallelOptions) GetTimeoutSecOk() (*int64, bool) {
 	if o == nil || o.TimeoutSec == nil {
 		return nil, false
 	}
@@ -137,17 +137,17 @@ func (o *SourcesParallelOptions) GetTimeoutSecOk() (*int64, bool) {
 }
 
 // HasTimeoutSec returns a boolean if a field has been set.
-func (o *SourcesParallelOptions) HasTimeoutSec() bool {
+func (o *ParallelOptions) HasTimeoutSec() bool {
 	return o != nil && o.TimeoutSec != nil
 }
 
 // SetTimeoutSec gets a reference to the given int64 and assigns it to the TimeoutSec field.
-func (o *SourcesParallelOptions) SetTimeoutSec(v int64) {
+func (o *ParallelOptions) SetTimeoutSec(v int64) {
 	o.TimeoutSec = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o SourcesParallelOptions) MarshalJSON() ([]byte, error) {
+func (o ParallelOptions) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -172,7 +172,7 @@ func (o SourcesParallelOptions) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *SourcesParallelOptions) UnMarshalJSON(bytes []byte) (err error) {
+func (o *ParallelOptions) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		IsActive        *bool  `json:"IsActive,omitempty"`
 		TaskCount       *int64 `json:"TaskCount,omitempty"`

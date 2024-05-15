@@ -6,7 +6,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-type SourcesScheduleConfig struct {
+type ScheduleConfig struct {
 	ScheduleFullDateTime *string  `json:"ScheduleFullDateTime,omitempty"`
 	ScheduleType         *string  `json:"ScheduleType,omitempty"`
 	TimeTics             *int64   `json:"TimeTics,omitempty"`
@@ -26,25 +26,25 @@ type SourcesScheduleConfig struct {
 	AdditionalProperties map[string]interface{}
 }
 
-// NewSourcesScheduleConfig creates a new SourcesScheduleConfig object.
+// NewScheduleConfig creates a new ScheduleConfig object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewSourcesScheduleConfig() *SourcesScheduleConfig {
-	this := SourcesScheduleConfig{}
+func NewScheduleConfig() *ScheduleConfig {
+	this := ScheduleConfig{}
 	return &this
 }
 
-// NewSourcesScheduleConfigWithDefaults creates a new SourcesScheduleConfig object.
+// NewScheduleConfigWithDefaults creates a new ScheduleConfig object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewSourcesScheduleConfigWithDefaults() *SourcesScheduleConfig {
-	this := SourcesScheduleConfig{}
+func NewScheduleConfigWithDefaults() *ScheduleConfig {
+	this := ScheduleConfig{}
 	return &this
 }
 
 // GetScheduleFullDateTime returns the ScheduleFullDateTime field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetScheduleFullDateTime() string {
+func (o *ScheduleConfig) GetScheduleFullDateTime() string {
 	if o == nil || o.ScheduleFullDateTime == nil {
 		var ret string
 		return ret
@@ -54,7 +54,7 @@ func (o *SourcesScheduleConfig) GetScheduleFullDateTime() string {
 
 // GetScheduleFullDateTimeOk returns a tuple with the ScheduleFullDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetScheduleFullDateTimeOk() (*string, bool) {
+func (o *ScheduleConfig) GetScheduleFullDateTimeOk() (*string, bool) {
 	if o == nil || o.ScheduleFullDateTime == nil {
 		return nil, false
 	}
@@ -62,17 +62,17 @@ func (o *SourcesScheduleConfig) GetScheduleFullDateTimeOk() (*string, bool) {
 }
 
 // HasScheduleFullDateTime returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasScheduleFullDateTime() bool {
+func (o *ScheduleConfig) HasScheduleFullDateTime() bool {
 	return o != nil && o.ScheduleFullDateTime != nil
 }
 
 // SetScheduleFullDateTime gets a reference to the given string and assigns it to the ScheduleFullDateTime field.
-func (o *SourcesScheduleConfig) SetScheduleFullDateTime(v string) {
+func (o *ScheduleConfig) SetScheduleFullDateTime(v string) {
 	o.ScheduleFullDateTime = &v
 }
 
 // GetScheduleType returns the ScheduleType field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetScheduleType() string {
+func (o *ScheduleConfig) GetScheduleType() string {
 	if o == nil || o.ScheduleType == nil {
 		var ret string
 		return ret
@@ -82,7 +82,7 @@ func (o *SourcesScheduleConfig) GetScheduleType() string {
 
 // GetScheduleTypeOk returns a tuple with the ScheduleType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetScheduleTypeOk() (*string, bool) {
+func (o *ScheduleConfig) GetScheduleTypeOk() (*string, bool) {
 	if o == nil || o.ScheduleType == nil {
 		return nil, false
 	}
@@ -90,17 +90,17 @@ func (o *SourcesScheduleConfig) GetScheduleTypeOk() (*string, bool) {
 }
 
 // HasScheduleType returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasScheduleType() bool {
+func (o *ScheduleConfig) HasScheduleType() bool {
 	return o != nil && o.ScheduleType != nil
 }
 
 // SetScheduleType gets a reference to the given string and assigns it to the ScheduleType field.
-func (o *SourcesScheduleConfig) SetScheduleType(v string) {
+func (o *ScheduleConfig) SetScheduleType(v string) {
 	o.ScheduleType = &v
 }
 
 // GetTimeTics returns the TimeTics field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetTimeTics() int64 {
+func (o *ScheduleConfig) GetTimeTics() int64 {
 	if o == nil || o.TimeTics == nil {
 		var ret int64
 		return ret
@@ -110,7 +110,7 @@ func (o *SourcesScheduleConfig) GetTimeTics() int64 {
 
 // GetTimeTicsOk returns a tuple with the TimeTics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetTimeTicsOk() (*int64, bool) {
+func (o *ScheduleConfig) GetTimeTicsOk() (*int64, bool) {
 	if o == nil || o.TimeTics == nil {
 		return nil, false
 	}
@@ -118,17 +118,17 @@ func (o *SourcesScheduleConfig) GetTimeTicsOk() (*int64, bool) {
 }
 
 // HasTimeTics returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasTimeTics() bool {
+func (o *ScheduleConfig) HasTimeTics() bool {
 	return o != nil && o.TimeTics != nil
 }
 
 // SetTimeTics gets a reference to the given int64 and assigns it to the TimeTics field.
-func (o *SourcesScheduleConfig) SetTimeTics(v int64) {
+func (o *ScheduleConfig) SetTimeTics(v int64) {
 	o.TimeTics = &v
 }
 
 // GetTime returns the Time field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetTime() string {
+func (o *ScheduleConfig) GetTime() string {
 	if o == nil || o.Time == nil {
 		var ret string
 		return ret
@@ -138,7 +138,7 @@ func (o *SourcesScheduleConfig) GetTime() string {
 
 // GetTimeOk returns a tuple with the Time field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetTimeOk() (*string, bool) {
+func (o *ScheduleConfig) GetTimeOk() (*string, bool) {
 	if o == nil || o.Time == nil {
 		return nil, false
 	}
@@ -146,17 +146,17 @@ func (o *SourcesScheduleConfig) GetTimeOk() (*string, bool) {
 }
 
 // HasTime returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasTime() bool {
+func (o *ScheduleConfig) HasTime() bool {
 	return o != nil && o.Time != nil
 }
 
 // SetTime gets a reference to the given string and assigns it to the Time field.
-func (o *SourcesScheduleConfig) SetTime(v string) {
+func (o *ScheduleConfig) SetTime(v string) {
 	o.Time = &v
 }
 
 // GetDateStr returns the DateStr field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetDateStr() string {
+func (o *ScheduleConfig) GetDateStr() string {
 	if o == nil || o.DateStr == nil {
 		var ret string
 		return ret
@@ -166,7 +166,7 @@ func (o *SourcesScheduleConfig) GetDateStr() string {
 
 // GetDateStrOk returns a tuple with the DateStr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetDateStrOk() (*string, bool) {
+func (o *ScheduleConfig) GetDateStrOk() (*string, bool) {
 	if o == nil || o.DateStr == nil {
 		return nil, false
 	}
@@ -174,17 +174,17 @@ func (o *SourcesScheduleConfig) GetDateStrOk() (*string, bool) {
 }
 
 // HasDateStr returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasDateStr() bool {
+func (o *ScheduleConfig) HasDateStr() bool {
 	return o != nil && o.DateStr != nil
 }
 
 // SetDateStr gets a reference to the given string and assigns it to the DateStr field.
-func (o *SourcesScheduleConfig) SetDateStr(v string) {
+func (o *ScheduleConfig) SetDateStr(v string) {
 	o.DateStr = &v
 }
 
 // GetDays returns the Days field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetDays() []string {
+func (o *ScheduleConfig) GetDays() []string {
 	if o == nil || o.Days == nil {
 		var ret []string
 		return ret
@@ -194,7 +194,7 @@ func (o *SourcesScheduleConfig) GetDays() []string {
 
 // GetDaysOk returns a tuple with the Days field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetDaysOk() (*[]string, bool) {
+func (o *ScheduleConfig) GetDaysOk() (*[]string, bool) {
 	if o == nil || o.Days == nil {
 		return nil, false
 	}
@@ -202,17 +202,17 @@ func (o *SourcesScheduleConfig) GetDaysOk() (*[]string, bool) {
 }
 
 // HasDays returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasDays() bool {
+func (o *ScheduleConfig) HasDays() bool {
 	return o != nil && o.Days != nil
 }
 
 // SetDays gets a reference to the given []string and assigns it to the Days field.
-func (o *SourcesScheduleConfig) SetDays(v []string) {
+func (o *ScheduleConfig) SetDays(v []string) {
 	o.Days = v
 }
 
 // GetDaysNumber returns the DaysNumber field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetDaysNumber() []int64 {
+func (o *ScheduleConfig) GetDaysNumber() []int64 {
 	if o == nil || o.DaysNumber == nil {
 		var ret []int64
 		return ret
@@ -222,7 +222,7 @@ func (o *SourcesScheduleConfig) GetDaysNumber() []int64 {
 
 // GetDaysNumberOk returns a tuple with the DaysNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetDaysNumberOk() (*[]int64, bool) {
+func (o *ScheduleConfig) GetDaysNumberOk() (*[]int64, bool) {
 	if o == nil || o.DaysNumber == nil {
 		return nil, false
 	}
@@ -230,17 +230,17 @@ func (o *SourcesScheduleConfig) GetDaysNumberOk() (*[]int64, bool) {
 }
 
 // HasDaysNumber returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasDaysNumber() bool {
+func (o *ScheduleConfig) HasDaysNumber() bool {
 	return o != nil && o.DaysNumber != nil
 }
 
 // SetDaysNumber gets a reference to the given []int64 and assigns it to the DaysNumber field.
-func (o *SourcesScheduleConfig) SetDaysNumber(v []int64) {
+func (o *ScheduleConfig) SetDaysNumber(v []int64) {
 	o.DaysNumber = v
 }
 
 // GetDayNo returns the DayNo field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetDayNo() int64 {
+func (o *ScheduleConfig) GetDayNo() int64 {
 	if o == nil || o.DayNo == nil {
 		var ret int64
 		return ret
@@ -250,7 +250,7 @@ func (o *SourcesScheduleConfig) GetDayNo() int64 {
 
 // GetDayNoOk returns a tuple with the DayNo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetDayNoOk() (*int64, bool) {
+func (o *ScheduleConfig) GetDayNoOk() (*int64, bool) {
 	if o == nil || o.DayNo == nil {
 		return nil, false
 	}
@@ -258,17 +258,17 @@ func (o *SourcesScheduleConfig) GetDayNoOk() (*int64, bool) {
 }
 
 // HasDayNo returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasDayNo() bool {
+func (o *ScheduleConfig) HasDayNo() bool {
 	return o != nil && o.DayNo != nil
 }
 
 // SetDayNo gets a reference to the given int64 and assigns it to the DayNo field.
-func (o *SourcesScheduleConfig) SetDayNo(v int64) {
+func (o *ScheduleConfig) SetDayNo(v int64) {
 	o.DayNo = &v
 }
 
 // GetDay returns the Day field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetDay() string {
+func (o *ScheduleConfig) GetDay() string {
 	if o == nil || o.Day == nil {
 		var ret string
 		return ret
@@ -278,7 +278,7 @@ func (o *SourcesScheduleConfig) GetDay() string {
 
 // GetDayOk returns a tuple with the Day field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetDayOk() (*string, bool) {
+func (o *ScheduleConfig) GetDayOk() (*string, bool) {
 	if o == nil || o.Day == nil {
 		return nil, false
 	}
@@ -286,17 +286,17 @@ func (o *SourcesScheduleConfig) GetDayOk() (*string, bool) {
 }
 
 // HasDay returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasDay() bool {
+func (o *ScheduleConfig) HasDay() bool {
 	return o != nil && o.Day != nil
 }
 
 // SetDay gets a reference to the given string and assigns it to the Day field.
-func (o *SourcesScheduleConfig) SetDay(v string) {
+func (o *ScheduleConfig) SetDay(v string) {
 	o.Day = &v
 }
 
 // GetDayNumber returns the DayNumber field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetDayNumber() int64 {
+func (o *ScheduleConfig) GetDayNumber() int64 {
 	if o == nil || o.DayNumber == nil {
 		var ret int64
 		return ret
@@ -306,7 +306,7 @@ func (o *SourcesScheduleConfig) GetDayNumber() int64 {
 
 // GetDayNumberOk returns a tuple with the DayNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetDayNumberOk() (*int64, bool) {
+func (o *ScheduleConfig) GetDayNumberOk() (*int64, bool) {
 	if o == nil || o.DayNumber == nil {
 		return nil, false
 	}
@@ -314,17 +314,17 @@ func (o *SourcesScheduleConfig) GetDayNumberOk() (*int64, bool) {
 }
 
 // HasDayNumber returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasDayNumber() bool {
+func (o *ScheduleConfig) HasDayNumber() bool {
 	return o != nil && o.DayNumber != nil
 }
 
 // SetDayNumber gets a reference to the given int64 and assigns it to the DayNumber field.
-func (o *SourcesScheduleConfig) SetDayNumber(v int64) {
+func (o *ScheduleConfig) SetDayNumber(v int64) {
 	o.DayNumber = &v
 }
 
 // GetWeekType returns the WeekType field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetWeekType() string {
+func (o *ScheduleConfig) GetWeekType() string {
 	if o == nil || o.WeekType == nil {
 		var ret string
 		return ret
@@ -334,7 +334,7 @@ func (o *SourcesScheduleConfig) GetWeekType() string {
 
 // GetWeekTypeOk returns a tuple with the WeekType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetWeekTypeOk() (*string, bool) {
+func (o *ScheduleConfig) GetWeekTypeOk() (*string, bool) {
 	if o == nil || o.WeekType == nil {
 		return nil, false
 	}
@@ -342,17 +342,17 @@ func (o *SourcesScheduleConfig) GetWeekTypeOk() (*string, bool) {
 }
 
 // HasWeekType returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasWeekType() bool {
+func (o *ScheduleConfig) HasWeekType() bool {
 	return o != nil && o.WeekType != nil
 }
 
 // SetWeekType gets a reference to the given string and assigns it to the WeekType field.
-func (o *SourcesScheduleConfig) SetWeekType(v string) {
+func (o *ScheduleConfig) SetWeekType(v string) {
 	o.WeekType = &v
 }
 
 // GetTimeType returns the TimeType field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetTimeType() string {
+func (o *ScheduleConfig) GetTimeType() string {
 	if o == nil || o.TimeType == nil {
 		var ret string
 		return ret
@@ -362,7 +362,7 @@ func (o *SourcesScheduleConfig) GetTimeType() string {
 
 // GetTimeTypeOk returns a tuple with the TimeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetTimeTypeOk() (*string, bool) {
+func (o *ScheduleConfig) GetTimeTypeOk() (*string, bool) {
 	if o == nil || o.TimeType == nil {
 		return nil, false
 	}
@@ -370,17 +370,17 @@ func (o *SourcesScheduleConfig) GetTimeTypeOk() (*string, bool) {
 }
 
 // HasTimeType returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasTimeType() bool {
+func (o *ScheduleConfig) HasTimeType() bool {
 	return o != nil && o.TimeType != nil
 }
 
 // SetTimeType gets a reference to the given string and assigns it to the TimeType field.
-func (o *SourcesScheduleConfig) SetTimeType(v string) {
+func (o *ScheduleConfig) SetTimeType(v string) {
 	o.TimeType = &v
 }
 
 // GetTimeValue returns the TimeValue field value if set, zero value otherwise.
-func (o *SourcesScheduleConfig) GetTimeValue() int64 {
+func (o *ScheduleConfig) GetTimeValue() int64 {
 	if o == nil || o.TimeValue == nil {
 		var ret int64
 		return ret
@@ -390,7 +390,7 @@ func (o *SourcesScheduleConfig) GetTimeValue() int64 {
 
 // GetTimeValueOk returns a tuple with the TimeValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesScheduleConfig) GetTimeValueOk() (*int64, bool) {
+func (o *ScheduleConfig) GetTimeValueOk() (*int64, bool) {
 	if o == nil || o.TimeValue == nil {
 		return nil, false
 	}
@@ -398,17 +398,17 @@ func (o *SourcesScheduleConfig) GetTimeValueOk() (*int64, bool) {
 }
 
 // HasTimeValue returns a boolean if a field has been set.
-func (o *SourcesScheduleConfig) HasTimeValue() bool {
+func (o *ScheduleConfig) HasTimeValue() bool {
 	return o != nil && o.TimeValue != nil
 }
 
 // SetTimeValue gets a reference to the given int64 and assigns it to the TimeValue field.
-func (o *SourcesScheduleConfig) SetTimeValue(v int64) {
+func (o *ScheduleConfig) SetTimeValue(v int64) {
 	o.TimeValue = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o SourcesScheduleConfig) MarshalJSON() ([]byte, error) {
+func (o ScheduleConfig) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -460,7 +460,7 @@ func (o SourcesScheduleConfig) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *SourcesScheduleConfig) UnMarshalJSON(bytes []byte) (err error) {
+func (o *ScheduleConfig) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		ScheduleFullDateTime *string  `json:"ScheduleFullDateTime,omitempty"`
 		ScheduleType         *string  `json:"ScheduleType,omitempty"`
@@ -507,46 +507,46 @@ func (o *SourcesScheduleConfig) UnMarshalJSON(bytes []byte) (err error) {
 	return nil
 }
 
-// NullableSourcesScheduleConfig handles when a null is used for SourcesScheduleConfig.
-type NullableSourcesScheduleConfig struct {
-	value *SourcesScheduleConfig
+// NullableScheduleConfig handles when a null is used for ScheduleConfig.
+type NullableScheduleConfig struct {
+	value *ScheduleConfig
 	isSet bool
 }
 
 // Get returns the associated value.
-func (v NullableSourcesScheduleConfig) Get() *SourcesScheduleConfig {
+func (v NullableScheduleConfig) Get() *ScheduleConfig {
 	return v.value
 }
 
 // Set changes the value and indicates it's been called.
-func (v *NullableSourcesScheduleConfig) Set(val *SourcesScheduleConfig) {
+func (v *NullableScheduleConfig) Set(val *ScheduleConfig) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet returns whether Set has been called.
-func (v NullableSourcesScheduleConfig) IsSet() bool {
+func (v NullableScheduleConfig) IsSet() bool {
 	return v.isSet
 }
 
 // Unset sets the value to nil and resets the set flag/
-func (v *NullableSourcesScheduleConfig) UnSet() {
+func (v *NullableScheduleConfig) UnSet() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableSourcesScheduleConfig initializes the struct as if Set has been called.
-func NewNullableSourcesScheduleConfig(val *SourcesScheduleConfig) *NullableSourcesScheduleConfig {
-	return &NullableSourcesScheduleConfig{value: val, isSet: true}
+// NewNullableScheduleConfig initializes the struct as if Set has been called.
+func NewNullableScheduleConfig(val *ScheduleConfig) *NullableScheduleConfig {
+	return &NullableScheduleConfig{value: val, isSet: true}
 }
 
 // MarshalJSON serializes the associated value.
-func (v NullableSourcesScheduleConfig) MarshalJSON() ([]byte, error) {
+func (v NullableScheduleConfig) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON deserializes the payload and sets the flag as if Set has been called.
-func (v *NullableSourcesScheduleConfig) UnmarshalJSON(src []byte) error {
+func (v *NullableScheduleConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 
 	// this object is nullable so check if the payload is null or empty string
