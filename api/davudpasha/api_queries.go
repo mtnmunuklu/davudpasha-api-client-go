@@ -114,7 +114,7 @@ func (a *QueriesApi) SerchQueries(ctx _context.Context, o ...SearchQueriesOption
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// NewEventsApi Returns QueriesApi.
+// NewEventsApi returns QueriesApi.
 func NewQueriesApi(client *common.APIClient) *QueriesApi {
 	return &QueriesApi{
 		Client: client,
