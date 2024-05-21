@@ -31,7 +31,7 @@ func main() {
 	configuration.SetHTTPClientWithInsecureSkipVerify()
 	apiClient := common.NewAPIClient(configuration)
 	api := davudpasha.NewQueriesApi(apiClient)
-	resp, r, err := api.SerchQueries(ctx, *davudpasha.NewSearchQueriesOptionalParameters().WithBody(body))
+	resp, r, err := api.SearchQueries(ctx, *davudpasha.NewSearchQueriesOptionalParameters().WithBody(body))
 
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QueriesApi.SearchQueries`: %v\n", err)
