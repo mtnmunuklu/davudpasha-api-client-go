@@ -30,7 +30,7 @@ func (r *SearchQueriesOptionalParameters) WithBody(body QueriesSearchRequest) *S
 
 // SerchQueries search queries.
 // Returns queries that match an queries search filter.
-func (a *QueriesApi) SerchQueries(ctx _context.Context, o ...SearchQueriesOptionalParameters) (QueriesSearchResponse, *_nethttp.Response, error) {
+func (a *QueriesApi) SearchQueries(ctx _context.Context, o ...SearchQueriesOptionalParameters) (QueriesSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost
 		localVarPostBody      interface{}
