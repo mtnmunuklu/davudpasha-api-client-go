@@ -23,7 +23,7 @@ type AlertsCorrelationData struct {
 	LimiterTimeFrameType  *string                     `json:"LimiterTimeFrameType,omitempty"`
 	LimiterTimeFrameValue *int64                      `json:"LimiterTimeFrameValue,omitempty"`
 	LimiterColumns        common.NullableList[string] `json:"LimiterColumns,omitempty"`
-	Actions               *json.RawMessage            `json:"Actions,omitempty"`
+	Actions               *Actions                    `json:"Actions,omitempty"`
 	MaxSendCount          *int64                      `json:"MaxSendCount,omitempty"`
 	Data                  *json.RawMessage            `json:"Data,omitempty"`
 	CorrelationType       *string                     `json:"CorrelationType,omitempty"`
@@ -480,9 +480,9 @@ func (o *AlertsCorrelationData) UnSetLimiterColumns() {
 }
 
 // GetActions returns the Actions field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetActions() json.RawMessage {
+func (o *AlertsCorrelationData) GetActions() Actions {
 	if o == nil || o.Actions == nil {
-		var ret json.RawMessage
+		var ret Actions
 		return ret
 	}
 	return *o.Actions
@@ -490,7 +490,7 @@ func (o *AlertsCorrelationData) GetActions() json.RawMessage {
 
 // GetActionsOk returns a tuple with the Actions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetActionsOk() (*json.RawMessage, bool) {
+func (o *AlertsCorrelationData) GetActionsOk() (*Actions, bool) {
 	if o == nil || o.Actions == nil {
 		return nil, false
 	}
@@ -502,8 +502,8 @@ func (o *AlertsCorrelationData) HasActions() bool {
 	return o != nil && o.Actions != nil
 }
 
-// SetActions gets a reference to the given json.RawMessage and assigns it to the Actions field.
-func (o *AlertsCorrelationData) SetActions(v json.RawMessage) {
+// SetActions gets a reference to the given Actions and assigns it to the Actions field.
+func (o *AlertsCorrelationData) SetActions(v Actions) {
 	o.Actions = &v
 }
 
@@ -772,7 +772,7 @@ func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 		LimiterTimeFrameType  *string                     `json:"LimiterTimeFrameType,omitempty"`
 		LimiterTimeFrameValue *int64                      `json:"LimiterTimeFrameValue,omitempty"`
 		LimiterColumns        common.NullableList[string] `json:"LimiterColumns,omitempty"`
-		Actions               *json.RawMessage            `json:"Actions,omitempty"`
+		Actions               *Actions                    `json:"Actions,omitempty"`
 		MaxSendCount          *int64                      `json:"MaxSendCount,omitempty"`
 		Data                  *json.RawMessage            `json:"Data,omitempty"`
 		CorrelationType       *string                     `json:"CorrelationType,omitempty"`

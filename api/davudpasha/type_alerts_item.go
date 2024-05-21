@@ -6,7 +6,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-type AlertsItems struct {
+type AlertsItem struct {
 	LgsName         common.NullableString  `json:"LgsName,omitempty"`
 	CorrelationData *AlertsCorrelationData `json:"CorrelationData,omitempty"`
 	ActionRequired  *bool                  `json:"ActionRequired,omitempty"`
@@ -17,27 +17,27 @@ type AlertsItems struct {
 	AdditionalProperties map[string]interface{}
 }
 
-// NewAlertsItems creates a new AlertsItems object.
+// NewAlertsItem creates a new AlertsItem object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewAlertsItems() *AlertsItems {
-	this := AlertsItems{}
+func NewAlertsItem() *AlertsItem {
+	this := AlertsItem{}
 	return &this
 }
 
-// NewAlertsItemsWithDefault creates a new AlertsItems object.
+// NewAlertsItemWithDefault creates a new AlertsItem object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewAlertsItemsWithDefaults() *AlertsItems {
-	this := AlertsItems{}
+func NewAlertsItemWithDefaults() *AlertsItem {
+	this := AlertsItem{}
 	return &this
 }
 
 // GetLgsNameOk returns a tuple with the LgsName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AlertsItems) GetLgsNameOk() (*string, bool) {
+func (o *AlertsItem) GetLgsNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -45,27 +45,27 @@ func (o *AlertsItems) GetLgsNameOk() (*string, bool) {
 }
 
 // HasLgsName returns a boolean if a field has been set.
-func (o *AlertsItems) HasLgsName() bool {
+func (o *AlertsItem) HasLgsName() bool {
 	return o != nil && o.LgsName.IsSet()
 }
 
 // SetLgsName gets a reference to the given datadog.NullableString and assigns it to the LgsName field.
-func (o *AlertsItems) SetLgsName(v string) {
+func (o *AlertsItem) SetLgsName(v string) {
 	o.LgsName.Set(&v)
 }
 
 // SetLgsNameNil sets the value for LgsName to be an explicit nil.
-func (o *AlertsItems) SetLgsNameNil() {
+func (o *AlertsItem) SetLgsNameNil() {
 	o.LgsName.Set(nil)
 }
 
 // UnsetLgsName ensures that no value is present for LgsName, not even an explicit nil.
-func (o *AlertsItems) UnSetLgsName() {
+func (o *AlertsItem) UnSetLgsName() {
 	o.LgsName.UnSet()
 }
 
 // GetCorrelationData returns the CorrelationData field value if set, zero value otherwise.
-func (o *AlertsItems) GetCorrelationData() AlertsCorrelationData {
+func (o *AlertsItem) GetCorrelationData() AlertsCorrelationData {
 	if o == nil || o.CorrelationData == nil {
 		var ret AlertsCorrelationData
 		return ret
@@ -75,7 +75,7 @@ func (o *AlertsItems) GetCorrelationData() AlertsCorrelationData {
 
 // GetCorrelationDataOk returns a tuple with the CorrelationData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsItems) GetCorrelationDataOk() (*AlertsCorrelationData, bool) {
+func (o *AlertsItem) GetCorrelationDataOk() (*AlertsCorrelationData, bool) {
 	if o == nil || o.CorrelationData == nil {
 		return nil, false
 	}
@@ -83,17 +83,17 @@ func (o *AlertsItems) GetCorrelationDataOk() (*AlertsCorrelationData, bool) {
 }
 
 // HasCorrelationData returns a boolean if a field has been set.
-func (o *AlertsItems) HasCorrelationData() bool {
+func (o *AlertsItem) HasCorrelationData() bool {
 	return o != nil && o.CorrelationData != nil
 }
 
 // SetCorrelationData gets a reference to the given CorrelationData and assigns it to the CorrelationData field.
-func (o *AlertsItems) SetCorrelationData(v AlertsCorrelationData) {
+func (o *AlertsItem) SetCorrelationData(v AlertsCorrelationData) {
 	o.CorrelationData = &v
 }
 
 // GetActionRequired returns the ActionRequired field value if set, zero value otherwise.
-func (o *AlertsItems) GetActionRequired() bool {
+func (o *AlertsItem) GetActionRequired() bool {
 	if o == nil || o.ActionRequired == nil {
 		var ret bool
 		return ret
@@ -103,7 +103,7 @@ func (o *AlertsItems) GetActionRequired() bool {
 
 // GetActionRequiredOk returns a tuple with the ActionRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsItems) GetActionRequiredOk() (*bool, bool) {
+func (o *AlertsItem) GetActionRequiredOk() (*bool, bool) {
 	if o == nil || o.ActionRequired == nil {
 		return nil, false
 	}
@@ -111,19 +111,19 @@ func (o *AlertsItems) GetActionRequiredOk() (*bool, bool) {
 }
 
 // HasActionRequired returns a boolean if a field has been set.
-func (o *AlertsItems) HasActionRequired() bool {
+func (o *AlertsItem) HasActionRequired() bool {
 	return o != nil && o.ActionRequired != nil
 }
 
 // SetActionRequired gets a reference to the given bool and assigns it to the ActionRequired field.
-func (o *AlertsItems) SetActionRequired(v bool) {
+func (o *AlertsItem) SetActionRequired(v bool) {
 	o.ActionRequired = &v
 }
 
 // GetActionMessageOk returns a tuple with the ActionMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AlertsItems) GetActionMessageOk() (*string, bool) {
+func (o *AlertsItem) GetActionMessageOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -131,22 +131,22 @@ func (o *AlertsItems) GetActionMessageOk() (*string, bool) {
 }
 
 // HasActionMessage returns a boolean if a field has been set.
-func (o *AlertsItems) HasActionMessage() bool {
+func (o *AlertsItem) HasActionMessage() bool {
 	return o != nil && o.ActionMessage.IsSet()
 }
 
 // SetActionMessage gets a reference to the given datadog.NullableString and assigns it to the ActionMessage field.
-func (o *AlertsItems) SetActionMessage(v string) {
+func (o *AlertsItem) SetActionMessage(v string) {
 	o.ActionMessage.Set(&v)
 }
 
 // SetActionMessageNil sets the value for ActionMessage to be an explicit nil.
-func (o *AlertsItems) SetActionMessageNil() {
+func (o *AlertsItem) SetActionMessageNil() {
 	o.ActionMessage.Set(nil)
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o AlertsItems) MarshalJSON() ([]byte, error) {
+func (o AlertsItem) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -171,7 +171,7 @@ func (o AlertsItems) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *AlertsItems) UnMarshalJSON(bytes []byte) (err error) {
+func (o *AlertsItem) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		LgsName         common.NullableString  `json:"LgsName,omitempty"`
 		CorrelationData *AlertsCorrelationData `json:"CorrelationData,omitempty"`
