@@ -7,9 +7,9 @@ import (
 )
 
 type SourcesSearchResponse struct {
-	Items        []SourcesItems    `json:"Items,omitempty"`
+	Items        []SourcesItem     `json:"Items,omitempty"`
 	FailedItems  []json.RawMessage `json:"FailedItems,omitempty"`
-	SuccessItems []SuccessItems    `json:"SuccessItems,omitempty"`
+	SuccessItems []SuccessItem     `json:"SuccessItems,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
 	UnparsedObject map[string]interface{}
 	// AdditionalProperties stores any additional properties not explicitly defined in the struct
@@ -34,9 +34,9 @@ func NewSourcesSearchResponseWithDefault() *SourcesSearchResponse {
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *SourcesSearchResponse) GetItems() []SourcesItems {
+func (o *SourcesSearchResponse) GetItems() []SourcesItem {
 	if o == nil || o.Items == nil {
-		var ret []SourcesItems
+		var ret []SourcesItem
 		return ret
 	}
 	return o.Items
@@ -44,7 +44,7 @@ func (o *SourcesSearchResponse) GetItems() []SourcesItems {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesSearchResponse) GetItemsOk() (*[]SourcesItems, bool) {
+func (o *SourcesSearchResponse) GetItemsOk() (*[]SourcesItem, bool) {
 	if o == nil || o.Items == nil {
 		return nil, false
 	}
@@ -56,8 +56,8 @@ func (o *SourcesSearchResponse) HasItems() bool {
 	return o != nil && o.Items != nil
 }
 
-// SetItems gets a reference to the given []SourcesItems and assigns it to the Items field.
-func (o *SourcesSearchResponse) SetItems(v []SourcesItems) {
+// SetItems gets a reference to the given []SourcesItem and assigns it to the Items field.
+func (o *SourcesSearchResponse) SetItems(v []SourcesItem) {
 	o.Items = v
 }
 
@@ -89,31 +89,31 @@ func (o *SourcesSearchResponse) SetFailedItems(v []json.RawMessage) {
 	o.FailedItems = v
 }
 
-// GetSuccessItems returns the SuccessItems field value if set, zero value otherwise.
-func (o *SourcesSearchResponse) GetSuccessItems() []SuccessItems {
+// GetSuccessItem returns the SuccessItem field value if set, zero value otherwise.
+func (o *SourcesSearchResponse) GetSuccessItem() []SuccessItem {
 	if o == nil || o.SuccessItems == nil {
-		var ret []SuccessItems
+		var ret []SuccessItem
 		return ret
 	}
 	return o.SuccessItems
 }
 
-// GetSuccessItemsOk returns a tuple with the SuccessItems field value if set, nil otherwise
+// GetSuccessItemOk returns a tuple with the SuccessItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesSearchResponse) GetSuccessItemsOk() (*[]SuccessItems, bool) {
+func (o *SourcesSearchResponse) GetSuccessItemOk() (*[]SuccessItem, bool) {
 	if o == nil || o.SuccessItems == nil {
 		return nil, false
 	}
 	return &o.SuccessItems, true
 }
 
-// HasSuccessItems returns a boolean if a field has been set.
-func (o *SourcesSearchResponse) HasSuccessItems() bool {
+// HasSuccessItem returns a boolean if a field has been set.
+func (o *SourcesSearchResponse) HasSuccessItem() bool {
 	return o != nil && o.SuccessItems != nil
 }
 
-// SetSuccessItems sets field value
-func (o *SourcesSearchResponse) SetSuccessItems(v []SuccessItems) {
+// SetSuccessItem sets field value
+func (o *SourcesSearchResponse) SetSuccessItem(v []SuccessItem) {
 	o.SuccessItems = v
 }
 
@@ -130,7 +130,7 @@ func (o SourcesSearchResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["FailedItems"] = o.FailedItems
 	}
 	if o.FailedItems != nil {
-		toSerialize["SuccessItems"] = o.SuccessItems
+		toSerialize["SuccessItem"] = o.SuccessItems
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -142,9 +142,9 @@ func (o SourcesSearchResponse) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *SourcesSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Items        []SourcesItems    `json:"Items,omitempty"`
+		Items        []SourcesItem     `json:"Items,omitempty"`
 		FailedItems  []json.RawMessage `json:"FailedItems,omitempty"`
-		SuccessItems []SuccessItems    `json:"SuccessItems,omitempty"`
+		SuccessItems []SuccessItem     `json:"SuccessItems,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)

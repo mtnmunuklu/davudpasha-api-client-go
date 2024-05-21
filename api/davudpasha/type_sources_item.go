@@ -7,7 +7,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-type SourcesItems struct {
+type SourcesItem struct {
 	Id                  *string                     `json:"Id,omitempty"`
 	Enabled             *bool                       `json:"Enabled,omitempty"`
 	Name                *string                     `json:"Name,omitempty"`
@@ -18,7 +18,7 @@ type SourcesItems struct {
 	Tags                []string                    `json:"Tags,omitempty"`
 	AlertTimeout        *int64                      `json:"AlertTimeout,omitempty"`
 	LogReaderData       *json.RawMessage            `json:"LogReaderData,omitempty"`
-	LogOperations       []SourcesLogOperations      `json:"LogOperations,omitempty"`
+	LogOperations       []SourcesLogOperation       `json:"LogOperations,omitempty"`
 	DiscardedLogsConfig *string                     `json:"DiscardedLogsConfig,omitempty"`
 	Value               *string                     `json:"value,omitempty"`
 	Label               *string                     `json:"label,omitempty"`
@@ -47,25 +47,25 @@ type SourcesItems struct {
 	AdditionalProperties map[string]interface{}
 }
 
-// NewSourcesItems creates a new SourcesItems object.
+// NewSourcesItem creates a new SourcesItem object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewSourcesItems() *SourcesItems {
-	this := SourcesItems{}
+func NewSourcesItem() *SourcesItem {
+	this := SourcesItem{}
 	return &this
 }
 
-// NewSourcesItemsWithDefaults creates a new SourcesItems object.
+// NewSourcesItemWithDefaults creates a new SourcesItem object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewSourcesItemsWithDefault() *SourcesItems {
-	this := SourcesItems{}
+func NewSourcesItemWithDefault() *SourcesItem {
+	this := SourcesItem{}
 	return &this
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *SourcesItems) GetId() string {
+func (o *SourcesItem) GetId() string {
 	if o == nil || o.Id == nil {
 		var ret string
 		return ret
@@ -75,7 +75,7 @@ func (o *SourcesItems) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetIdOk() (*string, bool) {
+func (o *SourcesItem) GetIdOk() (*string, bool) {
 	if o == nil || o.Id == nil {
 		return nil, false
 	}
@@ -83,17 +83,17 @@ func (o *SourcesItems) GetIdOk() (*string, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *SourcesItems) HasId() bool {
+func (o *SourcesItem) HasId() bool {
 	return o != nil && o.Id != nil
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
-func (o *SourcesItems) SetId(v string) {
+func (o *SourcesItem) SetId(v string) {
 	o.Id = &v
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
-func (o *SourcesItems) GetEnabled() bool {
+func (o *SourcesItem) GetEnabled() bool {
 	if o == nil || o.Enabled == nil {
 		var ret bool
 		return ret
@@ -103,7 +103,7 @@ func (o *SourcesItems) GetEnabled() bool {
 
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetEnabledOk() (*bool, bool) {
+func (o *SourcesItem) GetEnabledOk() (*bool, bool) {
 	if o == nil || o.Enabled == nil {
 		return nil, false
 	}
@@ -111,17 +111,17 @@ func (o *SourcesItems) GetEnabledOk() (*bool, bool) {
 }
 
 // HasEnabled returns a boolean if a field has been set.
-func (o *SourcesItems) HasEnabled() bool {
+func (o *SourcesItem) HasEnabled() bool {
 	return o != nil && o.Enabled != nil
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
-func (o *SourcesItems) SetEnabled(v bool) {
+func (o *SourcesItem) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *SourcesItems) GetName() string {
+func (o *SourcesItem) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -131,7 +131,7 @@ func (o *SourcesItems) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetNameOk() (*string, bool) {
+func (o *SourcesItem) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -139,17 +139,17 @@ func (o *SourcesItems) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *SourcesItems) HasName() bool {
+func (o *SourcesItem) HasName() bool {
 	return o != nil && o.Name != nil
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *SourcesItems) SetName(v string) {
+func (o *SourcesItem) SetName(v string) {
 	o.Name = &v
 }
 
 // GetGroup returns the Group field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItems) GetGroup() string {
+func (o *SourcesItem) GetGroup() string {
 	if o == nil || o.Group.Get() == nil {
 		var ret string
 		return ret
@@ -160,7 +160,7 @@ func (o *SourcesItems) GetGroup() string {
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItems) GetGroupOk() (*string, bool) {
+func (o *SourcesItem) GetGroupOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,22 +168,22 @@ func (o *SourcesItems) GetGroupOk() (*string, bool) {
 }
 
 // HasGroup returns a boolean if a Group has been set.
-func (o *SourcesItems) HasGroup() bool {
+func (o *SourcesItem) HasGroup() bool {
 	return o != nil && o.Group.IsSet()
 }
 
 // SetGroup gets a reference to the given datadog.NullableString and assigns it to the Group field.
-func (o *SourcesItems) SetGroup(v string) {
+func (o *SourcesItem) SetGroup(v string) {
 	o.Group.Set(&v)
 }
 
 // SetGroupNil sets the value for Group to be an explicit nil.
-func (o *SourcesItems) SetGroupNil() {
+func (o *SourcesItem) SetGroupNil() {
 	o.Group.Set(nil)
 }
 
 // GetAuthor returns the Author field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItems) GetAuthor() string {
+func (o *SourcesItem) GetAuthor() string {
 	if o == nil || o.Author.Get() == nil {
 		var ret string
 		return ret
@@ -194,7 +194,7 @@ func (o *SourcesItems) GetAuthor() string {
 // GetAuthorOk returns a tuple with the Author field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItems) GetAuthorOk() (*string, bool) {
+func (o *SourcesItem) GetAuthorOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -202,22 +202,22 @@ func (o *SourcesItems) GetAuthorOk() (*string, bool) {
 }
 
 // HasAuthor returns a boolean if a Author has been set.
-func (o *SourcesItems) HasAuthor() bool {
+func (o *SourcesItem) HasAuthor() bool {
 	return o != nil && o.Author.IsSet()
 }
 
 // SetAuthor gets a reference to the given datadog.NullableString and assigns it to the Author field.
-func (o *SourcesItems) SetAuthor(v string) {
+func (o *SourcesItem) SetAuthor(v string) {
 	o.Author.Set(&v)
 }
 
 // SetAuthorNil sets the value for Author to be an explicit nil.
-func (o *SourcesItems) SetAuthorNil() {
+func (o *SourcesItem) SetAuthorNil() {
 	o.Author.Set(nil)
 }
 
 // GetLogSourceDefCode returns the LogSourceDefCode field value if set, zero value otherwise.
-func (o *SourcesItems) GetLogSourceDefCode() string {
+func (o *SourcesItem) GetLogSourceDefCode() string {
 	if o == nil || o.LogSourceDefCode == nil {
 		var ret string
 		return ret
@@ -227,7 +227,7 @@ func (o *SourcesItems) GetLogSourceDefCode() string {
 
 // GetLogSourceDefCodeOk returns a tuple with the LogSourceDefCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetLogSourceDefCodeOk() (*string, bool) {
+func (o *SourcesItem) GetLogSourceDefCodeOk() (*string, bool) {
 	if o == nil || o.LogSourceDefCode == nil {
 		return nil, false
 	}
@@ -235,17 +235,17 @@ func (o *SourcesItems) GetLogSourceDefCodeOk() (*string, bool) {
 }
 
 // HasLogSourceDefCode returns a boolean if a field has been set.
-func (o *SourcesItems) HasLogSourceDefCode() bool {
+func (o *SourcesItem) HasLogSourceDefCode() bool {
 	return o != nil && o.LogSourceDefCode != nil
 }
 
 // SetLogSourceDefCode gets a reference to the given string and assigns it to the LogSourceDefCode field.
-func (o *SourcesItems) SetLogSourceDefCode(v string) {
+func (o *SourcesItem) SetLogSourceDefCode(v string) {
 	o.LogSourceDefCode = &v
 }
 
 // GetLogReaderType returns the LogReaderType field value if set, zero value otherwise.
-func (o *SourcesItems) GetLogReaderType() string {
+func (o *SourcesItem) GetLogReaderType() string {
 	if o == nil || o.LogReaderType == nil {
 		var ret string
 		return ret
@@ -255,7 +255,7 @@ func (o *SourcesItems) GetLogReaderType() string {
 
 // GetLogReaderTypeOk returns a tuple with the LogReaderType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetLogReaderTypeOk() (*string, bool) {
+func (o *SourcesItem) GetLogReaderTypeOk() (*string, bool) {
 	if o == nil || o.LogReaderType == nil {
 		return nil, false
 	}
@@ -263,17 +263,17 @@ func (o *SourcesItems) GetLogReaderTypeOk() (*string, bool) {
 }
 
 // HasLogReaderType returns a boolean if a field has been set.
-func (o *SourcesItems) HasLogReaderType() bool {
+func (o *SourcesItem) HasLogReaderType() bool {
 	return o != nil && o.LogReaderType != nil
 }
 
 // SetLogReaderType gets a reference to the given string and assigns it to the LogReaderType field.
-func (o *SourcesItems) SetLogReaderType(v string) {
+func (o *SourcesItem) SetLogReaderType(v string) {
 	o.LogReaderType = &v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *SourcesItems) GetTags() []string {
+func (o *SourcesItem) GetTags() []string {
 	if o == nil || o.Tags == nil {
 		var ret []string
 		return ret
@@ -283,7 +283,7 @@ func (o *SourcesItems) GetTags() []string {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetTagsOk() (*[]string, bool) {
+func (o *SourcesItem) GetTagsOk() (*[]string, bool) {
 	if o == nil || o.Tags == nil {
 		return nil, false
 	}
@@ -291,17 +291,17 @@ func (o *SourcesItems) GetTagsOk() (*[]string, bool) {
 }
 
 // HasTags returns a boolean if a field has been set.
-func (o *SourcesItems) HasTags() bool {
+func (o *SourcesItem) HasTags() bool {
 	return o != nil && o.Tags != nil
 }
 
 // SetTags gets a reference to the given []string and assigns it to the Tags field.
-func (o *SourcesItems) SetTags(v []string) {
+func (o *SourcesItem) SetTags(v []string) {
 	o.Tags = v
 }
 
 // GetAlertTimeout returns the AlertTimeout field value if set, zero value otherwise.
-func (o *SourcesItems) GetAlertTimeout() int64 {
+func (o *SourcesItem) GetAlertTimeout() int64 {
 	if o == nil || o.AlertTimeout == nil {
 		var ret int64
 		return ret
@@ -311,7 +311,7 @@ func (o *SourcesItems) GetAlertTimeout() int64 {
 
 // GetAlertTimeoutOk returns a tuple with the AlertTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetAlertTimeoutOk() (*int64, bool) {
+func (o *SourcesItem) GetAlertTimeoutOk() (*int64, bool) {
 	if o == nil || o.AlertTimeout == nil {
 		return nil, false
 	}
@@ -319,17 +319,17 @@ func (o *SourcesItems) GetAlertTimeoutOk() (*int64, bool) {
 }
 
 // HasAlertTimeout returns a boolean if a field has been set.
-func (o *SourcesItems) HasAlertTimeout() bool {
+func (o *SourcesItem) HasAlertTimeout() bool {
 	return o != nil && o.AlertTimeout != nil
 }
 
 // SetAlertTimeout gets a reference to the given int64 and assigns it to the AlertTimeout field.
-func (o *SourcesItems) SetAlertTimeout(v int64) {
+func (o *SourcesItem) SetAlertTimeout(v int64) {
 	o.AlertTimeout = &v
 }
 
 // GetLogReaderData returns the LogReaderData field value if set, zero value otherwise.
-func (o *SourcesItems) GetLogReaderData() json.RawMessage {
+func (o *SourcesItem) GetLogReaderData() json.RawMessage {
 	if o == nil || o.LogReaderData == nil {
 		var ret json.RawMessage
 		return ret
@@ -339,7 +339,7 @@ func (o *SourcesItems) GetLogReaderData() json.RawMessage {
 
 // GetLogReaderDataOk returns a tuple with the LogReaderData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetLogReaderDataOk() (*json.RawMessage, bool) {
+func (o *SourcesItem) GetLogReaderDataOk() (*json.RawMessage, bool) {
 	if o == nil || o.LogReaderData == nil {
 		return nil, false
 	}
@@ -347,19 +347,19 @@ func (o *SourcesItems) GetLogReaderDataOk() (*json.RawMessage, bool) {
 }
 
 // HasLogReaderData returns a boolean if a field has been set.
-func (o *SourcesItems) HasLogReaderData() bool {
+func (o *SourcesItem) HasLogReaderData() bool {
 	return o != nil && o.LogReaderData != nil
 }
 
 // SetLogReaderData gets a reference to the given json.RawMessage and assigns it to the LogReaderData field.
-func (o *SourcesItems) SetLogReaderData(v json.RawMessage) {
+func (o *SourcesItem) SetLogReaderData(v json.RawMessage) {
 	o.LogReaderData = &v
 }
 
 // GetLogOperations returns the LogOperations field value if set, zero value otherwise.
-func (o *SourcesItems) GetLogOperations() []SourcesLogOperations {
+func (o *SourcesItem) GetLogOperations() []SourcesLogOperation {
 	if o == nil || o.LogOperations == nil {
-		var ret []SourcesLogOperations
+		var ret []SourcesLogOperation
 		return ret
 	}
 	return o.LogOperations
@@ -367,7 +367,7 @@ func (o *SourcesItems) GetLogOperations() []SourcesLogOperations {
 
 // GetLogOperationsOk returns a tuple with the LogOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetLogOperationsOk() (*[]SourcesLogOperations, bool) {
+func (o *SourcesItem) GetLogOperationsOk() (*[]SourcesLogOperation, bool) {
 	if o == nil || o.LogOperations == nil {
 		return nil, false
 	}
@@ -375,17 +375,17 @@ func (o *SourcesItems) GetLogOperationsOk() (*[]SourcesLogOperations, bool) {
 }
 
 // HasLogOperations returns a boolean if a field has been set.
-func (o *SourcesItems) HasLogOperations() bool {
+func (o *SourcesItem) HasLogOperations() bool {
 	return o != nil && o.LogOperations != nil
 }
 
-// SetLogOperations gets a reference to the given []SourcesLogOperations and assigns it to the LogOperations field.
-func (o *SourcesItems) SetLogOperations(v []SourcesLogOperations) {
+// SetLogOperations gets a reference to the given []SourcesLogOperation and assigns it to the LogOperations field.
+func (o *SourcesItem) SetLogOperations(v []SourcesLogOperation) {
 	o.LogOperations = v
 }
 
 // GetDiscardedLogsConfig returns the DiscardedLogsConfig field value if set, zero value otherwise.
-func (o *SourcesItems) GetDiscardedLogsConfig() string {
+func (o *SourcesItem) GetDiscardedLogsConfig() string {
 	if o == nil || o.DiscardedLogsConfig == nil {
 		var ret string
 		return ret
@@ -395,7 +395,7 @@ func (o *SourcesItems) GetDiscardedLogsConfig() string {
 
 // GetDiscardedLogsConfigOk returns a tuple with the DiscardedLogsConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetDiscardedLogsConfigOk() (*string, bool) {
+func (o *SourcesItem) GetDiscardedLogsConfigOk() (*string, bool) {
 	if o == nil || o.DiscardedLogsConfig == nil {
 		return nil, false
 	}
@@ -403,17 +403,17 @@ func (o *SourcesItems) GetDiscardedLogsConfigOk() (*string, bool) {
 }
 
 // HasDiscardedLogsConfig returns a boolean if a field has been set.
-func (o *SourcesItems) HasDiscardedLogsConfig() bool {
+func (o *SourcesItem) HasDiscardedLogsConfig() bool {
 	return o != nil && o.DiscardedLogsConfig != nil
 }
 
 // SetDiscardedLogsConfig gets a reference to the given string and assigns it to the DiscardedLogsConfig field.
-func (o *SourcesItems) SetDiscardedLogsConfig(v string) {
+func (o *SourcesItem) SetDiscardedLogsConfig(v string) {
 	o.DiscardedLogsConfig = &v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *SourcesItems) GetValue() string {
+func (o *SourcesItem) GetValue() string {
 	if o == nil || o.Value == nil {
 		var ret string
 		return ret
@@ -423,7 +423,7 @@ func (o *SourcesItems) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetValueOk() (*string, bool) {
+func (o *SourcesItem) GetValueOk() (*string, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -431,17 +431,17 @@ func (o *SourcesItems) GetValueOk() (*string, bool) {
 }
 
 // HasValue returns a boolean if a field has been set.
-func (o *SourcesItems) HasValue() bool {
+func (o *SourcesItem) HasValue() bool {
 	return o != nil && o.Value != nil
 }
 
 // SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *SourcesItems) SetValue(v string) {
+func (o *SourcesItem) SetValue(v string) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *SourcesItems) GetLabel() string {
+func (o *SourcesItem) GetLabel() string {
 	if o == nil || o.Label == nil {
 		var ret string
 		return ret
@@ -451,7 +451,7 @@ func (o *SourcesItems) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetLabelOk() (*string, bool) {
+func (o *SourcesItem) GetLabelOk() (*string, bool) {
 	if o == nil || o.Label == nil {
 		return nil, false
 	}
@@ -459,17 +459,17 @@ func (o *SourcesItems) GetLabelOk() (*string, bool) {
 }
 
 // HasLabel returns a boolean if a field has been set.
-func (o *SourcesItems) HasLabel() bool {
+func (o *SourcesItem) HasLabel() bool {
 	return o != nil && o.Label != nil
 }
 
 // SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *SourcesItems) SetLabel(v string) {
+func (o *SourcesItem) SetLabel(v string) {
 	o.Label = &v
 }
 
 // GetIsDeleted returns the IsDeleted field value if set, zero value otherwise.
-func (o *SourcesItems) GetIsDeleted() bool {
+func (o *SourcesItem) GetIsDeleted() bool {
 	if o == nil || o.IsDeleted == nil {
 		var ret bool
 		return ret
@@ -479,7 +479,7 @@ func (o *SourcesItems) GetIsDeleted() bool {
 
 // GetIsDeletedOk returns a tuple with the IsDeleted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetIsDeletedOk() (*bool, bool) {
+func (o *SourcesItem) GetIsDeletedOk() (*bool, bool) {
 	if o == nil || o.IsDeleted == nil {
 		return nil, false
 	}
@@ -487,17 +487,17 @@ func (o *SourcesItems) GetIsDeletedOk() (*bool, bool) {
 }
 
 // HasIsDeleted returns a boolean if a field has been set.
-func (o *SourcesItems) HasIsDeleted() bool {
+func (o *SourcesItem) HasIsDeleted() bool {
 	return o != nil && o.IsDeleted != nil
 }
 
 // SetIsDeleted gets a reference to the given bool and assigns it to the IsDeleted field.
-func (o *SourcesItems) SetIsDeleted(v bool) {
+func (o *SourcesItem) SetIsDeleted(v bool) {
 	o.IsDeleted = &v
 }
 
 // GetIsAgentSource returns the IsAgentSource field value if set, zero value otherwise.
-func (o *SourcesItems) GetIsAgentSource() bool {
+func (o *SourcesItem) GetIsAgentSource() bool {
 	if o == nil || o.IsAgentSource == nil {
 		var ret bool
 		return ret
@@ -507,7 +507,7 @@ func (o *SourcesItems) GetIsAgentSource() bool {
 
 // GetIsAgentSourceOk returns a tuple with the IsAgentSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetIsAgentSourceOk() (*bool, bool) {
+func (o *SourcesItem) GetIsAgentSourceOk() (*bool, bool) {
 	if o == nil || o.IsAgentSource == nil {
 		return nil, false
 	}
@@ -515,17 +515,17 @@ func (o *SourcesItems) GetIsAgentSourceOk() (*bool, bool) {
 }
 
 // HasIsAgentSource returns a boolean if a field has been set.
-func (o *SourcesItems) HasIsAgentSource() bool {
+func (o *SourcesItem) HasIsAgentSource() bool {
 	return o != nil && o.IsAgentSource != nil
 }
 
 // SetIsAgentSource gets a reference to the given bool and assigns it to the IsAgentSource field.
-func (o *SourcesItems) SetIsAgentSource(v bool) {
+func (o *SourcesItem) SetIsAgentSource(v bool) {
 	o.IsAgentSource = &v
 }
 
 // GetAgentIds returns the AgentIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItems) GetAgentIds() []string {
+func (o *SourcesItem) GetAgentIds() []string {
 	if o == nil || o.AgentIds.Get() == nil {
 		var ret []string
 		return ret
@@ -536,7 +536,7 @@ func (o *SourcesItems) GetAgentIds() []string {
 // GetAgentIdsOk returns a tuple with the AgentIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItems) GetAgentIdsOk() (*[]string, bool) {
+func (o *SourcesItem) GetAgentIdsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -544,27 +544,27 @@ func (o *SourcesItems) GetAgentIdsOk() (*[]string, bool) {
 }
 
 // HasAgentIds returns a boolean if a AgentIds has been set.
-func (o *SourcesItems) HasAgentIds() bool {
+func (o *SourcesItem) HasAgentIds() bool {
 	return o != nil && o.AgentIds.IsSet()
 }
 
 // SetAgentIds gets a reference to the given datadog.Nullable[]string and assigns it to the AgentIds field.
-func (o *SourcesItems) SetAgentIds(v []string) {
+func (o *SourcesItem) SetAgentIds(v []string) {
 	o.AgentIds.Set(&v)
 }
 
 // SetAgentIdsNil sets the value for AgentIds to be an explicit nil.
-func (o *SourcesItems) SetAgentIdsNil() {
+func (o *SourcesItem) SetAgentIdsNil() {
 	o.AgentIds.Set(nil)
 }
 
 // UnsetAgentIds ensures that no value is present for AgentIds, not even an explicit nil.
-func (o *SourcesItems) UnSetAgentIds() {
+func (o *SourcesItem) UnSetAgentIds() {
 	o.AgentIds.UnSet()
 }
 
 // GetIndexGroupName returns the IndexGroupName field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItems) GetIndexGroupName() string {
+func (o *SourcesItem) GetIndexGroupName() string {
 	if o == nil || o.IndexGroupName.Get() == nil {
 		var ret string
 		return ret
@@ -575,7 +575,7 @@ func (o *SourcesItems) GetIndexGroupName() string {
 // GetIndexGroupNameOk returns a tuple with the IndexGroupName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItems) GetIndexGroupNameOk() (*string, bool) {
+func (o *SourcesItem) GetIndexGroupNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -583,27 +583,27 @@ func (o *SourcesItems) GetIndexGroupNameOk() (*string, bool) {
 }
 
 // HasIndexGroupName returns a boolean if a IndexGroupName has been set.
-func (o *SourcesItems) HasIndexGroupName() bool {
+func (o *SourcesItem) HasIndexGroupName() bool {
 	return o != nil && o.IndexGroupName.IsSet()
 }
 
 // SetIndexGroupName gets a reference to the given datadog.NullableString and assigns it to the IndexGroupName field.
-func (o *SourcesItems) SetIndexGroupName(v string) {
+func (o *SourcesItem) SetIndexGroupName(v string) {
 	o.IndexGroupName.Set(&v)
 }
 
 // SetIndexGroupNameNil sets the value for IndexGroupName to be an explicit nil.
-func (o *SourcesItems) SetIndexGroupNameNil() {
+func (o *SourcesItem) SetIndexGroupNameNil() {
 	o.IndexGroupName.Set(nil)
 }
 
 // UnsetIndexGroupName ensures that no value is present for IndexGroupName, not even an explicit nil.
-func (o *SourcesItems) UnsetIndexGroupName() {
+func (o *SourcesItem) UnsetIndexGroupName() {
 	o.IndexGroupName.UnSet()
 }
 
 // GetDashboardName returns the DashboardName field value if set, zero value otherwise.
-func (o *SourcesItems) GetDashboardName() string {
+func (o *SourcesItem) GetDashboardName() string {
 	if o == nil || o.DashboardName == nil {
 		var ret string
 		return ret
@@ -613,7 +613,7 @@ func (o *SourcesItems) GetDashboardName() string {
 
 // GetDashboardNameOk returns a tuple with the DashboardName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetDashboardNameOk() (*string, bool) {
+func (o *SourcesItem) GetDashboardNameOk() (*string, bool) {
 	if o == nil || o.DashboardName == nil {
 		return nil, false
 	}
@@ -621,17 +621,17 @@ func (o *SourcesItems) GetDashboardNameOk() (*string, bool) {
 }
 
 // HasDashboardName returns a boolean if a field has been set.
-func (o *SourcesItems) HasDashboardName() bool {
+func (o *SourcesItem) HasDashboardName() bool {
 	return o != nil && o.DashboardName != nil
 }
 
 // SetDashboardName gets a reference to the given string and assigns it to the DashboardName field.
-func (o *SourcesItems) SetDashboardName(v string) {
+func (o *SourcesItem) SetDashboardName(v string) {
 	o.DashboardName = &v
 }
 
 // GetDashboardId returns the DashboardId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItems) GetDashboardId() string {
+func (o *SourcesItem) GetDashboardId() string {
 	if o == nil || o.DashboardId.Get() == nil {
 		var ret string
 		return ret
@@ -642,7 +642,7 @@ func (o *SourcesItems) GetDashboardId() string {
 // GetDashboardIdOk returns a tuple with the DashboardId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItems) GetDashboardIdOk() (*string, bool) {
+func (o *SourcesItem) GetDashboardIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -650,27 +650,27 @@ func (o *SourcesItems) GetDashboardIdOk() (*string, bool) {
 }
 
 // HasDashboardId returns a boolean if a DashboardId has been set.
-func (o *SourcesItems) HasDashboardId() bool {
+func (o *SourcesItem) HasDashboardId() bool {
 	return o != nil && o.DashboardId.IsSet()
 }
 
 // SetDashboardId gets a reference to the given datadog.NullableString and assigns it to the DashboardId field.
-func (o *SourcesItems) SetDashboardId(v string) {
+func (o *SourcesItem) SetDashboardId(v string) {
 	o.DashboardId.Set(&v)
 }
 
 // SetDashboardIdNil sets the value for DashboardId to be an explicit nil.
-func (o *SourcesItems) SetDashboardIdNil() {
+func (o *SourcesItem) SetDashboardIdNil() {
 	o.DashboardId.Set(nil)
 }
 
 // UnsetDashboardId ensures that no value is present for DashboardId, not even an explicit nil.
-func (o *SourcesItems) UnsetDashboardId() {
+func (o *SourcesItem) UnsetDashboardId() {
 	o.DashboardId.UnSet()
 }
 
 // GetAssetTags returns the AssetTags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItems) GetAssetTags() []string {
+func (o *SourcesItem) GetAssetTags() []string {
 	if o == nil || o.AssetTags.Get() == nil {
 		var ret []string
 		return ret
@@ -681,7 +681,7 @@ func (o *SourcesItems) GetAssetTags() []string {
 // GetAssetTagsOk returns a tuple with the AssetTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItems) GetAssetTagsOk() (*[]string, bool) {
+func (o *SourcesItem) GetAssetTagsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -689,27 +689,27 @@ func (o *SourcesItems) GetAssetTagsOk() (*[]string, bool) {
 }
 
 // HasAssetTags returns a boolean if a AssetTags has been set.
-func (o *SourcesItems) HasAssetTags() bool {
+func (o *SourcesItem) HasAssetTags() bool {
 	return o != nil && o.AssetTags.IsSet()
 }
 
 // SetAssetTags gets a reference to the given datadog.Nullable[]string and assigns it to the AssetTags field.
-func (o *SourcesItems) SetAssetTags(v []string) {
+func (o *SourcesItem) SetAssetTags(v []string) {
 	o.AssetTags.Set(&v)
 }
 
 // SetAssetTagsNil sets the value for AssetTags to be an explicit nil.
-func (o *SourcesItems) SetAssetTagsNil() {
+func (o *SourcesItem) SetAssetTagsNil() {
 	o.AssetTags.Set(nil)
 }
 
 // UnsetAssetTags ensures that no value is present for AssetTags, not even an explicit nil.
-func (o *SourcesItems) UnSetAssetTags() {
+func (o *SourcesItem) UnSetAssetTags() {
 	o.AssetTags.UnSet()
 }
 
 // GetLogRemoveTime returns the LogRemoveTime field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItems) GetLogRemoveTime() string {
+func (o *SourcesItem) GetLogRemoveTime() string {
 	if o == nil || o.LogRemoveTime.Get() == nil {
 		var ret string
 		return ret
@@ -720,7 +720,7 @@ func (o *SourcesItems) GetLogRemoveTime() string {
 // GetLogRemoveTimeOk returns a tuple with the LogRemoveTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItems) GetLogRemoveTimeOk() (*string, bool) {
+func (o *SourcesItem) GetLogRemoveTimeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -728,27 +728,27 @@ func (o *SourcesItems) GetLogRemoveTimeOk() (*string, bool) {
 }
 
 // HasLogRemoveTime returns a boolean if a LogRemoveTime has been set.
-func (o *SourcesItems) HasLogRemoveTime() bool {
+func (o *SourcesItem) HasLogRemoveTime() bool {
 	return o != nil && o.LogRemoveTime.IsSet()
 }
 
 // SetLogRemoveTime gets a reference to the given datadog.NullableString and assigns it to the LogRemoveTime field.
-func (o *SourcesItems) SetLogRemoveTime(v string) {
+func (o *SourcesItem) SetLogRemoveTime(v string) {
 	o.LogRemoveTime.Set(&v)
 }
 
 // SetLogRemoveTimeNil sets the value for LogRemoveTime to be an explicit nil.
-func (o *SourcesItems) SetLogRemoveTimeNil() {
+func (o *SourcesItem) SetLogRemoveTimeNil() {
 	o.LogRemoveTime.Set(nil)
 }
 
 // UnsetLogRemoveTime ensures that no value is present for LogRemoveTime, not even an explicit nil.
-func (o *SourcesItems) UnsetLogRemoveTime() {
+func (o *SourcesItem) UnsetLogRemoveTime() {
 	o.LogRemoveTime.UnSet()
 }
 
 // GetLogRemoveFormat returns the LogRemoveFormat field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItems) GetLogRemoveFormat() string {
+func (o *SourcesItem) GetLogRemoveFormat() string {
 	if o == nil || o.LogRemoveFormat.Get() == nil {
 		var ret string
 		return ret
@@ -759,7 +759,7 @@ func (o *SourcesItems) GetLogRemoveFormat() string {
 // GetLogRemoveFormatOk returns a tuple with the LogRemoveFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItems) GetLogRemoveFormatOk() (*string, bool) {
+func (o *SourcesItem) GetLogRemoveFormatOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -767,27 +767,27 @@ func (o *SourcesItems) GetLogRemoveFormatOk() (*string, bool) {
 }
 
 // HasLogRemoveFormat returns a boolean if a LogRemoveFormat has been set.
-func (o *SourcesItems) HasLogRemoveFormat() bool {
+func (o *SourcesItem) HasLogRemoveFormat() bool {
 	return o != nil && o.LogRemoveFormat.IsSet()
 }
 
 // SetLogRemoveFormat gets a reference to the given datadog.NullableString and assigns it to the LogRemoveFormat field.
-func (o *SourcesItems) SetLogRemoveFormat(v string) {
+func (o *SourcesItem) SetLogRemoveFormat(v string) {
 	o.LogRemoveFormat.Set(&v)
 }
 
 // SetLogRemoveFormatNil sets the value for LogRemoveFormat to be an explicit nil.
-func (o *SourcesItems) SetLogRemoveFormatNil() {
+func (o *SourcesItem) SetLogRemoveFormatNil() {
 	o.LogRemoveFormat.Set(nil)
 }
 
 // UnsetLogRemoveFormat ensures that no value is present for LogRemoveFormat, not even an explicit nil.
-func (o *SourcesItems) UnsetLogRemoveFormat() {
+func (o *SourcesItem) UnsetLogRemoveFormat() {
 	o.LogRemoveFormat.UnSet()
 }
 
 // GetAgentId returns the AgentId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItems) GetAgentId() string {
+func (o *SourcesItem) GetAgentId() string {
 	if o == nil || o.AgentId.Get() == nil {
 		var ret string
 		return ret
@@ -798,7 +798,7 @@ func (o *SourcesItems) GetAgentId() string {
 // GetAgentIdOk returns a tuple with the AgentId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItems) GetAgentIdOk() (*string, bool) {
+func (o *SourcesItem) GetAgentIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -806,27 +806,27 @@ func (o *SourcesItems) GetAgentIdOk() (*string, bool) {
 }
 
 // HasAgentId returns a boolean if a AgentId has been set.
-func (o *SourcesItems) HasAgentId() bool {
+func (o *SourcesItem) HasAgentId() bool {
 	return o != nil && o.AgentId.IsSet()
 }
 
 // SetAgentId gets a reference to the given datadog.NullableString and assigns it to the AgentId field.
-func (o *SourcesItems) SetAgentId(v string) {
+func (o *SourcesItem) SetAgentId(v string) {
 	o.AgentId.Set(&v)
 }
 
 // SetAgentIdNil sets the value for AgentId to be an explicit nil.
-func (o *SourcesItems) SetAgentIdNil() {
+func (o *SourcesItem) SetAgentIdNil() {
 	o.AgentId.Set(nil)
 }
 
 // UnsetAgentId ensures that no value is present for AgentId, not even an explicit nil.
-func (o *SourcesItems) UnsetAgentId() {
+func (o *SourcesItem) UnsetAgentId() {
 	o.AgentId.UnSet()
 }
 
 // GetWriteRawLogs returns the WriteRawLogs field value if set, zero value otherwise.
-func (o *SourcesItems) GetWriteRawLogs() bool {
+func (o *SourcesItem) GetWriteRawLogs() bool {
 	if o == nil || o.WriteRawLogs == nil {
 		var ret bool
 		return ret
@@ -836,7 +836,7 @@ func (o *SourcesItems) GetWriteRawLogs() bool {
 
 // GetWriteRawLogsOk returns a tuple with the WriteRawLogs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetWriteRawLogsOk() (*bool, bool) {
+func (o *SourcesItem) GetWriteRawLogsOk() (*bool, bool) {
 	if o == nil || o.WriteRawLogs == nil {
 		return nil, false
 	}
@@ -844,17 +844,17 @@ func (o *SourcesItems) GetWriteRawLogsOk() (*bool, bool) {
 }
 
 // HasWriteRawLogs returns a boolean if a field has been set.
-func (o *SourcesItems) HasWriteRawLogs() bool {
+func (o *SourcesItem) HasWriteRawLogs() bool {
 	return o != nil && o.WriteRawLogs != nil
 }
 
 // SetWriteRawLogs gets a reference to the given bool and assigns it to the WriteRawLogs field.
-func (o *SourcesItems) SetWriteRawLogs(v bool) {
+func (o *SourcesItem) SetWriteRawLogs(v bool) {
 	o.WriteRawLogs = &v
 }
 
 // GetUseSecondaryWriter returns the UseSecondaryWriter field value if set, zero value otherwise.
-func (o *SourcesItems) GetUseSecondaryWriter() bool {
+func (o *SourcesItem) GetUseSecondaryWriter() bool {
 	if o == nil || o.UseSecondaryWriter == nil {
 		var ret bool
 		return ret
@@ -864,7 +864,7 @@ func (o *SourcesItems) GetUseSecondaryWriter() bool {
 
 // GetUseSecondaryWriterOk returns a tuple with the UseSecondaryWriter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetUseSecondaryWriterOk() (*bool, bool) {
+func (o *SourcesItem) GetUseSecondaryWriterOk() (*bool, bool) {
 	if o == nil || o.UseSecondaryWriter == nil {
 		return nil, false
 	}
@@ -872,17 +872,17 @@ func (o *SourcesItems) GetUseSecondaryWriterOk() (*bool, bool) {
 }
 
 // HasUseSecondaryWriter returns a boolean if a field has been set.
-func (o *SourcesItems) HasUseSecondaryWriter() bool {
+func (o *SourcesItem) HasUseSecondaryWriter() bool {
 	return o != nil && o.UseSecondaryWriter != nil
 }
 
 // SetUseSecondaryWriter gets a reference to the given bool and assigns it to the UseSecondaryWriter field.
-func (o *SourcesItems) SetUseSecondaryWriter(v bool) {
+func (o *SourcesItem) SetUseSecondaryWriter(v bool) {
 	o.UseSecondaryWriter = &v
 }
 
 // GetParallelOptions returns the ParallelOptions field value if set, zero value otherwise.
-func (o *SourcesItems) GetParallelOptions() ParallelOptions {
+func (o *SourcesItem) GetParallelOptions() ParallelOptions {
 	if o == nil || o.ParallelOptions == nil {
 		var ret ParallelOptions
 		return ret
@@ -892,7 +892,7 @@ func (o *SourcesItems) GetParallelOptions() ParallelOptions {
 
 // GetParallelOptionsOk returns a tuple with the ParallelOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetParallelOptionsOk() (*ParallelOptions, bool) {
+func (o *SourcesItem) GetParallelOptionsOk() (*ParallelOptions, bool) {
 	if o == nil || o.ParallelOptions == nil {
 		return nil, false
 	}
@@ -900,17 +900,17 @@ func (o *SourcesItems) GetParallelOptionsOk() (*ParallelOptions, bool) {
 }
 
 // HasParallelOptions returns a boolean if a field has been set.
-func (o *SourcesItems) HasParallelOptions() bool {
+func (o *SourcesItem) HasParallelOptions() bool {
 	return o != nil && o.ParallelOptions != nil
 }
 
 // SetParallelOptions gets a reference to the given ParallelOptions and assigns it to the ParallelOptions field.
-func (o *SourcesItems) SetParallelOptions(v ParallelOptions) {
+func (o *SourcesItem) SetParallelOptions(v ParallelOptions) {
 	o.ParallelOptions = &v
 }
 
 // GetBlockCount returns the BlockCount field value if set, zero value otherwise.
-func (o *SourcesItems) GetBlockCount() int64 {
+func (o *SourcesItem) GetBlockCount() int64 {
 	if o == nil || o.BlockCount == nil {
 		var ret int64
 		return ret
@@ -920,7 +920,7 @@ func (o *SourcesItems) GetBlockCount() int64 {
 
 // GetBlockCountOk returns a tuple with the BlockCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetBlockCountOk() (*int64, bool) {
+func (o *SourcesItem) GetBlockCountOk() (*int64, bool) {
 	if o == nil || o.BlockCount == nil {
 		return nil, false
 	}
@@ -928,17 +928,17 @@ func (o *SourcesItems) GetBlockCountOk() (*int64, bool) {
 }
 
 // HasBlockCount returns a boolean if a field has been set.
-func (o *SourcesItems) HasBlockCount() bool {
+func (o *SourcesItem) HasBlockCount() bool {
 	return o != nil && o.BlockCount != nil
 }
 
 // SetBlockCount gets a reference to the given int64 and assigns it to the BlockCount field.
-func (o *SourcesItems) SetBlockCount(v int64) {
+func (o *SourcesItem) SetBlockCount(v int64) {
 	o.BlockCount = &v
 }
 
 // GetScheduleConfig returns the ScheduleConfig field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItems) GetScheduleConfig() ScheduleConfig {
+func (o *SourcesItem) GetScheduleConfig() ScheduleConfig {
 	if o == nil || o.ScheduleConfig.Get() == nil {
 		var ret ScheduleConfig
 		return ret
@@ -949,7 +949,7 @@ func (o *SourcesItems) GetScheduleConfig() ScheduleConfig {
 // GetScheduleConfigOk returns a tuple with the ScheduleConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItems) GetScheduleConfigOk() (*ScheduleConfig, bool) {
+func (o *SourcesItem) GetScheduleConfigOk() (*ScheduleConfig, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -957,27 +957,27 @@ func (o *SourcesItems) GetScheduleConfigOk() (*ScheduleConfig, bool) {
 }
 
 // HasScheduleConfig returns a boolean if a ScheduleConfig has been set.
-func (o *SourcesItems) HasScheduleConfig() bool {
+func (o *SourcesItem) HasScheduleConfig() bool {
 	return o != nil && o.ScheduleConfig.IsSet()
 }
 
 // SetScheduleConfig gets a reference to the given datadog.NullableString and assigns it to the ScheduleConfig field.
-func (o *SourcesItems) SetScheduleConfig(v ScheduleConfig) {
+func (o *SourcesItem) SetScheduleConfig(v ScheduleConfig) {
 	o.ScheduleConfig.Set(&v)
 }
 
 // SetScheduleConfigNil sets the value for ScheduleConfig to be an explicit nil.
-func (o *SourcesItems) SetScheduleConfigNil() {
+func (o *SourcesItem) SetScheduleConfigNil() {
 	o.ScheduleConfig.Set(nil)
 }
 
 // UnsetScheduleConfig ensures that no value is present for ScheduleConfig, not even an explicit nil.
-func (o *SourcesItems) UnsetScheduleConfig() {
+func (o *SourcesItem) UnsetScheduleConfig() {
 	o.ScheduleConfig.UnSet()
 }
 
 // GetStoreRawLogs returns the StoreRawLogs field value if set, zero value otherwise.
-func (o *SourcesItems) GetStoreRawLogs() bool {
+func (o *SourcesItem) GetStoreRawLogs() bool {
 	if o == nil || o.StoreRawLogs == nil {
 		var ret bool
 		return ret
@@ -987,7 +987,7 @@ func (o *SourcesItems) GetStoreRawLogs() bool {
 
 // GetStoreRawLogsOk returns a tuple with the StoreRawLogs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetStoreRawLogsOk() (*bool, bool) {
+func (o *SourcesItem) GetStoreRawLogsOk() (*bool, bool) {
 	if o == nil || o.StoreRawLogs == nil {
 		return nil, false
 	}
@@ -995,17 +995,17 @@ func (o *SourcesItems) GetStoreRawLogsOk() (*bool, bool) {
 }
 
 // HasStoreRawLogs returns a boolean if a field has been set.
-func (o *SourcesItems) HasStoreRawLogs() bool {
+func (o *SourcesItem) HasStoreRawLogs() bool {
 	return o != nil && o.StoreRawLogs != nil
 }
 
 // SetStoreRawLogs gets a reference to the given bool and assigns it to the StoreRawLogs field.
-func (o *SourcesItems) SetStoreRawLogs(v bool) {
+func (o *SourcesItem) SetStoreRawLogs(v bool) {
 	o.StoreRawLogs = &v
 }
 
 // GetStoreRawLogsLgs returns the StoreRawLogsLgs field value if set, zero value otherwise.
-func (o *SourcesItems) GetStoreRawLogsLgs() string {
+func (o *SourcesItem) GetStoreRawLogsLgs() string {
 	if o == nil || o.StoreRawLogsLgs == nil {
 		var ret string
 		return ret
@@ -1015,7 +1015,7 @@ func (o *SourcesItems) GetStoreRawLogsLgs() string {
 
 // GetStoreRawLogsLgsOk returns a tuple with the StoreRawLogsLgs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetStoreRawLogsLgsOk() (*string, bool) {
+func (o *SourcesItem) GetStoreRawLogsLgsOk() (*string, bool) {
 	if o == nil || o.StoreRawLogsLgs == nil {
 		return nil, false
 	}
@@ -1023,17 +1023,17 @@ func (o *SourcesItems) GetStoreRawLogsLgsOk() (*string, bool) {
 }
 
 // HasStoreRawLogsLgs returns a boolean if a field has been set.
-func (o *SourcesItems) HasStoreRawLogsLgs() bool {
+func (o *SourcesItem) HasStoreRawLogsLgs() bool {
 	return o != nil && o.StoreRawLogsLgs != nil
 }
 
 // SetStoreRawLogsLgs gets a reference to the given string and assigns it to the StoreRawLogsLgs field.
-func (o *SourcesItems) SetStoreRawLogsLgs(v string) {
+func (o *SourcesItem) SetStoreRawLogsLgs(v string) {
 	o.StoreRawLogsLgs = &v
 }
 
 // GetIsEditable returns the IsEditable field value if set, zero value otherwise.
-func (o *SourcesItems) GetIsEditable() bool {
+func (o *SourcesItem) GetIsEditable() bool {
 	if o == nil || o.IsEditable == nil {
 		var ret bool
 		return ret
@@ -1043,7 +1043,7 @@ func (o *SourcesItems) GetIsEditable() bool {
 
 // GetIsEditableOk returns a tuple with the IsEditable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItems) GetIsEditableOk() (*bool, bool) {
+func (o *SourcesItem) GetIsEditableOk() (*bool, bool) {
 	if o == nil || o.IsEditable == nil {
 		return nil, false
 	}
@@ -1051,17 +1051,17 @@ func (o *SourcesItems) GetIsEditableOk() (*bool, bool) {
 }
 
 // HasIsEditable returns a boolean if a field has been set.
-func (o *SourcesItems) HasIsEditable() bool {
+func (o *SourcesItem) HasIsEditable() bool {
 	return o != nil && o.IsEditable != nil
 }
 
 // SetIsEditable gets a reference to the given bool and assigns it to the IsEditable field.
-func (o *SourcesItems) SetIsEditable(v bool) {
+func (o *SourcesItem) SetIsEditable(v bool) {
 	o.IsEditable = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o SourcesItems) MarshalJSON() ([]byte, error) {
+func (o SourcesItem) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -1173,7 +1173,7 @@ func (o SourcesItems) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *SourcesItems) UnMarshalJSON(bytes []byte) (err error) {
+func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		Id                  *string                     `json:"Id,omitempty"`
 		Enabled             *bool                       `json:"Enabled,omitempty"`
@@ -1185,7 +1185,7 @@ func (o *SourcesItems) UnMarshalJSON(bytes []byte) (err error) {
 		Tags                []string                    `json:"Tags,omitempty"`
 		AlertTimeout        *int64                      `json:"AlertTimeout,omitempty"`
 		LogReaderData       *json.RawMessage            `json:"LogReaderData,omitempty"`
-		LogOperations       []SourcesLogOperations      `json:"LogOperations,omitempty"`
+		LogOperations       []SourcesLogOperation       `json:"LogOperations,omitempty"`
 		DiscardedLogsConfig *string                     `json:"DiscardedLogsConfig,omitempty"`
 		Value               *string                     `json:"value,omitempty"`
 		Label               *string                     `json:"label,omitempty"`

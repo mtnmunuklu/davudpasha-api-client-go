@@ -6,7 +6,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-type SuccessItems struct {
+type SuccessItem struct {
 	Application *string  `json:"Application,omitempty"`
 	Keys        []string `json:"Keys,omitempty"`
 	SourceType  *string  `json:"SourceType,omitempty"`
@@ -16,25 +16,25 @@ type SuccessItems struct {
 	AdditionalProperties map[string]interface{}
 }
 
-// NewSuccessItems creates a new SuccessItems object.
+// NewSuccessItem creates a new SuccessItem object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewSuccessItems() *SuccessItems {
-	this := SuccessItems{}
+func NewSuccessItem() *SuccessItem {
+	this := SuccessItem{}
 	return &this
 }
 
-// NewSuccessItemsWithDefaults creates a new SuccessItems object.
+// NewSuccessItemWithDefaults creates a new SuccessItem object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewSuccessItemsWithDefault() *SuccessItems {
-	this := SuccessItems{}
+func NewSuccessItemWithDefault() *SuccessItem {
+	this := SuccessItem{}
 	return &this
 }
 
 // GetApplication returns the Application field value if set, zero value otherwise.
-func (o *SuccessItems) GetApplication() string {
+func (o *SuccessItem) GetApplication() string {
 	if o == nil || o.Application == nil {
 		var ret string
 		return ret
@@ -44,7 +44,7 @@ func (o *SuccessItems) GetApplication() string {
 
 // GetApplicationOk returns a tuple with the Application field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SuccessItems) GetApplicationOk() (*string, bool) {
+func (o *SuccessItem) GetApplicationOk() (*string, bool) {
 	if o == nil || o.Application == nil {
 		return nil, false
 	}
@@ -52,17 +52,17 @@ func (o *SuccessItems) GetApplicationOk() (*string, bool) {
 }
 
 // HasApplication returns a boolean if a field has been set.
-func (o *SuccessItems) HasApplication() bool {
+func (o *SuccessItem) HasApplication() bool {
 	return o != nil && o.Application != nil
 }
 
 // SetApplication gets a reference to the given string and assigns it to the Application field.
-func (o *SuccessItems) SetApplication(v string) {
+func (o *SuccessItem) SetApplication(v string) {
 	o.Application = &v
 }
 
 // GetKeys returns the Keys field value if set, zero value otherwise.
-func (o *SuccessItems) GetKeys() []string {
+func (o *SuccessItem) GetKeys() []string {
 	if o == nil || o.Keys == nil {
 		var ret []string
 		return ret
@@ -72,7 +72,7 @@ func (o *SuccessItems) GetKeys() []string {
 
 // GetKeysOk returns a tuple with the Keys field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SuccessItems) GetKeysOk() (*[]string, bool) {
+func (o *SuccessItem) GetKeysOk() (*[]string, bool) {
 	if o == nil || o.Keys == nil {
 		return nil, false
 	}
@@ -80,17 +80,17 @@ func (o *SuccessItems) GetKeysOk() (*[]string, bool) {
 }
 
 // HasKeys returns a boolean if a field has been set.
-func (o *SuccessItems) HasKeys() bool {
+func (o *SuccessItem) HasKeys() bool {
 	return o != nil && o.Keys != nil
 }
 
 // SetKeys gets a reference to the given []string and assigns it to the Keys field.
-func (o *SuccessItems) SetKeys(v []string) {
+func (o *SuccessItem) SetKeys(v []string) {
 	o.Keys = v
 }
 
 // GetSourceType returns the SourceType field value if set, zero value otherwise.
-func (o *SuccessItems) GetSourceType() string {
+func (o *SuccessItem) GetSourceType() string {
 	if o == nil || o.SourceType == nil {
 		var ret string
 		return ret
@@ -100,7 +100,7 @@ func (o *SuccessItems) GetSourceType() string {
 
 // GetSourceTypeOk returns a tuple with the SourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SuccessItems) GetSourceTypeOk() (*string, bool) {
+func (o *SuccessItem) GetSourceTypeOk() (*string, bool) {
 	if o == nil || o.SourceType == nil {
 		return nil, false
 	}
@@ -108,17 +108,17 @@ func (o *SuccessItems) GetSourceTypeOk() (*string, bool) {
 }
 
 // HasSourceType returns a boolean if a field has been set.
-func (o *SuccessItems) HasSourceType() bool {
+func (o *SuccessItem) HasSourceType() bool {
 	return o != nil && o.SourceType != nil
 }
 
 // SetSourceType gets a reference to the given string and assigns it to the SourceType field.
-func (o *SuccessItems) SetSourceType(v string) {
+func (o *SuccessItem) SetSourceType(v string) {
 	o.SourceType = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o SuccessItems) MarshalJSON() ([]byte, error) {
+func (o SuccessItem) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -140,7 +140,7 @@ func (o SuccessItems) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *SuccessItems) UnMarshalJSON(bytes []byte) (err error) {
+func (o *SuccessItem) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		Application *string  `json:"Application,omitempty"`
 		Keys        []string `json:"Keys,omitempty"`

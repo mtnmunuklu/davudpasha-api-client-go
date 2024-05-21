@@ -7,7 +7,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-type SelectedColumns struct {
+type SelectedColumn struct {
 	Value       *string               `json:"Value,omitempty"`
 	DisplayText *string               `json:"DisplayText,omitempty"`
 	Lookup      common.NullableString `json:"Lookup,omitempty"`
@@ -17,25 +17,25 @@ type SelectedColumns struct {
 	AdditionalProperties map[string]interface{}
 }
 
-// NewSelectedColumns creates a new SelectedColumns object.
+// NewSelectedColumn creates a new SelectedColumn object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewSelectedColumns() *SelectedColumns {
-	this := SelectedColumns{}
+func NewSelectedColumn() *SelectedColumn {
+	this := SelectedColumn{}
 	return &this
 }
 
-// NewSelectedColumnsWithDefaults creates a new SelectedColumns object.
+// NewSelectedColumnWithDefaults creates a new SelectedColumn object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewSelectedColumnsWithDefaults() *SelectedColumns {
-	this := SelectedColumns{}
+func NewSelectedColumnWithDefaults() *SelectedColumn {
+	this := SelectedColumn{}
 	return &this
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *SelectedColumns) GetValue() string {
+func (o *SelectedColumn) GetValue() string {
 	if o == nil || o.Value == nil {
 		var ret string
 		return ret
@@ -45,7 +45,7 @@ func (o *SelectedColumns) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SelectedColumns) GetValueOk() (*string, bool) {
+func (o *SelectedColumn) GetValueOk() (*string, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -53,17 +53,17 @@ func (o *SelectedColumns) GetValueOk() (*string, bool) {
 }
 
 // HasValue returns a boolean if a field has been set.
-func (o *SelectedColumns) HasValue() bool {
+func (o *SelectedColumn) HasValue() bool {
 	return o != nil && o.Value != nil
 }
 
 // SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *SelectedColumns) SetValue(v string) {
+func (o *SelectedColumn) SetValue(v string) {
 	o.Value = &v
 }
 
 // GetDisplayText returns the DisplayText field DisplayText if set, zero DisplayText otherwise.
-func (o *SelectedColumns) GetDisplayText() string {
+func (o *SelectedColumn) GetDisplayText() string {
 	if o == nil || o.DisplayText == nil {
 		var ret string
 		return ret
@@ -73,7 +73,7 @@ func (o *SelectedColumns) GetDisplayText() string {
 
 // GetDisplayTextOk returns a tuple with the DisplayText field DisplayText if set, nil otherwise
 // and a boolean to check if the DisplayText has been set.
-func (o *SelectedColumns) GetDisplayTextOk() (*string, bool) {
+func (o *SelectedColumn) GetDisplayTextOk() (*string, bool) {
 	if o == nil || o.DisplayText == nil {
 		return nil, false
 	}
@@ -81,17 +81,17 @@ func (o *SelectedColumns) GetDisplayTextOk() (*string, bool) {
 }
 
 // HasDisplayText returns a boolean if a field has been set.
-func (o *SelectedColumns) HasDisplayText() bool {
+func (o *SelectedColumn) HasDisplayText() bool {
 	return o != nil && o.DisplayText != nil
 }
 
 // SetDisplayText gets a reference to the given string and assigns it to the DisplayText field.
-func (o *SelectedColumns) SetDisplayText(v string) {
+func (o *SelectedColumn) SetDisplayText(v string) {
 	o.DisplayText = &v
 }
 
 // GetLookup returns the Lookup field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SelectedColumns) GetLookup() string {
+func (o *SelectedColumn) GetLookup() string {
 	if o == nil || o.Lookup.Get() == nil {
 		var ret string
 		return ret
@@ -102,7 +102,7 @@ func (o *SelectedColumns) GetLookup() string {
 // GetLookupOk returns a tuple with the Lookup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SelectedColumns) GetLookupOk() (*string, bool) {
+func (o *SelectedColumn) GetLookupOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -110,27 +110,27 @@ func (o *SelectedColumns) GetLookupOk() (*string, bool) {
 }
 
 // HasLookup returns a boolean if a field has been set.
-func (o *SelectedColumns) HasLookup() bool {
+func (o *SelectedColumn) HasLookup() bool {
 	return o != nil && o.Lookup.IsSet()
 }
 
 // SetLookup gets a reference to the given datadog.NullableString and assigns it to the Lookup field.
-func (o *SelectedColumns) SetLookup(v string) {
+func (o *SelectedColumn) SetLookup(v string) {
 	o.Lookup.Set(&v)
 }
 
 // SetLookupNil sets the value for Lookup to be an explicit nil.
-func (o *SelectedColumns) SetLookupNil() {
+func (o *SelectedColumn) SetLookupNil() {
 	o.Lookup.Set(nil)
 }
 
 // UnsetLookup ensures that no value is present for Lookup, not even an explicit nil.
-func (o *SelectedColumns) UnSetLookup() {
+func (o *SelectedColumn) UnSetLookup() {
 	o.Lookup.UnSet()
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o SelectedColumns) MarshalJSON() ([]byte, error) {
+func (o SelectedColumn) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -152,7 +152,7 @@ func (o SelectedColumns) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *SelectedColumns) UnMarshalJSON(bytes []byte) (err error) {
+func (o *SelectedColumn) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		Value       *string               `json:"Value,omitempty"`
 		DisplayText *string               `json:"DisplayText,omitempty"`

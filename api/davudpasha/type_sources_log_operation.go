@@ -6,7 +6,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-type SourcesLogOperations struct {
+type SourcesLogOperation struct {
 	ModuleName *string          `json:"ModuleName,omitempty"`
 	Priority   *string          `json:"Priority,omitempty"`
 	Parameters *json.RawMessage `json:"Parameters,omitempty"`
@@ -16,25 +16,25 @@ type SourcesLogOperations struct {
 	AdditionalProperties map[string]interface{}
 }
 
-// NewSourcesLogOperations creates a new SourcesLogOperations object.
+// NewSourcesLogOperation creates a new SourcesLogOperation object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewSourcesLogOperations() *SourcesLogOperations {
-	this := SourcesLogOperations{}
+func NewSourcesLogOperation() *SourcesLogOperation {
+	this := SourcesLogOperation{}
 	return &this
 }
 
-// NewSourcesLogOperationsWithDefaults creates a new SourcesLogOperations object.
+// NewSourcesLogOperationWithDefaults creates a new SourcesLogOperation object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewSourcesLogOperationsWithDefaults() *SourcesLogOperations {
-	this := SourcesLogOperations{}
+func NewSourcesLogOperationWithDefaults() *SourcesLogOperation {
+	this := SourcesLogOperation{}
 	return &this
 }
 
 // GetModuleName returns the ModuleName field value if set, zero value otherwise.
-func (o *SourcesLogOperations) GetModuleName() string {
+func (o *SourcesLogOperation) GetModuleName() string {
 	if o == nil || o.ModuleName == nil {
 		var ret string
 		return ret
@@ -44,7 +44,7 @@ func (o *SourcesLogOperations) GetModuleName() string {
 
 // GetModuleNameOk returns a tuple with the ModuleName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesLogOperations) GetModuleNameOk() (*string, bool) {
+func (o *SourcesLogOperation) GetModuleNameOk() (*string, bool) {
 	if o == nil || o.ModuleName == nil {
 		return nil, false
 	}
@@ -52,17 +52,17 @@ func (o *SourcesLogOperations) GetModuleNameOk() (*string, bool) {
 }
 
 // HasModuleName returns a boolean if a field has been set.
-func (o *SourcesLogOperations) HasModuleName() bool {
+func (o *SourcesLogOperation) HasModuleName() bool {
 	return o != nil && o.ModuleName != nil
 }
 
 // SetModuleName gets a reference to the given string and assigns it to the ModuleName field.
-func (o *SourcesLogOperations) SetModuleName(v string) {
+func (o *SourcesLogOperation) SetModuleName(v string) {
 	o.ModuleName = &v
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *SourcesLogOperations) GetPriority() string {
+func (o *SourcesLogOperation) GetPriority() string {
 	if o == nil || o.Priority == nil {
 		var ret string
 		return ret
@@ -72,7 +72,7 @@ func (o *SourcesLogOperations) GetPriority() string {
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesLogOperations) GetPriorityOk() (*string, bool) {
+func (o *SourcesLogOperation) GetPriorityOk() (*string, bool) {
 	if o == nil || o.Priority == nil {
 		return nil, false
 	}
@@ -80,17 +80,17 @@ func (o *SourcesLogOperations) GetPriorityOk() (*string, bool) {
 }
 
 // HasPriority returns a boolean if a field has been set.
-func (o *SourcesLogOperations) HasPriority() bool {
+func (o *SourcesLogOperation) HasPriority() bool {
 	return o != nil && o.Priority != nil
 }
 
 // SetPriority gets a reference to the given string and assigns it to the Priority field.
-func (o *SourcesLogOperations) SetPriority(v string) {
+func (o *SourcesLogOperation) SetPriority(v string) {
 	o.Priority = &v
 }
 
 // GetParameters returns the Parameters field value if set, zero value otherwise.
-func (o *SourcesLogOperations) GetParameters() json.RawMessage {
+func (o *SourcesLogOperation) GetParameters() json.RawMessage {
 	if o == nil || o.Parameters == nil {
 		var ret json.RawMessage
 		return ret
@@ -100,7 +100,7 @@ func (o *SourcesLogOperations) GetParameters() json.RawMessage {
 
 // GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesLogOperations) GetParametersOk() (*json.RawMessage, bool) {
+func (o *SourcesLogOperation) GetParametersOk() (*json.RawMessage, bool) {
 	if o == nil || o.Parameters == nil {
 		return nil, false
 	}
@@ -108,17 +108,17 @@ func (o *SourcesLogOperations) GetParametersOk() (*json.RawMessage, bool) {
 }
 
 // HasParameters returns a boolean if a field has been set.
-func (o *SourcesLogOperations) HasParameters() bool {
+func (o *SourcesLogOperation) HasParameters() bool {
 	return o != nil && o.Parameters != nil
 }
 
 // SetParameters gets a reference to the given json.RawMessage and assigns it to the Parameters field.
-func (o *SourcesLogOperations) SetParameters(v json.RawMessage) {
+func (o *SourcesLogOperation) SetParameters(v json.RawMessage) {
 	o.Parameters = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o SourcesLogOperations) MarshalJSON() ([]byte, error) {
+func (o SourcesLogOperation) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -141,7 +141,7 @@ func (o SourcesLogOperations) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *SourcesLogOperations) UnMarshalJSON(bytes []byte) (err error) {
+func (o *SourcesLogOperation) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		ModuleName *string          `json:"ModuleName,omitempty"`
 		Priority   *string          `json:"Priority,omitempty"`
