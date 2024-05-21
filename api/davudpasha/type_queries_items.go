@@ -7,52 +7,52 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-type QueriesItems struct {
-	ID                   *string                              `json:"ID,omitempty"`
-	Name                 *string                              `json:"Name,omitempty"`
-	Description          common.NullableString                `json:"Description,omitempty"`
-	Query                *string                              `json:"Query,omitempty"`
-	Columns              common.NullableList[SelectedColumns] `json:"Columns,omitempty"`
-	Author               *string                              `json:"Author,omitempty"`
-	InsertDate           *string                              `json:"InsertDate,omitempty"`
-	LastUpdateDate       *string                              `json:"LastUpdateDate,omitempty"`
-	QueryType            *string                              `json:"QueryType,omitempty"`
-	DateTimeRange        *DateTimeRange                       `json:"DateTimeRange,omitempty"`
-	Tags                 common.NullableList[string]          `json:"Tags,omitempty"`
-	MitreTags            common.NullableList[string]          `json:"MitreTags,omitempty"`
-	KillChainPhase       common.NullableString                `json:"KillChainPhase,omitempty"`
-	FromMarket           *bool                                `json:"FromMarket,omitempty"`
-	FromModules          *bool                                `json:"FromModules,omitempty"`
-	HasUpdate            *bool                                `json:"HasUpdate,omitempty"`
-	ModuleId             common.NullableString                `json:"ModuleId,omitempty"`
-	ModuleGuid           common.NullableString                `json:"ModuleGuid,omitempty"`
-	SharedUsersAndGroups common.NullableList[string]          `json:"SharedUsersAndGroups,omitempty"`
-	Version              *float64                             `json:"Version,omitempty"`
+type QueriesItem struct {
+	ID                   *string                             `json:"ID,omitempty"`
+	Name                 *string                             `json:"Name,omitempty"`
+	Description          common.NullableString               `json:"Description,omitempty"`
+	Query                *string                             `json:"Query,omitempty"`
+	Columns              common.NullableList[SelectedColumn] `json:"Columns,omitempty"`
+	Author               *string                             `json:"Author,omitempty"`
+	InsertDate           *string                             `json:"InsertDate,omitempty"`
+	LastUpdateDate       *string                             `json:"LastUpdateDate,omitempty"`
+	QueryType            *string                             `json:"QueryType,omitempty"`
+	DateTimeRange        *DateTimeRange                      `json:"DateTimeRange,omitempty"`
+	Tags                 common.NullableList[string]         `json:"Tags,omitempty"`
+	MitreTags            common.NullableList[string]         `json:"MitreTags,omitempty"`
+	KillChainPhase       common.NullableString               `json:"KillChainPhase,omitempty"`
+	FromMarket           *bool                               `json:"FromMarket,omitempty"`
+	FromModules          *bool                               `json:"FromModules,omitempty"`
+	HasUpdate            *bool                               `json:"HasUpdate,omitempty"`
+	ModuleId             common.NullableString               `json:"ModuleId,omitempty"`
+	ModuleGuid           common.NullableString               `json:"ModuleGuid,omitempty"`
+	SharedUsersAndGroups common.NullableList[string]         `json:"SharedUsersAndGroups,omitempty"`
+	Version              *float64                            `json:"Version,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
 	UnparsedObject map[string]interface{}
 	// AdditionalProperties stores any additional properties not explicitly defined in the struct
 	AdditionalProperties map[string]interface{}
 }
 
-// NewQueriesItems creates a new QueriesItems object.
+// NewQueriesItem creates a new QueriesItem object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewQueriesItems() *QueriesItems {
-	this := QueriesItems{}
+func NewQueriesItem() *QueriesItem {
+	this := QueriesItem{}
 	return &this
 }
 
-// NewQueriesItemsWithDefaults creates a new QueriesItems object.
+// NewQueriesItemWithDefaults creates a new QueriesItem object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewQueriesItemsWithDefaults() *QueriesItems {
-	this := QueriesItems{}
+func NewQueriesItemWithDefaults() *QueriesItem {
+	this := QueriesItem{}
 	return &this
 }
 
 // GetID returns the ID field value if set, zero value otherwise.
-func (o *QueriesItems) GetID() string {
+func (o *QueriesItem) GetID() string {
 	if o == nil || o.ID == nil {
 		var ret string
 		return ret
@@ -62,7 +62,7 @@ func (o *QueriesItems) GetID() string {
 
 // GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesItems) GetIDOk() (*string, bool) {
+func (o *QueriesItem) GetIDOk() (*string, bool) {
 	if o == nil || o.ID == nil {
 		return nil, false
 	}
@@ -70,17 +70,17 @@ func (o *QueriesItems) GetIDOk() (*string, bool) {
 }
 
 // HasID returns a boolean if a field has been set.
-func (o *QueriesItems) HasID() bool {
+func (o *QueriesItem) HasID() bool {
 	return o != nil && o.ID != nil
 }
 
 // SetID gets a reference to the given string and assigns it to the ID field.
-func (o *QueriesItems) SetID(v string) {
+func (o *QueriesItem) SetID(v string) {
 	o.ID = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *QueriesItems) GetName() string {
+func (o *QueriesItem) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -90,7 +90,7 @@ func (o *QueriesItems) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesItems) GetNameOk() (*string, bool) {
+func (o *QueriesItem) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -98,17 +98,17 @@ func (o *QueriesItems) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *QueriesItems) HasName() bool {
+func (o *QueriesItem) HasName() bool {
 	return o != nil && o.Name != nil
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *QueriesItems) SetName(v string) {
+func (o *QueriesItem) SetName(v string) {
 	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItems) GetDescription() string {
+func (o *QueriesItem) GetDescription() string {
 	if o == nil || o.Description.Get() == nil {
 		var ret string
 		return ret
@@ -119,7 +119,7 @@ func (o *QueriesItems) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItems) GetDescriptionOk() (*string, bool) {
+func (o *QueriesItem) GetDescriptionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -127,29 +127,29 @@ func (o *QueriesItems) GetDescriptionOk() (*string, bool) {
 }
 
 // HasDescription returns a boolean if a Description has been set.
-func (o *QueriesItems) HasDescription() bool {
+func (o *QueriesItem) HasDescription() bool {
 	return o != nil && o.Description.IsSet()
 }
 
 // SetDescription gets a reference to the given datadog.NullableString and assigns it to the Description field.
-func (o *QueriesItems) SetDescription(v string) {
+func (o *QueriesItem) SetDescription(v string) {
 	o.Description.Set(&v)
 }
 
 // SetDescriptionNil sets the value for Description to be an explicit nil.
-func (o *QueriesItems) SetDescriptionNil() {
+func (o *QueriesItem) SetDescriptionNil() {
 	o.Description.Set(nil)
 }
 
 // UnsetDescription ensures that no value is present for Description, not even an explicit nil.
-func (o *QueriesItems) UnsetDescription() {
+func (o *QueriesItem) UnsetDescription() {
 	o.Description.UnSet()
 }
 
 // GetColumns returns the Columns field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItems) GetColumns() []SelectedColumns {
+func (o *QueriesItem) GetColumns() []SelectedColumn {
 	if o == nil || o.Columns.Get() == nil {
-		var ret []SelectedColumns
+		var ret []SelectedColumn
 		return ret
 	}
 	return *o.Columns.Get()
@@ -158,7 +158,7 @@ func (o *QueriesItems) GetColumns() []SelectedColumns {
 // GetColumnsOk returns a tuple with the Columns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItems) GetColumnsOk() (*[]SelectedColumns, bool) {
+func (o *QueriesItem) GetColumnsOk() (*[]SelectedColumn, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -166,27 +166,27 @@ func (o *QueriesItems) GetColumnsOk() (*[]SelectedColumns, bool) {
 }
 
 // HasColumns returns a boolean if a Columns has been set.
-func (o *QueriesItems) HasColumns() bool {
+func (o *QueriesItem) HasColumns() bool {
 	return o != nil && o.Columns.IsSet()
 }
 
 // SetColumns gets a reference to the given datadog.Nullable[SelectedColumns] and assigns it to the Columns field.
-func (o *QueriesItems) SetColumns(v []SelectedColumns) {
+func (o *QueriesItem) SetColumns(v []SelectedColumn) {
 	o.Columns.Set(&v)
 }
 
 // SetColumnsNil sets the value for Columns to be an explicit nil.
-func (o *QueriesItems) SetColumnsNil() {
+func (o *QueriesItem) SetColumnsNil() {
 	o.Columns.Set(nil)
 }
 
 // UnsetColumns ensures that no value is present for Columns, not even an explicit nil.
-func (o *QueriesItems) UnSetColumns() {
+func (o *QueriesItem) UnSetColumns() {
 	o.Columns.UnSet()
 }
 
 // GetAuthor returns the Author field value if set, zero value otherwise.
-func (o *QueriesItems) GetAuthor() string {
+func (o *QueriesItem) GetAuthor() string {
 	if o == nil || o.Author == nil {
 		var ret string
 		return ret
@@ -196,7 +196,7 @@ func (o *QueriesItems) GetAuthor() string {
 
 // GetAuthorOk returns a tuple with the Author field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesItems) GetAuthorOk() (*string, bool) {
+func (o *QueriesItem) GetAuthorOk() (*string, bool) {
 	if o == nil || o.Author == nil {
 		return nil, false
 	}
@@ -204,17 +204,17 @@ func (o *QueriesItems) GetAuthorOk() (*string, bool) {
 }
 
 // HasAuthor returns a boolean if a field has been set.
-func (o *QueriesItems) HasAuthor() bool {
+func (o *QueriesItem) HasAuthor() bool {
 	return o != nil && o.Author != nil
 }
 
 // SetAuthor gets a reference to the given string and assigns it to the Author field.
-func (o *QueriesItems) SetAuthor(v string) {
+func (o *QueriesItem) SetAuthor(v string) {
 	o.Author = &v
 }
 
 // GetInsertDate returns the InsertDate field value if set, zero value otherwise.
-func (o *QueriesItems) GetInsertDate() string {
+func (o *QueriesItem) GetInsertDate() string {
 	if o == nil || o.InsertDate == nil {
 		var ret string
 		return ret
@@ -224,7 +224,7 @@ func (o *QueriesItems) GetInsertDate() string {
 
 // GetInsertDateOk returns a tuple with the InsertDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesItems) GetInsertDateOk() (*string, bool) {
+func (o *QueriesItem) GetInsertDateOk() (*string, bool) {
 	if o == nil || o.InsertDate == nil {
 		return nil, false
 	}
@@ -232,17 +232,17 @@ func (o *QueriesItems) GetInsertDateOk() (*string, bool) {
 }
 
 // HasInsertDate returns a boolean if a field has been set.
-func (o *QueriesItems) HasInsertDate() bool {
+func (o *QueriesItem) HasInsertDate() bool {
 	return o != nil && o.InsertDate != nil
 }
 
 // SetInsertDate gets a reference to the given string and assigns it to the InsertDate field.
-func (o *QueriesItems) SetInsertDate(v string) {
+func (o *QueriesItem) SetInsertDate(v string) {
 	o.InsertDate = &v
 }
 
 // GetLastUpdateDate returns the LastUpdateDate field value if set, zero value otherwise.
-func (o *QueriesItems) GetLastUpdateDate() string {
+func (o *QueriesItem) GetLastUpdateDate() string {
 	if o == nil || o.LastUpdateDate == nil {
 		var ret string
 		return ret
@@ -252,7 +252,7 @@ func (o *QueriesItems) GetLastUpdateDate() string {
 
 // GetLastUpdateDateOk returns a tuple with the LastUpdateDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesItems) GetLastUpdateDateOk() (*string, bool) {
+func (o *QueriesItem) GetLastUpdateDateOk() (*string, bool) {
 	if o == nil || o.LastUpdateDate == nil {
 		return nil, false
 	}
@@ -260,17 +260,17 @@ func (o *QueriesItems) GetLastUpdateDateOk() (*string, bool) {
 }
 
 // HasLastUpdateDate returns a boolean if a field has been set.
-func (o *QueriesItems) HasLastUpdateDate() bool {
+func (o *QueriesItem) HasLastUpdateDate() bool {
 	return o != nil && o.LastUpdateDate != nil
 }
 
 // SetLastUpdateDate gets a reference to the given string and assigns it to the LastUpdateDate field.
-func (o *QueriesItems) SetLastUpdateDate(v string) {
+func (o *QueriesItem) SetLastUpdateDate(v string) {
 	o.LastUpdateDate = &v
 }
 
 // GetQueryType returns the QueryType field value if set, zero value otherwise.
-func (o *QueriesItems) GetQueryType() string {
+func (o *QueriesItem) GetQueryType() string {
 	if o == nil || o.QueryType == nil {
 		var ret string
 		return ret
@@ -280,7 +280,7 @@ func (o *QueriesItems) GetQueryType() string {
 
 // GetQueryTypeOk returns a tuple with the QueryType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesItems) GetQueryTypeOk() (*string, bool) {
+func (o *QueriesItem) GetQueryTypeOk() (*string, bool) {
 	if o == nil || o.QueryType == nil {
 		return nil, false
 	}
@@ -288,17 +288,17 @@ func (o *QueriesItems) GetQueryTypeOk() (*string, bool) {
 }
 
 // HasQueryType returns a boolean if a field has been set.
-func (o *QueriesItems) HasQueryType() bool {
+func (o *QueriesItem) HasQueryType() bool {
 	return o != nil && o.QueryType != nil
 }
 
 // SetQueryType gets a reference to the given string and assigns it to the QueryType field.
-func (o *QueriesItems) SetQueryType(v string) {
+func (o *QueriesItem) SetQueryType(v string) {
 	o.QueryType = &v
 }
 
 // GetDateTimeRange returns the DateTimeRange field value if set, zero value otherwise.
-func (o *QueriesItems) GetDateTimeRange() DateTimeRange {
+func (o *QueriesItem) GetDateTimeRange() DateTimeRange {
 	if o == nil || o.DateTimeRange == nil {
 		var ret DateTimeRange
 		return ret
@@ -308,7 +308,7 @@ func (o *QueriesItems) GetDateTimeRange() DateTimeRange {
 
 // GetDateTimeRangeOk returns a tuple with the DateTimeRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesItems) GetDateTimeRangeOk() (*DateTimeRange, bool) {
+func (o *QueriesItem) GetDateTimeRangeOk() (*DateTimeRange, bool) {
 	if o == nil || o.DateTimeRange == nil {
 		return nil, false
 	}
@@ -316,17 +316,17 @@ func (o *QueriesItems) GetDateTimeRangeOk() (*DateTimeRange, bool) {
 }
 
 // HasDateTimeRange returns a boolean if a field has been set.
-func (o *QueriesItems) HasDateTimeRange() bool {
+func (o *QueriesItem) HasDateTimeRange() bool {
 	return o != nil && o.DateTimeRange != nil
 }
 
 // SetDateTimeRange gets a reference to the given DateTimeRange and assigns it to the DateTimeRange field.
-func (o *QueriesItems) SetDateTimeRange(v DateTimeRange) {
+func (o *QueriesItem) SetDateTimeRange(v DateTimeRange) {
 	o.DateTimeRange = &v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItems) GetTags() []string {
+func (o *QueriesItem) GetTags() []string {
 	if o == nil || o.Tags.Get() == nil {
 		var ret []string
 		return ret
@@ -337,7 +337,7 @@ func (o *QueriesItems) GetTags() []string {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItems) GetTagsOk() (*[]string, bool) {
+func (o *QueriesItem) GetTagsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -345,27 +345,27 @@ func (o *QueriesItems) GetTagsOk() (*[]string, bool) {
 }
 
 // HasTags returns a boolean if a Tags has been set.
-func (o *QueriesItems) HasTags() bool {
+func (o *QueriesItem) HasTags() bool {
 	return o != nil && o.Tags.IsSet()
 }
 
 // SetTags gets a reference to the given datadog.Nullable[]string and assigns it to the Tags field.
-func (o *QueriesItems) SetTags(v []string) {
+func (o *QueriesItem) SetTags(v []string) {
 	o.Tags.Set(&v)
 }
 
 // SetTagsNil sets the value for Tags to be an explicit nil.
-func (o *QueriesItems) SetTagsNil() {
+func (o *QueriesItem) SetTagsNil() {
 	o.Tags.Set(nil)
 }
 
 // UnsetTags ensures that no value is present for Tags, not even an explicit nil.
-func (o *QueriesItems) UnSetTags() {
+func (o *QueriesItem) UnSetTags() {
 	o.Tags.UnSet()
 }
 
 // GetMitreTags returns the MitreTags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItems) GetMitreTags() []string {
+func (o *QueriesItem) GetMitreTags() []string {
 	if o == nil || o.MitreTags.Get() == nil {
 		var ret []string
 		return ret
@@ -376,7 +376,7 @@ func (o *QueriesItems) GetMitreTags() []string {
 // GetMitreTagsOk returns a tuple with the MitreTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItems) GetMitreTagsOk() (*[]string, bool) {
+func (o *QueriesItem) GetMitreTagsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -384,27 +384,27 @@ func (o *QueriesItems) GetMitreTagsOk() (*[]string, bool) {
 }
 
 // HasMitreTags returns a boolean if a MitreTags has been set.
-func (o *QueriesItems) HasMitreTags() bool {
+func (o *QueriesItem) HasMitreTags() bool {
 	return o != nil && o.MitreTags.IsSet()
 }
 
 // SetMitreTags gets a reference to the given datadog.Nullable[]string and assigns it to the MitreTags field.
-func (o *QueriesItems) SetMitreTags(v []string) {
+func (o *QueriesItem) SetMitreTags(v []string) {
 	o.MitreTags.Set(&v)
 }
 
 // SetMitreTagsNil sets the value for MitreTags to be an explicit nil.
-func (o *QueriesItems) SetMitreTagsNil() {
+func (o *QueriesItem) SetMitreTagsNil() {
 	o.MitreTags.Set(nil)
 }
 
 // UnsetMitreTags ensures that no value is present for MitreTags, not even an explicit nil.
-func (o *QueriesItems) UnSetMitreTags() {
+func (o *QueriesItem) UnSetMitreTags() {
 	o.MitreTags.UnSet()
 }
 
 // GetKillChainPhase returns the KillChainPhase field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItems) GetKillChainPhase() string {
+func (o *QueriesItem) GetKillChainPhase() string {
 	if o == nil || o.KillChainPhase.Get() == nil {
 		var ret string
 		return ret
@@ -415,7 +415,7 @@ func (o *QueriesItems) GetKillChainPhase() string {
 // GetKillChainPhaseOk returns a tuple with the KillChainPhase field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItems) GetKillChainPhaseOk() (*string, bool) {
+func (o *QueriesItem) GetKillChainPhaseOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -423,27 +423,27 @@ func (o *QueriesItems) GetKillChainPhaseOk() (*string, bool) {
 }
 
 // HasKillChainPhase returns a boolean if a KillChainPhase has been set.
-func (o *QueriesItems) HasKillChainPhase() bool {
+func (o *QueriesItem) HasKillChainPhase() bool {
 	return o != nil && o.KillChainPhase.IsSet()
 }
 
 // SetKillChainPhase gets a reference to the given datadog.NullableString and assigns it to the KillChainPhase field.
-func (o *QueriesItems) SetKillChainPhase(v string) {
+func (o *QueriesItem) SetKillChainPhase(v string) {
 	o.KillChainPhase.Set(&v)
 }
 
 // SetKillChainPhaseNil sets the value for KillChainPhase to be an explicit nil.
-func (o *QueriesItems) SetKillChainPhaseNil() {
+func (o *QueriesItem) SetKillChainPhaseNil() {
 	o.KillChainPhase.Set(nil)
 }
 
 // UnsetKillChainPhase ensures that no value is present for KillChainPhase, not even an explicit nil.
-func (o *QueriesItems) UnsetKillChainPhase() {
+func (o *QueriesItem) UnsetKillChainPhase() {
 	o.KillChainPhase.UnSet()
 }
 
 // GetFromMarket returns the FromMarket field value if set, zero value otherwise.
-func (o *QueriesItems) GetFromMarket() bool {
+func (o *QueriesItem) GetFromMarket() bool {
 	if o == nil || o.FromMarket == nil {
 		var ret bool
 		return ret
@@ -453,7 +453,7 @@ func (o *QueriesItems) GetFromMarket() bool {
 
 // GetFromMarketOk returns a tuple with the FromMarket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesItems) GetFromMarketOk() (*bool, bool) {
+func (o *QueriesItem) GetFromMarketOk() (*bool, bool) {
 	if o == nil || o.FromMarket == nil {
 		return nil, false
 	}
@@ -461,17 +461,17 @@ func (o *QueriesItems) GetFromMarketOk() (*bool, bool) {
 }
 
 // HasFromMarket returns a boolean if a field has been set.
-func (o *QueriesItems) HasFromMarket() bool {
+func (o *QueriesItem) HasFromMarket() bool {
 	return o != nil && o.FromMarket != nil
 }
 
 // SetFromMarket gets a reference to the given bool and assigns it to the FromMarket field.
-func (o *QueriesItems) SetFromMarket(v bool) {
+func (o *QueriesItem) SetFromMarket(v bool) {
 	o.FromMarket = &v
 }
 
 // GetFromModules returns the FromModules field value if set, zero value otherwise.
-func (o *QueriesItems) GetFromModules() bool {
+func (o *QueriesItem) GetFromModules() bool {
 	if o == nil || o.FromModules == nil {
 		var ret bool
 		return ret
@@ -481,7 +481,7 @@ func (o *QueriesItems) GetFromModules() bool {
 
 // GetFromModulesOk returns a tuple with the FromModules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesItems) GetFromModulesOk() (*bool, bool) {
+func (o *QueriesItem) GetFromModulesOk() (*bool, bool) {
 	if o == nil || o.FromModules == nil {
 		return nil, false
 	}
@@ -489,17 +489,17 @@ func (o *QueriesItems) GetFromModulesOk() (*bool, bool) {
 }
 
 // HasFromModules returns a boolean if a field has been set.
-func (o *QueriesItems) HasFromModules() bool {
+func (o *QueriesItem) HasFromModules() bool {
 	return o != nil && o.FromModules != nil
 }
 
 // SetFromModules gets a reference to the given bool and assigns it to the FromModules field.
-func (o *QueriesItems) SetFromModules(v bool) {
+func (o *QueriesItem) SetFromModules(v bool) {
 	o.FromModules = &v
 }
 
 // GetHasUpdate returns the HasUpdate field value if set, zero value otherwise.
-func (o *QueriesItems) GetHasUpdate() bool {
+func (o *QueriesItem) GetHasUpdate() bool {
 	if o == nil || o.HasUpdate == nil {
 		var ret bool
 		return ret
@@ -509,7 +509,7 @@ func (o *QueriesItems) GetHasUpdate() bool {
 
 // GetHasUpdateOk returns a tuple with the HasUpdate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesItems) GetHasUpdateOk() (*bool, bool) {
+func (o *QueriesItem) GetHasUpdateOk() (*bool, bool) {
 	if o == nil || o.HasUpdate == nil {
 		return nil, false
 	}
@@ -517,17 +517,17 @@ func (o *QueriesItems) GetHasUpdateOk() (*bool, bool) {
 }
 
 // HasHasUpdate returns a boolean if a field has been set.
-func (o *QueriesItems) HasHasUpdate() bool {
+func (o *QueriesItem) HasHasUpdate() bool {
 	return o != nil && o.HasUpdate != nil
 }
 
 // SetHasUpdate gets a reference to the given bool and assigns it to the HasUpdate field.
-func (o *QueriesItems) SetHasUpdate(v bool) {
+func (o *QueriesItem) SetHasUpdate(v bool) {
 	o.HasUpdate = &v
 }
 
 // GetModuleId returns the ModuleId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItems) GetModuleId() string {
+func (o *QueriesItem) GetModuleId() string {
 	if o == nil || o.ModuleId.Get() == nil {
 		var ret string
 		return ret
@@ -538,7 +538,7 @@ func (o *QueriesItems) GetModuleId() string {
 // GetModuleIdOk returns a tuple with the ModuleId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItems) GetModuleIdOk() (*string, bool) {
+func (o *QueriesItem) GetModuleIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -546,27 +546,27 @@ func (o *QueriesItems) GetModuleIdOk() (*string, bool) {
 }
 
 // HasModuleId returns a boolean if a ModuleId has been set.
-func (o *QueriesItems) HasModuleId() bool {
+func (o *QueriesItem) HasModuleId() bool {
 	return o != nil && o.ModuleId.IsSet()
 }
 
 // SetModuleId gets a reference to the given datadog.NullableString and assigns it to the ModuleId field.
-func (o *QueriesItems) SetModuleId(v string) {
+func (o *QueriesItem) SetModuleId(v string) {
 	o.ModuleId.Set(&v)
 }
 
 // SetModuleIdNil sets the value for ModuleId to be an explicit nil.
-func (o *QueriesItems) SetModuleIdNil() {
+func (o *QueriesItem) SetModuleIdNil() {
 	o.ModuleId.Set(nil)
 }
 
 // UnsetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
-func (o *QueriesItems) UnsetModuleId() {
+func (o *QueriesItem) UnsetModuleId() {
 	o.ModuleId.UnSet()
 }
 
 // GetModuleGuid returns the ModuleGuid field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItems) GetModuleGuid() string {
+func (o *QueriesItem) GetModuleGuid() string {
 	if o == nil || o.ModuleGuid.Get() == nil {
 		var ret string
 		return ret
@@ -577,7 +577,7 @@ func (o *QueriesItems) GetModuleGuid() string {
 // GetModuleGuidOk returns a tuple with the ModuleGuid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItems) GetModuleGuidOk() (*string, bool) {
+func (o *QueriesItem) GetModuleGuidOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -585,27 +585,27 @@ func (o *QueriesItems) GetModuleGuidOk() (*string, bool) {
 }
 
 // HasModuleGuid returns a boolean if a ModuleGuid has been set.
-func (o *QueriesItems) HasModuleGuid() bool {
+func (o *QueriesItem) HasModuleGuid() bool {
 	return o != nil && o.ModuleGuid.IsSet()
 }
 
 // SetModuleGuid gets a reference to the given datadog.NullableString and assigns it to the ModuleGuid field.
-func (o *QueriesItems) SetModuleGuid(v string) {
+func (o *QueriesItem) SetModuleGuid(v string) {
 	o.ModuleGuid.Set(&v)
 }
 
 // SetModuleGuidNil sets the value for ModuleGuid to be an explicit nil.
-func (o *QueriesItems) SetModuleGuidNil() {
+func (o *QueriesItem) SetModuleGuidNil() {
 	o.ModuleGuid.Set(nil)
 }
 
 // UnsetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
-func (o *QueriesItems) UnsetModuleGuid() {
+func (o *QueriesItem) UnsetModuleGuid() {
 	o.ModuleGuid.UnSet()
 }
 
 // GetSharedUsersAndGroups returns the SharedUsersAndGroups field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItems) GetSharedUsersAndGroups() []string {
+func (o *QueriesItem) GetSharedUsersAndGroups() []string {
 	if o == nil || o.SharedUsersAndGroups.Get() == nil {
 		var ret []string
 		return ret
@@ -616,7 +616,7 @@ func (o *QueriesItems) GetSharedUsersAndGroups() []string {
 // GetSharedUsersAndGroupsOk returns a tuple with the SharedUsersAndGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItems) GetSharedUsersAndGroupsOk() (*[]string, bool) {
+func (o *QueriesItem) GetSharedUsersAndGroupsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -624,27 +624,27 @@ func (o *QueriesItems) GetSharedUsersAndGroupsOk() (*[]string, bool) {
 }
 
 // HasSharedUsersAndGroups returns a boolean if a SharedUsersAndGroups has been set.
-func (o *QueriesItems) HasSharedUsersAndGroups() bool {
+func (o *QueriesItem) HasSharedUsersAndGroups() bool {
 	return o != nil && o.SharedUsersAndGroups.IsSet()
 }
 
 // SetSharedUsersAndGroups gets a reference to the given datadog.Nullable[]string and assigns it to the SharedUsersAndGroups field.
-func (o *QueriesItems) SetSharedUsersAndGroups(v []string) {
+func (o *QueriesItem) SetSharedUsersAndGroups(v []string) {
 	o.SharedUsersAndGroups.Set(&v)
 }
 
 // SetSharedUsersAndGroupsNil sets the value for SharedUsersAndGroups to be an explicit nil.
-func (o *QueriesItems) SetSharedUsersAndGroupsNil() {
+func (o *QueriesItem) SetSharedUsersAndGroupsNil() {
 	o.SharedUsersAndGroups.Set(nil)
 }
 
 // UnsetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
-func (o *QueriesItems) UnSetSharedUsersAndGroups() {
+func (o *QueriesItem) UnSetSharedUsersAndGroups() {
 	o.SharedUsersAndGroups.UnSet()
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *QueriesItems) GetVersion() float64 {
+func (o *QueriesItem) GetVersion() float64 {
 	if o == nil || o.Version == nil {
 		var ret float64
 		return ret
@@ -654,7 +654,7 @@ func (o *QueriesItems) GetVersion() float64 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesItems) GetVersionOk() (*float64, bool) {
+func (o *QueriesItem) GetVersionOk() (*float64, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -662,17 +662,17 @@ func (o *QueriesItems) GetVersionOk() (*float64, bool) {
 }
 
 // HasVersion returns a boolean if a field has been set.
-func (o *QueriesItems) HasVersion() bool {
+func (o *QueriesItem) HasVersion() bool {
 	return o != nil && o.Version != nil
 }
 
 // SetVersion gets a reference to the given float64 and assigns it to the Version field.
-func (o *QueriesItems) SetVersion(v float64) {
+func (o *QueriesItem) SetVersion(v float64) {
 	o.Version = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o QueriesItems) MarshalJSON() ([]byte, error) {
+func (o QueriesItem) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -745,28 +745,28 @@ func (o QueriesItems) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *QueriesItems) UnMarshalJSON(bytes []byte) (err error) {
+func (o *QueriesItem) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		ID                   *string                              `json:"ID,omitempty"`
-		Name                 *string                              `json:"Name,omitempty"`
-		Description          common.NullableString                `json:"Description,omitempty"`
-		Query                *string                              `json:"Query,omitempty"`
-		Columns              common.NullableList[SelectedColumns] `json:"Columns,omitempty"`
-		Author               *string                              `json:"Author,omitempty"`
-		InsertDate           *string                              `json:"InsertDate,omitempty"`
-		LastUpdateDate       *string                              `json:"LastUpdateDate,omitempty"`
-		QueryType            *string                              `json:"QueryType,omitempty"`
-		DateTimeRange        *DateTimeRange                       `json:"DateTimeRange,omitempty"`
-		Tags                 common.NullableList[string]          `json:"Tags,omitempty"`
-		MitreTags            common.NullableList[string]          `json:"MitreTags,omitempty"`
-		KillChainPhase       common.NullableString                `json:"KillChainPhase,omitempty"`
-		FromMarket           *bool                                `json:"FromMarket,omitempty"`
-		FromModules          *bool                                `json:"FromModules,omitempty"`
-		HasUpdate            *bool                                `json:"HasUpdate,omitempty"`
-		ModuleId             common.NullableString                `json:"ModuleId,omitempty"`
-		ModuleGuid           common.NullableString                `json:"ModuleGuid,omitempty"`
-		SharedUsersAndGroups common.NullableList[string]          `json:"SharedUsersAndGroups,omitempty"`
-		Version              *float64                             `json:"Version,omitempty"`
+		ID                   *string                             `json:"ID,omitempty"`
+		Name                 *string                             `json:"Name,omitempty"`
+		Description          common.NullableString               `json:"Description,omitempty"`
+		Query                *string                             `json:"Query,omitempty"`
+		Columns              common.NullableList[SelectedColumn] `json:"Columns,omitempty"`
+		Author               *string                             `json:"Author,omitempty"`
+		InsertDate           *string                             `json:"InsertDate,omitempty"`
+		LastUpdateDate       *string                             `json:"LastUpdateDate,omitempty"`
+		QueryType            *string                             `json:"QueryType,omitempty"`
+		DateTimeRange        *DateTimeRange                      `json:"DateTimeRange,omitempty"`
+		Tags                 common.NullableList[string]         `json:"Tags,omitempty"`
+		MitreTags            common.NullableList[string]         `json:"MitreTags,omitempty"`
+		KillChainPhase       common.NullableString               `json:"KillChainPhase,omitempty"`
+		FromMarket           *bool                               `json:"FromMarket,omitempty"`
+		FromModules          *bool                               `json:"FromModules,omitempty"`
+		HasUpdate            *bool                               `json:"HasUpdate,omitempty"`
+		ModuleId             common.NullableString               `json:"ModuleId,omitempty"`
+		ModuleGuid           common.NullableString               `json:"ModuleGuid,omitempty"`
+		SharedUsersAndGroups common.NullableList[string]         `json:"SharedUsersAndGroups,omitempty"`
+		Version              *float64                            `json:"Version,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
