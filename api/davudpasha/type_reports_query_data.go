@@ -2,7 +2,7 @@ package davudpasha
 
 import "github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 
-type ReportsReportQueryData struct {
+type ReportsQueryData struct {
 	ItemType        *string                     `json:"ItemType,omitempty"`
 	QueryID         common.NullableString       `json:"QueryID,omitempty"`
 	QueryStr        common.NullableString       `json:"QueryStr,omitempty"`

@@ -15,9 +15,9 @@ type ReportsSearchResponse struct {
 	ReportLink           *string                     `json:"ReportLink,omitempty"`
 	SharedUsersAndGroups common.NullableList[string] `json:"SharedUsersAndGroups,omitempty"`
 	CreatedDate          *string                     `json:"CreatedDate,omitempty"`
-	ReportQuery          []ReportsReportQuery        `json:"ReportQuery,omitempty"`
-
-	UnparsedObject map[string]interface{}
+	ReportQuery          []ReportsQuery              `json:"ReportQuery,omitempty"`
+	ReportData           *ReportsData                `json:"ReportData,omitempty"`
+	UnparsedObject       map[string]interface{}
 	// AdditionalProperties stores any additional properties not explicitly defined in the struct
 	AdditionalProperties map[string]interface{}
 }

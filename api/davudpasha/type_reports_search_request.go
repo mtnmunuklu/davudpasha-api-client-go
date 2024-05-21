@@ -11,6 +11,7 @@ type ReportsSearchRequest struct {
 	ApplicationName         *string               `json:"applicationName,omitempty"`
 	StartDate               common.NullableString `json:"startDate,omitempty"`
 	SmartRestRequestContext *string               `json:"smartRestRequestContext,omitempty"`
+	ShowPassive             *bool                 `json:"showPassive,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
 	UnparsedObject map[string]interface{}
 	// AdditionalProperties stores any additional properties not explicitly defined in the struct
@@ -157,6 +158,34 @@ func (o *ReportsSearchRequest) SetSmartRestRequestContext(v string) {
 	o.SmartRestRequestContext = &v
 }
 
+// GetShowPassive returns the ShowPassive field value if set, zero value otherwise.
+func (o *ReportsSearchRequest) GetShowPassive() bool {
+	if o == nil || o.ShowPassive == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ShowPassive
+}
+
+// GetShowPassiveOk returns a tuple with the ShowPassive field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReportsSearchRequest) GetShowPassiveOk() (*bool, bool) {
+	if o == nil || o.ShowPassive == nil {
+		return nil, false
+	}
+	return o.ShowPassive, true
+}
+
+// HasShowPassive returns a boolean if a field has been set.
+func (o *ReportsSearchRequest) HasShowPassive() bool {
+	return o != nil && o.ShowPassive != nil
+}
+
+// SetShowPassive gets a reference to the given bool and assigns it to the ShowPassive field.
+func (o *ReportsSearchRequest) SetShowPassive(v bool) {
+	o.ShowPassive = &v
+}
+
 // MarshalJSON serializes the struct using spec logic.
 func (o ReportsSearchRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
@@ -175,6 +204,9 @@ func (o ReportsSearchRequest) MarshalJSON() ([]byte, error) {
 	if o.SmartRestRequestContext != nil {
 		toSerialize["smartRestRequestContext"] = o.SmartRestRequestContext
 	}
+	if o.ShowPassive != nil {
+		toSerialize["showPassive"] = o.ShowPassive
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -189,6 +221,7 @@ func (o *ReportsSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 		ApplicationName         *string               `json:"applicationName,omitempty"`
 		StartDate               common.NullableString `json:"startDate,omitempty"`
 		SmartRestRequestContext *string               `json:"smartRestRequestContext,omitempty"`
+		ShowPassive             *bool                 `json:"showPassive,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
@@ -196,7 +229,7 @@ func (o *ReportsSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"searchFilter", "applicationName", "startDate", "smartRestRequestContext"})
+		common.DeleteKeys(additionalProperties, &[]string{"searchFilter", "applicationName", "startDate", "smartRestRequestContext", "showPassive"})
 	} else {
 		return err
 	}
@@ -204,6 +237,7 @@ func (o *ReportsSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 	o.SearchFilter = all.SearchFilter
 	o.ApplicationName = all.ApplicationName
 	o.StartDate = all.StartDate
+	o.ShowPassive = all.ShowPassive
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
