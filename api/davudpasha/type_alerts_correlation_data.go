@@ -459,6 +459,16 @@ func (o *AlertsCorrelationData) GetLimiterColumns() (*[]string, bool) {
 	return o.LimiterColumns.Get(), o.LimiterColumns.IsSet()
 }
 
+// GetLimiterColumnsOk returns a tuple with the LimiterColumns field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
+func (o *AlertsCorrelationData) GetLimiterColumnsOk() (*[]string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.LimiterColumns.Get(), o.LimiterColumns.IsSet()
+}
+
 // HasLimiterColumns returns a boolean if a LimiterColumns has been set.
 func (o *AlertsCorrelationData) HasLimiterColumns() bool {
 	return o != nil && o.LimiterColumns.IsSet()

@@ -34,6 +34,15 @@ func NewAlertsItemWithDefaults() *AlertsItem {
 	return &this
 }
 
+// GetLgsName returns the LgsName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AlertsItem) GetLgsName() string {
+	if o == nil || o.LgsName.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.LgsName.Get()
+}
+
 // GetLgsNameOk returns a tuple with the LgsName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
@@ -118,6 +127,15 @@ func (o *AlertsItem) HasActionRequired() bool {
 // SetActionRequired gets a reference to the given bool and assigns it to the ActionRequired field.
 func (o *AlertsItem) SetActionRequired(v bool) {
 	o.ActionRequired = &v
+}
+
+// GetActionMessage returns the ActionMessage field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AlertsItem) GetActionMessage() string {
+	if o == nil || o.ActionMessage.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.ActionMessage.Get()
 }
 
 // GetActionMessageOk returns a tuple with the ActionMessage field value if set, nil otherwise
