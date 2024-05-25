@@ -277,6 +277,15 @@ func (o *AlertsCorrelationData) SetHasUpdate(v bool) {
 	o.HasUpdate = &v
 }
 
+// GetModuleId returns the ModuleId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AlertsCorrelationData) GetModuleId() string {
+	if o == nil || o.ModuleId.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.ModuleId.Get()
+}
+
 // GetModuleIdOk returns a tuple with the ModuleId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
@@ -305,6 +314,15 @@ func (o *AlertsCorrelationData) SetModuleIdNil() {
 // UnsetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
 func (o *AlertsCorrelationData) UnSetModuleId() {
 	o.ModuleId.UnSet()
+}
+
+// GetModuleGuid returns the ModuleGuid field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AlertsCorrelationData) GetModuleGuid() string {
+	if o == nil || o.ModuleGuid.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.ModuleGuid.Get()
 }
 
 // GetModuleGuidOk returns a tuple with the ModuleGuid field value if set, nil otherwise
