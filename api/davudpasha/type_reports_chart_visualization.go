@@ -601,8 +601,18 @@ func (o *ReportsChartVisualization) UnMarshalJSON(bytes []byte) (err error) {
 	o.LineType = all.LineType
 	o.ShowValues = all.ShowValues
 	o.ShowNullValues = all.ShowNullValues
+	hasInvalidField := false
+	if all.XAxis != nil && all.XAxis.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.XAxis = all.XAxis
+	if all.YAxis != nil && all.YAxis.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.YAxis = all.YAxis
+	if all.Legend != nil && all.Legend.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.Legend = all.Legend
 	o.UiDPModuleId = all.UiDPModuleId
 	o.ColorScheme = all.ColorScheme
@@ -613,6 +623,10 @@ func (o *ReportsChartVisualization) UnMarshalJSON(bytes []byte) (err error) {
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
+	}
+
+	if hasInvalidField {
+		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
 	return nil

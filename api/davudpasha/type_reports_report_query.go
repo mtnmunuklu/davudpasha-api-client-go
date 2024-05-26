@@ -287,15 +287,32 @@ func (o *ReportsQuery) UnMarshalJSON(bytes []byte) (err error) {
 	}
 
 	o.Name = all.Name
+	hasInvalidField := false
+	if all.Data != nil && all.Data.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.Data = all.Data
 	o.ShowTable = all.ShowTable
+	if all.TableVisualization != nil && all.TableVisualization.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.TableVisualization = all.TableVisualization
 	o.ShowChart = all.ShowChart
+	if all.ChartVisualization != nil && all.ChartVisualization.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.ChartVisualization = all.ChartVisualization
+	if all.ExtData != nil && all.ExtData.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.ExtData = all.ExtData
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
+	}
+
+	if hasInvalidField {
+		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
 	return nil

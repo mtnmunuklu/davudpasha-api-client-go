@@ -685,6 +685,10 @@ func (o *ReportsData) UnMarshalJSON(bytes []byte) (err error) {
 	o.Name = all.Name
 	o.FileName = all.FileName
 	o.CreateDate = all.CreateDate
+	hasInvalidField := false
+	if all.Page != nil && all.Page.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.Page = all.Page
 	o.Header = all.Header
 	o.Footer = all.Footer
@@ -701,6 +705,10 @@ func (o *ReportsData) UnMarshalJSON(bytes []byte) (err error) {
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
+	}
+
+	if hasInvalidField {
+		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
 	return nil

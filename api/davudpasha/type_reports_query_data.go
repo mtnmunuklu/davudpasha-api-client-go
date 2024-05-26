@@ -372,12 +372,20 @@ func (o *ReportsQueryData) UnMarshalJSON(bytes []byte) (err error) {
 	o.QueryStr = all.QueryStr
 	o.Code = all.Code
 	o.MaxRowCount = all.MaxRowCount
+	hasInvalidField := false
+	if all.DateTimeRange != nil && all.DateTimeRange.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.DateTimeRange = all.DateTimeRange
 	o.ScriptPath = all.ScriptPath
 	o.ScriptArguments = all.ScriptArguments
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
+	}
+
+	if hasInvalidField {
+		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
 	return nil

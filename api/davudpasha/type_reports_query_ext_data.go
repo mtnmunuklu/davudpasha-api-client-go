@@ -617,6 +617,10 @@ func (o *ReportsQueryExtData) UnMarshalJSON(bytes []byte) (err error) {
 	}
 
 	o.ReportType = all.ReportType
+	hasInvalidField := false
+	if all.DateTimeRange != nil && all.DateTimeRange.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.DateTimeRange = all.DateTimeRange
 	o.Alerts = all.Alerts
 	o.LogPositions = all.LogPositions
@@ -636,6 +640,10 @@ func (o *ReportsQueryExtData) UnMarshalJSON(bytes []byte) (err error) {
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
+	}
+
+	if hasInvalidField {
+		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
 	return nil

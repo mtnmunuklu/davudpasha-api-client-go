@@ -980,6 +980,10 @@ func (o *ReportsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 	o.SharedUsersAndGroups = all.SharedUsersAndGroups
 	o.CreatedDate = all.CreatedDate
 	o.ReportQuery = all.ReportQuery
+	hasInvalidField := false
+	if all.ReportData != nil && all.ReportData.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.ReportData = all.ReportData
 	o.Schedule = all.Schedule
 	o.LastGenerationTime = all.LastGenerationTime
@@ -998,6 +1002,10 @@ func (o *ReportsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
+	}
+
+	if hasInvalidField {
+		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
 	return nil

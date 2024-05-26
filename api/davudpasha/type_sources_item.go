@@ -1251,6 +1251,10 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 	o.AgentId = all.AgentId
 	o.WriteRawLogs = all.WriteRawLogs
 	o.UseSecondaryWriter = all.UseSecondaryWriter
+	hasInvalidField := false
+	if all.ParallelOptions != nil && all.ParallelOptions.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.ParallelOptions = all.ParallelOptions
 	o.BlockCount = all.BlockCount
 	o.ScheduleConfig = all.ScheduleConfig
@@ -1260,6 +1264,10 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
+	}
+
+	if hasInvalidField {
+		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
 	return nil

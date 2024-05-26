@@ -842,6 +842,10 @@ func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 	o.LimiterTimeFrameType = all.LimiterTimeFrameType
 	o.LimiterTimeFrameValue = all.LimiterTimeFrameValue
 	o.LimiterColumns = all.LimiterColumns
+	hasInvalidField := false
+	if all.Actions != nil && all.Actions.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.Actions = all.Actions
 	o.MaxSendCount = all.MaxSendCount
 	o.Data = all.Data
@@ -852,6 +856,10 @@ func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
+	}
+
+	if hasInvalidField {
+		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
 	return nil
