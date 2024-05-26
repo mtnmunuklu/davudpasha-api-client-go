@@ -129,8 +129,8 @@ func (o SourcesSearchResponse) MarshalJSON() ([]byte, error) {
 	if o.FailedItems != nil {
 		toSerialize["FailedItems"] = o.FailedItems
 	}
-	if o.FailedItems != nil {
-		toSerialize["SuccessItem"] = o.SuccessItems
+	if o.SuccessItems != nil {
+		toSerialize["SuccessItems"] = o.SuccessItems
 	}
 
 	for key, value := range o.AdditionalProperties {
