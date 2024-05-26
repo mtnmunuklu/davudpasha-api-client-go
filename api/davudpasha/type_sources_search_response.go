@@ -25,10 +25,10 @@ func NewSourcesSearchResponse() *SourcesSearchResponse {
 	return &this
 }
 
-// NewSourcesSearchResponseWithDefault creates a new SourcesSearchResponse object.
+// NewSourcesSearchResponseWithDefaults creates a new SourcesSearchResponse object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewSourcesSearchResponseWithDefault() *SourcesSearchResponse {
+func NewSourcesSearchResponseWithDefaults() *SourcesSearchResponse {
 	this := SourcesSearchResponse{}
 	return &this
 }
