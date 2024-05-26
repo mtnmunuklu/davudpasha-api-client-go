@@ -23,10 +23,10 @@ func NewReportsChartLegend() *ReportsChartLegend {
 	return &this
 }
 
-// NewReportsChartLegendWithDefault creates a new ReportsChartLegend object.
+// NewReportsChartLegendWithDefaults creates a new ReportsChartLegend object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewReportsChartLegendWithDefault() *ReportsChartLegend {
+func NewReportsChartLegendWithDefaults() *ReportsChartLegend {
 	this := ReportsChartLegend{}
 	return &this
 }

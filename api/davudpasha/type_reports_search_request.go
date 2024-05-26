@@ -27,10 +27,10 @@ func NewReportsSearchRequest() *ReportsSearchRequest {
 	return &this
 }
 
-// NewReportsSearchRequestWithDefault creates a new ReportsSearchRequest object.
+// NewReportsSearchRequestWithDefaults creates a new ReportsSearchRequest object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewReportsSearchRequestWithDefault() *ReportsSearchRequest {
+func NewReportsSearchRequestWithDefaults() *ReportsSearchRequest {
 	this := ReportsSearchRequest{}
 	return &this
 }

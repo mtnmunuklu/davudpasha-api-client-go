@@ -30,10 +30,10 @@ func NewReportsPage() *ReportsPage {
 	return &this
 }
 
-// NewReportsPageWithDefault creates a new ReportsPage object.
+// NewReportsPageWithDefaults creates a new ReportsPage object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewReportsPageWithDefault() *ReportsPage {
+func NewReportsPageWithDefaults() *ReportsPage {
 	this := ReportsPage{}
 	return &this
 }

@@ -25,7 +25,7 @@ func NewReportsChartXAxis() *ReportsChartXAxis {
 	return &this
 }
 
-// NewReportsChartXAxisWithDefault creates a new ReportsChartXAxis object.
+// NewReportsChartXAxisWithDefaults creates a new ReportsChartXAxis object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
 func NewReportsChartXAxisWithDefaults() *ReportsChartXAxis {
