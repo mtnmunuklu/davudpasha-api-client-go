@@ -326,7 +326,7 @@ func (o *ReportsPage) UnMarshalJSON(bytes []byte) (err error) {
 	o.LeftMargin = all.LeftMargin
 	o.RightMargin = all.RightMargin
 	o.HeaderDistance = all.HeaderDistance
-	o.FooterDistance = all.HeaderDistance
+	o.FooterDistance = all.FooterDistance
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
