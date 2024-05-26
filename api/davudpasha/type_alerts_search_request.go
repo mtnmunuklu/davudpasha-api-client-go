@@ -29,7 +29,7 @@ func NewAlertsSearchRequest() *AlertsSearchRequest {
 // NewAlertsSearchRequestWithDefaults creates a new AlertsSearchRequest object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewAlertsSearchRequestWithDefault() *AlertsSearchRequest {
+func NewAlertsSearchRequestWithDefaults() *AlertsSearchRequest {
 	this := AlertsSearchRequest{}
 	return &this
 }

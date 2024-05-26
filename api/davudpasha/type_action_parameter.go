@@ -24,10 +24,10 @@ func NewActionParameter() *ActionParameter {
 	return &this
 }
 
-// NewActionParameterWithDefault creates a new ActionParameter object.
+// NewActionParameterWithDefaults creates a new ActionParameter object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewActionParameterWithDefault() *ActionParameter {
+func NewActionParameterWithDefaults() *ActionParameter {
 	this := ActionParameter{}
 	return &this
 }

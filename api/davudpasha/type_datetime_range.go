@@ -35,7 +35,7 @@ func NewDateTimeRange(dateTimeType DateTimeType) *DateTimeRange {
 // NewDateTimeRangeWithDefaults creates a new DateTimeRange object.
 // This constructor will assign default values to properties that have it defined,
 // but it doensn't guarantee that properties requiered by API are set.
-func NewDateTimeRangeWithDefault(dateTimeType DateTimeType) *DateTimeRange {
+func NewDateTimeRangeWithDefaults(dateTimeType DateTimeType) *DateTimeRange {
 	this := DateTimeRange{}
 	this.DateTimeType = dateTimeType
 	return &this

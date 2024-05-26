@@ -26,10 +26,10 @@ func NewQueriesSearchResponse() *QueriesSearchResponse {
 	return &this
 }
 
-// NewQueriesSearchResponseWithDefault creates a new QueriesSearchResponse object.
+// NewQueriesSearchResponseWithDefaults creates a new QueriesSearchResponse object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewQueriesSearchResponseWithDefault() *QueriesSearchResponse {
+func NewQueriesSearchResponseWithDefaults() *QueriesSearchResponse {
 	this := QueriesSearchResponse{}
 	return &this
 }

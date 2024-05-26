@@ -26,7 +26,7 @@ func NewAlertsItem() *AlertsItem {
 	return &this
 }
 
-// NewAlertsItemWithDefault creates a new AlertsItem object.
+// NewAlertsItemWithDefaults creates a new AlertsItem object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
 func NewAlertsItemWithDefaults() *AlertsItem {

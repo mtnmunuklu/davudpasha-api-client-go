@@ -29,7 +29,7 @@ func NewAction() *Action {
 // NewActionWithDefaults creates a new Action object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewActionWithDefault() *Action {
+func NewActionWithDefaults() *Action {
 	this := Action{}
 	return &this
 }

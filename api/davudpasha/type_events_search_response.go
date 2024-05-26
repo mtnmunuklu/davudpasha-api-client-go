@@ -36,7 +36,7 @@ func NewEventsSearchResponse() *EventsSearchResponse {
 // NewEventsSearchResponseWithDefaults creates a new EventsSearchResponse object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewEventsSearchResponseWithDefault() *EventsSearchResponse {
+func NewEventsSearchResponseWithDefaults() *EventsSearchResponse {
 	this := EventsSearchResponse{}
 	return &this
 }

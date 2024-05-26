@@ -28,7 +28,7 @@ func NewSuccessItem() *SuccessItem {
 // NewSuccessItemWithDefaults creates a new SuccessItem object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewSuccessItemWithDefault() *SuccessItem {
+func NewSuccessItemWithDefaults() *SuccessItem {
 	this := SuccessItem{}
 	return &this
 }
