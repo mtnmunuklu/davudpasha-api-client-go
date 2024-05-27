@@ -7,43 +7,75 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourcesItem represents an item in the sources.
 type SourcesItem struct {
-	Id                  *string                     `json:"Id,omitempty"`
-	Enabled             *bool                       `json:"Enabled,omitempty"`
-	Name                *string                     `json:"Name,omitempty"`
-	Group               common.NullableString       `json:"Group,omitempty"`
-	Author              common.NullableString       `json:"Author,omitempty"`
-	LogSourceDefCode    *string                     `json:"LogSourceDefCode,omitempty"`
-	LogReaderType       *string                     `json:"LogReaderType,omitempty"`
-	Tags                []string                    `json:"Tags,omitempty"`
-	AlertTimeout        *int64                      `json:"AlertTimeout,omitempty"`
-	LogReaderData       *json.RawMessage            `json:"LogReaderData,omitempty"`
-	LogOperations       []SourcesLogOperation       `json:"LogOperations,omitempty"`
-	DiscardedLogsConfig *string                     `json:"DiscardedLogsConfig,omitempty"`
-	Value               *string                     `json:"value,omitempty"`
-	Label               *string                     `json:"label,omitempty"`
-	IsDeleted           *bool                       `json:"IsDeleted,omitempty"`
-	IsAgentSource       *bool                       `json:"IsAgentSource,omitempty"`
-	AgentIds            common.NullableList[string] `json:"AgentIds,omitempty"`
-	IndexGroupName      common.NullableString       `json:"IndexGroupName,omitempty"`
-	DashboardName       *string                     `json:"dashboardName,omitempty"`
-	DashboardId         common.NullableString       `json:"dashboardId,omitempty"`
-	AssetTags           common.NullableList[string] `json:"AssetTags,omitempty"`
-	LogRemoveTime       common.NullableString       `json:"LogRemoveTime,omitempty"`
-	LogRemoveFormat     common.NullableString       `json:"LogRemoveFormat,omitempty"`
-	AgentId             common.NullableString       `json:"AgentId,omitempty"`
-	WriteRawLogs        *bool                       `json:"WriteRawLogs,omitempty"`
-	UseSecondaryWriter  *bool                       `json:"UseSecondaryWriter,omitempty"`
-	ParallelOptions     *ParallelOptions            `json:"ParallelOptions,omitempty"`
-	BlockCount          *int64                      `json:"BlockCount,omitempty"`
-	ScheduleConfig      NullableScheduleConfig      `json:"ScheduleConfig,omitempty"`
-	StoreRawLogs        *bool                       `json:"StoreRawLogs,omitempty"`
-	StoreRawLogsLgs     *string                     `json:"StoreRawLogsLgs,omitempty"`
-	IsEditable          *bool                       `json:"IsEditable,omitempty"`
-
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// ID of the source item.
+	Id *string `json:"Id,omitempty"`
+	// Indicates if the source item is enabled.
+	Enabled *bool `json:"Enabled,omitempty"`
+	// Name of the source item.
+	Name *string `json:"Name,omitempty"`
+	// Group of the source item.
+	Group common.NullableString `json:"Group,omitempty"`
+	// Author of the source item.
+	Author common.NullableString `json:"Author,omitempty"`
+	// Code defining the log source.
+	LogSourceDefCode *string `json:"LogSourceDefCode,omitempty"`
+	// Type of the log reader.
+	LogReaderType *string `json:"LogReaderType,omitempty"`
+	// Tags associated with the source item.
+	Tags []string `json:"Tags,omitempty"`
+	// Timeout for alerts.
+	AlertTimeout *int64 `json:"AlertTimeout,omitempty"`
+	// Data related to log reader.
+	LogReaderData *json.RawMessage `json:"LogReaderData,omitempty"`
+	// Log operations associated with the source item.
+	LogOperations []SourcesLogOperation `json:"LogOperations,omitempty"`
+	// Configuration for discarded logs.
+	DiscardedLogsConfig *string `json:"DiscardedLogsConfig,omitempty"`
+	// Value of the source item.
+	Value *string `json:"value,omitempty"`
+	// Label of the source item.
+	Label *string `json:"label,omitempty"`
+	// Indicates if the source item is deleted.
+	IsDeleted *bool `json:"IsDeleted,omitempty"`
+	// Indicates if the source item is an agent source.
+	IsAgentSource *bool `json:"IsAgentSource,omitempty"`
+	// IDs of associated agents.
+	AgentIds common.NullableList[string] `json:"AgentIds,omitempty"`
+	// Name of the index group.
+	IndexGroupName common.NullableString `json:"IndexGroupName,omitempty"`
+	// Name of the associated dashboard.
+	DashboardName *string `json:"dashboardName,omitempty"`
+	// ID of the associated dashboard.
+	DashboardId common.NullableString `json:"dashboardId,omitempty"`
+	// Asset tags associated with the source item.
+	AssetTags common.NullableList[string] `json:"AssetTags,omitempty"`
+	// Time to remove logs.
+	LogRemoveTime common.NullableString `json:"LogRemoveTime,omitempty"`
+	// Format to remove logs.
+	LogRemoveFormat common.NullableString `json:"LogRemoveFormat,omitempty"`
+	// ID of the associated agent.
+	AgentId common.NullableString `json:"AgentId,omitempty"`
+	// Indicates if raw logs should be written.
+	WriteRawLogs *bool `json:"WriteRawLogs,omitempty"`
+	// Indicates if a secondary writer should be used.
+	UseSecondaryWriter *bool `json:"UseSecondaryWriter,omitempty"`
+	// Parallel options for the source item.
+	ParallelOptions *ParallelOptions `json:"ParallelOptions,omitempty"`
+	// Block count for the source item.
+	BlockCount *int64 `json:"BlockCount,omitempty"`
+	// Schedule configuration for the source item.
+	ScheduleConfig NullableScheduleConfig `json:"ScheduleConfig,omitempty"`
+	// Indicates if raw logs should be stored.
+	StoreRawLogs *bool `json:"StoreRawLogs,omitempty"`
+	// Name of the LGS for storing raw logs.
+	StoreRawLogsLgs *string `json:"StoreRawLogsLgs,omitempty"`
+	// Indicates if the source item is editable.
+	IsEditable *bool `json:"IsEditable,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

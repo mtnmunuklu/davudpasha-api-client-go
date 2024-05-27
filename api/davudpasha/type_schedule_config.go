@@ -6,23 +6,37 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ScheduleConfig represents the configuration for scheduling tasks.
 type ScheduleConfig struct {
-	ScheduleFullDateTime *string  `json:"ScheduleFullDateTime,omitempty"`
-	ScheduleType         *string  `json:"ScheduleType,omitempty"`
-	TimeTics             *int64   `json:"TimeTics,omitempty"`
-	Time                 *string  `json:"Time,omitempty"`
-	DateStr              *string  `json:"DateStr,omitempty"`
-	Days                 []string `json:"Days,omitempty"`
-	DaysNumber           []int64  `json:"DaysNumber,omitempty"`
-	DayNo                *int64   `json:"DayNo,omitempty"`
-	Day                  *string  `json:"Day,omitempty"`
-	DayNumber            *int64   `json:"DayNumber,omitempty"`
-	WeekType             *string  `json:"WeekType,omitempty"`
-	TimeType             *string  `json:"TimeType,omitempty"`
-	TimeValue            *int64   `json:"TimeValue,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Full date and time of the schedule.
+	ScheduleFullDateTime *string `json:"ScheduleFullDateTime,omitempty"`
+	// Type of the schedule.
+	ScheduleType *string `json:"ScheduleType,omitempty"`
+	// Time ticks.
+	TimeTics *int64 `json:"TimeTics,omitempty"`
+	// Time for the schedule.
+	Time *string `json:"Time,omitempty"`
+	// Date string for the schedule.
+	DateStr *string `json:"DateStr,omitempty"`
+	// Days for the schedule.
+	Days []string `json:"Days,omitempty"`
+	// Numbers representing days for the schedule.
+	DaysNumber []int64 `json:"DaysNumber,omitempty"`
+	// Number of the day.
+	DayNo *int64 `json:"DayNo,omitempty"`
+	// Day of the schedule.
+	Day *string `json:"Day,omitempty"`
+	// Number representing the day.
+	DayNumber *int64 `json:"DayNumber,omitempty"`
+	// Type of the week for the schedule.
+	WeekType *string `json:"WeekType,omitempty"`
+	// Type of time for the schedule.
+	TimeType *string `json:"TimeType,omitempty"`
+	// Value representing time for the schedule.
+	TimeValue *int64 `json:"TimeValue,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

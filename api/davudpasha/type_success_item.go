@@ -6,13 +6,17 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SuccessItem represents an item indicating a successful operation.
 type SuccessItem struct {
-	Application *string  `json:"Application,omitempty"`
-	Keys        []string `json:"Keys,omitempty"`
-	SourceType  *string  `json:"SourceType,omitempty"`
+	// Application associated with the success item.
+	Application *string `json:"Application,omitempty"`
+	// Keys related to the success item.
+	Keys []string `json:"Keys,omitempty"`
+	// Source type of the success item.
+	SourceType *string `json:"SourceType,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

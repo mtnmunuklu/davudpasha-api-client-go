@@ -6,13 +6,17 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsParameters represents the parameters for reports.
 type ReportsParameters struct {
-	Parameters []string         `json:"Parameters,omitempty"`
-	Datas      *json.RawMessage `json:"Datas,omitempty"`
-	IsActive   *bool            `json:"IsActive,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// List of parameters for the report.
+	Parameters []string `json:"Parameters,omitempty"`
+	// Raw JSON message for the report data.
+	Datas *json.RawMessage `json:"Datas,omitempty"`
+	// Indicates if the report is active.
+	IsActive *bool `json:"IsActive,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

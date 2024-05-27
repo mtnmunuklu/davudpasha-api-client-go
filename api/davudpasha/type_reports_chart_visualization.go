@@ -6,26 +6,43 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsChartVisualization defines the visualization configuration for a chart in reports.
 type ReportsChartVisualization struct {
-	ChartType      *string               `json:"ChartType,omitempty"`
-	SerieColors    []string              `json:"SerieColors,omitempty"`
-	LineWidth      *int64                `json:"LineWidth,omitempty"`
-	InnerRadius    *float64              `json:"InnerRadius,omitempty"`
-	LineType       *string               `json:"LineType,omitempty"`
-	ShowValues     *bool                 `json:"ShowValues,omitempty"`
-	ShowNullValues *bool                 `json:"ShowNullValues,omitempty"`
-	XAxis          *ReportsChartXAxis    `json:"XAxis,omitempty"`
-	YAxis          *ReportsChartYAxis    `json:"YAxis,omitempty"`
-	Legend         *ReportsChartLegend   `json:"Legend,omitempty"`
-	UiDPModuleId   *string               `json:"UiDPModuleId,omitempty"`
-	ColorScheme    common.NullableString `json:"ColorScheme,omitempty"`
-	Settings       *string               `json:"Settings,omitempty"`
-	MaxRowCount    *int64                `json:"MaxRowCount,omitempty"`
-	SlicesNumber   *int64                `json:"SlicesNumber,omitempty"`
-	ShowLabel      *bool                 `json:"ShowLabel,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Type of chart.
+	ChartType *string `json:"ChartType,omitempty"`
+	// Colors for series in the chart.
+	SerieColors []string `json:"SerieColors,omitempty"`
+	// Line width for the chart.
+	LineWidth *int64 `json:"LineWidth,omitempty"`
+	// Inner radius for the chart (applicable for pie charts).
+	InnerRadius *float64 `json:"InnerRadius,omitempty"`
+	// Line type for the chart.
+	LineType *string `json:"LineType,omitempty"`
+	// Indicates whether to show values on the chart.
+	ShowValues *bool `json:"ShowValues,omitempty"`
+	// Indicates whether to show null values on the chart.
+	ShowNullValues *bool `json:"ShowNullValues,omitempty"`
+	// X-axis configuration for the chart.
+	XAxis *ReportsChartXAxis `json:"XAxis,omitempty"`
+	// Y-axis configuration for the chart.
+	YAxis *ReportsChartYAxis `json:"YAxis,omitempty"`
+	// Legend configuration for the chart.
+	Legend *ReportsChartLegend `json:"Legend,omitempty"`
+	// ID of the UI DP module.
+	UiDPModuleId *string `json:"UiDPModuleId,omitempty"`
+	// Color scheme for the chart.
+	ColorScheme common.NullableString `json:"ColorScheme,omitempty"`
+	// Additional settings for the chart.
+	Settings *string `json:"Settings,omitempty"`
+	// Maximum row count for the chart data.
+	MaxRowCount *int64 `json:"MaxRowCount,omitempty"`
+	// Number of slices for pie charts.
+	SlicesNumber *int64 `json:"SlicesNumber,omitempty"`
+	// Indicates whether to show labels on the chart.
+	ShowLabel *bool `json:"ShowLabel,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

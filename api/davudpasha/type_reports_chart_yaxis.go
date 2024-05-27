@@ -6,14 +6,19 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsChartYAxis defines the configuration for the Y-axis of a chart in reports.
 type ReportsChartYAxis struct {
-	Label    *string              `json:"Label,omitempty"`
-	Interval *int64               `json:"Interval,omitempty"`
+	// Label for the y-axis.
+	Label *string `json:"Label,omitempty"`
+	// Interval for y-axis values.
+	Interval *int64 `json:"Interval,omitempty"`
+	// Minimum value for the y-axis.
 	MinValue common.NullableInt64 `json:"MinValue,omitempty"`
+	// Maximum value for the y-axis.
 	MaxValue common.NullableInt64 `json:"MaxValue,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

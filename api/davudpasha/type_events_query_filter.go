@@ -7,7 +7,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// EventsQueryFilter represents the search and filter query settings.
+// EventsQueryFilter represents the filter used for querying events.
 type EventsQueryFilter struct {
 	// QuerySQL is the SQL query for filtering events.
 	QuerySQL *string `json:"QuerySQL,omitempty"`

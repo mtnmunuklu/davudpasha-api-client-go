@@ -6,14 +6,19 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsLatestReportFile contains information about the latest report file.
 type ReportsLatestReportFile struct {
-	Filename           *string `json:"Filename,omitempty"`
-	Status             *string `json:"Status,omitempty"`
+	// Filename of the latest report file.
+	Filename *string `json:"Filename,omitempty"`
+	// Status of the latest report file.
+	Status *string `json:"Status,omitempty"`
+	// ID of the latest report file in GridFS.
 	ReportGridFSFileId *string `json:"ReportGridFSFileId,omitempty"`
-	RunDate            *string `json:"RunDate,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Run date of the latest report file.
+	RunDate *string `json:"RunDate,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

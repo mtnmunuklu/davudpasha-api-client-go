@@ -6,12 +6,15 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// Actions represents a collection of actions.
 type Actions struct {
-	Actions      []Action                    `json:"Actions,omitempty"`
+	// List of actions.
+	Actions []Action `json:"Actions,omitempty"`
+	// List of action reference IDs.
 	ActionRefIds common.NullableList[string] `json:"ActionRefIds,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

@@ -9,13 +9,15 @@ import (
 
 // QueriesSearchRequest is the object sent with a request to retrieve a list of queries from your organization.
 type QueriesSearchRequest struct {
+	// Username for the search request.
 	Username *string `json:"username,omitempty"`
-	Filter   *string `json:"filter,omitempty"`
-	// SmartRestRequestContext is the context for the Smart REST request.
+	// Filter for the search request.
+	Filter *string `json:"filter,omitempty"`
+	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

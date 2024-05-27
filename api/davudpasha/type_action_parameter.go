@@ -6,12 +6,15 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ActionParameter represents a parameter for an action.
 type ActionParameter struct {
-	Key   *string `json:"Key,omitempty"`
+	// Key of the action parameter.
+	Key *string `json:"Key,omitempty"`
+	// Value of the action parameter.
 	Value *string `json:"Value,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

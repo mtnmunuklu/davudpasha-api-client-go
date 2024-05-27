@@ -8,12 +8,15 @@ import (
 
 // QueriesSearchResponse is the response object with all queries matching the request.
 type QueriesSearchResponse struct {
-	Items        []QueriesItem     `json:"Items,omitempty"`
-	FailedItems  []json.RawMessage `json:"FailedItems,omitempty"`
-	SuccessItems []SuccessItem     `json:"SuccessItems,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// List of query items.
+	Items []QueriesItem `json:"Items,omitempty"`
+	// List of failed items in raw JSON format.
+	FailedItems []json.RawMessage `json:"FailedItems,omitempty"`
+	// List of successful items.
+	SuccessItems []SuccessItem `json:"SuccessItems,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

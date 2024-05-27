@@ -6,7 +6,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// EventsQueryOptions represents the global query options that are used.
+// EventsQueryOptions represents the query options that are used.
 type EventsQueryOptions struct {
 	// ShowHighlight indicates whether to show highlight.
 	ShowHighlight *bool `json:"ShowHighlight,omitempty"`

@@ -6,15 +6,21 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsSearchRequest represents a request to search reports.
 type ReportsSearchRequest struct {
-	SearchFilter            *string               `json:"searchFilter,omitempty"`
-	ApplicationName         *string               `json:"applicationName,omitempty"`
-	StartDate               common.NullableString `json:"startDate,omitempty"`
-	SmartRestRequestContext *string               `json:"smartRestRequestContext,omitempty"`
-	ShowPassive             *bool                 `json:"showPassive,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Filter for the search.
+	SearchFilter *string `json:"searchFilter,omitempty"`
+	// Name of the application.
+	ApplicationName *string `json:"applicationName,omitempty"`
+	// Start date for the search.
+	StartDate common.NullableString `json:"startDate,omitempty"`
+	// Context for the Smart REST request.
+	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
+	// Indicates whether to show passive reports.
+	ShowPassive *bool `json:"showPassive,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

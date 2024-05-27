@@ -6,13 +6,17 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// AlertsSearchResponse contains the response data for an alerts search.
 type AlertsSearchResponse struct {
-	Items        []AlertsItem      `json:"Items,omitempty"`
-	FailedItems  []json.RawMessage `json:"FailedItems,omitempty"`
-	SuccessItems []SuccessItem     `json:"SuccessItems,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// List of alert items.
+	Items []AlertsItem `json:"Items,omitempty"`
+	// List of failed items in raw JSON format.
+	FailedItems []json.RawMessage `json:"FailedItems,omitempty"`
+	// List of successful items.
+	SuccessItems []SuccessItem `json:"SuccessItems,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

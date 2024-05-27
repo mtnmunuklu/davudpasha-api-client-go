@@ -6,18 +6,27 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsPage defines the layout settings for a page in reports.
 type ReportsPage struct {
-	IsA3           *bool  `json:"IsA3,omitempty"`
-	IsLandscape    *bool  `json:"IsLandscape,omitempty"`
-	TopMargin      *int64 `json:"TopMargin,omitempty"`
-	BottomMargin   *int64 `json:"BottomMargin,omitempty"`
-	LeftMargin     *int64 `json:"LeftMargin,omitempty"`
-	RightMargin    *int64 `json:"RightMargin,omitempty"`
+	// Indicates if the page size is A3.
+	IsA3 *bool `json:"IsA3,omitempty"`
+	// Indicates if the page orientation is landscape.
+	IsLandscape *bool `json:"IsLandscape,omitempty"`
+	// Top margin of the page.
+	TopMargin *int64 `json:"TopMargin,omitempty"`
+	// Bottom margin of the page.
+	BottomMargin *int64 `json:"BottomMargin,omitempty"`
+	// Left margin of the page.
+	LeftMargin *int64 `json:"LeftMargin,omitempty"`
+	// Right margin of the page.
+	RightMargin *int64 `json:"RightMargin,omitempty"`
+	// Distance of the header from the top of the page.
 	HeaderDistance *int64 `json:"HeaderDistance,omitempty"`
+	// Distance of the footer from the bottom of the page.
 	FooterDistance *int64 `json:"FooterDistance,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

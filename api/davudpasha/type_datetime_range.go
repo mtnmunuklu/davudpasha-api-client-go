@@ -7,7 +7,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// DateTimeRange represents the date time range for events.
+// DateTimeRange represents a range of date and time.
 type DateTimeRange struct {
 	// DateTimeType specifies the type of date time range
 	DateTimeType DateTimeType `json:"DateTimeType"`

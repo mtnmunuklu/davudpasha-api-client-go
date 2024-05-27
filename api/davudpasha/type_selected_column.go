@@ -7,13 +7,17 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SelectedColumn represents a selected column in a query.
 type SelectedColumn struct {
-	Value       *string               `json:"Value,omitempty"`
-	DisplayText *string               `json:"DisplayText,omitempty"`
-	Lookup      common.NullableString `json:"Lookup,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Value of the column.
+	Value *string `json:"Value,omitempty"`
+	// Text to display for the column.
+	DisplayText *string `json:"DisplayText,omitempty"`
+	// Lookup value for the column.
+	Lookup common.NullableString `json:"Lookup,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

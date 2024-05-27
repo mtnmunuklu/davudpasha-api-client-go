@@ -6,14 +6,19 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// AlertsItem represents an item in alerts.
 type AlertsItem struct {
-	LgsName         common.NullableString  `json:"LgsName,omitempty"`
+	// LGS name.
+	LgsName common.NullableString `json:"LgsName,omitempty"`
+	// Correlation data.
 	CorrelationData *AlertsCorrelationData `json:"CorrelationData,omitempty"`
-	ActionRequired  *bool                  `json:"ActionRequired,omitempty"`
-	ActionMessage   common.NullableString  `json:"ActionMessage,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Indicates if action is required.
+	ActionRequired *bool `json:"ActionRequired,omitempty"`
+	// Message for the required action.
+	ActionMessage common.NullableString `json:"ActionMessage,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

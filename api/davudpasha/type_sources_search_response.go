@@ -6,13 +6,17 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourcesSearchResponse represents a response for searching sources.
 type SourcesSearchResponse struct {
-	Items        []SourcesItem     `json:"Items,omitempty"`
-	FailedItems  []json.RawMessage `json:"FailedItems,omitempty"`
-	SuccessItems []SuccessItem     `json:"SuccessItems,omitempty"`
+	// Items retrieved from the search.
+	Items []SourcesItem `json:"Items,omitempty"`
+	// Items that failed during the search.
+	FailedItems []json.RawMessage `json:"FailedItems,omitempty"`
+	// Items that were successfully retrieved.
+	SuccessItems []SuccessItem `json:"SuccessItems,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

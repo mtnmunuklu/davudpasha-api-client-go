@@ -6,9 +6,13 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourcesLogOperation represents a log operation in the sources.
 type SourcesLogOperation struct {
-	ModuleName *string          `json:"ModuleName,omitempty"`
-	Priority   *string          `json:"Priority,omitempty"`
+	// Name of the module.
+	ModuleName *string `json:"ModuleName,omitempty"`
+	// Priority of the log operation.
+	Priority *string `json:"Priority,omitempty"`
+	// Parameters for the log operation.
 	Parameters *json.RawMessage `json:"Parameters,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
 	UnparsedObject map[string]interface{} `json:"-"`

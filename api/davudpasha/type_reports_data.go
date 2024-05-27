@@ -6,26 +6,43 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsData contains the data and settings for generating reports.
 type ReportsData struct {
-	Name         common.NullableString `json:"Name,omitempty"`
-	FileName     common.NullableString `json:"FileName,omitempty"`
-	CreateDate   *string               `json:"CreateDate,omitempty"`
-	Page         *ReportsPage          `json:"Page,omitempty"`
-	Header       common.NullableString `json:"Header,omitempty"`
-	Footer       common.NullableString `json:"Footer,omitempty"`
-	CoverPage    common.NullableString `json:"CoverPage,omitempty"`
-	Sections     []string              `json:"Sections,omitempty"`
-	ReportType   *string               `json:"ReportType,omitempty"`
-	Theme        common.NullableString `json:"Theme,omitempty"`
-	Language     *string               `json:"Language,omitempty"`
-	AddCoverPage *bool                 `json:"AddCoverPage,omitempty"`
+	// Name of the report.
+	Name common.NullableString `json:"Name,omitempty"`
+	// Filename of the report.
+	FileName common.NullableString `json:"FileName,omitempty"`
+	// Creation date of the report.
+	CreateDate *string `json:"CreateDate,omitempty"`
+	// Page settings of the report.
+	Page *ReportsPage `json:"Page,omitempty"`
+	// Header content of the report.
+	Header common.NullableString `json:"Header,omitempty"`
+	// Footer content of the report.
+	Footer common.NullableString `json:"Footer,omitempty"`
+	// Cover page content of the report.
+	CoverPage common.NullableString `json:"CoverPage,omitempty"`
+	// Sections included in the report.
+	Sections []string `json:"Sections,omitempty"`
+	// Type of the report.
+	ReportType *string `json:"ReportType,omitempty"`
+	// Theme of the report.
+	Theme common.NullableString `json:"Theme,omitempty"`
+	// Language of the report.
+	Language *string `json:"Language,omitempty"`
+	// Indicates whether to add a cover page to the report.
+	AddCoverPage *bool `json:"AddCoverPage,omitempty"`
+	// Password for the report file.
 	FilePassword common.NullableString `json:"FilePassword,omitempty"`
-	ReportId     common.NullableString `json:"ReportId,omitempty"`
-	ReportTheme  common.NullableString `json:"ReportTheme,omitempty"`
-	MaxRowCount  *int64                `json:"MaxRowCount,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// ID of the report.
+	ReportId common.NullableString `json:"ReportId,omitempty"`
+	// Theme of the report.
+	ReportTheme common.NullableString `json:"ReportTheme,omitempty"`
+	// Maximum row count for the report data.
+	MaxRowCount *int64 `json:"MaxRowCount,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

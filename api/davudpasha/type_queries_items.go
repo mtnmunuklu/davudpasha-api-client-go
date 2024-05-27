@@ -7,30 +7,51 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// QueriesItem represents an item in queries.
 type QueriesItem struct {
-	ID                   *string                             `json:"ID,omitempty"`
-	Name                 *string                             `json:"Name,omitempty"`
-	Description          common.NullableString               `json:"Description,omitempty"`
-	Query                *string                             `json:"Query,omitempty"`
-	Columns              common.NullableList[SelectedColumn] `json:"Columns,omitempty"`
-	Author               *string                             `json:"Author,omitempty"`
-	InsertDate           *string                             `json:"InsertDate,omitempty"`
-	LastUpdateDate       *string                             `json:"LastUpdateDate,omitempty"`
-	QueryType            *string                             `json:"QueryType,omitempty"`
-	DateTimeRange        *DateTimeRange                      `json:"DateTimeRange,omitempty"`
-	Tags                 common.NullableList[string]         `json:"Tags,omitempty"`
-	MitreTags            common.NullableList[string]         `json:"MitreTags,omitempty"`
-	KillChainPhase       common.NullableString               `json:"KillChainPhase,omitempty"`
-	FromMarket           *bool                               `json:"FromMarket,omitempty"`
-	FromModules          *bool                               `json:"FromModules,omitempty"`
-	HasUpdate            *bool                               `json:"HasUpdate,omitempty"`
-	ModuleId             common.NullableString               `json:"ModuleId,omitempty"`
-	ModuleGuid           common.NullableString               `json:"ModuleGuid,omitempty"`
-	SharedUsersAndGroups common.NullableList[string]         `json:"SharedUsersAndGroups,omitempty"`
-	Version              *float64                            `json:"Version,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// ID of the query.
+	ID *string `json:"ID,omitempty"`
+	// Name of the query.
+	Name *string `json:"Name,omitempty"`
+	// Description of the query.
+	Description common.NullableString `json:"Description,omitempty"`
+	// Query string.
+	Query *string `json:"Query,omitempty"`
+	// Selected columns for the query.
+	Columns common.NullableList[SelectedColumn] `json:"Columns,omitempty"`
+	// Author of the query.
+	Author *string `json:"Author,omitempty"`
+	// Date when the query was inserted.
+	InsertDate *string `json:"InsertDate,omitempty"`
+	// Date of the last update to the query.
+	LastUpdateDate *string `json:"LastUpdateDate,omitempty"`
+	// Type of the query.
+	QueryType *string `json:"QueryType,omitempty"`
+	// Date-time range for the query.
+	DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
+	// Tags associated with the query.
+	Tags common.NullableList[string] `json:"Tags,omitempty"`
+	// MITRE tags associated with the query.
+	MitreTags common.NullableList[string] `json:"MitreTags,omitempty"`
+	// Kill chain phase associated with the query.
+	KillChainPhase common.NullableString `json:"KillChainPhase,omitempty"`
+	// Whether the query is from the market.
+	FromMarket *bool `json:"FromMarket,omitempty"`
+	// Whether the query is from modules.
+	FromModules *bool `json:"FromModules,omitempty"`
+	// Whether the query has an update.
+	HasUpdate *bool `json:"HasUpdate,omitempty"`
+	// ID of the module.
+	ModuleId common.NullableString `json:"ModuleId,omitempty"`
+	// GUID of the module.
+	ModuleGuid common.NullableString `json:"ModuleGuid,omitempty"`
+	// Users and groups with whom the query is shared.
+	SharedUsersAndGroups common.NullableList[string] `json:"SharedUsersAndGroups,omitempty"`
+	// Version of the query.
+	Version *float64 `json:"Version,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

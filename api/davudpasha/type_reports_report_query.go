@@ -6,17 +6,25 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsQuery represents a report query.
 type ReportsQuery struct {
-	Name               *string                    `json:"Nane,omitempty"`
-	Data               *ReportsQueryData          `json:"Data,omitempty"`
-	ShowTable          *bool                      `json:"ShowTable,omitempty"`
+	// Name of the query.
+	Name *string `json:"Nane,omitempty"`
+	// Data related to the query.
+	Data *ReportsQueryData `json:"Data,omitempty"`
+	// Indicates if the table should be shown.
+	ShowTable *bool `json:"ShowTable,omitempty"`
+	// Visualization settings for the table.
 	TableVisualization *ReportsTableVisualization `json:"TableVisualization,omitempty"`
-	ShowChart          *bool                      `json:"ShowChart,omitempty"`
+	// Indicates if the chart should be shown.
+	ShowChart *bool `json:"ShowChart,omitempty"`
+	// Visualization settings for the chart.
 	ChartVisualization *ReportsChartVisualization `json:"ChartVisualization,omitempty"`
-	ExtData            *ReportsQueryExtData       `json:"ExtData,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Extended data for the query.
+	ExtData *ReportsQueryExtData `json:"ExtData,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

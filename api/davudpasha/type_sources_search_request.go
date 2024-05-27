@@ -7,13 +7,15 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourcesSearchRequest represents a request for searching sources.
 type SourcesSearchRequest struct {
+	// Filter for searching sources.
 	SearchFilter *string `json:"searchFilter,omitempty"`
-	// SmartRestRequestContext is the context for the Smart REST request.
+	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

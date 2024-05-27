@@ -6,13 +6,17 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsChartXAxis defines the configuration for the X-axis of a chart in reports.
 type ReportsChartXAxis struct {
-	Label    *string `json:"Label,omitempty"`
-	Interval *int64  `json:"Interval,omitempty"`
-	Angle    *int64  `json:"Angle,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Label for the x-axis.
+	Label *string `json:"Label,omitempty"`
+	// Interval for x-axis values.
+	Interval *int64 `json:"Interval,omitempty"`
+	// Angle for x-axis labels.
+	Angle *int64 `json:"Angle,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

@@ -6,18 +6,27 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsQueryData represents the data for a report query.
 type ReportsQueryData struct {
-	ItemType        *string                     `json:"ItemType,omitempty"`
-	QueryID         common.NullableString       `json:"QueryID,omitempty"`
-	QueryStr        common.NullableString       `json:"QueryStr,omitempty"`
-	Code            *string                     `json:"Code,omitempty"`
-	MaxRowCount     *int64                      `json:"MaxRowCount,omitempty"`
-	DateTimeRange   *DateTimeRange              `json:"DateTimeRange,omitempty"`
-	ScriptPath      common.NullableString       `json:"ScriptPath,omitempty"`
+	// Type of the item.
+	ItemType *string `json:"ItemType,omitempty"`
+	// ID of the query.
+	QueryID common.NullableString `json:"QueryID,omitempty"`
+	// Query string.
+	QueryStr common.NullableString `json:"QueryStr,omitempty"`
+	// Code related to the query.
+	Code *string `json:"Code,omitempty"`
+	// Maximum row count for the query data.
+	MaxRowCount *int64 `json:"MaxRowCount,omitempty"`
+	// Date-time range for the query.
+	DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
+	// Path to the script related to the query.
+	ScriptPath common.NullableString `json:"ScriptPath,omitempty"`
+	// Arguments for the script.
 	ScriptArguments common.NullableList[string] `json:"ScriptArguments,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

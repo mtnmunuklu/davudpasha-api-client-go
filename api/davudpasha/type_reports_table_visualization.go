@@ -6,13 +6,17 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsTableVisualization defines the visualization options for a table in a report.
 type ReportsTableVisualization struct {
-	ChartType   *string  `json:"ChartType,omitempty"`
-	MaxRowCount *string  `json:"MaxRowCount,omitempty"`
-	Columns     []string `json:"Columns,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Type of the chart.
+	ChartType *string `json:"ChartType,omitempty"`
+	// Maximum row count.
+	MaxRowCount *string `json:"MaxRowCount,omitempty"`
+	// Columns for the visualization.
+	Columns []string `json:"Columns,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

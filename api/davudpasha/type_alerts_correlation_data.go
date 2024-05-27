@@ -7,32 +7,55 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// AlertsCorrelationData represents correlation data for alerts.
 type AlertsCorrelationData struct {
-	Id                    *string                     `json:"Id,omitempty"`
-	Enabled               *bool                       `json:"Enabled,omitempty"`
-	Name                  *string                     `json:"Name,omitempty"`
-	Description           *string                     `json:"Description,omitempty"`
-	Tags                  []string                    `json:"Tags,omitempty"`
-	FromMarket            *bool                       `json:"FromMarket,omitempty"`
-	FromModules           *bool                       `json:"FromModules,omitempty"`
-	HasUpdate             *bool                       `json:"HasUpdate,omitempty"`
-	ModuleId              common.NullableString       `json:"ModuleId,omitempty"`
-	ModuleGuid            common.NullableString       `json:"ModuleGuid,omitempty"`
-	RiskLevel             *int64                      `json:"RiskLevel,omitempty"`
-	MaxAlertCount         *int64                      `json:"MaxAlertCount,omitempty"`
-	LimiterTimeFrameType  *string                     `json:"LimiterTimeFrameType,omitempty"`
-	LimiterTimeFrameValue *int64                      `json:"LimiterTimeFrameValue,omitempty"`
-	LimiterColumns        common.NullableList[string] `json:"LimiterColumns,omitempty"`
-	Actions               *Actions                    `json:"Actions,omitempty"`
-	MaxSendCount          *int64                      `json:"MaxSendCount,omitempty"`
-	Data                  *json.RawMessage            `json:"Data,omitempty"`
-	CorrelationType       *string                     `json:"CorrelationType,omitempty"`
-	Message               *string                     `json:"Message,omitempty"`
-	GroupedColumns        []string                    `json:"GroupedColumns,omitempty"`
-	Version               *float64                    `json:"Version,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// ID of the alert correlation.
+	Id *string `json:"Id,omitempty"`
+	// Whether the correlation is enabled.
+	Enabled *bool `json:"Enabled,omitempty"`
+	// Name of the correlation.
+	Name *string `json:"Name,omitempty"`
+	// Description of the correlation.
+	Description *string `json:"Description,omitempty"`
+	// Tags associated with the correlation.
+	Tags []string `json:"Tags,omitempty"`
+	// Whether the correlation is from the market.
+	FromMarket *bool `json:"FromMarket,omitempty"`
+	// Whether the correlation is from modules.
+	FromModules *bool `json:"FromModules,omitempty"`
+	// Whether the correlation has an update.
+	HasUpdate *bool `json:"HasUpdate,omitempty"`
+	// ID of the module.
+	ModuleId common.NullableString `json:"ModuleId,omitempty"`
+	// GUID of the module.
+	ModuleGuid common.NullableString `json:"ModuleGuid,omitempty"`
+	// Risk level of the correlation.
+	RiskLevel *int64 `json:"RiskLevel,omitempty"`
+	// Maximum alert count.
+	MaxAlertCount *int64 `json:"MaxAlertCount,omitempty"`
+	// Time frame type for limiter.
+	LimiterTimeFrameType *string `json:"LimiterTimeFrameType,omitempty"`
+	// Time frame value for limiter.
+	LimiterTimeFrameValue *int64 `json:"LimiterTimeFrameValue,omitempty"`
+	// Columns used for limiting.
+	LimiterColumns common.NullableList[string] `json:"LimiterColumns,omitempty"`
+	// Actions related to the correlation.
+	Actions *Actions `json:"Actions,omitempty"`
+	// Maximum send count.
+	MaxSendCount *int64 `json:"MaxSendCount,omitempty"`
+	// Raw data in JSON format.
+	Data *json.RawMessage `json:"Data,omitempty"`
+	// Type of correlation.
+	CorrelationType *string `json:"CorrelationType,omitempty"`
+	// Message of the correlation.
+	Message *string `json:"Message,omitempty"`
+	// Columns grouped by the correlation.
+	GroupedColumns []string `json:"GroupedColumns,omitempty"`
+	// Version of the correlation.
+	Version *float64 `json:"Version,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

@@ -6,14 +6,19 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ParallelOptions represents options for parallel processing.
 type ParallelOptions struct {
-	IsActive        *bool  `json:"IsActive,omitempty"`
-	TaskCount       *int64 `json:"TaskCount,omitempty"`
+	// Indicates whether parallel processing is active.
+	IsActive *bool `json:"IsActive,omitempty"`
+	// Number of tasks for parallel processing.
+	TaskCount *int64 `json:"TaskCount,omitempty"`
+	// Size of file blocks for parallel processing, in megabytes.
 	FileBlockSizeMb *int64 `json:"FileBlockSizeMb,omitempty"`
-	TimeoutSec      *int64 `json:"TimeoutSec,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Timeout duration for parallel processing, in seconds.
+	TimeoutSec *int64 `json:"TimeoutSec,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

@@ -6,27 +6,45 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsQueryExtData represents the extended data for a report query.
 type ReportsQueryExtData struct {
-	ReportType              *string        `json:"ReportType,omitempty"`
-	DateTimeRange           *DateTimeRange `json:"DateTimeRange,omitempty"`
-	Alerts                  *bool          `json:"Alerts,omitempty"`
-	LogPositions            *bool          `json:"LogPositions,omitempty"`
-	SystemInfo              *bool          `json:"SystemInfo,omitempty"`
-	LogCounts               *bool          `json:"LogCounts,omitempty"`
-	Classifications         *bool          `json:"Classifications,omitempty"`
-	Correlation             *bool          `json:"Correlation,omitempty"`
-	TimeStamps              *bool          `json:"TimeStamps,omitempty"`
-	LogCountsChart          *bool          `json:"LogCounts_Chart,omitempty"`
-	LogCountsTable          *bool          `json:"LogCounts_Table,omitempty"`
-	ClassificationsChart    *bool          `json:"Classifications_Chart,omitempty"`
-	ClassificationsSvrChart *bool          `json:"Classifications_SvrChart,omitempty"`
-	ClassificationsTable    *bool          `json:"Classifications_Table,omitempty"`
-	CorrelationAlertChart   *bool          `json:"Correlation_AlertChart,omitempty"`
-	CorrelationSvrChart     *bool          `json:"Correlation_SvrChart,omitempty"`
-	CorrelationTable        *bool          `json:"Correlation_Table,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Type of the report.
+	ReportType *string `json:"ReportType,omitempty"`
+	// Date-time range for the report.
+	DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
+	// Indicates if alerts should be included.
+	Alerts *bool `json:"Alerts,omitempty"`
+	// Indicates if log positions should be included.
+	LogPositions *bool `json:"LogPositions,omitempty"`
+	// Indicates if system information should be included.
+	SystemInfo *bool `json:"SystemInfo,omitempty"`
+	// Indicates if log counts should be included.
+	LogCounts *bool `json:"LogCounts,omitempty"`
+	// Indicates if classifications should be included.
+	Classifications *bool `json:"Classifications,omitempty"`
+	// Indicates if correlation should be included.
+	Correlation *bool `json:"Correlation,omitempty"`
+	// Indicates if timestamps should be included.
+	TimeStamps *bool `json:"TimeStamps,omitempty"`
+	// Indicates if log counts chart should be included.
+	LogCountsChart *bool `json:"LogCounts_Chart,omitempty"`
+	// Indicates if log counts table should be included.
+	LogCountsTable *bool `json:"LogCounts_Table,omitempty"`
+	// Indicates if classifications chart should be included.
+	ClassificationsChart *bool `json:"Classifications_Chart,omitempty"`
+	// Indicates if classifications server chart should be included.
+	ClassificationsSvrChart *bool `json:"Classifications_SvrChart,omitempty"`
+	// Indicates if classifications table should be included.
+	ClassificationsTable *bool `json:"Classifications_Table,omitempty"`
+	// Indicates if correlation alert chart should be included.
+	CorrelationAlertChart *bool `json:"Correlation_AlertChart,omitempty"`
+	// Indicates if correlation server chart should be included.
+	CorrelationSvrChart *bool `json:"Correlation_SvrChart,omitempty"`
+	// Indicates if correlation table should be included.
+	CorrelationTable *bool `json:"Correlation_Table,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

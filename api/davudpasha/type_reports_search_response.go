@@ -6,36 +6,63 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsSearchResponse represents a response from a report search operation.
 type ReportsSearchResponse struct {
-	ModifiedDate            *string                     `json:"ModifiedDate,omitempty"`
-	ReportId                *string                     `jsom:"ReportId,omitempty"`
-	Username                *string                     `json:"Username,omitempty"`
-	Name                    *string                     `json:"Name,omitempty"`
-	Description             *string                     `json:"Description,omitempty"`
-	IsActive                *bool                       `json:"IsActive,omitempty"`
-	Author                  common.NullableString       `json:"Author,omitempty"`
-	ReportLink              *string                     `json:"ReportLink,omitempty"`
-	SharedUsersAndGroups    common.NullableList[string] `json:"SharedUsersAndGroups,omitempty"`
-	CreatedDate             *string                     `json:"CreatedDate,omitempty"`
-	ReportQuery             []ReportsQuery              `json:"ReportQuery,omitempty"`
-	ReportData              *ReportsData                `json:"ReportData,omitempty"`
-	Schedule                *ScheduleConfig             `json:"Schedule,omitempty"`
-	LastGenerationTime      common.NullableString       `json:"LastGenerationTime,omitempty"`
-	NextGenerationTime      common.NullableString       `json:"NextGenerationTime,omitempty"`
-	LatestReportFile        *ReportsLatestReportFile    `json:"LatestReportFile,omitempty"`
-	PageSettings            common.NullableString       `json:"PageSettings,omitempty"`
-	Parameters              *ReportsParameters          `json:"Parameters,omitempty"`
-	Tags                    []string                    `json:"Tags,omitempty"`
-	Actions                 *Actions                    `json:"Actions,omitempty"`
-	ModuleFilter            *string                     `json:"ModuleFilter,omitempty"`
-	RemoteInterfaceName     *string                     `json:"RemoteInterfaceName,omitempty"`
-	RemoteMethodName        *string                     `json:"RemoteMethodName,omitempty"`
-	ApplicationName         *string                     `json:"ApplicationName,omitempty"`
-	SubExecutorModuleFilter *string                     `json:"SubExecutorModuleFilter,omitempty"`
-	Version                 *float64                    `json:"Version,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Date when the report was last modified.
+	ModifiedDate *string `json:"ModifiedDate,omitempty"`
+	// ID of the report.
+	ReportId *string `json:"ReportId,omitempty"`
+	// Username associated with the report.
+	Username *string `json:"Username,omitempty"`
+	// Name of the report.
+	Name *string `json:"Name,omitempty"`
+	// Description of the report.
+	Description *string `json:"Description,omitempty"`
+	// Indicates if the report is active.
+	IsActive *bool `json:"IsActive,omitempty"`
+	// Author of the report.
+	Author common.NullableString `json:"Author,omitempty"`
+	// Link to access the report.
+	ReportLink *string `json:"ReportLink,omitempty"`
+	// Users and groups with whom the report is shared.
+	SharedUsersAndGroups common.NullableList[string] `json:"SharedUsersAndGroups,omitempty"`
+	// Date when the report was created.
+	CreatedDate *string `json:"CreatedDate,omitempty"`
+	// Queries associated with the report.
+	ReportQuery []ReportsQuery `json:"ReportQuery,omitempty"`
+	// Data related to the report.
+	ReportData *ReportsData `json:"ReportData,omitempty"`
+	// Schedule configuration for generating the report.
+	Schedule *ScheduleConfig `json:"Schedule,omitempty"`
+	// Date and time when the report was last generated.
+	LastGenerationTime common.NullableString `json:"LastGenerationTime,omitempty"`
+	// Date and time when the report is scheduled to be generated next.
+	NextGenerationTime common.NullableString `json:"NextGenerationTime,omitempty"`
+	// Latest file associated with the report.
+	LatestReportFile *ReportsLatestReportFile `json:"LatestReportFile,omitempty"`
+	// Page settings for the report.
+	PageSettings common.NullableString `json:"PageSettings,omitempty"`
+	// Parameters for the report.
+	Parameters *ReportsParameters `json:"Parameters,omitempty"`
+	// Tags associated with the report.
+	Tags []string `json:"Tags,omitempty"`
+	// Actions associated with the report.
+	Actions *Actions `json:"Actions,omitempty"`
+	// Filter for the module.
+	ModuleFilter *string `json:"ModuleFilter,omitempty"`
+	// Name of the remote interface.
+	RemoteInterfaceName *string `json:"RemoteInterfaceName,omitempty"`
+	// Name of the remote method.
+	RemoteMethodName *string `json:"RemoteMethodName,omitempty"`
+	// Name of the application associated with the report.
+	ApplicationName *string `json:"ApplicationName,omitempty"`
+	// Filter for the sub-executor module.
+	SubExecutorModuleFilter *string `json:"SubExecutorModuleFilter,omitempty"`
+	// Version of the report.
+	Version *float64 `json:"Version,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 
