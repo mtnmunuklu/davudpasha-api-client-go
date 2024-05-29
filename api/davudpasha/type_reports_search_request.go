@@ -198,14 +198,14 @@ func (o ReportsSearchRequest) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
+
+	toSerialize["startDate"] = o.StartDate.Get()
+
 	if o.SearchFilter != nil {
 		toSerialize["searchFilter"] = o.SearchFilter
 	}
 	if o.ApplicationName != nil {
 		toSerialize["applicationName"] = o.ApplicationName
-	}
-	if o.StartDate.IsSet() {
-		toSerialize["startDate"] = o.StartDate.Get()
 	}
 	if o.SmartRestRequestContext != nil {
 		toSerialize["smartRestRequestContext"] = o.SmartRestRequestContext
