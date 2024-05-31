@@ -30,11 +30,11 @@ func (r *SearchReportsOptionalParameters) WithBody(body ReportsSearchRequest) *S
 
 // SerchQueries search queries.
 // Returns reports that match an reports search filter.
-func (a *ReportsApi) SearchReports(ctx _context.Context, o ...SearchReportsOptionalParameters) (ReportsSearchResponse, *_nethttp.Response, error) {
+func (a *ReportsApi) SearchReports(ctx _context.Context, o ...SearchReportsOptionalParameters) ([]ReportsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost
 		localVarPostBody      interface{}
-		localVarReturnValue   ReportsSearchResponse
+		localVarReturnValue   []ReportsSearchResponse
 		optionalParams        SearchReportsOptionalParameters
 		localVarInterfaceCode = "IDPReportScheduleAct"
 		localVarMethodName    = "GetListWithSchedule"
