@@ -11,7 +11,7 @@ type ReportsTableVisualization struct {
 	// Type of the chart.
 	ChartType *string `json:"ChartType,omitempty"`
 	// Maximum row count.
-	MaxRowCount *string `json:"MaxRowCount,omitempty"`
+	MaxRowCount *int64 `json:"MaxRowCount,omitempty"`
 	// Columns for the visualization.
 	Columns []string `json:"Columns,omitempty"`
 	// Raw value if deserialization fails.
@@ -66,9 +66,9 @@ func (o *ReportsTableVisualization) SetChartType(v string) {
 }
 
 // GetMaxRowCount returns the MaxRowCount field value if set, zero value otherwise.
-func (o *ReportsTableVisualization) GetMaxRowCount() string {
+func (o *ReportsTableVisualization) GetMaxRowCount() int64 {
 	if o == nil || o.MaxRowCount == nil {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MaxRowCount
@@ -76,7 +76,7 @@ func (o *ReportsTableVisualization) GetMaxRowCount() string {
 
 // GetMaxRowCountOk returns a tuple with the MaxRowCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsTableVisualization) GetMaxRowCountOk() (*string, bool) {
+func (o *ReportsTableVisualization) GetMaxRowCountOk() (*int64, bool) {
 	if o == nil || o.MaxRowCount == nil {
 		return nil, false
 	}
@@ -89,7 +89,7 @@ func (o *ReportsTableVisualization) HasMaxRowCount() bool {
 }
 
 // SetMaxRowCount gets a reference to the given string and assigns it to the MaxRowCount field.
-func (o *ReportsTableVisualization) SetMaxRowCount(v string) {
+func (o *ReportsTableVisualization) SetMaxRowCount(v int64) {
 	o.MaxRowCount = &v
 }
 
@@ -147,7 +147,7 @@ func (o ReportsTableVisualization) MarshalJSON() ([]byte, error) {
 func (o *ReportsTableVisualization) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		ChartType   *string  `json:"ChartType,omitempty"`
-		MaxRowCount *string  `json:"MaxRowCount,omitempty"`
+		MaxRowCount *int64   `json:"MaxRowCount,omitempty"`
 		Columns     []string `json:"Columns,omitempty"`
 	}{}
 
