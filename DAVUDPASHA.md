@@ -53,8 +53,8 @@ import "github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
   - [func \(v NullableBool\) IsSet\(\) bool](<#NullableBool.IsSet>)
   - [func \(v NullableBool\) MarshalJSON\(\) \(\[\]byte, error\)](<#NullableBool.MarshalJSON>)
   - [func \(v \*NullableBool\) Set\(val \*bool\)](<#NullableBool.Set>)
+  - [func \(v \*NullableBool\) UnSet\(\)](<#NullableBool.UnSet>)
   - [func \(v \*NullableBool\) UnmarsahlJSON\(src \[\]byte\) error](<#NullableBool.UnmarsahlJSON>)
-  - [func \(v \*NullableBool\) Unset\(\)](<#NullableBool.Unset>)
 - [type NullableFloat32](<#NullableFloat32>)
   - [func NewNullableFloat32\(val \*float32\) \*NullableFloat32](<#NewNullableFloat32>)
   - [func \(v NullableFloat32\) Get\(\) \*float32](<#NullableFloat32.Get>)
@@ -101,8 +101,8 @@ import "github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
   - [func \(v NullableList\[T\]\) IsSet\(\) bool](<#NullableList[T].IsSet>)
   - [func \(v NullableList\[T\]\) MarshalJSON\(\) \(\[\]byte, error\)](<#NullableList[T].MarshalJSON>)
   - [func \(v \*NullableList\[T\]\) Set\(val \*\[\]T\)](<#NullableList[T].Set>)
+  - [func \(v \*NullableList\[T\]\) UnSet\(\)](<#NullableList[T].UnSet>)
   - [func \(v \*NullableList\[T\]\) UnmarshalJSON\(src \[\]byte\) error](<#NullableList[T].UnmarshalJSON>)
-  - [func \(v \*NullableList\[T\]\) Unset\(\)](<#NullableList[T].Unset>)
 - [type NullableString](<#NullableString>)
   - [func NewNullableString\(val \*string\) \*NullableString](<#NewNullableString>)
   - [func \(v NullableString\) Get\(\) \*string](<#NullableString.Get>)
@@ -178,7 +178,7 @@ func DeleteKeys[V any](obj map[string]V, keysToDelete *[]string)
 DeleteKeys helper method to delete keys from a map
 
 <a name="NewContextWithEnvParams"></a>
-## func [NewContextWithEnvParams](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/configuration.go#L372>)
+## func [NewContextWithEnvParams](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/configuration.go#L376>)
 
 ```go
 func NewContextWithEnvParams(ctx context.Context, siteEnvVar, apiKeyEnvVar string) context.Context
@@ -187,7 +187,7 @@ func NewContextWithEnvParams(ctx context.Context, siteEnvVar, apiKeyEnvVar strin
 NewContextWithEnvParams function enriches the given context using the provided environment variables for site and API key.
 
 <a name="NewDefaultContext"></a>
-## func [NewDefaultContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/configuration.go#L345>)
+## func [NewDefaultContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/configuration.go#L349>)
 
 ```go
 func NewDefaultContext(ctx context.Context) context.Context
@@ -586,6 +586,15 @@ func (v *NullableBool) Set(val *bool)
 
 Set sets the value associated with the nullable bool.
 
+<a name="NullableBool.UnSet"></a>
+### func \(\*NullableBool\) [UnSet](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L60>)
+
+```go
+func (v *NullableBool) UnSet()
+```
+
+UnSet resets fields of the nullable bool.
+
 <a name="NullableBool.UnmarsahlJSON"></a>
 ### func \(\*NullableBool\) [UnmarsahlJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L76>)
 
@@ -594,15 +603,6 @@ func (v *NullableBool) UnmarsahlJSON(src []byte) error
 ```
 
 UnmarshalJSON deserializes to the associated value.
-
-<a name="NullableBool.Unset"></a>
-### func \(\*NullableBool\) [Unset](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L60>)
-
-```go
-func (v *NullableBool) Unset()
-```
-
-Unset resets fields of the nullable bool.
 
 <a name="NullableFloat32"></a>
 ## type [NullableFloat32](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L214-L217>)
@@ -667,7 +667,7 @@ Set sets the value associated with the nullable float32.
 func (v *NullableFloat32) UnSet()
 ```
 
-Unset resets fields of the nullable float32.
+UnSet resets fields of the nullable float32.
 
 <a name="NullableFloat32.UnmarshalJSON"></a>
 ### func \(\*NullableFloat32\) [UnmarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L252>)
@@ -741,7 +741,7 @@ Set sets the value associated with the nullable float64.
 func (v *NullableFloat64) UnSet()
 ```
 
-Unset resets fields of the nullable float64.
+UnSet resets fields of the nullable float64.
 
 <a name="NullableFloat64.UnmarshalJSON"></a>
 ### func \(\*NullableFloat64\) [UnmarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L296>)
@@ -815,7 +815,7 @@ Set sets the value associated with the nullable int.
 func (v *NullableInt) UnSet()
 ```
 
-Unset resets fields of the nullable int.
+UnSet resets fields of the nullable int.
 
 <a name="NullableInt.UnmarshalJSON"></a>
 ### func \(\*NullableInt\) [UnmarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L120>)
@@ -889,7 +889,7 @@ Set sets the value associated with the nullable int32.
 func (v *NullableInt32) UnSet()
 ```
 
-Unset resets fields of the nullable int32.
+UnSet resets fields of the nullable int32.
 
 <a name="NullableInt32.UnmarshalJSON"></a>
 ### func \(\*NullableInt32\) [UnmarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L164>)
@@ -963,7 +963,7 @@ Set sets the value associated with the nullable int64.
 func (v *NullableInt64) UnSet()
 ```
 
-Unset resets fields of the nullable int64.
+UnSet resets fields of the nullable int64.
 
 <a name="NullableInt64.UnmarshalJSON"></a>
 ### func \(\*NullableInt64\) [UnmarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L208>)
@@ -1030,6 +1030,15 @@ func (v *NullableList[T]) Set(val *[]T)
 
 Set sets the value associated with the nullable list.
 
+<a name="NullableList[T].UnSet"></a>
+### func \(\*NullableList\[T\]\) [UnSet](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L412>)
+
+```go
+func (v *NullableList[T]) UnSet()
+```
+
+UnSet resets fields of the nullable list.
+
 <a name="NullableList[T].UnmarshalJSON"></a>
 ### func \(\*NullableList\[T\]\) [UnmarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L428>)
 
@@ -1038,15 +1047,6 @@ func (v *NullableList[T]) UnmarshalJSON(src []byte) error
 ```
 
 UnmarshalJSON deserializes to the associated value.
-
-<a name="NullableList[T].Unset"></a>
-### func \(\*NullableList\[T\]\) [Unset](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L412>)
-
-```go
-func (v *NullableList[T]) Unset()
-```
-
-Unset resets fields of the nullable list.
 
 <a name="NullableString"></a>
 ## type [NullableString](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L302-L305>)
@@ -1111,7 +1111,7 @@ Set sets the value associated with the nullable string.
 func (v *NullableString) UnSet()
 ```
 
-Unset resets fields of the nullable string.
+UnSet resets fields of the nullable string.
 
 <a name="NullableString.UnmarshalJSON"></a>
 ### func \(\*NullableString\) [UnmarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L340>)
@@ -1185,7 +1185,7 @@ Set sets the value associated with the nullable time.Time.
 func (v *NullableTime) UnSet()
 ```
 
-Unset resets fields of the nullable time.Time.
+UnSet resets fields of the nullable time.Time.
 
 <a name="NullableTime.UnmarshalJSON"></a>
 ### func \(\*NullableTime\) [UnmarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/common/utils.go#L384>)
@@ -1274,86 +1274,259 @@ import "github.com/mtnmunuklu/davudpasha-api-client-go/api/davudpasha"
 
 ## Index
 
-- [type APIErrorResponse](<#APIErrorResponse>)
-  - [func NewAPIErrorResponse\(errors \[\]string\) \*APIErrorResponse](<#NewAPIErrorResponse>)
-  - [func NewAPIErrorResponseWithDefaults\(\) \*APIErrorResponse](<#NewAPIErrorResponseWithDefaults>)
-  - [func \(o \*APIErrorResponse\) GetErrors\(\) \[\]string](<#APIErrorResponse.GetErrors>)
-  - [func \(o \*APIErrorResponse\) GetErrorsOk\(\) \(\*\[\]string, bool\)](<#APIErrorResponse.GetErrorsOk>)
-  - [func \(o APIErrorResponse\) MarshalJSON\(\) \(\[\]byte, error\)](<#APIErrorResponse.MarshalJSON>)
-  - [func \(o \*APIErrorResponse\) SetErrors\(v \[\]string\)](<#APIErrorResponse.SetErrors>)
-  - [func \(o \*APIErrorResponse\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#APIErrorResponse.UnMarshalJSON>)
+- [type Action](<#Action>)
+  - [func NewAction\(\) \*Action](<#NewAction>)
+  - [func NewActionWithDefaults\(\) \*Action](<#NewActionWithDefaults>)
+  - [func \(o \*Action\) GetActionParameters\(\) \[\]ActionParameter](<#Action.GetActionParameters>)
+  - [func \(o \*Action\) GetActionParametersOk\(\) \(\*\[\]ActionParameter, bool\)](<#Action.GetActionParametersOk>)
+  - [func \(o \*Action\) GetActionRefId\(\) string](<#Action.GetActionRefId>)
+  - [func \(o \*Action\) GetActionRefIdOk\(\) \(\*string, bool\)](<#Action.GetActionRefIdOk>)
+  - [func \(o \*Action\) GetActionType\(\) string](<#Action.GetActionType>)
+  - [func \(o \*Action\) GetActionTypeOk\(\) \(\*string, bool\)](<#Action.GetActionTypeOk>)
+  - [func \(o \*Action\) GetData\(\) string](<#Action.GetData>)
+  - [func \(o \*Action\) GetDataOk\(\) \(\*string, bool\)](<#Action.GetDataOk>)
+  - [func \(o \*Action\) HasActionParameters\(\) bool](<#Action.HasActionParameters>)
+  - [func \(o \*Action\) HasActionRefId\(\) bool](<#Action.HasActionRefId>)
+  - [func \(o \*Action\) HasActionType\(\) bool](<#Action.HasActionType>)
+  - [func \(o \*Action\) HasData\(\) bool](<#Action.HasData>)
+  - [func \(o Action\) MarshalJSON\(\) \(\[\]byte, error\)](<#Action.MarshalJSON>)
+  - [func \(o \*Action\) SetActionParameters\(v \[\]ActionParameter\)](<#Action.SetActionParameters>)
+  - [func \(o \*Action\) SetActionRefId\(v string\)](<#Action.SetActionRefId>)
+  - [func \(o \*Action\) SetActionRefIdNil\(\)](<#Action.SetActionRefIdNil>)
+  - [func \(o \*Action\) SetActionType\(v string\)](<#Action.SetActionType>)
+  - [func \(o \*Action\) SetData\(v string\)](<#Action.SetData>)
+  - [func \(o \*Action\) SetDataNil\(\)](<#Action.SetDataNil>)
+  - [func \(o \*Action\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#Action.UnMarshalJSON>)
+  - [func \(o \*Action\) UnsetActionRefId\(\)](<#Action.UnsetActionRefId>)
+  - [func \(o \*Action\) UnsetData\(\)](<#Action.UnsetData>)
+- [type ActionParameter](<#ActionParameter>)
+  - [func NewActionParameter\(\) \*ActionParameter](<#NewActionParameter>)
+  - [func NewActionParameterWithDefaults\(\) \*ActionParameter](<#NewActionParameterWithDefaults>)
+  - [func \(o \*ActionParameter\) GetKey\(\) string](<#ActionParameter.GetKey>)
+  - [func \(o \*ActionParameter\) GetKeyOk\(\) \(\*string, bool\)](<#ActionParameter.GetKeyOk>)
+  - [func \(o \*ActionParameter\) GetValue\(\) string](<#ActionParameter.GetValue>)
+  - [func \(o \*ActionParameter\) GetValueOk\(\) \(\*string, bool\)](<#ActionParameter.GetValueOk>)
+  - [func \(o \*ActionParameter\) HasKey\(\) bool](<#ActionParameter.HasKey>)
+  - [func \(o \*ActionParameter\) HasValue\(\) bool](<#ActionParameter.HasValue>)
+  - [func \(o ActionParameter\) MarshalJSON\(\) \(\[\]byte, error\)](<#ActionParameter.MarshalJSON>)
+  - [func \(o \*ActionParameter\) SetKey\(v string\)](<#ActionParameter.SetKey>)
+  - [func \(o \*ActionParameter\) SetValue\(v string\)](<#ActionParameter.SetValue>)
+  - [func \(o \*ActionParameter\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ActionParameter.UnMarshalJSON>)
+- [type Actions](<#Actions>)
+  - [func NewActions\(\) \*Actions](<#NewActions>)
+  - [func NewActionsWithDefaults\(\) \*Actions](<#NewActionsWithDefaults>)
+  - [func \(o \*Actions\) GetActionRefIds\(\) \(\*\[\]string, bool\)](<#Actions.GetActionRefIds>)
+  - [func \(o \*Actions\) GetActionRefIdsOk\(\) \(\*\[\]string, bool\)](<#Actions.GetActionRefIdsOk>)
+  - [func \(o \*Actions\) GetActions\(\) \[\]Action](<#Actions.GetActions>)
+  - [func \(o \*Actions\) GetActionsOk\(\) \(\*\[\]Action, bool\)](<#Actions.GetActionsOk>)
+  - [func \(o \*Actions\) HasActionRefIds\(\) bool](<#Actions.HasActionRefIds>)
+  - [func \(o \*Actions\) HasActions\(\) bool](<#Actions.HasActions>)
+  - [func \(o Actions\) MarshalJSON\(\) \(\[\]byte, error\)](<#Actions.MarshalJSON>)
+  - [func \(o \*Actions\) SetActionRefIds\(v \[\]string\)](<#Actions.SetActionRefIds>)
+  - [func \(o \*Actions\) SetActionRefIdsNil\(\)](<#Actions.SetActionRefIdsNil>)
+  - [func \(o \*Actions\) SetActions\(v \[\]Action\)](<#Actions.SetActions>)
+  - [func \(o \*Actions\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#Actions.UnMarshalJSON>)
+  - [func \(o \*Actions\) UnSetActionRefIds\(\)](<#Actions.UnSetActionRefIds>)
+- [type AlertsApi](<#AlertsApi>)
+  - [func NewAlertsApi\(client \*common.APIClient\) \*AlertsApi](<#NewAlertsApi>)
+  - [func \(a \*AlertsApi\) SearchAlerts\(ctx \_context.Context, o ...SearchAlertsOptionalParameters\) \(AlertsSearchResponse, \*\_nethttp.Response, error\)](<#AlertsApi.SearchAlerts>)
+- [type AlertsCorrelationData](<#AlertsCorrelationData>)
+  - [func NewAlertsCorrelationData\(\) \*AlertsCorrelationData](<#NewAlertsCorrelationData>)
+  - [func NewAlertsCorrelationDataWithDefaults\(\) \*AlertsCorrelationData](<#NewAlertsCorrelationDataWithDefaults>)
+  - [func \(o \*AlertsCorrelationData\) GetActions\(\) Actions](<#AlertsCorrelationData.GetActions>)
+  - [func \(o \*AlertsCorrelationData\) GetActionsOk\(\) \(\*Actions, bool\)](<#AlertsCorrelationData.GetActionsOk>)
+  - [func \(o \*AlertsCorrelationData\) GetCorrelationType\(\) string](<#AlertsCorrelationData.GetCorrelationType>)
+  - [func \(o \*AlertsCorrelationData\) GetCorrelationTypeOk\(\) \(\*string, bool\)](<#AlertsCorrelationData.GetCorrelationTypeOk>)
+  - [func \(o \*AlertsCorrelationData\) GetData\(\) json.RawMessage](<#AlertsCorrelationData.GetData>)
+  - [func \(o \*AlertsCorrelationData\) GetDataOk\(\) \(\*json.RawMessage, bool\)](<#AlertsCorrelationData.GetDataOk>)
+  - [func \(o \*AlertsCorrelationData\) GetDescription\(\) string](<#AlertsCorrelationData.GetDescription>)
+  - [func \(o \*AlertsCorrelationData\) GetDescriptionOk\(\) \(\*string, bool\)](<#AlertsCorrelationData.GetDescriptionOk>)
+  - [func \(o \*AlertsCorrelationData\) GetEnabled\(\) bool](<#AlertsCorrelationData.GetEnabled>)
+  - [func \(o \*AlertsCorrelationData\) GetEnabledOk\(\) \(\*bool, bool\)](<#AlertsCorrelationData.GetEnabledOk>)
+  - [func \(o \*AlertsCorrelationData\) GetFromMarket\(\) bool](<#AlertsCorrelationData.GetFromMarket>)
+  - [func \(o \*AlertsCorrelationData\) GetFromMarketOk\(\) \(\*bool, bool\)](<#AlertsCorrelationData.GetFromMarketOk>)
+  - [func \(o \*AlertsCorrelationData\) GetFromModules\(\) bool](<#AlertsCorrelationData.GetFromModules>)
+  - [func \(o \*AlertsCorrelationData\) GetFromModulesOk\(\) \(\*bool, bool\)](<#AlertsCorrelationData.GetFromModulesOk>)
+  - [func \(o \*AlertsCorrelationData\) GetGroupedColumns\(\) \[\]string](<#AlertsCorrelationData.GetGroupedColumns>)
+  - [func \(o \*AlertsCorrelationData\) GetGroupedColumnsOk\(\) \(\*\[\]string, bool\)](<#AlertsCorrelationData.GetGroupedColumnsOk>)
+  - [func \(o \*AlertsCorrelationData\) GetHasUpdate\(\) bool](<#AlertsCorrelationData.GetHasUpdate>)
+  - [func \(o \*AlertsCorrelationData\) GetHasUpdateOk\(\) \(\*bool, bool\)](<#AlertsCorrelationData.GetHasUpdateOk>)
+  - [func \(o \*AlertsCorrelationData\) GetId\(\) string](<#AlertsCorrelationData.GetId>)
+  - [func \(o \*AlertsCorrelationData\) GetIdOk\(\) \(\*string, bool\)](<#AlertsCorrelationData.GetIdOk>)
+  - [func \(o \*AlertsCorrelationData\) GetLimiterColumns\(\) \(\*\[\]string, bool\)](<#AlertsCorrelationData.GetLimiterColumns>)
+  - [func \(o \*AlertsCorrelationData\) GetLimiterColumnsOk\(\) \(\*\[\]string, bool\)](<#AlertsCorrelationData.GetLimiterColumnsOk>)
+  - [func \(o \*AlertsCorrelationData\) GetLimiterTimeFrameType\(\) string](<#AlertsCorrelationData.GetLimiterTimeFrameType>)
+  - [func \(o \*AlertsCorrelationData\) GetLimiterTimeFrameTypeOk\(\) \(\*string, bool\)](<#AlertsCorrelationData.GetLimiterTimeFrameTypeOk>)
+  - [func \(o \*AlertsCorrelationData\) GetLimiterTimeFrameValue\(\) int64](<#AlertsCorrelationData.GetLimiterTimeFrameValue>)
+  - [func \(o \*AlertsCorrelationData\) GetLimiterTimeFrameValueOk\(\) \(\*int64, bool\)](<#AlertsCorrelationData.GetLimiterTimeFrameValueOk>)
+  - [func \(o \*AlertsCorrelationData\) GetMaxAlertCount\(\) int64](<#AlertsCorrelationData.GetMaxAlertCount>)
+  - [func \(o \*AlertsCorrelationData\) GetMaxAlertCountOk\(\) \(\*int64, bool\)](<#AlertsCorrelationData.GetMaxAlertCountOk>)
+  - [func \(o \*AlertsCorrelationData\) GetMaxSendCount\(\) int64](<#AlertsCorrelationData.GetMaxSendCount>)
+  - [func \(o \*AlertsCorrelationData\) GetMaxSendCountOk\(\) \(\*int64, bool\)](<#AlertsCorrelationData.GetMaxSendCountOk>)
+  - [func \(o \*AlertsCorrelationData\) GetMessage\(\) string](<#AlertsCorrelationData.GetMessage>)
+  - [func \(o \*AlertsCorrelationData\) GetMessageOk\(\) \(\*string, bool\)](<#AlertsCorrelationData.GetMessageOk>)
+  - [func \(o \*AlertsCorrelationData\) GetModuleGuid\(\) string](<#AlertsCorrelationData.GetModuleGuid>)
+  - [func \(o \*AlertsCorrelationData\) GetModuleGuidOk\(\) \(\*string, bool\)](<#AlertsCorrelationData.GetModuleGuidOk>)
+  - [func \(o \*AlertsCorrelationData\) GetModuleId\(\) string](<#AlertsCorrelationData.GetModuleId>)
+  - [func \(o \*AlertsCorrelationData\) GetModuleIdOk\(\) \(\*string, bool\)](<#AlertsCorrelationData.GetModuleIdOk>)
+  - [func \(o \*AlertsCorrelationData\) GetName\(\) string](<#AlertsCorrelationData.GetName>)
+  - [func \(o \*AlertsCorrelationData\) GetNameOk\(\) \(\*string, bool\)](<#AlertsCorrelationData.GetNameOk>)
+  - [func \(o \*AlertsCorrelationData\) GetRiskLevel\(\) int64](<#AlertsCorrelationData.GetRiskLevel>)
+  - [func \(o \*AlertsCorrelationData\) GetRiskLevelOk\(\) \(\*int64, bool\)](<#AlertsCorrelationData.GetRiskLevelOk>)
+  - [func \(o \*AlertsCorrelationData\) GetTags\(\) \[\]string](<#AlertsCorrelationData.GetTags>)
+  - [func \(o \*AlertsCorrelationData\) GetTagsOk\(\) \(\*\[\]string, bool\)](<#AlertsCorrelationData.GetTagsOk>)
+  - [func \(o \*AlertsCorrelationData\) GetVersion\(\) float64](<#AlertsCorrelationData.GetVersion>)
+  - [func \(o \*AlertsCorrelationData\) GetVersionOk\(\) \(\*float64, bool\)](<#AlertsCorrelationData.GetVersionOk>)
+  - [func \(o \*AlertsCorrelationData\) HasActions\(\) bool](<#AlertsCorrelationData.HasActions>)
+  - [func \(o \*AlertsCorrelationData\) HasCorrelationType\(\) bool](<#AlertsCorrelationData.HasCorrelationType>)
+  - [func \(o \*AlertsCorrelationData\) HasData\(\) bool](<#AlertsCorrelationData.HasData>)
+  - [func \(o \*AlertsCorrelationData\) HasDescription\(\) bool](<#AlertsCorrelationData.HasDescription>)
+  - [func \(o \*AlertsCorrelationData\) HasEnabled\(\) bool](<#AlertsCorrelationData.HasEnabled>)
+  - [func \(o \*AlertsCorrelationData\) HasFromMarket\(\) bool](<#AlertsCorrelationData.HasFromMarket>)
+  - [func \(o \*AlertsCorrelationData\) HasFromModules\(\) bool](<#AlertsCorrelationData.HasFromModules>)
+  - [func \(o \*AlertsCorrelationData\) HasGroupedColumns\(\) bool](<#AlertsCorrelationData.HasGroupedColumns>)
+  - [func \(o \*AlertsCorrelationData\) HasHasUpdate\(\) bool](<#AlertsCorrelationData.HasHasUpdate>)
+  - [func \(o \*AlertsCorrelationData\) HasId\(\) bool](<#AlertsCorrelationData.HasId>)
+  - [func \(o \*AlertsCorrelationData\) HasLimiterColumns\(\) bool](<#AlertsCorrelationData.HasLimiterColumns>)
+  - [func \(o \*AlertsCorrelationData\) HasLimiterTimeFrameType\(\) bool](<#AlertsCorrelationData.HasLimiterTimeFrameType>)
+  - [func \(o \*AlertsCorrelationData\) HasLimiterTimeFrameValue\(\) bool](<#AlertsCorrelationData.HasLimiterTimeFrameValue>)
+  - [func \(o \*AlertsCorrelationData\) HasMaxAlertCount\(\) bool](<#AlertsCorrelationData.HasMaxAlertCount>)
+  - [func \(o \*AlertsCorrelationData\) HasMaxSendCount\(\) bool](<#AlertsCorrelationData.HasMaxSendCount>)
+  - [func \(o \*AlertsCorrelationData\) HasMessage\(\) bool](<#AlertsCorrelationData.HasMessage>)
+  - [func \(o \*AlertsCorrelationData\) HasModuleGuid\(\) bool](<#AlertsCorrelationData.HasModuleGuid>)
+  - [func \(o \*AlertsCorrelationData\) HasModuleId\(\) bool](<#AlertsCorrelationData.HasModuleId>)
+  - [func \(o \*AlertsCorrelationData\) HasName\(\) bool](<#AlertsCorrelationData.HasName>)
+  - [func \(o \*AlertsCorrelationData\) HasRiskLevel\(\) bool](<#AlertsCorrelationData.HasRiskLevel>)
+  - [func \(o \*AlertsCorrelationData\) HasTags\(\) bool](<#AlertsCorrelationData.HasTags>)
+  - [func \(o \*AlertsCorrelationData\) HasVersion\(\) bool](<#AlertsCorrelationData.HasVersion>)
+  - [func \(o AlertsCorrelationData\) MarshalJSON\(\) \(\[\]byte, error\)](<#AlertsCorrelationData.MarshalJSON>)
+  - [func \(o \*AlertsCorrelationData\) SetActions\(v Actions\)](<#AlertsCorrelationData.SetActions>)
+  - [func \(o \*AlertsCorrelationData\) SetCorrelationType\(v string\)](<#AlertsCorrelationData.SetCorrelationType>)
+  - [func \(o \*AlertsCorrelationData\) SetData\(v json.RawMessage\)](<#AlertsCorrelationData.SetData>)
+  - [func \(o \*AlertsCorrelationData\) SetDescription\(v string\)](<#AlertsCorrelationData.SetDescription>)
+  - [func \(o \*AlertsCorrelationData\) SetEnabled\(v bool\)](<#AlertsCorrelationData.SetEnabled>)
+  - [func \(o \*AlertsCorrelationData\) SetFromMarket\(v bool\)](<#AlertsCorrelationData.SetFromMarket>)
+  - [func \(o \*AlertsCorrelationData\) SetFromModules\(v bool\)](<#AlertsCorrelationData.SetFromModules>)
+  - [func \(o \*AlertsCorrelationData\) SetGroupedColumns\(v \[\]string\)](<#AlertsCorrelationData.SetGroupedColumns>)
+  - [func \(o \*AlertsCorrelationData\) SetHasUpdate\(v bool\)](<#AlertsCorrelationData.SetHasUpdate>)
+  - [func \(o \*AlertsCorrelationData\) SetId\(v string\)](<#AlertsCorrelationData.SetId>)
+  - [func \(o \*AlertsCorrelationData\) SetLimiterColumns\(v \[\]string\)](<#AlertsCorrelationData.SetLimiterColumns>)
+  - [func \(o \*AlertsCorrelationData\) SetLimiterColumnsNil\(\)](<#AlertsCorrelationData.SetLimiterColumnsNil>)
+  - [func \(o \*AlertsCorrelationData\) SetLimiterTimeFrameType\(v string\)](<#AlertsCorrelationData.SetLimiterTimeFrameType>)
+  - [func \(o \*AlertsCorrelationData\) SetLimiterTimeFrameValue\(v int64\)](<#AlertsCorrelationData.SetLimiterTimeFrameValue>)
+  - [func \(o \*AlertsCorrelationData\) SetMaxAlertCount\(v int64\)](<#AlertsCorrelationData.SetMaxAlertCount>)
+  - [func \(o \*AlertsCorrelationData\) SetMaxSendCount\(v int64\)](<#AlertsCorrelationData.SetMaxSendCount>)
+  - [func \(o \*AlertsCorrelationData\) SetMessage\(v string\)](<#AlertsCorrelationData.SetMessage>)
+  - [func \(o \*AlertsCorrelationData\) SetModuleGuid\(v string\)](<#AlertsCorrelationData.SetModuleGuid>)
+  - [func \(o \*AlertsCorrelationData\) SetModuleGuidNil\(\)](<#AlertsCorrelationData.SetModuleGuidNil>)
+  - [func \(o \*AlertsCorrelationData\) SetModuleId\(v string\)](<#AlertsCorrelationData.SetModuleId>)
+  - [func \(o \*AlertsCorrelationData\) SetModuleIdNil\(\)](<#AlertsCorrelationData.SetModuleIdNil>)
+  - [func \(o \*AlertsCorrelationData\) SetName\(v string\)](<#AlertsCorrelationData.SetName>)
+  - [func \(o \*AlertsCorrelationData\) SetRiskLevel\(v int64\)](<#AlertsCorrelationData.SetRiskLevel>)
+  - [func \(o \*AlertsCorrelationData\) SetTags\(v \[\]string\)](<#AlertsCorrelationData.SetTags>)
+  - [func \(o \*AlertsCorrelationData\) SetVersion\(v float64\)](<#AlertsCorrelationData.SetVersion>)
+  - [func \(o \*AlertsCorrelationData\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#AlertsCorrelationData.UnMarshalJSON>)
+  - [func \(o \*AlertsCorrelationData\) UnSetLimiterColumns\(\)](<#AlertsCorrelationData.UnSetLimiterColumns>)
+  - [func \(o \*AlertsCorrelationData\) UnSetModuleGuid\(\)](<#AlertsCorrelationData.UnSetModuleGuid>)
+  - [func \(o \*AlertsCorrelationData\) UnSetModuleId\(\)](<#AlertsCorrelationData.UnSetModuleId>)
+- [type AlertsItem](<#AlertsItem>)
+  - [func NewAlertsItem\(\) \*AlertsItem](<#NewAlertsItem>)
+  - [func NewAlertsItemWithDefaults\(\) \*AlertsItem](<#NewAlertsItemWithDefaults>)
+  - [func \(o \*AlertsItem\) GetActionMessage\(\) string](<#AlertsItem.GetActionMessage>)
+  - [func \(o \*AlertsItem\) GetActionMessageOk\(\) \(\*string, bool\)](<#AlertsItem.GetActionMessageOk>)
+  - [func \(o \*AlertsItem\) GetActionRequired\(\) bool](<#AlertsItem.GetActionRequired>)
+  - [func \(o \*AlertsItem\) GetActionRequiredOk\(\) \(\*bool, bool\)](<#AlertsItem.GetActionRequiredOk>)
+  - [func \(o \*AlertsItem\) GetCorrelationData\(\) AlertsCorrelationData](<#AlertsItem.GetCorrelationData>)
+  - [func \(o \*AlertsItem\) GetCorrelationDataOk\(\) \(\*AlertsCorrelationData, bool\)](<#AlertsItem.GetCorrelationDataOk>)
+  - [func \(o \*AlertsItem\) GetLgsName\(\) string](<#AlertsItem.GetLgsName>)
+  - [func \(o \*AlertsItem\) GetLgsNameOk\(\) \(\*string, bool\)](<#AlertsItem.GetLgsNameOk>)
+  - [func \(o \*AlertsItem\) HasActionMessage\(\) bool](<#AlertsItem.HasActionMessage>)
+  - [func \(o \*AlertsItem\) HasActionRequired\(\) bool](<#AlertsItem.HasActionRequired>)
+  - [func \(o \*AlertsItem\) HasCorrelationData\(\) bool](<#AlertsItem.HasCorrelationData>)
+  - [func \(o \*AlertsItem\) HasLgsName\(\) bool](<#AlertsItem.HasLgsName>)
+  - [func \(o AlertsItem\) MarshalJSON\(\) \(\[\]byte, error\)](<#AlertsItem.MarshalJSON>)
+  - [func \(o \*AlertsItem\) SetActionMessage\(v string\)](<#AlertsItem.SetActionMessage>)
+  - [func \(o \*AlertsItem\) SetActionMessageNil\(\)](<#AlertsItem.SetActionMessageNil>)
+  - [func \(o \*AlertsItem\) SetActionRequired\(v bool\)](<#AlertsItem.SetActionRequired>)
+  - [func \(o \*AlertsItem\) SetCorrelationData\(v AlertsCorrelationData\)](<#AlertsItem.SetCorrelationData>)
+  - [func \(o \*AlertsItem\) SetLgsName\(v string\)](<#AlertsItem.SetLgsName>)
+  - [func \(o \*AlertsItem\) SetLgsNameNil\(\)](<#AlertsItem.SetLgsNameNil>)
+  - [func \(o \*AlertsItem\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#AlertsItem.UnMarshalJSON>)
+  - [func \(o \*AlertsItem\) UnSetLgsName\(\)](<#AlertsItem.UnSetLgsName>)
+- [type AlertsSearchRequest](<#AlertsSearchRequest>)
+  - [func NewAlertsSearchRequest\(\) \*AlertsSearchRequest](<#NewAlertsSearchRequest>)
+  - [func NewAlertsSearchRequestWithDefaults\(\) \*AlertsSearchRequest](<#NewAlertsSearchRequestWithDefaults>)
+  - [func \(o \*AlertsSearchRequest\) GetFilter\(\) string](<#AlertsSearchRequest.GetFilter>)
+  - [func \(o \*AlertsSearchRequest\) GetFilterOk\(\) \(\*string, bool\)](<#AlertsSearchRequest.GetFilterOk>)
+  - [func \(o \*AlertsSearchRequest\) GetSmartRestRequestContext\(\) string](<#AlertsSearchRequest.GetSmartRestRequestContext>)
+  - [func \(o \*AlertsSearchRequest\) GetSmartRestRequestContextOk\(\) \(\*string, bool\)](<#AlertsSearchRequest.GetSmartRestRequestContextOk>)
+  - [func \(o \*AlertsSearchRequest\) HasFilter\(\) bool](<#AlertsSearchRequest.HasFilter>)
+  - [func \(o \*AlertsSearchRequest\) HasSmartRestRequestContext\(\) bool](<#AlertsSearchRequest.HasSmartRestRequestContext>)
+  - [func \(o AlertsSearchRequest\) MarshalJSON\(\) \(\[\]byte, error\)](<#AlertsSearchRequest.MarshalJSON>)
+  - [func \(o \*AlertsSearchRequest\) SetFilter\(v string\)](<#AlertsSearchRequest.SetFilter>)
+  - [func \(o \*AlertsSearchRequest\) SetSmartRestRequestContext\(v string\)](<#AlertsSearchRequest.SetSmartRestRequestContext>)
+  - [func \(o \*AlertsSearchRequest\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#AlertsSearchRequest.UnMarshalJSON>)
+- [type AlertsSearchResponse](<#AlertsSearchResponse>)
+  - [func NewAlertsSearchResponse\(\) \*AlertsSearchResponse](<#NewAlertsSearchResponse>)
+  - [func NewAlertsSearchResponseWithDefaults\(\) \*AlertsSearchResponse](<#NewAlertsSearchResponseWithDefaults>)
+  - [func \(o \*AlertsSearchResponse\) GetFailedItems\(\) \[\]json.RawMessage](<#AlertsSearchResponse.GetFailedItems>)
+  - [func \(o \*AlertsSearchResponse\) GetFailedItemsOk\(\) \(\*\[\]json.RawMessage, bool\)](<#AlertsSearchResponse.GetFailedItemsOk>)
+  - [func \(o \*AlertsSearchResponse\) GetItems\(\) \[\]AlertsItem](<#AlertsSearchResponse.GetItems>)
+  - [func \(o \*AlertsSearchResponse\) GetItemsOk\(\) \(\*\[\]AlertsItem, bool\)](<#AlertsSearchResponse.GetItemsOk>)
+  - [func \(o \*AlertsSearchResponse\) GetSuccessItem\(\) \[\]SuccessItem](<#AlertsSearchResponse.GetSuccessItem>)
+  - [func \(o \*AlertsSearchResponse\) GetSuccessItemOk\(\) \(\*\[\]SuccessItem, bool\)](<#AlertsSearchResponse.GetSuccessItemOk>)
+  - [func \(o \*AlertsSearchResponse\) HasFailedItems\(\) bool](<#AlertsSearchResponse.HasFailedItems>)
+  - [func \(o \*AlertsSearchResponse\) HasItems\(\) bool](<#AlertsSearchResponse.HasItems>)
+  - [func \(o \*AlertsSearchResponse\) HasSuccessItem\(\) bool](<#AlertsSearchResponse.HasSuccessItem>)
+  - [func \(o AlertsSearchResponse\) MarshalJSON\(\) \(\[\]byte, error\)](<#AlertsSearchResponse.MarshalJSON>)
+  - [func \(o \*AlertsSearchResponse\) SetFailedItems\(v \[\]json.RawMessage\)](<#AlertsSearchResponse.SetFailedItems>)
+  - [func \(o \*AlertsSearchResponse\) SetItems\(v \[\]AlertsItem\)](<#AlertsSearchResponse.SetItems>)
+  - [func \(o \*AlertsSearchResponse\) SetSuccessItem\(v \[\]SuccessItem\)](<#AlertsSearchResponse.SetSuccessItem>)
+  - [func \(o \*AlertsSearchResponse\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#AlertsSearchResponse.UnMarshalJSON>)
+- [type DateTimeRange](<#DateTimeRange>)
+  - [func NewDateTimeRange\(dateTimeType DateTimeType\) \*DateTimeRange](<#NewDateTimeRange>)
+  - [func NewDateTimeRangeWithDefaults\(dateTimeType DateTimeType\) \*DateTimeRange](<#NewDateTimeRangeWithDefaults>)
+  - [func \(o \*DateTimeRange\) GetDateTimeType\(\) DateTimeType](<#DateTimeRange.GetDateTimeType>)
+  - [func \(o \*DateTimeRange\) GetDateTimeTypeOk\(\) \(\*DateTimeType, bool\)](<#DateTimeRange.GetDateTimeTypeOk>)
+  - [func \(o \*DateTimeRange\) GetEndDate\(\) string](<#DateTimeRange.GetEndDate>)
+  - [func \(o \*DateTimeRange\) GetEndDateOk\(\) \(\*string, bool\)](<#DateTimeRange.GetEndDateOk>)
+  - [func \(o \*DateTimeRange\) GetField\(\) string](<#DateTimeRange.GetField>)
+  - [func \(o \*DateTimeRange\) GetFieldOk\(\) \(\*string, bool\)](<#DateTimeRange.GetFieldOk>)
+  - [func \(o \*DateTimeRange\) GetStartDate\(\) string](<#DateTimeRange.GetStartDate>)
+  - [func \(o \*DateTimeRange\) GetStartDateOk\(\) \(\*string, bool\)](<#DateTimeRange.GetStartDateOk>)
+  - [func \(o \*DateTimeRange\) HasEndDate\(\) bool](<#DateTimeRange.HasEndDate>)
+  - [func \(o \*DateTimeRange\) HasField\(\) bool](<#DateTimeRange.HasField>)
+  - [func \(o \*DateTimeRange\) HasStartDate\(\) bool](<#DateTimeRange.HasStartDate>)
+  - [func \(o DateTimeRange\) MarshalJSON\(\) \(\[\]byte, error\)](<#DateTimeRange.MarshalJSON>)
+  - [func \(o \*DateTimeRange\) SetDateTimeType\(v DateTimeType\)](<#DateTimeRange.SetDateTimeType>)
+  - [func \(o \*DateTimeRange\) SetEndDate\(v string\)](<#DateTimeRange.SetEndDate>)
+  - [func \(o \*DateTimeRange\) SetField\(v string\)](<#DateTimeRange.SetField>)
+  - [func \(o \*DateTimeRange\) SetFieldNil\(\)](<#DateTimeRange.SetFieldNil>)
+  - [func \(o \*DateTimeRange\) SetStartDate\(v string\)](<#DateTimeRange.SetStartDate>)
+  - [func \(o \*DateTimeRange\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#DateTimeRange.UnMarshalJSON>)
+  - [func \(o \*DateTimeRange\) UnSetField\(\)](<#DateTimeRange.UnSetField>)
+- [type DateTimeType](<#DateTimeType>)
+  - [func NewDateTimeTypeFromValue\(v string\) \(\*DateTimeType, error\)](<#NewDateTimeTypeFromValue>)
+  - [func \(v \*DateTimeType\) GetAllowedValues\(\) \[\]DateTimeType](<#DateTimeType.GetAllowedValues>)
+  - [func \(v DateTimeType\) IsValid\(\) bool](<#DateTimeType.IsValid>)
+  - [func \(v DateTimeType\) Ptr\(\) \*DateTimeType](<#DateTimeType.Ptr>)
+  - [func \(v \*DateTimeType\) UnMarshalJSON\(src \[\]byte\) error](<#DateTimeType.UnMarshalJSON>)
+- [type ErrorResponse](<#ErrorResponse>)
+  - [func NewErrorResponse\(errors \[\]string\) \*ErrorResponse](<#NewErrorResponse>)
+  - [func NewErrorResponseWithDefaults\(\) \*ErrorResponse](<#NewErrorResponseWithDefaults>)
+  - [func \(o \*ErrorResponse\) GetErrors\(\) \[\]string](<#ErrorResponse.GetErrors>)
+  - [func \(o \*ErrorResponse\) GetErrorsOk\(\) \(\*\[\]string, bool\)](<#ErrorResponse.GetErrorsOk>)
+  - [func \(o ErrorResponse\) MarshalJSON\(\) \(\[\]byte, error\)](<#ErrorResponse.MarshalJSON>)
+  - [func \(o \*ErrorResponse\) SetErrors\(v \[\]string\)](<#ErrorResponse.SetErrors>)
+  - [func \(o \*ErrorResponse\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ErrorResponse.UnMarshalJSON>)
 - [type EventsApi](<#EventsApi>)
   - [func NewEventsApi\(client \*common.APIClient\) \*EventsApi](<#NewEventsApi>)
-  - [func \(a \*EventsApi\) SearchEvents\(ctx \_context.Context, o ...SearchEventsOptionalParameters\) \(EventsListResponse, \*\_nethttp.Response, error\)](<#EventsApi.SearchEvents>)
-- [type EventsDateTimeRange](<#EventsDateTimeRange>)
-  - [func NewEventsDateTimeRange\(dateTimeType EventsDateTimeType\) \*EventsDateTimeRange](<#NewEventsDateTimeRange>)
-  - [func NewEventsDateTimeRangeWithDefault\(dateTimeType EventsDateTimeType\) \*EventsDateTimeRange](<#NewEventsDateTimeRangeWithDefault>)
-  - [func \(o \*EventsDateTimeRange\) GetDateTimeType\(\) EventsDateTimeType](<#EventsDateTimeRange.GetDateTimeType>)
-  - [func \(o \*EventsDateTimeRange\) GetDateTimeTypeOk\(\) \(\*EventsDateTimeType, bool\)](<#EventsDateTimeRange.GetDateTimeTypeOk>)
-  - [func \(o \*EventsDateTimeRange\) GetEndDate\(\) string](<#EventsDateTimeRange.GetEndDate>)
-  - [func \(o \*EventsDateTimeRange\) GetEndDateOk\(\) \(\*string, bool\)](<#EventsDateTimeRange.GetEndDateOk>)
-  - [func \(o \*EventsDateTimeRange\) GetStartDate\(\) string](<#EventsDateTimeRange.GetStartDate>)
-  - [func \(o \*EventsDateTimeRange\) GetStartDateOk\(\) \(\*string, bool\)](<#EventsDateTimeRange.GetStartDateOk>)
-  - [func \(o \*EventsDateTimeRange\) HasEndDate\(\) bool](<#EventsDateTimeRange.HasEndDate>)
-  - [func \(o \*EventsDateTimeRange\) HasStartDate\(\) bool](<#EventsDateTimeRange.HasStartDate>)
-  - [func \(o EventsDateTimeRange\) MarshalJSON\(\) \(\[\]byte, error\)](<#EventsDateTimeRange.MarshalJSON>)
-  - [func \(o \*EventsDateTimeRange\) SetDateTimeType\(v EventsDateTimeType\)](<#EventsDateTimeRange.SetDateTimeType>)
-  - [func \(o \*EventsDateTimeRange\) SetEndDate\(v string\)](<#EventsDateTimeRange.SetEndDate>)
-  - [func \(o \*EventsDateTimeRange\) SetStartDate\(v string\)](<#EventsDateTimeRange.SetStartDate>)
-  - [func \(o \*EventsDateTimeRange\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#EventsDateTimeRange.UnMarshalJSON>)
-- [type EventsDateTimeType](<#EventsDateTimeType>)
-  - [func NewEventsDateTimeTypeFromValue\(v string\) \(\*EventsDateTimeType, error\)](<#NewEventsDateTimeTypeFromValue>)
-  - [func \(v \*EventsDateTimeType\) GetAllowedValues\(\) \[\]EventsDateTimeType](<#EventsDateTimeType.GetAllowedValues>)
-  - [func \(v EventsDateTimeType\) IsValid\(\) bool](<#EventsDateTimeType.IsValid>)
-  - [func \(v EventsDateTimeType\) Ptr\(\) \*EventsDateTimeType](<#EventsDateTimeType.Ptr>)
-  - [func \(v \*EventsDateTimeType\) UnMarshalJSON\(src \[\]byte\) error](<#EventsDateTimeType.UnMarshalJSON>)
-- [type EventsListRequest](<#EventsListRequest>)
-  - [func NewEventsListRequest\(\) \*EventsListRequest](<#NewEventsListRequest>)
-  - [func NewEventsListRequestWithDefaults\(\) \*EventsListRequest](<#NewEventsListRequestWithDefaults>)
-  - [func \(o \*EventsListRequest\) GetQuery\(\) EventsQueryFilter](<#EventsListRequest.GetQuery>)
-  - [func \(o \*EventsListRequest\) GetQueryOk\(\) \(\*EventsQueryFilter, bool\)](<#EventsListRequest.GetQueryOk>)
-  - [func \(o \*EventsListRequest\) GetReason\(\) string](<#EventsListRequest.GetReason>)
-  - [func \(o \*EventsListRequest\) GetReasonOk\(\) \(\*string, bool\)](<#EventsListRequest.GetReasonOk>)
-  - [func \(o \*EventsListRequest\) GetSmartRestRequestContext\(\) string](<#EventsListRequest.GetSmartRestRequestContext>)
-  - [func \(o \*EventsListRequest\) GetSmartRestRequestContextOk\(\) \(\*string, bool\)](<#EventsListRequest.GetSmartRestRequestContextOk>)
-  - [func \(o \*EventsListRequest\) HasQuery\(\) bool](<#EventsListRequest.HasQuery>)
-  - [func \(o \*EventsListRequest\) HasReason\(\) bool](<#EventsListRequest.HasReason>)
-  - [func \(o \*EventsListRequest\) HasSmartRestRequestContext\(\) bool](<#EventsListRequest.HasSmartRestRequestContext>)
-  - [func \(o EventsListRequest\) MarshalJSON\(\) \(\[\]byte, error\)](<#EventsListRequest.MarshalJSON>)
-  - [func \(o \*EventsListRequest\) SetQuery\(v EventsQueryFilter\)](<#EventsListRequest.SetQuery>)
-  - [func \(o \*EventsListRequest\) SetReason\(v string\)](<#EventsListRequest.SetReason>)
-  - [func \(o \*EventsListRequest\) SetSmartRestRequestContext\(v string\)](<#EventsListRequest.SetSmartRestRequestContext>)
-  - [func \(o \*EventsListRequest\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#EventsListRequest.UnMarshalJSON>)
-- [type EventsListResponse](<#EventsListResponse>)
-  - [func NewEventsListResponse\(\) \*EventsListResponse](<#NewEventsListResponse>)
-  - [func NewEventsListResponseWithDefault\(\) \*EventsListResponse](<#NewEventsListResponseWithDefault>)
-  - [func \(o \*EventsListResponse\) GetData\(\) \[\]json.RawMessage](<#EventsListResponse.GetData>)
-  - [func \(o \*EventsListResponse\) GetDataOk\(\) \(\*\[\]json.RawMessage, bool\)](<#EventsListResponse.GetDataOk>)
-  - [func \(o \*EventsListResponse\) GetQueryType\(\) string](<#EventsListResponse.GetQueryType>)
-  - [func \(o \*EventsListResponse\) GetQueryTypeOk\(\) \(\*string, bool\)](<#EventsListResponse.GetQueryTypeOk>)
-  - [func \(o \*EventsListResponse\) GetSearchTime\(\) int64](<#EventsListResponse.GetSearchTime>)
-  - [func \(o \*EventsListResponse\) GetSearchTimeOk\(\) \(\*int64, bool\)](<#EventsListResponse.GetSearchTimeOk>)
-  - [func \(o \*EventsListResponse\) GetSelectedColumns\(\) \[\]json.RawMessage](<#EventsListResponse.GetSelectedColumns>)
-  - [func \(o \*EventsListResponse\) GetSelectedColumnsOk\(\) \(\*\[\]json.RawMessage, bool\)](<#EventsListResponse.GetSelectedColumnsOk>)
-  - [func \(o \*EventsListResponse\) GetTotalSize\(\) int64](<#EventsListResponse.GetTotalSize>)
-  - [func \(o \*EventsListResponse\) GetTotalSizeOk\(\) \(\*int64, bool\)](<#EventsListResponse.GetTotalSizeOk>)
-  - [func \(o \*EventsListResponse\) HasData\(\) bool](<#EventsListResponse.HasData>)
-  - [func \(o \*EventsListResponse\) HasQueryType\(\) bool](<#EventsListResponse.HasQueryType>)
-  - [func \(o \*EventsListResponse\) HasSearchTime\(\) bool](<#EventsListResponse.HasSearchTime>)
-  - [func \(o \*EventsListResponse\) HasSelectedColumns\(\) bool](<#EventsListResponse.HasSelectedColumns>)
-  - [func \(o \*EventsListResponse\) HasTotalSize\(\) bool](<#EventsListResponse.HasTotalSize>)
-  - [func \(o EventsListResponse\) MarshalJSON\(\) \(\[\]byte, error\)](<#EventsListResponse.MarshalJSON>)
-  - [func \(o \*EventsListResponse\) SetData\(v \[\]json.RawMessage\)](<#EventsListResponse.SetData>)
-  - [func \(o \*EventsListResponse\) SetQueryType\(v string\)](<#EventsListResponse.SetQueryType>)
-  - [func \(o \*EventsListResponse\) SetSearchTime\(v int64\)](<#EventsListResponse.SetSearchTime>)
-  - [func \(o \*EventsListResponse\) SetSelectedColumns\(v \[\]json.RawMessage\)](<#EventsListResponse.SetSelectedColumns>)
-  - [func \(o \*EventsListResponse\) SetTotalSize\(v int64\)](<#EventsListResponse.SetTotalSize>)
-  - [func \(o \*EventsListResponse\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#EventsListResponse.UnMarshalJSON>)
+  - [func \(a \*EventsApi\) SearchEvents\(ctx \_context.Context, o ...SearchEventsOptionalParameters\) \(EventsSearchResponse, \*\_nethttp.Response, error\)](<#EventsApi.SearchEvents>)
 - [type EventsQueryFilter](<#EventsQueryFilter>)
   - [func NewEventsQueryFilter\(\) \*EventsQueryFilter](<#NewEventsQueryFilter>)
   - [func NewEventsQueryFilterWithDefaults\(\) \*EventsQueryFilter](<#NewEventsQueryFilterWithDefaults>)
-  - [func \(o \*EventsQueryFilter\) GetDateTimeRange\(\) EventsDateTimeRange](<#EventsQueryFilter.GetDateTimeRange>)
-  - [func \(o \*EventsQueryFilter\) GetDateTimeRangeOk\(\) \(\*EventsDateTimeRange, bool\)](<#EventsQueryFilter.GetDateTimeRangeOk>)
+  - [func \(o \*EventsQueryFilter\) GetDateTimeRange\(\) DateTimeRange](<#EventsQueryFilter.GetDateTimeRange>)
+  - [func \(o \*EventsQueryFilter\) GetDateTimeRangeOk\(\) \(\*DateTimeRange, bool\)](<#EventsQueryFilter.GetDateTimeRangeOk>)
   - [func \(o \*EventsQueryFilter\) GetQueryOptions\(\) EventsQueryOptions](<#EventsQueryFilter.GetQueryOptions>)
   - [func \(o \*EventsQueryFilter\) GetQueryOptionsOk\(\) \(\*EventsQueryOptions, bool\)](<#EventsQueryFilter.GetQueryOptionsOk>)
   - [func \(o \*EventsQueryFilter\) GetQuerySQL\(\) string](<#EventsQueryFilter.GetQuerySQL>)
@@ -1362,7 +1535,7 @@ import "github.com/mtnmunuklu/davudpasha-api-client-go/api/davudpasha"
   - [func \(o \*EventsQueryFilter\) HasQueryOptions\(\) bool](<#EventsQueryFilter.HasQueryOptions>)
   - [func \(o \*EventsQueryFilter\) HasQuerySQL\(\) bool](<#EventsQueryFilter.HasQuerySQL>)
   - [func \(o EventsQueryFilter\) MarshalJSON\(\) \(\[\]byte, error\)](<#EventsQueryFilter.MarshalJSON>)
-  - [func \(o \*EventsQueryFilter\) SetDateTimeRange\(v EventsDateTimeRange\)](<#EventsQueryFilter.SetDateTimeRange>)
+  - [func \(o \*EventsQueryFilter\) SetDateTimeRange\(v DateTimeRange\)](<#EventsQueryFilter.SetDateTimeRange>)
   - [func \(o \*EventsQueryFilter\) SetQueryOptions\(v EventsQueryOptions\)](<#EventsQueryFilter.SetQueryOptions>)
   - [func \(o \*EventsQueryFilter\) SetQuerySQL\(v string\)](<#EventsQueryFilter.SetQuerySQL>)
   - [func \(o \*EventsQueryFilter\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#EventsQueryFilter.UnMarshalJSON>)
@@ -1373,18 +1546,3424 @@ import "github.com/mtnmunuklu/davudpasha-api-client-go/api/davudpasha"
   - [func \(o EventsQueryOptions\) MarshalJSON\(\) \(\[\]byte, error\)](<#EventsQueryOptions.MarshalJSON>)
   - [func \(o \*EventsQueryOptions\) SetShowHighlight\(v bool\)](<#EventsQueryOptions.SetShowHighlight>)
   - [func \(o \*EventsQueryOptions\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#EventsQueryOptions.UnMarshalJSON>)
+- [type EventsSearchRequest](<#EventsSearchRequest>)
+  - [func NewEventsSearchRequest\(\) \*EventsSearchRequest](<#NewEventsSearchRequest>)
+  - [func NewEventsSearchRequestWithDefaults\(\) \*EventsSearchRequest](<#NewEventsSearchRequestWithDefaults>)
+  - [func \(o \*EventsSearchRequest\) GetQuery\(\) EventsQueryFilter](<#EventsSearchRequest.GetQuery>)
+  - [func \(o \*EventsSearchRequest\) GetQueryOk\(\) \(\*EventsQueryFilter, bool\)](<#EventsSearchRequest.GetQueryOk>)
+  - [func \(o \*EventsSearchRequest\) GetReason\(\) string](<#EventsSearchRequest.GetReason>)
+  - [func \(o \*EventsSearchRequest\) GetReasonOk\(\) \(\*string, bool\)](<#EventsSearchRequest.GetReasonOk>)
+  - [func \(o \*EventsSearchRequest\) GetSmartRestRequestContext\(\) string](<#EventsSearchRequest.GetSmartRestRequestContext>)
+  - [func \(o \*EventsSearchRequest\) GetSmartRestRequestContextOk\(\) \(\*string, bool\)](<#EventsSearchRequest.GetSmartRestRequestContextOk>)
+  - [func \(o \*EventsSearchRequest\) HasQuery\(\) bool](<#EventsSearchRequest.HasQuery>)
+  - [func \(o \*EventsSearchRequest\) HasReason\(\) bool](<#EventsSearchRequest.HasReason>)
+  - [func \(o \*EventsSearchRequest\) HasSmartRestRequestContext\(\) bool](<#EventsSearchRequest.HasSmartRestRequestContext>)
+  - [func \(o EventsSearchRequest\) MarshalJSON\(\) \(\[\]byte, error\)](<#EventsSearchRequest.MarshalJSON>)
+  - [func \(o \*EventsSearchRequest\) SetQuery\(v EventsQueryFilter\)](<#EventsSearchRequest.SetQuery>)
+  - [func \(o \*EventsSearchRequest\) SetReason\(v string\)](<#EventsSearchRequest.SetReason>)
+  - [func \(o \*EventsSearchRequest\) SetSmartRestRequestContext\(v string\)](<#EventsSearchRequest.SetSmartRestRequestContext>)
+  - [func \(o \*EventsSearchRequest\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#EventsSearchRequest.UnMarshalJSON>)
+- [type EventsSearchResponse](<#EventsSearchResponse>)
+  - [func NewEventsSearchResponse\(\) \*EventsSearchResponse](<#NewEventsSearchResponse>)
+  - [func NewEventsSearchResponseWithDefaults\(\) \*EventsSearchResponse](<#NewEventsSearchResponseWithDefaults>)
+  - [func \(o \*EventsSearchResponse\) GetData\(\) \[\]json.RawMessage](<#EventsSearchResponse.GetData>)
+  - [func \(o \*EventsSearchResponse\) GetDataOk\(\) \(\*\[\]json.RawMessage, bool\)](<#EventsSearchResponse.GetDataOk>)
+  - [func \(o \*EventsSearchResponse\) GetQueryType\(\) string](<#EventsSearchResponse.GetQueryType>)
+  - [func \(o \*EventsSearchResponse\) GetQueryTypeOk\(\) \(\*string, bool\)](<#EventsSearchResponse.GetQueryTypeOk>)
+  - [func \(o \*EventsSearchResponse\) GetSearchTime\(\) int64](<#EventsSearchResponse.GetSearchTime>)
+  - [func \(o \*EventsSearchResponse\) GetSearchTimeOk\(\) \(\*int64, bool\)](<#EventsSearchResponse.GetSearchTimeOk>)
+  - [func \(o \*EventsSearchResponse\) GetSelectedColumns\(\) \[\]SelectedColumn](<#EventsSearchResponse.GetSelectedColumns>)
+  - [func \(o \*EventsSearchResponse\) GetSelectedColumnsOk\(\) \(\*\[\]SelectedColumn, bool\)](<#EventsSearchResponse.GetSelectedColumnsOk>)
+  - [func \(o \*EventsSearchResponse\) GetTotalSize\(\) int64](<#EventsSearchResponse.GetTotalSize>)
+  - [func \(o \*EventsSearchResponse\) GetTotalSizeOk\(\) \(\*int64, bool\)](<#EventsSearchResponse.GetTotalSizeOk>)
+  - [func \(o \*EventsSearchResponse\) HasData\(\) bool](<#EventsSearchResponse.HasData>)
+  - [func \(o \*EventsSearchResponse\) HasQueryType\(\) bool](<#EventsSearchResponse.HasQueryType>)
+  - [func \(o \*EventsSearchResponse\) HasSearchTime\(\) bool](<#EventsSearchResponse.HasSearchTime>)
+  - [func \(o \*EventsSearchResponse\) HasSelectedColumns\(\) bool](<#EventsSearchResponse.HasSelectedColumns>)
+  - [func \(o \*EventsSearchResponse\) HasTotalSize\(\) bool](<#EventsSearchResponse.HasTotalSize>)
+  - [func \(o EventsSearchResponse\) MarshalJSON\(\) \(\[\]byte, error\)](<#EventsSearchResponse.MarshalJSON>)
+  - [func \(o \*EventsSearchResponse\) SetData\(v \[\]json.RawMessage\)](<#EventsSearchResponse.SetData>)
+  - [func \(o \*EventsSearchResponse\) SetQueryType\(v string\)](<#EventsSearchResponse.SetQueryType>)
+  - [func \(o \*EventsSearchResponse\) SetSearchTime\(v int64\)](<#EventsSearchResponse.SetSearchTime>)
+  - [func \(o \*EventsSearchResponse\) SetSelectedColumns\(v \[\]SelectedColumn\)](<#EventsSearchResponse.SetSelectedColumns>)
+  - [func \(o \*EventsSearchResponse\) SetTotalSize\(v int64\)](<#EventsSearchResponse.SetTotalSize>)
+  - [func \(o \*EventsSearchResponse\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#EventsSearchResponse.UnMarshalJSON>)
+- [type NullableReportsQueryExtData](<#NullableReportsQueryExtData>)
+  - [func NewNullableReportsQueryExtData\(val \*ReportsQueryExtData\) \*NullableReportsQueryExtData](<#NewNullableReportsQueryExtData>)
+  - [func \(v NullableReportsQueryExtData\) Get\(\) \*ReportsQueryExtData](<#NullableReportsQueryExtData.Get>)
+  - [func \(v NullableReportsQueryExtData\) IsSet\(\) bool](<#NullableReportsQueryExtData.IsSet>)
+  - [func \(v NullableReportsQueryExtData\) MarshalJSON\(\) \(\[\]byte, error\)](<#NullableReportsQueryExtData.MarshalJSON>)
+  - [func \(v \*NullableReportsQueryExtData\) Set\(val \*ReportsQueryExtData\)](<#NullableReportsQueryExtData.Set>)
+  - [func \(v \*NullableReportsQueryExtData\) UnSet\(\)](<#NullableReportsQueryExtData.UnSet>)
+  - [func \(v \*NullableReportsQueryExtData\) UnmarshalJSON\(src \[\]byte\) error](<#NullableReportsQueryExtData.UnmarshalJSON>)
+- [type NullableScheduleConfig](<#NullableScheduleConfig>)
+  - [func NewNullableScheduleConfig\(val \*ScheduleConfig\) \*NullableScheduleConfig](<#NewNullableScheduleConfig>)
+  - [func \(v NullableScheduleConfig\) Get\(\) \*ScheduleConfig](<#NullableScheduleConfig.Get>)
+  - [func \(v NullableScheduleConfig\) IsSet\(\) bool](<#NullableScheduleConfig.IsSet>)
+  - [func \(v NullableScheduleConfig\) MarshalJSON\(\) \(\[\]byte, error\)](<#NullableScheduleConfig.MarshalJSON>)
+  - [func \(v \*NullableScheduleConfig\) Set\(val \*ScheduleConfig\)](<#NullableScheduleConfig.Set>)
+  - [func \(v \*NullableScheduleConfig\) UnSet\(\)](<#NullableScheduleConfig.UnSet>)
+  - [func \(v \*NullableScheduleConfig\) UnmarshalJSON\(src \[\]byte\) error](<#NullableScheduleConfig.UnmarshalJSON>)
+- [type ParallelOptions](<#ParallelOptions>)
+  - [func NewParallelOptions\(\) \*ParallelOptions](<#NewParallelOptions>)
+  - [func NewParallelOptionsWithDefaults\(\) \*ParallelOptions](<#NewParallelOptionsWithDefaults>)
+  - [func \(o \*ParallelOptions\) GetFileBlockSizeMb\(\) int64](<#ParallelOptions.GetFileBlockSizeMb>)
+  - [func \(o \*ParallelOptions\) GetFileBlockSizeMbOk\(\) \(\*int64, bool\)](<#ParallelOptions.GetFileBlockSizeMbOk>)
+  - [func \(o \*ParallelOptions\) GetIsActive\(\) bool](<#ParallelOptions.GetIsActive>)
+  - [func \(o \*ParallelOptions\) GetIsActiveOk\(\) \(\*bool, bool\)](<#ParallelOptions.GetIsActiveOk>)
+  - [func \(o \*ParallelOptions\) GetTaskCount\(\) int64](<#ParallelOptions.GetTaskCount>)
+  - [func \(o \*ParallelOptions\) GetTaskCountOk\(\) \(\*int64, bool\)](<#ParallelOptions.GetTaskCountOk>)
+  - [func \(o \*ParallelOptions\) GetTimeoutSec\(\) int64](<#ParallelOptions.GetTimeoutSec>)
+  - [func \(o \*ParallelOptions\) GetTimeoutSecOk\(\) \(\*int64, bool\)](<#ParallelOptions.GetTimeoutSecOk>)
+  - [func \(o \*ParallelOptions\) HasFileBlockSizeMb\(\) bool](<#ParallelOptions.HasFileBlockSizeMb>)
+  - [func \(o \*ParallelOptions\) HasIsActive\(\) bool](<#ParallelOptions.HasIsActive>)
+  - [func \(o \*ParallelOptions\) HasTaskCount\(\) bool](<#ParallelOptions.HasTaskCount>)
+  - [func \(o \*ParallelOptions\) HasTimeoutSec\(\) bool](<#ParallelOptions.HasTimeoutSec>)
+  - [func \(o ParallelOptions\) MarshalJSON\(\) \(\[\]byte, error\)](<#ParallelOptions.MarshalJSON>)
+  - [func \(o \*ParallelOptions\) SetFileBlockSizeMb\(v int64\)](<#ParallelOptions.SetFileBlockSizeMb>)
+  - [func \(o \*ParallelOptions\) SetIsActive\(v bool\)](<#ParallelOptions.SetIsActive>)
+  - [func \(o \*ParallelOptions\) SetTaskCount\(v int64\)](<#ParallelOptions.SetTaskCount>)
+  - [func \(o \*ParallelOptions\) SetTimeoutSec\(v int64\)](<#ParallelOptions.SetTimeoutSec>)
+  - [func \(o \*ParallelOptions\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ParallelOptions.UnMarshalJSON>)
+- [type QueriesApi](<#QueriesApi>)
+  - [func NewQueriesApi\(client \*common.APIClient\) \*QueriesApi](<#NewQueriesApi>)
+  - [func \(a \*QueriesApi\) SearchQueries\(ctx \_context.Context, o ...SearchQueriesOptionalParameters\) \(QueriesSearchResponse, \*\_nethttp.Response, error\)](<#QueriesApi.SearchQueries>)
+- [type QueriesItem](<#QueriesItem>)
+  - [func NewQueriesItem\(\) \*QueriesItem](<#NewQueriesItem>)
+  - [func NewQueriesItemWithDefaults\(\) \*QueriesItem](<#NewQueriesItemWithDefaults>)
+  - [func \(o \*QueriesItem\) GetAuthor\(\) string](<#QueriesItem.GetAuthor>)
+  - [func \(o \*QueriesItem\) GetAuthorOk\(\) \(\*string, bool\)](<#QueriesItem.GetAuthorOk>)
+  - [func \(o \*QueriesItem\) GetColumns\(\) \[\]SelectedColumn](<#QueriesItem.GetColumns>)
+  - [func \(o \*QueriesItem\) GetColumnsOk\(\) \(\*\[\]SelectedColumn, bool\)](<#QueriesItem.GetColumnsOk>)
+  - [func \(o \*QueriesItem\) GetDateTimeRange\(\) DateTimeRange](<#QueriesItem.GetDateTimeRange>)
+  - [func \(o \*QueriesItem\) GetDateTimeRangeOk\(\) \(\*DateTimeRange, bool\)](<#QueriesItem.GetDateTimeRangeOk>)
+  - [func \(o \*QueriesItem\) GetDescription\(\) string](<#QueriesItem.GetDescription>)
+  - [func \(o \*QueriesItem\) GetDescriptionOk\(\) \(\*string, bool\)](<#QueriesItem.GetDescriptionOk>)
+  - [func \(o \*QueriesItem\) GetFromMarket\(\) bool](<#QueriesItem.GetFromMarket>)
+  - [func \(o \*QueriesItem\) GetFromMarketOk\(\) \(\*bool, bool\)](<#QueriesItem.GetFromMarketOk>)
+  - [func \(o \*QueriesItem\) GetFromModules\(\) bool](<#QueriesItem.GetFromModules>)
+  - [func \(o \*QueriesItem\) GetFromModulesOk\(\) \(\*bool, bool\)](<#QueriesItem.GetFromModulesOk>)
+  - [func \(o \*QueriesItem\) GetHasUpdate\(\) bool](<#QueriesItem.GetHasUpdate>)
+  - [func \(o \*QueriesItem\) GetHasUpdateOk\(\) \(\*bool, bool\)](<#QueriesItem.GetHasUpdateOk>)
+  - [func \(o \*QueriesItem\) GetID\(\) string](<#QueriesItem.GetID>)
+  - [func \(o \*QueriesItem\) GetIDOk\(\) \(\*string, bool\)](<#QueriesItem.GetIDOk>)
+  - [func \(o \*QueriesItem\) GetInsertDate\(\) string](<#QueriesItem.GetInsertDate>)
+  - [func \(o \*QueriesItem\) GetInsertDateOk\(\) \(\*string, bool\)](<#QueriesItem.GetInsertDateOk>)
+  - [func \(o \*QueriesItem\) GetKillChainPhase\(\) string](<#QueriesItem.GetKillChainPhase>)
+  - [func \(o \*QueriesItem\) GetKillChainPhaseOk\(\) \(\*string, bool\)](<#QueriesItem.GetKillChainPhaseOk>)
+  - [func \(o \*QueriesItem\) GetLastUpdateDate\(\) string](<#QueriesItem.GetLastUpdateDate>)
+  - [func \(o \*QueriesItem\) GetLastUpdateDateOk\(\) \(\*string, bool\)](<#QueriesItem.GetLastUpdateDateOk>)
+  - [func \(o \*QueriesItem\) GetMitreTags\(\) \[\]string](<#QueriesItem.GetMitreTags>)
+  - [func \(o \*QueriesItem\) GetMitreTagsOk\(\) \(\*\[\]string, bool\)](<#QueriesItem.GetMitreTagsOk>)
+  - [func \(o \*QueriesItem\) GetModuleGuid\(\) string](<#QueriesItem.GetModuleGuid>)
+  - [func \(o \*QueriesItem\) GetModuleGuidOk\(\) \(\*string, bool\)](<#QueriesItem.GetModuleGuidOk>)
+  - [func \(o \*QueriesItem\) GetModuleId\(\) string](<#QueriesItem.GetModuleId>)
+  - [func \(o \*QueriesItem\) GetModuleIdOk\(\) \(\*string, bool\)](<#QueriesItem.GetModuleIdOk>)
+  - [func \(o \*QueriesItem\) GetName\(\) string](<#QueriesItem.GetName>)
+  - [func \(o \*QueriesItem\) GetNameOk\(\) \(\*string, bool\)](<#QueriesItem.GetNameOk>)
+  - [func \(o \*QueriesItem\) GetQueryType\(\) string](<#QueriesItem.GetQueryType>)
+  - [func \(o \*QueriesItem\) GetQueryTypeOk\(\) \(\*string, bool\)](<#QueriesItem.GetQueryTypeOk>)
+  - [func \(o \*QueriesItem\) GetSharedUsersAndGroups\(\) \[\]string](<#QueriesItem.GetSharedUsersAndGroups>)
+  - [func \(o \*QueriesItem\) GetSharedUsersAndGroupsOk\(\) \(\*\[\]string, bool\)](<#QueriesItem.GetSharedUsersAndGroupsOk>)
+  - [func \(o \*QueriesItem\) GetTags\(\) \[\]string](<#QueriesItem.GetTags>)
+  - [func \(o \*QueriesItem\) GetTagsOk\(\) \(\*\[\]string, bool\)](<#QueriesItem.GetTagsOk>)
+  - [func \(o \*QueriesItem\) GetVersion\(\) float64](<#QueriesItem.GetVersion>)
+  - [func \(o \*QueriesItem\) GetVersionOk\(\) \(\*float64, bool\)](<#QueriesItem.GetVersionOk>)
+  - [func \(o \*QueriesItem\) HasAuthor\(\) bool](<#QueriesItem.HasAuthor>)
+  - [func \(o \*QueriesItem\) HasColumns\(\) bool](<#QueriesItem.HasColumns>)
+  - [func \(o \*QueriesItem\) HasDateTimeRange\(\) bool](<#QueriesItem.HasDateTimeRange>)
+  - [func \(o \*QueriesItem\) HasDescription\(\) bool](<#QueriesItem.HasDescription>)
+  - [func \(o \*QueriesItem\) HasFromMarket\(\) bool](<#QueriesItem.HasFromMarket>)
+  - [func \(o \*QueriesItem\) HasFromModules\(\) bool](<#QueriesItem.HasFromModules>)
+  - [func \(o \*QueriesItem\) HasHasUpdate\(\) bool](<#QueriesItem.HasHasUpdate>)
+  - [func \(o \*QueriesItem\) HasID\(\) bool](<#QueriesItem.HasID>)
+  - [func \(o \*QueriesItem\) HasInsertDate\(\) bool](<#QueriesItem.HasInsertDate>)
+  - [func \(o \*QueriesItem\) HasKillChainPhase\(\) bool](<#QueriesItem.HasKillChainPhase>)
+  - [func \(o \*QueriesItem\) HasLastUpdateDate\(\) bool](<#QueriesItem.HasLastUpdateDate>)
+  - [func \(o \*QueriesItem\) HasMitreTags\(\) bool](<#QueriesItem.HasMitreTags>)
+  - [func \(o \*QueriesItem\) HasModuleGuid\(\) bool](<#QueriesItem.HasModuleGuid>)
+  - [func \(o \*QueriesItem\) HasModuleId\(\) bool](<#QueriesItem.HasModuleId>)
+  - [func \(o \*QueriesItem\) HasName\(\) bool](<#QueriesItem.HasName>)
+  - [func \(o \*QueriesItem\) HasQueryType\(\) bool](<#QueriesItem.HasQueryType>)
+  - [func \(o \*QueriesItem\) HasSharedUsersAndGroups\(\) bool](<#QueriesItem.HasSharedUsersAndGroups>)
+  - [func \(o \*QueriesItem\) HasTags\(\) bool](<#QueriesItem.HasTags>)
+  - [func \(o \*QueriesItem\) HasVersion\(\) bool](<#QueriesItem.HasVersion>)
+  - [func \(o QueriesItem\) MarshalJSON\(\) \(\[\]byte, error\)](<#QueriesItem.MarshalJSON>)
+  - [func \(o \*QueriesItem\) SetAuthor\(v string\)](<#QueriesItem.SetAuthor>)
+  - [func \(o \*QueriesItem\) SetColumns\(v \[\]SelectedColumn\)](<#QueriesItem.SetColumns>)
+  - [func \(o \*QueriesItem\) SetColumnsNil\(\)](<#QueriesItem.SetColumnsNil>)
+  - [func \(o \*QueriesItem\) SetDateTimeRange\(v DateTimeRange\)](<#QueriesItem.SetDateTimeRange>)
+  - [func \(o \*QueriesItem\) SetDescription\(v string\)](<#QueriesItem.SetDescription>)
+  - [func \(o \*QueriesItem\) SetDescriptionNil\(\)](<#QueriesItem.SetDescriptionNil>)
+  - [func \(o \*QueriesItem\) SetFromMarket\(v bool\)](<#QueriesItem.SetFromMarket>)
+  - [func \(o \*QueriesItem\) SetFromModules\(v bool\)](<#QueriesItem.SetFromModules>)
+  - [func \(o \*QueriesItem\) SetHasUpdate\(v bool\)](<#QueriesItem.SetHasUpdate>)
+  - [func \(o \*QueriesItem\) SetID\(v string\)](<#QueriesItem.SetID>)
+  - [func \(o \*QueriesItem\) SetInsertDate\(v string\)](<#QueriesItem.SetInsertDate>)
+  - [func \(o \*QueriesItem\) SetKillChainPhase\(v string\)](<#QueriesItem.SetKillChainPhase>)
+  - [func \(o \*QueriesItem\) SetKillChainPhaseNil\(\)](<#QueriesItem.SetKillChainPhaseNil>)
+  - [func \(o \*QueriesItem\) SetLastUpdateDate\(v string\)](<#QueriesItem.SetLastUpdateDate>)
+  - [func \(o \*QueriesItem\) SetMitreTags\(v \[\]string\)](<#QueriesItem.SetMitreTags>)
+  - [func \(o \*QueriesItem\) SetMitreTagsNil\(\)](<#QueriesItem.SetMitreTagsNil>)
+  - [func \(o \*QueriesItem\) SetModuleGuid\(v string\)](<#QueriesItem.SetModuleGuid>)
+  - [func \(o \*QueriesItem\) SetModuleGuidNil\(\)](<#QueriesItem.SetModuleGuidNil>)
+  - [func \(o \*QueriesItem\) SetModuleId\(v string\)](<#QueriesItem.SetModuleId>)
+  - [func \(o \*QueriesItem\) SetModuleIdNil\(\)](<#QueriesItem.SetModuleIdNil>)
+  - [func \(o \*QueriesItem\) SetName\(v string\)](<#QueriesItem.SetName>)
+  - [func \(o \*QueriesItem\) SetQueryType\(v string\)](<#QueriesItem.SetQueryType>)
+  - [func \(o \*QueriesItem\) SetSharedUsersAndGroups\(v \[\]string\)](<#QueriesItem.SetSharedUsersAndGroups>)
+  - [func \(o \*QueriesItem\) SetSharedUsersAndGroupsNil\(\)](<#QueriesItem.SetSharedUsersAndGroupsNil>)
+  - [func \(o \*QueriesItem\) SetTags\(v \[\]string\)](<#QueriesItem.SetTags>)
+  - [func \(o \*QueriesItem\) SetTagsNil\(\)](<#QueriesItem.SetTagsNil>)
+  - [func \(o \*QueriesItem\) SetVersion\(v float64\)](<#QueriesItem.SetVersion>)
+  - [func \(o \*QueriesItem\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#QueriesItem.UnMarshalJSON>)
+  - [func \(o \*QueriesItem\) UnSetColumns\(\)](<#QueriesItem.UnSetColumns>)
+  - [func \(o \*QueriesItem\) UnSetMitreTags\(\)](<#QueriesItem.UnSetMitreTags>)
+  - [func \(o \*QueriesItem\) UnSetSharedUsersAndGroups\(\)](<#QueriesItem.UnSetSharedUsersAndGroups>)
+  - [func \(o \*QueriesItem\) UnSetTags\(\)](<#QueriesItem.UnSetTags>)
+  - [func \(o \*QueriesItem\) UnsetDescription\(\)](<#QueriesItem.UnsetDescription>)
+  - [func \(o \*QueriesItem\) UnsetKillChainPhase\(\)](<#QueriesItem.UnsetKillChainPhase>)
+  - [func \(o \*QueriesItem\) UnsetModuleGuid\(\)](<#QueriesItem.UnsetModuleGuid>)
+  - [func \(o \*QueriesItem\) UnsetModuleId\(\)](<#QueriesItem.UnsetModuleId>)
+- [type QueriesSearchRequest](<#QueriesSearchRequest>)
+  - [func NewQueriesSearchRequest\(\) \*QueriesSearchRequest](<#NewQueriesSearchRequest>)
+  - [func NewQueriesSearchRequestWithDefaults\(\) \*QueriesSearchRequest](<#NewQueriesSearchRequestWithDefaults>)
+  - [func \(o \*QueriesSearchRequest\) GetFilter\(\) string](<#QueriesSearchRequest.GetFilter>)
+  - [func \(o \*QueriesSearchRequest\) GetFilterOk\(\) \(\*string, bool\)](<#QueriesSearchRequest.GetFilterOk>)
+  - [func \(o \*QueriesSearchRequest\) GetSmartRestRequestContext\(\) string](<#QueriesSearchRequest.GetSmartRestRequestContext>)
+  - [func \(o \*QueriesSearchRequest\) GetSmartRestRequestContextOk\(\) \(\*string, bool\)](<#QueriesSearchRequest.GetSmartRestRequestContextOk>)
+  - [func \(o \*QueriesSearchRequest\) GetUsername\(\) string](<#QueriesSearchRequest.GetUsername>)
+  - [func \(o \*QueriesSearchRequest\) GetUsernameOk\(\) \(\*string, bool\)](<#QueriesSearchRequest.GetUsernameOk>)
+  - [func \(o \*QueriesSearchRequest\) HasFilter\(\) bool](<#QueriesSearchRequest.HasFilter>)
+  - [func \(o \*QueriesSearchRequest\) HasSmartRestRequestContext\(\) bool](<#QueriesSearchRequest.HasSmartRestRequestContext>)
+  - [func \(o \*QueriesSearchRequest\) HasUsername\(\) bool](<#QueriesSearchRequest.HasUsername>)
+  - [func \(o QueriesSearchRequest\) MarshalJSON\(\) \(\[\]byte, error\)](<#QueriesSearchRequest.MarshalJSON>)
+  - [func \(o \*QueriesSearchRequest\) SetFilter\(v string\)](<#QueriesSearchRequest.SetFilter>)
+  - [func \(o \*QueriesSearchRequest\) SetSmartRestRequestContext\(v string\)](<#QueriesSearchRequest.SetSmartRestRequestContext>)
+  - [func \(o \*QueriesSearchRequest\) SetUsername\(v string\)](<#QueriesSearchRequest.SetUsername>)
+  - [func \(o \*QueriesSearchRequest\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#QueriesSearchRequest.UnMarshalJSON>)
+- [type QueriesSearchResponse](<#QueriesSearchResponse>)
+  - [func NewQueriesSearchResponse\(\) \*QueriesSearchResponse](<#NewQueriesSearchResponse>)
+  - [func NewQueriesSearchResponseWithDefaults\(\) \*QueriesSearchResponse](<#NewQueriesSearchResponseWithDefaults>)
+  - [func \(o \*QueriesSearchResponse\) GetFailedItems\(\) \[\]json.RawMessage](<#QueriesSearchResponse.GetFailedItems>)
+  - [func \(o \*QueriesSearchResponse\) GetFailedItemsOk\(\) \(\*\[\]json.RawMessage, bool\)](<#QueriesSearchResponse.GetFailedItemsOk>)
+  - [func \(o \*QueriesSearchResponse\) GetItems\(\) \[\]QueriesItem](<#QueriesSearchResponse.GetItems>)
+  - [func \(o \*QueriesSearchResponse\) GetItemsOk\(\) \(\*\[\]QueriesItem, bool\)](<#QueriesSearchResponse.GetItemsOk>)
+  - [func \(o \*QueriesSearchResponse\) GetSuccessItem\(\) \[\]SuccessItem](<#QueriesSearchResponse.GetSuccessItem>)
+  - [func \(o \*QueriesSearchResponse\) GetSuccessItemOk\(\) \(\*\[\]SuccessItem, bool\)](<#QueriesSearchResponse.GetSuccessItemOk>)
+  - [func \(o \*QueriesSearchResponse\) HasFailedItems\(\) bool](<#QueriesSearchResponse.HasFailedItems>)
+  - [func \(o \*QueriesSearchResponse\) HasItems\(\) bool](<#QueriesSearchResponse.HasItems>)
+  - [func \(o \*QueriesSearchResponse\) HasSuccessItem\(\) bool](<#QueriesSearchResponse.HasSuccessItem>)
+  - [func \(o QueriesSearchResponse\) MarshalJSON\(\) \(\[\]byte, error\)](<#QueriesSearchResponse.MarshalJSON>)
+  - [func \(o \*QueriesSearchResponse\) SetFailedItems\(v \[\]json.RawMessage\)](<#QueriesSearchResponse.SetFailedItems>)
+  - [func \(o \*QueriesSearchResponse\) SetItems\(v \[\]QueriesItem\)](<#QueriesSearchResponse.SetItems>)
+  - [func \(o \*QueriesSearchResponse\) SetSuccessItem\(v \[\]SuccessItem\)](<#QueriesSearchResponse.SetSuccessItem>)
+  - [func \(o \*QueriesSearchResponse\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#QueriesSearchResponse.UnMarshalJSON>)
+- [type ReportsApi](<#ReportsApi>)
+  - [func NewReportsApi\(client \*common.APIClient\) \*ReportsApi](<#NewReportsApi>)
+  - [func \(a \*ReportsApi\) SearchReports\(ctx \_context.Context, o ...SearchReportsOptionalParameters\) \(\[\]ReportsSearchResponse, \*\_nethttp.Response, error\)](<#ReportsApi.SearchReports>)
+- [type ReportsChartLegend](<#ReportsChartLegend>)
+  - [func NewReportsChartLegend\(\) \*ReportsChartLegend](<#NewReportsChartLegend>)
+  - [func NewReportsChartLegendWithDefaults\(\) \*ReportsChartLegend](<#NewReportsChartLegendWithDefaults>)
+  - [func \(o \*ReportsChartLegend\) GetLegendPosition\(\) string](<#ReportsChartLegend.GetLegendPosition>)
+  - [func \(o \*ReportsChartLegend\) GetLegendPositionOk\(\) \(\*string, bool\)](<#ReportsChartLegend.GetLegendPositionOk>)
+  - [func \(o \*ReportsChartLegend\) HasLegendPosition\(\) bool](<#ReportsChartLegend.HasLegendPosition>)
+  - [func \(o ReportsChartLegend\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsChartLegend.MarshalJSON>)
+  - [func \(o \*ReportsChartLegend\) SetLegendPosition\(v string\)](<#ReportsChartLegend.SetLegendPosition>)
+  - [func \(o \*ReportsChartLegend\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsChartLegend.UnMarshalJSON>)
+- [type ReportsChartVisualization](<#ReportsChartVisualization>)
+  - [func NewReportsChartVisualization\(\) \*ReportsChartVisualization](<#NewReportsChartVisualization>)
+  - [func NewReportsChartVisualizationWithDefaults\(\) \*ReportsChartVisualization](<#NewReportsChartVisualizationWithDefaults>)
+  - [func \(o \*ReportsChartVisualization\) GetChartType\(\) string](<#ReportsChartVisualization.GetChartType>)
+  - [func \(o \*ReportsChartVisualization\) GetChartTypeOk\(\) \(\*string, bool\)](<#ReportsChartVisualization.GetChartTypeOk>)
+  - [func \(o \*ReportsChartVisualization\) GetColorScheme\(\) string](<#ReportsChartVisualization.GetColorScheme>)
+  - [func \(o \*ReportsChartVisualization\) GetColorSchemeOk\(\) \(\*string, bool\)](<#ReportsChartVisualization.GetColorSchemeOk>)
+  - [func \(o \*ReportsChartVisualization\) GetInnerRadius\(\) float64](<#ReportsChartVisualization.GetInnerRadius>)
+  - [func \(o \*ReportsChartVisualization\) GetInnerRadiusOk\(\) \(\*float64, bool\)](<#ReportsChartVisualization.GetInnerRadiusOk>)
+  - [func \(o \*ReportsChartVisualization\) GetLegend\(\) ReportsChartLegend](<#ReportsChartVisualization.GetLegend>)
+  - [func \(o \*ReportsChartVisualization\) GetLegendOk\(\) \(\*ReportsChartLegend, bool\)](<#ReportsChartVisualization.GetLegendOk>)
+  - [func \(o \*ReportsChartVisualization\) GetLineType\(\) string](<#ReportsChartVisualization.GetLineType>)
+  - [func \(o \*ReportsChartVisualization\) GetLineTypeOk\(\) \(\*string, bool\)](<#ReportsChartVisualization.GetLineTypeOk>)
+  - [func \(o \*ReportsChartVisualization\) GetLineWidth\(\) int64](<#ReportsChartVisualization.GetLineWidth>)
+  - [func \(o \*ReportsChartVisualization\) GetLineWidthOk\(\) \(\*int64, bool\)](<#ReportsChartVisualization.GetLineWidthOk>)
+  - [func \(o \*ReportsChartVisualization\) GetMaxRowCount\(\) int64](<#ReportsChartVisualization.GetMaxRowCount>)
+  - [func \(o \*ReportsChartVisualization\) GetMaxRowCountOk\(\) \(\*int64, bool\)](<#ReportsChartVisualization.GetMaxRowCountOk>)
+  - [func \(o \*ReportsChartVisualization\) GetSerieColors\(\) \[\]string](<#ReportsChartVisualization.GetSerieColors>)
+  - [func \(o \*ReportsChartVisualization\) GetSerieColorsOk\(\) \(\*\[\]string, bool\)](<#ReportsChartVisualization.GetSerieColorsOk>)
+  - [func \(o \*ReportsChartVisualization\) GetSettings\(\) string](<#ReportsChartVisualization.GetSettings>)
+  - [func \(o \*ReportsChartVisualization\) GetSettingsOk\(\) \(\*string, bool\)](<#ReportsChartVisualization.GetSettingsOk>)
+  - [func \(o \*ReportsChartVisualization\) GetShowLabel\(\) bool](<#ReportsChartVisualization.GetShowLabel>)
+  - [func \(o \*ReportsChartVisualization\) GetShowLabelOk\(\) \(\*bool, bool\)](<#ReportsChartVisualization.GetShowLabelOk>)
+  - [func \(o \*ReportsChartVisualization\) GetShowNullValues\(\) bool](<#ReportsChartVisualization.GetShowNullValues>)
+  - [func \(o \*ReportsChartVisualization\) GetShowNullValuesOk\(\) \(\*bool, bool\)](<#ReportsChartVisualization.GetShowNullValuesOk>)
+  - [func \(o \*ReportsChartVisualization\) GetShowValues\(\) bool](<#ReportsChartVisualization.GetShowValues>)
+  - [func \(o \*ReportsChartVisualization\) GetShowValuesOk\(\) \(\*bool, bool\)](<#ReportsChartVisualization.GetShowValuesOk>)
+  - [func \(o \*ReportsChartVisualization\) GetSlicesNumber\(\) int64](<#ReportsChartVisualization.GetSlicesNumber>)
+  - [func \(o \*ReportsChartVisualization\) GetSlicesNumberOk\(\) \(\*int64, bool\)](<#ReportsChartVisualization.GetSlicesNumberOk>)
+  - [func \(o \*ReportsChartVisualization\) GetUiDPModuleId\(\) string](<#ReportsChartVisualization.GetUiDPModuleId>)
+  - [func \(o \*ReportsChartVisualization\) GetUiDPModuleIdOk\(\) \(\*string, bool\)](<#ReportsChartVisualization.GetUiDPModuleIdOk>)
+  - [func \(o \*ReportsChartVisualization\) GetXAxis\(\) ReportsChartXAxis](<#ReportsChartVisualization.GetXAxis>)
+  - [func \(o \*ReportsChartVisualization\) GetXAxisOk\(\) \(\*ReportsChartXAxis, bool\)](<#ReportsChartVisualization.GetXAxisOk>)
+  - [func \(o \*ReportsChartVisualization\) GetYAxis\(\) ReportsChartYAxis](<#ReportsChartVisualization.GetYAxis>)
+  - [func \(o \*ReportsChartVisualization\) GetYAxisOk\(\) \(\*ReportsChartYAxis, bool\)](<#ReportsChartVisualization.GetYAxisOk>)
+  - [func \(o \*ReportsChartVisualization\) HasChartType\(\) bool](<#ReportsChartVisualization.HasChartType>)
+  - [func \(o \*ReportsChartVisualization\) HasColorScheme\(\) bool](<#ReportsChartVisualization.HasColorScheme>)
+  - [func \(o \*ReportsChartVisualization\) HasInnerRadius\(\) bool](<#ReportsChartVisualization.HasInnerRadius>)
+  - [func \(o \*ReportsChartVisualization\) HasLegend\(\) bool](<#ReportsChartVisualization.HasLegend>)
+  - [func \(o \*ReportsChartVisualization\) HasLineType\(\) bool](<#ReportsChartVisualization.HasLineType>)
+  - [func \(o \*ReportsChartVisualization\) HasLineWidth\(\) bool](<#ReportsChartVisualization.HasLineWidth>)
+  - [func \(o \*ReportsChartVisualization\) HasMaxRowCount\(\) bool](<#ReportsChartVisualization.HasMaxRowCount>)
+  - [func \(o \*ReportsChartVisualization\) HasSerieColors\(\) bool](<#ReportsChartVisualization.HasSerieColors>)
+  - [func \(o \*ReportsChartVisualization\) HasSettings\(\) bool](<#ReportsChartVisualization.HasSettings>)
+  - [func \(o \*ReportsChartVisualization\) HasShowLabel\(\) bool](<#ReportsChartVisualization.HasShowLabel>)
+  - [func \(o \*ReportsChartVisualization\) HasShowNullValues\(\) bool](<#ReportsChartVisualization.HasShowNullValues>)
+  - [func \(o \*ReportsChartVisualization\) HasShowValues\(\) bool](<#ReportsChartVisualization.HasShowValues>)
+  - [func \(o \*ReportsChartVisualization\) HasSlicesNumber\(\) bool](<#ReportsChartVisualization.HasSlicesNumber>)
+  - [func \(o \*ReportsChartVisualization\) HasUiDPModuleId\(\) bool](<#ReportsChartVisualization.HasUiDPModuleId>)
+  - [func \(o \*ReportsChartVisualization\) HasXAxis\(\) bool](<#ReportsChartVisualization.HasXAxis>)
+  - [func \(o \*ReportsChartVisualization\) HasYAxis\(\) bool](<#ReportsChartVisualization.HasYAxis>)
+  - [func \(o ReportsChartVisualization\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsChartVisualization.MarshalJSON>)
+  - [func \(o \*ReportsChartVisualization\) SetChartType\(v string\)](<#ReportsChartVisualization.SetChartType>)
+  - [func \(o \*ReportsChartVisualization\) SetColorScheme\(v string\)](<#ReportsChartVisualization.SetColorScheme>)
+  - [func \(o \*ReportsChartVisualization\) SetColorSchemeNil\(\)](<#ReportsChartVisualization.SetColorSchemeNil>)
+  - [func \(o \*ReportsChartVisualization\) SetInnerRadius\(v float64\)](<#ReportsChartVisualization.SetInnerRadius>)
+  - [func \(o \*ReportsChartVisualization\) SetLegend\(v ReportsChartLegend\)](<#ReportsChartVisualization.SetLegend>)
+  - [func \(o \*ReportsChartVisualization\) SetLineType\(v string\)](<#ReportsChartVisualization.SetLineType>)
+  - [func \(o \*ReportsChartVisualization\) SetLineWidth\(v int64\)](<#ReportsChartVisualization.SetLineWidth>)
+  - [func \(o \*ReportsChartVisualization\) SetMaxRowCount\(v int64\)](<#ReportsChartVisualization.SetMaxRowCount>)
+  - [func \(o \*ReportsChartVisualization\) SetSerieColors\(v \[\]string\)](<#ReportsChartVisualization.SetSerieColors>)
+  - [func \(o \*ReportsChartVisualization\) SetSettings\(v string\)](<#ReportsChartVisualization.SetSettings>)
+  - [func \(o \*ReportsChartVisualization\) SetShowLabel\(v bool\)](<#ReportsChartVisualization.SetShowLabel>)
+  - [func \(o \*ReportsChartVisualization\) SetShowNullValues\(v bool\)](<#ReportsChartVisualization.SetShowNullValues>)
+  - [func \(o \*ReportsChartVisualization\) SetShowValues\(v bool\)](<#ReportsChartVisualization.SetShowValues>)
+  - [func \(o \*ReportsChartVisualization\) SetSlicesNumber\(v int64\)](<#ReportsChartVisualization.SetSlicesNumber>)
+  - [func \(o \*ReportsChartVisualization\) SetUiDPModuleId\(v string\)](<#ReportsChartVisualization.SetUiDPModuleId>)
+  - [func \(o \*ReportsChartVisualization\) SetXAxis\(v ReportsChartXAxis\)](<#ReportsChartVisualization.SetXAxis>)
+  - [func \(o \*ReportsChartVisualization\) SetYAxis\(v ReportsChartYAxis\)](<#ReportsChartVisualization.SetYAxis>)
+  - [func \(o \*ReportsChartVisualization\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsChartVisualization.UnMarshalJSON>)
+  - [func \(o \*ReportsChartVisualization\) UnSetColorScheme\(\)](<#ReportsChartVisualization.UnSetColorScheme>)
+- [type ReportsChartXAxis](<#ReportsChartXAxis>)
+  - [func NewReportsChartXAxis\(\) \*ReportsChartXAxis](<#NewReportsChartXAxis>)
+  - [func NewReportsChartXAxisWithDefaults\(\) \*ReportsChartXAxis](<#NewReportsChartXAxisWithDefaults>)
+  - [func \(o \*ReportsChartXAxis\) GetAngle\(\) int64](<#ReportsChartXAxis.GetAngle>)
+  - [func \(o \*ReportsChartXAxis\) GetAngleOk\(\) \(\*int64, bool\)](<#ReportsChartXAxis.GetAngleOk>)
+  - [func \(o \*ReportsChartXAxis\) GetInterval\(\) int64](<#ReportsChartXAxis.GetInterval>)
+  - [func \(o \*ReportsChartXAxis\) GetIntervalOk\(\) \(\*int64, bool\)](<#ReportsChartXAxis.GetIntervalOk>)
+  - [func \(o \*ReportsChartXAxis\) GetLabel\(\) string](<#ReportsChartXAxis.GetLabel>)
+  - [func \(o \*ReportsChartXAxis\) GetLabelOk\(\) \(\*string, bool\)](<#ReportsChartXAxis.GetLabelOk>)
+  - [func \(o \*ReportsChartXAxis\) HasAngle\(\) bool](<#ReportsChartXAxis.HasAngle>)
+  - [func \(o \*ReportsChartXAxis\) HasInterval\(\) bool](<#ReportsChartXAxis.HasInterval>)
+  - [func \(o \*ReportsChartXAxis\) HasLabel\(\) bool](<#ReportsChartXAxis.HasLabel>)
+  - [func \(o ReportsChartXAxis\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsChartXAxis.MarshalJSON>)
+  - [func \(o \*ReportsChartXAxis\) SetAngle\(v int64\)](<#ReportsChartXAxis.SetAngle>)
+  - [func \(o \*ReportsChartXAxis\) SetInterval\(v int64\)](<#ReportsChartXAxis.SetInterval>)
+  - [func \(o \*ReportsChartXAxis\) SetLabel\(v string\)](<#ReportsChartXAxis.SetLabel>)
+  - [func \(o \*ReportsChartXAxis\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsChartXAxis.UnMarshalJSON>)
+- [type ReportsChartYAxis](<#ReportsChartYAxis>)
+  - [func NewReportsChartYAxis\(\) \*ReportsChartYAxis](<#NewReportsChartYAxis>)
+  - [func NewReportsChartYAxisWithDefaults\(\) \*ReportsChartYAxis](<#NewReportsChartYAxisWithDefaults>)
+  - [func \(o \*ReportsChartYAxis\) GetInterval\(\) int64](<#ReportsChartYAxis.GetInterval>)
+  - [func \(o \*ReportsChartYAxis\) GetIntervalOk\(\) \(\*int64, bool\)](<#ReportsChartYAxis.GetIntervalOk>)
+  - [func \(o \*ReportsChartYAxis\) GetLabel\(\) string](<#ReportsChartYAxis.GetLabel>)
+  - [func \(o \*ReportsChartYAxis\) GetLabelOk\(\) \(\*string, bool\)](<#ReportsChartYAxis.GetLabelOk>)
+  - [func \(o \*ReportsChartYAxis\) GetMaxValue\(\) int64](<#ReportsChartYAxis.GetMaxValue>)
+  - [func \(o \*ReportsChartYAxis\) GetMaxValueOk\(\) \(\*int64, bool\)](<#ReportsChartYAxis.GetMaxValueOk>)
+  - [func \(o \*ReportsChartYAxis\) GetMinValue\(\) int64](<#ReportsChartYAxis.GetMinValue>)
+  - [func \(o \*ReportsChartYAxis\) GetMinValueOk\(\) \(\*int64, bool\)](<#ReportsChartYAxis.GetMinValueOk>)
+  - [func \(o \*ReportsChartYAxis\) HasInterval\(\) bool](<#ReportsChartYAxis.HasInterval>)
+  - [func \(o \*ReportsChartYAxis\) HasLabel\(\) bool](<#ReportsChartYAxis.HasLabel>)
+  - [func \(o \*ReportsChartYAxis\) HasMaxValue\(\) bool](<#ReportsChartYAxis.HasMaxValue>)
+  - [func \(o \*ReportsChartYAxis\) HasMinValue\(\) bool](<#ReportsChartYAxis.HasMinValue>)
+  - [func \(o ReportsChartYAxis\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsChartYAxis.MarshalJSON>)
+  - [func \(o \*ReportsChartYAxis\) SetInterval\(v int64\)](<#ReportsChartYAxis.SetInterval>)
+  - [func \(o \*ReportsChartYAxis\) SetLabel\(v string\)](<#ReportsChartYAxis.SetLabel>)
+  - [func \(o \*ReportsChartYAxis\) SetMaxValue\(v int64\)](<#ReportsChartYAxis.SetMaxValue>)
+  - [func \(o \*ReportsChartYAxis\) SetMaxValueNil\(\)](<#ReportsChartYAxis.SetMaxValueNil>)
+  - [func \(o \*ReportsChartYAxis\) SetMinValue\(v int64\)](<#ReportsChartYAxis.SetMinValue>)
+  - [func \(o \*ReportsChartYAxis\) SetMinValueNil\(\)](<#ReportsChartYAxis.SetMinValueNil>)
+  - [func \(o \*ReportsChartYAxis\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsChartYAxis.UnMarshalJSON>)
+  - [func \(o \*ReportsChartYAxis\) UnSetMaxValue\(\)](<#ReportsChartYAxis.UnSetMaxValue>)
+  - [func \(o \*ReportsChartYAxis\) UnSetMinValue\(\)](<#ReportsChartYAxis.UnSetMinValue>)
+- [type ReportsData](<#ReportsData>)
+  - [func NewReportsData\(\) \*ReportsData](<#NewReportsData>)
+  - [func NewReportsDataWithDefaults\(\) \*ReportsData](<#NewReportsDataWithDefaults>)
+  - [func \(o \*ReportsData\) GetAddCoverPage\(\) bool](<#ReportsData.GetAddCoverPage>)
+  - [func \(o \*ReportsData\) GetAddCoverPageOk\(\) \(\*bool, bool\)](<#ReportsData.GetAddCoverPageOk>)
+  - [func \(o \*ReportsData\) GetCoverPage\(\) string](<#ReportsData.GetCoverPage>)
+  - [func \(o \*ReportsData\) GetCoverPageOk\(\) \(\*string, bool\)](<#ReportsData.GetCoverPageOk>)
+  - [func \(o \*ReportsData\) GetCreateDate\(\) string](<#ReportsData.GetCreateDate>)
+  - [func \(o \*ReportsData\) GetCreateDateOk\(\) \(\*string, bool\)](<#ReportsData.GetCreateDateOk>)
+  - [func \(o \*ReportsData\) GetFileName\(\) string](<#ReportsData.GetFileName>)
+  - [func \(o \*ReportsData\) GetFileNameOk\(\) \(\*string, bool\)](<#ReportsData.GetFileNameOk>)
+  - [func \(o \*ReportsData\) GetFilePassword\(\) string](<#ReportsData.GetFilePassword>)
+  - [func \(o \*ReportsData\) GetFilePasswordOk\(\) \(\*string, bool\)](<#ReportsData.GetFilePasswordOk>)
+  - [func \(o \*ReportsData\) GetFooter\(\) string](<#ReportsData.GetFooter>)
+  - [func \(o \*ReportsData\) GetFooterOk\(\) \(\*string, bool\)](<#ReportsData.GetFooterOk>)
+  - [func \(o \*ReportsData\) GetHeader\(\) string](<#ReportsData.GetHeader>)
+  - [func \(o \*ReportsData\) GetHeaderOk\(\) \(\*string, bool\)](<#ReportsData.GetHeaderOk>)
+  - [func \(o \*ReportsData\) GetLanguage\(\) string](<#ReportsData.GetLanguage>)
+  - [func \(o \*ReportsData\) GetLanguageOk\(\) \(\*string, bool\)](<#ReportsData.GetLanguageOk>)
+  - [func \(o \*ReportsData\) GetMaxRowCount\(\) int64](<#ReportsData.GetMaxRowCount>)
+  - [func \(o \*ReportsData\) GetMaxRowCountOk\(\) \(\*int64, bool\)](<#ReportsData.GetMaxRowCountOk>)
+  - [func \(o \*ReportsData\) GetName\(\) string](<#ReportsData.GetName>)
+  - [func \(o \*ReportsData\) GetNameOk\(\) \(\*string, bool\)](<#ReportsData.GetNameOk>)
+  - [func \(o \*ReportsData\) GetPage\(\) ReportsPage](<#ReportsData.GetPage>)
+  - [func \(o \*ReportsData\) GetPageOk\(\) \(\*ReportsPage, bool\)](<#ReportsData.GetPageOk>)
+  - [func \(o \*ReportsData\) GetReportId\(\) string](<#ReportsData.GetReportId>)
+  - [func \(o \*ReportsData\) GetReportIdOk\(\) \(\*string, bool\)](<#ReportsData.GetReportIdOk>)
+  - [func \(o \*ReportsData\) GetReportTheme\(\) string](<#ReportsData.GetReportTheme>)
+  - [func \(o \*ReportsData\) GetReportThemeOk\(\) \(\*string, bool\)](<#ReportsData.GetReportThemeOk>)
+  - [func \(o \*ReportsData\) GetReportType\(\) string](<#ReportsData.GetReportType>)
+  - [func \(o \*ReportsData\) GetReportTypeOk\(\) \(\*string, bool\)](<#ReportsData.GetReportTypeOk>)
+  - [func \(o \*ReportsData\) GetSections\(\) \[\]string](<#ReportsData.GetSections>)
+  - [func \(o \*ReportsData\) GetSectionsOk\(\) \(\*\[\]string, bool\)](<#ReportsData.GetSectionsOk>)
+  - [func \(o \*ReportsData\) GetTheme\(\) string](<#ReportsData.GetTheme>)
+  - [func \(o \*ReportsData\) GetThemeOk\(\) \(\*string, bool\)](<#ReportsData.GetThemeOk>)
+  - [func \(o \*ReportsData\) HasAddCoverPage\(\) bool](<#ReportsData.HasAddCoverPage>)
+  - [func \(o \*ReportsData\) HasCoverPage\(\) bool](<#ReportsData.HasCoverPage>)
+  - [func \(o \*ReportsData\) HasCreateDate\(\) bool](<#ReportsData.HasCreateDate>)
+  - [func \(o \*ReportsData\) HasFileName\(\) bool](<#ReportsData.HasFileName>)
+  - [func \(o \*ReportsData\) HasFilePassword\(\) bool](<#ReportsData.HasFilePassword>)
+  - [func \(o \*ReportsData\) HasFooter\(\) bool](<#ReportsData.HasFooter>)
+  - [func \(o \*ReportsData\) HasHeader\(\) bool](<#ReportsData.HasHeader>)
+  - [func \(o \*ReportsData\) HasLanguage\(\) bool](<#ReportsData.HasLanguage>)
+  - [func \(o \*ReportsData\) HasMaxRowCount\(\) bool](<#ReportsData.HasMaxRowCount>)
+  - [func \(o \*ReportsData\) HasName\(\) bool](<#ReportsData.HasName>)
+  - [func \(o \*ReportsData\) HasPage\(\) bool](<#ReportsData.HasPage>)
+  - [func \(o \*ReportsData\) HasReportId\(\) bool](<#ReportsData.HasReportId>)
+  - [func \(o \*ReportsData\) HasReportTheme\(\) bool](<#ReportsData.HasReportTheme>)
+  - [func \(o \*ReportsData\) HasReportType\(\) bool](<#ReportsData.HasReportType>)
+  - [func \(o \*ReportsData\) HasSections\(\) bool](<#ReportsData.HasSections>)
+  - [func \(o \*ReportsData\) HasTheme\(\) bool](<#ReportsData.HasTheme>)
+  - [func \(o ReportsData\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsData.MarshalJSON>)
+  - [func \(o \*ReportsData\) SetAddCoverPage\(v bool\)](<#ReportsData.SetAddCoverPage>)
+  - [func \(o \*ReportsData\) SetCoverPage\(v string\)](<#ReportsData.SetCoverPage>)
+  - [func \(o \*ReportsData\) SetCoverPageNil\(\)](<#ReportsData.SetCoverPageNil>)
+  - [func \(o \*ReportsData\) SetCreateDate\(v string\)](<#ReportsData.SetCreateDate>)
+  - [func \(o \*ReportsData\) SetFileName\(v string\)](<#ReportsData.SetFileName>)
+  - [func \(o \*ReportsData\) SetFileNameNil\(\)](<#ReportsData.SetFileNameNil>)
+  - [func \(o \*ReportsData\) SetFilePassword\(v string\)](<#ReportsData.SetFilePassword>)
+  - [func \(o \*ReportsData\) SetFilePasswordNil\(\)](<#ReportsData.SetFilePasswordNil>)
+  - [func \(o \*ReportsData\) SetFooter\(v string\)](<#ReportsData.SetFooter>)
+  - [func \(o \*ReportsData\) SetFooterNil\(\)](<#ReportsData.SetFooterNil>)
+  - [func \(o \*ReportsData\) SetHeader\(v string\)](<#ReportsData.SetHeader>)
+  - [func \(o \*ReportsData\) SetHeaderNil\(\)](<#ReportsData.SetHeaderNil>)
+  - [func \(o \*ReportsData\) SetLanguage\(v string\)](<#ReportsData.SetLanguage>)
+  - [func \(o \*ReportsData\) SetMaxRowCount\(v int64\)](<#ReportsData.SetMaxRowCount>)
+  - [func \(o \*ReportsData\) SetName\(v string\)](<#ReportsData.SetName>)
+  - [func \(o \*ReportsData\) SetNameNil\(\)](<#ReportsData.SetNameNil>)
+  - [func \(o \*ReportsData\) SetPage\(v ReportsPage\)](<#ReportsData.SetPage>)
+  - [func \(o \*ReportsData\) SetReportId\(v string\)](<#ReportsData.SetReportId>)
+  - [func \(o \*ReportsData\) SetReportIdNil\(\)](<#ReportsData.SetReportIdNil>)
+  - [func \(o \*ReportsData\) SetReportTheme\(v string\)](<#ReportsData.SetReportTheme>)
+  - [func \(o \*ReportsData\) SetReportThemeNil\(\)](<#ReportsData.SetReportThemeNil>)
+  - [func \(o \*ReportsData\) SetReportType\(v string\)](<#ReportsData.SetReportType>)
+  - [func \(o \*ReportsData\) SetSections\(v \[\]string\)](<#ReportsData.SetSections>)
+  - [func \(o \*ReportsData\) SetTheme\(v string\)](<#ReportsData.SetTheme>)
+  - [func \(o \*ReportsData\) SetThemeNil\(\)](<#ReportsData.SetThemeNil>)
+  - [func \(o \*ReportsData\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsData.UnMarshalJSON>)
+  - [func \(o \*ReportsData\) UnSetCoverPage\(\)](<#ReportsData.UnSetCoverPage>)
+  - [func \(o \*ReportsData\) UnSetFileName\(\)](<#ReportsData.UnSetFileName>)
+  - [func \(o \*ReportsData\) UnSetFilePassword\(\)](<#ReportsData.UnSetFilePassword>)
+  - [func \(o \*ReportsData\) UnSetFooter\(\)](<#ReportsData.UnSetFooter>)
+  - [func \(o \*ReportsData\) UnSetHeader\(\)](<#ReportsData.UnSetHeader>)
+  - [func \(o \*ReportsData\) UnSetName\(\)](<#ReportsData.UnSetName>)
+  - [func \(o \*ReportsData\) UnSetReportId\(\)](<#ReportsData.UnSetReportId>)
+  - [func \(o \*ReportsData\) UnSetReportTheme\(\)](<#ReportsData.UnSetReportTheme>)
+  - [func \(o \*ReportsData\) UnSetTheme\(\)](<#ReportsData.UnSetTheme>)
+- [type ReportsLatestReportFile](<#ReportsLatestReportFile>)
+  - [func NewReportsLatestReportFile\(\) \*ReportsLatestReportFile](<#NewReportsLatestReportFile>)
+  - [func NewReportsLatestReportFileWithDefaults\(\) \*ReportsLatestReportFile](<#NewReportsLatestReportFileWithDefaults>)
+  - [func \(o \*ReportsLatestReportFile\) GetFilename\(\) string](<#ReportsLatestReportFile.GetFilename>)
+  - [func \(o \*ReportsLatestReportFile\) GetFilenameOk\(\) \(\*string, bool\)](<#ReportsLatestReportFile.GetFilenameOk>)
+  - [func \(o \*ReportsLatestReportFile\) GetReportGridFSFileId\(\) string](<#ReportsLatestReportFile.GetReportGridFSFileId>)
+  - [func \(o \*ReportsLatestReportFile\) GetReportGridFSFileIdOk\(\) \(\*string, bool\)](<#ReportsLatestReportFile.GetReportGridFSFileIdOk>)
+  - [func \(o \*ReportsLatestReportFile\) GetRunDate\(\) string](<#ReportsLatestReportFile.GetRunDate>)
+  - [func \(o \*ReportsLatestReportFile\) GetRunDateOk\(\) \(\*string, bool\)](<#ReportsLatestReportFile.GetRunDateOk>)
+  - [func \(o \*ReportsLatestReportFile\) GetStatus\(\) string](<#ReportsLatestReportFile.GetStatus>)
+  - [func \(o \*ReportsLatestReportFile\) GetStatusOk\(\) \(\*string, bool\)](<#ReportsLatestReportFile.GetStatusOk>)
+  - [func \(o \*ReportsLatestReportFile\) HasFilename\(\) bool](<#ReportsLatestReportFile.HasFilename>)
+  - [func \(o \*ReportsLatestReportFile\) HasReportGridFSFileId\(\) bool](<#ReportsLatestReportFile.HasReportGridFSFileId>)
+  - [func \(o \*ReportsLatestReportFile\) HasRunDate\(\) bool](<#ReportsLatestReportFile.HasRunDate>)
+  - [func \(o \*ReportsLatestReportFile\) HasStatus\(\) bool](<#ReportsLatestReportFile.HasStatus>)
+  - [func \(o ReportsLatestReportFile\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsLatestReportFile.MarshalJSON>)
+  - [func \(o \*ReportsLatestReportFile\) SetFilename\(v string\)](<#ReportsLatestReportFile.SetFilename>)
+  - [func \(o \*ReportsLatestReportFile\) SetReportGridFSFileId\(v string\)](<#ReportsLatestReportFile.SetReportGridFSFileId>)
+  - [func \(o \*ReportsLatestReportFile\) SetRunDate\(v string\)](<#ReportsLatestReportFile.SetRunDate>)
+  - [func \(o \*ReportsLatestReportFile\) SetStatus\(v string\)](<#ReportsLatestReportFile.SetStatus>)
+  - [func \(o \*ReportsLatestReportFile\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsLatestReportFile.UnMarshalJSON>)
+- [type ReportsPage](<#ReportsPage>)
+  - [func NewReportsPage\(\) \*ReportsPage](<#NewReportsPage>)
+  - [func NewReportsPageWithDefaults\(\) \*ReportsPage](<#NewReportsPageWithDefaults>)
+  - [func \(o \*ReportsPage\) GetBottomMargin\(\) int64](<#ReportsPage.GetBottomMargin>)
+  - [func \(o \*ReportsPage\) GetBottomMarginOk\(\) \(\*int64, bool\)](<#ReportsPage.GetBottomMarginOk>)
+  - [func \(o \*ReportsPage\) GetFooterDistance\(\) int64](<#ReportsPage.GetFooterDistance>)
+  - [func \(o \*ReportsPage\) GetFooterDistanceOk\(\) \(\*int64, bool\)](<#ReportsPage.GetFooterDistanceOk>)
+  - [func \(o \*ReportsPage\) GetHeaderDistance\(\) int64](<#ReportsPage.GetHeaderDistance>)
+  - [func \(o \*ReportsPage\) GetHeaderDistanceOk\(\) \(\*int64, bool\)](<#ReportsPage.GetHeaderDistanceOk>)
+  - [func \(o \*ReportsPage\) GetIsA3\(\) bool](<#ReportsPage.GetIsA3>)
+  - [func \(o \*ReportsPage\) GetIsA3Ok\(\) \(\*bool, bool\)](<#ReportsPage.GetIsA3Ok>)
+  - [func \(o \*ReportsPage\) GetIsLandscape\(\) bool](<#ReportsPage.GetIsLandscape>)
+  - [func \(o \*ReportsPage\) GetIsLandscapeOk\(\) \(\*bool, bool\)](<#ReportsPage.GetIsLandscapeOk>)
+  - [func \(o \*ReportsPage\) GetLeftMargin\(\) int64](<#ReportsPage.GetLeftMargin>)
+  - [func \(o \*ReportsPage\) GetLeftMarginOk\(\) \(\*int64, bool\)](<#ReportsPage.GetLeftMarginOk>)
+  - [func \(o \*ReportsPage\) GetRightMargin\(\) int64](<#ReportsPage.GetRightMargin>)
+  - [func \(o \*ReportsPage\) GetRightMarginOk\(\) \(\*int64, bool\)](<#ReportsPage.GetRightMarginOk>)
+  - [func \(o \*ReportsPage\) GetTopMargin\(\) int64](<#ReportsPage.GetTopMargin>)
+  - [func \(o \*ReportsPage\) GetTopMarginOk\(\) \(\*int64, bool\)](<#ReportsPage.GetTopMarginOk>)
+  - [func \(o \*ReportsPage\) HasBottomMargin\(\) bool](<#ReportsPage.HasBottomMargin>)
+  - [func \(o \*ReportsPage\) HasFooterDistance\(\) bool](<#ReportsPage.HasFooterDistance>)
+  - [func \(o \*ReportsPage\) HasHeaderDistance\(\) bool](<#ReportsPage.HasHeaderDistance>)
+  - [func \(o \*ReportsPage\) HasIsA3\(\) bool](<#ReportsPage.HasIsA3>)
+  - [func \(o \*ReportsPage\) HasIsLandscape\(\) bool](<#ReportsPage.HasIsLandscape>)
+  - [func \(o \*ReportsPage\) HasLeftMargin\(\) bool](<#ReportsPage.HasLeftMargin>)
+  - [func \(o \*ReportsPage\) HasRightMargin\(\) bool](<#ReportsPage.HasRightMargin>)
+  - [func \(o \*ReportsPage\) HasTopMargin\(\) bool](<#ReportsPage.HasTopMargin>)
+  - [func \(o ReportsPage\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsPage.MarshalJSON>)
+  - [func \(o \*ReportsPage\) SetBottomMargin\(v int64\)](<#ReportsPage.SetBottomMargin>)
+  - [func \(o \*ReportsPage\) SetFooterDistance\(v int64\)](<#ReportsPage.SetFooterDistance>)
+  - [func \(o \*ReportsPage\) SetHeaderDistance\(v int64\)](<#ReportsPage.SetHeaderDistance>)
+  - [func \(o \*ReportsPage\) SetIsA3\(v bool\)](<#ReportsPage.SetIsA3>)
+  - [func \(o \*ReportsPage\) SetIsLandscape\(v bool\)](<#ReportsPage.SetIsLandscape>)
+  - [func \(o \*ReportsPage\) SetLeftMargin\(v int64\)](<#ReportsPage.SetLeftMargin>)
+  - [func \(o \*ReportsPage\) SetRightMargin\(v int64\)](<#ReportsPage.SetRightMargin>)
+  - [func \(o \*ReportsPage\) SetTopMargin\(v int64\)](<#ReportsPage.SetTopMargin>)
+  - [func \(o \*ReportsPage\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsPage.UnMarshalJSON>)
+- [type ReportsParameters](<#ReportsParameters>)
+  - [func NewReportsParameters\(\) \*ReportsParameters](<#NewReportsParameters>)
+  - [func NewReportsParametersWithDefaults\(\) \*ReportsParameters](<#NewReportsParametersWithDefaults>)
+  - [func \(o \*ReportsParameters\) GetDatas\(\) json.RawMessage](<#ReportsParameters.GetDatas>)
+  - [func \(o \*ReportsParameters\) GetDatasOk\(\) \(\*json.RawMessage, bool\)](<#ReportsParameters.GetDatasOk>)
+  - [func \(o \*ReportsParameters\) GetIsActive\(\) bool](<#ReportsParameters.GetIsActive>)
+  - [func \(o \*ReportsParameters\) GetIsActiveOk\(\) \(\*bool, bool\)](<#ReportsParameters.GetIsActiveOk>)
+  - [func \(o \*ReportsParameters\) GetParameters\(\) \[\]string](<#ReportsParameters.GetParameters>)
+  - [func \(o \*ReportsParameters\) GetParametersOk\(\) \(\*\[\]string, bool\)](<#ReportsParameters.GetParametersOk>)
+  - [func \(o \*ReportsParameters\) HasDatas\(\) bool](<#ReportsParameters.HasDatas>)
+  - [func \(o \*ReportsParameters\) HasIsActive\(\) bool](<#ReportsParameters.HasIsActive>)
+  - [func \(o \*ReportsParameters\) HasParameters\(\) bool](<#ReportsParameters.HasParameters>)
+  - [func \(o ReportsParameters\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsParameters.MarshalJSON>)
+  - [func \(o \*ReportsParameters\) SetDatas\(v json.RawMessage\)](<#ReportsParameters.SetDatas>)
+  - [func \(o \*ReportsParameters\) SetIsActive\(v bool\)](<#ReportsParameters.SetIsActive>)
+  - [func \(o \*ReportsParameters\) SetParameters\(v \[\]string\)](<#ReportsParameters.SetParameters>)
+  - [func \(o \*ReportsParameters\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsParameters.UnMarshalJSON>)
+- [type ReportsQuery](<#ReportsQuery>)
+  - [func NewReportsQuery\(\) \*ReportsQuery](<#NewReportsQuery>)
+  - [func NewReportsQueryWithDefaults\(\) \*ReportsQuery](<#NewReportsQueryWithDefaults>)
+  - [func \(o \*ReportsQuery\) GetChartVisualization\(\) ReportsChartVisualization](<#ReportsQuery.GetChartVisualization>)
+  - [func \(o \*ReportsQuery\) GetChartVisualizationOk\(\) \(\*ReportsChartVisualization, bool\)](<#ReportsQuery.GetChartVisualizationOk>)
+  - [func \(o \*ReportsQuery\) GetData\(\) ReportsQueryData](<#ReportsQuery.GetData>)
+  - [func \(o \*ReportsQuery\) GetDataOk\(\) \(\*ReportsQueryData, bool\)](<#ReportsQuery.GetDataOk>)
+  - [func \(o \*ReportsQuery\) GetExtData\(\) ReportsQueryExtData](<#ReportsQuery.GetExtData>)
+  - [func \(o \*ReportsQuery\) GetExtDataOk\(\) \(\*ReportsQueryExtData, bool\)](<#ReportsQuery.GetExtDataOk>)
+  - [func \(o \*ReportsQuery\) GetName\(\) string](<#ReportsQuery.GetName>)
+  - [func \(o \*ReportsQuery\) GetNameOk\(\) \(\*string, bool\)](<#ReportsQuery.GetNameOk>)
+  - [func \(o \*ReportsQuery\) GetShowChart\(\) bool](<#ReportsQuery.GetShowChart>)
+  - [func \(o \*ReportsQuery\) GetShowChartOk\(\) \(\*bool, bool\)](<#ReportsQuery.GetShowChartOk>)
+  - [func \(o \*ReportsQuery\) GetShowTable\(\) bool](<#ReportsQuery.GetShowTable>)
+  - [func \(o \*ReportsQuery\) GetShowTableOk\(\) \(\*bool, bool\)](<#ReportsQuery.GetShowTableOk>)
+  - [func \(o \*ReportsQuery\) GetTableVisualization\(\) ReportsTableVisualization](<#ReportsQuery.GetTableVisualization>)
+  - [func \(o \*ReportsQuery\) GetTableVisualizationOk\(\) \(\*ReportsTableVisualization, bool\)](<#ReportsQuery.GetTableVisualizationOk>)
+  - [func \(o \*ReportsQuery\) HasChartVisualization\(\) bool](<#ReportsQuery.HasChartVisualization>)
+  - [func \(o \*ReportsQuery\) HasData\(\) bool](<#ReportsQuery.HasData>)
+  - [func \(o \*ReportsQuery\) HasExtData\(\) bool](<#ReportsQuery.HasExtData>)
+  - [func \(o \*ReportsQuery\) HasName\(\) bool](<#ReportsQuery.HasName>)
+  - [func \(o \*ReportsQuery\) HasShowChart\(\) bool](<#ReportsQuery.HasShowChart>)
+  - [func \(o \*ReportsQuery\) HasShowTable\(\) bool](<#ReportsQuery.HasShowTable>)
+  - [func \(o \*ReportsQuery\) HasTableVisualization\(\) bool](<#ReportsQuery.HasTableVisualization>)
+  - [func \(o ReportsQuery\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsQuery.MarshalJSON>)
+  - [func \(o \*ReportsQuery\) SetChartVisualization\(v ReportsChartVisualization\)](<#ReportsQuery.SetChartVisualization>)
+  - [func \(o \*ReportsQuery\) SetData\(v ReportsQueryData\)](<#ReportsQuery.SetData>)
+  - [func \(o \*ReportsQuery\) SetExtData\(v ReportsQueryExtData\)](<#ReportsQuery.SetExtData>)
+  - [func \(o \*ReportsQuery\) SetExtDataNil\(\)](<#ReportsQuery.SetExtDataNil>)
+  - [func \(o \*ReportsQuery\) SetName\(v string\)](<#ReportsQuery.SetName>)
+  - [func \(o \*ReportsQuery\) SetShowChart\(v bool\)](<#ReportsQuery.SetShowChart>)
+  - [func \(o \*ReportsQuery\) SetShowTable\(v bool\)](<#ReportsQuery.SetShowTable>)
+  - [func \(o \*ReportsQuery\) SetTableVisualization\(v ReportsTableVisualization\)](<#ReportsQuery.SetTableVisualization>)
+  - [func \(o \*ReportsQuery\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsQuery.UnMarshalJSON>)
+  - [func \(o \*ReportsQuery\) UnsetExtData\(\)](<#ReportsQuery.UnsetExtData>)
+- [type ReportsQueryData](<#ReportsQueryData>)
+  - [func NewReportsQueryData\(\) \*ReportsQueryData](<#NewReportsQueryData>)
+  - [func NewReportsQueryDataWithDefaults\(\) \*ReportsQueryData](<#NewReportsQueryDataWithDefaults>)
+  - [func \(o \*ReportsQueryData\) GetCode\(\) string](<#ReportsQueryData.GetCode>)
+  - [func \(o \*ReportsQueryData\) GetCodeOk\(\) \(\*string, bool\)](<#ReportsQueryData.GetCodeOk>)
+  - [func \(o \*ReportsQueryData\) GetDateTimeRange\(\) DateTimeRange](<#ReportsQueryData.GetDateTimeRange>)
+  - [func \(o \*ReportsQueryData\) GetDateTimeRangeOk\(\) \(\*DateTimeRange, bool\)](<#ReportsQueryData.GetDateTimeRangeOk>)
+  - [func \(o \*ReportsQueryData\) GetItemType\(\) string](<#ReportsQueryData.GetItemType>)
+  - [func \(o \*ReportsQueryData\) GetItemTypeOk\(\) \(\*string, bool\)](<#ReportsQueryData.GetItemTypeOk>)
+  - [func \(o \*ReportsQueryData\) GetMaxRowCount\(\) int64](<#ReportsQueryData.GetMaxRowCount>)
+  - [func \(o \*ReportsQueryData\) GetMaxRowCountOk\(\) \(\*int64, bool\)](<#ReportsQueryData.GetMaxRowCountOk>)
+  - [func \(o \*ReportsQueryData\) GetQueryID\(\) string](<#ReportsQueryData.GetQueryID>)
+  - [func \(o \*ReportsQueryData\) GetQueryIDOk\(\) \(\*string, bool\)](<#ReportsQueryData.GetQueryIDOk>)
+  - [func \(o \*ReportsQueryData\) GetQueryStr\(\) string](<#ReportsQueryData.GetQueryStr>)
+  - [func \(o \*ReportsQueryData\) GetQueryStrOk\(\) \(\*string, bool\)](<#ReportsQueryData.GetQueryStrOk>)
+  - [func \(o \*ReportsQueryData\) GetScriptArguments\(\) \(\*\[\]string, bool\)](<#ReportsQueryData.GetScriptArguments>)
+  - [func \(o \*ReportsQueryData\) GetScriptArgumentsOk\(\) \(\*\[\]string, bool\)](<#ReportsQueryData.GetScriptArgumentsOk>)
+  - [func \(o \*ReportsQueryData\) GetScriptPath\(\) string](<#ReportsQueryData.GetScriptPath>)
+  - [func \(o \*ReportsQueryData\) GetScriptPathOk\(\) \(\*string, bool\)](<#ReportsQueryData.GetScriptPathOk>)
+  - [func \(o \*ReportsQueryData\) HasCode\(\) bool](<#ReportsQueryData.HasCode>)
+  - [func \(o \*ReportsQueryData\) HasDateTimeRange\(\) bool](<#ReportsQueryData.HasDateTimeRange>)
+  - [func \(o \*ReportsQueryData\) HasItemType\(\) bool](<#ReportsQueryData.HasItemType>)
+  - [func \(o \*ReportsQueryData\) HasMaxRowCount\(\) bool](<#ReportsQueryData.HasMaxRowCount>)
+  - [func \(o \*ReportsQueryData\) HasQueryID\(\) bool](<#ReportsQueryData.HasQueryID>)
+  - [func \(o \*ReportsQueryData\) HasQueryStr\(\) bool](<#ReportsQueryData.HasQueryStr>)
+  - [func \(o \*ReportsQueryData\) HasScriptArguments\(\) bool](<#ReportsQueryData.HasScriptArguments>)
+  - [func \(o \*ReportsQueryData\) HasScriptPath\(\) bool](<#ReportsQueryData.HasScriptPath>)
+  - [func \(o ReportsQueryData\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsQueryData.MarshalJSON>)
+  - [func \(o \*ReportsQueryData\) SetCode\(v string\)](<#ReportsQueryData.SetCode>)
+  - [func \(o \*ReportsQueryData\) SetDateTimeRange\(v DateTimeRange\)](<#ReportsQueryData.SetDateTimeRange>)
+  - [func \(o \*ReportsQueryData\) SetItemType\(v string\)](<#ReportsQueryData.SetItemType>)
+  - [func \(o \*ReportsQueryData\) SetMaxRowCount\(v int64\)](<#ReportsQueryData.SetMaxRowCount>)
+  - [func \(o \*ReportsQueryData\) SetQueryID\(v string\)](<#ReportsQueryData.SetQueryID>)
+  - [func \(o \*ReportsQueryData\) SetQueryIDNil\(\)](<#ReportsQueryData.SetQueryIDNil>)
+  - [func \(o \*ReportsQueryData\) SetQueryStr\(v string\)](<#ReportsQueryData.SetQueryStr>)
+  - [func \(o \*ReportsQueryData\) SetQueryStrNil\(\)](<#ReportsQueryData.SetQueryStrNil>)
+  - [func \(o \*ReportsQueryData\) SetScriptArguments\(v \[\]string\)](<#ReportsQueryData.SetScriptArguments>)
+  - [func \(o \*ReportsQueryData\) SetScriptArgumentsNil\(\)](<#ReportsQueryData.SetScriptArgumentsNil>)
+  - [func \(o \*ReportsQueryData\) SetScriptPath\(v string\)](<#ReportsQueryData.SetScriptPath>)
+  - [func \(o \*ReportsQueryData\) SetScriptPathNil\(\)](<#ReportsQueryData.SetScriptPathNil>)
+  - [func \(o \*ReportsQueryData\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsQueryData.UnMarshalJSON>)
+  - [func \(o \*ReportsQueryData\) UnSetQueryID\(\)](<#ReportsQueryData.UnSetQueryID>)
+  - [func \(o \*ReportsQueryData\) UnSetQueryStr\(\)](<#ReportsQueryData.UnSetQueryStr>)
+  - [func \(o \*ReportsQueryData\) UnSetScriptArguments\(\)](<#ReportsQueryData.UnSetScriptArguments>)
+  - [func \(o \*ReportsQueryData\) UnSetScriptPath\(\)](<#ReportsQueryData.UnSetScriptPath>)
+- [type ReportsQueryExtData](<#ReportsQueryExtData>)
+  - [func NewReportsQueryExtData\(\) \*ReportsQueryExtData](<#NewReportsQueryExtData>)
+  - [func NewReportsQueryExtDataWithDefaults\(\) \*ReportsQueryExtData](<#NewReportsQueryExtDataWithDefaults>)
+  - [func \(o \*ReportsQueryExtData\) GetAlerts\(\) bool](<#ReportsQueryExtData.GetAlerts>)
+  - [func \(o \*ReportsQueryExtData\) GetAlertsOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetAlertsOk>)
+  - [func \(o \*ReportsQueryExtData\) GetClassifications\(\) bool](<#ReportsQueryExtData.GetClassifications>)
+  - [func \(o \*ReportsQueryExtData\) GetClassificationsChart\(\) bool](<#ReportsQueryExtData.GetClassificationsChart>)
+  - [func \(o \*ReportsQueryExtData\) GetClassificationsChartOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetClassificationsChartOk>)
+  - [func \(o \*ReportsQueryExtData\) GetClassificationsOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetClassificationsOk>)
+  - [func \(o \*ReportsQueryExtData\) GetClassificationsSvrChart\(\) bool](<#ReportsQueryExtData.GetClassificationsSvrChart>)
+  - [func \(o \*ReportsQueryExtData\) GetClassificationsSvrChartOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetClassificationsSvrChartOk>)
+  - [func \(o \*ReportsQueryExtData\) GetClassificationsTable\(\) bool](<#ReportsQueryExtData.GetClassificationsTable>)
+  - [func \(o \*ReportsQueryExtData\) GetClassificationsTableOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetClassificationsTableOk>)
+  - [func \(o \*ReportsQueryExtData\) GetCorrelation\(\) bool](<#ReportsQueryExtData.GetCorrelation>)
+  - [func \(o \*ReportsQueryExtData\) GetCorrelationAlertChart\(\) bool](<#ReportsQueryExtData.GetCorrelationAlertChart>)
+  - [func \(o \*ReportsQueryExtData\) GetCorrelationAlertChartOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetCorrelationAlertChartOk>)
+  - [func \(o \*ReportsQueryExtData\) GetCorrelationOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetCorrelationOk>)
+  - [func \(o \*ReportsQueryExtData\) GetCorrelationSvrChart\(\) bool](<#ReportsQueryExtData.GetCorrelationSvrChart>)
+  - [func \(o \*ReportsQueryExtData\) GetCorrelationSvrChartOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetCorrelationSvrChartOk>)
+  - [func \(o \*ReportsQueryExtData\) GetCorrelationTable\(\) bool](<#ReportsQueryExtData.GetCorrelationTable>)
+  - [func \(o \*ReportsQueryExtData\) GetCorrelationTableOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetCorrelationTableOk>)
+  - [func \(o \*ReportsQueryExtData\) GetDateTimeRange\(\) DateTimeRange](<#ReportsQueryExtData.GetDateTimeRange>)
+  - [func \(o \*ReportsQueryExtData\) GetDateTimeRangeOk\(\) \(\*DateTimeRange, bool\)](<#ReportsQueryExtData.GetDateTimeRangeOk>)
+  - [func \(o \*ReportsQueryExtData\) GetLogCounts\(\) bool](<#ReportsQueryExtData.GetLogCounts>)
+  - [func \(o \*ReportsQueryExtData\) GetLogCountsChart\(\) bool](<#ReportsQueryExtData.GetLogCountsChart>)
+  - [func \(o \*ReportsQueryExtData\) GetLogCountsChartOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetLogCountsChartOk>)
+  - [func \(o \*ReportsQueryExtData\) GetLogCountsOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetLogCountsOk>)
+  - [func \(o \*ReportsQueryExtData\) GetLogCountsTable\(\) bool](<#ReportsQueryExtData.GetLogCountsTable>)
+  - [func \(o \*ReportsQueryExtData\) GetLogCountsTableOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetLogCountsTableOk>)
+  - [func \(o \*ReportsQueryExtData\) GetLogPositions\(\) bool](<#ReportsQueryExtData.GetLogPositions>)
+  - [func \(o \*ReportsQueryExtData\) GetLogPositionsOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetLogPositionsOk>)
+  - [func \(o \*ReportsQueryExtData\) GetReportType\(\) string](<#ReportsQueryExtData.GetReportType>)
+  - [func \(o \*ReportsQueryExtData\) GetReportTypeOk\(\) \(\*string, bool\)](<#ReportsQueryExtData.GetReportTypeOk>)
+  - [func \(o \*ReportsQueryExtData\) GetSystemInfo\(\) bool](<#ReportsQueryExtData.GetSystemInfo>)
+  - [func \(o \*ReportsQueryExtData\) GetSystemInfoOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetSystemInfoOk>)
+  - [func \(o \*ReportsQueryExtData\) GetTimeStamps\(\) bool](<#ReportsQueryExtData.GetTimeStamps>)
+  - [func \(o \*ReportsQueryExtData\) GetTimeStampsOk\(\) \(\*bool, bool\)](<#ReportsQueryExtData.GetTimeStampsOk>)
+  - [func \(o \*ReportsQueryExtData\) HasAlerts\(\) bool](<#ReportsQueryExtData.HasAlerts>)
+  - [func \(o \*ReportsQueryExtData\) HasClassifications\(\) bool](<#ReportsQueryExtData.HasClassifications>)
+  - [func \(o \*ReportsQueryExtData\) HasClassificationsChart\(\) bool](<#ReportsQueryExtData.HasClassificationsChart>)
+  - [func \(o \*ReportsQueryExtData\) HasClassificationsSvrChart\(\) bool](<#ReportsQueryExtData.HasClassificationsSvrChart>)
+  - [func \(o \*ReportsQueryExtData\) HasClassificationsTable\(\) bool](<#ReportsQueryExtData.HasClassificationsTable>)
+  - [func \(o \*ReportsQueryExtData\) HasCorrelation\(\) bool](<#ReportsQueryExtData.HasCorrelation>)
+  - [func \(o \*ReportsQueryExtData\) HasCorrelationAlertChart\(\) bool](<#ReportsQueryExtData.HasCorrelationAlertChart>)
+  - [func \(o \*ReportsQueryExtData\) HasCorrelationSvrChart\(\) bool](<#ReportsQueryExtData.HasCorrelationSvrChart>)
+  - [func \(o \*ReportsQueryExtData\) HasCorrelationTable\(\) bool](<#ReportsQueryExtData.HasCorrelationTable>)
+  - [func \(o \*ReportsQueryExtData\) HasDateTimeRange\(\) bool](<#ReportsQueryExtData.HasDateTimeRange>)
+  - [func \(o \*ReportsQueryExtData\) HasLogCounts\(\) bool](<#ReportsQueryExtData.HasLogCounts>)
+  - [func \(o \*ReportsQueryExtData\) HasLogCountsChart\(\) bool](<#ReportsQueryExtData.HasLogCountsChart>)
+  - [func \(o \*ReportsQueryExtData\) HasLogCountsTable\(\) bool](<#ReportsQueryExtData.HasLogCountsTable>)
+  - [func \(o \*ReportsQueryExtData\) HasLogPositions\(\) bool](<#ReportsQueryExtData.HasLogPositions>)
+  - [func \(o \*ReportsQueryExtData\) HasReportType\(\) bool](<#ReportsQueryExtData.HasReportType>)
+  - [func \(o \*ReportsQueryExtData\) HasSystemInfo\(\) bool](<#ReportsQueryExtData.HasSystemInfo>)
+  - [func \(o \*ReportsQueryExtData\) HasTimeStamps\(\) bool](<#ReportsQueryExtData.HasTimeStamps>)
+  - [func \(o ReportsQueryExtData\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsQueryExtData.MarshalJSON>)
+  - [func \(o \*ReportsQueryExtData\) SetAlerts\(v bool\)](<#ReportsQueryExtData.SetAlerts>)
+  - [func \(o \*ReportsQueryExtData\) SetClassifications\(v bool\)](<#ReportsQueryExtData.SetClassifications>)
+  - [func \(o \*ReportsQueryExtData\) SetClassificationsChart\(v bool\)](<#ReportsQueryExtData.SetClassificationsChart>)
+  - [func \(o \*ReportsQueryExtData\) SetClassificationsSvrChart\(v bool\)](<#ReportsQueryExtData.SetClassificationsSvrChart>)
+  - [func \(o \*ReportsQueryExtData\) SetClassificationsTable\(v bool\)](<#ReportsQueryExtData.SetClassificationsTable>)
+  - [func \(o \*ReportsQueryExtData\) SetCorrelation\(v bool\)](<#ReportsQueryExtData.SetCorrelation>)
+  - [func \(o \*ReportsQueryExtData\) SetCorrelationAlertChart\(v bool\)](<#ReportsQueryExtData.SetCorrelationAlertChart>)
+  - [func \(o \*ReportsQueryExtData\) SetCorrelationSvrChart\(v bool\)](<#ReportsQueryExtData.SetCorrelationSvrChart>)
+  - [func \(o \*ReportsQueryExtData\) SetCorrelationTable\(v bool\)](<#ReportsQueryExtData.SetCorrelationTable>)
+  - [func \(o \*ReportsQueryExtData\) SetDateTimeRange\(v DateTimeRange\)](<#ReportsQueryExtData.SetDateTimeRange>)
+  - [func \(o \*ReportsQueryExtData\) SetLogCounts\(v bool\)](<#ReportsQueryExtData.SetLogCounts>)
+  - [func \(o \*ReportsQueryExtData\) SetLogCountsChart\(v bool\)](<#ReportsQueryExtData.SetLogCountsChart>)
+  - [func \(o \*ReportsQueryExtData\) SetLogCountsTable\(v bool\)](<#ReportsQueryExtData.SetLogCountsTable>)
+  - [func \(o \*ReportsQueryExtData\) SetLogPositions\(v bool\)](<#ReportsQueryExtData.SetLogPositions>)
+  - [func \(o \*ReportsQueryExtData\) SetReportType\(v string\)](<#ReportsQueryExtData.SetReportType>)
+  - [func \(o \*ReportsQueryExtData\) SetSystemInfo\(v bool\)](<#ReportsQueryExtData.SetSystemInfo>)
+  - [func \(o \*ReportsQueryExtData\) SetTimeStamps\(v bool\)](<#ReportsQueryExtData.SetTimeStamps>)
+  - [func \(o \*ReportsQueryExtData\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsQueryExtData.UnMarshalJSON>)
+- [type ReportsSearchRequest](<#ReportsSearchRequest>)
+  - [func NewReportsSearchRequest\(\) \*ReportsSearchRequest](<#NewReportsSearchRequest>)
+  - [func NewReportsSearchRequestWithDefaults\(\) \*ReportsSearchRequest](<#NewReportsSearchRequestWithDefaults>)
+  - [func \(o \*ReportsSearchRequest\) GetApplicationName\(\) string](<#ReportsSearchRequest.GetApplicationName>)
+  - [func \(o \*ReportsSearchRequest\) GetApplicationNameOk\(\) \(\*string, bool\)](<#ReportsSearchRequest.GetApplicationNameOk>)
+  - [func \(o \*ReportsSearchRequest\) GetSearchFilter\(\) string](<#ReportsSearchRequest.GetSearchFilter>)
+  - [func \(o \*ReportsSearchRequest\) GetSearchFilterOk\(\) \(\*string, bool\)](<#ReportsSearchRequest.GetSearchFilterOk>)
+  - [func \(o \*ReportsSearchRequest\) GetShowPassive\(\) bool](<#ReportsSearchRequest.GetShowPassive>)
+  - [func \(o \*ReportsSearchRequest\) GetShowPassiveOk\(\) \(\*bool, bool\)](<#ReportsSearchRequest.GetShowPassiveOk>)
+  - [func \(o \*ReportsSearchRequest\) GetSmartRestRequestContext\(\) string](<#ReportsSearchRequest.GetSmartRestRequestContext>)
+  - [func \(o \*ReportsSearchRequest\) GetSmartRestRequestContextOk\(\) \(\*string, bool\)](<#ReportsSearchRequest.GetSmartRestRequestContextOk>)
+  - [func \(o \*ReportsSearchRequest\) GetStartDate\(\) string](<#ReportsSearchRequest.GetStartDate>)
+  - [func \(o \*ReportsSearchRequest\) GetStartDateOk\(\) \(\*string, bool\)](<#ReportsSearchRequest.GetStartDateOk>)
+  - [func \(o \*ReportsSearchRequest\) HasApplicationName\(\) bool](<#ReportsSearchRequest.HasApplicationName>)
+  - [func \(o \*ReportsSearchRequest\) HasSearchFilter\(\) bool](<#ReportsSearchRequest.HasSearchFilter>)
+  - [func \(o \*ReportsSearchRequest\) HasShowPassive\(\) bool](<#ReportsSearchRequest.HasShowPassive>)
+  - [func \(o \*ReportsSearchRequest\) HasSmartRestRequestContext\(\) bool](<#ReportsSearchRequest.HasSmartRestRequestContext>)
+  - [func \(o \*ReportsSearchRequest\) HasStartDate\(\) bool](<#ReportsSearchRequest.HasStartDate>)
+  - [func \(o ReportsSearchRequest\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsSearchRequest.MarshalJSON>)
+  - [func \(o \*ReportsSearchRequest\) SetApplicationName\(v string\)](<#ReportsSearchRequest.SetApplicationName>)
+  - [func \(o \*ReportsSearchRequest\) SetSearchFilter\(v string\)](<#ReportsSearchRequest.SetSearchFilter>)
+  - [func \(o \*ReportsSearchRequest\) SetShowPassive\(v bool\)](<#ReportsSearchRequest.SetShowPassive>)
+  - [func \(o \*ReportsSearchRequest\) SetSmartRestRequestContext\(v string\)](<#ReportsSearchRequest.SetSmartRestRequestContext>)
+  - [func \(o \*ReportsSearchRequest\) SetStartDate\(v string\)](<#ReportsSearchRequest.SetStartDate>)
+  - [func \(o \*ReportsSearchRequest\) SetStartDateNil\(\)](<#ReportsSearchRequest.SetStartDateNil>)
+  - [func \(o \*ReportsSearchRequest\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsSearchRequest.UnMarshalJSON>)
+  - [func \(o \*ReportsSearchRequest\) UnsetStartDate\(\)](<#ReportsSearchRequest.UnsetStartDate>)
+- [type ReportsSearchResponse](<#ReportsSearchResponse>)
+  - [func NewReportsSearchResponse\(\) \*ReportsSearchResponse](<#NewReportsSearchResponse>)
+  - [func NewReportsSearchResponseWithDefaults\(\) \*ReportsSearchResponse](<#NewReportsSearchResponseWithDefaults>)
+  - [func \(o \*ReportsSearchResponse\) GetActions\(\) Actions](<#ReportsSearchResponse.GetActions>)
+  - [func \(o \*ReportsSearchResponse\) GetActionsOk\(\) \(\*Actions, bool\)](<#ReportsSearchResponse.GetActionsOk>)
+  - [func \(o \*ReportsSearchResponse\) GetApplicationName\(\) string](<#ReportsSearchResponse.GetApplicationName>)
+  - [func \(o \*ReportsSearchResponse\) GetApplicationNameOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetApplicationNameOk>)
+  - [func \(o \*ReportsSearchResponse\) GetAuthor\(\) string](<#ReportsSearchResponse.GetAuthor>)
+  - [func \(o \*ReportsSearchResponse\) GetAuthorOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetAuthorOk>)
+  - [func \(o \*ReportsSearchResponse\) GetCreatedDate\(\) string](<#ReportsSearchResponse.GetCreatedDate>)
+  - [func \(o \*ReportsSearchResponse\) GetCreatedDateOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetCreatedDateOk>)
+  - [func \(o \*ReportsSearchResponse\) GetDescription\(\) string](<#ReportsSearchResponse.GetDescription>)
+  - [func \(o \*ReportsSearchResponse\) GetDescriptionOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetDescriptionOk>)
+  - [func \(o \*ReportsSearchResponse\) GetIsActive\(\) bool](<#ReportsSearchResponse.GetIsActive>)
+  - [func \(o \*ReportsSearchResponse\) GetIsActiveOk\(\) \(\*bool, bool\)](<#ReportsSearchResponse.GetIsActiveOk>)
+  - [func \(o \*ReportsSearchResponse\) GetLastGenerationTime\(\) string](<#ReportsSearchResponse.GetLastGenerationTime>)
+  - [func \(o \*ReportsSearchResponse\) GetLastGenerationTimeOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetLastGenerationTimeOk>)
+  - [func \(o \*ReportsSearchResponse\) GetLatestReportFile\(\) ReportsLatestReportFile](<#ReportsSearchResponse.GetLatestReportFile>)
+  - [func \(o \*ReportsSearchResponse\) GetLatestReportFileOk\(\) \(\*ReportsLatestReportFile, bool\)](<#ReportsSearchResponse.GetLatestReportFileOk>)
+  - [func \(o \*ReportsSearchResponse\) GetModifiedDate\(\) string](<#ReportsSearchResponse.GetModifiedDate>)
+  - [func \(o \*ReportsSearchResponse\) GetModifiedDateOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetModifiedDateOk>)
+  - [func \(o \*ReportsSearchResponse\) GetModuleFilter\(\) string](<#ReportsSearchResponse.GetModuleFilter>)
+  - [func \(o \*ReportsSearchResponse\) GetModuleFilterOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetModuleFilterOk>)
+  - [func \(o \*ReportsSearchResponse\) GetName\(\) string](<#ReportsSearchResponse.GetName>)
+  - [func \(o \*ReportsSearchResponse\) GetNameOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetNameOk>)
+  - [func \(o \*ReportsSearchResponse\) GetNextGenerationTime\(\) string](<#ReportsSearchResponse.GetNextGenerationTime>)
+  - [func \(o \*ReportsSearchResponse\) GetNextGenerationTimeOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetNextGenerationTimeOk>)
+  - [func \(o \*ReportsSearchResponse\) GetPageSettings\(\) string](<#ReportsSearchResponse.GetPageSettings>)
+  - [func \(o \*ReportsSearchResponse\) GetPageSettingsOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetPageSettingsOk>)
+  - [func \(o \*ReportsSearchResponse\) GetParameters\(\) ReportsParameters](<#ReportsSearchResponse.GetParameters>)
+  - [func \(o \*ReportsSearchResponse\) GetParametersOk\(\) \(\*ReportsParameters, bool\)](<#ReportsSearchResponse.GetParametersOk>)
+  - [func \(o \*ReportsSearchResponse\) GetRemoteInterfaceName\(\) string](<#ReportsSearchResponse.GetRemoteInterfaceName>)
+  - [func \(o \*ReportsSearchResponse\) GetRemoteInterfaceNameOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetRemoteInterfaceNameOk>)
+  - [func \(o \*ReportsSearchResponse\) GetRemoteMethodName\(\) string](<#ReportsSearchResponse.GetRemoteMethodName>)
+  - [func \(o \*ReportsSearchResponse\) GetRemoteMethodNameOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetRemoteMethodNameOk>)
+  - [func \(o \*ReportsSearchResponse\) GetReportData\(\) ReportsData](<#ReportsSearchResponse.GetReportData>)
+  - [func \(o \*ReportsSearchResponse\) GetReportDataOk\(\) \(\*ReportsData, bool\)](<#ReportsSearchResponse.GetReportDataOk>)
+  - [func \(o \*ReportsSearchResponse\) GetReportId\(\) string](<#ReportsSearchResponse.GetReportId>)
+  - [func \(o \*ReportsSearchResponse\) GetReportIdOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetReportIdOk>)
+  - [func \(o \*ReportsSearchResponse\) GetReportLink\(\) string](<#ReportsSearchResponse.GetReportLink>)
+  - [func \(o \*ReportsSearchResponse\) GetReportLinkOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetReportLinkOk>)
+  - [func \(o \*ReportsSearchResponse\) GetReportQuery\(\) \[\]ReportsQuery](<#ReportsSearchResponse.GetReportQuery>)
+  - [func \(o \*ReportsSearchResponse\) GetReportQueryOk\(\) \(\*\[\]ReportsQuery, bool\)](<#ReportsSearchResponse.GetReportQueryOk>)
+  - [func \(o \*ReportsSearchResponse\) GetSchedule\(\) ScheduleConfig](<#ReportsSearchResponse.GetSchedule>)
+  - [func \(o \*ReportsSearchResponse\) GetScheduleOk\(\) \(\*ScheduleConfig, bool\)](<#ReportsSearchResponse.GetScheduleOk>)
+  - [func \(o \*ReportsSearchResponse\) GetSharedUsersAndGroups\(\) \(\*\[\]string, bool\)](<#ReportsSearchResponse.GetSharedUsersAndGroups>)
+  - [func \(o \*ReportsSearchResponse\) GetSharedUsersAndGroupsOk\(\) \(\*\[\]string, bool\)](<#ReportsSearchResponse.GetSharedUsersAndGroupsOk>)
+  - [func \(o \*ReportsSearchResponse\) GetSubExecutorModuleFilter\(\) string](<#ReportsSearchResponse.GetSubExecutorModuleFilter>)
+  - [func \(o \*ReportsSearchResponse\) GetSubExecutorModuleFilterOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetSubExecutorModuleFilterOk>)
+  - [func \(o \*ReportsSearchResponse\) GetTags\(\) \[\]string](<#ReportsSearchResponse.GetTags>)
+  - [func \(o \*ReportsSearchResponse\) GetTagsOk\(\) \(\*\[\]string, bool\)](<#ReportsSearchResponse.GetTagsOk>)
+  - [func \(o \*ReportsSearchResponse\) GetUsername\(\) string](<#ReportsSearchResponse.GetUsername>)
+  - [func \(o \*ReportsSearchResponse\) GetUsernameOk\(\) \(\*string, bool\)](<#ReportsSearchResponse.GetUsernameOk>)
+  - [func \(o \*ReportsSearchResponse\) GetVersion\(\) float64](<#ReportsSearchResponse.GetVersion>)
+  - [func \(o \*ReportsSearchResponse\) GetVersionOk\(\) \(\*float64, bool\)](<#ReportsSearchResponse.GetVersionOk>)
+  - [func \(o \*ReportsSearchResponse\) HasActions\(\) bool](<#ReportsSearchResponse.HasActions>)
+  - [func \(o \*ReportsSearchResponse\) HasApplicationName\(\) bool](<#ReportsSearchResponse.HasApplicationName>)
+  - [func \(o \*ReportsSearchResponse\) HasAuthor\(\) bool](<#ReportsSearchResponse.HasAuthor>)
+  - [func \(o \*ReportsSearchResponse\) HasCreatedDate\(\) bool](<#ReportsSearchResponse.HasCreatedDate>)
+  - [func \(o \*ReportsSearchResponse\) HasDescription\(\) bool](<#ReportsSearchResponse.HasDescription>)
+  - [func \(o \*ReportsSearchResponse\) HasIsActive\(\) bool](<#ReportsSearchResponse.HasIsActive>)
+  - [func \(o \*ReportsSearchResponse\) HasLastGenerationTime\(\) bool](<#ReportsSearchResponse.HasLastGenerationTime>)
+  - [func \(o \*ReportsSearchResponse\) HasLatestReportFile\(\) bool](<#ReportsSearchResponse.HasLatestReportFile>)
+  - [func \(o \*ReportsSearchResponse\) HasModifiedDate\(\) bool](<#ReportsSearchResponse.HasModifiedDate>)
+  - [func \(o \*ReportsSearchResponse\) HasModuleFilter\(\) bool](<#ReportsSearchResponse.HasModuleFilter>)
+  - [func \(o \*ReportsSearchResponse\) HasName\(\) bool](<#ReportsSearchResponse.HasName>)
+  - [func \(o \*ReportsSearchResponse\) HasNextGenerationTime\(\) bool](<#ReportsSearchResponse.HasNextGenerationTime>)
+  - [func \(o \*ReportsSearchResponse\) HasPageSettings\(\) bool](<#ReportsSearchResponse.HasPageSettings>)
+  - [func \(o \*ReportsSearchResponse\) HasParameters\(\) bool](<#ReportsSearchResponse.HasParameters>)
+  - [func \(o \*ReportsSearchResponse\) HasRemoteInterfaceName\(\) bool](<#ReportsSearchResponse.HasRemoteInterfaceName>)
+  - [func \(o \*ReportsSearchResponse\) HasRemoteMethodName\(\) bool](<#ReportsSearchResponse.HasRemoteMethodName>)
+  - [func \(o \*ReportsSearchResponse\) HasReportData\(\) bool](<#ReportsSearchResponse.HasReportData>)
+  - [func \(o \*ReportsSearchResponse\) HasReportId\(\) bool](<#ReportsSearchResponse.HasReportId>)
+  - [func \(o \*ReportsSearchResponse\) HasReportLink\(\) bool](<#ReportsSearchResponse.HasReportLink>)
+  - [func \(o \*ReportsSearchResponse\) HasReportQuery\(\) bool](<#ReportsSearchResponse.HasReportQuery>)
+  - [func \(o \*ReportsSearchResponse\) HasSchedule\(\) bool](<#ReportsSearchResponse.HasSchedule>)
+  - [func \(o \*ReportsSearchResponse\) HasSharedUsersAndGroups\(\) bool](<#ReportsSearchResponse.HasSharedUsersAndGroups>)
+  - [func \(o \*ReportsSearchResponse\) HasSubExecutorModuleFilter\(\) bool](<#ReportsSearchResponse.HasSubExecutorModuleFilter>)
+  - [func \(o \*ReportsSearchResponse\) HasTags\(\) bool](<#ReportsSearchResponse.HasTags>)
+  - [func \(o \*ReportsSearchResponse\) HasUsername\(\) bool](<#ReportsSearchResponse.HasUsername>)
+  - [func \(o \*ReportsSearchResponse\) HasVersion\(\) bool](<#ReportsSearchResponse.HasVersion>)
+  - [func \(o ReportsSearchResponse\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsSearchResponse.MarshalJSON>)
+  - [func \(o \*ReportsSearchResponse\) SetActions\(v Actions\)](<#ReportsSearchResponse.SetActions>)
+  - [func \(o \*ReportsSearchResponse\) SetApplicationName\(v string\)](<#ReportsSearchResponse.SetApplicationName>)
+  - [func \(o \*ReportsSearchResponse\) SetAuthor\(v string\)](<#ReportsSearchResponse.SetAuthor>)
+  - [func \(o \*ReportsSearchResponse\) SetAuthorNil\(\)](<#ReportsSearchResponse.SetAuthorNil>)
+  - [func \(o \*ReportsSearchResponse\) SetCreatedDate\(v string\)](<#ReportsSearchResponse.SetCreatedDate>)
+  - [func \(o \*ReportsSearchResponse\) SetDescription\(v string\)](<#ReportsSearchResponse.SetDescription>)
+  - [func \(o \*ReportsSearchResponse\) SetIsActive\(v bool\)](<#ReportsSearchResponse.SetIsActive>)
+  - [func \(o \*ReportsSearchResponse\) SetLastGenerationTime\(v string\)](<#ReportsSearchResponse.SetLastGenerationTime>)
+  - [func \(o \*ReportsSearchResponse\) SetLastGenerationTimeNil\(\)](<#ReportsSearchResponse.SetLastGenerationTimeNil>)
+  - [func \(o \*ReportsSearchResponse\) SetLatestReportFile\(v ReportsLatestReportFile\)](<#ReportsSearchResponse.SetLatestReportFile>)
+  - [func \(o \*ReportsSearchResponse\) SetModifiedDate\(v string\)](<#ReportsSearchResponse.SetModifiedDate>)
+  - [func \(o \*ReportsSearchResponse\) SetModuleFilter\(v string\)](<#ReportsSearchResponse.SetModuleFilter>)
+  - [func \(o \*ReportsSearchResponse\) SetName\(v string\)](<#ReportsSearchResponse.SetName>)
+  - [func \(o \*ReportsSearchResponse\) SetNextGenerationTime\(v string\)](<#ReportsSearchResponse.SetNextGenerationTime>)
+  - [func \(o \*ReportsSearchResponse\) SetNextGenerationTimeNil\(\)](<#ReportsSearchResponse.SetNextGenerationTimeNil>)
+  - [func \(o \*ReportsSearchResponse\) SetPageSettings\(v string\)](<#ReportsSearchResponse.SetPageSettings>)
+  - [func \(o \*ReportsSearchResponse\) SetPageSettingsNil\(\)](<#ReportsSearchResponse.SetPageSettingsNil>)
+  - [func \(o \*ReportsSearchResponse\) SetParameters\(v ReportsParameters\)](<#ReportsSearchResponse.SetParameters>)
+  - [func \(o \*ReportsSearchResponse\) SetRemoteInterfaceName\(v string\)](<#ReportsSearchResponse.SetRemoteInterfaceName>)
+  - [func \(o \*ReportsSearchResponse\) SetRemoteMethodName\(v string\)](<#ReportsSearchResponse.SetRemoteMethodName>)
+  - [func \(o \*ReportsSearchResponse\) SetReportData\(v ReportsData\)](<#ReportsSearchResponse.SetReportData>)
+  - [func \(o \*ReportsSearchResponse\) SetReportId\(v string\)](<#ReportsSearchResponse.SetReportId>)
+  - [func \(o \*ReportsSearchResponse\) SetReportLink\(v string\)](<#ReportsSearchResponse.SetReportLink>)
+  - [func \(o \*ReportsSearchResponse\) SetReportQuery\(v \[\]ReportsQuery\)](<#ReportsSearchResponse.SetReportQuery>)
+  - [func \(o \*ReportsSearchResponse\) SetSchedule\(v ScheduleConfig\)](<#ReportsSearchResponse.SetSchedule>)
+  - [func \(o \*ReportsSearchResponse\) SetSharedUsersAndGroups\(v \[\]string\)](<#ReportsSearchResponse.SetSharedUsersAndGroups>)
+  - [func \(o \*ReportsSearchResponse\) SetSharedUsersAndGroupsNil\(\)](<#ReportsSearchResponse.SetSharedUsersAndGroupsNil>)
+  - [func \(o \*ReportsSearchResponse\) SetSubExecutorModuleFilter\(v string\)](<#ReportsSearchResponse.SetSubExecutorModuleFilter>)
+  - [func \(o \*ReportsSearchResponse\) SetTags\(v \[\]string\)](<#ReportsSearchResponse.SetTags>)
+  - [func \(o \*ReportsSearchResponse\) SetUsername\(v string\)](<#ReportsSearchResponse.SetUsername>)
+  - [func \(o \*ReportsSearchResponse\) SetVersion\(v float64\)](<#ReportsSearchResponse.SetVersion>)
+  - [func \(o \*ReportsSearchResponse\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsSearchResponse.UnMarshalJSON>)
+  - [func \(o \*ReportsSearchResponse\) UnSetAuthor\(\)](<#ReportsSearchResponse.UnSetAuthor>)
+  - [func \(o \*ReportsSearchResponse\) UnSetLastGenerationTime\(\)](<#ReportsSearchResponse.UnSetLastGenerationTime>)
+  - [func \(o \*ReportsSearchResponse\) UnSetNextGenerationTime\(\)](<#ReportsSearchResponse.UnSetNextGenerationTime>)
+  - [func \(o \*ReportsSearchResponse\) UnSetPageSettings\(\)](<#ReportsSearchResponse.UnSetPageSettings>)
+  - [func \(o \*ReportsSearchResponse\) UnSetSharedUsersAndGroups\(\)](<#ReportsSearchResponse.UnSetSharedUsersAndGroups>)
+- [type ReportsTableVisualization](<#ReportsTableVisualization>)
+  - [func NewReportsTableVisualization\(\) \*ReportsTableVisualization](<#NewReportsTableVisualization>)
+  - [func NewReportsTableVisualizationWithDefaults\(\) \*ReportsTableVisualization](<#NewReportsTableVisualizationWithDefaults>)
+  - [func \(o \*ReportsTableVisualization\) GetChartType\(\) string](<#ReportsTableVisualization.GetChartType>)
+  - [func \(o \*ReportsTableVisualization\) GetChartTypeOk\(\) \(\*string, bool\)](<#ReportsTableVisualization.GetChartTypeOk>)
+  - [func \(o \*ReportsTableVisualization\) GetColumns\(\) \[\]string](<#ReportsTableVisualization.GetColumns>)
+  - [func \(o \*ReportsTableVisualization\) GetColumnsOk\(\) \(\*\[\]string, bool\)](<#ReportsTableVisualization.GetColumnsOk>)
+  - [func \(o \*ReportsTableVisualization\) GetMaxRowCount\(\) int64](<#ReportsTableVisualization.GetMaxRowCount>)
+  - [func \(o \*ReportsTableVisualization\) GetMaxRowCountOk\(\) \(\*int64, bool\)](<#ReportsTableVisualization.GetMaxRowCountOk>)
+  - [func \(o \*ReportsTableVisualization\) HasChartType\(\) bool](<#ReportsTableVisualization.HasChartType>)
+  - [func \(o \*ReportsTableVisualization\) HasColumns\(\) bool](<#ReportsTableVisualization.HasColumns>)
+  - [func \(o \*ReportsTableVisualization\) HasMaxRowCount\(\) bool](<#ReportsTableVisualization.HasMaxRowCount>)
+  - [func \(o ReportsTableVisualization\) MarshalJSON\(\) \(\[\]byte, error\)](<#ReportsTableVisualization.MarshalJSON>)
+  - [func \(o \*ReportsTableVisualization\) SetChartType\(v string\)](<#ReportsTableVisualization.SetChartType>)
+  - [func \(o \*ReportsTableVisualization\) SetColumns\(v \[\]string\)](<#ReportsTableVisualization.SetColumns>)
+  - [func \(o \*ReportsTableVisualization\) SetMaxRowCount\(v int64\)](<#ReportsTableVisualization.SetMaxRowCount>)
+  - [func \(o \*ReportsTableVisualization\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsTableVisualization.UnMarshalJSON>)
+- [type ScheduleConfig](<#ScheduleConfig>)
+  - [func NewScheduleConfig\(\) \*ScheduleConfig](<#NewScheduleConfig>)
+  - [func NewScheduleConfigWithDefaults\(\) \*ScheduleConfig](<#NewScheduleConfigWithDefaults>)
+  - [func \(o \*ScheduleConfig\) GetDateStr\(\) string](<#ScheduleConfig.GetDateStr>)
+  - [func \(o \*ScheduleConfig\) GetDateStrOk\(\) \(\*string, bool\)](<#ScheduleConfig.GetDateStrOk>)
+  - [func \(o \*ScheduleConfig\) GetDay\(\) string](<#ScheduleConfig.GetDay>)
+  - [func \(o \*ScheduleConfig\) GetDayNo\(\) int64](<#ScheduleConfig.GetDayNo>)
+  - [func \(o \*ScheduleConfig\) GetDayNoOk\(\) \(\*int64, bool\)](<#ScheduleConfig.GetDayNoOk>)
+  - [func \(o \*ScheduleConfig\) GetDayNumber\(\) int64](<#ScheduleConfig.GetDayNumber>)
+  - [func \(o \*ScheduleConfig\) GetDayNumberOk\(\) \(\*int64, bool\)](<#ScheduleConfig.GetDayNumberOk>)
+  - [func \(o \*ScheduleConfig\) GetDayOk\(\) \(\*string, bool\)](<#ScheduleConfig.GetDayOk>)
+  - [func \(o \*ScheduleConfig\) GetDays\(\) \[\]string](<#ScheduleConfig.GetDays>)
+  - [func \(o \*ScheduleConfig\) GetDaysNumber\(\) \[\]int64](<#ScheduleConfig.GetDaysNumber>)
+  - [func \(o \*ScheduleConfig\) GetDaysNumberOk\(\) \(\*\[\]int64, bool\)](<#ScheduleConfig.GetDaysNumberOk>)
+  - [func \(o \*ScheduleConfig\) GetDaysOk\(\) \(\*\[\]string, bool\)](<#ScheduleConfig.GetDaysOk>)
+  - [func \(o \*ScheduleConfig\) GetScheduleFullDateTime\(\) string](<#ScheduleConfig.GetScheduleFullDateTime>)
+  - [func \(o \*ScheduleConfig\) GetScheduleFullDateTimeOk\(\) \(\*string, bool\)](<#ScheduleConfig.GetScheduleFullDateTimeOk>)
+  - [func \(o \*ScheduleConfig\) GetScheduleType\(\) string](<#ScheduleConfig.GetScheduleType>)
+  - [func \(o \*ScheduleConfig\) GetScheduleTypeOk\(\) \(\*string, bool\)](<#ScheduleConfig.GetScheduleTypeOk>)
+  - [func \(o \*ScheduleConfig\) GetTime\(\) string](<#ScheduleConfig.GetTime>)
+  - [func \(o \*ScheduleConfig\) GetTimeOk\(\) \(\*string, bool\)](<#ScheduleConfig.GetTimeOk>)
+  - [func \(o \*ScheduleConfig\) GetTimeTics\(\) int64](<#ScheduleConfig.GetTimeTics>)
+  - [func \(o \*ScheduleConfig\) GetTimeTicsOk\(\) \(\*int64, bool\)](<#ScheduleConfig.GetTimeTicsOk>)
+  - [func \(o \*ScheduleConfig\) GetTimeType\(\) string](<#ScheduleConfig.GetTimeType>)
+  - [func \(o \*ScheduleConfig\) GetTimeTypeOk\(\) \(\*string, bool\)](<#ScheduleConfig.GetTimeTypeOk>)
+  - [func \(o \*ScheduleConfig\) GetTimeValue\(\) int64](<#ScheduleConfig.GetTimeValue>)
+  - [func \(o \*ScheduleConfig\) GetTimeValueOk\(\) \(\*int64, bool\)](<#ScheduleConfig.GetTimeValueOk>)
+  - [func \(o \*ScheduleConfig\) GetWeekType\(\) string](<#ScheduleConfig.GetWeekType>)
+  - [func \(o \*ScheduleConfig\) GetWeekTypeOk\(\) \(\*string, bool\)](<#ScheduleConfig.GetWeekTypeOk>)
+  - [func \(o \*ScheduleConfig\) HasDateStr\(\) bool](<#ScheduleConfig.HasDateStr>)
+  - [func \(o \*ScheduleConfig\) HasDay\(\) bool](<#ScheduleConfig.HasDay>)
+  - [func \(o \*ScheduleConfig\) HasDayNo\(\) bool](<#ScheduleConfig.HasDayNo>)
+  - [func \(o \*ScheduleConfig\) HasDayNumber\(\) bool](<#ScheduleConfig.HasDayNumber>)
+  - [func \(o \*ScheduleConfig\) HasDays\(\) bool](<#ScheduleConfig.HasDays>)
+  - [func \(o \*ScheduleConfig\) HasDaysNumber\(\) bool](<#ScheduleConfig.HasDaysNumber>)
+  - [func \(o \*ScheduleConfig\) HasScheduleFullDateTime\(\) bool](<#ScheduleConfig.HasScheduleFullDateTime>)
+  - [func \(o \*ScheduleConfig\) HasScheduleType\(\) bool](<#ScheduleConfig.HasScheduleType>)
+  - [func \(o \*ScheduleConfig\) HasTime\(\) bool](<#ScheduleConfig.HasTime>)
+  - [func \(o \*ScheduleConfig\) HasTimeTics\(\) bool](<#ScheduleConfig.HasTimeTics>)
+  - [func \(o \*ScheduleConfig\) HasTimeType\(\) bool](<#ScheduleConfig.HasTimeType>)
+  - [func \(o \*ScheduleConfig\) HasTimeValue\(\) bool](<#ScheduleConfig.HasTimeValue>)
+  - [func \(o \*ScheduleConfig\) HasWeekType\(\) bool](<#ScheduleConfig.HasWeekType>)
+  - [func \(o ScheduleConfig\) MarshalJSON\(\) \(\[\]byte, error\)](<#ScheduleConfig.MarshalJSON>)
+  - [func \(o \*ScheduleConfig\) SetDateStr\(v string\)](<#ScheduleConfig.SetDateStr>)
+  - [func \(o \*ScheduleConfig\) SetDay\(v string\)](<#ScheduleConfig.SetDay>)
+  - [func \(o \*ScheduleConfig\) SetDayNo\(v int64\)](<#ScheduleConfig.SetDayNo>)
+  - [func \(o \*ScheduleConfig\) SetDayNumber\(v int64\)](<#ScheduleConfig.SetDayNumber>)
+  - [func \(o \*ScheduleConfig\) SetDays\(v \[\]string\)](<#ScheduleConfig.SetDays>)
+  - [func \(o \*ScheduleConfig\) SetDaysNumber\(v \[\]int64\)](<#ScheduleConfig.SetDaysNumber>)
+  - [func \(o \*ScheduleConfig\) SetScheduleFullDateTime\(v string\)](<#ScheduleConfig.SetScheduleFullDateTime>)
+  - [func \(o \*ScheduleConfig\) SetScheduleType\(v string\)](<#ScheduleConfig.SetScheduleType>)
+  - [func \(o \*ScheduleConfig\) SetTime\(v string\)](<#ScheduleConfig.SetTime>)
+  - [func \(o \*ScheduleConfig\) SetTimeTics\(v int64\)](<#ScheduleConfig.SetTimeTics>)
+  - [func \(o \*ScheduleConfig\) SetTimeType\(v string\)](<#ScheduleConfig.SetTimeType>)
+  - [func \(o \*ScheduleConfig\) SetTimeValue\(v int64\)](<#ScheduleConfig.SetTimeValue>)
+  - [func \(o \*ScheduleConfig\) SetWeekType\(v string\)](<#ScheduleConfig.SetWeekType>)
+  - [func \(o \*ScheduleConfig\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ScheduleConfig.UnMarshalJSON>)
+- [type SearchAlertsOptionalParameters](<#SearchAlertsOptionalParameters>)
+  - [func NewSearchAlertsOptionalParameters\(\) \*SearchAlertsOptionalParameters](<#NewSearchAlertsOptionalParameters>)
+  - [func \(r \*SearchAlertsOptionalParameters\) WithBody\(body AlertsSearchRequest\) \*SearchAlertsOptionalParameters](<#SearchAlertsOptionalParameters.WithBody>)
 - [type SearchEventsOptionalParameters](<#SearchEventsOptionalParameters>)
   - [func NewSearchEventsOptionalParameters\(\) \*SearchEventsOptionalParameters](<#NewSearchEventsOptionalParameters>)
-  - [func \(r \*SearchEventsOptionalParameters\) WithBody\(body EventsListRequest\) \*SearchEventsOptionalParameters](<#SearchEventsOptionalParameters.WithBody>)
+  - [func \(r \*SearchEventsOptionalParameters\) WithBody\(body EventsSearchRequest\) \*SearchEventsOptionalParameters](<#SearchEventsOptionalParameters.WithBody>)
+- [type SearchQueriesOptionalParameters](<#SearchQueriesOptionalParameters>)
+  - [func NewSearchQueriesOptionalParameters\(\) \*SearchQueriesOptionalParameters](<#NewSearchQueriesOptionalParameters>)
+  - [func \(r \*SearchQueriesOptionalParameters\) WithBody\(body QueriesSearchRequest\) \*SearchQueriesOptionalParameters](<#SearchQueriesOptionalParameters.WithBody>)
+- [type SearchReportsOptionalParameters](<#SearchReportsOptionalParameters>)
+  - [func NewSearchReportsOptionalParameters\(\) \*SearchReportsOptionalParameters](<#NewSearchReportsOptionalParameters>)
+  - [func \(r \*SearchReportsOptionalParameters\) WithBody\(body ReportsSearchRequest\) \*SearchReportsOptionalParameters](<#SearchReportsOptionalParameters.WithBody>)
+- [type SearchSourcesOptionalParameters](<#SearchSourcesOptionalParameters>)
+  - [func NewSearchSourcesOptionalParameters\(\) \*SearchSourcesOptionalParameters](<#NewSearchSourcesOptionalParameters>)
+  - [func \(r \*SearchSourcesOptionalParameters\) WithBody\(body SourcesSearchRequest\) \*SearchSourcesOptionalParameters](<#SearchSourcesOptionalParameters.WithBody>)
+- [type SelectedColumn](<#SelectedColumn>)
+  - [func NewSelectedColumn\(\) \*SelectedColumn](<#NewSelectedColumn>)
+  - [func NewSelectedColumnWithDefaults\(\) \*SelectedColumn](<#NewSelectedColumnWithDefaults>)
+  - [func \(o \*SelectedColumn\) GetDisplayText\(\) string](<#SelectedColumn.GetDisplayText>)
+  - [func \(o \*SelectedColumn\) GetDisplayTextOk\(\) \(\*string, bool\)](<#SelectedColumn.GetDisplayTextOk>)
+  - [func \(o \*SelectedColumn\) GetLookup\(\) string](<#SelectedColumn.GetLookup>)
+  - [func \(o \*SelectedColumn\) GetLookupOk\(\) \(\*string, bool\)](<#SelectedColumn.GetLookupOk>)
+  - [func \(o \*SelectedColumn\) GetValue\(\) string](<#SelectedColumn.GetValue>)
+  - [func \(o \*SelectedColumn\) GetValueOk\(\) \(\*string, bool\)](<#SelectedColumn.GetValueOk>)
+  - [func \(o \*SelectedColumn\) HasDisplayText\(\) bool](<#SelectedColumn.HasDisplayText>)
+  - [func \(o \*SelectedColumn\) HasLookup\(\) bool](<#SelectedColumn.HasLookup>)
+  - [func \(o \*SelectedColumn\) HasValue\(\) bool](<#SelectedColumn.HasValue>)
+  - [func \(o SelectedColumn\) MarshalJSON\(\) \(\[\]byte, error\)](<#SelectedColumn.MarshalJSON>)
+  - [func \(o \*SelectedColumn\) SetDisplayText\(v string\)](<#SelectedColumn.SetDisplayText>)
+  - [func \(o \*SelectedColumn\) SetLookup\(v string\)](<#SelectedColumn.SetLookup>)
+  - [func \(o \*SelectedColumn\) SetLookupNil\(\)](<#SelectedColumn.SetLookupNil>)
+  - [func \(o \*SelectedColumn\) SetValue\(v string\)](<#SelectedColumn.SetValue>)
+  - [func \(o \*SelectedColumn\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#SelectedColumn.UnMarshalJSON>)
+  - [func \(o \*SelectedColumn\) UnSetLookup\(\)](<#SelectedColumn.UnSetLookup>)
+- [type SourcesApi](<#SourcesApi>)
+  - [func NewSourcesApi\(client \*common.APIClient\) \*SourcesApi](<#NewSourcesApi>)
+  - [func \(a \*SourcesApi\) SearchSources\(ctx \_context.Context, o ...SearchSourcesOptionalParameters\) \(SourcesSearchResponse, \*\_nethttp.Response, error\)](<#SourcesApi.SearchSources>)
+- [type SourcesItem](<#SourcesItem>)
+  - [func NewSourcesItem\(\) \*SourcesItem](<#NewSourcesItem>)
+  - [func NewSourcesItemWithDefaults\(\) \*SourcesItem](<#NewSourcesItemWithDefaults>)
+  - [func \(o \*SourcesItem\) GetAgentId\(\) string](<#SourcesItem.GetAgentId>)
+  - [func \(o \*SourcesItem\) GetAgentIdOk\(\) \(\*string, bool\)](<#SourcesItem.GetAgentIdOk>)
+  - [func \(o \*SourcesItem\) GetAgentIds\(\) \[\]string](<#SourcesItem.GetAgentIds>)
+  - [func \(o \*SourcesItem\) GetAgentIdsOk\(\) \(\*\[\]string, bool\)](<#SourcesItem.GetAgentIdsOk>)
+  - [func \(o \*SourcesItem\) GetAlertTimeout\(\) int64](<#SourcesItem.GetAlertTimeout>)
+  - [func \(o \*SourcesItem\) GetAlertTimeoutOk\(\) \(\*int64, bool\)](<#SourcesItem.GetAlertTimeoutOk>)
+  - [func \(o \*SourcesItem\) GetAssetTags\(\) \[\]string](<#SourcesItem.GetAssetTags>)
+  - [func \(o \*SourcesItem\) GetAssetTagsOk\(\) \(\*\[\]string, bool\)](<#SourcesItem.GetAssetTagsOk>)
+  - [func \(o \*SourcesItem\) GetAuthor\(\) string](<#SourcesItem.GetAuthor>)
+  - [func \(o \*SourcesItem\) GetAuthorOk\(\) \(\*string, bool\)](<#SourcesItem.GetAuthorOk>)
+  - [func \(o \*SourcesItem\) GetBlockCount\(\) int64](<#SourcesItem.GetBlockCount>)
+  - [func \(o \*SourcesItem\) GetBlockCountOk\(\) \(\*int64, bool\)](<#SourcesItem.GetBlockCountOk>)
+  - [func \(o \*SourcesItem\) GetDashboardId\(\) string](<#SourcesItem.GetDashboardId>)
+  - [func \(o \*SourcesItem\) GetDashboardIdOk\(\) \(\*string, bool\)](<#SourcesItem.GetDashboardIdOk>)
+  - [func \(o \*SourcesItem\) GetDashboardName\(\) string](<#SourcesItem.GetDashboardName>)
+  - [func \(o \*SourcesItem\) GetDashboardNameOk\(\) \(\*string, bool\)](<#SourcesItem.GetDashboardNameOk>)
+  - [func \(o \*SourcesItem\) GetDiscardedLogsConfig\(\) string](<#SourcesItem.GetDiscardedLogsConfig>)
+  - [func \(o \*SourcesItem\) GetDiscardedLogsConfigOk\(\) \(\*string, bool\)](<#SourcesItem.GetDiscardedLogsConfigOk>)
+  - [func \(o \*SourcesItem\) GetEnabled\(\) bool](<#SourcesItem.GetEnabled>)
+  - [func \(o \*SourcesItem\) GetEnabledOk\(\) \(\*bool, bool\)](<#SourcesItem.GetEnabledOk>)
+  - [func \(o \*SourcesItem\) GetGroup\(\) string](<#SourcesItem.GetGroup>)
+  - [func \(o \*SourcesItem\) GetGroupOk\(\) \(\*string, bool\)](<#SourcesItem.GetGroupOk>)
+  - [func \(o \*SourcesItem\) GetId\(\) string](<#SourcesItem.GetId>)
+  - [func \(o \*SourcesItem\) GetIdOk\(\) \(\*string, bool\)](<#SourcesItem.GetIdOk>)
+  - [func \(o \*SourcesItem\) GetIndexGroupName\(\) string](<#SourcesItem.GetIndexGroupName>)
+  - [func \(o \*SourcesItem\) GetIndexGroupNameOk\(\) \(\*string, bool\)](<#SourcesItem.GetIndexGroupNameOk>)
+  - [func \(o \*SourcesItem\) GetIsAgentSource\(\) bool](<#SourcesItem.GetIsAgentSource>)
+  - [func \(o \*SourcesItem\) GetIsAgentSourceOk\(\) \(\*bool, bool\)](<#SourcesItem.GetIsAgentSourceOk>)
+  - [func \(o \*SourcesItem\) GetIsDeleted\(\) bool](<#SourcesItem.GetIsDeleted>)
+  - [func \(o \*SourcesItem\) GetIsDeletedOk\(\) \(\*bool, bool\)](<#SourcesItem.GetIsDeletedOk>)
+  - [func \(o \*SourcesItem\) GetIsEditable\(\) bool](<#SourcesItem.GetIsEditable>)
+  - [func \(o \*SourcesItem\) GetIsEditableOk\(\) \(\*bool, bool\)](<#SourcesItem.GetIsEditableOk>)
+  - [func \(o \*SourcesItem\) GetLabel\(\) string](<#SourcesItem.GetLabel>)
+  - [func \(o \*SourcesItem\) GetLabelOk\(\) \(\*string, bool\)](<#SourcesItem.GetLabelOk>)
+  - [func \(o \*SourcesItem\) GetLogOperations\(\) \[\]SourcesLogOperation](<#SourcesItem.GetLogOperations>)
+  - [func \(o \*SourcesItem\) GetLogOperationsOk\(\) \(\*\[\]SourcesLogOperation, bool\)](<#SourcesItem.GetLogOperationsOk>)
+  - [func \(o \*SourcesItem\) GetLogReaderData\(\) json.RawMessage](<#SourcesItem.GetLogReaderData>)
+  - [func \(o \*SourcesItem\) GetLogReaderDataOk\(\) \(\*json.RawMessage, bool\)](<#SourcesItem.GetLogReaderDataOk>)
+  - [func \(o \*SourcesItem\) GetLogReaderType\(\) string](<#SourcesItem.GetLogReaderType>)
+  - [func \(o \*SourcesItem\) GetLogReaderTypeOk\(\) \(\*string, bool\)](<#SourcesItem.GetLogReaderTypeOk>)
+  - [func \(o \*SourcesItem\) GetLogRemoveFormat\(\) string](<#SourcesItem.GetLogRemoveFormat>)
+  - [func \(o \*SourcesItem\) GetLogRemoveFormatOk\(\) \(\*string, bool\)](<#SourcesItem.GetLogRemoveFormatOk>)
+  - [func \(o \*SourcesItem\) GetLogRemoveTime\(\) string](<#SourcesItem.GetLogRemoveTime>)
+  - [func \(o \*SourcesItem\) GetLogRemoveTimeOk\(\) \(\*string, bool\)](<#SourcesItem.GetLogRemoveTimeOk>)
+  - [func \(o \*SourcesItem\) GetLogSourceDefCode\(\) string](<#SourcesItem.GetLogSourceDefCode>)
+  - [func \(o \*SourcesItem\) GetLogSourceDefCodeOk\(\) \(\*string, bool\)](<#SourcesItem.GetLogSourceDefCodeOk>)
+  - [func \(o \*SourcesItem\) GetName\(\) string](<#SourcesItem.GetName>)
+  - [func \(o \*SourcesItem\) GetNameOk\(\) \(\*string, bool\)](<#SourcesItem.GetNameOk>)
+  - [func \(o \*SourcesItem\) GetParallelOptions\(\) ParallelOptions](<#SourcesItem.GetParallelOptions>)
+  - [func \(o \*SourcesItem\) GetParallelOptionsOk\(\) \(\*ParallelOptions, bool\)](<#SourcesItem.GetParallelOptionsOk>)
+  - [func \(o \*SourcesItem\) GetScheduleConfig\(\) ScheduleConfig](<#SourcesItem.GetScheduleConfig>)
+  - [func \(o \*SourcesItem\) GetScheduleConfigOk\(\) \(\*ScheduleConfig, bool\)](<#SourcesItem.GetScheduleConfigOk>)
+  - [func \(o \*SourcesItem\) GetStoreRawLogs\(\) bool](<#SourcesItem.GetStoreRawLogs>)
+  - [func \(o \*SourcesItem\) GetStoreRawLogsLgs\(\) string](<#SourcesItem.GetStoreRawLogsLgs>)
+  - [func \(o \*SourcesItem\) GetStoreRawLogsLgsOk\(\) \(\*string, bool\)](<#SourcesItem.GetStoreRawLogsLgsOk>)
+  - [func \(o \*SourcesItem\) GetStoreRawLogsOk\(\) \(\*bool, bool\)](<#SourcesItem.GetStoreRawLogsOk>)
+  - [func \(o \*SourcesItem\) GetTags\(\) \[\]string](<#SourcesItem.GetTags>)
+  - [func \(o \*SourcesItem\) GetTagsOk\(\) \(\*\[\]string, bool\)](<#SourcesItem.GetTagsOk>)
+  - [func \(o \*SourcesItem\) GetUseSecondaryWriter\(\) bool](<#SourcesItem.GetUseSecondaryWriter>)
+  - [func \(o \*SourcesItem\) GetUseSecondaryWriterOk\(\) \(\*bool, bool\)](<#SourcesItem.GetUseSecondaryWriterOk>)
+  - [func \(o \*SourcesItem\) GetValue\(\) string](<#SourcesItem.GetValue>)
+  - [func \(o \*SourcesItem\) GetValueOk\(\) \(\*string, bool\)](<#SourcesItem.GetValueOk>)
+  - [func \(o \*SourcesItem\) GetWriteRawLogs\(\) bool](<#SourcesItem.GetWriteRawLogs>)
+  - [func \(o \*SourcesItem\) GetWriteRawLogsOk\(\) \(\*bool, bool\)](<#SourcesItem.GetWriteRawLogsOk>)
+  - [func \(o \*SourcesItem\) HasAgentId\(\) bool](<#SourcesItem.HasAgentId>)
+  - [func \(o \*SourcesItem\) HasAgentIds\(\) bool](<#SourcesItem.HasAgentIds>)
+  - [func \(o \*SourcesItem\) HasAlertTimeout\(\) bool](<#SourcesItem.HasAlertTimeout>)
+  - [func \(o \*SourcesItem\) HasAssetTags\(\) bool](<#SourcesItem.HasAssetTags>)
+  - [func \(o \*SourcesItem\) HasAuthor\(\) bool](<#SourcesItem.HasAuthor>)
+  - [func \(o \*SourcesItem\) HasBlockCount\(\) bool](<#SourcesItem.HasBlockCount>)
+  - [func \(o \*SourcesItem\) HasDashboardId\(\) bool](<#SourcesItem.HasDashboardId>)
+  - [func \(o \*SourcesItem\) HasDashboardName\(\) bool](<#SourcesItem.HasDashboardName>)
+  - [func \(o \*SourcesItem\) HasDiscardedLogsConfig\(\) bool](<#SourcesItem.HasDiscardedLogsConfig>)
+  - [func \(o \*SourcesItem\) HasEnabled\(\) bool](<#SourcesItem.HasEnabled>)
+  - [func \(o \*SourcesItem\) HasGroup\(\) bool](<#SourcesItem.HasGroup>)
+  - [func \(o \*SourcesItem\) HasId\(\) bool](<#SourcesItem.HasId>)
+  - [func \(o \*SourcesItem\) HasIndexGroupName\(\) bool](<#SourcesItem.HasIndexGroupName>)
+  - [func \(o \*SourcesItem\) HasIsAgentSource\(\) bool](<#SourcesItem.HasIsAgentSource>)
+  - [func \(o \*SourcesItem\) HasIsDeleted\(\) bool](<#SourcesItem.HasIsDeleted>)
+  - [func \(o \*SourcesItem\) HasIsEditable\(\) bool](<#SourcesItem.HasIsEditable>)
+  - [func \(o \*SourcesItem\) HasLabel\(\) bool](<#SourcesItem.HasLabel>)
+  - [func \(o \*SourcesItem\) HasLogOperations\(\) bool](<#SourcesItem.HasLogOperations>)
+  - [func \(o \*SourcesItem\) HasLogReaderData\(\) bool](<#SourcesItem.HasLogReaderData>)
+  - [func \(o \*SourcesItem\) HasLogReaderType\(\) bool](<#SourcesItem.HasLogReaderType>)
+  - [func \(o \*SourcesItem\) HasLogRemoveFormat\(\) bool](<#SourcesItem.HasLogRemoveFormat>)
+  - [func \(o \*SourcesItem\) HasLogRemoveTime\(\) bool](<#SourcesItem.HasLogRemoveTime>)
+  - [func \(o \*SourcesItem\) HasLogSourceDefCode\(\) bool](<#SourcesItem.HasLogSourceDefCode>)
+  - [func \(o \*SourcesItem\) HasName\(\) bool](<#SourcesItem.HasName>)
+  - [func \(o \*SourcesItem\) HasParallelOptions\(\) bool](<#SourcesItem.HasParallelOptions>)
+  - [func \(o \*SourcesItem\) HasScheduleConfig\(\) bool](<#SourcesItem.HasScheduleConfig>)
+  - [func \(o \*SourcesItem\) HasStoreRawLogs\(\) bool](<#SourcesItem.HasStoreRawLogs>)
+  - [func \(o \*SourcesItem\) HasStoreRawLogsLgs\(\) bool](<#SourcesItem.HasStoreRawLogsLgs>)
+  - [func \(o \*SourcesItem\) HasTags\(\) bool](<#SourcesItem.HasTags>)
+  - [func \(o \*SourcesItem\) HasUseSecondaryWriter\(\) bool](<#SourcesItem.HasUseSecondaryWriter>)
+  - [func \(o \*SourcesItem\) HasValue\(\) bool](<#SourcesItem.HasValue>)
+  - [func \(o \*SourcesItem\) HasWriteRawLogs\(\) bool](<#SourcesItem.HasWriteRawLogs>)
+  - [func \(o SourcesItem\) MarshalJSON\(\) \(\[\]byte, error\)](<#SourcesItem.MarshalJSON>)
+  - [func \(o \*SourcesItem\) SetAgentId\(v string\)](<#SourcesItem.SetAgentId>)
+  - [func \(o \*SourcesItem\) SetAgentIdNil\(\)](<#SourcesItem.SetAgentIdNil>)
+  - [func \(o \*SourcesItem\) SetAgentIds\(v \[\]string\)](<#SourcesItem.SetAgentIds>)
+  - [func \(o \*SourcesItem\) SetAgentIdsNil\(\)](<#SourcesItem.SetAgentIdsNil>)
+  - [func \(o \*SourcesItem\) SetAlertTimeout\(v int64\)](<#SourcesItem.SetAlertTimeout>)
+  - [func \(o \*SourcesItem\) SetAssetTags\(v \[\]string\)](<#SourcesItem.SetAssetTags>)
+  - [func \(o \*SourcesItem\) SetAssetTagsNil\(\)](<#SourcesItem.SetAssetTagsNil>)
+  - [func \(o \*SourcesItem\) SetAuthor\(v string\)](<#SourcesItem.SetAuthor>)
+  - [func \(o \*SourcesItem\) SetAuthorNil\(\)](<#SourcesItem.SetAuthorNil>)
+  - [func \(o \*SourcesItem\) SetBlockCount\(v int64\)](<#SourcesItem.SetBlockCount>)
+  - [func \(o \*SourcesItem\) SetDashboardId\(v string\)](<#SourcesItem.SetDashboardId>)
+  - [func \(o \*SourcesItem\) SetDashboardIdNil\(\)](<#SourcesItem.SetDashboardIdNil>)
+  - [func \(o \*SourcesItem\) SetDashboardName\(v string\)](<#SourcesItem.SetDashboardName>)
+  - [func \(o \*SourcesItem\) SetDiscardedLogsConfig\(v string\)](<#SourcesItem.SetDiscardedLogsConfig>)
+  - [func \(o \*SourcesItem\) SetEnabled\(v bool\)](<#SourcesItem.SetEnabled>)
+  - [func \(o \*SourcesItem\) SetGroup\(v string\)](<#SourcesItem.SetGroup>)
+  - [func \(o \*SourcesItem\) SetGroupNil\(\)](<#SourcesItem.SetGroupNil>)
+  - [func \(o \*SourcesItem\) SetId\(v string\)](<#SourcesItem.SetId>)
+  - [func \(o \*SourcesItem\) SetIndexGroupName\(v string\)](<#SourcesItem.SetIndexGroupName>)
+  - [func \(o \*SourcesItem\) SetIndexGroupNameNil\(\)](<#SourcesItem.SetIndexGroupNameNil>)
+  - [func \(o \*SourcesItem\) SetIsAgentSource\(v bool\)](<#SourcesItem.SetIsAgentSource>)
+  - [func \(o \*SourcesItem\) SetIsDeleted\(v bool\)](<#SourcesItem.SetIsDeleted>)
+  - [func \(o \*SourcesItem\) SetIsEditable\(v bool\)](<#SourcesItem.SetIsEditable>)
+  - [func \(o \*SourcesItem\) SetLabel\(v string\)](<#SourcesItem.SetLabel>)
+  - [func \(o \*SourcesItem\) SetLogOperations\(v \[\]SourcesLogOperation\)](<#SourcesItem.SetLogOperations>)
+  - [func \(o \*SourcesItem\) SetLogReaderData\(v json.RawMessage\)](<#SourcesItem.SetLogReaderData>)
+  - [func \(o \*SourcesItem\) SetLogReaderType\(v string\)](<#SourcesItem.SetLogReaderType>)
+  - [func \(o \*SourcesItem\) SetLogRemoveFormat\(v string\)](<#SourcesItem.SetLogRemoveFormat>)
+  - [func \(o \*SourcesItem\) SetLogRemoveFormatNil\(\)](<#SourcesItem.SetLogRemoveFormatNil>)
+  - [func \(o \*SourcesItem\) SetLogRemoveTime\(v string\)](<#SourcesItem.SetLogRemoveTime>)
+  - [func \(o \*SourcesItem\) SetLogRemoveTimeNil\(\)](<#SourcesItem.SetLogRemoveTimeNil>)
+  - [func \(o \*SourcesItem\) SetLogSourceDefCode\(v string\)](<#SourcesItem.SetLogSourceDefCode>)
+  - [func \(o \*SourcesItem\) SetName\(v string\)](<#SourcesItem.SetName>)
+  - [func \(o \*SourcesItem\) SetParallelOptions\(v ParallelOptions\)](<#SourcesItem.SetParallelOptions>)
+  - [func \(o \*SourcesItem\) SetScheduleConfig\(v ScheduleConfig\)](<#SourcesItem.SetScheduleConfig>)
+  - [func \(o \*SourcesItem\) SetScheduleConfigNil\(\)](<#SourcesItem.SetScheduleConfigNil>)
+  - [func \(o \*SourcesItem\) SetStoreRawLogs\(v bool\)](<#SourcesItem.SetStoreRawLogs>)
+  - [func \(o \*SourcesItem\) SetStoreRawLogsLgs\(v string\)](<#SourcesItem.SetStoreRawLogsLgs>)
+  - [func \(o \*SourcesItem\) SetTags\(v \[\]string\)](<#SourcesItem.SetTags>)
+  - [func \(o \*SourcesItem\) SetUseSecondaryWriter\(v bool\)](<#SourcesItem.SetUseSecondaryWriter>)
+  - [func \(o \*SourcesItem\) SetValue\(v string\)](<#SourcesItem.SetValue>)
+  - [func \(o \*SourcesItem\) SetWriteRawLogs\(v bool\)](<#SourcesItem.SetWriteRawLogs>)
+  - [func \(o \*SourcesItem\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#SourcesItem.UnMarshalJSON>)
+  - [func \(o \*SourcesItem\) UnSetAgentIds\(\)](<#SourcesItem.UnSetAgentIds>)
+  - [func \(o \*SourcesItem\) UnSetAssetTags\(\)](<#SourcesItem.UnSetAssetTags>)
+  - [func \(o \*SourcesItem\) UnsetAgentId\(\)](<#SourcesItem.UnsetAgentId>)
+  - [func \(o \*SourcesItem\) UnsetDashboardId\(\)](<#SourcesItem.UnsetDashboardId>)
+  - [func \(o \*SourcesItem\) UnsetIndexGroupName\(\)](<#SourcesItem.UnsetIndexGroupName>)
+  - [func \(o \*SourcesItem\) UnsetLogRemoveFormat\(\)](<#SourcesItem.UnsetLogRemoveFormat>)
+  - [func \(o \*SourcesItem\) UnsetLogRemoveTime\(\)](<#SourcesItem.UnsetLogRemoveTime>)
+  - [func \(o \*SourcesItem\) UnsetScheduleConfig\(\)](<#SourcesItem.UnsetScheduleConfig>)
+- [type SourcesLogOperation](<#SourcesLogOperation>)
+  - [func NewSourcesLogOperation\(\) \*SourcesLogOperation](<#NewSourcesLogOperation>)
+  - [func NewSourcesLogOperationWithDefaults\(\) \*SourcesLogOperation](<#NewSourcesLogOperationWithDefaults>)
+  - [func \(o \*SourcesLogOperation\) GetModuleName\(\) string](<#SourcesLogOperation.GetModuleName>)
+  - [func \(o \*SourcesLogOperation\) GetModuleNameOk\(\) \(\*string, bool\)](<#SourcesLogOperation.GetModuleNameOk>)
+  - [func \(o \*SourcesLogOperation\) GetParameters\(\) json.RawMessage](<#SourcesLogOperation.GetParameters>)
+  - [func \(o \*SourcesLogOperation\) GetParametersOk\(\) \(\*json.RawMessage, bool\)](<#SourcesLogOperation.GetParametersOk>)
+  - [func \(o \*SourcesLogOperation\) GetPriority\(\) string](<#SourcesLogOperation.GetPriority>)
+  - [func \(o \*SourcesLogOperation\) GetPriorityOk\(\) \(\*string, bool\)](<#SourcesLogOperation.GetPriorityOk>)
+  - [func \(o \*SourcesLogOperation\) HasModuleName\(\) bool](<#SourcesLogOperation.HasModuleName>)
+  - [func \(o \*SourcesLogOperation\) HasParameters\(\) bool](<#SourcesLogOperation.HasParameters>)
+  - [func \(o \*SourcesLogOperation\) HasPriority\(\) bool](<#SourcesLogOperation.HasPriority>)
+  - [func \(o SourcesLogOperation\) MarshalJSON\(\) \(\[\]byte, error\)](<#SourcesLogOperation.MarshalJSON>)
+  - [func \(o \*SourcesLogOperation\) SetModuleName\(v string\)](<#SourcesLogOperation.SetModuleName>)
+  - [func \(o \*SourcesLogOperation\) SetParameters\(v json.RawMessage\)](<#SourcesLogOperation.SetParameters>)
+  - [func \(o \*SourcesLogOperation\) SetPriority\(v string\)](<#SourcesLogOperation.SetPriority>)
+  - [func \(o \*SourcesLogOperation\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#SourcesLogOperation.UnMarshalJSON>)
+- [type SourcesSearchRequest](<#SourcesSearchRequest>)
+  - [func NewSourcesSearchRequest\(\) \*SourcesSearchRequest](<#NewSourcesSearchRequest>)
+  - [func NewSourcesSearchRequestWithDefaults\(\) \*SourcesSearchRequest](<#NewSourcesSearchRequestWithDefaults>)
+  - [func \(o \*SourcesSearchRequest\) GetSearchFilter\(\) string](<#SourcesSearchRequest.GetSearchFilter>)
+  - [func \(o \*SourcesSearchRequest\) GetSearchFilterOk\(\) \(\*string, bool\)](<#SourcesSearchRequest.GetSearchFilterOk>)
+  - [func \(o \*SourcesSearchRequest\) GetSmartRestRequestContext\(\) string](<#SourcesSearchRequest.GetSmartRestRequestContext>)
+  - [func \(o \*SourcesSearchRequest\) GetSmartRestRequestContextOk\(\) \(\*string, bool\)](<#SourcesSearchRequest.GetSmartRestRequestContextOk>)
+  - [func \(o \*SourcesSearchRequest\) HasSearchFilter\(\) bool](<#SourcesSearchRequest.HasSearchFilter>)
+  - [func \(o \*SourcesSearchRequest\) HasSmartRestRequestContext\(\) bool](<#SourcesSearchRequest.HasSmartRestRequestContext>)
+  - [func \(o SourcesSearchRequest\) MarshalJSON\(\) \(\[\]byte, error\)](<#SourcesSearchRequest.MarshalJSON>)
+  - [func \(o \*SourcesSearchRequest\) SetSearchFilter\(v string\)](<#SourcesSearchRequest.SetSearchFilter>)
+  - [func \(o \*SourcesSearchRequest\) SetSmartRestRequestContext\(v string\)](<#SourcesSearchRequest.SetSmartRestRequestContext>)
+  - [func \(o \*SourcesSearchRequest\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#SourcesSearchRequest.UnMarshalJSON>)
+- [type SourcesSearchResponse](<#SourcesSearchResponse>)
+  - [func NewSourcesSearchResponse\(\) \*SourcesSearchResponse](<#NewSourcesSearchResponse>)
+  - [func NewSourcesSearchResponseWithDefaults\(\) \*SourcesSearchResponse](<#NewSourcesSearchResponseWithDefaults>)
+  - [func \(o \*SourcesSearchResponse\) GetFailedItems\(\) \[\]json.RawMessage](<#SourcesSearchResponse.GetFailedItems>)
+  - [func \(o \*SourcesSearchResponse\) GetFailedItemsOk\(\) \(\*\[\]json.RawMessage, bool\)](<#SourcesSearchResponse.GetFailedItemsOk>)
+  - [func \(o \*SourcesSearchResponse\) GetItems\(\) \[\]SourcesItem](<#SourcesSearchResponse.GetItems>)
+  - [func \(o \*SourcesSearchResponse\) GetItemsOk\(\) \(\*\[\]SourcesItem, bool\)](<#SourcesSearchResponse.GetItemsOk>)
+  - [func \(o \*SourcesSearchResponse\) GetSuccessItem\(\) \[\]SuccessItem](<#SourcesSearchResponse.GetSuccessItem>)
+  - [func \(o \*SourcesSearchResponse\) GetSuccessItemOk\(\) \(\*\[\]SuccessItem, bool\)](<#SourcesSearchResponse.GetSuccessItemOk>)
+  - [func \(o \*SourcesSearchResponse\) HasFailedItems\(\) bool](<#SourcesSearchResponse.HasFailedItems>)
+  - [func \(o \*SourcesSearchResponse\) HasItems\(\) bool](<#SourcesSearchResponse.HasItems>)
+  - [func \(o \*SourcesSearchResponse\) HasSuccessItem\(\) bool](<#SourcesSearchResponse.HasSuccessItem>)
+  - [func \(o SourcesSearchResponse\) MarshalJSON\(\) \(\[\]byte, error\)](<#SourcesSearchResponse.MarshalJSON>)
+  - [func \(o \*SourcesSearchResponse\) SetFailedItems\(v \[\]json.RawMessage\)](<#SourcesSearchResponse.SetFailedItems>)
+  - [func \(o \*SourcesSearchResponse\) SetItems\(v \[\]SourcesItem\)](<#SourcesSearchResponse.SetItems>)
+  - [func \(o \*SourcesSearchResponse\) SetSuccessItem\(v \[\]SuccessItem\)](<#SourcesSearchResponse.SetSuccessItem>)
+  - [func \(o \*SourcesSearchResponse\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#SourcesSearchResponse.UnMarshalJSON>)
+- [type SuccessItem](<#SuccessItem>)
+  - [func NewSuccessItem\(\) \*SuccessItem](<#NewSuccessItem>)
+  - [func NewSuccessItemWithDefaults\(\) \*SuccessItem](<#NewSuccessItemWithDefaults>)
+  - [func \(o \*SuccessItem\) GetApplication\(\) string](<#SuccessItem.GetApplication>)
+  - [func \(o \*SuccessItem\) GetApplicationOk\(\) \(\*string, bool\)](<#SuccessItem.GetApplicationOk>)
+  - [func \(o \*SuccessItem\) GetKeys\(\) \[\]string](<#SuccessItem.GetKeys>)
+  - [func \(o \*SuccessItem\) GetKeysOk\(\) \(\*\[\]string, bool\)](<#SuccessItem.GetKeysOk>)
+  - [func \(o \*SuccessItem\) GetSourceType\(\) string](<#SuccessItem.GetSourceType>)
+  - [func \(o \*SuccessItem\) GetSourceTypeOk\(\) \(\*string, bool\)](<#SuccessItem.GetSourceTypeOk>)
+  - [func \(o \*SuccessItem\) HasApplication\(\) bool](<#SuccessItem.HasApplication>)
+  - [func \(o \*SuccessItem\) HasKeys\(\) bool](<#SuccessItem.HasKeys>)
+  - [func \(o \*SuccessItem\) HasSourceType\(\) bool](<#SuccessItem.HasSourceType>)
+  - [func \(o SuccessItem\) MarshalJSON\(\) \(\[\]byte, error\)](<#SuccessItem.MarshalJSON>)
+  - [func \(o \*SuccessItem\) SetApplication\(v string\)](<#SuccessItem.SetApplication>)
+  - [func \(o \*SuccessItem\) SetKeys\(v \[\]string\)](<#SuccessItem.SetKeys>)
+  - [func \(o \*SuccessItem\) SetSourceType\(v string\)](<#SuccessItem.SetSourceType>)
+  - [func \(o \*SuccessItem\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#SuccessItem.UnMarshalJSON>)
 
 
-<a name="APIErrorResponse"></a>
-## type [APIErrorResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_api_error_response.go#L11-L17>)
+<a name="Action"></a>
+## type [Action](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L10-L23>)
 
-APIErrorResponse API Error response
+Action represents an action.
 
 ```go
-type APIErrorResponse struct {
+type Action struct {
+    // Type of the action.
+    ActionType *string `json:"ActionType,omitempty"`
+    // Parameters of the action.
+    ActionParameters []ActionParameter `json:"ActionParameters,omitempty"`
+    // Data associated with the action.
+    Data common.NullableString `json:"Data,omitempty"`
+    // Reference ID for the action.
+    ActionRefId common.NullableString `json:"ActionRefId,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{} `json:"-"`
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewAction"></a>
+### func [NewAction](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L29>)
+
+```go
+func NewAction() *Action
+```
+
+NewAction creates a new Action object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewActionWithDefaults"></a>
+### func [NewActionWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L37>)
+
+```go
+func NewActionWithDefaults() *Action
+```
+
+NewActionWithDefaults creates a new Action object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="Action.GetActionParameters"></a>
+### func \(\*Action\) [GetActionParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L71>)
+
+```go
+func (o *Action) GetActionParameters() []ActionParameter
+```
+
+GetActionParameters returns the ActionParameters field value if set, zero value otherwise.
+
+<a name="Action.GetActionParametersOk"></a>
+### func \(\*Action\) [GetActionParametersOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L81>)
+
+```go
+func (o *Action) GetActionParametersOk() (*[]ActionParameter, bool)
+```
+
+GetActionParametersOk returns a tuple with the ActionParameters field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="Action.GetActionRefId"></a>
+### func \(\*Action\) [GetActionRefId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L138>)
+
+```go
+func (o *Action) GetActionRefId() string
+```
+
+GetActionRefId returns the ActionRefId field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="Action.GetActionRefIdOk"></a>
+### func \(\*Action\) [GetActionRefIdOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L149>)
+
+```go
+func (o *Action) GetActionRefIdOk() (*string, bool)
+```
+
+GetActionRefIdOk returns a tuple with the ActionRefId field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="Action.GetActionType"></a>
+### func \(\*Action\) [GetActionType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L43>)
+
+```go
+func (o *Action) GetActionType() string
+```
+
+GetActionType returns the ActionType field value if set, zero value otherwise.
+
+<a name="Action.GetActionTypeOk"></a>
+### func \(\*Action\) [GetActionTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L53>)
+
+```go
+func (o *Action) GetActionTypeOk() (*string, bool)
+```
+
+GetActionTypeOk returns a tuple with the ActionType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="Action.GetData"></a>
+### func \(\*Action\) [GetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L99>)
+
+```go
+func (o *Action) GetData() string
+```
+
+GetData returns the Data field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="Action.GetDataOk"></a>
+### func \(\*Action\) [GetDataOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L110>)
+
+```go
+func (o *Action) GetDataOk() (*string, bool)
+```
+
+GetDataOk returns a tuple with the Data field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="Action.HasActionParameters"></a>
+### func \(\*Action\) [HasActionParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L89>)
+
+```go
+func (o *Action) HasActionParameters() bool
+```
+
+HasActionParameters returns a boolean if a field has been set.
+
+<a name="Action.HasActionRefId"></a>
+### func \(\*Action\) [HasActionRefId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L157>)
+
+```go
+func (o *Action) HasActionRefId() bool
+```
+
+HasActionRefId returns a boolean if a ActionRefId has been set.
+
+<a name="Action.HasActionType"></a>
+### func \(\*Action\) [HasActionType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L61>)
+
+```go
+func (o *Action) HasActionType() bool
+```
+
+HasActionType returns a boolean if a field has been set.
+
+<a name="Action.HasData"></a>
+### func \(\*Action\) [HasData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L118>)
+
+```go
+func (o *Action) HasData() bool
+```
+
+HasData returns a boolean if a Data has been set.
+
+<a name="Action.MarshalJSON"></a>
+### func \(Action\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L177>)
+
+```go
+func (o Action) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="Action.SetActionParameters"></a>
+### func \(\*Action\) [SetActionParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L94>)
+
+```go
+func (o *Action) SetActionParameters(v []ActionParameter)
+```
+
+SetActionParameters gets a reference to the given \[\]ActionParameter and assigns it to the ActionParameters field.
+
+<a name="Action.SetActionRefId"></a>
+### func \(\*Action\) [SetActionRefId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L162>)
+
+```go
+func (o *Action) SetActionRefId(v string)
+```
+
+SetActionRefId gets a reference to the given datadog.NullableString and assigns it to the ActionRefId field.
+
+<a name="Action.SetActionRefIdNil"></a>
+### func \(\*Action\) [SetActionRefIdNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L167>)
+
+```go
+func (o *Action) SetActionRefIdNil()
+```
+
+SetActionRefIdNil sets the value for ActionRefId to be an explicit nil.
+
+<a name="Action.SetActionType"></a>
+### func \(\*Action\) [SetActionType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L66>)
+
+```go
+func (o *Action) SetActionType(v string)
+```
+
+SetActionType gets a reference to the given string and assigns it to the ActionType field.
+
+<a name="Action.SetData"></a>
+### func \(\*Action\) [SetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L123>)
+
+```go
+func (o *Action) SetData(v string)
+```
+
+SetData gets a reference to the given datadog.NullableString and assigns it to the Data field.
+
+<a name="Action.SetDataNil"></a>
+### func \(\*Action\) [SetDataNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L128>)
+
+```go
+func (o *Action) SetDataNil()
+```
+
+SetDataNil sets the value for Data to be an explicit nil.
+
+<a name="Action.UnMarshalJSON"></a>
+### func \(\*Action\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L202>)
+
+```go
+func (o *Action) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="Action.UnsetActionRefId"></a>
+### func \(\*Action\) [UnsetActionRefId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L172>)
+
+```go
+func (o *Action) UnsetActionRefId()
+```
+
+UnsetActionRefId ensures that no value is present for ActionRefId, not even an explicit nil.
+
+<a name="Action.UnsetData"></a>
+### func \(\*Action\) [UnsetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L133>)
+
+```go
+func (o *Action) UnsetData()
+```
+
+UnsetData ensures that no value is present for Data, not even an explicit nil.
+
+<a name="ActionParameter"></a>
+## type [ActionParameter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L10-L19>)
+
+ActionParameter represents a parameter for an action.
+
+```go
+type ActionParameter struct {
+    // Key of the action parameter.
+    Key *string `json:"Key,omitempty"`
+    // Value of the action parameter.
+    Value *string `json:"Value,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{} `json:"-"`
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewActionParameter"></a>
+### func [NewActionParameter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L25>)
+
+```go
+func NewActionParameter() *ActionParameter
+```
+
+NewActionParameter creates a new ActionParameter object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewActionParameterWithDefaults"></a>
+### func [NewActionParameterWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L33>)
+
+```go
+func NewActionParameterWithDefaults() *ActionParameter
+```
+
+NewActionParameterWithDefaults creates a new ActionParameter object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ActionParameter.GetKey"></a>
+### func \(\*ActionParameter\) [GetKey](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L39>)
+
+```go
+func (o *ActionParameter) GetKey() string
+```
+
+GetKey returns the Key field value if set, zero value otherwise.
+
+<a name="ActionParameter.GetKeyOk"></a>
+### func \(\*ActionParameter\) [GetKeyOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L49>)
+
+```go
+func (o *ActionParameter) GetKeyOk() (*string, bool)
+```
+
+GetKeyOk returns a tuple with the Key field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ActionParameter.GetValue"></a>
+### func \(\*ActionParameter\) [GetValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L67>)
+
+```go
+func (o *ActionParameter) GetValue() string
+```
+
+GetValue returns the Value field value if set, zero value otherwise.
+
+<a name="ActionParameter.GetValueOk"></a>
+### func \(\*ActionParameter\) [GetValueOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L77>)
+
+```go
+func (o *ActionParameter) GetValueOk() (*string, bool)
+```
+
+GetValueOk returns a tuple with the Value field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ActionParameter.HasKey"></a>
+### func \(\*ActionParameter\) [HasKey](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L57>)
+
+```go
+func (o *ActionParameter) HasKey() bool
+```
+
+HasKey returns a boolean if a field has been set.
+
+<a name="ActionParameter.HasValue"></a>
+### func \(\*ActionParameter\) [HasValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L85>)
+
+```go
+func (o *ActionParameter) HasValue() bool
+```
+
+HasValue returns a boolean if a field has been set.
+
+<a name="ActionParameter.MarshalJSON"></a>
+### func \(ActionParameter\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L95>)
+
+```go
+func (o ActionParameter) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ActionParameter.SetKey"></a>
+### func \(\*ActionParameter\) [SetKey](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L62>)
+
+```go
+func (o *ActionParameter) SetKey(v string)
+```
+
+SetKey gets a reference to the given string and assigns it to the Key field.
+
+<a name="ActionParameter.SetValue"></a>
+### func \(\*ActionParameter\) [SetValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L90>)
+
+```go
+func (o *ActionParameter) SetValue(v string)
+```
+
+SetValue gets a reference to the given string and assigns it to the Value field.
+
+<a name="ActionParameter.UnMarshalJSON"></a>
+### func \(\*ActionParameter\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L114>)
+
+```go
+func (o *ActionParameter) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="Actions"></a>
+## type [Actions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L10-L19>)
+
+Actions represents a collection of actions.
+
+```go
+type Actions struct {
+    // List of actions.
+    Actions []Action `json:"Actions,omitempty"`
+    // List of action reference IDs.
+    ActionRefIds common.NullableList[string] `json:"ActionRefIds,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{} `json:"-"`
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewActions"></a>
+### func [NewActions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L25>)
+
+```go
+func NewActions() *Actions
+```
+
+NewActions creates a new Actions object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewActionsWithDefaults"></a>
+### func [NewActionsWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L33>)
+
+```go
+func NewActionsWithDefaults() *Actions
+```
+
+NewActionsWithDefaults creates a new Actions object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="Actions.GetActionRefIds"></a>
+### func \(\*Actions\) [GetActionRefIds](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L69>)
+
+```go
+func (o *Actions) GetActionRefIds() (*[]string, bool)
+```
+
+GetActionRefIds returns a tuple with the ActionRefIds field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="Actions.GetActionRefIdsOk"></a>
+### func \(\*Actions\) [GetActionRefIdsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L79>)
+
+```go
+func (o *Actions) GetActionRefIdsOk() (*[]string, bool)
+```
+
+GetActionRefIdsOk returns a tuple with the ActionRefIds field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="Actions.GetActions"></a>
+### func \(\*Actions\) [GetActions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L39>)
+
+```go
+func (o *Actions) GetActions() []Action
+```
+
+GetActions returns the Actions field value if set, zero value otherwise.
+
+<a name="Actions.GetActionsOk"></a>
+### func \(\*Actions\) [GetActionsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L49>)
+
+```go
+func (o *Actions) GetActionsOk() (*[]Action, bool)
+```
+
+GetActionsOk returns a tuple with the Actions field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="Actions.HasActionRefIds"></a>
+### func \(\*Actions\) [HasActionRefIds](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L87>)
+
+```go
+func (o *Actions) HasActionRefIds() bool
+```
+
+HasActionRefIds returns a boolean if a ActionRefIds has been set.
+
+<a name="Actions.HasActions"></a>
+### func \(\*Actions\) [HasActions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L57>)
+
+```go
+func (o *Actions) HasActions() bool
+```
+
+HasActions returns a boolean if a field has been set.
+
+<a name="Actions.MarshalJSON"></a>
+### func \(Actions\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L107>)
+
+```go
+func (o Actions) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="Actions.SetActionRefIds"></a>
+### func \(\*Actions\) [SetActionRefIds](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L92>)
+
+```go
+func (o *Actions) SetActionRefIds(v []string)
+```
+
+SetActionRefIds gets a reference to the given datadog.Nullable\[\]string and assigns it to the ActionRefIds field.
+
+<a name="Actions.SetActionRefIdsNil"></a>
+### func \(\*Actions\) [SetActionRefIdsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L97>)
+
+```go
+func (o *Actions) SetActionRefIdsNil()
+```
+
+SetActionRefIdsNil sets the value for ActionRefIds to be an explicit nil.
+
+<a name="Actions.SetActions"></a>
+### func \(\*Actions\) [SetActions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L62>)
+
+```go
+func (o *Actions) SetActions(v []Action)
+```
+
+SetActions gets a reference to the given \[\]Action and assigns it to the Actions field.
+
+<a name="Actions.UnMarshalJSON"></a>
+### func \(\*Actions\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L126>)
+
+```go
+func (o *Actions) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="Actions.UnSetActionRefIds"></a>
+### func \(\*Actions\) [UnSetActionRefIds](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L102>)
+
+```go
+func (o *Actions) UnSetActionRefIds()
+```
+
+UnsetActionRefIds ensures that no value is present for ActionRefIds, not even an explicit nil.
+
+<a name="AlertsApi"></a>
+## type [AlertsApi](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_alerts.go#L12>)
+
+AlertsApi service type.
+
+```go
+type AlertsApi common.Service
+```
+
+<a name="NewAlertsApi"></a>
+### func [NewAlertsApi](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_alerts.go#L117>)
+
+```go
+func NewAlertsApi(client *common.APIClient) *AlertsApi
+```
+
+NewAlertsApi returns AlertsApi.
+
+<a name="AlertsApi.SearchAlerts"></a>
+### func \(\*AlertsApi\) [SearchAlerts](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_alerts.go#L32>)
+
+```go
+func (a *AlertsApi) SearchAlerts(ctx _context.Context, o ...SearchAlertsOptionalParameters) (AlertsSearchResponse, *_nethttp.Response, error)
+```
+
+SearcAlerts search alerts. Returns alerts that match an alerts search query.
+
+<a name="AlertsCorrelationData"></a>
+## type [AlertsCorrelationData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L11-L60>)
+
+AlertsCorrelationData represents correlation data for alerts.
+
+```go
+type AlertsCorrelationData struct {
+    // ID of the alert correlation.
+    Id  *string `json:"Id,omitempty"`
+    // Whether the correlation is enabled.
+    Enabled *bool `json:"Enabled,omitempty"`
+    // Name of the correlation.
+    Name *string `json:"Name,omitempty"`
+    // Description of the correlation.
+    Description *string `json:"Description,omitempty"`
+    // Tags associated with the correlation.
+    Tags []string `json:"Tags,omitempty"`
+    // Whether the correlation is from the market.
+    FromMarket *bool `json:"FromMarket,omitempty"`
+    // Whether the correlation is from modules.
+    FromModules *bool `json:"FromModules,omitempty"`
+    // Whether the correlation has an update.
+    HasUpdate *bool `json:"HasUpdate,omitempty"`
+    // ID of the module.
+    ModuleId common.NullableString `json:"ModuleId,omitempty"`
+    // GUID of the module.
+    ModuleGuid common.NullableString `json:"ModuleGuid,omitempty"`
+    // Risk level of the correlation.
+    RiskLevel *int64 `json:"RiskLevel,omitempty"`
+    // Maximum alert count.
+    MaxAlertCount *int64 `json:"MaxAlertCount,omitempty"`
+    // Time frame type for limiter.
+    LimiterTimeFrameType *string `json:"LimiterTimeFrameType,omitempty"`
+    // Time frame value for limiter.
+    LimiterTimeFrameValue *int64 `json:"LimiterTimeFrameValue,omitempty"`
+    // Columns used for limiting.
+    LimiterColumns common.NullableList[string] `json:"LimiterColumns,omitempty"`
+    // Actions related to the correlation.
+    Actions *Actions `json:"Actions,omitempty"`
+    // Maximum send count.
+    MaxSendCount *int64 `json:"MaxSendCount,omitempty"`
+    // Raw data in JSON format.
+    Data *json.RawMessage `json:"Data,omitempty"`
+    // Type of correlation.
+    CorrelationType *string `json:"CorrelationType,omitempty"`
+    // Message of the correlation.
+    Message *string `json:"Message,omitempty"`
+    // Columns grouped by the correlation.
+    GroupedColumns []string `json:"GroupedColumns,omitempty"`
+    // Version of the correlation.
+    Version *float64 `json:"Version,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{} `json:"-"`
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewAlertsCorrelationData"></a>
+### func [NewAlertsCorrelationData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L66>)
+
+```go
+func NewAlertsCorrelationData() *AlertsCorrelationData
+```
+
+NewAlertsCorrelationData creates a new AlertsCorrelationData object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewAlertsCorrelationDataWithDefaults"></a>
+### func [NewAlertsCorrelationDataWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L74>)
+
+```go
+func NewAlertsCorrelationDataWithDefaults() *AlertsCorrelationData
+```
+
+NewAlertsCorrelationDataWithDefaults creates a new AlertsCorrelationData object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="AlertsCorrelationData.GetActions"></a>
+### func \(\*AlertsCorrelationData\) [GetActions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L534>)
+
+```go
+func (o *AlertsCorrelationData) GetActions() Actions
+```
+
+GetActions returns the Actions field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetActionsOk"></a>
+### func \(\*AlertsCorrelationData\) [GetActionsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L544>)
+
+```go
+func (o *AlertsCorrelationData) GetActionsOk() (*Actions, bool)
+```
+
+GetActionsOk returns a tuple with the Actions field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetCorrelationType"></a>
+### func \(\*AlertsCorrelationData\) [GetCorrelationType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L618>)
+
+```go
+func (o *AlertsCorrelationData) GetCorrelationType() string
+```
+
+GetCorrelationType returns the CorrelationType field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetCorrelationTypeOk"></a>
+### func \(\*AlertsCorrelationData\) [GetCorrelationTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L628>)
+
+```go
+func (o *AlertsCorrelationData) GetCorrelationTypeOk() (*string, bool)
+```
+
+GetCorrelationTypeOk returns a tuple with the CorrelationType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetData"></a>
+### func \(\*AlertsCorrelationData\) [GetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L590>)
+
+```go
+func (o *AlertsCorrelationData) GetData() json.RawMessage
+```
+
+GetData returns the Data field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetDataOk"></a>
+### func \(\*AlertsCorrelationData\) [GetDataOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L600>)
+
+```go
+func (o *AlertsCorrelationData) GetDataOk() (*json.RawMessage, bool)
+```
+
+GetDataOk returns a tuple with the Data field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetDescription"></a>
+### func \(\*AlertsCorrelationData\) [GetDescription](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L164>)
+
+```go
+func (o *AlertsCorrelationData) GetDescription() string
+```
+
+GetDescription returns the Description field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetDescriptionOk"></a>
+### func \(\*AlertsCorrelationData\) [GetDescriptionOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L174>)
+
+```go
+func (o *AlertsCorrelationData) GetDescriptionOk() (*string, bool)
+```
+
+GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetEnabled"></a>
+### func \(\*AlertsCorrelationData\) [GetEnabled](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L108>)
+
+```go
+func (o *AlertsCorrelationData) GetEnabled() bool
+```
+
+GetEnabled returns the Enabled field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetEnabledOk"></a>
+### func \(\*AlertsCorrelationData\) [GetEnabledOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L118>)
+
+```go
+func (o *AlertsCorrelationData) GetEnabledOk() (*bool, bool)
+```
+
+GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetFromMarket"></a>
+### func \(\*AlertsCorrelationData\) [GetFromMarket](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L220>)
+
+```go
+func (o *AlertsCorrelationData) GetFromMarket() bool
+```
+
+GetFromMarket returns the FromMarket field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetFromMarketOk"></a>
+### func \(\*AlertsCorrelationData\) [GetFromMarketOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L230>)
+
+```go
+func (o *AlertsCorrelationData) GetFromMarketOk() (*bool, bool)
+```
+
+GetFromMarketOk returns a tuple with the FromMarket field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetFromModules"></a>
+### func \(\*AlertsCorrelationData\) [GetFromModules](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L248>)
+
+```go
+func (o *AlertsCorrelationData) GetFromModules() bool
+```
+
+GetFromModules returns the FromModules field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetFromModulesOk"></a>
+### func \(\*AlertsCorrelationData\) [GetFromModulesOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L258>)
+
+```go
+func (o *AlertsCorrelationData) GetFromModulesOk() (*bool, bool)
+```
+
+GetFromModulesOk returns a tuple with the FromModules field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetGroupedColumns"></a>
+### func \(\*AlertsCorrelationData\) [GetGroupedColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L674>)
+
+```go
+func (o *AlertsCorrelationData) GetGroupedColumns() []string
+```
+
+GetGroupedColumns returns the GroupedColumns field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetGroupedColumnsOk"></a>
+### func \(\*AlertsCorrelationData\) [GetGroupedColumnsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L684>)
+
+```go
+func (o *AlertsCorrelationData) GetGroupedColumnsOk() (*[]string, bool)
+```
+
+GetGroupedColumnsOk returns a tuple with the GroupedColumns field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetHasUpdate"></a>
+### func \(\*AlertsCorrelationData\) [GetHasUpdate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L276>)
+
+```go
+func (o *AlertsCorrelationData) GetHasUpdate() bool
+```
+
+GetHasUpdate returns the HasUpdate field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetHasUpdateOk"></a>
+### func \(\*AlertsCorrelationData\) [GetHasUpdateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L286>)
+
+```go
+func (o *AlertsCorrelationData) GetHasUpdateOk() (*bool, bool)
+```
+
+GetHasUpdateOk returns a tuple with the HasUpdate field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetId"></a>
+### func \(\*AlertsCorrelationData\) [GetId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L80>)
+
+```go
+func (o *AlertsCorrelationData) GetId() string
+```
+
+GetId returns the Id field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetIdOk"></a>
+### func \(\*AlertsCorrelationData\) [GetIdOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L90>)
+
+```go
+func (o *AlertsCorrelationData) GetIdOk() (*string, bool)
+```
+
+GetIdOk returns a tuple with the Id field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetLimiterColumns"></a>
+### func \(\*AlertsCorrelationData\) [GetLimiterColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L496>)
+
+```go
+func (o *AlertsCorrelationData) GetLimiterColumns() (*[]string, bool)
+```
+
+GetLimiterColumns returns a tuple with the LimiterColumns field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="AlertsCorrelationData.GetLimiterColumnsOk"></a>
+### func \(\*AlertsCorrelationData\) [GetLimiterColumnsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L506>)
+
+```go
+func (o *AlertsCorrelationData) GetLimiterColumnsOk() (*[]string, bool)
+```
+
+GetLimiterColumnsOk returns a tuple with the LimiterColumns field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="AlertsCorrelationData.GetLimiterTimeFrameType"></a>
+### func \(\*AlertsCorrelationData\) [GetLimiterTimeFrameType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L438>)
+
+```go
+func (o *AlertsCorrelationData) GetLimiterTimeFrameType() string
+```
+
+GetLimiterTimeFrameType returns the LimiterTimeFrameType field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetLimiterTimeFrameTypeOk"></a>
+### func \(\*AlertsCorrelationData\) [GetLimiterTimeFrameTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L448>)
+
+```go
+func (o *AlertsCorrelationData) GetLimiterTimeFrameTypeOk() (*string, bool)
+```
+
+GetLimiterTimeFrameTypeOk returns a tuple with the LimiterTimeFrameType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetLimiterTimeFrameValue"></a>
+### func \(\*AlertsCorrelationData\) [GetLimiterTimeFrameValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L466>)
+
+```go
+func (o *AlertsCorrelationData) GetLimiterTimeFrameValue() int64
+```
+
+GetLimiterTimeFrameValue returns the LimiterTimeFrameValue field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetLimiterTimeFrameValueOk"></a>
+### func \(\*AlertsCorrelationData\) [GetLimiterTimeFrameValueOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L476>)
+
+```go
+func (o *AlertsCorrelationData) GetLimiterTimeFrameValueOk() (*int64, bool)
+```
+
+GetLimiterTimeFrameValueOk returns a tuple with the LimiterTimeFrameValue field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetMaxAlertCount"></a>
+### func \(\*AlertsCorrelationData\) [GetMaxAlertCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L410>)
+
+```go
+func (o *AlertsCorrelationData) GetMaxAlertCount() int64
+```
+
+GetMaxAlertCount returns the MaxAlertCount field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetMaxAlertCountOk"></a>
+### func \(\*AlertsCorrelationData\) [GetMaxAlertCountOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L420>)
+
+```go
+func (o *AlertsCorrelationData) GetMaxAlertCountOk() (*int64, bool)
+```
+
+GetMaxAlertCountOk returns a tuple with the MaxAlertCount field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetMaxSendCount"></a>
+### func \(\*AlertsCorrelationData\) [GetMaxSendCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L562>)
+
+```go
+func (o *AlertsCorrelationData) GetMaxSendCount() int64
+```
+
+GetMaxSendCount returns the MaxSendCount field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetMaxSendCountOk"></a>
+### func \(\*AlertsCorrelationData\) [GetMaxSendCountOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L572>)
+
+```go
+func (o *AlertsCorrelationData) GetMaxSendCountOk() (*int64, bool)
+```
+
+GetMaxSendCountOk returns a tuple with the MaxSendCount field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetMessage"></a>
+### func \(\*AlertsCorrelationData\) [GetMessage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L646>)
+
+```go
+func (o *AlertsCorrelationData) GetMessage() string
+```
+
+GetMessage returns the Message field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetMessageOk"></a>
+### func \(\*AlertsCorrelationData\) [GetMessageOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L656>)
+
+```go
+func (o *AlertsCorrelationData) GetMessageOk() (*string, bool)
+```
+
+GetMessageOk returns a tuple with the Message field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetModuleGuid"></a>
+### func \(\*AlertsCorrelationData\) [GetModuleGuid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L343>)
+
+```go
+func (o *AlertsCorrelationData) GetModuleGuid() string
+```
+
+GetModuleGuid returns the ModuleGuid field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="AlertsCorrelationData.GetModuleGuidOk"></a>
+### func \(\*AlertsCorrelationData\) [GetModuleGuidOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L354>)
+
+```go
+func (o *AlertsCorrelationData) GetModuleGuidOk() (*string, bool)
+```
+
+GetModuleGuidOk returns a tuple with the ModuleGuid field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="AlertsCorrelationData.GetModuleId"></a>
+### func \(\*AlertsCorrelationData\) [GetModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L304>)
+
+```go
+func (o *AlertsCorrelationData) GetModuleId() string
+```
+
+GetModuleId returns the ModuleId field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="AlertsCorrelationData.GetModuleIdOk"></a>
+### func \(\*AlertsCorrelationData\) [GetModuleIdOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L315>)
+
+```go
+func (o *AlertsCorrelationData) GetModuleIdOk() (*string, bool)
+```
+
+GetModuleIdOk returns a tuple with the ModuleId field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="AlertsCorrelationData.GetName"></a>
+### func \(\*AlertsCorrelationData\) [GetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L136>)
+
+```go
+func (o *AlertsCorrelationData) GetName() string
+```
+
+GetName returns the Name field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetNameOk"></a>
+### func \(\*AlertsCorrelationData\) [GetNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L146>)
+
+```go
+func (o *AlertsCorrelationData) GetNameOk() (*string, bool)
+```
+
+GetNameOk returns a tuple with the Name field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetRiskLevel"></a>
+### func \(\*AlertsCorrelationData\) [GetRiskLevel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L382>)
+
+```go
+func (o *AlertsCorrelationData) GetRiskLevel() int64
+```
+
+GetRiskLevel returns the RiskLevel field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetRiskLevelOk"></a>
+### func \(\*AlertsCorrelationData\) [GetRiskLevelOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L392>)
+
+```go
+func (o *AlertsCorrelationData) GetRiskLevelOk() (*int64, bool)
+```
+
+GetRiskLevelOk returns a tuple with the RiskLevel field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetTags"></a>
+### func \(\*AlertsCorrelationData\) [GetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L192>)
+
+```go
+func (o *AlertsCorrelationData) GetTags() []string
+```
+
+GetTags returns the Tags field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetTagsOk"></a>
+### func \(\*AlertsCorrelationData\) [GetTagsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L202>)
+
+```go
+func (o *AlertsCorrelationData) GetTagsOk() (*[]string, bool)
+```
+
+GetTagsOk returns a tuple with the Tags field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.GetVersion"></a>
+### func \(\*AlertsCorrelationData\) [GetVersion](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L702>)
+
+```go
+func (o *AlertsCorrelationData) GetVersion() float64
+```
+
+GetVersion returns the Version field value if set, zero value otherwise.
+
+<a name="AlertsCorrelationData.GetVersionOk"></a>
+### func \(\*AlertsCorrelationData\) [GetVersionOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L712>)
+
+```go
+func (o *AlertsCorrelationData) GetVersionOk() (*float64, bool)
+```
+
+GetVersionOk returns a tuple with the Version field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsCorrelationData.HasActions"></a>
+### func \(\*AlertsCorrelationData\) [HasActions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L552>)
+
+```go
+func (o *AlertsCorrelationData) HasActions() bool
+```
+
+HasActions returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasCorrelationType"></a>
+### func \(\*AlertsCorrelationData\) [HasCorrelationType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L636>)
+
+```go
+func (o *AlertsCorrelationData) HasCorrelationType() bool
+```
+
+HasCorrelationType returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasData"></a>
+### func \(\*AlertsCorrelationData\) [HasData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L608>)
+
+```go
+func (o *AlertsCorrelationData) HasData() bool
+```
+
+HasData returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasDescription"></a>
+### func \(\*AlertsCorrelationData\) [HasDescription](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L182>)
+
+```go
+func (o *AlertsCorrelationData) HasDescription() bool
+```
+
+HasDescription returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasEnabled"></a>
+### func \(\*AlertsCorrelationData\) [HasEnabled](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L126>)
+
+```go
+func (o *AlertsCorrelationData) HasEnabled() bool
+```
+
+HasEnabled returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasFromMarket"></a>
+### func \(\*AlertsCorrelationData\) [HasFromMarket](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L238>)
+
+```go
+func (o *AlertsCorrelationData) HasFromMarket() bool
+```
+
+HasFromMarket returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasFromModules"></a>
+### func \(\*AlertsCorrelationData\) [HasFromModules](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L266>)
+
+```go
+func (o *AlertsCorrelationData) HasFromModules() bool
+```
+
+HasFromModules returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasGroupedColumns"></a>
+### func \(\*AlertsCorrelationData\) [HasGroupedColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L692>)
+
+```go
+func (o *AlertsCorrelationData) HasGroupedColumns() bool
+```
+
+HasGroupedColumns returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasHasUpdate"></a>
+### func \(\*AlertsCorrelationData\) [HasHasUpdate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L294>)
+
+```go
+func (o *AlertsCorrelationData) HasHasUpdate() bool
+```
+
+HasHasUpdate returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasId"></a>
+### func \(\*AlertsCorrelationData\) [HasId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L98>)
+
+```go
+func (o *AlertsCorrelationData) HasId() bool
+```
+
+HasId returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasLimiterColumns"></a>
+### func \(\*AlertsCorrelationData\) [HasLimiterColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L514>)
+
+```go
+func (o *AlertsCorrelationData) HasLimiterColumns() bool
+```
+
+HasLimiterColumns returns a boolean if a LimiterColumns has been set.
+
+<a name="AlertsCorrelationData.HasLimiterTimeFrameType"></a>
+### func \(\*AlertsCorrelationData\) [HasLimiterTimeFrameType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L456>)
+
+```go
+func (o *AlertsCorrelationData) HasLimiterTimeFrameType() bool
+```
+
+HasLimiterTimeFrameType returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasLimiterTimeFrameValue"></a>
+### func \(\*AlertsCorrelationData\) [HasLimiterTimeFrameValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L484>)
+
+```go
+func (o *AlertsCorrelationData) HasLimiterTimeFrameValue() bool
+```
+
+HasLimiterTimeFrameValue returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasMaxAlertCount"></a>
+### func \(\*AlertsCorrelationData\) [HasMaxAlertCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L428>)
+
+```go
+func (o *AlertsCorrelationData) HasMaxAlertCount() bool
+```
+
+HasMaxAlertCount returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasMaxSendCount"></a>
+### func \(\*AlertsCorrelationData\) [HasMaxSendCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L580>)
+
+```go
+func (o *AlertsCorrelationData) HasMaxSendCount() bool
+```
+
+HasMaxSendCount returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasMessage"></a>
+### func \(\*AlertsCorrelationData\) [HasMessage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L664>)
+
+```go
+func (o *AlertsCorrelationData) HasMessage() bool
+```
+
+HasMessage returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasModuleGuid"></a>
+### func \(\*AlertsCorrelationData\) [HasModuleGuid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L362>)
+
+```go
+func (o *AlertsCorrelationData) HasModuleGuid() bool
+```
+
+HasModuleGuid returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasModuleId"></a>
+### func \(\*AlertsCorrelationData\) [HasModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L323>)
+
+```go
+func (o *AlertsCorrelationData) HasModuleId() bool
+```
+
+HasModuleId returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasName"></a>
+### func \(\*AlertsCorrelationData\) [HasName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L154>)
+
+```go
+func (o *AlertsCorrelationData) HasName() bool
+```
+
+HasName returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasRiskLevel"></a>
+### func \(\*AlertsCorrelationData\) [HasRiskLevel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L400>)
+
+```go
+func (o *AlertsCorrelationData) HasRiskLevel() bool
+```
+
+HasRiskLevel returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasTags"></a>
+### func \(\*AlertsCorrelationData\) [HasTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L210>)
+
+```go
+func (o *AlertsCorrelationData) HasTags() bool
+```
+
+HasTags returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.HasVersion"></a>
+### func \(\*AlertsCorrelationData\) [HasVersion](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L720>)
+
+```go
+func (o *AlertsCorrelationData) HasVersion() bool
+```
+
+HasVersion returns a boolean if a field has been set.
+
+<a name="AlertsCorrelationData.MarshalJSON"></a>
+### func \(AlertsCorrelationData\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L730>)
+
+```go
+func (o AlertsCorrelationData) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="AlertsCorrelationData.SetActions"></a>
+### func \(\*AlertsCorrelationData\) [SetActions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L557>)
+
+```go
+func (o *AlertsCorrelationData) SetActions(v Actions)
+```
+
+SetActions gets a reference to the given Actions and assigns it to the Actions field.
+
+<a name="AlertsCorrelationData.SetCorrelationType"></a>
+### func \(\*AlertsCorrelationData\) [SetCorrelationType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L641>)
+
+```go
+func (o *AlertsCorrelationData) SetCorrelationType(v string)
+```
+
+SetCorrelationType gets a reference to the given string and assigns it to the CorrelationType field.
+
+<a name="AlertsCorrelationData.SetData"></a>
+### func \(\*AlertsCorrelationData\) [SetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L613>)
+
+```go
+func (o *AlertsCorrelationData) SetData(v json.RawMessage)
+```
+
+SetData gets a reference to the given json.RawMessage and assigns it to the Data field.
+
+<a name="AlertsCorrelationData.SetDescription"></a>
+### func \(\*AlertsCorrelationData\) [SetDescription](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L187>)
+
+```go
+func (o *AlertsCorrelationData) SetDescription(v string)
+```
+
+SetDescription gets a reference to the given string and assigns it to the Description field.
+
+<a name="AlertsCorrelationData.SetEnabled"></a>
+### func \(\*AlertsCorrelationData\) [SetEnabled](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L131>)
+
+```go
+func (o *AlertsCorrelationData) SetEnabled(v bool)
+```
+
+SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
+
+<a name="AlertsCorrelationData.SetFromMarket"></a>
+### func \(\*AlertsCorrelationData\) [SetFromMarket](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L243>)
+
+```go
+func (o *AlertsCorrelationData) SetFromMarket(v bool)
+```
+
+SetFromMarket gets a reference to the given bool and assigns it to the FromMarket field.
+
+<a name="AlertsCorrelationData.SetFromModules"></a>
+### func \(\*AlertsCorrelationData\) [SetFromModules](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L271>)
+
+```go
+func (o *AlertsCorrelationData) SetFromModules(v bool)
+```
+
+SetFromModules gets a reference to the given bool and assigns it to the FromModules field.
+
+<a name="AlertsCorrelationData.SetGroupedColumns"></a>
+### func \(\*AlertsCorrelationData\) [SetGroupedColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L697>)
+
+```go
+func (o *AlertsCorrelationData) SetGroupedColumns(v []string)
+```
+
+SetGroupedColumns gets a reference to the given \[\]string and assigns it to the GroupedColumns field.
+
+<a name="AlertsCorrelationData.SetHasUpdate"></a>
+### func \(\*AlertsCorrelationData\) [SetHasUpdate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L299>)
+
+```go
+func (o *AlertsCorrelationData) SetHasUpdate(v bool)
+```
+
+SetHasUpdate gets a reference to the given bool and assigns it to the HasUpdate field.
+
+<a name="AlertsCorrelationData.SetId"></a>
+### func \(\*AlertsCorrelationData\) [SetId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L103>)
+
+```go
+func (o *AlertsCorrelationData) SetId(v string)
+```
+
+SetId gets a reference to the given string and assigns it to the Id field.
+
+<a name="AlertsCorrelationData.SetLimiterColumns"></a>
+### func \(\*AlertsCorrelationData\) [SetLimiterColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L519>)
+
+```go
+func (o *AlertsCorrelationData) SetLimiterColumns(v []string)
+```
+
+SetLimiterColumns gets a reference to the given datadog.Nullable\[\]string and assigns it to the LimiterColumns field.
+
+<a name="AlertsCorrelationData.SetLimiterColumnsNil"></a>
+### func \(\*AlertsCorrelationData\) [SetLimiterColumnsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L524>)
+
+```go
+func (o *AlertsCorrelationData) SetLimiterColumnsNil()
+```
+
+SetLimiterColumnsNil sets the value for LimiterColumns to be an explicit nil.
+
+<a name="AlertsCorrelationData.SetLimiterTimeFrameType"></a>
+### func \(\*AlertsCorrelationData\) [SetLimiterTimeFrameType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L461>)
+
+```go
+func (o *AlertsCorrelationData) SetLimiterTimeFrameType(v string)
+```
+
+SetLimiterTimeFrameType gets a reference to the given string and assigns it to the LimiterTimeFrameType field.
+
+<a name="AlertsCorrelationData.SetLimiterTimeFrameValue"></a>
+### func \(\*AlertsCorrelationData\) [SetLimiterTimeFrameValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L489>)
+
+```go
+func (o *AlertsCorrelationData) SetLimiterTimeFrameValue(v int64)
+```
+
+SetLimiterTimeFrameValue gets a reference to the given int64 and assigns it to the LimiterTimeFrameValue field.
+
+<a name="AlertsCorrelationData.SetMaxAlertCount"></a>
+### func \(\*AlertsCorrelationData\) [SetMaxAlertCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L433>)
+
+```go
+func (o *AlertsCorrelationData) SetMaxAlertCount(v int64)
+```
+
+SetMaxAlertCount gets a reference to the given int64 and assigns it to the MaxAlertCount field.
+
+<a name="AlertsCorrelationData.SetMaxSendCount"></a>
+### func \(\*AlertsCorrelationData\) [SetMaxSendCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L585>)
+
+```go
+func (o *AlertsCorrelationData) SetMaxSendCount(v int64)
+```
+
+SetMaxSendCount gets a reference to the given int64 and assigns it to the MaxSendCount field.
+
+<a name="AlertsCorrelationData.SetMessage"></a>
+### func \(\*AlertsCorrelationData\) [SetMessage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L669>)
+
+```go
+func (o *AlertsCorrelationData) SetMessage(v string)
+```
+
+SetMessage gets a reference to the given string and assigns it to the Message field.
+
+<a name="AlertsCorrelationData.SetModuleGuid"></a>
+### func \(\*AlertsCorrelationData\) [SetModuleGuid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L367>)
+
+```go
+func (o *AlertsCorrelationData) SetModuleGuid(v string)
+```
+
+SetModuleGuid gets a reference to the given datadog.NullableString and assigns it to the ModuleGuid field.
+
+<a name="AlertsCorrelationData.SetModuleGuidNil"></a>
+### func \(\*AlertsCorrelationData\) [SetModuleGuidNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L372>)
+
+```go
+func (o *AlertsCorrelationData) SetModuleGuidNil()
+```
+
+SetModuleGuidNil sets the value for ModuleGuid to be an explicit nil.
+
+<a name="AlertsCorrelationData.SetModuleId"></a>
+### func \(\*AlertsCorrelationData\) [SetModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L328>)
+
+```go
+func (o *AlertsCorrelationData) SetModuleId(v string)
+```
+
+SetModuleId gets a reference to the given datadog.NullableString and assigns it to the ModuleId field.
+
+<a name="AlertsCorrelationData.SetModuleIdNil"></a>
+### func \(\*AlertsCorrelationData\) [SetModuleIdNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L333>)
+
+```go
+func (o *AlertsCorrelationData) SetModuleIdNil()
+```
+
+SetModuleIdNil sets the value for ModuleId to be an explicit nil.
+
+<a name="AlertsCorrelationData.SetName"></a>
+### func \(\*AlertsCorrelationData\) [SetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L159>)
+
+```go
+func (o *AlertsCorrelationData) SetName(v string)
+```
+
+SetName gets a reference to the given string and assigns it to the Name field.
+
+<a name="AlertsCorrelationData.SetRiskLevel"></a>
+### func \(\*AlertsCorrelationData\) [SetRiskLevel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L405>)
+
+```go
+func (o *AlertsCorrelationData) SetRiskLevel(v int64)
+```
+
+SetRiskLevel gets a reference to the given int64 and assigns it to the RiskLevel field.
+
+<a name="AlertsCorrelationData.SetTags"></a>
+### func \(\*AlertsCorrelationData\) [SetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L215>)
+
+```go
+func (o *AlertsCorrelationData) SetTags(v []string)
+```
+
+SetTags gets a reference to the given \[\]string and assigns it to the Tags field.
+
+<a name="AlertsCorrelationData.SetVersion"></a>
+### func \(\*AlertsCorrelationData\) [SetVersion](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L725>)
+
+```go
+func (o *AlertsCorrelationData) SetVersion(v float64)
+```
+
+SetVersion gets a reference to the given float64 and assigns it to the Version field.
+
+<a name="AlertsCorrelationData.UnMarshalJSON"></a>
+### func \(\*AlertsCorrelationData\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L809>)
+
+```go
+func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="AlertsCorrelationData.UnSetLimiterColumns"></a>
+### func \(\*AlertsCorrelationData\) [UnSetLimiterColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L529>)
+
+```go
+func (o *AlertsCorrelationData) UnSetLimiterColumns()
+```
+
+UnsetLimiterColumns ensures that no value is present for LimiterColumns, not even an explicit nil.
+
+<a name="AlertsCorrelationData.UnSetModuleGuid"></a>
+### func \(\*AlertsCorrelationData\) [UnSetModuleGuid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L377>)
+
+```go
+func (o *AlertsCorrelationData) UnSetModuleGuid()
+```
+
+UnsetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
+
+<a name="AlertsCorrelationData.UnSetModuleId"></a>
+### func \(\*AlertsCorrelationData\) [UnSetModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L338>)
+
+```go
+func (o *AlertsCorrelationData) UnSetModuleId()
+```
+
+UnsetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
+
+<a name="AlertsItem"></a>
+## type [AlertsItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L10-L23>)
+
+AlertsItem represents an item in alerts.
+
+```go
+type AlertsItem struct {
+    // LGS name.
+    LgsName common.NullableString `json:"LgsName,omitempty"`
+    // Correlation data.
+    CorrelationData *AlertsCorrelationData `json:"CorrelationData,omitempty"`
+    // Indicates if action is required.
+    ActionRequired *bool `json:"ActionRequired,omitempty"`
+    // Message for the required action.
+    ActionMessage common.NullableString `json:"ActionMessage,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{} `json:"-"`
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewAlertsItem"></a>
+### func [NewAlertsItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L29>)
+
+```go
+func NewAlertsItem() *AlertsItem
+```
+
+NewAlertsItem creates a new AlertsItem object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewAlertsItemWithDefaults"></a>
+### func [NewAlertsItemWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L37>)
+
+```go
+func NewAlertsItemWithDefaults() *AlertsItem
+```
+
+NewAlertsItemWithDefaults creates a new AlertsItem object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="AlertsItem.GetActionMessage"></a>
+### func \(\*AlertsItem\) [GetActionMessage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L138>)
+
+```go
+func (o *AlertsItem) GetActionMessage() string
+```
+
+GetActionMessage returns the ActionMessage field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="AlertsItem.GetActionMessageOk"></a>
+### func \(\*AlertsItem\) [GetActionMessageOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L149>)
+
+```go
+func (o *AlertsItem) GetActionMessageOk() (*string, bool)
+```
+
+GetActionMessageOk returns a tuple with the ActionMessage field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="AlertsItem.GetActionRequired"></a>
+### func \(\*AlertsItem\) [GetActionRequired](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L110>)
+
+```go
+func (o *AlertsItem) GetActionRequired() bool
+```
+
+GetActionRequired returns the ActionRequired field value if set, zero value otherwise.
+
+<a name="AlertsItem.GetActionRequiredOk"></a>
+### func \(\*AlertsItem\) [GetActionRequiredOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L120>)
+
+```go
+func (o *AlertsItem) GetActionRequiredOk() (*bool, bool)
+```
+
+GetActionRequiredOk returns a tuple with the ActionRequired field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsItem.GetCorrelationData"></a>
+### func \(\*AlertsItem\) [GetCorrelationData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L82>)
+
+```go
+func (o *AlertsItem) GetCorrelationData() AlertsCorrelationData
+```
+
+GetCorrelationData returns the CorrelationData field value if set, zero value otherwise.
+
+<a name="AlertsItem.GetCorrelationDataOk"></a>
+### func \(\*AlertsItem\) [GetCorrelationDataOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L92>)
+
+```go
+func (o *AlertsItem) GetCorrelationDataOk() (*AlertsCorrelationData, bool)
+```
+
+GetCorrelationDataOk returns a tuple with the CorrelationData field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsItem.GetLgsName"></a>
+### func \(\*AlertsItem\) [GetLgsName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L43>)
+
+```go
+func (o *AlertsItem) GetLgsName() string
+```
+
+GetLgsName returns the LgsName field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="AlertsItem.GetLgsNameOk"></a>
+### func \(\*AlertsItem\) [GetLgsNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L54>)
+
+```go
+func (o *AlertsItem) GetLgsNameOk() (*string, bool)
+```
+
+GetLgsNameOk returns a tuple with the LgsName field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="AlertsItem.HasActionMessage"></a>
+### func \(\*AlertsItem\) [HasActionMessage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L157>)
+
+```go
+func (o *AlertsItem) HasActionMessage() bool
+```
+
+HasActionMessage returns a boolean if a field has been set.
+
+<a name="AlertsItem.HasActionRequired"></a>
+### func \(\*AlertsItem\) [HasActionRequired](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L128>)
+
+```go
+func (o *AlertsItem) HasActionRequired() bool
+```
+
+HasActionRequired returns a boolean if a field has been set.
+
+<a name="AlertsItem.HasCorrelationData"></a>
+### func \(\*AlertsItem\) [HasCorrelationData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L100>)
+
+```go
+func (o *AlertsItem) HasCorrelationData() bool
+```
+
+HasCorrelationData returns a boolean if a field has been set.
+
+<a name="AlertsItem.HasLgsName"></a>
+### func \(\*AlertsItem\) [HasLgsName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L62>)
+
+```go
+func (o *AlertsItem) HasLgsName() bool
+```
+
+HasLgsName returns a boolean if a field has been set.
+
+<a name="AlertsItem.MarshalJSON"></a>
+### func \(AlertsItem\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L172>)
+
+```go
+func (o AlertsItem) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="AlertsItem.SetActionMessage"></a>
+### func \(\*AlertsItem\) [SetActionMessage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L162>)
+
+```go
+func (o *AlertsItem) SetActionMessage(v string)
+```
+
+SetActionMessage gets a reference to the given datadog.NullableString and assigns it to the ActionMessage field.
+
+<a name="AlertsItem.SetActionMessageNil"></a>
+### func \(\*AlertsItem\) [SetActionMessageNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L167>)
+
+```go
+func (o *AlertsItem) SetActionMessageNil()
+```
+
+SetActionMessageNil sets the value for ActionMessage to be an explicit nil.
+
+<a name="AlertsItem.SetActionRequired"></a>
+### func \(\*AlertsItem\) [SetActionRequired](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L133>)
+
+```go
+func (o *AlertsItem) SetActionRequired(v bool)
+```
+
+SetActionRequired gets a reference to the given bool and assigns it to the ActionRequired field.
+
+<a name="AlertsItem.SetCorrelationData"></a>
+### func \(\*AlertsItem\) [SetCorrelationData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L105>)
+
+```go
+func (o *AlertsItem) SetCorrelationData(v AlertsCorrelationData)
+```
+
+SetCorrelationData gets a reference to the given CorrelationData and assigns it to the CorrelationData field.
+
+<a name="AlertsItem.SetLgsName"></a>
+### func \(\*AlertsItem\) [SetLgsName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L67>)
+
+```go
+func (o *AlertsItem) SetLgsName(v string)
+```
+
+SetLgsName gets a reference to the given datadog.NullableString and assigns it to the LgsName field.
+
+<a name="AlertsItem.SetLgsNameNil"></a>
+### func \(\*AlertsItem\) [SetLgsNameNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L72>)
+
+```go
+func (o *AlertsItem) SetLgsNameNil()
+```
+
+SetLgsNameNil sets the value for LgsName to be an explicit nil.
+
+<a name="AlertsItem.UnMarshalJSON"></a>
+### func \(\*AlertsItem\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L197>)
+
+```go
+func (o *AlertsItem) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="AlertsItem.UnSetLgsName"></a>
+### func \(\*AlertsItem\) [UnSetLgsName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L77>)
+
+```go
+func (o *AlertsItem) UnSetLgsName()
+```
+
+UnsetLgsName ensures that no value is present for LgsName, not even an explicit nil.
+
+<a name="AlertsSearchRequest"></a>
+## type [AlertsSearchRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L11-L20>)
+
+AlertsSearchRequest contains the search criteria for alerts.
+
+```go
+type AlertsSearchRequest struct {
+    // Filter for the search request.
+    Filter *string `json:"filter,omitempty"`
+    // Context for the Smart REST request.
+    SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewAlertsSearchRequest"></a>
+### func [NewAlertsSearchRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L26>)
+
+```go
+func NewAlertsSearchRequest() *AlertsSearchRequest
+```
+
+NewAlertsSearchRequest creates a new AlertsSearchRequest object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewAlertsSearchRequestWithDefaults"></a>
+### func [NewAlertsSearchRequestWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L34>)
+
+```go
+func NewAlertsSearchRequestWithDefaults() *AlertsSearchRequest
+```
+
+NewAlertsSearchRequestWithDefaults creates a new AlertsSearchRequest object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="AlertsSearchRequest.GetFilter"></a>
+### func \(\*AlertsSearchRequest\) [GetFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L40>)
+
+```go
+func (o *AlertsSearchRequest) GetFilter() string
+```
+
+GetFilter returns the Filter field value if set, zero value otherwise.
+
+<a name="AlertsSearchRequest.GetFilterOk"></a>
+### func \(\*AlertsSearchRequest\) [GetFilterOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L50>)
+
+```go
+func (o *AlertsSearchRequest) GetFilterOk() (*string, bool)
+```
+
+GetFilterOk returns a tuple with the Filter field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsSearchRequest.GetSmartRestRequestContext"></a>
+### func \(\*AlertsSearchRequest\) [GetSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L68>)
+
+```go
+func (o *AlertsSearchRequest) GetSmartRestRequestContext() string
+```
+
+GetSmartRestRequestContext returns the SmartRestRequestContext field value if set, zero value otherwise.
+
+<a name="AlertsSearchRequest.GetSmartRestRequestContextOk"></a>
+### func \(\*AlertsSearchRequest\) [GetSmartRestRequestContextOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L78>)
+
+```go
+func (o *AlertsSearchRequest) GetSmartRestRequestContextOk() (*string, bool)
+```
+
+GetSmartRestRequestContextOk returns a tuple with the SmartRestRequestContext field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsSearchRequest.HasFilter"></a>
+### func \(\*AlertsSearchRequest\) [HasFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L58>)
+
+```go
+func (o *AlertsSearchRequest) HasFilter() bool
+```
+
+HasFilter returns a boolean if a field has been set.
+
+<a name="AlertsSearchRequest.HasSmartRestRequestContext"></a>
+### func \(\*AlertsSearchRequest\) [HasSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L86>)
+
+```go
+func (o *AlertsSearchRequest) HasSmartRestRequestContext() bool
+```
+
+HasSmartRestRequestContext returns a boolean if a field has been set.
+
+<a name="AlertsSearchRequest.MarshalJSON"></a>
+### func \(AlertsSearchRequest\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L96>)
+
+```go
+func (o AlertsSearchRequest) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="AlertsSearchRequest.SetFilter"></a>
+### func \(\*AlertsSearchRequest\) [SetFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L63>)
+
+```go
+func (o *AlertsSearchRequest) SetFilter(v string)
+```
+
+SetFilter gets a reference to the given string and assigns it to the Filter field.
+
+<a name="AlertsSearchRequest.SetSmartRestRequestContext"></a>
+### func \(\*AlertsSearchRequest\) [SetSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L91>)
+
+```go
+func (o *AlertsSearchRequest) SetSmartRestRequestContext(v string)
+```
+
+SetSmartRestRequestContext gets a reference to the given string and assigns it to the SmartRestRequestContext field.
+
+<a name="AlertsSearchRequest.UnMarshalJSON"></a>
+### func \(\*AlertsSearchRequest\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L115>)
+
+```go
+func (o *AlertsSearchRequest) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="AlertsSearchResponse"></a>
+## type [AlertsSearchResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L10-L21>)
+
+AlertsSearchResponse contains the response data for an alerts search.
+
+```go
+type AlertsSearchResponse struct {
+    // List of alert items.
+    Items []AlertsItem `json:"Items,omitempty"`
+    // List of failed items in raw JSON format.
+    FailedItems []json.RawMessage `json:"FailedItems,omitempty"`
+    // List of successful items.
+    SuccessItems []SuccessItem `json:"SuccessItems,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewAlertsSearchResponse"></a>
+### func [NewAlertsSearchResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L27>)
+
+```go
+func NewAlertsSearchResponse() *AlertsSearchResponse
+```
+
+NewAlertsSearchResponse creates a new AlertsSearchResponse object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewAlertsSearchResponseWithDefaults"></a>
+### func [NewAlertsSearchResponseWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L35>)
+
+```go
+func NewAlertsSearchResponseWithDefaults() *AlertsSearchResponse
+```
+
+NewAlertsSearchResponseWithDefaults creates a new AlertsSearchResponse object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="AlertsSearchResponse.GetFailedItems"></a>
+### func \(\*AlertsSearchResponse\) [GetFailedItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L69>)
+
+```go
+func (o *AlertsSearchResponse) GetFailedItems() []json.RawMessage
+```
+
+GetFailedItems returns the FailedItems field value if set, zero value otherwise.
+
+<a name="AlertsSearchResponse.GetFailedItemsOk"></a>
+### func \(\*AlertsSearchResponse\) [GetFailedItemsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L79>)
+
+```go
+func (o *AlertsSearchResponse) GetFailedItemsOk() (*[]json.RawMessage, bool)
+```
+
+GetFailedItemsOk returns a tuple with the FailedItems field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsSearchResponse.GetItems"></a>
+### func \(\*AlertsSearchResponse\) [GetItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L41>)
+
+```go
+func (o *AlertsSearchResponse) GetItems() []AlertsItem
+```
+
+GetItems returns the Items field value if set, zero value otherwise.
+
+<a name="AlertsSearchResponse.GetItemsOk"></a>
+### func \(\*AlertsSearchResponse\) [GetItemsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L51>)
+
+```go
+func (o *AlertsSearchResponse) GetItemsOk() (*[]AlertsItem, bool)
+```
+
+GetItemsOk returns a tuple with the Items field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsSearchResponse.GetSuccessItem"></a>
+### func \(\*AlertsSearchResponse\) [GetSuccessItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L97>)
+
+```go
+func (o *AlertsSearchResponse) GetSuccessItem() []SuccessItem
+```
+
+GetSuccessItem returns the SuccessItem field value if set, zero value otherwise.
+
+<a name="AlertsSearchResponse.GetSuccessItemOk"></a>
+### func \(\*AlertsSearchResponse\) [GetSuccessItemOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L107>)
+
+```go
+func (o *AlertsSearchResponse) GetSuccessItemOk() (*[]SuccessItem, bool)
+```
+
+GetSuccessItemOk returns a tuple with the SuccessItem field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="AlertsSearchResponse.HasFailedItems"></a>
+### func \(\*AlertsSearchResponse\) [HasFailedItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L87>)
+
+```go
+func (o *AlertsSearchResponse) HasFailedItems() bool
+```
+
+HasFailedItems returns a boolean if a field has been set.
+
+<a name="AlertsSearchResponse.HasItems"></a>
+### func \(\*AlertsSearchResponse\) [HasItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L59>)
+
+```go
+func (o *AlertsSearchResponse) HasItems() bool
+```
+
+HasItems returns a boolean if a field has been set.
+
+<a name="AlertsSearchResponse.HasSuccessItem"></a>
+### func \(\*AlertsSearchResponse\) [HasSuccessItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L115>)
+
+```go
+func (o *AlertsSearchResponse) HasSuccessItem() bool
+```
+
+HasSuccessItem returns a boolean if a field has been set.
+
+<a name="AlertsSearchResponse.MarshalJSON"></a>
+### func \(AlertsSearchResponse\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L125>)
+
+```go
+func (o AlertsSearchResponse) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="AlertsSearchResponse.SetFailedItems"></a>
+### func \(\*AlertsSearchResponse\) [SetFailedItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L92>)
+
+```go
+func (o *AlertsSearchResponse) SetFailedItems(v []json.RawMessage)
+```
+
+SetFailedItems sets field value
+
+<a name="AlertsSearchResponse.SetItems"></a>
+### func \(\*AlertsSearchResponse\) [SetItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L64>)
+
+```go
+func (o *AlertsSearchResponse) SetItems(v []AlertsItem)
+```
+
+SetItems gets a reference to the given \[\]AlertsItem and assigns it to the Items field.
+
+<a name="AlertsSearchResponse.SetSuccessItem"></a>
+### func \(\*AlertsSearchResponse\) [SetSuccessItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L120>)
+
+```go
+func (o *AlertsSearchResponse) SetSuccessItem(v []SuccessItem)
+```
+
+SetSuccessItem sets field value
+
+<a name="AlertsSearchResponse.UnMarshalJSON"></a>
+### func \(\*AlertsSearchResponse\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_response.go#L147>)
+
+```go
+func (o *AlertsSearchResponse) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="DateTimeRange"></a>
+## type [DateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L11-L23>)
+
+DateTimeRange represents a range of date and time.
+
+```go
+type DateTimeRange struct {
+    // DateTimeType specifies the type of date time range
+    DateTimeType DateTimeType `json:"DateTimeType"`
+    // StartDate is the start date of the range
+    StartDate *string `json:"StartDate,omitempty"`
+    // EndDate is the end date of the range
+    EndDate *string               `json:"EndDate,omitempty"`
+    Field   common.NullableString `json:"Field,omitempty"`
+    // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct
+    UnparsedObject map[string]interface{}
+    // AdditionalProperties stores any additional properties not explicitly defined in the struct
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewDateTimeRange"></a>
+### func [NewDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L29>)
+
+```go
+func NewDateTimeRange(dateTimeType DateTimeType) *DateTimeRange
+```
+
+NewDateTimeRange creates a new DateTimeRange object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewDateTimeRangeWithDefaults"></a>
+### func [NewDateTimeRangeWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L38>)
+
+```go
+func NewDateTimeRangeWithDefaults(dateTimeType DateTimeType) *DateTimeRange
+```
+
+NewDateTimeRangeWithDefaults creates a new DateTimeRange object. This constructor will assign default values to properties that have it defined, but it doensn't guarantee that properties requiered by API are set.
+
+<a name="DateTimeRange.GetDateTimeType"></a>
+### func \(\*DateTimeRange\) [GetDateTimeType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L45>)
+
+```go
+func (o *DateTimeRange) GetDateTimeType() DateTimeType
+```
+
+GetDateTimeType returns the DateTimeType field value if set, zero value otherwise.
+
+<a name="DateTimeRange.GetDateTimeTypeOk"></a>
+### func \(\*DateTimeRange\) [GetDateTimeTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L55>)
+
+```go
+func (o *DateTimeRange) GetDateTimeTypeOk() (*DateTimeType, bool)
+```
+
+GetDateTimeTypeOk returns a tuple with the DateTimeType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="DateTimeRange.GetEndDate"></a>
+### func \(\*DateTimeRange\) [GetEndDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L96>)
+
+```go
+func (o *DateTimeRange) GetEndDate() string
+```
+
+GetEndDate returns the EndDate field value if set, zero value otherwise.
+
+<a name="DateTimeRange.GetEndDateOk"></a>
+### func \(\*DateTimeRange\) [GetEndDateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L106>)
+
+```go
+func (o *DateTimeRange) GetEndDateOk() (*string, bool)
+```
+
+GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="DateTimeRange.GetField"></a>
+### func \(\*DateTimeRange\) [GetField](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L124>)
+
+```go
+func (o *DateTimeRange) GetField() string
+```
+
+GetField returns the Field field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="DateTimeRange.GetFieldOk"></a>
+### func \(\*DateTimeRange\) [GetFieldOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L135>)
+
+```go
+func (o *DateTimeRange) GetFieldOk() (*string, bool)
+```
+
+GetFieldOk returns a tuple with the Field field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="DateTimeRange.GetStartDate"></a>
+### func \(\*DateTimeRange\) [GetStartDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L68>)
+
+```go
+func (o *DateTimeRange) GetStartDate() string
+```
+
+GetStartDate returns the StartDate field value if set, zero value otherwise.
+
+<a name="DateTimeRange.GetStartDateOk"></a>
+### func \(\*DateTimeRange\) [GetStartDateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L78>)
+
+```go
+func (o *DateTimeRange) GetStartDateOk() (*string, bool)
+```
+
+GetStartDateOk returns a tuple with the StartDate field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="DateTimeRange.HasEndDate"></a>
+### func \(\*DateTimeRange\) [HasEndDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L114>)
+
+```go
+func (o *DateTimeRange) HasEndDate() bool
+```
+
+HasEndDate returns a boolean if a field has been set.
+
+<a name="DateTimeRange.HasField"></a>
+### func \(\*DateTimeRange\) [HasField](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L143>)
+
+```go
+func (o *DateTimeRange) HasField() bool
+```
+
+HasField returns a boolean if a field has been set.
+
+<a name="DateTimeRange.HasStartDate"></a>
+### func \(\*DateTimeRange\) [HasStartDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L86>)
+
+```go
+func (o *DateTimeRange) HasStartDate() bool
+```
+
+HasStartDate returns a boolean if a field has been set.
+
+<a name="DateTimeRange.MarshalJSON"></a>
+### func \(DateTimeRange\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L163>)
+
+```go
+func (o DateTimeRange) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="DateTimeRange.SetDateTimeType"></a>
+### func \(\*DateTimeRange\) [SetDateTimeType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L63>)
+
+```go
+func (o *DateTimeRange) SetDateTimeType(v DateTimeType)
+```
+
+SetDateTimeType gets a reference to the given string and assigns it to the DateTimeType field.
+
+<a name="DateTimeRange.SetEndDate"></a>
+### func \(\*DateTimeRange\) [SetEndDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L119>)
+
+```go
+func (o *DateTimeRange) SetEndDate(v string)
+```
+
+SetEndDate gets a reference to the given string and assigns it to the EndDate field.
+
+<a name="DateTimeRange.SetField"></a>
+### func \(\*DateTimeRange\) [SetField](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L148>)
+
+```go
+func (o *DateTimeRange) SetField(v string)
+```
+
+SetField gets a reference to the given datadog.NullableString and assigns it to the Field field.
+
+<a name="DateTimeRange.SetFieldNil"></a>
+### func \(\*DateTimeRange\) [SetFieldNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L153>)
+
+```go
+func (o *DateTimeRange) SetFieldNil()
+```
+
+SetFieldNil sets the value for Field to be an explicit nil.
+
+<a name="DateTimeRange.SetStartDate"></a>
+### func \(\*DateTimeRange\) [SetStartDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L91>)
+
+```go
+func (o *DateTimeRange) SetStartDate(v string)
+```
+
+SetStartDate gets a reference to the given string and assigns it to the StartDate field.
+
+<a name="DateTimeRange.UnMarshalJSON"></a>
+### func \(\*DateTimeRange\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L185>)
+
+```go
+func (o *DateTimeRange) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="DateTimeRange.UnSetField"></a>
+### func \(\*DateTimeRange\) [UnSetField](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L158>)
+
+```go
+func (o *DateTimeRange) UnSetField()
+```
+
+UnsetField ensures that no value is present for Field, not even an explicit nil.
+
+<a name="DateTimeType"></a>
+## type [DateTimeType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_type.go#L9>)
+
+DateTimeType represents the type of date time range for events.
+
+```go
+type DateTimeType string
+```
+
+<a name="DATETIMETYPE_LAST5MINUTES"></a>Allowed values for DateTimeType.
+
+```go
+const (
+    DATETIMETYPE_LAST5MINUTES   DateTimeType = "Last5Minutes"
+    DATETIMETYPE_LAST10MINUTES  DateTimeType = "Last10Minutes"
+    DATETIMETYPE_LAST15MINUTES  DateTimeType = "Last15Minutes"
+    DATETIMETYPE_LAST30MINUTES  DateTimeType = "Last30Minutes"
+    DATETIMETYPE_LAST60MINUTES  DateTimeType = "Last60Minutes"
+    DATETIMETYPE_LAST120MINUTES DateTimeType = "Last120Minutes"
+    DATETIMETYPE_THISHOUR       DateTimeType = "ThisHour"
+    DATETIMETYPE_LAST6HOUR      DateTimeType = "Last6Hours"
+    DATETIMETYPE_LAST12HOUR     DateTimeType = "Last12Hours"
+    DATETIMETYPE_LAST48HOUR     DateTimeType = "Last48Hours"
+    DATETIMETYPE_LAST72HOUR     DateTimeType = "Last72Hours"
+    DATETIMETYPE_TODAY          DateTimeType = "Today"
+    DATETIMETYPE_YESTERDAY      DateTimeType = "Yesterday"
+    DATETIMETYPE_THISWEEK       DateTimeType = "ThisWeek"
+    DATETIMETYPE_PREVWEEK       DateTimeType = "PrevWeek"
+    DATETIMETYPE_THISMONTH      DateTimeType = "ThisMonth"
+    DATETIMETYPE_LASTMONTH      DateTimeType = "LastMonth"
+    DATETIMETYPE_ALLTIME        DateTimeType = "AllTime"
+    DATETIMETYPE_DATERANGE      DateTimeType = "DateRange"
+)
+```
+
+<a name="NewDateTimeTypeFromValue"></a>
+### func [NewDateTimeTypeFromValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_type.go#L75>)
+
+```go
+func NewDateTimeTypeFromValue(v string) (*DateTimeType, error)
+```
+
+NewDateTimeTypeFromValue returns a pointer to a valid DateTimeType for the value passed as argument, or an error if the value passed is not allowed by the enum.
+
+<a name="DateTimeType.GetAllowedValues"></a>
+### func \(\*DateTimeType\) [GetAllowedValues](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_type.go#L58>)
+
+```go
+func (v *DateTimeType) GetAllowedValues() []DateTimeType
+```
+
+GetAllowedValues returns the list of possible values.
+
+<a name="DateTimeType.IsValid"></a>
+### func \(DateTimeType\) [IsValid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_type.go#L84>)
+
+```go
+func (v DateTimeType) IsValid() bool
+```
+
+IsValid return true if the value is valid for the enum, false otherwise.
+
+<a name="DateTimeType.Ptr"></a>
+### func \(DateTimeType\) [Ptr](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_type.go#L94>)
+
+```go
+func (v DateTimeType) Ptr() *DateTimeType
+```
+
+Ptr returns references to DateTimeType value.
+
+<a name="DateTimeType.UnMarshalJSON"></a>
+### func \(\*DateTimeType\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_type.go#L63>)
+
+```go
+func (v *DateTimeType) UnMarshalJSON(src []byte) error
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ErrorResponse"></a>
+## type [ErrorResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_error_response.go#L11-L17>)
+
+ErrorResponse API Error response
+
+```go
+type ErrorResponse struct {
     // A list of errors
     Errors []string `json:"errors"`
     // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
@@ -1393,65 +4972,65 @@ type APIErrorResponse struct {
 }
 ```
 
-<a name="NewAPIErrorResponse"></a>
-### func [NewAPIErrorResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_api_error_response.go#L23>)
+<a name="NewErrorResponse"></a>
+### func [NewErrorResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_error_response.go#L23>)
 
 ```go
-func NewAPIErrorResponse(errors []string) *APIErrorResponse
+func NewErrorResponse(errors []string) *ErrorResponse
 ```
 
-NewAPIErrorResponse creates a new APIErrorResponse object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+NewErrorResponse creates a new ErrorResponse object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
 
-<a name="NewAPIErrorResponseWithDefaults"></a>
-### func [NewAPIErrorResponseWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_api_error_response.go#L32>)
+<a name="NewErrorResponseWithDefaults"></a>
+### func [NewErrorResponseWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_error_response.go#L32>)
 
 ```go
-func NewAPIErrorResponseWithDefaults() *APIErrorResponse
+func NewErrorResponseWithDefaults() *ErrorResponse
 ```
 
-NewAPIErrorResponseWithDefaults creates a new APIErrorResponse object. This constructor will assign default values to properties that have it defined, but it doensn't guarantee that properties requiered by API are set.
+NewErrorResponseWithDefaults creates a new ErrorResponse object. This constructor will assign default values to properties that have it defined, but it doensn't guarantee that properties requiered by API are set.
 
-<a name="APIErrorResponse.GetErrors"></a>
-### func \(\*APIErrorResponse\) [GetErrors](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_api_error_response.go#L38>)
+<a name="ErrorResponse.GetErrors"></a>
+### func \(\*ErrorResponse\) [GetErrors](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_error_response.go#L38>)
 
 ```go
-func (o *APIErrorResponse) GetErrors() []string
+func (o *ErrorResponse) GetErrors() []string
 ```
 
 GetErrors returns the Errors field value.
 
-<a name="APIErrorResponse.GetErrorsOk"></a>
-### func \(\*APIErrorResponse\) [GetErrorsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_api_error_response.go#L48>)
+<a name="ErrorResponse.GetErrorsOk"></a>
+### func \(\*ErrorResponse\) [GetErrorsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_error_response.go#L48>)
 
 ```go
-func (o *APIErrorResponse) GetErrorsOk() (*[]string, bool)
+func (o *ErrorResponse) GetErrorsOk() (*[]string, bool)
 ```
 
 GetErrorsOk returns a tuple with the Errors field value and a boolean to check if the value has been set.
 
-<a name="APIErrorResponse.MarshalJSON"></a>
-### func \(APIErrorResponse\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_api_error_response.go#L61>)
+<a name="ErrorResponse.MarshalJSON"></a>
+### func \(ErrorResponse\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_error_response.go#L61>)
 
 ```go
-func (o APIErrorResponse) MarshalJSON() ([]byte, error)
+func (o ErrorResponse) MarshalJSON() ([]byte, error)
 ```
 
 MarshalJSON serializes the struct using spec logic.
 
-<a name="APIErrorResponse.SetErrors"></a>
-### func \(\*APIErrorResponse\) [SetErrors](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_api_error_response.go#L56>)
+<a name="ErrorResponse.SetErrors"></a>
+### func \(\*ErrorResponse\) [SetErrors](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_error_response.go#L56>)
 
 ```go
-func (o *APIErrorResponse) SetErrors(v []string)
+func (o *ErrorResponse) SetErrors(v []string)
 ```
 
 SetErrors sets field value
 
-<a name="APIErrorResponse.UnMarshalJSON"></a>
-### func \(\*APIErrorResponse\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_api_error_response.go#L75>)
+<a name="ErrorResponse.UnMarshalJSON"></a>
+### func \(\*ErrorResponse\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_error_response.go#L77>)
 
 ```go
-func (o *APIErrorResponse) UnMarshalJSON(bytes []byte) (err error)
+func (o *ErrorResponse) UnMarshalJSON(bytes []byte) (err error)
 ```
 
 UnMarshalJSON deserializes the given payload.
@@ -1472,667 +5051,28 @@ type EventsApi common.Service
 func NewEventsApi(client *common.APIClient) *EventsApi
 ```
 
-NewEventsApi Returns NewEventsApi.
+NewEventsApi Returns EventsApi.
 
 <a name="EventsApi.SearchEvents"></a>
 ### func \(\*EventsApi\) [SearchEvents](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_events.go#L33>)
 
 ```go
-func (a *EventsApi) SearchEvents(ctx _context.Context, o ...SearchEventsOptionalParameters) (EventsListResponse, *_nethttp.Response, error)
+func (a *EventsApi) SearchEvents(ctx _context.Context, o ...SearchEventsOptionalParameters) (EventsSearchResponse, *_nethttp.Response, error)
 ```
 
 SearcEvents search events. Returns events that match an events search query.
 
-<a name="EventsDateTimeRange"></a>
-## type [EventsDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L11-L22>)
-
-EventsDateTimeRange represents the date time range for events.
-
-```go
-type EventsDateTimeRange struct {
-    // DateTimeType specifies the type of date time range
-    DateTimeType EventsDateTimeType `json:"DateTimeType"`
-    // StartDate is the start date of the range
-    StartDate *string `json:"StartDate,omitempty"`
-    // EndDate is the end date of the range
-    EndDate *string `json:"EndDate,omitempty"`
-    // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct
-    UnparsedObject map[string]interface{}
-    // AdditionalProperties stores any additional properties not explicitly defined in the struct
-    AdditionalProperties map[string]interface{}
-}
-```
-
-<a name="NewEventsDateTimeRange"></a>
-### func [NewEventsDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L28>)
-
-```go
-func NewEventsDateTimeRange(dateTimeType EventsDateTimeType) *EventsDateTimeRange
-```
-
-NewEventsDateTimeRange creates a new EventsDateTimeRange object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
-
-<a name="NewEventsDateTimeRangeWithDefault"></a>
-### func [NewEventsDateTimeRangeWithDefault](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L37>)
-
-```go
-func NewEventsDateTimeRangeWithDefault(dateTimeType EventsDateTimeType) *EventsDateTimeRange
-```
-
-NewDateTimeRangeWithDefaults creates a new DateTimeRange object. This constructor will assign default values to properties that have it defined, but it doensn't guarantee that properties requiered by API are set.
-
-<a name="EventsDateTimeRange.GetDateTimeType"></a>
-### func \(\*EventsDateTimeRange\) [GetDateTimeType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L44>)
-
-```go
-func (o *EventsDateTimeRange) GetDateTimeType() EventsDateTimeType
-```
-
-GetDateTimeType returns the DateTimeType field value if set, zero value otherwise.
-
-<a name="EventsDateTimeRange.GetDateTimeTypeOk"></a>
-### func \(\*EventsDateTimeRange\) [GetDateTimeTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L54>)
-
-```go
-func (o *EventsDateTimeRange) GetDateTimeTypeOk() (*EventsDateTimeType, bool)
-```
-
-GetDateTimeTypeOk returns a tuple with the DateTimeType field value if set, nil otherwise and a boolean to check if the value has been set.
-
-<a name="EventsDateTimeRange.GetEndDate"></a>
-### func \(\*EventsDateTimeRange\) [GetEndDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L95>)
-
-```go
-func (o *EventsDateTimeRange) GetEndDate() string
-```
-
-GetEndDate returns the EndDate field value if set, zero value otherwise.
-
-<a name="EventsDateTimeRange.GetEndDateOk"></a>
-### func \(\*EventsDateTimeRange\) [GetEndDateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L105>)
-
-```go
-func (o *EventsDateTimeRange) GetEndDateOk() (*string, bool)
-```
-
-GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise and a boolean to check if the value has been set.
-
-<a name="EventsDateTimeRange.GetStartDate"></a>
-### func \(\*EventsDateTimeRange\) [GetStartDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L67>)
-
-```go
-func (o *EventsDateTimeRange) GetStartDate() string
-```
-
-GetStartDate returns the StartDate field value if set, zero value otherwise.
-
-<a name="EventsDateTimeRange.GetStartDateOk"></a>
-### func \(\*EventsDateTimeRange\) [GetStartDateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L77>)
-
-```go
-func (o *EventsDateTimeRange) GetStartDateOk() (*string, bool)
-```
-
-GetStartDateOk returns a tuple with the StartDate field value if set, nil otherwise and a boolean to check if the value has been set.
-
-<a name="EventsDateTimeRange.HasEndDate"></a>
-### func \(\*EventsDateTimeRange\) [HasEndDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L113>)
-
-```go
-func (o *EventsDateTimeRange) HasEndDate() bool
-```
-
-HasEndDate returns a boolean if a field has been set.
-
-<a name="EventsDateTimeRange.HasStartDate"></a>
-### func \(\*EventsDateTimeRange\) [HasStartDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L85>)
-
-```go
-func (o *EventsDateTimeRange) HasStartDate() bool
-```
-
-HasStartDate returns a boolean if a field has been set.
-
-<a name="EventsDateTimeRange.MarshalJSON"></a>
-### func \(EventsDateTimeRange\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L123>)
-
-```go
-func (o EventsDateTimeRange) MarshalJSON() ([]byte, error)
-```
-
-MarshalJSON serializes the struct using spec logic.
-
-<a name="EventsDateTimeRange.SetDateTimeType"></a>
-### func \(\*EventsDateTimeRange\) [SetDateTimeType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L62>)
-
-```go
-func (o *EventsDateTimeRange) SetDateTimeType(v EventsDateTimeType)
-```
-
-SetDateTimeType gets a reference to the given string and assigns it to the DateTimeType field.
-
-<a name="EventsDateTimeRange.SetEndDate"></a>
-### func \(\*EventsDateTimeRange\) [SetEndDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L118>)
-
-```go
-func (o *EventsDateTimeRange) SetEndDate(v string)
-```
-
-SetEndDate gets a reference to the given string and assigns it to the EndDate field.
-
-<a name="EventsDateTimeRange.SetStartDate"></a>
-### func \(\*EventsDateTimeRange\) [SetStartDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L90>)
-
-```go
-func (o *EventsDateTimeRange) SetStartDate(v string)
-```
-
-SetStartDate gets a reference to the given string and assigns it to the StartDate field.
-
-<a name="EventsDateTimeRange.UnMarshalJSON"></a>
-### func \(\*EventsDateTimeRange\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_range.go#L143>)
-
-```go
-func (o *EventsDateTimeRange) UnMarshalJSON(bytes []byte) (err error)
-```
-
-UnMarshalJSON deserializes the given payload.
-
-<a name="EventsDateTimeType"></a>
-## type [EventsDateTimeType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_type.go#L9>)
-
-EventsDateTimeType represents the type of date time range for events.
-
-```go
-type EventsDateTimeType string
-```
-
-<a name="EVENTSDATETIMETYPE_LAST5MINUTES"></a>Allowed values for EventsDateTimeType.
-
-```go
-const (
-    EVENTSDATETIMETYPE_LAST5MINUTES   EventsDateTimeType = "Last5Minutes"
-    EVENTSDATETIMETYPE_LAST10MINUTES  EventsDateTimeType = "Last10Minutes"
-    EVENTSDATETIMETYPE_LAST15MINUTES  EventsDateTimeType = "Last15Minutes"
-    EVENTSDATETIMETYPE_LAST30MINUTES  EventsDateTimeType = "Last30Minutes"
-    EVENTSDATETIMETYPE_LAST60MINUTES  EventsDateTimeType = "Last60Minutes"
-    EVENTSDATETIMETYPE_LAST120MINUTES EventsDateTimeType = "Last120Minutes"
-    EVENTSDATETIMETYPE_THISHOUR       EventsDateTimeType = "ThisHour"
-    EVENTSDATETIMETYPE_LAST6HOUR      EventsDateTimeType = "Last6Hours"
-    EVENTSDATETIMETYPE_LAST12HOUR     EventsDateTimeType = "Last12Hours"
-    EVENTSDATETIMETYPE_LAST48HOUR     EventsDateTimeType = "Last48Hours"
-    EVENTSDATETIMETYPE_LAST72HOUR     EventsDateTimeType = "Last72Hours"
-    EVENTSDATETIMETYPE_TODAY          EventsDateTimeType = "Today"
-    EVENTSDATETIMETYPE_YESTERDAY      EventsDateTimeType = "Yesterday"
-    EVENTSDATETIMETYPE_THISWEEK       EventsDateTimeType = "ThisWeek"
-    EVENTSDATETIMETYPE_PREVWEEK       EventsDateTimeType = "PrevWeek"
-    EVENTSDATETIMETYPE_THISMONTH      EventsDateTimeType = "ThisMonth"
-    EVENTSDATETIMETYPE_LASTMONTH      EventsDateTimeType = "LastMonth"
-    EVENTSDATETIMETYPE_ALLTIME        EventsDateTimeType = "AllTime"
-    EVENTSDATETIMETYPE_DATERANGE      EventsDateTimeType = "DateRange"
-)
-```
-
-<a name="NewEventsDateTimeTypeFromValue"></a>
-### func [NewEventsDateTimeTypeFromValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_type.go#L75>)
-
-```go
-func NewEventsDateTimeTypeFromValue(v string) (*EventsDateTimeType, error)
-```
-
-NewEventsDateTimeTypeFromValue returns a pointer to a valid EventsDateTimeType for the value passed as argument, or an error if the value passed is not allowed by the enum.
-
-<a name="EventsDateTimeType.GetAllowedValues"></a>
-### func \(\*EventsDateTimeType\) [GetAllowedValues](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_type.go#L58>)
-
-```go
-func (v *EventsDateTimeType) GetAllowedValues() []EventsDateTimeType
-```
-
-GetAllowedValues returns the list of possible values.
-
-<a name="EventsDateTimeType.IsValid"></a>
-### func \(EventsDateTimeType\) [IsValid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_type.go#L84>)
-
-```go
-func (v EventsDateTimeType) IsValid() bool
-```
-
-IsValid return true if the value is valid for the enum, false otherwise.
-
-<a name="EventsDateTimeType.Ptr"></a>
-### func \(EventsDateTimeType\) [Ptr](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_type.go#L94>)
-
-```go
-func (v EventsDateTimeType) Ptr() *EventsDateTimeType
-```
-
-Ptr returns references to EventsDateTimeType value.
-
-<a name="EventsDateTimeType.UnMarshalJSON"></a>
-### func \(\*EventsDateTimeType\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_datetime_type.go#L63>)
-
-```go
-func (v *EventsDateTimeType) UnMarshalJSON(src []byte) error
-```
-
-UnMarshalJSON deserializes the given payload.
-
-<a name="EventsListRequest"></a>
-## type [EventsListRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L11-L22>)
-
-EventsListRequest is the object sent with a request to retrieve a list of events from your organization.
-
-```go
-type EventsListRequest struct {
-    // Reason represents the reason for the event list request.
-    Reason *string `json:"reason,omitempty"`
-    // Query specifies the search and filter query settings.
-    Query *EventsQueryFilter `json:"query,omitempty"`
-    // SmartRestRequestContext is the context for the Smart REST request.
-    SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
-    // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-    UnparsedObject map[string]interface{}
-    // AdditionalProperties stores any additional properties not explicitly defined in the struct
-    AdditionalProperties map[string]interface{}
-}
-```
-
-<a name="NewEventsListRequest"></a>
-### func [NewEventsListRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L28>)
-
-```go
-func NewEventsListRequest() *EventsListRequest
-```
-
-NewEventsListRequest creates a new EventsListRequest object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
-
-<a name="NewEventsListRequestWithDefaults"></a>
-### func [NewEventsListRequestWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L40>)
-
-```go
-func NewEventsListRequestWithDefaults() *EventsListRequest
-```
-
-NewEventsListRequestWithDefaults creates a new EventsListRequest object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
-
-<a name="EventsListRequest.GetQuery"></a>
-### func \(\*EventsListRequest\) [GetQuery](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L78>)
-
-```go
-func (o *EventsListRequest) GetQuery() EventsQueryFilter
-```
-
-GetQuery returns the Query field value if set, zero value otherwise.
-
-<a name="EventsListRequest.GetQueryOk"></a>
-### func \(\*EventsListRequest\) [GetQueryOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L88>)
-
-```go
-func (o *EventsListRequest) GetQueryOk() (*EventsQueryFilter, bool)
-```
-
-GetQueryOk returns a tuple with the Query field value if set, nil otherwise and a boolean to check if the value has been set.
-
-<a name="EventsListRequest.GetReason"></a>
-### func \(\*EventsListRequest\) [GetReason](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L50>)
-
-```go
-func (o *EventsListRequest) GetReason() string
-```
-
-GetReason returns the Reason field value if set, zero value otherwise.
-
-<a name="EventsListRequest.GetReasonOk"></a>
-### func \(\*EventsListRequest\) [GetReasonOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L60>)
-
-```go
-func (o *EventsListRequest) GetReasonOk() (*string, bool)
-```
-
-GetReasonOk returns a tuple with the Reason field value if set, nil otherwise and a boolean to check if the value has been set.
-
-<a name="EventsListRequest.GetSmartRestRequestContext"></a>
-### func \(\*EventsListRequest\) [GetSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L106>)
-
-```go
-func (o *EventsListRequest) GetSmartRestRequestContext() string
-```
-
-GetSmartRestRequestContext returns the SmartRestRequestContext field value if set, zero value otherwise.
-
-<a name="EventsListRequest.GetSmartRestRequestContextOk"></a>
-### func \(\*EventsListRequest\) [GetSmartRestRequestContextOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L116>)
-
-```go
-func (o *EventsListRequest) GetSmartRestRequestContextOk() (*string, bool)
-```
-
-GetSmartRestRequestContextOk returns a tuple with the SmartRestRequestContext field value if set, nil otherwise and a boolean to check if the value has been set.
-
-<a name="EventsListRequest.HasQuery"></a>
-### func \(\*EventsListRequest\) [HasQuery](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L96>)
-
-```go
-func (o *EventsListRequest) HasQuery() bool
-```
-
-HasQuery returns a boolean if a field has been set.
-
-<a name="EventsListRequest.HasReason"></a>
-### func \(\*EventsListRequest\) [HasReason](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L68>)
-
-```go
-func (o *EventsListRequest) HasReason() bool
-```
-
-HasReason returns a boolean if a field has been set.
-
-<a name="EventsListRequest.HasSmartRestRequestContext"></a>
-### func \(\*EventsListRequest\) [HasSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L124>)
-
-```go
-func (o *EventsListRequest) HasSmartRestRequestContext() bool
-```
-
-HasSmartRestRequestContext returns a boolean if a field has been set.
-
-<a name="EventsListRequest.MarshalJSON"></a>
-### func \(EventsListRequest\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L134>)
-
-```go
-func (o EventsListRequest) MarshalJSON() ([]byte, error)
-```
-
-MarshalJSON serializes the struct using spec logic.
-
-<a name="EventsListRequest.SetQuery"></a>
-### func \(\*EventsListRequest\) [SetQuery](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L101>)
-
-```go
-func (o *EventsListRequest) SetQuery(v EventsQueryFilter)
-```
-
-SetQuery gets a reference to the given EventsQueryFilter and assigns it to the Query field.
-
-<a name="EventsListRequest.SetReason"></a>
-### func \(\*EventsListRequest\) [SetReason](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L73>)
-
-```go
-func (o *EventsListRequest) SetReason(v string)
-```
-
-SetReason gets a reference to the given string and assigns it to the Reason field.
-
-<a name="EventsListRequest.SetSmartRestRequestContext"></a>
-### func \(\*EventsListRequest\) [SetSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L129>)
-
-```go
-func (o *EventsListRequest) SetSmartRestRequestContext(v string)
-```
-
-SetSmartRestRequestContext gets a reference to the given string and assigns it to the SmartRestRequestContext field.
-
-<a name="EventsListRequest.UnMarshalJSON"></a>
-### func \(\*EventsListRequest\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_request.go#L156>)
-
-```go
-func (o *EventsListRequest) UnMarshalJSON(bytes []byte) (err error)
-```
-
-UnMarshalJSON deserializes the given payload.
-
-<a name="EventsListResponse"></a>
-## type [EventsListResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L10-L25>)
-
-EventsListResponse is the response object with all events matching the request.
-
-```go
-type EventsListResponse struct {
-    // Data contains the list of events.
-    Data common.NullableList[json.RawMessage] `json:"Data,omitempty"`
-    // TotalSize is the total number of events.
-    TotalSize *int64 `json:"TotalSize,omitempty"`
-    // QueryType is the type of query used.
-    QueryType *string `json:"QueryType,omitempty"`
-    // SelectedColumns contains the selected columns.
-    SelectedColumns common.NullableList[json.RawMessage] `json:"SelectedColumns,omitempty"`
-    // SearchTime is the time taken for the search.
-    SearchTime *int64 `json:"SearchTime,omitempty"`
-    // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-    UnparsedObject map[string]interface{} `json:"-"`
-    // AdditionalProperties stores any additional properties not explicitly defined in the struct.
-    AdditionalProperties map[string]interface{}
-}
-```
-
-<a name="NewEventsListResponse"></a>
-### func [NewEventsListResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L31>)
-
-```go
-func NewEventsListResponse() *EventsListResponse
-```
-
-NewEventsListResponse creates a new EventsListResponse object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
-
-<a name="NewEventsListResponseWithDefault"></a>
-### func [NewEventsListResponseWithDefault](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L39>)
-
-```go
-func NewEventsListResponseWithDefault() *EventsListResponse
-```
-
-NewEventsListResponseWithDefaults creates a new EventsListResponse object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
-
-<a name="EventsListResponse.GetData"></a>
-### func \(\*EventsListResponse\) [GetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L45>)
-
-```go
-func (o *EventsListResponse) GetData() []json.RawMessage
-```
-
-GetData returns the Data field value if set, zero value otherwise.
-
-<a name="EventsListResponse.GetDataOk"></a>
-### func \(\*EventsListResponse\) [GetDataOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L55>)
-
-```go
-func (o *EventsListResponse) GetDataOk() (*[]json.RawMessage, bool)
-```
-
-GetDataOk returns a tuple with the Data field value if set, nil otherwise and a boolean to check if the value has been set.
-
-<a name="EventsListResponse.GetQueryType"></a>
-### func \(\*EventsListResponse\) [GetQueryType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L101>)
-
-```go
-func (o *EventsListResponse) GetQueryType() string
-```
-
-GetQueryType returns the QueryType field value if set, zero value otherwise.
-
-<a name="EventsListResponse.GetQueryTypeOk"></a>
-### func \(\*EventsListResponse\) [GetQueryTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L111>)
-
-```go
-func (o *EventsListResponse) GetQueryTypeOk() (*string, bool)
-```
-
-GetQueryTypeOk returns a tuple with the QueryType field value if set, nil otherwise and a boolean to check if the value has been set.
-
-<a name="EventsListResponse.GetSearchTime"></a>
-### func \(\*EventsListResponse\) [GetSearchTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L157>)
-
-```go
-func (o *EventsListResponse) GetSearchTime() int64
-```
-
-GetSearchTime returns the SearchTime field value if set, zero value otherwise.
-
-<a name="EventsListResponse.GetSearchTimeOk"></a>
-### func \(\*EventsListResponse\) [GetSearchTimeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L167>)
-
-```go
-func (o *EventsListResponse) GetSearchTimeOk() (*int64, bool)
-```
-
-GetSearchTimeOk returns a tuple with the SearchTime field value if set, nil otherwise and a boolean to check if the value has been set.
-
-<a name="EventsListResponse.GetSelectedColumns"></a>
-### func \(\*EventsListResponse\) [GetSelectedColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L129>)
-
-```go
-func (o *EventsListResponse) GetSelectedColumns() []json.RawMessage
-```
-
-GetSelectedColumns returns the SelectedColumns field value if set, zero value otherwise.
-
-<a name="EventsListResponse.GetSelectedColumnsOk"></a>
-### func \(\*EventsListResponse\) [GetSelectedColumnsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L139>)
-
-```go
-func (o *EventsListResponse) GetSelectedColumnsOk() (*[]json.RawMessage, bool)
-```
-
-GetSelectedColumnsOk returns a tuple with the SelectedColumns field value if set, nil otherwise and a boolean to check if the value has been set.
-
-<a name="EventsListResponse.GetTotalSize"></a>
-### func \(\*EventsListResponse\) [GetTotalSize](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L73>)
-
-```go
-func (o *EventsListResponse) GetTotalSize() int64
-```
-
-GetTotalSize returns the TotalSize field value if set, zero value otherwise.
-
-<a name="EventsListResponse.GetTotalSizeOk"></a>
-### func \(\*EventsListResponse\) [GetTotalSizeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L83>)
-
-```go
-func (o *EventsListResponse) GetTotalSizeOk() (*int64, bool)
-```
-
-GetTotalSizeOk returns a tuple with the TotalSize field value if set, nil otherwise and a boolean to check if the value has been set.
-
-<a name="EventsListResponse.HasData"></a>
-### func \(\*EventsListResponse\) [HasData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L63>)
-
-```go
-func (o *EventsListResponse) HasData() bool
-```
-
-HasData returns a boolean if a field has been set.
-
-<a name="EventsListResponse.HasQueryType"></a>
-### func \(\*EventsListResponse\) [HasQueryType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L119>)
-
-```go
-func (o *EventsListResponse) HasQueryType() bool
-```
-
-HasQueryType returns a boolean if a field has been set.
-
-<a name="EventsListResponse.HasSearchTime"></a>
-### func \(\*EventsListResponse\) [HasSearchTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L175>)
-
-```go
-func (o *EventsListResponse) HasSearchTime() bool
-```
-
-HasSearchTime returns a boolean if a field has been set.
-
-<a name="EventsListResponse.HasSelectedColumns"></a>
-### func \(\*EventsListResponse\) [HasSelectedColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L147>)
-
-```go
-func (o *EventsListResponse) HasSelectedColumns() bool
-```
-
-HasSelectedColumns returns a boolean if a field has been set.
-
-<a name="EventsListResponse.HasTotalSize"></a>
-### func \(\*EventsListResponse\) [HasTotalSize](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L91>)
-
-```go
-func (o *EventsListResponse) HasTotalSize() bool
-```
-
-HasTotalSize returns a boolean if a field has been set.
-
-<a name="EventsListResponse.MarshalJSON"></a>
-### func \(EventsListResponse\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L185>)
-
-```go
-func (o EventsListResponse) MarshalJSON() ([]byte, error)
-```
-
-MarshalJSON serializes the struct using spec logic.
-
-<a name="EventsListResponse.SetData"></a>
-### func \(\*EventsListResponse\) [SetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L68>)
-
-```go
-func (o *EventsListResponse) SetData(v []json.RawMessage)
-```
-
-SetData gets a reference to the given \[\]json.RawMessage and assigns it to the Data field.
-
-<a name="EventsListResponse.SetQueryType"></a>
-### func \(\*EventsListResponse\) [SetQueryType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L124>)
-
-```go
-func (o *EventsListResponse) SetQueryType(v string)
-```
-
-SetQueryType gets a reference to the given string and assigns it to the QueryType field.
-
-<a name="EventsListResponse.SetSearchTime"></a>
-### func \(\*EventsListResponse\) [SetSearchTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L180>)
-
-```go
-func (o *EventsListResponse) SetSearchTime(v int64)
-```
-
-SetSearchTime gets a reference to the given int64 and assigns it to the SearchTime field.
-
-<a name="EventsListResponse.SetSelectedColumns"></a>
-### func \(\*EventsListResponse\) [SetSelectedColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L152>)
-
-```go
-func (o *EventsListResponse) SetSelectedColumns(v []json.RawMessage)
-```
-
-SetSelectedColumns gets a reference to the given \[\]json.RawMessage and assigns it to the SelectedColumns field.
-
-<a name="EventsListResponse.SetTotalSize"></a>
-### func \(\*EventsListResponse\) [SetTotalSize](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L96>)
-
-```go
-func (o *EventsListResponse) SetTotalSize(v int64)
-```
-
-SetTotalSize gets a reference to the given int64 and assigns it to the TotalSize field.
-
-<a name="EventsListResponse.UnMarshalJSON"></a>
-### func \(\*EventsListResponse\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_list_response.go#L213>)
-
-```go
-func (o *EventsListResponse) UnMarshalJSON(bytes []byte) (err error)
-```
-
-UnMarshalJSON deserializes the given payload.
-
 <a name="EventsQueryFilter"></a>
-## type [EventsQueryFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L11-L22>)
+## type [EventsQueryFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L11-L22>)
 
-EventsQueryFilter represents the search and filter query settings.
+EventsQueryFilter represents the filter used for querying events.
 
 ```go
 type EventsQueryFilter struct {
     // QuerySQL is the SQL query for filtering events.
     QuerySQL *string `json:"QuerySQL,omitempty"`
     // DateTimeRange specifies the date time range for filtering events.
-    DateTimeRange *EventsDateTimeRange `json:"DateTimeRange,omitempty"`
+    DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
     // QueryOptions stores additional query options.
     QueryOptions *EventsQueryOptions `json:"QueryOptions,omitempty"`
     // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
@@ -2143,7 +5083,7 @@ type EventsQueryFilter struct {
 ```
 
 <a name="NewEventsQueryFilter"></a>
-### func [NewEventsQueryFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L28>)
+### func [NewEventsQueryFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L28>)
 
 ```go
 func NewEventsQueryFilter() *EventsQueryFilter
@@ -2152,7 +5092,7 @@ func NewEventsQueryFilter() *EventsQueryFilter
 NewEventsQueryFilter creates a new EventsQueryFilter object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
 
 <a name="NewEventsQueryFilterWithDefaults"></a>
-### func [NewEventsQueryFilterWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L38>)
+### func [NewEventsQueryFilterWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L38>)
 
 ```go
 func NewEventsQueryFilterWithDefaults() *EventsQueryFilter
@@ -2161,25 +5101,25 @@ func NewEventsQueryFilterWithDefaults() *EventsQueryFilter
 NewEventsQueryFilterWithDefaults creates a new EventsQueryFilter object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
 
 <a name="EventsQueryFilter.GetDateTimeRange"></a>
-### func \(\*EventsQueryFilter\) [GetDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L74>)
+### func \(\*EventsQueryFilter\) [GetDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L74>)
 
 ```go
-func (o *EventsQueryFilter) GetDateTimeRange() EventsDateTimeRange
+func (o *EventsQueryFilter) GetDateTimeRange() DateTimeRange
 ```
 
 GetDateTimeRange returns the DateTimeRange field value if set, zero value otherwise.
 
 <a name="EventsQueryFilter.GetDateTimeRangeOk"></a>
-### func \(\*EventsQueryFilter\) [GetDateTimeRangeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L84>)
+### func \(\*EventsQueryFilter\) [GetDateTimeRangeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L84>)
 
 ```go
-func (o *EventsQueryFilter) GetDateTimeRangeOk() (*EventsDateTimeRange, bool)
+func (o *EventsQueryFilter) GetDateTimeRangeOk() (*DateTimeRange, bool)
 ```
 
 GetDateTimeRangeOk returns a tuple with the DateTimeRange field value if set, nil otherwise and a boolean to check if the value has been set.
 
 <a name="EventsQueryFilter.GetQueryOptions"></a>
-### func \(\*EventsQueryFilter\) [GetQueryOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L102>)
+### func \(\*EventsQueryFilter\) [GetQueryOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L102>)
 
 ```go
 func (o *EventsQueryFilter) GetQueryOptions() EventsQueryOptions
@@ -2188,7 +5128,7 @@ func (o *EventsQueryFilter) GetQueryOptions() EventsQueryOptions
 GetQueryOptions returns the QueryOptions field value if set, zero value otherwise.
 
 <a name="EventsQueryFilter.GetQueryOptionsOk"></a>
-### func \(\*EventsQueryFilter\) [GetQueryOptionsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L112>)
+### func \(\*EventsQueryFilter\) [GetQueryOptionsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L112>)
 
 ```go
 func (o *EventsQueryFilter) GetQueryOptionsOk() (*EventsQueryOptions, bool)
@@ -2197,7 +5137,7 @@ func (o *EventsQueryFilter) GetQueryOptionsOk() (*EventsQueryOptions, bool)
 GetQueryOptionsOk returns a tuple with the QueryOptions field value if set, nil otherwise and a boolean to check if the value has been set.
 
 <a name="EventsQueryFilter.GetQuerySQL"></a>
-### func \(\*EventsQueryFilter\) [GetQuerySQL](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L46>)
+### func \(\*EventsQueryFilter\) [GetQuerySQL](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L46>)
 
 ```go
 func (o *EventsQueryFilter) GetQuerySQL() string
@@ -2206,7 +5146,7 @@ func (o *EventsQueryFilter) GetQuerySQL() string
 GetQuerySQL returns the QuerySQL field value if set, zero value otherwise.
 
 <a name="EventsQueryFilter.GetQuerySQLOk"></a>
-### func \(\*EventsQueryFilter\) [GetQuerySQLOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L56>)
+### func \(\*EventsQueryFilter\) [GetQuerySQLOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L56>)
 
 ```go
 func (o *EventsQueryFilter) GetQuerySQLOk() (*string, bool)
@@ -2215,7 +5155,7 @@ func (o *EventsQueryFilter) GetQuerySQLOk() (*string, bool)
 GetQuerySQLOk returns a tuple with the QuerySQL field value if set, nil otherwise and a boolean to check if the value has been set.
 
 <a name="EventsQueryFilter.HasDateTimeRange"></a>
-### func \(\*EventsQueryFilter\) [HasDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L92>)
+### func \(\*EventsQueryFilter\) [HasDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L92>)
 
 ```go
 func (o *EventsQueryFilter) HasDateTimeRange() bool
@@ -2224,7 +5164,7 @@ func (o *EventsQueryFilter) HasDateTimeRange() bool
 HasDateTimeRange returns a boolean if a field has been set.
 
 <a name="EventsQueryFilter.HasQueryOptions"></a>
-### func \(\*EventsQueryFilter\) [HasQueryOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L120>)
+### func \(\*EventsQueryFilter\) [HasQueryOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L120>)
 
 ```go
 func (o *EventsQueryFilter) HasQueryOptions() bool
@@ -2233,7 +5173,7 @@ func (o *EventsQueryFilter) HasQueryOptions() bool
 HasQueryOptions returns a boolean if a field has been set.
 
 <a name="EventsQueryFilter.HasQuerySQL"></a>
-### func \(\*EventsQueryFilter\) [HasQuerySQL](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L64>)
+### func \(\*EventsQueryFilter\) [HasQuerySQL](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L64>)
 
 ```go
 func (o *EventsQueryFilter) HasQuerySQL() bool
@@ -2242,7 +5182,7 @@ func (o *EventsQueryFilter) HasQuerySQL() bool
 HasQuerySQL returns a boolean if a field has been set.
 
 <a name="EventsQueryFilter.MarshalJSON"></a>
-### func \(EventsQueryFilter\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L130>)
+### func \(EventsQueryFilter\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L130>)
 
 ```go
 func (o EventsQueryFilter) MarshalJSON() ([]byte, error)
@@ -2251,16 +5191,16 @@ func (o EventsQueryFilter) MarshalJSON() ([]byte, error)
 MarshalJSON serializes the struct using spec logic.
 
 <a name="EventsQueryFilter.SetDateTimeRange"></a>
-### func \(\*EventsQueryFilter\) [SetDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L97>)
+### func \(\*EventsQueryFilter\) [SetDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L97>)
 
 ```go
-func (o *EventsQueryFilter) SetDateTimeRange(v EventsDateTimeRange)
+func (o *EventsQueryFilter) SetDateTimeRange(v DateTimeRange)
 ```
 
-SetDateTimeRange gets a reference to the given EventsDateTimeRange and assigns it to the DateTimeRange field.
+SetDateTimeRange gets a reference to the given DateTimeRange and assigns it to the DateTimeRange field.
 
 <a name="EventsQueryFilter.SetQueryOptions"></a>
-### func \(\*EventsQueryFilter\) [SetQueryOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L125>)
+### func \(\*EventsQueryFilter\) [SetQueryOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L125>)
 
 ```go
 func (o *EventsQueryFilter) SetQueryOptions(v EventsQueryOptions)
@@ -2269,7 +5209,7 @@ func (o *EventsQueryFilter) SetQueryOptions(v EventsQueryOptions)
 SetQueryOptions gets a reference to the given EventsQueryOptions and assigns it to the QueryOptions field.
 
 <a name="EventsQueryFilter.SetQuerySQL"></a>
-### func \(\*EventsQueryFilter\) [SetQuerySQL](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L69>)
+### func \(\*EventsQueryFilter\) [SetQuerySQL](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L69>)
 
 ```go
 func (o *EventsQueryFilter) SetQuerySQL(v string)
@@ -2278,7 +5218,7 @@ func (o *EventsQueryFilter) SetQuerySQL(v string)
 SetQuerySQL gets a reference to the given string and assigns it to the QuerySQL field.
 
 <a name="EventsQueryFilter.UnMarshalJSON"></a>
-### func \(\*EventsQueryFilter\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_filter.go#L152>)
+### func \(\*EventsQueryFilter\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_filter.go#L152>)
 
 ```go
 func (o *EventsQueryFilter) UnMarshalJSON(bytes []byte) (err error)
@@ -2287,9 +5227,9 @@ func (o *EventsQueryFilter) UnMarshalJSON(bytes []byte) (err error)
 UnMarshalJSON deserializes the given payload.
 
 <a name="EventsQueryOptions"></a>
-## type [EventsQueryOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_options.go#L10-L17>)
+## type [EventsQueryOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_options.go#L10-L17>)
 
-EventsQueryOptions represents the global query options that are used.
+EventsQueryOptions represents the query options that are used.
 
 ```go
 type EventsQueryOptions struct {
@@ -2303,7 +5243,7 @@ type EventsQueryOptions struct {
 ```
 
 <a name="EventsQueryOptions.GetShowHighlight"></a>
-### func \(\*EventsQueryOptions\) [GetShowHighlight](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_options.go#L20>)
+### func \(\*EventsQueryOptions\) [GetShowHighlight](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_options.go#L20>)
 
 ```go
 func (o *EventsQueryOptions) GetShowHighlight() bool
@@ -2312,7 +5252,7 @@ func (o *EventsQueryOptions) GetShowHighlight() bool
 GetShowHighlight returns the ShowHighlight field value if set, zero value otherwise.
 
 <a name="EventsQueryOptions.GetShowHighlightOk"></a>
-### func \(\*EventsQueryOptions\) [GetShowHighlightOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_options.go#L30>)
+### func \(\*EventsQueryOptions\) [GetShowHighlightOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_options.go#L30>)
 
 ```go
 func (o *EventsQueryOptions) GetShowHighlightOk() (*bool, bool)
@@ -2321,7 +5261,7 @@ func (o *EventsQueryOptions) GetShowHighlightOk() (*bool, bool)
 GetShowHighlightOk returns a tuple with the ShowHighlight field value if set, nil otherwise and a boolean to check if the value has been set.
 
 <a name="EventsQueryOptions.HasShowHighlight"></a>
-### func \(\*EventsQueryOptions\) [HasShowHighlight](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_options.go#L38>)
+### func \(\*EventsQueryOptions\) [HasShowHighlight](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_options.go#L38>)
 
 ```go
 func (o *EventsQueryOptions) HasShowHighlight() bool
@@ -2330,7 +5270,7 @@ func (o *EventsQueryOptions) HasShowHighlight() bool
 HasShowHighlight returns a boolean if a field has been set.
 
 <a name="EventsQueryOptions.MarshalJSON"></a>
-### func \(EventsQueryOptions\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_options.go#L48>)
+### func \(EventsQueryOptions\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_options.go#L48>)
 
 ```go
 func (o EventsQueryOptions) MarshalJSON() ([]byte, error)
@@ -2339,7 +5279,7 @@ func (o EventsQueryOptions) MarshalJSON() ([]byte, error)
 MarshalJSON serializes the struct using spec logic.
 
 <a name="EventsQueryOptions.SetShowHighlight"></a>
-### func \(\*EventsQueryOptions\) [SetShowHighlight](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_options.go#L43>)
+### func \(\*EventsQueryOptions\) [SetShowHighlight](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_options.go#L43>)
 
 ```go
 func (o *EventsQueryOptions) SetShowHighlight(v bool)
@@ -2348,13 +5288,8352 @@ func (o *EventsQueryOptions) SetShowHighlight(v bool)
 SetShowHighlight gets a reference to the given string and assigns it to the ShowHighlight field.
 
 <a name="EventsQueryOptions.UnMarshalJSON"></a>
-### func \(\*EventsQueryOptions\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/model_events_query_options.go#L62>)
+### func \(\*EventsQueryOptions\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_query_options.go#L64>)
 
 ```go
 func (o *EventsQueryOptions) UnMarshalJSON(bytes []byte) (err error)
 ```
 
 UnMarshalJSON deserializes the given payload.
+
+<a name="EventsSearchRequest"></a>
+## type [EventsSearchRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L11-L22>)
+
+EventsSearchRequest is the object sent with a request to retrieve a list of events from your organization.
+
+```go
+type EventsSearchRequest struct {
+    // Reason represents the reason for the event list request.
+    Reason *string `json:"reason,omitempty"`
+    // Query specifies the search and filter query settings.
+    Query *EventsQueryFilter `json:"query,omitempty"`
+    // SmartRestRequestContext is the context for the Smart REST request.
+    SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
+    // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+    UnparsedObject map[string]interface{}
+    // AdditionalProperties stores any additional properties not explicitly defined in the struct
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewEventsSearchRequest"></a>
+### func [NewEventsSearchRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L28>)
+
+```go
+func NewEventsSearchRequest() *EventsSearchRequest
+```
+
+NewEventsSearchRequest creates a new EventsSearchRequest object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewEventsSearchRequestWithDefaults"></a>
+### func [NewEventsSearchRequestWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L40>)
+
+```go
+func NewEventsSearchRequestWithDefaults() *EventsSearchRequest
+```
+
+NewEventsSearchRequestWithDefaults creates a new EventsSearchRequest object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="EventsSearchRequest.GetQuery"></a>
+### func \(\*EventsSearchRequest\) [GetQuery](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L78>)
+
+```go
+func (o *EventsSearchRequest) GetQuery() EventsQueryFilter
+```
+
+GetQuery returns the Query field value if set, zero value otherwise.
+
+<a name="EventsSearchRequest.GetQueryOk"></a>
+### func \(\*EventsSearchRequest\) [GetQueryOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L88>)
+
+```go
+func (o *EventsSearchRequest) GetQueryOk() (*EventsQueryFilter, bool)
+```
+
+GetQueryOk returns a tuple with the Query field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="EventsSearchRequest.GetReason"></a>
+### func \(\*EventsSearchRequest\) [GetReason](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L50>)
+
+```go
+func (o *EventsSearchRequest) GetReason() string
+```
+
+GetReason returns the Reason field value if set, zero value otherwise.
+
+<a name="EventsSearchRequest.GetReasonOk"></a>
+### func \(\*EventsSearchRequest\) [GetReasonOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L60>)
+
+```go
+func (o *EventsSearchRequest) GetReasonOk() (*string, bool)
+```
+
+GetReasonOk returns a tuple with the Reason field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="EventsSearchRequest.GetSmartRestRequestContext"></a>
+### func \(\*EventsSearchRequest\) [GetSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L106>)
+
+```go
+func (o *EventsSearchRequest) GetSmartRestRequestContext() string
+```
+
+GetSmartRestRequestContext returns the SmartRestRequestContext field value if set, zero value otherwise.
+
+<a name="EventsSearchRequest.GetSmartRestRequestContextOk"></a>
+### func \(\*EventsSearchRequest\) [GetSmartRestRequestContextOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L116>)
+
+```go
+func (o *EventsSearchRequest) GetSmartRestRequestContextOk() (*string, bool)
+```
+
+GetSmartRestRequestContextOk returns a tuple with the SmartRestRequestContext field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="EventsSearchRequest.HasQuery"></a>
+### func \(\*EventsSearchRequest\) [HasQuery](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L96>)
+
+```go
+func (o *EventsSearchRequest) HasQuery() bool
+```
+
+HasQuery returns a boolean if a field has been set.
+
+<a name="EventsSearchRequest.HasReason"></a>
+### func \(\*EventsSearchRequest\) [HasReason](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L68>)
+
+```go
+func (o *EventsSearchRequest) HasReason() bool
+```
+
+HasReason returns a boolean if a field has been set.
+
+<a name="EventsSearchRequest.HasSmartRestRequestContext"></a>
+### func \(\*EventsSearchRequest\) [HasSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L124>)
+
+```go
+func (o *EventsSearchRequest) HasSmartRestRequestContext() bool
+```
+
+HasSmartRestRequestContext returns a boolean if a field has been set.
+
+<a name="EventsSearchRequest.MarshalJSON"></a>
+### func \(EventsSearchRequest\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L134>)
+
+```go
+func (o EventsSearchRequest) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="EventsSearchRequest.SetQuery"></a>
+### func \(\*EventsSearchRequest\) [SetQuery](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L101>)
+
+```go
+func (o *EventsSearchRequest) SetQuery(v EventsQueryFilter)
+```
+
+SetQuery gets a reference to the given EventsQueryFilter and assigns it to the Query field.
+
+<a name="EventsSearchRequest.SetReason"></a>
+### func \(\*EventsSearchRequest\) [SetReason](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L73>)
+
+```go
+func (o *EventsSearchRequest) SetReason(v string)
+```
+
+SetReason gets a reference to the given string and assigns it to the Reason field.
+
+<a name="EventsSearchRequest.SetSmartRestRequestContext"></a>
+### func \(\*EventsSearchRequest\) [SetSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L129>)
+
+```go
+func (o *EventsSearchRequest) SetSmartRestRequestContext(v string)
+```
+
+SetSmartRestRequestContext gets a reference to the given string and assigns it to the SmartRestRequestContext field.
+
+<a name="EventsSearchRequest.UnMarshalJSON"></a>
+### func \(\*EventsSearchRequest\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_request.go#L156>)
+
+```go
+func (o *EventsSearchRequest) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="EventsSearchResponse"></a>
+## type [EventsSearchResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L10-L25>)
+
+EventsSearchResponse is the response object with all events matching the request.
+
+```go
+type EventsSearchResponse struct {
+    // Data contains the list of events.
+    Data []json.RawMessage `json:"Data,omitempty"`
+    // TotalSize is the total number of events.
+    TotalSize *int64 `json:"TotalSize,omitempty"`
+    // QueryType is the type of query used.
+    QueryType *string `json:"QueryType,omitempty"`
+    // SelectedColumns contains the selected columns.
+    SelectedColumns []SelectedColumn `json:"SelectedColumns,omitempty"`
+    // SearchTime is the time taken for the search.
+    SearchTime *int64 `json:"SearchTime,omitempty"`
+    // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+    UnparsedObject map[string]interface{} `json:"-"`
+    // AdditionalProperties stores any additional properties not explicitly defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewEventsSearchResponse"></a>
+### func [NewEventsSearchResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L31>)
+
+```go
+func NewEventsSearchResponse() *EventsSearchResponse
+```
+
+NewEventsSearchResponse creates a new EventsSearchResponse object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewEventsSearchResponseWithDefaults"></a>
+### func [NewEventsSearchResponseWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L39>)
+
+```go
+func NewEventsSearchResponseWithDefaults() *EventsSearchResponse
+```
+
+NewEventsSearchResponseWithDefaults creates a new EventsSearchResponse object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="EventsSearchResponse.GetData"></a>
+### func \(\*EventsSearchResponse\) [GetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L45>)
+
+```go
+func (o *EventsSearchResponse) GetData() []json.RawMessage
+```
+
+GetData returns the Data field value if set, zero value otherwise.
+
+<a name="EventsSearchResponse.GetDataOk"></a>
+### func \(\*EventsSearchResponse\) [GetDataOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L55>)
+
+```go
+func (o *EventsSearchResponse) GetDataOk() (*[]json.RawMessage, bool)
+```
+
+GetDataOk returns a tuple with the Data field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="EventsSearchResponse.GetQueryType"></a>
+### func \(\*EventsSearchResponse\) [GetQueryType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L101>)
+
+```go
+func (o *EventsSearchResponse) GetQueryType() string
+```
+
+GetQueryType returns the QueryType field value if set, zero value otherwise.
+
+<a name="EventsSearchResponse.GetQueryTypeOk"></a>
+### func \(\*EventsSearchResponse\) [GetQueryTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L111>)
+
+```go
+func (o *EventsSearchResponse) GetQueryTypeOk() (*string, bool)
+```
+
+GetQueryTypeOk returns a tuple with the QueryType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="EventsSearchResponse.GetSearchTime"></a>
+### func \(\*EventsSearchResponse\) [GetSearchTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L157>)
+
+```go
+func (o *EventsSearchResponse) GetSearchTime() int64
+```
+
+GetSearchTime returns the SearchTime field value if set, zero value otherwise.
+
+<a name="EventsSearchResponse.GetSearchTimeOk"></a>
+### func \(\*EventsSearchResponse\) [GetSearchTimeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L167>)
+
+```go
+func (o *EventsSearchResponse) GetSearchTimeOk() (*int64, bool)
+```
+
+GetSearchTimeOk returns a tuple with the SearchTime field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="EventsSearchResponse.GetSelectedColumns"></a>
+### func \(\*EventsSearchResponse\) [GetSelectedColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L129>)
+
+```go
+func (o *EventsSearchResponse) GetSelectedColumns() []SelectedColumn
+```
+
+GetSelectedColumns returns the SelectedColumns field value if set, zero value otherwise.
+
+<a name="EventsSearchResponse.GetSelectedColumnsOk"></a>
+### func \(\*EventsSearchResponse\) [GetSelectedColumnsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L139>)
+
+```go
+func (o *EventsSearchResponse) GetSelectedColumnsOk() (*[]SelectedColumn, bool)
+```
+
+GetSelectedColumnsOk returns a tuple with the SelectedColumns field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="EventsSearchResponse.GetTotalSize"></a>
+### func \(\*EventsSearchResponse\) [GetTotalSize](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L73>)
+
+```go
+func (o *EventsSearchResponse) GetTotalSize() int64
+```
+
+GetTotalSize returns the TotalSize field value if set, zero value otherwise.
+
+<a name="EventsSearchResponse.GetTotalSizeOk"></a>
+### func \(\*EventsSearchResponse\) [GetTotalSizeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L83>)
+
+```go
+func (o *EventsSearchResponse) GetTotalSizeOk() (*int64, bool)
+```
+
+GetTotalSizeOk returns a tuple with the TotalSize field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="EventsSearchResponse.HasData"></a>
+### func \(\*EventsSearchResponse\) [HasData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L63>)
+
+```go
+func (o *EventsSearchResponse) HasData() bool
+```
+
+HasData returns a boolean if a field has been set.
+
+<a name="EventsSearchResponse.HasQueryType"></a>
+### func \(\*EventsSearchResponse\) [HasQueryType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L119>)
+
+```go
+func (o *EventsSearchResponse) HasQueryType() bool
+```
+
+HasQueryType returns a boolean if a field has been set.
+
+<a name="EventsSearchResponse.HasSearchTime"></a>
+### func \(\*EventsSearchResponse\) [HasSearchTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L175>)
+
+```go
+func (o *EventsSearchResponse) HasSearchTime() bool
+```
+
+HasSearchTime returns a boolean if a field has been set.
+
+<a name="EventsSearchResponse.HasSelectedColumns"></a>
+### func \(\*EventsSearchResponse\) [HasSelectedColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L147>)
+
+```go
+func (o *EventsSearchResponse) HasSelectedColumns() bool
+```
+
+HasSelectedColumns returns a boolean if a field has been set.
+
+<a name="EventsSearchResponse.HasTotalSize"></a>
+### func \(\*EventsSearchResponse\) [HasTotalSize](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L91>)
+
+```go
+func (o *EventsSearchResponse) HasTotalSize() bool
+```
+
+HasTotalSize returns a boolean if a field has been set.
+
+<a name="EventsSearchResponse.MarshalJSON"></a>
+### func \(EventsSearchResponse\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L185>)
+
+```go
+func (o EventsSearchResponse) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="EventsSearchResponse.SetData"></a>
+### func \(\*EventsSearchResponse\) [SetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L68>)
+
+```go
+func (o *EventsSearchResponse) SetData(v []json.RawMessage)
+```
+
+SetData gets a reference to the given \[\]json.RawMessage and assigns it to the Data field.
+
+<a name="EventsSearchResponse.SetQueryType"></a>
+### func \(\*EventsSearchResponse\) [SetQueryType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L124>)
+
+```go
+func (o *EventsSearchResponse) SetQueryType(v string)
+```
+
+SetQueryType gets a reference to the given string and assigns it to the QueryType field.
+
+<a name="EventsSearchResponse.SetSearchTime"></a>
+### func \(\*EventsSearchResponse\) [SetSearchTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L180>)
+
+```go
+func (o *EventsSearchResponse) SetSearchTime(v int64)
+```
+
+SetSearchTime gets a reference to the given int64 and assigns it to the SearchTime field.
+
+<a name="EventsSearchResponse.SetSelectedColumns"></a>
+### func \(\*EventsSearchResponse\) [SetSelectedColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L152>)
+
+```go
+func (o *EventsSearchResponse) SetSelectedColumns(v []SelectedColumn)
+```
+
+SetSelectedColumns gets a reference to the given \[\]SelectedColumn and assigns it to the SelectedColumns field.
+
+<a name="EventsSearchResponse.SetTotalSize"></a>
+### func \(\*EventsSearchResponse\) [SetTotalSize](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L96>)
+
+```go
+func (o *EventsSearchResponse) SetTotalSize(v int64)
+```
+
+SetTotalSize gets a reference to the given int64 and assigns it to the TotalSize field.
+
+<a name="EventsSearchResponse.UnMarshalJSON"></a>
+### func \(\*EventsSearchResponse\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_events_search_response.go#L213>)
+
+```go
+func (o *EventsSearchResponse) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="NullableReportsQueryExtData"></a>
+## type [NullableReportsQueryExtData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L671-L674>)
+
+NullableReportsQueryExtData handles when a null is used for ReportsQueryExtData.
+
+```go
+type NullableReportsQueryExtData struct {
+    // contains filtered or unexported fields
+}
+```
+
+<a name="NewNullableReportsQueryExtData"></a>
+### func [NewNullableReportsQueryExtData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L699>)
+
+```go
+func NewNullableReportsQueryExtData(val *ReportsQueryExtData) *NullableReportsQueryExtData
+```
+
+NewNullableReportsQueryExtData initializes the struct as if Set has been called.
+
+<a name="NullableReportsQueryExtData.Get"></a>
+### func \(NullableReportsQueryExtData\) [Get](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L677>)
+
+```go
+func (v NullableReportsQueryExtData) Get() *ReportsQueryExtData
+```
+
+Get returns the associated value.
+
+<a name="NullableReportsQueryExtData.IsSet"></a>
+### func \(NullableReportsQueryExtData\) [IsSet](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L688>)
+
+```go
+func (v NullableReportsQueryExtData) IsSet() bool
+```
+
+IsSet returns whether Set has been called.
+
+<a name="NullableReportsQueryExtData.MarshalJSON"></a>
+### func \(NullableReportsQueryExtData\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L704>)
+
+```go
+func (v NullableReportsQueryExtData) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the associated value.
+
+<a name="NullableReportsQueryExtData.Set"></a>
+### func \(\*NullableReportsQueryExtData\) [Set](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L682>)
+
+```go
+func (v *NullableReportsQueryExtData) Set(val *ReportsQueryExtData)
+```
+
+Set changes the value and indicates it's been called.
+
+<a name="NullableReportsQueryExtData.UnSet"></a>
+### func \(\*NullableReportsQueryExtData\) [UnSet](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L693>)
+
+```go
+func (v *NullableReportsQueryExtData) UnSet()
+```
+
+Unset sets the value to nil and resets the set flag/
+
+<a name="NullableReportsQueryExtData.UnmarshalJSON"></a>
+### func \(\*NullableReportsQueryExtData\) [UnmarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L709>)
+
+```go
+func (v *NullableReportsQueryExtData) UnmarshalJSON(src []byte) error
+```
+
+UnmarshalJSON deserializes the payload and sets the flag as if Set has been called.
+
+<a name="NullableScheduleConfig"></a>
+## type [NullableScheduleConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L525-L528>)
+
+NullableScheduleConfig handles when a null is used for ScheduleConfig.
+
+```go
+type NullableScheduleConfig struct {
+    // contains filtered or unexported fields
+}
+```
+
+<a name="NewNullableScheduleConfig"></a>
+### func [NewNullableScheduleConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L553>)
+
+```go
+func NewNullableScheduleConfig(val *ScheduleConfig) *NullableScheduleConfig
+```
+
+NewNullableScheduleConfig initializes the struct as if Set has been called.
+
+<a name="NullableScheduleConfig.Get"></a>
+### func \(NullableScheduleConfig\) [Get](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L531>)
+
+```go
+func (v NullableScheduleConfig) Get() *ScheduleConfig
+```
+
+Get returns the associated value.
+
+<a name="NullableScheduleConfig.IsSet"></a>
+### func \(NullableScheduleConfig\) [IsSet](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L542>)
+
+```go
+func (v NullableScheduleConfig) IsSet() bool
+```
+
+IsSet returns whether Set has been called.
+
+<a name="NullableScheduleConfig.MarshalJSON"></a>
+### func \(NullableScheduleConfig\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L558>)
+
+```go
+func (v NullableScheduleConfig) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the associated value.
+
+<a name="NullableScheduleConfig.Set"></a>
+### func \(\*NullableScheduleConfig\) [Set](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L536>)
+
+```go
+func (v *NullableScheduleConfig) Set(val *ScheduleConfig)
+```
+
+Set changes the value and indicates it's been called.
+
+<a name="NullableScheduleConfig.UnSet"></a>
+### func \(\*NullableScheduleConfig\) [UnSet](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L547>)
+
+```go
+func (v *NullableScheduleConfig) UnSet()
+```
+
+Unset sets the value to nil and resets the set flag/
+
+<a name="NullableScheduleConfig.UnmarshalJSON"></a>
+### func \(\*NullableScheduleConfig\) [UnmarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L563>)
+
+```go
+func (v *NullableScheduleConfig) UnmarshalJSON(src []byte) error
+```
+
+UnmarshalJSON deserializes the payload and sets the flag as if Set has been called.
+
+<a name="ParallelOptions"></a>
+## type [ParallelOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L10-L23>)
+
+ParallelOptions represents options for parallel processing.
+
+```go
+type ParallelOptions struct {
+    // Indicates whether parallel processing is active.
+    IsActive *bool `json:"IsActive,omitempty"`
+    // Number of tasks for parallel processing.
+    TaskCount *int64 `json:"TaskCount,omitempty"`
+    // Size of file blocks for parallel processing, in megabytes.
+    FileBlockSizeMb *int64 `json:"FileBlockSizeMb,omitempty"`
+    // Timeout duration for parallel processing, in seconds.
+    TimeoutSec *int64 `json:"TimeoutSec,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{} `json:"-"`
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewParallelOptions"></a>
+### func [NewParallelOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L29>)
+
+```go
+func NewParallelOptions() *ParallelOptions
+```
+
+NewParallelOptions creates a new ParallelOptions object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewParallelOptionsWithDefaults"></a>
+### func [NewParallelOptionsWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L37>)
+
+```go
+func NewParallelOptionsWithDefaults() *ParallelOptions
+```
+
+NewParallelOptionsWithDefaults creates a new ParallelOptions object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ParallelOptions.GetFileBlockSizeMb"></a>
+### func \(\*ParallelOptions\) [GetFileBlockSizeMb](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L99>)
+
+```go
+func (o *ParallelOptions) GetFileBlockSizeMb() int64
+```
+
+GetFileBlockSizeMb returns the FileBlockSizeMb field value if set, zero value otherwise.
+
+<a name="ParallelOptions.GetFileBlockSizeMbOk"></a>
+### func \(\*ParallelOptions\) [GetFileBlockSizeMbOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L109>)
+
+```go
+func (o *ParallelOptions) GetFileBlockSizeMbOk() (*int64, bool)
+```
+
+GetFileBlockSizeMbOk returns a tuple with the FileBlockSizeMb field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ParallelOptions.GetIsActive"></a>
+### func \(\*ParallelOptions\) [GetIsActive](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L43>)
+
+```go
+func (o *ParallelOptions) GetIsActive() bool
+```
+
+GetIsActive returns the IsActive field value if set, zero value otherwise.
+
+<a name="ParallelOptions.GetIsActiveOk"></a>
+### func \(\*ParallelOptions\) [GetIsActiveOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L53>)
+
+```go
+func (o *ParallelOptions) GetIsActiveOk() (*bool, bool)
+```
+
+GetIsActiveOk returns a tuple with the IsActive field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ParallelOptions.GetTaskCount"></a>
+### func \(\*ParallelOptions\) [GetTaskCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L71>)
+
+```go
+func (o *ParallelOptions) GetTaskCount() int64
+```
+
+GetTaskCount returns the TaskCount field value if set, zero value otherwise.
+
+<a name="ParallelOptions.GetTaskCountOk"></a>
+### func \(\*ParallelOptions\) [GetTaskCountOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L81>)
+
+```go
+func (o *ParallelOptions) GetTaskCountOk() (*int64, bool)
+```
+
+GetTaskCountOk returns a tuple with the TaskCount field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ParallelOptions.GetTimeoutSec"></a>
+### func \(\*ParallelOptions\) [GetTimeoutSec](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L127>)
+
+```go
+func (o *ParallelOptions) GetTimeoutSec() int64
+```
+
+GetTimeoutSec returns the TimeoutSec field value if set, zero value otherwise.
+
+<a name="ParallelOptions.GetTimeoutSecOk"></a>
+### func \(\*ParallelOptions\) [GetTimeoutSecOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L137>)
+
+```go
+func (o *ParallelOptions) GetTimeoutSecOk() (*int64, bool)
+```
+
+GetTimeoutSecOk returns a tuple with the TimeoutSec field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ParallelOptions.HasFileBlockSizeMb"></a>
+### func \(\*ParallelOptions\) [HasFileBlockSizeMb](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L117>)
+
+```go
+func (o *ParallelOptions) HasFileBlockSizeMb() bool
+```
+
+HasFileBlockSizeMb returns a boolean if a field has been set.
+
+<a name="ParallelOptions.HasIsActive"></a>
+### func \(\*ParallelOptions\) [HasIsActive](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L61>)
+
+```go
+func (o *ParallelOptions) HasIsActive() bool
+```
+
+HasIsActive returns a boolean if a field has been set.
+
+<a name="ParallelOptions.HasTaskCount"></a>
+### func \(\*ParallelOptions\) [HasTaskCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L89>)
+
+```go
+func (o *ParallelOptions) HasTaskCount() bool
+```
+
+HasTaskCount returns a boolean if a field has been set.
+
+<a name="ParallelOptions.HasTimeoutSec"></a>
+### func \(\*ParallelOptions\) [HasTimeoutSec](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L145>)
+
+```go
+func (o *ParallelOptions) HasTimeoutSec() bool
+```
+
+HasTimeoutSec returns a boolean if a field has been set.
+
+<a name="ParallelOptions.MarshalJSON"></a>
+### func \(ParallelOptions\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L155>)
+
+```go
+func (o ParallelOptions) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ParallelOptions.SetFileBlockSizeMb"></a>
+### func \(\*ParallelOptions\) [SetFileBlockSizeMb](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L122>)
+
+```go
+func (o *ParallelOptions) SetFileBlockSizeMb(v int64)
+```
+
+SetFileBlockSizeMb gets a reference to the given int64 and assigns it to the FileBlockSizeMb field.
+
+<a name="ParallelOptions.SetIsActive"></a>
+### func \(\*ParallelOptions\) [SetIsActive](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L66>)
+
+```go
+func (o *ParallelOptions) SetIsActive(v bool)
+```
+
+SetIsActive gets a reference to the given bool and assigns it to the IsActive field.
+
+<a name="ParallelOptions.SetTaskCount"></a>
+### func \(\*ParallelOptions\) [SetTaskCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L94>)
+
+```go
+func (o *ParallelOptions) SetTaskCount(v int64)
+```
+
+SetTaskCount gets a reference to the given int64 and assigns it to the TaskCount field.
+
+<a name="ParallelOptions.SetTimeoutSec"></a>
+### func \(\*ParallelOptions\) [SetTimeoutSec](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L150>)
+
+```go
+func (o *ParallelOptions) SetTimeoutSec(v int64)
+```
+
+SetTimeoutSec gets a reference to the given int64 and assigns it to the TimeoutSec field.
+
+<a name="ParallelOptions.UnMarshalJSON"></a>
+### func \(\*ParallelOptions\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_parallel_options.go#L180>)
+
+```go
+func (o *ParallelOptions) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="QueriesApi"></a>
+## type [QueriesApi](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_queries.go#L12>)
+
+QueriesApi service type.
+
+```go
+type QueriesApi common.Service
+```
+
+<a name="NewQueriesApi"></a>
+### func [NewQueriesApi](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_queries.go#L118>)
+
+```go
+func NewQueriesApi(client *common.APIClient) *QueriesApi
+```
+
+NewEventsApi returns QueriesApi.
+
+<a name="QueriesApi.SearchQueries"></a>
+### func \(\*QueriesApi\) [SearchQueries](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_queries.go#L33>)
+
+```go
+func (a *QueriesApi) SearchQueries(ctx _context.Context, o ...SearchQueriesOptionalParameters) (QueriesSearchResponse, *_nethttp.Response, error)
+```
+
+SerchQueries search queries. Returns queries that match an queries search filter.
+
+<a name="QueriesItem"></a>
+## type [QueriesItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L11-L56>)
+
+QueriesItem represents an item in queries.
+
+```go
+type QueriesItem struct {
+    // ID of the query.
+    ID  *string `json:"ID,omitempty"`
+    // Name of the query.
+    Name *string `json:"Name,omitempty"`
+    // Description of the query.
+    Description common.NullableString `json:"Description,omitempty"`
+    // Query string.
+    Query *string `json:"Query,omitempty"`
+    // Selected columns for the query.
+    Columns common.NullableList[SelectedColumn] `json:"Columns,omitempty"`
+    // Author of the query.
+    Author *string `json:"Author,omitempty"`
+    // Date when the query was inserted.
+    InsertDate *string `json:"InsertDate,omitempty"`
+    // Date of the last update to the query.
+    LastUpdateDate *string `json:"LastUpdateDate,omitempty"`
+    // Type of the query.
+    QueryType *string `json:"QueryType,omitempty"`
+    // Date-time range for the query.
+    DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
+    // Tags associated with the query.
+    Tags common.NullableList[string] `json:"Tags,omitempty"`
+    // MITRE tags associated with the query.
+    MitreTags common.NullableList[string] `json:"MitreTags,omitempty"`
+    // Kill chain phase associated with the query.
+    KillChainPhase common.NullableString `json:"KillChainPhase,omitempty"`
+    // Whether the query is from the market.
+    FromMarket *bool `json:"FromMarket,omitempty"`
+    // Whether the query is from modules.
+    FromModules *bool `json:"FromModules,omitempty"`
+    // Whether the query has an update.
+    HasUpdate *bool `json:"HasUpdate,omitempty"`
+    // ID of the module.
+    ModuleId common.NullableString `json:"ModuleId,omitempty"`
+    // GUID of the module.
+    ModuleGuid common.NullableString `json:"ModuleGuid,omitempty"`
+    // Users and groups with whom the query is shared.
+    SharedUsersAndGroups common.NullableList[string] `json:"SharedUsersAndGroups,omitempty"`
+    // Version of the query.
+    Version *float64 `json:"Version,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewQueriesItem"></a>
+### func [NewQueriesItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L62>)
+
+```go
+func NewQueriesItem() *QueriesItem
+```
+
+NewQueriesItem creates a new QueriesItem object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewQueriesItemWithDefaults"></a>
+### func [NewQueriesItemWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L70>)
+
+```go
+func NewQueriesItemWithDefaults() *QueriesItem
+```
+
+NewQueriesItemWithDefaults creates a new QueriesItem object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="QueriesItem.GetAuthor"></a>
+### func \(\*QueriesItem\) [GetAuthor](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L210>)
+
+```go
+func (o *QueriesItem) GetAuthor() string
+```
+
+GetAuthor returns the Author field value if set, zero value otherwise.
+
+<a name="QueriesItem.GetAuthorOk"></a>
+### func \(\*QueriesItem\) [GetAuthorOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L220>)
+
+```go
+func (o *QueriesItem) GetAuthorOk() (*string, bool)
+```
+
+GetAuthorOk returns a tuple with the Author field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesItem.GetColumns"></a>
+### func \(\*QueriesItem\) [GetColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L171>)
+
+```go
+func (o *QueriesItem) GetColumns() []SelectedColumn
+```
+
+GetColumns returns the Columns field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="QueriesItem.GetColumnsOk"></a>
+### func \(\*QueriesItem\) [GetColumnsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L182>)
+
+```go
+func (o *QueriesItem) GetColumnsOk() (*[]SelectedColumn, bool)
+```
+
+GetColumnsOk returns a tuple with the Columns field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="QueriesItem.GetDateTimeRange"></a>
+### func \(\*QueriesItem\) [GetDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L322>)
+
+```go
+func (o *QueriesItem) GetDateTimeRange() DateTimeRange
+```
+
+GetDateTimeRange returns the DateTimeRange field value if set, zero value otherwise.
+
+<a name="QueriesItem.GetDateTimeRangeOk"></a>
+### func \(\*QueriesItem\) [GetDateTimeRangeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L332>)
+
+```go
+func (o *QueriesItem) GetDateTimeRangeOk() (*DateTimeRange, bool)
+```
+
+GetDateTimeRangeOk returns a tuple with the DateTimeRange field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesItem.GetDescription"></a>
+### func \(\*QueriesItem\) [GetDescription](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L132>)
+
+```go
+func (o *QueriesItem) GetDescription() string
+```
+
+GetDescription returns the Description field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="QueriesItem.GetDescriptionOk"></a>
+### func \(\*QueriesItem\) [GetDescriptionOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L143>)
+
+```go
+func (o *QueriesItem) GetDescriptionOk() (*string, bool)
+```
+
+GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="QueriesItem.GetFromMarket"></a>
+### func \(\*QueriesItem\) [GetFromMarket](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L467>)
+
+```go
+func (o *QueriesItem) GetFromMarket() bool
+```
+
+GetFromMarket returns the FromMarket field value if set, zero value otherwise.
+
+<a name="QueriesItem.GetFromMarketOk"></a>
+### func \(\*QueriesItem\) [GetFromMarketOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L477>)
+
+```go
+func (o *QueriesItem) GetFromMarketOk() (*bool, bool)
+```
+
+GetFromMarketOk returns a tuple with the FromMarket field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesItem.GetFromModules"></a>
+### func \(\*QueriesItem\) [GetFromModules](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L495>)
+
+```go
+func (o *QueriesItem) GetFromModules() bool
+```
+
+GetFromModules returns the FromModules field value if set, zero value otherwise.
+
+<a name="QueriesItem.GetFromModulesOk"></a>
+### func \(\*QueriesItem\) [GetFromModulesOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L505>)
+
+```go
+func (o *QueriesItem) GetFromModulesOk() (*bool, bool)
+```
+
+GetFromModulesOk returns a tuple with the FromModules field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesItem.GetHasUpdate"></a>
+### func \(\*QueriesItem\) [GetHasUpdate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L523>)
+
+```go
+func (o *QueriesItem) GetHasUpdate() bool
+```
+
+GetHasUpdate returns the HasUpdate field value if set, zero value otherwise.
+
+<a name="QueriesItem.GetHasUpdateOk"></a>
+### func \(\*QueriesItem\) [GetHasUpdateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L533>)
+
+```go
+func (o *QueriesItem) GetHasUpdateOk() (*bool, bool)
+```
+
+GetHasUpdateOk returns a tuple with the HasUpdate field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesItem.GetID"></a>
+### func \(\*QueriesItem\) [GetID](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L76>)
+
+```go
+func (o *QueriesItem) GetID() string
+```
+
+GetID returns the ID field value if set, zero value otherwise.
+
+<a name="QueriesItem.GetIDOk"></a>
+### func \(\*QueriesItem\) [GetIDOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L86>)
+
+```go
+func (o *QueriesItem) GetIDOk() (*string, bool)
+```
+
+GetIDOk returns a tuple with the ID field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesItem.GetInsertDate"></a>
+### func \(\*QueriesItem\) [GetInsertDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L238>)
+
+```go
+func (o *QueriesItem) GetInsertDate() string
+```
+
+GetInsertDate returns the InsertDate field value if set, zero value otherwise.
+
+<a name="QueriesItem.GetInsertDateOk"></a>
+### func \(\*QueriesItem\) [GetInsertDateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L248>)
+
+```go
+func (o *QueriesItem) GetInsertDateOk() (*string, bool)
+```
+
+GetInsertDateOk returns a tuple with the InsertDate field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesItem.GetKillChainPhase"></a>
+### func \(\*QueriesItem\) [GetKillChainPhase](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L428>)
+
+```go
+func (o *QueriesItem) GetKillChainPhase() string
+```
+
+GetKillChainPhase returns the KillChainPhase field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="QueriesItem.GetKillChainPhaseOk"></a>
+### func \(\*QueriesItem\) [GetKillChainPhaseOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L439>)
+
+```go
+func (o *QueriesItem) GetKillChainPhaseOk() (*string, bool)
+```
+
+GetKillChainPhaseOk returns a tuple with the KillChainPhase field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="QueriesItem.GetLastUpdateDate"></a>
+### func \(\*QueriesItem\) [GetLastUpdateDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L266>)
+
+```go
+func (o *QueriesItem) GetLastUpdateDate() string
+```
+
+GetLastUpdateDate returns the LastUpdateDate field value if set, zero value otherwise.
+
+<a name="QueriesItem.GetLastUpdateDateOk"></a>
+### func \(\*QueriesItem\) [GetLastUpdateDateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L276>)
+
+```go
+func (o *QueriesItem) GetLastUpdateDateOk() (*string, bool)
+```
+
+GetLastUpdateDateOk returns a tuple with the LastUpdateDate field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesItem.GetMitreTags"></a>
+### func \(\*QueriesItem\) [GetMitreTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L389>)
+
+```go
+func (o *QueriesItem) GetMitreTags() []string
+```
+
+GetMitreTags returns the MitreTags field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="QueriesItem.GetMitreTagsOk"></a>
+### func \(\*QueriesItem\) [GetMitreTagsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L400>)
+
+```go
+func (o *QueriesItem) GetMitreTagsOk() (*[]string, bool)
+```
+
+GetMitreTagsOk returns a tuple with the MitreTags field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="QueriesItem.GetModuleGuid"></a>
+### func \(\*QueriesItem\) [GetModuleGuid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L590>)
+
+```go
+func (o *QueriesItem) GetModuleGuid() string
+```
+
+GetModuleGuid returns the ModuleGuid field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="QueriesItem.GetModuleGuidOk"></a>
+### func \(\*QueriesItem\) [GetModuleGuidOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L601>)
+
+```go
+func (o *QueriesItem) GetModuleGuidOk() (*string, bool)
+```
+
+GetModuleGuidOk returns a tuple with the ModuleGuid field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="QueriesItem.GetModuleId"></a>
+### func \(\*QueriesItem\) [GetModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L551>)
+
+```go
+func (o *QueriesItem) GetModuleId() string
+```
+
+GetModuleId returns the ModuleId field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="QueriesItem.GetModuleIdOk"></a>
+### func \(\*QueriesItem\) [GetModuleIdOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L562>)
+
+```go
+func (o *QueriesItem) GetModuleIdOk() (*string, bool)
+```
+
+GetModuleIdOk returns a tuple with the ModuleId field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="QueriesItem.GetName"></a>
+### func \(\*QueriesItem\) [GetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L104>)
+
+```go
+func (o *QueriesItem) GetName() string
+```
+
+GetName returns the Name field value if set, zero value otherwise.
+
+<a name="QueriesItem.GetNameOk"></a>
+### func \(\*QueriesItem\) [GetNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L114>)
+
+```go
+func (o *QueriesItem) GetNameOk() (*string, bool)
+```
+
+GetNameOk returns a tuple with the Name field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesItem.GetQueryType"></a>
+### func \(\*QueriesItem\) [GetQueryType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L294>)
+
+```go
+func (o *QueriesItem) GetQueryType() string
+```
+
+GetQueryType returns the QueryType field value if set, zero value otherwise.
+
+<a name="QueriesItem.GetQueryTypeOk"></a>
+### func \(\*QueriesItem\) [GetQueryTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L304>)
+
+```go
+func (o *QueriesItem) GetQueryTypeOk() (*string, bool)
+```
+
+GetQueryTypeOk returns a tuple with the QueryType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesItem.GetSharedUsersAndGroups"></a>
+### func \(\*QueriesItem\) [GetSharedUsersAndGroups](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L629>)
+
+```go
+func (o *QueriesItem) GetSharedUsersAndGroups() []string
+```
+
+GetSharedUsersAndGroups returns the SharedUsersAndGroups field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="QueriesItem.GetSharedUsersAndGroupsOk"></a>
+### func \(\*QueriesItem\) [GetSharedUsersAndGroupsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L640>)
+
+```go
+func (o *QueriesItem) GetSharedUsersAndGroupsOk() (*[]string, bool)
+```
+
+GetSharedUsersAndGroupsOk returns a tuple with the SharedUsersAndGroups field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="QueriesItem.GetTags"></a>
+### func \(\*QueriesItem\) [GetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L350>)
+
+```go
+func (o *QueriesItem) GetTags() []string
+```
+
+GetTags returns the Tags field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="QueriesItem.GetTagsOk"></a>
+### func \(\*QueriesItem\) [GetTagsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L361>)
+
+```go
+func (o *QueriesItem) GetTagsOk() (*[]string, bool)
+```
+
+GetTagsOk returns a tuple with the Tags field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="QueriesItem.GetVersion"></a>
+### func \(\*QueriesItem\) [GetVersion](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L668>)
+
+```go
+func (o *QueriesItem) GetVersion() float64
+```
+
+GetVersion returns the Version field value if set, zero value otherwise.
+
+<a name="QueriesItem.GetVersionOk"></a>
+### func \(\*QueriesItem\) [GetVersionOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L678>)
+
+```go
+func (o *QueriesItem) GetVersionOk() (*float64, bool)
+```
+
+GetVersionOk returns a tuple with the Version field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesItem.HasAuthor"></a>
+### func \(\*QueriesItem\) [HasAuthor](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L228>)
+
+```go
+func (o *QueriesItem) HasAuthor() bool
+```
+
+HasAuthor returns a boolean if a field has been set.
+
+<a name="QueriesItem.HasColumns"></a>
+### func \(\*QueriesItem\) [HasColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L190>)
+
+```go
+func (o *QueriesItem) HasColumns() bool
+```
+
+HasColumns returns a boolean if a Columns has been set.
+
+<a name="QueriesItem.HasDateTimeRange"></a>
+### func \(\*QueriesItem\) [HasDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L340>)
+
+```go
+func (o *QueriesItem) HasDateTimeRange() bool
+```
+
+HasDateTimeRange returns a boolean if a field has been set.
+
+<a name="QueriesItem.HasDescription"></a>
+### func \(\*QueriesItem\) [HasDescription](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L151>)
+
+```go
+func (o *QueriesItem) HasDescription() bool
+```
+
+HasDescription returns a boolean if a Description has been set.
+
+<a name="QueriesItem.HasFromMarket"></a>
+### func \(\*QueriesItem\) [HasFromMarket](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L485>)
+
+```go
+func (o *QueriesItem) HasFromMarket() bool
+```
+
+HasFromMarket returns a boolean if a field has been set.
+
+<a name="QueriesItem.HasFromModules"></a>
+### func \(\*QueriesItem\) [HasFromModules](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L513>)
+
+```go
+func (o *QueriesItem) HasFromModules() bool
+```
+
+HasFromModules returns a boolean if a field has been set.
+
+<a name="QueriesItem.HasHasUpdate"></a>
+### func \(\*QueriesItem\) [HasHasUpdate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L541>)
+
+```go
+func (o *QueriesItem) HasHasUpdate() bool
+```
+
+HasHasUpdate returns a boolean if a field has been set.
+
+<a name="QueriesItem.HasID"></a>
+### func \(\*QueriesItem\) [HasID](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L94>)
+
+```go
+func (o *QueriesItem) HasID() bool
+```
+
+HasID returns a boolean if a field has been set.
+
+<a name="QueriesItem.HasInsertDate"></a>
+### func \(\*QueriesItem\) [HasInsertDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L256>)
+
+```go
+func (o *QueriesItem) HasInsertDate() bool
+```
+
+HasInsertDate returns a boolean if a field has been set.
+
+<a name="QueriesItem.HasKillChainPhase"></a>
+### func \(\*QueriesItem\) [HasKillChainPhase](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L447>)
+
+```go
+func (o *QueriesItem) HasKillChainPhase() bool
+```
+
+HasKillChainPhase returns a boolean if a KillChainPhase has been set.
+
+<a name="QueriesItem.HasLastUpdateDate"></a>
+### func \(\*QueriesItem\) [HasLastUpdateDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L284>)
+
+```go
+func (o *QueriesItem) HasLastUpdateDate() bool
+```
+
+HasLastUpdateDate returns a boolean if a field has been set.
+
+<a name="QueriesItem.HasMitreTags"></a>
+### func \(\*QueriesItem\) [HasMitreTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L408>)
+
+```go
+func (o *QueriesItem) HasMitreTags() bool
+```
+
+HasMitreTags returns a boolean if a MitreTags has been set.
+
+<a name="QueriesItem.HasModuleGuid"></a>
+### func \(\*QueriesItem\) [HasModuleGuid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L609>)
+
+```go
+func (o *QueriesItem) HasModuleGuid() bool
+```
+
+HasModuleGuid returns a boolean if a ModuleGuid has been set.
+
+<a name="QueriesItem.HasModuleId"></a>
+### func \(\*QueriesItem\) [HasModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L570>)
+
+```go
+func (o *QueriesItem) HasModuleId() bool
+```
+
+HasModuleId returns a boolean if a ModuleId has been set.
+
+<a name="QueriesItem.HasName"></a>
+### func \(\*QueriesItem\) [HasName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L122>)
+
+```go
+func (o *QueriesItem) HasName() bool
+```
+
+HasName returns a boolean if a field has been set.
+
+<a name="QueriesItem.HasQueryType"></a>
+### func \(\*QueriesItem\) [HasQueryType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L312>)
+
+```go
+func (o *QueriesItem) HasQueryType() bool
+```
+
+HasQueryType returns a boolean if a field has been set.
+
+<a name="QueriesItem.HasSharedUsersAndGroups"></a>
+### func \(\*QueriesItem\) [HasSharedUsersAndGroups](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L648>)
+
+```go
+func (o *QueriesItem) HasSharedUsersAndGroups() bool
+```
+
+HasSharedUsersAndGroups returns a boolean if a SharedUsersAndGroups has been set.
+
+<a name="QueriesItem.HasTags"></a>
+### func \(\*QueriesItem\) [HasTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L369>)
+
+```go
+func (o *QueriesItem) HasTags() bool
+```
+
+HasTags returns a boolean if a Tags has been set.
+
+<a name="QueriesItem.HasVersion"></a>
+### func \(\*QueriesItem\) [HasVersion](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L686>)
+
+```go
+func (o *QueriesItem) HasVersion() bool
+```
+
+HasVersion returns a boolean if a field has been set.
+
+<a name="QueriesItem.MarshalJSON"></a>
+### func \(QueriesItem\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L696>)
+
+```go
+func (o QueriesItem) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="QueriesItem.SetAuthor"></a>
+### func \(\*QueriesItem\) [SetAuthor](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L233>)
+
+```go
+func (o *QueriesItem) SetAuthor(v string)
+```
+
+SetAuthor gets a reference to the given string and assigns it to the Author field.
+
+<a name="QueriesItem.SetColumns"></a>
+### func \(\*QueriesItem\) [SetColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L195>)
+
+```go
+func (o *QueriesItem) SetColumns(v []SelectedColumn)
+```
+
+SetColumns gets a reference to the given datadog.Nullable\[SelectedColumns\] and assigns it to the Columns field.
+
+<a name="QueriesItem.SetColumnsNil"></a>
+### func \(\*QueriesItem\) [SetColumnsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L200>)
+
+```go
+func (o *QueriesItem) SetColumnsNil()
+```
+
+SetColumnsNil sets the value for Columns to be an explicit nil.
+
+<a name="QueriesItem.SetDateTimeRange"></a>
+### func \(\*QueriesItem\) [SetDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L345>)
+
+```go
+func (o *QueriesItem) SetDateTimeRange(v DateTimeRange)
+```
+
+SetDateTimeRange gets a reference to the given DateTimeRange and assigns it to the DateTimeRange field.
+
+<a name="QueriesItem.SetDescription"></a>
+### func \(\*QueriesItem\) [SetDescription](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L156>)
+
+```go
+func (o *QueriesItem) SetDescription(v string)
+```
+
+SetDescription gets a reference to the given datadog.NullableString and assigns it to the Description field.
+
+<a name="QueriesItem.SetDescriptionNil"></a>
+### func \(\*QueriesItem\) [SetDescriptionNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L161>)
+
+```go
+func (o *QueriesItem) SetDescriptionNil()
+```
+
+SetDescriptionNil sets the value for Description to be an explicit nil.
+
+<a name="QueriesItem.SetFromMarket"></a>
+### func \(\*QueriesItem\) [SetFromMarket](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L490>)
+
+```go
+func (o *QueriesItem) SetFromMarket(v bool)
+```
+
+SetFromMarket gets a reference to the given bool and assigns it to the FromMarket field.
+
+<a name="QueriesItem.SetFromModules"></a>
+### func \(\*QueriesItem\) [SetFromModules](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L518>)
+
+```go
+func (o *QueriesItem) SetFromModules(v bool)
+```
+
+SetFromModules gets a reference to the given bool and assigns it to the FromModules field.
+
+<a name="QueriesItem.SetHasUpdate"></a>
+### func \(\*QueriesItem\) [SetHasUpdate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L546>)
+
+```go
+func (o *QueriesItem) SetHasUpdate(v bool)
+```
+
+SetHasUpdate gets a reference to the given bool and assigns it to the HasUpdate field.
+
+<a name="QueriesItem.SetID"></a>
+### func \(\*QueriesItem\) [SetID](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L99>)
+
+```go
+func (o *QueriesItem) SetID(v string)
+```
+
+SetID gets a reference to the given string and assigns it to the ID field.
+
+<a name="QueriesItem.SetInsertDate"></a>
+### func \(\*QueriesItem\) [SetInsertDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L261>)
+
+```go
+func (o *QueriesItem) SetInsertDate(v string)
+```
+
+SetInsertDate gets a reference to the given string and assigns it to the InsertDate field.
+
+<a name="QueriesItem.SetKillChainPhase"></a>
+### func \(\*QueriesItem\) [SetKillChainPhase](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L452>)
+
+```go
+func (o *QueriesItem) SetKillChainPhase(v string)
+```
+
+SetKillChainPhase gets a reference to the given datadog.NullableString and assigns it to the KillChainPhase field.
+
+<a name="QueriesItem.SetKillChainPhaseNil"></a>
+### func \(\*QueriesItem\) [SetKillChainPhaseNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L457>)
+
+```go
+func (o *QueriesItem) SetKillChainPhaseNil()
+```
+
+SetKillChainPhaseNil sets the value for KillChainPhase to be an explicit nil.
+
+<a name="QueriesItem.SetLastUpdateDate"></a>
+### func \(\*QueriesItem\) [SetLastUpdateDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L289>)
+
+```go
+func (o *QueriesItem) SetLastUpdateDate(v string)
+```
+
+SetLastUpdateDate gets a reference to the given string and assigns it to the LastUpdateDate field.
+
+<a name="QueriesItem.SetMitreTags"></a>
+### func \(\*QueriesItem\) [SetMitreTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L413>)
+
+```go
+func (o *QueriesItem) SetMitreTags(v []string)
+```
+
+SetMitreTags gets a reference to the given datadog.Nullable\[\]string and assigns it to the MitreTags field.
+
+<a name="QueriesItem.SetMitreTagsNil"></a>
+### func \(\*QueriesItem\) [SetMitreTagsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L418>)
+
+```go
+func (o *QueriesItem) SetMitreTagsNil()
+```
+
+SetMitreTagsNil sets the value for MitreTags to be an explicit nil.
+
+<a name="QueriesItem.SetModuleGuid"></a>
+### func \(\*QueriesItem\) [SetModuleGuid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L614>)
+
+```go
+func (o *QueriesItem) SetModuleGuid(v string)
+```
+
+SetModuleGuid gets a reference to the given datadog.NullableString and assigns it to the ModuleGuid field.
+
+<a name="QueriesItem.SetModuleGuidNil"></a>
+### func \(\*QueriesItem\) [SetModuleGuidNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L619>)
+
+```go
+func (o *QueriesItem) SetModuleGuidNil()
+```
+
+SetModuleGuidNil sets the value for ModuleGuid to be an explicit nil.
+
+<a name="QueriesItem.SetModuleId"></a>
+### func \(\*QueriesItem\) [SetModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L575>)
+
+```go
+func (o *QueriesItem) SetModuleId(v string)
+```
+
+SetModuleId gets a reference to the given datadog.NullableString and assigns it to the ModuleId field.
+
+<a name="QueriesItem.SetModuleIdNil"></a>
+### func \(\*QueriesItem\) [SetModuleIdNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L580>)
+
+```go
+func (o *QueriesItem) SetModuleIdNil()
+```
+
+SetModuleIdNil sets the value for ModuleId to be an explicit nil.
+
+<a name="QueriesItem.SetName"></a>
+### func \(\*QueriesItem\) [SetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L127>)
+
+```go
+func (o *QueriesItem) SetName(v string)
+```
+
+SetName gets a reference to the given string and assigns it to the Name field.
+
+<a name="QueriesItem.SetQueryType"></a>
+### func \(\*QueriesItem\) [SetQueryType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L317>)
+
+```go
+func (o *QueriesItem) SetQueryType(v string)
+```
+
+SetQueryType gets a reference to the given string and assigns it to the QueryType field.
+
+<a name="QueriesItem.SetSharedUsersAndGroups"></a>
+### func \(\*QueriesItem\) [SetSharedUsersAndGroups](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L653>)
+
+```go
+func (o *QueriesItem) SetSharedUsersAndGroups(v []string)
+```
+
+SetSharedUsersAndGroups gets a reference to the given datadog.Nullable\[\]string and assigns it to the SharedUsersAndGroups field.
+
+<a name="QueriesItem.SetSharedUsersAndGroupsNil"></a>
+### func \(\*QueriesItem\) [SetSharedUsersAndGroupsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L658>)
+
+```go
+func (o *QueriesItem) SetSharedUsersAndGroupsNil()
+```
+
+SetSharedUsersAndGroupsNil sets the value for SharedUsersAndGroups to be an explicit nil.
+
+<a name="QueriesItem.SetTags"></a>
+### func \(\*QueriesItem\) [SetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L374>)
+
+```go
+func (o *QueriesItem) SetTags(v []string)
+```
+
+SetTags gets a reference to the given datadog.Nullable\[\]string and assigns it to the Tags field.
+
+<a name="QueriesItem.SetTagsNil"></a>
+### func \(\*QueriesItem\) [SetTagsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L379>)
+
+```go
+func (o *QueriesItem) SetTagsNil()
+```
+
+SetTagsNil sets the value for Tags to be an explicit nil.
+
+<a name="QueriesItem.SetVersion"></a>
+### func \(\*QueriesItem\) [SetVersion](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L691>)
+
+```go
+func (o *QueriesItem) SetVersion(v float64)
+```
+
+SetVersion gets a reference to the given float64 and assigns it to the Version field.
+
+<a name="QueriesItem.UnMarshalJSON"></a>
+### func \(\*QueriesItem\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L769>)
+
+```go
+func (o *QueriesItem) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="QueriesItem.UnSetColumns"></a>
+### func \(\*QueriesItem\) [UnSetColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L205>)
+
+```go
+func (o *QueriesItem) UnSetColumns()
+```
+
+UnsetColumns ensures that no value is present for Columns, not even an explicit nil.
+
+<a name="QueriesItem.UnSetMitreTags"></a>
+### func \(\*QueriesItem\) [UnSetMitreTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L423>)
+
+```go
+func (o *QueriesItem) UnSetMitreTags()
+```
+
+UnsetMitreTags ensures that no value is present for MitreTags, not even an explicit nil.
+
+<a name="QueriesItem.UnSetSharedUsersAndGroups"></a>
+### func \(\*QueriesItem\) [UnSetSharedUsersAndGroups](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L663>)
+
+```go
+func (o *QueriesItem) UnSetSharedUsersAndGroups()
+```
+
+UnsetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
+
+<a name="QueriesItem.UnSetTags"></a>
+### func \(\*QueriesItem\) [UnSetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L384>)
+
+```go
+func (o *QueriesItem) UnSetTags()
+```
+
+UnsetTags ensures that no value is present for Tags, not even an explicit nil.
+
+<a name="QueriesItem.UnsetDescription"></a>
+### func \(\*QueriesItem\) [UnsetDescription](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L166>)
+
+```go
+func (o *QueriesItem) UnsetDescription()
+```
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil.
+
+<a name="QueriesItem.UnsetKillChainPhase"></a>
+### func \(\*QueriesItem\) [UnsetKillChainPhase](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L462>)
+
+```go
+func (o *QueriesItem) UnsetKillChainPhase()
+```
+
+UnsetKillChainPhase ensures that no value is present for KillChainPhase, not even an explicit nil.
+
+<a name="QueriesItem.UnsetModuleGuid"></a>
+### func \(\*QueriesItem\) [UnsetModuleGuid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L624>)
+
+```go
+func (o *QueriesItem) UnsetModuleGuid()
+```
+
+UnsetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
+
+<a name="QueriesItem.UnsetModuleId"></a>
+### func \(\*QueriesItem\) [UnsetModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L585>)
+
+```go
+func (o *QueriesItem) UnsetModuleId()
+```
+
+UnsetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
+
+<a name="QueriesSearchRequest"></a>
+## type [QueriesSearchRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L11-L22>)
+
+QueriesSearchRequest is the object sent with a request to retrieve a list of queries from your organization.
+
+```go
+type QueriesSearchRequest struct {
+    // Username for the search request.
+    Username *string `json:"username,omitempty"`
+    // Filter for the search request.
+    Filter *string `json:"filter,omitempty"`
+    // Context for the Smart REST request.
+    SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewQueriesSearchRequest"></a>
+### func [NewQueriesSearchRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L28>)
+
+```go
+func NewQueriesSearchRequest() *QueriesSearchRequest
+```
+
+NewQueriesSearchRequest creates a new QueriesSearchRequest object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewQueriesSearchRequestWithDefaults"></a>
+### func [NewQueriesSearchRequestWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L36>)
+
+```go
+func NewQueriesSearchRequestWithDefaults() *QueriesSearchRequest
+```
+
+NewQueriesSearchRequestWithDefaults creates a new QueriesSearchRequest object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="QueriesSearchRequest.GetFilter"></a>
+### func \(\*QueriesSearchRequest\) [GetFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L70>)
+
+```go
+func (o *QueriesSearchRequest) GetFilter() string
+```
+
+GetFilter returns the Filter field value if set, zero value otherwise.
+
+<a name="QueriesSearchRequest.GetFilterOk"></a>
+### func \(\*QueriesSearchRequest\) [GetFilterOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L80>)
+
+```go
+func (o *QueriesSearchRequest) GetFilterOk() (*string, bool)
+```
+
+GetFilterOk returns a tuple with the Filter field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesSearchRequest.GetSmartRestRequestContext"></a>
+### func \(\*QueriesSearchRequest\) [GetSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L98>)
+
+```go
+func (o *QueriesSearchRequest) GetSmartRestRequestContext() string
+```
+
+GetSmartRestRequestContext returns the SmartRestRequestContext field value if set, zero value otherwise.
+
+<a name="QueriesSearchRequest.GetSmartRestRequestContextOk"></a>
+### func \(\*QueriesSearchRequest\) [GetSmartRestRequestContextOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L108>)
+
+```go
+func (o *QueriesSearchRequest) GetSmartRestRequestContextOk() (*string, bool)
+```
+
+GetSmartRestRequestContextOk returns a tuple with the SmartRestRequestContext field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesSearchRequest.GetUsername"></a>
+### func \(\*QueriesSearchRequest\) [GetUsername](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L42>)
+
+```go
+func (o *QueriesSearchRequest) GetUsername() string
+```
+
+GetUsername returns the Username field value if set, zero value otherwise.
+
+<a name="QueriesSearchRequest.GetUsernameOk"></a>
+### func \(\*QueriesSearchRequest\) [GetUsernameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L52>)
+
+```go
+func (o *QueriesSearchRequest) GetUsernameOk() (*string, bool)
+```
+
+GetUsernameOk returns a tuple with the Username field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesSearchRequest.HasFilter"></a>
+### func \(\*QueriesSearchRequest\) [HasFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L88>)
+
+```go
+func (o *QueriesSearchRequest) HasFilter() bool
+```
+
+HasFilter returns a boolean if a field has been set.
+
+<a name="QueriesSearchRequest.HasSmartRestRequestContext"></a>
+### func \(\*QueriesSearchRequest\) [HasSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L116>)
+
+```go
+func (o *QueriesSearchRequest) HasSmartRestRequestContext() bool
+```
+
+HasSmartRestRequestContext returns a boolean if a field has been set.
+
+<a name="QueriesSearchRequest.HasUsername"></a>
+### func \(\*QueriesSearchRequest\) [HasUsername](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L60>)
+
+```go
+func (o *QueriesSearchRequest) HasUsername() bool
+```
+
+HasUsername returns a boolean if a field has been set.
+
+<a name="QueriesSearchRequest.MarshalJSON"></a>
+### func \(QueriesSearchRequest\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L126>)
+
+```go
+func (o QueriesSearchRequest) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="QueriesSearchRequest.SetFilter"></a>
+### func \(\*QueriesSearchRequest\) [SetFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L93>)
+
+```go
+func (o *QueriesSearchRequest) SetFilter(v string)
+```
+
+SetFilter gets a reference to the given string and assigns it to the Filter field.
+
+<a name="QueriesSearchRequest.SetSmartRestRequestContext"></a>
+### func \(\*QueriesSearchRequest\) [SetSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L121>)
+
+```go
+func (o *QueriesSearchRequest) SetSmartRestRequestContext(v string)
+```
+
+SetSmartRestRequestContext gets a reference to the given string and assigns it to the SmartRestRequestContext field.
+
+<a name="QueriesSearchRequest.SetUsername"></a>
+### func \(\*QueriesSearchRequest\) [SetUsername](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L65>)
+
+```go
+func (o *QueriesSearchRequest) SetUsername(v string)
+```
+
+SetUsername gets a reference to the given string and assigns it to the Username field.
+
+<a name="QueriesSearchRequest.UnMarshalJSON"></a>
+### func \(\*QueriesSearchRequest\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L148>)
+
+```go
+func (o *QueriesSearchRequest) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="QueriesSearchResponse"></a>
+## type [QueriesSearchResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L10-L21>)
+
+QueriesSearchResponse is the response object with all queries matching the request.
+
+```go
+type QueriesSearchResponse struct {
+    // List of query items.
+    Items []QueriesItem `json:"Items,omitempty"`
+    // List of failed items in raw JSON format.
+    FailedItems []json.RawMessage `json:"FailedItems,omitempty"`
+    // List of successful items.
+    SuccessItems []SuccessItem `json:"SuccessItems,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewQueriesSearchResponse"></a>
+### func [NewQueriesSearchResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L27>)
+
+```go
+func NewQueriesSearchResponse() *QueriesSearchResponse
+```
+
+NewQueriesSearchResponse creates a new QueriesSearchResponse object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewQueriesSearchResponseWithDefaults"></a>
+### func [NewQueriesSearchResponseWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L35>)
+
+```go
+func NewQueriesSearchResponseWithDefaults() *QueriesSearchResponse
+```
+
+NewQueriesSearchResponseWithDefaults creates a new QueriesSearchResponse object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="QueriesSearchResponse.GetFailedItems"></a>
+### func \(\*QueriesSearchResponse\) [GetFailedItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L69>)
+
+```go
+func (o *QueriesSearchResponse) GetFailedItems() []json.RawMessage
+```
+
+GetFailedItems returns the FailedItems field value if set, zero value otherwise.
+
+<a name="QueriesSearchResponse.GetFailedItemsOk"></a>
+### func \(\*QueriesSearchResponse\) [GetFailedItemsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L79>)
+
+```go
+func (o *QueriesSearchResponse) GetFailedItemsOk() (*[]json.RawMessage, bool)
+```
+
+GetFailedItemsOk returns a tuple with the FailedItems field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesSearchResponse.GetItems"></a>
+### func \(\*QueriesSearchResponse\) [GetItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L41>)
+
+```go
+func (o *QueriesSearchResponse) GetItems() []QueriesItem
+```
+
+GetItems returns the Items field value if set, zero value otherwise.
+
+<a name="QueriesSearchResponse.GetItemsOk"></a>
+### func \(\*QueriesSearchResponse\) [GetItemsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L51>)
+
+```go
+func (o *QueriesSearchResponse) GetItemsOk() (*[]QueriesItem, bool)
+```
+
+GetItemsOk returns a tuple with the Items field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesSearchResponse.GetSuccessItem"></a>
+### func \(\*QueriesSearchResponse\) [GetSuccessItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L97>)
+
+```go
+func (o *QueriesSearchResponse) GetSuccessItem() []SuccessItem
+```
+
+GetSuccessItem returns the SuccessItem field value if set, zero value otherwise.
+
+<a name="QueriesSearchResponse.GetSuccessItemOk"></a>
+### func \(\*QueriesSearchResponse\) [GetSuccessItemOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L107>)
+
+```go
+func (o *QueriesSearchResponse) GetSuccessItemOk() (*[]SuccessItem, bool)
+```
+
+GetSuccessItemOk returns a tuple with the SuccessItem field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="QueriesSearchResponse.HasFailedItems"></a>
+### func \(\*QueriesSearchResponse\) [HasFailedItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L87>)
+
+```go
+func (o *QueriesSearchResponse) HasFailedItems() bool
+```
+
+HasFailedItems returns a boolean if a field has been set.
+
+<a name="QueriesSearchResponse.HasItems"></a>
+### func \(\*QueriesSearchResponse\) [HasItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L59>)
+
+```go
+func (o *QueriesSearchResponse) HasItems() bool
+```
+
+HasItems returns a boolean if a field has been set.
+
+<a name="QueriesSearchResponse.HasSuccessItem"></a>
+### func \(\*QueriesSearchResponse\) [HasSuccessItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L115>)
+
+```go
+func (o *QueriesSearchResponse) HasSuccessItem() bool
+```
+
+HasSuccessItem returns a boolean if a field has been set.
+
+<a name="QueriesSearchResponse.MarshalJSON"></a>
+### func \(QueriesSearchResponse\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L125>)
+
+```go
+func (o QueriesSearchResponse) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="QueriesSearchResponse.SetFailedItems"></a>
+### func \(\*QueriesSearchResponse\) [SetFailedItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L92>)
+
+```go
+func (o *QueriesSearchResponse) SetFailedItems(v []json.RawMessage)
+```
+
+SetFailedItems gets a reference to the given \[\]json.RawMessage and assigns it to the FailedItems field.
+
+<a name="QueriesSearchResponse.SetItems"></a>
+### func \(\*QueriesSearchResponse\) [SetItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L64>)
+
+```go
+func (o *QueriesSearchResponse) SetItems(v []QueriesItem)
+```
+
+SetItems gets a reference to the given \[\]QueriesItem and assigns it to the Items field.
+
+<a name="QueriesSearchResponse.SetSuccessItem"></a>
+### func \(\*QueriesSearchResponse\) [SetSuccessItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L120>)
+
+```go
+func (o *QueriesSearchResponse) SetSuccessItem(v []SuccessItem)
+```
+
+SetSuccessItem gets a reference to the given \[\]SuccessItem and assigns it to the SuccessItem field.
+
+<a name="QueriesSearchResponse.UnMarshalJSON"></a>
+### func \(\*QueriesSearchResponse\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_response.go#L147>)
+
+```go
+func (o *QueriesSearchResponse) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsApi"></a>
+## type [ReportsApi](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_reports.go#L12>)
+
+ReportsApi service type.
+
+```go
+type ReportsApi common.Service
+```
+
+<a name="NewReportsApi"></a>
+### func [NewReportsApi](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_reports.go#L118>)
+
+```go
+func NewReportsApi(client *common.APIClient) *ReportsApi
+```
+
+NewReportsApi returns ReportsApi.
+
+<a name="ReportsApi.SearchReports"></a>
+### func \(\*ReportsApi\) [SearchReports](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_reports.go#L33>)
+
+```go
+func (a *ReportsApi) SearchReports(ctx _context.Context, o ...SearchReportsOptionalParameters) ([]ReportsSearchResponse, *_nethttp.Response, error)
+```
+
+SerchQueries search queries. Returns reports that match an reports search filter.
+
+<a name="ReportsChartLegend"></a>
+## type [ReportsChartLegend](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_legend.go#L10-L17>)
+
+ReportsChartLegend defines the legend configuration for a chart visualization in reports.
+
+```go
+type ReportsChartLegend struct {
+    // Position of the legend.
+    LegendPosition *string `json:"LegendPosition,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsChartLegend"></a>
+### func [NewReportsChartLegend](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_legend.go#L23>)
+
+```go
+func NewReportsChartLegend() *ReportsChartLegend
+```
+
+NewReportsChartLegend creates a new ReportsChartLegend object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsChartLegendWithDefaults"></a>
+### func [NewReportsChartLegendWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_legend.go#L31>)
+
+```go
+func NewReportsChartLegendWithDefaults() *ReportsChartLegend
+```
+
+NewReportsChartLegendWithDefaults creates a new ReportsChartLegend object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsChartLegend.GetLegendPosition"></a>
+### func \(\*ReportsChartLegend\) [GetLegendPosition](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_legend.go#L37>)
+
+```go
+func (o *ReportsChartLegend) GetLegendPosition() string
+```
+
+GetLegendPosition returns the LegendPosition field value if set, zero value otherwise.
+
+<a name="ReportsChartLegend.GetLegendPositionOk"></a>
+### func \(\*ReportsChartLegend\) [GetLegendPositionOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_legend.go#L47>)
+
+```go
+func (o *ReportsChartLegend) GetLegendPositionOk() (*string, bool)
+```
+
+GetLegendPositionOk returns a tuple with the LegendPosition field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartLegend.HasLegendPosition"></a>
+### func \(\*ReportsChartLegend\) [HasLegendPosition](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_legend.go#L55>)
+
+```go
+func (o *ReportsChartLegend) HasLegendPosition() bool
+```
+
+HasLegendPosition returns a boolean if a field has been set.
+
+<a name="ReportsChartLegend.MarshalJSON"></a>
+### func \(ReportsChartLegend\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_legend.go#L65>)
+
+```go
+func (o ReportsChartLegend) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsChartLegend.SetLegendPosition"></a>
+### func \(\*ReportsChartLegend\) [SetLegendPosition](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_legend.go#L60>)
+
+```go
+func (o *ReportsChartLegend) SetLegendPosition(v string)
+```
+
+SetLegendPosition gets a reference to the given string and assigns it to the LegendPosition field.
+
+<a name="ReportsChartLegend.UnMarshalJSON"></a>
+### func \(\*ReportsChartLegend\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_legend.go#L81>)
+
+```go
+func (o *ReportsChartLegend) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsChartVisualization"></a>
+## type [ReportsChartVisualization](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L10-L47>)
+
+ReportsChartVisualization defines the visualization configuration for a chart in reports.
+
+```go
+type ReportsChartVisualization struct {
+    // Type of chart.
+    ChartType *string `json:"ChartType,omitempty"`
+    // Colors for series in the chart.
+    SerieColors []string `json:"SerieColors,omitempty"`
+    // Line width for the chart.
+    LineWidth *int64 `json:"LineWidth,omitempty"`
+    // Inner radius for the chart (applicable for pie charts).
+    InnerRadius *float64 `json:"InnerRadius,omitempty"`
+    // Line type for the chart.
+    LineType *string `json:"LineType,omitempty"`
+    // Indicates whether to show values on the chart.
+    ShowValues *bool `json:"ShowValues,omitempty"`
+    // Indicates whether to show null values on the chart.
+    ShowNullValues *bool `json:"ShowNullValues,omitempty"`
+    // X-axis configuration for the chart.
+    XAxis *ReportsChartXAxis `json:"XAxis,omitempty"`
+    // Y-axis configuration for the chart.
+    YAxis *ReportsChartYAxis `json:"YAxis,omitempty"`
+    // Legend configuration for the chart.
+    Legend *ReportsChartLegend `json:"Legend,omitempty"`
+    // ID of the UI DP module.
+    UiDPModuleId *string `json:"UiDPModuleId,omitempty"`
+    // Color scheme for the chart.
+    ColorScheme common.NullableString `json:"ColorScheme,omitempty"`
+    // Additional settings for the chart.
+    Settings *string `json:"Settings,omitempty"`
+    // Maximum row count for the chart data.
+    MaxRowCount *int64 `json:"MaxRowCount,omitempty"`
+    // Number of slices for pie charts.
+    SlicesNumber *int64 `json:"SlicesNumber,omitempty"`
+    // Indicates whether to show labels on the chart.
+    ShowLabel *bool `json:"ShowLabel,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsChartVisualization"></a>
+### func [NewReportsChartVisualization](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L53>)
+
+```go
+func NewReportsChartVisualization() *ReportsChartVisualization
+```
+
+NewReportsChartVisualization creates a new ReportsChartVisualization object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsChartVisualizationWithDefaults"></a>
+### func [NewReportsChartVisualizationWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L61>)
+
+```go
+func NewReportsChartVisualizationWithDefaults() *ReportsChartVisualization
+```
+
+NewReportsChartVisualizationWithDefaults creates a new ReportsChartVisualization object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsChartVisualization.GetChartType"></a>
+### func \(\*ReportsChartVisualization\) [GetChartType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L67>)
+
+```go
+func (o *ReportsChartVisualization) GetChartType() string
+```
+
+GetChartType returns the ChartType field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetChartTypeOk"></a>
+### func \(\*ReportsChartVisualization\) [GetChartTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L77>)
+
+```go
+func (o *ReportsChartVisualization) GetChartTypeOk() (*string, bool)
+```
+
+GetChartTypeOk returns a tuple with the ChartType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetColorScheme"></a>
+### func \(\*ReportsChartVisualization\) [GetColorScheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L375>)
+
+```go
+func (o *ReportsChartVisualization) GetColorScheme() string
+```
+
+GetColorScheme returns the ColorScheme field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsChartVisualization.GetColorSchemeOk"></a>
+### func \(\*ReportsChartVisualization\) [GetColorSchemeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L386>)
+
+```go
+func (o *ReportsChartVisualization) GetColorSchemeOk() (*string, bool)
+```
+
+GetColorSchemeOk returns a tuple with the ColorScheme field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsChartVisualization.GetInnerRadius"></a>
+### func \(\*ReportsChartVisualization\) [GetInnerRadius](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L151>)
+
+```go
+func (o *ReportsChartVisualization) GetInnerRadius() float64
+```
+
+GetInnerRadius returns the InnerRadius field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetInnerRadiusOk"></a>
+### func \(\*ReportsChartVisualization\) [GetInnerRadiusOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L161>)
+
+```go
+func (o *ReportsChartVisualization) GetInnerRadiusOk() (*float64, bool)
+```
+
+GetInnerRadiusOk returns a tuple with the InnerRadius field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetLegend"></a>
+### func \(\*ReportsChartVisualization\) [GetLegend](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L319>)
+
+```go
+func (o *ReportsChartVisualization) GetLegend() ReportsChartLegend
+```
+
+GetLegend returns the Legend field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetLegendOk"></a>
+### func \(\*ReportsChartVisualization\) [GetLegendOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L329>)
+
+```go
+func (o *ReportsChartVisualization) GetLegendOk() (*ReportsChartLegend, bool)
+```
+
+GetLegendOk returns a tuple with the Legend field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetLineType"></a>
+### func \(\*ReportsChartVisualization\) [GetLineType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L179>)
+
+```go
+func (o *ReportsChartVisualization) GetLineType() string
+```
+
+GetLineType returns the LineType field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetLineTypeOk"></a>
+### func \(\*ReportsChartVisualization\) [GetLineTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L189>)
+
+```go
+func (o *ReportsChartVisualization) GetLineTypeOk() (*string, bool)
+```
+
+GetLineTypeOk returns a tuple with the LineType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetLineWidth"></a>
+### func \(\*ReportsChartVisualization\) [GetLineWidth](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L123>)
+
+```go
+func (o *ReportsChartVisualization) GetLineWidth() int64
+```
+
+GetLineWidth returns the LineWidth field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetLineWidthOk"></a>
+### func \(\*ReportsChartVisualization\) [GetLineWidthOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L133>)
+
+```go
+func (o *ReportsChartVisualization) GetLineWidthOk() (*int64, bool)
+```
+
+GetLineWidthOk returns a tuple with the LineWidth field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetMaxRowCount"></a>
+### func \(\*ReportsChartVisualization\) [GetMaxRowCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L442>)
+
+```go
+func (o *ReportsChartVisualization) GetMaxRowCount() int64
+```
+
+GetMaxRowCount returns the MaxRowCount field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetMaxRowCountOk"></a>
+### func \(\*ReportsChartVisualization\) [GetMaxRowCountOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L452>)
+
+```go
+func (o *ReportsChartVisualization) GetMaxRowCountOk() (*int64, bool)
+```
+
+GetMaxRowCountOk returns a tuple with the MaxRowCount field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetSerieColors"></a>
+### func \(\*ReportsChartVisualization\) [GetSerieColors](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L95>)
+
+```go
+func (o *ReportsChartVisualization) GetSerieColors() []string
+```
+
+GetSerieColors returns the SerieColors field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetSerieColorsOk"></a>
+### func \(\*ReportsChartVisualization\) [GetSerieColorsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L105>)
+
+```go
+func (o *ReportsChartVisualization) GetSerieColorsOk() (*[]string, bool)
+```
+
+GetSerieColorsOk returns a tuple with the SerieColors field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetSettings"></a>
+### func \(\*ReportsChartVisualization\) [GetSettings](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L414>)
+
+```go
+func (o *ReportsChartVisualization) GetSettings() string
+```
+
+GetSettings returns the Settings field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetSettingsOk"></a>
+### func \(\*ReportsChartVisualization\) [GetSettingsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L424>)
+
+```go
+func (o *ReportsChartVisualization) GetSettingsOk() (*string, bool)
+```
+
+GetSettingsOk returns a tuple with the Settings field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetShowLabel"></a>
+### func \(\*ReportsChartVisualization\) [GetShowLabel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L498>)
+
+```go
+func (o *ReportsChartVisualization) GetShowLabel() bool
+```
+
+GetShowLabel returns the ShowLabel field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetShowLabelOk"></a>
+### func \(\*ReportsChartVisualization\) [GetShowLabelOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L508>)
+
+```go
+func (o *ReportsChartVisualization) GetShowLabelOk() (*bool, bool)
+```
+
+GetShowLabelOk returns a tuple with the ShowLabel field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetShowNullValues"></a>
+### func \(\*ReportsChartVisualization\) [GetShowNullValues](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L235>)
+
+```go
+func (o *ReportsChartVisualization) GetShowNullValues() bool
+```
+
+GetShowNullValues returns the ShowNullValues field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetShowNullValuesOk"></a>
+### func \(\*ReportsChartVisualization\) [GetShowNullValuesOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L245>)
+
+```go
+func (o *ReportsChartVisualization) GetShowNullValuesOk() (*bool, bool)
+```
+
+GetShowNullValuesOk returns a tuple with the ShowNullValues field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetShowValues"></a>
+### func \(\*ReportsChartVisualization\) [GetShowValues](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L207>)
+
+```go
+func (o *ReportsChartVisualization) GetShowValues() bool
+```
+
+GetShowValues returns the ShowValues field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetShowValuesOk"></a>
+### func \(\*ReportsChartVisualization\) [GetShowValuesOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L217>)
+
+```go
+func (o *ReportsChartVisualization) GetShowValuesOk() (*bool, bool)
+```
+
+GetShowValuesOk returns a tuple with the ShowValues field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetSlicesNumber"></a>
+### func \(\*ReportsChartVisualization\) [GetSlicesNumber](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L470>)
+
+```go
+func (o *ReportsChartVisualization) GetSlicesNumber() int64
+```
+
+GetSlicesNumber returns the SlicesNumber field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetSlicesNumberOk"></a>
+### func \(\*ReportsChartVisualization\) [GetSlicesNumberOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L480>)
+
+```go
+func (o *ReportsChartVisualization) GetSlicesNumberOk() (*int64, bool)
+```
+
+GetSlicesNumberOk returns a tuple with the SlicesNumber field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetUiDPModuleId"></a>
+### func \(\*ReportsChartVisualization\) [GetUiDPModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L347>)
+
+```go
+func (o *ReportsChartVisualization) GetUiDPModuleId() string
+```
+
+GetUiDPModuleId returns the UiDPModuleId field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetUiDPModuleIdOk"></a>
+### func \(\*ReportsChartVisualization\) [GetUiDPModuleIdOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L357>)
+
+```go
+func (o *ReportsChartVisualization) GetUiDPModuleIdOk() (*string, bool)
+```
+
+GetUiDPModuleIdOk returns a tuple with the UiDPModuleId field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetXAxis"></a>
+### func \(\*ReportsChartVisualization\) [GetXAxis](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L263>)
+
+```go
+func (o *ReportsChartVisualization) GetXAxis() ReportsChartXAxis
+```
+
+GetXAxis returns the XAxis field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetXAxisOk"></a>
+### func \(\*ReportsChartVisualization\) [GetXAxisOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L273>)
+
+```go
+func (o *ReportsChartVisualization) GetXAxisOk() (*ReportsChartXAxis, bool)
+```
+
+GetXAxisOk returns a tuple with the XAxis field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.GetYAxis"></a>
+### func \(\*ReportsChartVisualization\) [GetYAxis](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L291>)
+
+```go
+func (o *ReportsChartVisualization) GetYAxis() ReportsChartYAxis
+```
+
+GetYAxis returns the YAxis field value if set, zero value otherwise.
+
+<a name="ReportsChartVisualization.GetYAxisOk"></a>
+### func \(\*ReportsChartVisualization\) [GetYAxisOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L301>)
+
+```go
+func (o *ReportsChartVisualization) GetYAxisOk() (*ReportsChartYAxis, bool)
+```
+
+GetYAxisOk returns a tuple with the YAxis field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartVisualization.HasChartType"></a>
+### func \(\*ReportsChartVisualization\) [HasChartType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L85>)
+
+```go
+func (o *ReportsChartVisualization) HasChartType() bool
+```
+
+HasChartType returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasColorScheme"></a>
+### func \(\*ReportsChartVisualization\) [HasColorScheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L394>)
+
+```go
+func (o *ReportsChartVisualization) HasColorScheme() bool
+```
+
+HasColorScheme returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasInnerRadius"></a>
+### func \(\*ReportsChartVisualization\) [HasInnerRadius](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L169>)
+
+```go
+func (o *ReportsChartVisualization) HasInnerRadius() bool
+```
+
+HasInnerRadius returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasLegend"></a>
+### func \(\*ReportsChartVisualization\) [HasLegend](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L337>)
+
+```go
+func (o *ReportsChartVisualization) HasLegend() bool
+```
+
+HasLegend returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasLineType"></a>
+### func \(\*ReportsChartVisualization\) [HasLineType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L197>)
+
+```go
+func (o *ReportsChartVisualization) HasLineType() bool
+```
+
+HasLineType returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasLineWidth"></a>
+### func \(\*ReportsChartVisualization\) [HasLineWidth](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L141>)
+
+```go
+func (o *ReportsChartVisualization) HasLineWidth() bool
+```
+
+HasLineWidth returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasMaxRowCount"></a>
+### func \(\*ReportsChartVisualization\) [HasMaxRowCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L460>)
+
+```go
+func (o *ReportsChartVisualization) HasMaxRowCount() bool
+```
+
+HasMaxRowCount returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasSerieColors"></a>
+### func \(\*ReportsChartVisualization\) [HasSerieColors](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L113>)
+
+```go
+func (o *ReportsChartVisualization) HasSerieColors() bool
+```
+
+HasSerieColors returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasSettings"></a>
+### func \(\*ReportsChartVisualization\) [HasSettings](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L432>)
+
+```go
+func (o *ReportsChartVisualization) HasSettings() bool
+```
+
+HasSettings returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasShowLabel"></a>
+### func \(\*ReportsChartVisualization\) [HasShowLabel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L516>)
+
+```go
+func (o *ReportsChartVisualization) HasShowLabel() bool
+```
+
+HasShowLabel returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasShowNullValues"></a>
+### func \(\*ReportsChartVisualization\) [HasShowNullValues](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L253>)
+
+```go
+func (o *ReportsChartVisualization) HasShowNullValues() bool
+```
+
+HasShowNullValues returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasShowValues"></a>
+### func \(\*ReportsChartVisualization\) [HasShowValues](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L225>)
+
+```go
+func (o *ReportsChartVisualization) HasShowValues() bool
+```
+
+HasShowValues returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasSlicesNumber"></a>
+### func \(\*ReportsChartVisualization\) [HasSlicesNumber](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L488>)
+
+```go
+func (o *ReportsChartVisualization) HasSlicesNumber() bool
+```
+
+HasSlicesNumber returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasUiDPModuleId"></a>
+### func \(\*ReportsChartVisualization\) [HasUiDPModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L365>)
+
+```go
+func (o *ReportsChartVisualization) HasUiDPModuleId() bool
+```
+
+HasUiDPModuleId returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasXAxis"></a>
+### func \(\*ReportsChartVisualization\) [HasXAxis](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L281>)
+
+```go
+func (o *ReportsChartVisualization) HasXAxis() bool
+```
+
+HasXAxis returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.HasYAxis"></a>
+### func \(\*ReportsChartVisualization\) [HasYAxis](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L309>)
+
+```go
+func (o *ReportsChartVisualization) HasYAxis() bool
+```
+
+HasYAxis returns a boolean if a field has been set.
+
+<a name="ReportsChartVisualization.MarshalJSON"></a>
+### func \(ReportsChartVisualization\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L526>)
+
+```go
+func (o ReportsChartVisualization) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsChartVisualization.SetChartType"></a>
+### func \(\*ReportsChartVisualization\) [SetChartType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L90>)
+
+```go
+func (o *ReportsChartVisualization) SetChartType(v string)
+```
+
+SetChartType gets a reference to the given string and assigns it to the ChartType field.
+
+<a name="ReportsChartVisualization.SetColorScheme"></a>
+### func \(\*ReportsChartVisualization\) [SetColorScheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L399>)
+
+```go
+func (o *ReportsChartVisualization) SetColorScheme(v string)
+```
+
+SetColorScheme gets a reference to the given datadog.NullableString and assigns it to the ColorScheme field.
+
+<a name="ReportsChartVisualization.SetColorSchemeNil"></a>
+### func \(\*ReportsChartVisualization\) [SetColorSchemeNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L404>)
+
+```go
+func (o *ReportsChartVisualization) SetColorSchemeNil()
+```
+
+SetColorSchemeNil sets the value for ColorScheme to be an explicit nil.
+
+<a name="ReportsChartVisualization.SetInnerRadius"></a>
+### func \(\*ReportsChartVisualization\) [SetInnerRadius](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L174>)
+
+```go
+func (o *ReportsChartVisualization) SetInnerRadius(v float64)
+```
+
+SetInnerRadius gets a reference to the given float64 and assigns it to the InnerRadius field.
+
+<a name="ReportsChartVisualization.SetLegend"></a>
+### func \(\*ReportsChartVisualization\) [SetLegend](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L342>)
+
+```go
+func (o *ReportsChartVisualization) SetLegend(v ReportsChartLegend)
+```
+
+SetLegend gets a reference to the given ReportsChartLegend and assigns it to the Legend field.
+
+<a name="ReportsChartVisualization.SetLineType"></a>
+### func \(\*ReportsChartVisualization\) [SetLineType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L202>)
+
+```go
+func (o *ReportsChartVisualization) SetLineType(v string)
+```
+
+SetLineType gets a reference to the given string and assigns it to the LineType field.
+
+<a name="ReportsChartVisualization.SetLineWidth"></a>
+### func \(\*ReportsChartVisualization\) [SetLineWidth](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L146>)
+
+```go
+func (o *ReportsChartVisualization) SetLineWidth(v int64)
+```
+
+SetLineWidth gets a reference to the given int64 and assigns it to the LineWidth field.
+
+<a name="ReportsChartVisualization.SetMaxRowCount"></a>
+### func \(\*ReportsChartVisualization\) [SetMaxRowCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L465>)
+
+```go
+func (o *ReportsChartVisualization) SetMaxRowCount(v int64)
+```
+
+SetMaxRowCount gets a reference to the given int64 and assigns it to the MaxRowCount field.
+
+<a name="ReportsChartVisualization.SetSerieColors"></a>
+### func \(\*ReportsChartVisualization\) [SetSerieColors](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L118>)
+
+```go
+func (o *ReportsChartVisualization) SetSerieColors(v []string)
+```
+
+SetSerieColors gets a reference to the given \[\]string and assigns it to the SerieColors field.
+
+<a name="ReportsChartVisualization.SetSettings"></a>
+### func \(\*ReportsChartVisualization\) [SetSettings](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L437>)
+
+```go
+func (o *ReportsChartVisualization) SetSettings(v string)
+```
+
+SetSettings gets a reference to the given string and assigns it to the Settings field.
+
+<a name="ReportsChartVisualization.SetShowLabel"></a>
+### func \(\*ReportsChartVisualization\) [SetShowLabel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L521>)
+
+```go
+func (o *ReportsChartVisualization) SetShowLabel(v bool)
+```
+
+SetShowLabel gets a reference to the given bool and assigns it to the ShowLabel field.
+
+<a name="ReportsChartVisualization.SetShowNullValues"></a>
+### func \(\*ReportsChartVisualization\) [SetShowNullValues](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L258>)
+
+```go
+func (o *ReportsChartVisualization) SetShowNullValues(v bool)
+```
+
+SetShowNullValues gets a reference to the given bool and assigns it to the ShowNullValues field.
+
+<a name="ReportsChartVisualization.SetShowValues"></a>
+### func \(\*ReportsChartVisualization\) [SetShowValues](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L230>)
+
+```go
+func (o *ReportsChartVisualization) SetShowValues(v bool)
+```
+
+SetShowValues gets a reference to the given bool and assigns it to the ShowValues field.
+
+<a name="ReportsChartVisualization.SetSlicesNumber"></a>
+### func \(\*ReportsChartVisualization\) [SetSlicesNumber](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L493>)
+
+```go
+func (o *ReportsChartVisualization) SetSlicesNumber(v int64)
+```
+
+SetSlicesNumber gets a reference to the given int64 and assigns it to the SlicesNumber field.
+
+<a name="ReportsChartVisualization.SetUiDPModuleId"></a>
+### func \(\*ReportsChartVisualization\) [SetUiDPModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L370>)
+
+```go
+func (o *ReportsChartVisualization) SetUiDPModuleId(v string)
+```
+
+SetUiDPModuleId gets a reference to the given string and assigns it to the UiDPModuleId field.
+
+<a name="ReportsChartVisualization.SetXAxis"></a>
+### func \(\*ReportsChartVisualization\) [SetXAxis](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L286>)
+
+```go
+func (o *ReportsChartVisualization) SetXAxis(v ReportsChartXAxis)
+```
+
+SetXAxis gets a reference to the given ReportsChartXAxis and assigns it to the XAxis field.
+
+<a name="ReportsChartVisualization.SetYAxis"></a>
+### func \(\*ReportsChartVisualization\) [SetYAxis](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L314>)
+
+```go
+func (o *ReportsChartVisualization) SetYAxis(v ReportsChartYAxis)
+```
+
+SetYAxis gets a reference to the given ReportsChartYAxis and assigns it to the YAxis field.
+
+<a name="ReportsChartVisualization.UnMarshalJSON"></a>
+### func \(\*ReportsChartVisualization\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L587>)
+
+```go
+func (o *ReportsChartVisualization) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsChartVisualization.UnSetColorScheme"></a>
+### func \(\*ReportsChartVisualization\) [UnSetColorScheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L409>)
+
+```go
+func (o *ReportsChartVisualization) UnSetColorScheme()
+```
+
+UnsetColorScheme ensures that no value is present for ColorScheme, not even an explicit nil.
+
+<a name="ReportsChartXAxis"></a>
+## type [ReportsChartXAxis](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L10-L21>)
+
+ReportsChartXAxis defines the configuration for the X\-axis of a chart in reports.
+
+```go
+type ReportsChartXAxis struct {
+    // Label for the x-axis.
+    Label *string `json:"Label,omitempty"`
+    // Interval for x-axis values.
+    Interval *int64 `json:"Interval,omitempty"`
+    // Angle for x-axis labels.
+    Angle *int64 `json:"Angle,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsChartXAxis"></a>
+### func [NewReportsChartXAxis](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L27>)
+
+```go
+func NewReportsChartXAxis() *ReportsChartXAxis
+```
+
+NewReportsChartXAxis creates a new ReportsChartXAxis object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsChartXAxisWithDefaults"></a>
+### func [NewReportsChartXAxisWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L35>)
+
+```go
+func NewReportsChartXAxisWithDefaults() *ReportsChartXAxis
+```
+
+NewReportsChartXAxisWithDefaults creates a new ReportsChartXAxis object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsChartXAxis.GetAngle"></a>
+### func \(\*ReportsChartXAxis\) [GetAngle](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L97>)
+
+```go
+func (o *ReportsChartXAxis) GetAngle() int64
+```
+
+GetAngle returns the Angle field value if set, zero value otherwise.
+
+<a name="ReportsChartXAxis.GetAngleOk"></a>
+### func \(\*ReportsChartXAxis\) [GetAngleOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L107>)
+
+```go
+func (o *ReportsChartXAxis) GetAngleOk() (*int64, bool)
+```
+
+GetAngleOk returns a tuple with the Angle field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartXAxis.GetInterval"></a>
+### func \(\*ReportsChartXAxis\) [GetInterval](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L69>)
+
+```go
+func (o *ReportsChartXAxis) GetInterval() int64
+```
+
+GetInterval returns the Interval field value if set, zero value otherwise.
+
+<a name="ReportsChartXAxis.GetIntervalOk"></a>
+### func \(\*ReportsChartXAxis\) [GetIntervalOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L79>)
+
+```go
+func (o *ReportsChartXAxis) GetIntervalOk() (*int64, bool)
+```
+
+GetIntervalOk returns a tuple with the Interval field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartXAxis.GetLabel"></a>
+### func \(\*ReportsChartXAxis\) [GetLabel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L41>)
+
+```go
+func (o *ReportsChartXAxis) GetLabel() string
+```
+
+GetLabel returns the Label field value if set, zero value otherwise.
+
+<a name="ReportsChartXAxis.GetLabelOk"></a>
+### func \(\*ReportsChartXAxis\) [GetLabelOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L51>)
+
+```go
+func (o *ReportsChartXAxis) GetLabelOk() (*string, bool)
+```
+
+GetLabelOk returns a tuple with the Label field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartXAxis.HasAngle"></a>
+### func \(\*ReportsChartXAxis\) [HasAngle](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L115>)
+
+```go
+func (o *ReportsChartXAxis) HasAngle() bool
+```
+
+HasAngle returns a boolean if a field has been set.
+
+<a name="ReportsChartXAxis.HasInterval"></a>
+### func \(\*ReportsChartXAxis\) [HasInterval](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L87>)
+
+```go
+func (o *ReportsChartXAxis) HasInterval() bool
+```
+
+HasInterval returns a boolean if a field has been set.
+
+<a name="ReportsChartXAxis.HasLabel"></a>
+### func \(\*ReportsChartXAxis\) [HasLabel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L59>)
+
+```go
+func (o *ReportsChartXAxis) HasLabel() bool
+```
+
+HasLabel returns a boolean if a field has been set.
+
+<a name="ReportsChartXAxis.MarshalJSON"></a>
+### func \(ReportsChartXAxis\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L125>)
+
+```go
+func (o ReportsChartXAxis) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsChartXAxis.SetAngle"></a>
+### func \(\*ReportsChartXAxis\) [SetAngle](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L120>)
+
+```go
+func (o *ReportsChartXAxis) SetAngle(v int64)
+```
+
+SetAngle gets a reference to the given int64 and assigns it to the Angle field.
+
+<a name="ReportsChartXAxis.SetInterval"></a>
+### func \(\*ReportsChartXAxis\) [SetInterval](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L92>)
+
+```go
+func (o *ReportsChartXAxis) SetInterval(v int64)
+```
+
+SetInterval gets a reference to the given int64 and assigns it to the Interval field.
+
+<a name="ReportsChartXAxis.SetLabel"></a>
+### func \(\*ReportsChartXAxis\) [SetLabel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L64>)
+
+```go
+func (o *ReportsChartXAxis) SetLabel(v string)
+```
+
+SetLabel gets a reference to the given string and assigns it to the Label field.
+
+<a name="ReportsChartXAxis.UnMarshalJSON"></a>
+### func \(\*ReportsChartXAxis\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L147>)
+
+```go
+func (o *ReportsChartXAxis) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsChartYAxis"></a>
+## type [ReportsChartYAxis](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L10-L23>)
+
+ReportsChartYAxis defines the configuration for the Y\-axis of a chart in reports.
+
+```go
+type ReportsChartYAxis struct {
+    // Label for the y-axis.
+    Label *string `json:"Label,omitempty"`
+    // Interval for y-axis values.
+    Interval *int64 `json:"Interval,omitempty"`
+    // Minimum value for the y-axis.
+    MinValue common.NullableInt64 `json:"MinValue,omitempty"`
+    // Maximum value for the y-axis.
+    MaxValue common.NullableInt64 `json:"MaxValue,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsChartYAxis"></a>
+### func [NewReportsChartYAxis](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L29>)
+
+```go
+func NewReportsChartYAxis() *ReportsChartYAxis
+```
+
+NewReportsChartYAxis creates a new ReportsChartYAxis object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsChartYAxisWithDefaults"></a>
+### func [NewReportsChartYAxisWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L37>)
+
+```go
+func NewReportsChartYAxisWithDefaults() *ReportsChartYAxis
+```
+
+NewReportsChartYAxisWithDefaults creates a new ReportsChartYAxis object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsChartYAxis.GetInterval"></a>
+### func \(\*ReportsChartYAxis\) [GetInterval](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L71>)
+
+```go
+func (o *ReportsChartYAxis) GetInterval() int64
+```
+
+GetInterval returns the Interval field value if set, zero value otherwise.
+
+<a name="ReportsChartYAxis.GetIntervalOk"></a>
+### func \(\*ReportsChartYAxis\) [GetIntervalOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L81>)
+
+```go
+func (o *ReportsChartYAxis) GetIntervalOk() (*int64, bool)
+```
+
+GetIntervalOk returns a tuple with the Interval field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartYAxis.GetLabel"></a>
+### func \(\*ReportsChartYAxis\) [GetLabel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L43>)
+
+```go
+func (o *ReportsChartYAxis) GetLabel() string
+```
+
+GetLabel returns the Label field value if set, zero value otherwise.
+
+<a name="ReportsChartYAxis.GetLabelOk"></a>
+### func \(\*ReportsChartYAxis\) [GetLabelOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L53>)
+
+```go
+func (o *ReportsChartYAxis) GetLabelOk() (*string, bool)
+```
+
+GetLabelOk returns a tuple with the Label field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsChartYAxis.GetMaxValue"></a>
+### func \(\*ReportsChartYAxis\) [GetMaxValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L138>)
+
+```go
+func (o *ReportsChartYAxis) GetMaxValue() int64
+```
+
+GetMaxValue returns the MaxValue field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsChartYAxis.GetMaxValueOk"></a>
+### func \(\*ReportsChartYAxis\) [GetMaxValueOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L149>)
+
+```go
+func (o *ReportsChartYAxis) GetMaxValueOk() (*int64, bool)
+```
+
+GetMaxValueOk returns a tuple with the MaxValue field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsChartYAxis.GetMinValue"></a>
+### func \(\*ReportsChartYAxis\) [GetMinValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L99>)
+
+```go
+func (o *ReportsChartYAxis) GetMinValue() int64
+```
+
+GetMinValue returns the MinValue field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsChartYAxis.GetMinValueOk"></a>
+### func \(\*ReportsChartYAxis\) [GetMinValueOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L110>)
+
+```go
+func (o *ReportsChartYAxis) GetMinValueOk() (*int64, bool)
+```
+
+GetMinValueOk returns a tuple with the MinValue field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsChartYAxis.HasInterval"></a>
+### func \(\*ReportsChartYAxis\) [HasInterval](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L89>)
+
+```go
+func (o *ReportsChartYAxis) HasInterval() bool
+```
+
+HasInterval returns a boolean if a field has been set.
+
+<a name="ReportsChartYAxis.HasLabel"></a>
+### func \(\*ReportsChartYAxis\) [HasLabel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L61>)
+
+```go
+func (o *ReportsChartYAxis) HasLabel() bool
+```
+
+HasLabel returns a boolean if a field has been set.
+
+<a name="ReportsChartYAxis.HasMaxValue"></a>
+### func \(\*ReportsChartYAxis\) [HasMaxValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L157>)
+
+```go
+func (o *ReportsChartYAxis) HasMaxValue() bool
+```
+
+HasMaxValue returns a boolean if a field has been set.
+
+<a name="ReportsChartYAxis.HasMinValue"></a>
+### func \(\*ReportsChartYAxis\) [HasMinValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L118>)
+
+```go
+func (o *ReportsChartYAxis) HasMinValue() bool
+```
+
+HasMinValue returns a boolean if a field has been set.
+
+<a name="ReportsChartYAxis.MarshalJSON"></a>
+### func \(ReportsChartYAxis\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L177>)
+
+```go
+func (o ReportsChartYAxis) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsChartYAxis.SetInterval"></a>
+### func \(\*ReportsChartYAxis\) [SetInterval](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L94>)
+
+```go
+func (o *ReportsChartYAxis) SetInterval(v int64)
+```
+
+SetInterval gets a reference to the given int64 and assigns it to the Interval field.
+
+<a name="ReportsChartYAxis.SetLabel"></a>
+### func \(\*ReportsChartYAxis\) [SetLabel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L66>)
+
+```go
+func (o *ReportsChartYAxis) SetLabel(v string)
+```
+
+SetLabel gets a reference to the given string and assigns it to the Label field.
+
+<a name="ReportsChartYAxis.SetMaxValue"></a>
+### func \(\*ReportsChartYAxis\) [SetMaxValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L162>)
+
+```go
+func (o *ReportsChartYAxis) SetMaxValue(v int64)
+```
+
+SetMaxValue gets a reference to the given datadog.NullableString and assigns it to the MaxValue field.
+
+<a name="ReportsChartYAxis.SetMaxValueNil"></a>
+### func \(\*ReportsChartYAxis\) [SetMaxValueNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L167>)
+
+```go
+func (o *ReportsChartYAxis) SetMaxValueNil()
+```
+
+SetMaxValueNil sets the value for MaxValue to be an explicit nil.
+
+<a name="ReportsChartYAxis.SetMinValue"></a>
+### func \(\*ReportsChartYAxis\) [SetMinValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L123>)
+
+```go
+func (o *ReportsChartYAxis) SetMinValue(v int64)
+```
+
+SetMinValue gets a reference to the given datadog.NullableString and assigns it to the MinValue field.
+
+<a name="ReportsChartYAxis.SetMinValueNil"></a>
+### func \(\*ReportsChartYAxis\) [SetMinValueNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L128>)
+
+```go
+func (o *ReportsChartYAxis) SetMinValueNil()
+```
+
+SetMinValueNil sets the value for MinValue to be an explicit nil.
+
+<a name="ReportsChartYAxis.UnMarshalJSON"></a>
+### func \(\*ReportsChartYAxis\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L202>)
+
+```go
+func (o *ReportsChartYAxis) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsChartYAxis.UnSetMaxValue"></a>
+### func \(\*ReportsChartYAxis\) [UnSetMaxValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L172>)
+
+```go
+func (o *ReportsChartYAxis) UnSetMaxValue()
+```
+
+UnsetMaxValue ensures that no value is present for MaxValue, not even an explicit nil.
+
+<a name="ReportsChartYAxis.UnSetMinValue"></a>
+### func \(\*ReportsChartYAxis\) [UnSetMinValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L133>)
+
+```go
+func (o *ReportsChartYAxis) UnSetMinValue()
+```
+
+UnsetMinValue ensures that no value is present for MinValue, not even an explicit nil.
+
+<a name="ReportsData"></a>
+## type [ReportsData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L10-L47>)
+
+ReportsData contains the data and settings for generating reports.
+
+```go
+type ReportsData struct {
+    // Name of the report.
+    Name common.NullableString `json:"Name,omitempty"`
+    // Filename of the report.
+    FileName common.NullableString `json:"FileName,omitempty"`
+    // Creation date of the report.
+    CreateDate *string `json:"CreateDate,omitempty"`
+    // Page settings of the report.
+    Page *ReportsPage `json:"Page,omitempty"`
+    // Header content of the report.
+    Header common.NullableString `json:"Header,omitempty"`
+    // Footer content of the report.
+    Footer common.NullableString `json:"Footer,omitempty"`
+    // Cover page content of the report.
+    CoverPage common.NullableString `json:"CoverPage,omitempty"`
+    // Sections included in the report.
+    Sections []string `json:"Sections,omitempty"`
+    // Type of the report.
+    ReportType *string `json:"ReportType,omitempty"`
+    // Theme of the report.
+    Theme common.NullableString `json:"Theme,omitempty"`
+    // Language of the report.
+    Language *string `json:"Language,omitempty"`
+    // Indicates whether to add a cover page to the report.
+    AddCoverPage *bool `json:"AddCoverPage,omitempty"`
+    // Password for the report file.
+    FilePassword common.NullableString `json:"FilePassword,omitempty"`
+    // ID of the report.
+    ReportId common.NullableString `json:"ReportId,omitempty"`
+    // Theme of the report.
+    ReportTheme common.NullableString `json:"ReportTheme,omitempty"`
+    // Maximum row count for the report data.
+    MaxRowCount *int64 `json:"MaxRowCount,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsData"></a>
+### func [NewReportsData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L53>)
+
+```go
+func NewReportsData() *ReportsData
+```
+
+NewReportsData creates a new ReportsData object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsDataWithDefaults"></a>
+### func [NewReportsDataWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L61>)
+
+```go
+func NewReportsDataWithDefaults() *ReportsData
+```
+
+NewReportsDataWithDefaults creates a new ReportsData object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsData.GetAddCoverPage"></a>
+### func \(\*ReportsData\) [GetAddCoverPage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L441>)
+
+```go
+func (o *ReportsData) GetAddCoverPage() bool
+```
+
+GetAddCoverPage returns the AddCoverPage field value if set, zero value otherwise.
+
+<a name="ReportsData.GetAddCoverPageOk"></a>
+### func \(\*ReportsData\) [GetAddCoverPageOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L451>)
+
+```go
+func (o *ReportsData) GetAddCoverPageOk() (*bool, bool)
+```
+
+GetAddCoverPageOk returns a tuple with the AddCoverPage field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsData.GetCoverPage"></a>
+### func \(\*ReportsData\) [GetCoverPage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L279>)
+
+```go
+func (o *ReportsData) GetCoverPage() string
+```
+
+GetCoverPage returns the CoverPage field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsData.GetCoverPageOk"></a>
+### func \(\*ReportsData\) [GetCoverPageOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L290>)
+
+```go
+func (o *ReportsData) GetCoverPageOk() (*string, bool)
+```
+
+GetCoverPageOk returns a tuple with the CoverPage field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsData.GetCreateDate"></a>
+### func \(\*ReportsData\) [GetCreateDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L145>)
+
+```go
+func (o *ReportsData) GetCreateDate() string
+```
+
+GetCreateDate returns the CreateDate field value if set, zero value otherwise.
+
+<a name="ReportsData.GetCreateDateOk"></a>
+### func \(\*ReportsData\) [GetCreateDateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L155>)
+
+```go
+func (o *ReportsData) GetCreateDateOk() (*string, bool)
+```
+
+GetCreateDateOk returns a tuple with the CreateDate field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsData.GetFileName"></a>
+### func \(\*ReportsData\) [GetFileName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L106>)
+
+```go
+func (o *ReportsData) GetFileName() string
+```
+
+GetFileName returns the FileName field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsData.GetFileNameOk"></a>
+### func \(\*ReportsData\) [GetFileNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L117>)
+
+```go
+func (o *ReportsData) GetFileNameOk() (*string, bool)
+```
+
+GetFileNameOk returns a tuple with the FileName field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsData.GetFilePassword"></a>
+### func \(\*ReportsData\) [GetFilePassword](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L469>)
+
+```go
+func (o *ReportsData) GetFilePassword() string
+```
+
+GetFilePassword returns the FilePassword field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsData.GetFilePasswordOk"></a>
+### func \(\*ReportsData\) [GetFilePasswordOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L480>)
+
+```go
+func (o *ReportsData) GetFilePasswordOk() (*string, bool)
+```
+
+GetFilePasswordOk returns a tuple with the FilePassword field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsData.GetFooter"></a>
+### func \(\*ReportsData\) [GetFooter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L240>)
+
+```go
+func (o *ReportsData) GetFooter() string
+```
+
+GetFooter returns the Footer field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsData.GetFooterOk"></a>
+### func \(\*ReportsData\) [GetFooterOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L251>)
+
+```go
+func (o *ReportsData) GetFooterOk() (*string, bool)
+```
+
+GetFooterOk returns a tuple with the Footer field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsData.GetHeader"></a>
+### func \(\*ReportsData\) [GetHeader](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L201>)
+
+```go
+func (o *ReportsData) GetHeader() string
+```
+
+GetHeader returns the Header field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsData.GetHeaderOk"></a>
+### func \(\*ReportsData\) [GetHeaderOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L212>)
+
+```go
+func (o *ReportsData) GetHeaderOk() (*string, bool)
+```
+
+GetHeaderOk returns a tuple with the Header field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsData.GetLanguage"></a>
+### func \(\*ReportsData\) [GetLanguage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L413>)
+
+```go
+func (o *ReportsData) GetLanguage() string
+```
+
+GetLanguage returns the Language field value if set, zero value otherwise.
+
+<a name="ReportsData.GetLanguageOk"></a>
+### func \(\*ReportsData\) [GetLanguageOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L423>)
+
+```go
+func (o *ReportsData) GetLanguageOk() (*string, bool)
+```
+
+GetLanguageOk returns a tuple with the Language field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsData.GetMaxRowCount"></a>
+### func \(\*ReportsData\) [GetMaxRowCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L586>)
+
+```go
+func (o *ReportsData) GetMaxRowCount() int64
+```
+
+GetMaxRowCount returns the MaxRowCount field value if set, zero value otherwise.
+
+<a name="ReportsData.GetMaxRowCountOk"></a>
+### func \(\*ReportsData\) [GetMaxRowCountOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L596>)
+
+```go
+func (o *ReportsData) GetMaxRowCountOk() (*int64, bool)
+```
+
+GetMaxRowCountOk returns a tuple with the MaxRowCount field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsData.GetName"></a>
+### func \(\*ReportsData\) [GetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L67>)
+
+```go
+func (o *ReportsData) GetName() string
+```
+
+GetName returns the Name field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsData.GetNameOk"></a>
+### func \(\*ReportsData\) [GetNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L78>)
+
+```go
+func (o *ReportsData) GetNameOk() (*string, bool)
+```
+
+GetNameOk returns a tuple with the Name field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsData.GetPage"></a>
+### func \(\*ReportsData\) [GetPage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L173>)
+
+```go
+func (o *ReportsData) GetPage() ReportsPage
+```
+
+GetPage returns the Page field value if set, zero value otherwise.
+
+<a name="ReportsData.GetPageOk"></a>
+### func \(\*ReportsData\) [GetPageOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L183>)
+
+```go
+func (o *ReportsData) GetPageOk() (*ReportsPage, bool)
+```
+
+GetPageOk returns a tuple with the Page field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsData.GetReportId"></a>
+### func \(\*ReportsData\) [GetReportId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L508>)
+
+```go
+func (o *ReportsData) GetReportId() string
+```
+
+GetReportId returns the ReportId field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsData.GetReportIdOk"></a>
+### func \(\*ReportsData\) [GetReportIdOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L519>)
+
+```go
+func (o *ReportsData) GetReportIdOk() (*string, bool)
+```
+
+GetReportIdOk returns a tuple with the ReportId field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsData.GetReportTheme"></a>
+### func \(\*ReportsData\) [GetReportTheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L547>)
+
+```go
+func (o *ReportsData) GetReportTheme() string
+```
+
+GetReportTheme returns the ReportTheme field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsData.GetReportThemeOk"></a>
+### func \(\*ReportsData\) [GetReportThemeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L558>)
+
+```go
+func (o *ReportsData) GetReportThemeOk() (*string, bool)
+```
+
+GetReportThemeOk returns a tuple with the ReportTheme field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsData.GetReportType"></a>
+### func \(\*ReportsData\) [GetReportType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L346>)
+
+```go
+func (o *ReportsData) GetReportType() string
+```
+
+GetReportType returns the ReportType field value if set, zero value otherwise.
+
+<a name="ReportsData.GetReportTypeOk"></a>
+### func \(\*ReportsData\) [GetReportTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L356>)
+
+```go
+func (o *ReportsData) GetReportTypeOk() (*string, bool)
+```
+
+GetReportTypeOk returns a tuple with the ReportType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsData.GetSections"></a>
+### func \(\*ReportsData\) [GetSections](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L318>)
+
+```go
+func (o *ReportsData) GetSections() []string
+```
+
+GetSections returns the Sections field value if set, zero value otherwise.
+
+<a name="ReportsData.GetSectionsOk"></a>
+### func \(\*ReportsData\) [GetSectionsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L328>)
+
+```go
+func (o *ReportsData) GetSectionsOk() (*[]string, bool)
+```
+
+GetSectionsOk returns a tuple with the Sections field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsData.GetTheme"></a>
+### func \(\*ReportsData\) [GetTheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L374>)
+
+```go
+func (o *ReportsData) GetTheme() string
+```
+
+GetTheme returns the Theme field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsData.GetThemeOk"></a>
+### func \(\*ReportsData\) [GetThemeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L385>)
+
+```go
+func (o *ReportsData) GetThemeOk() (*string, bool)
+```
+
+GetThemeOk returns a tuple with the Theme field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsData.HasAddCoverPage"></a>
+### func \(\*ReportsData\) [HasAddCoverPage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L459>)
+
+```go
+func (o *ReportsData) HasAddCoverPage() bool
+```
+
+HasAddCoverPage returns a boolean if a field has been set.
+
+<a name="ReportsData.HasCoverPage"></a>
+### func \(\*ReportsData\) [HasCoverPage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L298>)
+
+```go
+func (o *ReportsData) HasCoverPage() bool
+```
+
+HasCoverPage returns a boolean if a field has been set.
+
+<a name="ReportsData.HasCreateDate"></a>
+### func \(\*ReportsData\) [HasCreateDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L163>)
+
+```go
+func (o *ReportsData) HasCreateDate() bool
+```
+
+HasCreateDate returns a boolean if a field has been set.
+
+<a name="ReportsData.HasFileName"></a>
+### func \(\*ReportsData\) [HasFileName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L125>)
+
+```go
+func (o *ReportsData) HasFileName() bool
+```
+
+HasFileName returns a boolean if a field has been set.
+
+<a name="ReportsData.HasFilePassword"></a>
+### func \(\*ReportsData\) [HasFilePassword](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L488>)
+
+```go
+func (o *ReportsData) HasFilePassword() bool
+```
+
+HasFilePassword returns a boolean if a field has been set.
+
+<a name="ReportsData.HasFooter"></a>
+### func \(\*ReportsData\) [HasFooter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L259>)
+
+```go
+func (o *ReportsData) HasFooter() bool
+```
+
+HasFooter returns a boolean if a field has been set.
+
+<a name="ReportsData.HasHeader"></a>
+### func \(\*ReportsData\) [HasHeader](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L220>)
+
+```go
+func (o *ReportsData) HasHeader() bool
+```
+
+HasHeader returns a boolean if a field has been set.
+
+<a name="ReportsData.HasLanguage"></a>
+### func \(\*ReportsData\) [HasLanguage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L431>)
+
+```go
+func (o *ReportsData) HasLanguage() bool
+```
+
+HasLanguage returns a boolean if a field has been set.
+
+<a name="ReportsData.HasMaxRowCount"></a>
+### func \(\*ReportsData\) [HasMaxRowCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L604>)
+
+```go
+func (o *ReportsData) HasMaxRowCount() bool
+```
+
+HasMaxRowCount returns a boolean if a field has been set.
+
+<a name="ReportsData.HasName"></a>
+### func \(\*ReportsData\) [HasName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L86>)
+
+```go
+func (o *ReportsData) HasName() bool
+```
+
+HasName returns a boolean if a field has been set.
+
+<a name="ReportsData.HasPage"></a>
+### func \(\*ReportsData\) [HasPage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L191>)
+
+```go
+func (o *ReportsData) HasPage() bool
+```
+
+HasPage returns a boolean if a field has been set.
+
+<a name="ReportsData.HasReportId"></a>
+### func \(\*ReportsData\) [HasReportId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L527>)
+
+```go
+func (o *ReportsData) HasReportId() bool
+```
+
+HasReportId returns a boolean if a field has been set.
+
+<a name="ReportsData.HasReportTheme"></a>
+### func \(\*ReportsData\) [HasReportTheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L566>)
+
+```go
+func (o *ReportsData) HasReportTheme() bool
+```
+
+HasReportTheme returns a boolean if a field has been set.
+
+<a name="ReportsData.HasReportType"></a>
+### func \(\*ReportsData\) [HasReportType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L364>)
+
+```go
+func (o *ReportsData) HasReportType() bool
+```
+
+HasReportType returns a boolean if a field has been set.
+
+<a name="ReportsData.HasSections"></a>
+### func \(\*ReportsData\) [HasSections](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L336>)
+
+```go
+func (o *ReportsData) HasSections() bool
+```
+
+HasSections returns a boolean if a field has been set.
+
+<a name="ReportsData.HasTheme"></a>
+### func \(\*ReportsData\) [HasTheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L393>)
+
+```go
+func (o *ReportsData) HasTheme() bool
+```
+
+HasTheme returns a boolean if a field has been set.
+
+<a name="ReportsData.MarshalJSON"></a>
+### func \(ReportsData\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L614>)
+
+```go
+func (o ReportsData) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsData.SetAddCoverPage"></a>
+### func \(\*ReportsData\) [SetAddCoverPage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L464>)
+
+```go
+func (o *ReportsData) SetAddCoverPage(v bool)
+```
+
+SetAddCoverPage gets a reference to the given bool and assigns it to the AddCoverPage field.
+
+<a name="ReportsData.SetCoverPage"></a>
+### func \(\*ReportsData\) [SetCoverPage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L303>)
+
+```go
+func (o *ReportsData) SetCoverPage(v string)
+```
+
+SetCoverPage gets a reference to the given datadog.NullableString and assigns it to the CoverPage field.
+
+<a name="ReportsData.SetCoverPageNil"></a>
+### func \(\*ReportsData\) [SetCoverPageNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L308>)
+
+```go
+func (o *ReportsData) SetCoverPageNil()
+```
+
+SetCoverPageNil sets the value for CoverPage to be an explicit nil.
+
+<a name="ReportsData.SetCreateDate"></a>
+### func \(\*ReportsData\) [SetCreateDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L168>)
+
+```go
+func (o *ReportsData) SetCreateDate(v string)
+```
+
+SetCreateDate gets a reference to the given string and assigns it to the CreateDate field.
+
+<a name="ReportsData.SetFileName"></a>
+### func \(\*ReportsData\) [SetFileName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L130>)
+
+```go
+func (o *ReportsData) SetFileName(v string)
+```
+
+SetFileName gets a reference to the given datadog.NullableString and assigns it to the FileName field.
+
+<a name="ReportsData.SetFileNameNil"></a>
+### func \(\*ReportsData\) [SetFileNameNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L135>)
+
+```go
+func (o *ReportsData) SetFileNameNil()
+```
+
+SetFileNameNil sets the value for FileName to be an explicit nil.
+
+<a name="ReportsData.SetFilePassword"></a>
+### func \(\*ReportsData\) [SetFilePassword](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L493>)
+
+```go
+func (o *ReportsData) SetFilePassword(v string)
+```
+
+SetFilePassword gets a reference to the given datadog.NullableString and assigns it to the FilePassword field.
+
+<a name="ReportsData.SetFilePasswordNil"></a>
+### func \(\*ReportsData\) [SetFilePasswordNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L498>)
+
+```go
+func (o *ReportsData) SetFilePasswordNil()
+```
+
+SetFilePasswordNil sets the value for FilePassword to be an explicit nil.
+
+<a name="ReportsData.SetFooter"></a>
+### func \(\*ReportsData\) [SetFooter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L264>)
+
+```go
+func (o *ReportsData) SetFooter(v string)
+```
+
+SetFooter gets a reference to the given datadog.NullableString and assigns it to the Footer field.
+
+<a name="ReportsData.SetFooterNil"></a>
+### func \(\*ReportsData\) [SetFooterNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L269>)
+
+```go
+func (o *ReportsData) SetFooterNil()
+```
+
+SetFooterNil sets the value for Footer to be an explicit nil.
+
+<a name="ReportsData.SetHeader"></a>
+### func \(\*ReportsData\) [SetHeader](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L225>)
+
+```go
+func (o *ReportsData) SetHeader(v string)
+```
+
+SetHeader gets a reference to the given datadog.NullableString and assigns it to the Header field.
+
+<a name="ReportsData.SetHeaderNil"></a>
+### func \(\*ReportsData\) [SetHeaderNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L230>)
+
+```go
+func (o *ReportsData) SetHeaderNil()
+```
+
+SetHeaderNil sets the value for Header to be an explicit nil.
+
+<a name="ReportsData.SetLanguage"></a>
+### func \(\*ReportsData\) [SetLanguage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L436>)
+
+```go
+func (o *ReportsData) SetLanguage(v string)
+```
+
+SetLanguage gets a reference to the given string and assigns it to the Language field.
+
+<a name="ReportsData.SetMaxRowCount"></a>
+### func \(\*ReportsData\) [SetMaxRowCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L609>)
+
+```go
+func (o *ReportsData) SetMaxRowCount(v int64)
+```
+
+SetMaxRowCount gets a reference to the given int64 and assigns it to the MaxRowCount field.
+
+<a name="ReportsData.SetName"></a>
+### func \(\*ReportsData\) [SetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L91>)
+
+```go
+func (o *ReportsData) SetName(v string)
+```
+
+SetName gets a reference to the given datadog.NullableString and assigns it to the Name field.
+
+<a name="ReportsData.SetNameNil"></a>
+### func \(\*ReportsData\) [SetNameNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L96>)
+
+```go
+func (o *ReportsData) SetNameNil()
+```
+
+SetNameNil sets the value for Name to be an explicit nil.
+
+<a name="ReportsData.SetPage"></a>
+### func \(\*ReportsData\) [SetPage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L196>)
+
+```go
+func (o *ReportsData) SetPage(v ReportsPage)
+```
+
+SetPage gets a reference to the given ReportsPage and assigns it to the Page field.
+
+<a name="ReportsData.SetReportId"></a>
+### func \(\*ReportsData\) [SetReportId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L532>)
+
+```go
+func (o *ReportsData) SetReportId(v string)
+```
+
+SetReportId gets a reference to the given datadog.NullableString and assigns it to the ReportId field.
+
+<a name="ReportsData.SetReportIdNil"></a>
+### func \(\*ReportsData\) [SetReportIdNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L537>)
+
+```go
+func (o *ReportsData) SetReportIdNil()
+```
+
+SetReportIdNil sets the value for ReportId to be an explicit nil.
+
+<a name="ReportsData.SetReportTheme"></a>
+### func \(\*ReportsData\) [SetReportTheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L571>)
+
+```go
+func (o *ReportsData) SetReportTheme(v string)
+```
+
+SetReportTheme gets a reference to the given datadog.NullableString and assigns it to the ReportTheme field.
+
+<a name="ReportsData.SetReportThemeNil"></a>
+### func \(\*ReportsData\) [SetReportThemeNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L576>)
+
+```go
+func (o *ReportsData) SetReportThemeNil()
+```
+
+SetReportThemeNil sets the value for ReportTheme to be an explicit nil.
+
+<a name="ReportsData.SetReportType"></a>
+### func \(\*ReportsData\) [SetReportType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L369>)
+
+```go
+func (o *ReportsData) SetReportType(v string)
+```
+
+SetReportType gets a reference to the given string and assigns it to the ReportType field.
+
+<a name="ReportsData.SetSections"></a>
+### func \(\*ReportsData\) [SetSections](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L341>)
+
+```go
+func (o *ReportsData) SetSections(v []string)
+```
+
+SetSections gets a reference to the given \[\]string and assigns it to the Sections field.
+
+<a name="ReportsData.SetTheme"></a>
+### func \(\*ReportsData\) [SetTheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L398>)
+
+```go
+func (o *ReportsData) SetTheme(v string)
+```
+
+SetTheme gets a reference to the given datadog.NullableString and assigns it to the Theme field.
+
+<a name="ReportsData.SetThemeNil"></a>
+### func \(\*ReportsData\) [SetThemeNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L403>)
+
+```go
+func (o *ReportsData) SetThemeNil()
+```
+
+SetThemeNil sets the value for Theme to be an explicit nil.
+
+<a name="ReportsData.UnMarshalJSON"></a>
+### func \(\*ReportsData\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L675>)
+
+```go
+func (o *ReportsData) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsData.UnSetCoverPage"></a>
+### func \(\*ReportsData\) [UnSetCoverPage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L313>)
+
+```go
+func (o *ReportsData) UnSetCoverPage()
+```
+
+UnsetCoverPage ensures that no value is present for CoverPage, not even an explicit nil.
+
+<a name="ReportsData.UnSetFileName"></a>
+### func \(\*ReportsData\) [UnSetFileName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L140>)
+
+```go
+func (o *ReportsData) UnSetFileName()
+```
+
+UnsetFileName ensures that no value is present for FileName, not even an explicit nil.
+
+<a name="ReportsData.UnSetFilePassword"></a>
+### func \(\*ReportsData\) [UnSetFilePassword](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L503>)
+
+```go
+func (o *ReportsData) UnSetFilePassword()
+```
+
+UnsetFilePassword ensures that no value is present for FilePassword, not even an explicit nil.
+
+<a name="ReportsData.UnSetFooter"></a>
+### func \(\*ReportsData\) [UnSetFooter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L274>)
+
+```go
+func (o *ReportsData) UnSetFooter()
+```
+
+UnsetFooter ensures that no value is present for Footer, not even an explicit nil.
+
+<a name="ReportsData.UnSetHeader"></a>
+### func \(\*ReportsData\) [UnSetHeader](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L235>)
+
+```go
+func (o *ReportsData) UnSetHeader()
+```
+
+UnsetHeader ensures that no value is present for Header, not even an explicit nil.
+
+<a name="ReportsData.UnSetName"></a>
+### func \(\*ReportsData\) [UnSetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L101>)
+
+```go
+func (o *ReportsData) UnSetName()
+```
+
+UnsetName ensures that no value is present for Name, not even an explicit nil.
+
+<a name="ReportsData.UnSetReportId"></a>
+### func \(\*ReportsData\) [UnSetReportId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L542>)
+
+```go
+func (o *ReportsData) UnSetReportId()
+```
+
+UnsetReportId ensures that no value is present for ReportId, not even an explicit nil.
+
+<a name="ReportsData.UnSetReportTheme"></a>
+### func \(\*ReportsData\) [UnSetReportTheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L581>)
+
+```go
+func (o *ReportsData) UnSetReportTheme()
+```
+
+UnsetReportTheme ensures that no value is present for ReportTheme, not even an explicit nil.
+
+<a name="ReportsData.UnSetTheme"></a>
+### func \(\*ReportsData\) [UnSetTheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L408>)
+
+```go
+func (o *ReportsData) UnSetTheme()
+```
+
+UnsetTheme ensures that no value is present for Theme, not even an explicit nil.
+
+<a name="ReportsLatestReportFile"></a>
+## type [ReportsLatestReportFile](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L10-L23>)
+
+ReportsLatestReportFile contains information about the latest report file.
+
+```go
+type ReportsLatestReportFile struct {
+    // Filename of the latest report file.
+    Filename *string `json:"Filename,omitempty"`
+    // Status of the latest report file.
+    Status *string `json:"Status,omitempty"`
+    // ID of the latest report file in GridFS.
+    ReportGridFSFileId *string `json:"ReportGridFSFileId,omitempty"`
+    // Run date of the latest report file.
+    RunDate *string `json:"RunDate,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsLatestReportFile"></a>
+### func [NewReportsLatestReportFile](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L29>)
+
+```go
+func NewReportsLatestReportFile() *ReportsLatestReportFile
+```
+
+NewReportsLatestReportFile creates a new ReportsLatestReportFile object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsLatestReportFileWithDefaults"></a>
+### func [NewReportsLatestReportFileWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L37>)
+
+```go
+func NewReportsLatestReportFileWithDefaults() *ReportsLatestReportFile
+```
+
+NewReportsLatestReportFileWithDefaults creates a new ReportsLatestReportFile object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsLatestReportFile.GetFilename"></a>
+### func \(\*ReportsLatestReportFile\) [GetFilename](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L43>)
+
+```go
+func (o *ReportsLatestReportFile) GetFilename() string
+```
+
+GetFilename returns the Filename field value if set, zero value otherwise.
+
+<a name="ReportsLatestReportFile.GetFilenameOk"></a>
+### func \(\*ReportsLatestReportFile\) [GetFilenameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L53>)
+
+```go
+func (o *ReportsLatestReportFile) GetFilenameOk() (*string, bool)
+```
+
+GetFilenameOk returns a tuple with the Filename field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsLatestReportFile.GetReportGridFSFileId"></a>
+### func \(\*ReportsLatestReportFile\) [GetReportGridFSFileId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L99>)
+
+```go
+func (o *ReportsLatestReportFile) GetReportGridFSFileId() string
+```
+
+GetReportGridFSFileId returns the ReportGridFSFileId field value if set, zero value otherwise.
+
+<a name="ReportsLatestReportFile.GetReportGridFSFileIdOk"></a>
+### func \(\*ReportsLatestReportFile\) [GetReportGridFSFileIdOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L109>)
+
+```go
+func (o *ReportsLatestReportFile) GetReportGridFSFileIdOk() (*string, bool)
+```
+
+GetReportGridFSFileIdOk returns a tuple with the ReportGridFSFileId field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsLatestReportFile.GetRunDate"></a>
+### func \(\*ReportsLatestReportFile\) [GetRunDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L127>)
+
+```go
+func (o *ReportsLatestReportFile) GetRunDate() string
+```
+
+GetRunDate returns the RunDate field value if set, zero value otherwise.
+
+<a name="ReportsLatestReportFile.GetRunDateOk"></a>
+### func \(\*ReportsLatestReportFile\) [GetRunDateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L137>)
+
+```go
+func (o *ReportsLatestReportFile) GetRunDateOk() (*string, bool)
+```
+
+GetRunDateOk returns a tuple with the RunDate field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsLatestReportFile.GetStatus"></a>
+### func \(\*ReportsLatestReportFile\) [GetStatus](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L71>)
+
+```go
+func (o *ReportsLatestReportFile) GetStatus() string
+```
+
+GetStatus returns the Status field value if set, zero value otherwise.
+
+<a name="ReportsLatestReportFile.GetStatusOk"></a>
+### func \(\*ReportsLatestReportFile\) [GetStatusOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L81>)
+
+```go
+func (o *ReportsLatestReportFile) GetStatusOk() (*string, bool)
+```
+
+GetStatusOk returns a tuple with the Status field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsLatestReportFile.HasFilename"></a>
+### func \(\*ReportsLatestReportFile\) [HasFilename](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L61>)
+
+```go
+func (o *ReportsLatestReportFile) HasFilename() bool
+```
+
+HasFilename returns a boolean if a field has been set.
+
+<a name="ReportsLatestReportFile.HasReportGridFSFileId"></a>
+### func \(\*ReportsLatestReportFile\) [HasReportGridFSFileId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L117>)
+
+```go
+func (o *ReportsLatestReportFile) HasReportGridFSFileId() bool
+```
+
+HasReportGridFSFileId returns a boolean if a field has been set.
+
+<a name="ReportsLatestReportFile.HasRunDate"></a>
+### func \(\*ReportsLatestReportFile\) [HasRunDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L145>)
+
+```go
+func (o *ReportsLatestReportFile) HasRunDate() bool
+```
+
+HasRunDate returns a boolean if a field has been set.
+
+<a name="ReportsLatestReportFile.HasStatus"></a>
+### func \(\*ReportsLatestReportFile\) [HasStatus](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L89>)
+
+```go
+func (o *ReportsLatestReportFile) HasStatus() bool
+```
+
+HasStatus returns a boolean if a field has been set.
+
+<a name="ReportsLatestReportFile.MarshalJSON"></a>
+### func \(ReportsLatestReportFile\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L155>)
+
+```go
+func (o ReportsLatestReportFile) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsLatestReportFile.SetFilename"></a>
+### func \(\*ReportsLatestReportFile\) [SetFilename](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L66>)
+
+```go
+func (o *ReportsLatestReportFile) SetFilename(v string)
+```
+
+SetFilename gets a reference to the given string and assigns it to the Filename field.
+
+<a name="ReportsLatestReportFile.SetReportGridFSFileId"></a>
+### func \(\*ReportsLatestReportFile\) [SetReportGridFSFileId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L122>)
+
+```go
+func (o *ReportsLatestReportFile) SetReportGridFSFileId(v string)
+```
+
+SetReportGridFSFileId gets a reference to the given string and assigns it to the ReportGridFSFileId field.
+
+<a name="ReportsLatestReportFile.SetRunDate"></a>
+### func \(\*ReportsLatestReportFile\) [SetRunDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L150>)
+
+```go
+func (o *ReportsLatestReportFile) SetRunDate(v string)
+```
+
+SetRunDate gets a reference to the given string and assigns it to the RunDate field.
+
+<a name="ReportsLatestReportFile.SetStatus"></a>
+### func \(\*ReportsLatestReportFile\) [SetStatus](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L94>)
+
+```go
+func (o *ReportsLatestReportFile) SetStatus(v string)
+```
+
+SetStatus gets a reference to the given string and assigns it to the Status field.
+
+<a name="ReportsLatestReportFile.UnMarshalJSON"></a>
+### func \(\*ReportsLatestReportFile\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L180>)
+
+```go
+func (o *ReportsLatestReportFile) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsPage"></a>
+## type [ReportsPage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L10-L31>)
+
+ReportsPage defines the layout settings for a page in reports.
+
+```go
+type ReportsPage struct {
+    // Indicates if the page size is A3.
+    IsA3 *bool `json:"IsA3,omitempty"`
+    // Indicates if the page orientation is landscape.
+    IsLandscape *bool `json:"IsLandscape,omitempty"`
+    // Top margin of the page.
+    TopMargin *int64 `json:"TopMargin,omitempty"`
+    // Bottom margin of the page.
+    BottomMargin *int64 `json:"BottomMargin,omitempty"`
+    // Left margin of the page.
+    LeftMargin *int64 `json:"LeftMargin,omitempty"`
+    // Right margin of the page.
+    RightMargin *int64 `json:"RightMargin,omitempty"`
+    // Distance of the header from the top of the page.
+    HeaderDistance *int64 `json:"HeaderDistance,omitempty"`
+    // Distance of the footer from the bottom of the page.
+    FooterDistance *int64 `json:"FooterDistance,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsPage"></a>
+### func [NewReportsPage](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L37>)
+
+```go
+func NewReportsPage() *ReportsPage
+```
+
+NewReportsPage creates a new ReportsPage object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsPageWithDefaults"></a>
+### func [NewReportsPageWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L45>)
+
+```go
+func NewReportsPageWithDefaults() *ReportsPage
+```
+
+NewReportsPageWithDefaults creates a new ReportsPage object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsPage.GetBottomMargin"></a>
+### func \(\*ReportsPage\) [GetBottomMargin](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L135>)
+
+```go
+func (o *ReportsPage) GetBottomMargin() int64
+```
+
+GetBottomMargin returns the BottomMargin field value if set, zero value otherwise.
+
+<a name="ReportsPage.GetBottomMarginOk"></a>
+### func \(\*ReportsPage\) [GetBottomMarginOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L145>)
+
+```go
+func (o *ReportsPage) GetBottomMarginOk() (*int64, bool)
+```
+
+GetBottomMarginOk returns a tuple with the BottomMargin field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsPage.GetFooterDistance"></a>
+### func \(\*ReportsPage\) [GetFooterDistance](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L247>)
+
+```go
+func (o *ReportsPage) GetFooterDistance() int64
+```
+
+GetFooterDistance returns the FooterDistance field value if set, zero value otherwise.
+
+<a name="ReportsPage.GetFooterDistanceOk"></a>
+### func \(\*ReportsPage\) [GetFooterDistanceOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L257>)
+
+```go
+func (o *ReportsPage) GetFooterDistanceOk() (*int64, bool)
+```
+
+GetFooterDistanceOk returns a tuple with the FooterDistance field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsPage.GetHeaderDistance"></a>
+### func \(\*ReportsPage\) [GetHeaderDistance](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L219>)
+
+```go
+func (o *ReportsPage) GetHeaderDistance() int64
+```
+
+GetHeaderDistance returns the HeaderDistance field value if set, zero value otherwise.
+
+<a name="ReportsPage.GetHeaderDistanceOk"></a>
+### func \(\*ReportsPage\) [GetHeaderDistanceOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L229>)
+
+```go
+func (o *ReportsPage) GetHeaderDistanceOk() (*int64, bool)
+```
+
+GetHeaderDistanceOk returns a tuple with the HeaderDistance field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsPage.GetIsA3"></a>
+### func \(\*ReportsPage\) [GetIsA3](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L51>)
+
+```go
+func (o *ReportsPage) GetIsA3() bool
+```
+
+GetIsA3 returns the IsA3 field value if set, zero value otherwise.
+
+<a name="ReportsPage.GetIsA3Ok"></a>
+### func \(\*ReportsPage\) [GetIsA3Ok](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L61>)
+
+```go
+func (o *ReportsPage) GetIsA3Ok() (*bool, bool)
+```
+
+GetIsA3Ok returns a tuple with the IsA3 field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsPage.GetIsLandscape"></a>
+### func \(\*ReportsPage\) [GetIsLandscape](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L79>)
+
+```go
+func (o *ReportsPage) GetIsLandscape() bool
+```
+
+GetIsLandscape returns the IsLandscape field value if set, zero value otherwise.
+
+<a name="ReportsPage.GetIsLandscapeOk"></a>
+### func \(\*ReportsPage\) [GetIsLandscapeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L89>)
+
+```go
+func (o *ReportsPage) GetIsLandscapeOk() (*bool, bool)
+```
+
+GetIsLandscapeOk returns a tuple with the IsLandscape field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsPage.GetLeftMargin"></a>
+### func \(\*ReportsPage\) [GetLeftMargin](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L163>)
+
+```go
+func (o *ReportsPage) GetLeftMargin() int64
+```
+
+GetLeftMargin returns the LeftMargin field value if set, zero value otherwise.
+
+<a name="ReportsPage.GetLeftMarginOk"></a>
+### func \(\*ReportsPage\) [GetLeftMarginOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L173>)
+
+```go
+func (o *ReportsPage) GetLeftMarginOk() (*int64, bool)
+```
+
+GetLeftMarginOk returns a tuple with the LeftMargin field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsPage.GetRightMargin"></a>
+### func \(\*ReportsPage\) [GetRightMargin](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L191>)
+
+```go
+func (o *ReportsPage) GetRightMargin() int64
+```
+
+GetRightMargin returns the RightMargin field value if set, zero value otherwise.
+
+<a name="ReportsPage.GetRightMarginOk"></a>
+### func \(\*ReportsPage\) [GetRightMarginOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L201>)
+
+```go
+func (o *ReportsPage) GetRightMarginOk() (*int64, bool)
+```
+
+GetRightMarginOk returns a tuple with the RightMargin field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsPage.GetTopMargin"></a>
+### func \(\*ReportsPage\) [GetTopMargin](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L107>)
+
+```go
+func (o *ReportsPage) GetTopMargin() int64
+```
+
+GetTopMargin returns the TopMargin field value if set, zero value otherwise.
+
+<a name="ReportsPage.GetTopMarginOk"></a>
+### func \(\*ReportsPage\) [GetTopMarginOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L117>)
+
+```go
+func (o *ReportsPage) GetTopMarginOk() (*int64, bool)
+```
+
+GetTopMarginOk returns a tuple with the TopMargin field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsPage.HasBottomMargin"></a>
+### func \(\*ReportsPage\) [HasBottomMargin](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L153>)
+
+```go
+func (o *ReportsPage) HasBottomMargin() bool
+```
+
+HasBottomMargin returns a boolean if a field has been set.
+
+<a name="ReportsPage.HasFooterDistance"></a>
+### func \(\*ReportsPage\) [HasFooterDistance](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L265>)
+
+```go
+func (o *ReportsPage) HasFooterDistance() bool
+```
+
+HasFooterDistance returns a boolean if a field has been set.
+
+<a name="ReportsPage.HasHeaderDistance"></a>
+### func \(\*ReportsPage\) [HasHeaderDistance](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L237>)
+
+```go
+func (o *ReportsPage) HasHeaderDistance() bool
+```
+
+HasHeaderDistance returns a boolean if a field has been set.
+
+<a name="ReportsPage.HasIsA3"></a>
+### func \(\*ReportsPage\) [HasIsA3](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L69>)
+
+```go
+func (o *ReportsPage) HasIsA3() bool
+```
+
+HasIsA3 returns a boolean if a field has been set.
+
+<a name="ReportsPage.HasIsLandscape"></a>
+### func \(\*ReportsPage\) [HasIsLandscape](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L97>)
+
+```go
+func (o *ReportsPage) HasIsLandscape() bool
+```
+
+HasIsLandscape returns a boolean if a field has been set.
+
+<a name="ReportsPage.HasLeftMargin"></a>
+### func \(\*ReportsPage\) [HasLeftMargin](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L181>)
+
+```go
+func (o *ReportsPage) HasLeftMargin() bool
+```
+
+HasLeftMargin returns a boolean if a field has been set.
+
+<a name="ReportsPage.HasRightMargin"></a>
+### func \(\*ReportsPage\) [HasRightMargin](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L209>)
+
+```go
+func (o *ReportsPage) HasRightMargin() bool
+```
+
+HasRightMargin returns a boolean if a field has been set.
+
+<a name="ReportsPage.HasTopMargin"></a>
+### func \(\*ReportsPage\) [HasTopMargin](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L125>)
+
+```go
+func (o *ReportsPage) HasTopMargin() bool
+```
+
+HasTopMargin returns a boolean if a field has been set.
+
+<a name="ReportsPage.MarshalJSON"></a>
+### func \(ReportsPage\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L275>)
+
+```go
+func (o ReportsPage) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsPage.SetBottomMargin"></a>
+### func \(\*ReportsPage\) [SetBottomMargin](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L158>)
+
+```go
+func (o *ReportsPage) SetBottomMargin(v int64)
+```
+
+SetBottomMargin gets a reference to the given int64 and assigns it to the BottomMargin field.
+
+<a name="ReportsPage.SetFooterDistance"></a>
+### func \(\*ReportsPage\) [SetFooterDistance](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L270>)
+
+```go
+func (o *ReportsPage) SetFooterDistance(v int64)
+```
+
+SetFooterDistance gets a reference to the given int64 and assigns it to the FooterDistance field.
+
+<a name="ReportsPage.SetHeaderDistance"></a>
+### func \(\*ReportsPage\) [SetHeaderDistance](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L242>)
+
+```go
+func (o *ReportsPage) SetHeaderDistance(v int64)
+```
+
+SetHeaderDistance gets a reference to the given int64 and assigns it to the HeaderDistance field.
+
+<a name="ReportsPage.SetIsA3"></a>
+### func \(\*ReportsPage\) [SetIsA3](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L74>)
+
+```go
+func (o *ReportsPage) SetIsA3(v bool)
+```
+
+SetIsA3 gets a reference to the given bool and assigns it to the IsA3 field.
+
+<a name="ReportsPage.SetIsLandscape"></a>
+### func \(\*ReportsPage\) [SetIsLandscape](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L102>)
+
+```go
+func (o *ReportsPage) SetIsLandscape(v bool)
+```
+
+SetIsLandscape gets a reference to the given bool and assigns it to the IsLandscape field.
+
+<a name="ReportsPage.SetLeftMargin"></a>
+### func \(\*ReportsPage\) [SetLeftMargin](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L186>)
+
+```go
+func (o *ReportsPage) SetLeftMargin(v int64)
+```
+
+SetLeftMargin gets a reference to the given int64 and assigns it to the LeftMargin field.
+
+<a name="ReportsPage.SetRightMargin"></a>
+### func \(\*ReportsPage\) [SetRightMargin](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L214>)
+
+```go
+func (o *ReportsPage) SetRightMargin(v int64)
+```
+
+SetRightMargin gets a reference to the given int64 and assigns it to the RightMargin field.
+
+<a name="ReportsPage.SetTopMargin"></a>
+### func \(\*ReportsPage\) [SetTopMargin](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L130>)
+
+```go
+func (o *ReportsPage) SetTopMargin(v int64)
+```
+
+SetTopMargin gets a reference to the given int64 and assigns it to the TopMargin field.
+
+<a name="ReportsPage.UnMarshalJSON"></a>
+### func \(\*ReportsPage\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data_page.go#L312>)
+
+```go
+func (o *ReportsPage) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsParameters"></a>
+## type [ReportsParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L10-L21>)
+
+ReportsParameters represents the parameters for reports.
+
+```go
+type ReportsParameters struct {
+    // List of parameters for the report.
+    Parameters []string `json:"Parameters,omitempty"`
+    // Raw JSON message for the report data.
+    Datas *json.RawMessage `json:"Datas,omitempty"`
+    // Indicates if the report is active.
+    IsActive *bool `json:"IsActive,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsParameters"></a>
+### func [NewReportsParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L27>)
+
+```go
+func NewReportsParameters() *ReportsParameters
+```
+
+NewReportsParameters creates a new ReportsParameters object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsParametersWithDefaults"></a>
+### func [NewReportsParametersWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L35>)
+
+```go
+func NewReportsParametersWithDefaults() *ReportsParameters
+```
+
+NewReportsParametersWithDefaults creates a new ReportsParameters object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsParameters.GetDatas"></a>
+### func \(\*ReportsParameters\) [GetDatas](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L69>)
+
+```go
+func (o *ReportsParameters) GetDatas() json.RawMessage
+```
+
+GetDatas returns the Datas field value if set, zero value otherwise.
+
+<a name="ReportsParameters.GetDatasOk"></a>
+### func \(\*ReportsParameters\) [GetDatasOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L79>)
+
+```go
+func (o *ReportsParameters) GetDatasOk() (*json.RawMessage, bool)
+```
+
+GetDatasOk returns a tuple with the Datas field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsParameters.GetIsActive"></a>
+### func \(\*ReportsParameters\) [GetIsActive](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L97>)
+
+```go
+func (o *ReportsParameters) GetIsActive() bool
+```
+
+GetIsActive returns the IsActive field value if set, zero value otherwise.
+
+<a name="ReportsParameters.GetIsActiveOk"></a>
+### func \(\*ReportsParameters\) [GetIsActiveOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L107>)
+
+```go
+func (o *ReportsParameters) GetIsActiveOk() (*bool, bool)
+```
+
+GetIsActiveOk returns a tuple with the IsActive field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsParameters.GetParameters"></a>
+### func \(\*ReportsParameters\) [GetParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L41>)
+
+```go
+func (o *ReportsParameters) GetParameters() []string
+```
+
+GetParameters returns the Parameters field value if set, zero value otherwise.
+
+<a name="ReportsParameters.GetParametersOk"></a>
+### func \(\*ReportsParameters\) [GetParametersOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L51>)
+
+```go
+func (o *ReportsParameters) GetParametersOk() (*[]string, bool)
+```
+
+GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsParameters.HasDatas"></a>
+### func \(\*ReportsParameters\) [HasDatas](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L87>)
+
+```go
+func (o *ReportsParameters) HasDatas() bool
+```
+
+HasDatas returns a boolean if a field has been set.
+
+<a name="ReportsParameters.HasIsActive"></a>
+### func \(\*ReportsParameters\) [HasIsActive](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L115>)
+
+```go
+func (o *ReportsParameters) HasIsActive() bool
+```
+
+HasIsActive returns a boolean if a field has been set.
+
+<a name="ReportsParameters.HasParameters"></a>
+### func \(\*ReportsParameters\) [HasParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L59>)
+
+```go
+func (o *ReportsParameters) HasParameters() bool
+```
+
+HasParameters returns a boolean if a field has been set.
+
+<a name="ReportsParameters.MarshalJSON"></a>
+### func \(ReportsParameters\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L125>)
+
+```go
+func (o ReportsParameters) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsParameters.SetDatas"></a>
+### func \(\*ReportsParameters\) [SetDatas](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L92>)
+
+```go
+func (o *ReportsParameters) SetDatas(v json.RawMessage)
+```
+
+SetDatas gets a reference to the given json.RawMessage and assigns it to the Datas field.
+
+<a name="ReportsParameters.SetIsActive"></a>
+### func \(\*ReportsParameters\) [SetIsActive](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L120>)
+
+```go
+func (o *ReportsParameters) SetIsActive(v bool)
+```
+
+SetIsActive gets a reference to the given bool and assigns it to the IsActive field.
+
+<a name="ReportsParameters.SetParameters"></a>
+### func \(\*ReportsParameters\) [SetParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L64>)
+
+```go
+func (o *ReportsParameters) SetParameters(v []string)
+```
+
+SetParameters gets a reference to the given \[\]string and assigns it to the Parameters field.
+
+<a name="ReportsParameters.UnMarshalJSON"></a>
+### func \(\*ReportsParameters\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_parameters.go#L147>)
+
+```go
+func (o *ReportsParameters) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsQuery"></a>
+## type [ReportsQuery](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L10-L29>)
+
+ReportsQuery represents a report query.
+
+```go
+type ReportsQuery struct {
+    // Name of the query.
+    Name *string `json:"Nane,omitempty"`
+    // Data related to the query.
+    Data *ReportsQueryData `json:"Data,omitempty"`
+    // Indicates if the table should be shown.
+    ShowTable *bool `json:"ShowTable,omitempty"`
+    // Visualization settings for the table.
+    TableVisualization *ReportsTableVisualization `json:"TableVisualization,omitempty"`
+    // Indicates if the chart should be shown.
+    ShowChart *bool `json:"ShowChart,omitempty"`
+    // Visualization settings for the chart.
+    ChartVisualization *ReportsChartVisualization `json:"ChartVisualization,omitempty"`
+    // Extended data for the query.
+    ExtData NullableReportsQueryExtData `json:"ExtData,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsQuery"></a>
+### func [NewReportsQuery](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L35>)
+
+```go
+func NewReportsQuery() *ReportsQuery
+```
+
+NewReportsQuery creates a new ReportsQuery object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsQueryWithDefaults"></a>
+### func [NewReportsQueryWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L43>)
+
+```go
+func NewReportsQueryWithDefaults() *ReportsQuery
+```
+
+NewReportsQueryWithDefaults creates a new ReportsQuery object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsQuery.GetChartVisualization"></a>
+### func \(\*ReportsQuery\) [GetChartVisualization](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L189>)
+
+```go
+func (o *ReportsQuery) GetChartVisualization() ReportsChartVisualization
+```
+
+GetChartVisualization returns the ChartVisualization field value if set, zero value otherwise.
+
+<a name="ReportsQuery.GetChartVisualizationOk"></a>
+### func \(\*ReportsQuery\) [GetChartVisualizationOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L199>)
+
+```go
+func (o *ReportsQuery) GetChartVisualizationOk() (*ReportsChartVisualization, bool)
+```
+
+GetChartVisualizationOk returns a tuple with the ChartVisualization field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQuery.GetData"></a>
+### func \(\*ReportsQuery\) [GetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L77>)
+
+```go
+func (o *ReportsQuery) GetData() ReportsQueryData
+```
+
+GetData returns the Data field value if set, zero value otherwise.
+
+<a name="ReportsQuery.GetDataOk"></a>
+### func \(\*ReportsQuery\) [GetDataOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L87>)
+
+```go
+func (o *ReportsQuery) GetDataOk() (*ReportsQueryData, bool)
+```
+
+GetDataOk returns a tuple with the Data field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQuery.GetExtData"></a>
+### func \(\*ReportsQuery\) [GetExtData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L217>)
+
+```go
+func (o *ReportsQuery) GetExtData() ReportsQueryExtData
+```
+
+GetExtData returns the ExtData field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsQuery.GetExtDataOk"></a>
+### func \(\*ReportsQuery\) [GetExtDataOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L228>)
+
+```go
+func (o *ReportsQuery) GetExtDataOk() (*ReportsQueryExtData, bool)
+```
+
+GetExtDataOk returns a tuple with the ExtData field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsQuery.GetName"></a>
+### func \(\*ReportsQuery\) [GetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L49>)
+
+```go
+func (o *ReportsQuery) GetName() string
+```
+
+GetName returns the Name field value if set, zero value otherwise.
+
+<a name="ReportsQuery.GetNameOk"></a>
+### func \(\*ReportsQuery\) [GetNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L59>)
+
+```go
+func (o *ReportsQuery) GetNameOk() (*string, bool)
+```
+
+GetNameOk returns a tuple with the Name field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQuery.GetShowChart"></a>
+### func \(\*ReportsQuery\) [GetShowChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L161>)
+
+```go
+func (o *ReportsQuery) GetShowChart() bool
+```
+
+GetShowChart returns the ShowChart field value if set, zero value otherwise.
+
+<a name="ReportsQuery.GetShowChartOk"></a>
+### func \(\*ReportsQuery\) [GetShowChartOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L171>)
+
+```go
+func (o *ReportsQuery) GetShowChartOk() (*bool, bool)
+```
+
+GetShowChartOk returns a tuple with the ShowChart field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQuery.GetShowTable"></a>
+### func \(\*ReportsQuery\) [GetShowTable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L105>)
+
+```go
+func (o *ReportsQuery) GetShowTable() bool
+```
+
+GetShowTable returns the ShowTable field value if set, zero value otherwise.
+
+<a name="ReportsQuery.GetShowTableOk"></a>
+### func \(\*ReportsQuery\) [GetShowTableOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L115>)
+
+```go
+func (o *ReportsQuery) GetShowTableOk() (*bool, bool)
+```
+
+GetShowTableOk returns a tuple with the ShowTable field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQuery.GetTableVisualization"></a>
+### func \(\*ReportsQuery\) [GetTableVisualization](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L133>)
+
+```go
+func (o *ReportsQuery) GetTableVisualization() ReportsTableVisualization
+```
+
+GetTableVisualization returns the TableVisualization field value if set, zero value otherwise.
+
+<a name="ReportsQuery.GetTableVisualizationOk"></a>
+### func \(\*ReportsQuery\) [GetTableVisualizationOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L143>)
+
+```go
+func (o *ReportsQuery) GetTableVisualizationOk() (*ReportsTableVisualization, bool)
+```
+
+GetTableVisualizationOk returns a tuple with the TableVisualization field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQuery.HasChartVisualization"></a>
+### func \(\*ReportsQuery\) [HasChartVisualization](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L207>)
+
+```go
+func (o *ReportsQuery) HasChartVisualization() bool
+```
+
+HasChartVisualization returns a boolean if a field has been set.
+
+<a name="ReportsQuery.HasData"></a>
+### func \(\*ReportsQuery\) [HasData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L95>)
+
+```go
+func (o *ReportsQuery) HasData() bool
+```
+
+HasData returns a boolean if a field has been set.
+
+<a name="ReportsQuery.HasExtData"></a>
+### func \(\*ReportsQuery\) [HasExtData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L236>)
+
+```go
+func (o *ReportsQuery) HasExtData() bool
+```
+
+HasExtData returns a boolean if a ExtData has been set.
+
+<a name="ReportsQuery.HasName"></a>
+### func \(\*ReportsQuery\) [HasName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L67>)
+
+```go
+func (o *ReportsQuery) HasName() bool
+```
+
+HasName returns a boolean if a field has been set.
+
+<a name="ReportsQuery.HasShowChart"></a>
+### func \(\*ReportsQuery\) [HasShowChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L179>)
+
+```go
+func (o *ReportsQuery) HasShowChart() bool
+```
+
+HasShowChart returns a boolean if a field has been set.
+
+<a name="ReportsQuery.HasShowTable"></a>
+### func \(\*ReportsQuery\) [HasShowTable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L123>)
+
+```go
+func (o *ReportsQuery) HasShowTable() bool
+```
+
+HasShowTable returns a boolean if a field has been set.
+
+<a name="ReportsQuery.HasTableVisualization"></a>
+### func \(\*ReportsQuery\) [HasTableVisualization](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L151>)
+
+```go
+func (o *ReportsQuery) HasTableVisualization() bool
+```
+
+HasTableVisualization returns a boolean if a field has been set.
+
+<a name="ReportsQuery.MarshalJSON"></a>
+### func \(ReportsQuery\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L256>)
+
+```go
+func (o ReportsQuery) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsQuery.SetChartVisualization"></a>
+### func \(\*ReportsQuery\) [SetChartVisualization](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L212>)
+
+```go
+func (o *ReportsQuery) SetChartVisualization(v ReportsChartVisualization)
+```
+
+SetChartVisualization gets a reference to the given ReportsChartVisualization and assigns it to the ChartVisualization field.
+
+<a name="ReportsQuery.SetData"></a>
+### func \(\*ReportsQuery\) [SetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L100>)
+
+```go
+func (o *ReportsQuery) SetData(v ReportsQueryData)
+```
+
+SetData gets a reference to the given ReportsQueryData and assigns it to the Data field.
+
+<a name="ReportsQuery.SetExtData"></a>
+### func \(\*ReportsQuery\) [SetExtData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L241>)
+
+```go
+func (o *ReportsQuery) SetExtData(v ReportsQueryExtData)
+```
+
+SetExtData gets a reference to the given datadog.NullableString and assigns it to the ExtData field.
+
+<a name="ReportsQuery.SetExtDataNil"></a>
+### func \(\*ReportsQuery\) [SetExtDataNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L246>)
+
+```go
+func (o *ReportsQuery) SetExtDataNil()
+```
+
+SetExtDataNil sets the value for ExtData to be an explicit nil.
+
+<a name="ReportsQuery.SetName"></a>
+### func \(\*ReportsQuery\) [SetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L72>)
+
+```go
+func (o *ReportsQuery) SetName(v string)
+```
+
+SetName gets a reference to the given string and assigns it to the Name field.
+
+<a name="ReportsQuery.SetShowChart"></a>
+### func \(\*ReportsQuery\) [SetShowChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L184>)
+
+```go
+func (o *ReportsQuery) SetShowChart(v bool)
+```
+
+SetShowChart gets a reference to the given bool and assigns it to the ShowChart field.
+
+<a name="ReportsQuery.SetShowTable"></a>
+### func \(\*ReportsQuery\) [SetShowTable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L128>)
+
+```go
+func (o *ReportsQuery) SetShowTable(v bool)
+```
+
+SetShowTable gets a reference to the given bool and assigns it to the ShowTable field.
+
+<a name="ReportsQuery.SetTableVisualization"></a>
+### func \(\*ReportsQuery\) [SetTableVisualization](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L156>)
+
+```go
+func (o *ReportsQuery) SetTableVisualization(v ReportsTableVisualization)
+```
+
+SetTableVisualization gets a reference to the given ReportsTableVisualization and assigns it to the TableVisualization field.
+
+<a name="ReportsQuery.UnMarshalJSON"></a>
+### func \(\*ReportsQuery\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L290>)
+
+```go
+func (o *ReportsQuery) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsQuery.UnsetExtData"></a>
+### func \(\*ReportsQuery\) [UnsetExtData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L251>)
+
+```go
+func (o *ReportsQuery) UnsetExtData()
+```
+
+UnsetExtData ensures that no value is present for ExtData, not even an explicit nil.
+
+<a name="ReportsQueryData"></a>
+## type [ReportsQueryData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L10-L31>)
+
+ReportsQueryData represents the data for a report query.
+
+```go
+type ReportsQueryData struct {
+    // Type of the item.
+    ItemType *string `json:"ItemType,omitempty"`
+    // ID of the query.
+    QueryID common.NullableString `json:"QueryID,omitempty"`
+    // Query string.
+    QueryStr common.NullableString `json:"QueryStr,omitempty"`
+    // Code related to the query.
+    Code *string `json:"Code,omitempty"`
+    // Maximum row count for the query data.
+    MaxRowCount *int64 `json:"MaxRowCount,omitempty"`
+    // Date-time range for the query.
+    DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
+    // Path to the script related to the query.
+    ScriptPath common.NullableString `json:"ScriptPath,omitempty"`
+    // Arguments for the script.
+    ScriptArguments common.NullableList[string] `json:"ScriptArguments,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsQueryData"></a>
+### func [NewReportsQueryData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L37>)
+
+```go
+func NewReportsQueryData() *ReportsQueryData
+```
+
+NewReportsQueryData creates a new ReportsQueryData object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsQueryDataWithDefaults"></a>
+### func [NewReportsQueryDataWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L45>)
+
+```go
+func NewReportsQueryDataWithDefaults() *ReportsQueryData
+```
+
+NewReportsQueryDataWithDefaults creates a new ReportsQueryData object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsQueryData.GetCode"></a>
+### func \(\*ReportsQueryData\) [GetCode](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L157>)
+
+```go
+func (o *ReportsQueryData) GetCode() string
+```
+
+GetCode returns the Code field value if set, zero value otherwise.
+
+<a name="ReportsQueryData.GetCodeOk"></a>
+### func \(\*ReportsQueryData\) [GetCodeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L167>)
+
+```go
+func (o *ReportsQueryData) GetCodeOk() (*string, bool)
+```
+
+GetCodeOk returns a tuple with the Code field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryData.GetDateTimeRange"></a>
+### func \(\*ReportsQueryData\) [GetDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L213>)
+
+```go
+func (o *ReportsQueryData) GetDateTimeRange() DateTimeRange
+```
+
+GetDateTimeRange returns the DateTimeRange field value if set, zero value otherwise.
+
+<a name="ReportsQueryData.GetDateTimeRangeOk"></a>
+### func \(\*ReportsQueryData\) [GetDateTimeRangeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L223>)
+
+```go
+func (o *ReportsQueryData) GetDateTimeRangeOk() (*DateTimeRange, bool)
+```
+
+GetDateTimeRangeOk returns a tuple with the DateTimeRange field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryData.GetItemType"></a>
+### func \(\*ReportsQueryData\) [GetItemType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L51>)
+
+```go
+func (o *ReportsQueryData) GetItemType() string
+```
+
+GetItemType returns the ItemType field value if set, zero value otherwise.
+
+<a name="ReportsQueryData.GetItemTypeOk"></a>
+### func \(\*ReportsQueryData\) [GetItemTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L61>)
+
+```go
+func (o *ReportsQueryData) GetItemTypeOk() (*string, bool)
+```
+
+GetItemTypeOk returns a tuple with the ItemType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryData.GetMaxRowCount"></a>
+### func \(\*ReportsQueryData\) [GetMaxRowCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L185>)
+
+```go
+func (o *ReportsQueryData) GetMaxRowCount() int64
+```
+
+GetMaxRowCount returns the MaxRowCount field value if set, zero value otherwise.
+
+<a name="ReportsQueryData.GetMaxRowCountOk"></a>
+### func \(\*ReportsQueryData\) [GetMaxRowCountOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L195>)
+
+```go
+func (o *ReportsQueryData) GetMaxRowCountOk() (*int64, bool)
+```
+
+GetMaxRowCountOk returns a tuple with the MaxRowCount field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryData.GetQueryID"></a>
+### func \(\*ReportsQueryData\) [GetQueryID](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L79>)
+
+```go
+func (o *ReportsQueryData) GetQueryID() string
+```
+
+GetQueryID returns the QueryID field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsQueryData.GetQueryIDOk"></a>
+### func \(\*ReportsQueryData\) [GetQueryIDOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L90>)
+
+```go
+func (o *ReportsQueryData) GetQueryIDOk() (*string, bool)
+```
+
+GetQueryIDOk returns a tuple with the QueryID field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsQueryData.GetQueryStr"></a>
+### func \(\*ReportsQueryData\) [GetQueryStr](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L118>)
+
+```go
+func (o *ReportsQueryData) GetQueryStr() string
+```
+
+GetQueryStr returns the QueryStr field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsQueryData.GetQueryStrOk"></a>
+### func \(\*ReportsQueryData\) [GetQueryStrOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L129>)
+
+```go
+func (o *ReportsQueryData) GetQueryStrOk() (*string, bool)
+```
+
+GetQueryStrOk returns a tuple with the QueryStr field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsQueryData.GetScriptArguments"></a>
+### func \(\*ReportsQueryData\) [GetScriptArguments](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L282>)
+
+```go
+func (o *ReportsQueryData) GetScriptArguments() (*[]string, bool)
+```
+
+GetScriptArguments returns a tuple with the ScriptArguments field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsQueryData.GetScriptArgumentsOk"></a>
+### func \(\*ReportsQueryData\) [GetScriptArgumentsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L292>)
+
+```go
+func (o *ReportsQueryData) GetScriptArgumentsOk() (*[]string, bool)
+```
+
+GetScriptArgumentsOk returns a tuple with the ScriptArguments field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsQueryData.GetScriptPath"></a>
+### func \(\*ReportsQueryData\) [GetScriptPath](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L241>)
+
+```go
+func (o *ReportsQueryData) GetScriptPath() string
+```
+
+GetScriptPath returns the ScriptPath field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsQueryData.GetScriptPathOk"></a>
+### func \(\*ReportsQueryData\) [GetScriptPathOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L252>)
+
+```go
+func (o *ReportsQueryData) GetScriptPathOk() (*string, bool)
+```
+
+GetScriptPathOk returns a tuple with the ScriptPath field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsQueryData.HasCode"></a>
+### func \(\*ReportsQueryData\) [HasCode](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L175>)
+
+```go
+func (o *ReportsQueryData) HasCode() bool
+```
+
+HasCode returns a boolean if a field has been set.
+
+<a name="ReportsQueryData.HasDateTimeRange"></a>
+### func \(\*ReportsQueryData\) [HasDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L231>)
+
+```go
+func (o *ReportsQueryData) HasDateTimeRange() bool
+```
+
+HasDateTimeRange returns a boolean if a field has been set.
+
+<a name="ReportsQueryData.HasItemType"></a>
+### func \(\*ReportsQueryData\) [HasItemType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L69>)
+
+```go
+func (o *ReportsQueryData) HasItemType() bool
+```
+
+HasItemType returns a boolean if a field has been set.
+
+<a name="ReportsQueryData.HasMaxRowCount"></a>
+### func \(\*ReportsQueryData\) [HasMaxRowCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L203>)
+
+```go
+func (o *ReportsQueryData) HasMaxRowCount() bool
+```
+
+HasMaxRowCount returns a boolean if a field has been set.
+
+<a name="ReportsQueryData.HasQueryID"></a>
+### func \(\*ReportsQueryData\) [HasQueryID](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L98>)
+
+```go
+func (o *ReportsQueryData) HasQueryID() bool
+```
+
+HasQueryID returns a boolean if a field has been set.
+
+<a name="ReportsQueryData.HasQueryStr"></a>
+### func \(\*ReportsQueryData\) [HasQueryStr](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L137>)
+
+```go
+func (o *ReportsQueryData) HasQueryStr() bool
+```
+
+HasQueryStr returns a boolean if a field has been set.
+
+<a name="ReportsQueryData.HasScriptArguments"></a>
+### func \(\*ReportsQueryData\) [HasScriptArguments](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L300>)
+
+```go
+func (o *ReportsQueryData) HasScriptArguments() bool
+```
+
+HasScriptArguments returns a boolean if a ScriptArguments has been set.
+
+<a name="ReportsQueryData.HasScriptPath"></a>
+### func \(\*ReportsQueryData\) [HasScriptPath](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L260>)
+
+```go
+func (o *ReportsQueryData) HasScriptPath() bool
+```
+
+HasScriptPath returns a boolean if a field has been set.
+
+<a name="ReportsQueryData.MarshalJSON"></a>
+### func \(ReportsQueryData\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L320>)
+
+```go
+func (o ReportsQueryData) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsQueryData.SetCode"></a>
+### func \(\*ReportsQueryData\) [SetCode](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L180>)
+
+```go
+func (o *ReportsQueryData) SetCode(v string)
+```
+
+SetCode gets a reference to the given string and assigns it to the Code field.
+
+<a name="ReportsQueryData.SetDateTimeRange"></a>
+### func \(\*ReportsQueryData\) [SetDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L236>)
+
+```go
+func (o *ReportsQueryData) SetDateTimeRange(v DateTimeRange)
+```
+
+SetDateTimeRange gets a reference to the given DateTimeRange and assigns it to the DateTimeRange field.
+
+<a name="ReportsQueryData.SetItemType"></a>
+### func \(\*ReportsQueryData\) [SetItemType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L74>)
+
+```go
+func (o *ReportsQueryData) SetItemType(v string)
+```
+
+SetItemType gets a reference to the given string and assigns it to the ItemType field.
+
+<a name="ReportsQueryData.SetMaxRowCount"></a>
+### func \(\*ReportsQueryData\) [SetMaxRowCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L208>)
+
+```go
+func (o *ReportsQueryData) SetMaxRowCount(v int64)
+```
+
+SetMaxRowCount gets a reference to the given int64 and assigns it to the MaxRowCount field.
+
+<a name="ReportsQueryData.SetQueryID"></a>
+### func \(\*ReportsQueryData\) [SetQueryID](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L103>)
+
+```go
+func (o *ReportsQueryData) SetQueryID(v string)
+```
+
+SetQueryID gets a reference to the given datadog.NullableString and assigns it to the QueryID field.
+
+<a name="ReportsQueryData.SetQueryIDNil"></a>
+### func \(\*ReportsQueryData\) [SetQueryIDNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L108>)
+
+```go
+func (o *ReportsQueryData) SetQueryIDNil()
+```
+
+SetQueryIDNil sets the value for QueryID to be an explicit nil.
+
+<a name="ReportsQueryData.SetQueryStr"></a>
+### func \(\*ReportsQueryData\) [SetQueryStr](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L142>)
+
+```go
+func (o *ReportsQueryData) SetQueryStr(v string)
+```
+
+SetQueryStr gets a reference to the given datadog.NullableString and assigns it to the QueryStr field.
+
+<a name="ReportsQueryData.SetQueryStrNil"></a>
+### func \(\*ReportsQueryData\) [SetQueryStrNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L147>)
+
+```go
+func (o *ReportsQueryData) SetQueryStrNil()
+```
+
+SetQueryStrNil sets the value for QueryStr to be an explicit nil.
+
+<a name="ReportsQueryData.SetScriptArguments"></a>
+### func \(\*ReportsQueryData\) [SetScriptArguments](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L305>)
+
+```go
+func (o *ReportsQueryData) SetScriptArguments(v []string)
+```
+
+SetScriptArguments gets a reference to the given datadog.Nullable\[\]string and assigns it to the ScriptArguments field.
+
+<a name="ReportsQueryData.SetScriptArgumentsNil"></a>
+### func \(\*ReportsQueryData\) [SetScriptArgumentsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L310>)
+
+```go
+func (o *ReportsQueryData) SetScriptArgumentsNil()
+```
+
+SetScriptArgumentsNil sets the value for ScriptArguments to be an explicit nil.
+
+<a name="ReportsQueryData.SetScriptPath"></a>
+### func \(\*ReportsQueryData\) [SetScriptPath](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L265>)
+
+```go
+func (o *ReportsQueryData) SetScriptPath(v string)
+```
+
+SetScriptPath gets a reference to the given datadog.NullableString and assigns it to the ScriptPath field.
+
+<a name="ReportsQueryData.SetScriptPathNil"></a>
+### func \(\*ReportsQueryData\) [SetScriptPathNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L270>)
+
+```go
+func (o *ReportsQueryData) SetScriptPathNil()
+```
+
+SetScriptPathNil sets the value for ScriptPath to be an explicit nil.
+
+<a name="ReportsQueryData.UnMarshalJSON"></a>
+### func \(\*ReportsQueryData\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L357>)
+
+```go
+func (o *ReportsQueryData) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsQueryData.UnSetQueryID"></a>
+### func \(\*ReportsQueryData\) [UnSetQueryID](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L113>)
+
+```go
+func (o *ReportsQueryData) UnSetQueryID()
+```
+
+UnsetQueryID ensures that no value is present for QueryID, not even an explicit nil.
+
+<a name="ReportsQueryData.UnSetQueryStr"></a>
+### func \(\*ReportsQueryData\) [UnSetQueryStr](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L152>)
+
+```go
+func (o *ReportsQueryData) UnSetQueryStr()
+```
+
+UnsetQueryStr ensures that no value is present for QueryStr, not even an explicit nil.
+
+<a name="ReportsQueryData.UnSetScriptArguments"></a>
+### func \(\*ReportsQueryData\) [UnSetScriptArguments](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L315>)
+
+```go
+func (o *ReportsQueryData) UnSetScriptArguments()
+```
+
+UnsetScriptArguments ensures that no value is present for ScriptArguments, not even an explicit nil.
+
+<a name="ReportsQueryData.UnSetScriptPath"></a>
+### func \(\*ReportsQueryData\) [UnSetScriptPath](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L275>)
+
+```go
+func (o *ReportsQueryData) UnSetScriptPath()
+```
+
+UnsetScriptPath ensures that no value is present for ScriptPath, not even an explicit nil.
+
+<a name="ReportsQueryExtData"></a>
+## type [ReportsQueryExtData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L10-L49>)
+
+ReportsQueryExtData represents the extended data for a report query.
+
+```go
+type ReportsQueryExtData struct {
+    // Type of the report.
+    ReportType *string `json:"ReportType,omitempty"`
+    // Date-time range for the report.
+    DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
+    // Indicates if alerts should be included.
+    Alerts *bool `json:"Alerts,omitempty"`
+    // Indicates if log positions should be included.
+    LogPositions *bool `json:"LogPositions,omitempty"`
+    // Indicates if system information should be included.
+    SystemInfo *bool `json:"SystemInfo,omitempty"`
+    // Indicates if log counts should be included.
+    LogCounts *bool `json:"LogCounts,omitempty"`
+    // Indicates if classifications should be included.
+    Classifications *bool `json:"Classifications,omitempty"`
+    // Indicates if correlation should be included.
+    Correlation *bool `json:"Correlation,omitempty"`
+    // Indicates if timestamps should be included.
+    TimeStamps *bool `json:"TimeStamps,omitempty"`
+    // Indicates if log counts chart should be included.
+    LogCountsChart *bool `json:"LogCounts_Chart,omitempty"`
+    // Indicates if log counts table should be included.
+    LogCountsTable *bool `json:"LogCounts_Table,omitempty"`
+    // Indicates if classifications chart should be included.
+    ClassificationsChart *bool `json:"Classifications_Chart,omitempty"`
+    // Indicates if classifications server chart should be included.
+    ClassificationsSvrChart *bool `json:"Classifications_SvrChart,omitempty"`
+    // Indicates if classifications table should be included.
+    ClassificationsTable *bool `json:"Classifications_Table,omitempty"`
+    // Indicates if correlation alert chart should be included.
+    CorrelationAlertChart *bool `json:"Correlation_AlertChart,omitempty"`
+    // Indicates if correlation server chart should be included.
+    CorrelationSvrChart *bool `json:"Correlation_SvrChart,omitempty"`
+    // Indicates if correlation table should be included.
+    CorrelationTable *bool `json:"Correlation_Table,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsQueryExtData"></a>
+### func [NewReportsQueryExtData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L55>)
+
+```go
+func NewReportsQueryExtData() *ReportsQueryExtData
+```
+
+NewReportsQueryExtData creates a new ReportsQueryExtData object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsQueryExtDataWithDefaults"></a>
+### func [NewReportsQueryExtDataWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L63>)
+
+```go
+func NewReportsQueryExtDataWithDefaults() *ReportsQueryExtData
+```
+
+NewReportsQueryExtDataWithDefaults creates a new ReportsQueryExtData object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsQueryExtData.GetAlerts"></a>
+### func \(\*ReportsQueryExtData\) [GetAlerts](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L125>)
+
+```go
+func (o *ReportsQueryExtData) GetAlerts() bool
+```
+
+GetAlerts returns the Alerts field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetAlertsOk"></a>
+### func \(\*ReportsQueryExtData\) [GetAlertsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L135>)
+
+```go
+func (o *ReportsQueryExtData) GetAlertsOk() (*bool, bool)
+```
+
+GetAlertsOk returns a tuple with the Alerts field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetClassifications"></a>
+### func \(\*ReportsQueryExtData\) [GetClassifications](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L237>)
+
+```go
+func (o *ReportsQueryExtData) GetClassifications() bool
+```
+
+GetClassifications returns the Classifications field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetClassificationsChart"></a>
+### func \(\*ReportsQueryExtData\) [GetClassificationsChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L377>)
+
+```go
+func (o *ReportsQueryExtData) GetClassificationsChart() bool
+```
+
+GetClassificationsChart returns the ClassificationsChart field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetClassificationsChartOk"></a>
+### func \(\*ReportsQueryExtData\) [GetClassificationsChartOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L387>)
+
+```go
+func (o *ReportsQueryExtData) GetClassificationsChartOk() (*bool, bool)
+```
+
+GetClassificationsChartOk returns a tuple with the ClassificationsChart field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetClassificationsOk"></a>
+### func \(\*ReportsQueryExtData\) [GetClassificationsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L247>)
+
+```go
+func (o *ReportsQueryExtData) GetClassificationsOk() (*bool, bool)
+```
+
+GetClassificationsOk returns a tuple with the Classifications field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetClassificationsSvrChart"></a>
+### func \(\*ReportsQueryExtData\) [GetClassificationsSvrChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L405>)
+
+```go
+func (o *ReportsQueryExtData) GetClassificationsSvrChart() bool
+```
+
+GetClassificationsSvrChart returns the ClassificationsSvrChart field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetClassificationsSvrChartOk"></a>
+### func \(\*ReportsQueryExtData\) [GetClassificationsSvrChartOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L415>)
+
+```go
+func (o *ReportsQueryExtData) GetClassificationsSvrChartOk() (*bool, bool)
+```
+
+GetClassificationsSvrChartOk returns a tuple with the ClassificationsSvrChart field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetClassificationsTable"></a>
+### func \(\*ReportsQueryExtData\) [GetClassificationsTable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L433>)
+
+```go
+func (o *ReportsQueryExtData) GetClassificationsTable() bool
+```
+
+GetClassificationsTable returns the ClassificationsTable field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetClassificationsTableOk"></a>
+### func \(\*ReportsQueryExtData\) [GetClassificationsTableOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L443>)
+
+```go
+func (o *ReportsQueryExtData) GetClassificationsTableOk() (*bool, bool)
+```
+
+GetClassificationsTableOk returns a tuple with the ClassificationsTable field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetCorrelation"></a>
+### func \(\*ReportsQueryExtData\) [GetCorrelation](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L265>)
+
+```go
+func (o *ReportsQueryExtData) GetCorrelation() bool
+```
+
+GetCorrelation returns the Correlation field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetCorrelationAlertChart"></a>
+### func \(\*ReportsQueryExtData\) [GetCorrelationAlertChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L461>)
+
+```go
+func (o *ReportsQueryExtData) GetCorrelationAlertChart() bool
+```
+
+GetCorrelationAlertChart returns the CorrelationAlertChart field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetCorrelationAlertChartOk"></a>
+### func \(\*ReportsQueryExtData\) [GetCorrelationAlertChartOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L471>)
+
+```go
+func (o *ReportsQueryExtData) GetCorrelationAlertChartOk() (*bool, bool)
+```
+
+GetCorrelationAlertChartOk returns a tuple with the CorrelationAlertChart field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetCorrelationOk"></a>
+### func \(\*ReportsQueryExtData\) [GetCorrelationOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L275>)
+
+```go
+func (o *ReportsQueryExtData) GetCorrelationOk() (*bool, bool)
+```
+
+GetCorrelationOk returns a tuple with the Correlation field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetCorrelationSvrChart"></a>
+### func \(\*ReportsQueryExtData\) [GetCorrelationSvrChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L489>)
+
+```go
+func (o *ReportsQueryExtData) GetCorrelationSvrChart() bool
+```
+
+GetCorrelationSvrChart returns the CorrelationSvrChart field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetCorrelationSvrChartOk"></a>
+### func \(\*ReportsQueryExtData\) [GetCorrelationSvrChartOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L499>)
+
+```go
+func (o *ReportsQueryExtData) GetCorrelationSvrChartOk() (*bool, bool)
+```
+
+GetCorrelationSvrChartOk returns a tuple with the CorrelationSvrChart field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetCorrelationTable"></a>
+### func \(\*ReportsQueryExtData\) [GetCorrelationTable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L517>)
+
+```go
+func (o *ReportsQueryExtData) GetCorrelationTable() bool
+```
+
+GetCorrelationTable returns the CorrelationTable field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetCorrelationTableOk"></a>
+### func \(\*ReportsQueryExtData\) [GetCorrelationTableOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L527>)
+
+```go
+func (o *ReportsQueryExtData) GetCorrelationTableOk() (*bool, bool)
+```
+
+GetCorrelationTableOk returns a tuple with the CorrelationTable field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetDateTimeRange"></a>
+### func \(\*ReportsQueryExtData\) [GetDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L97>)
+
+```go
+func (o *ReportsQueryExtData) GetDateTimeRange() DateTimeRange
+```
+
+GetDateTimeRange returns the DateTimeRange field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetDateTimeRangeOk"></a>
+### func \(\*ReportsQueryExtData\) [GetDateTimeRangeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L107>)
+
+```go
+func (o *ReportsQueryExtData) GetDateTimeRangeOk() (*DateTimeRange, bool)
+```
+
+GetDateTimeRangeOk returns a tuple with the DateTimeRange field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetLogCounts"></a>
+### func \(\*ReportsQueryExtData\) [GetLogCounts](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L209>)
+
+```go
+func (o *ReportsQueryExtData) GetLogCounts() bool
+```
+
+GetLogCounts returns the LogCounts field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetLogCountsChart"></a>
+### func \(\*ReportsQueryExtData\) [GetLogCountsChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L321>)
+
+```go
+func (o *ReportsQueryExtData) GetLogCountsChart() bool
+```
+
+GetLogCountsChart returns the LogCountsChart field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetLogCountsChartOk"></a>
+### func \(\*ReportsQueryExtData\) [GetLogCountsChartOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L331>)
+
+```go
+func (o *ReportsQueryExtData) GetLogCountsChartOk() (*bool, bool)
+```
+
+GetLogCountsChartOk returns a tuple with the LogCountsChart field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetLogCountsOk"></a>
+### func \(\*ReportsQueryExtData\) [GetLogCountsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L219>)
+
+```go
+func (o *ReportsQueryExtData) GetLogCountsOk() (*bool, bool)
+```
+
+GetLogCountsOk returns a tuple with the LogCounts field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetLogCountsTable"></a>
+### func \(\*ReportsQueryExtData\) [GetLogCountsTable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L349>)
+
+```go
+func (o *ReportsQueryExtData) GetLogCountsTable() bool
+```
+
+GetLogCountsTable returns the LogCountsTable field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetLogCountsTableOk"></a>
+### func \(\*ReportsQueryExtData\) [GetLogCountsTableOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L359>)
+
+```go
+func (o *ReportsQueryExtData) GetLogCountsTableOk() (*bool, bool)
+```
+
+GetLogCountsTableOk returns a tuple with the LogCountsTable field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetLogPositions"></a>
+### func \(\*ReportsQueryExtData\) [GetLogPositions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L153>)
+
+```go
+func (o *ReportsQueryExtData) GetLogPositions() bool
+```
+
+GetLogPositions returns the LogPositions field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetLogPositionsOk"></a>
+### func \(\*ReportsQueryExtData\) [GetLogPositionsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L163>)
+
+```go
+func (o *ReportsQueryExtData) GetLogPositionsOk() (*bool, bool)
+```
+
+GetLogPositionsOk returns a tuple with the LogPositions field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetReportType"></a>
+### func \(\*ReportsQueryExtData\) [GetReportType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L69>)
+
+```go
+func (o *ReportsQueryExtData) GetReportType() string
+```
+
+GetReportType returns the ReportType field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetReportTypeOk"></a>
+### func \(\*ReportsQueryExtData\) [GetReportTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L79>)
+
+```go
+func (o *ReportsQueryExtData) GetReportTypeOk() (*string, bool)
+```
+
+GetReportTypeOk returns a tuple with the ReportType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetSystemInfo"></a>
+### func \(\*ReportsQueryExtData\) [GetSystemInfo](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L181>)
+
+```go
+func (o *ReportsQueryExtData) GetSystemInfo() bool
+```
+
+GetSystemInfo returns the SystemInfo field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetSystemInfoOk"></a>
+### func \(\*ReportsQueryExtData\) [GetSystemInfoOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L191>)
+
+```go
+func (o *ReportsQueryExtData) GetSystemInfoOk() (*bool, bool)
+```
+
+GetSystemInfoOk returns a tuple with the SystemInfo field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.GetTimeStamps"></a>
+### func \(\*ReportsQueryExtData\) [GetTimeStamps](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L293>)
+
+```go
+func (o *ReportsQueryExtData) GetTimeStamps() bool
+```
+
+GetTimeStamps returns the TimeStamps field value if set, zero value otherwise.
+
+<a name="ReportsQueryExtData.GetTimeStampsOk"></a>
+### func \(\*ReportsQueryExtData\) [GetTimeStampsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L303>)
+
+```go
+func (o *ReportsQueryExtData) GetTimeStampsOk() (*bool, bool)
+```
+
+GetTimeStampsOk returns a tuple with the TimeStamps field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsQueryExtData.HasAlerts"></a>
+### func \(\*ReportsQueryExtData\) [HasAlerts](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L143>)
+
+```go
+func (o *ReportsQueryExtData) HasAlerts() bool
+```
+
+HasAlerts returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasClassifications"></a>
+### func \(\*ReportsQueryExtData\) [HasClassifications](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L255>)
+
+```go
+func (o *ReportsQueryExtData) HasClassifications() bool
+```
+
+HasClassifications returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasClassificationsChart"></a>
+### func \(\*ReportsQueryExtData\) [HasClassificationsChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L395>)
+
+```go
+func (o *ReportsQueryExtData) HasClassificationsChart() bool
+```
+
+HasClassificationsChart returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasClassificationsSvrChart"></a>
+### func \(\*ReportsQueryExtData\) [HasClassificationsSvrChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L423>)
+
+```go
+func (o *ReportsQueryExtData) HasClassificationsSvrChart() bool
+```
+
+HasClassificationsSvrChart returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasClassificationsTable"></a>
+### func \(\*ReportsQueryExtData\) [HasClassificationsTable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L451>)
+
+```go
+func (o *ReportsQueryExtData) HasClassificationsTable() bool
+```
+
+HasClassificationsTable returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasCorrelation"></a>
+### func \(\*ReportsQueryExtData\) [HasCorrelation](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L283>)
+
+```go
+func (o *ReportsQueryExtData) HasCorrelation() bool
+```
+
+HasCorrelation returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasCorrelationAlertChart"></a>
+### func \(\*ReportsQueryExtData\) [HasCorrelationAlertChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L479>)
+
+```go
+func (o *ReportsQueryExtData) HasCorrelationAlertChart() bool
+```
+
+HasCorrelationAlertChart returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasCorrelationSvrChart"></a>
+### func \(\*ReportsQueryExtData\) [HasCorrelationSvrChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L507>)
+
+```go
+func (o *ReportsQueryExtData) HasCorrelationSvrChart() bool
+```
+
+HasCorrelationSvrChart returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasCorrelationTable"></a>
+### func \(\*ReportsQueryExtData\) [HasCorrelationTable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L535>)
+
+```go
+func (o *ReportsQueryExtData) HasCorrelationTable() bool
+```
+
+HasCorrelationTable returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasDateTimeRange"></a>
+### func \(\*ReportsQueryExtData\) [HasDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L115>)
+
+```go
+func (o *ReportsQueryExtData) HasDateTimeRange() bool
+```
+
+HasDateTimeRange returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasLogCounts"></a>
+### func \(\*ReportsQueryExtData\) [HasLogCounts](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L227>)
+
+```go
+func (o *ReportsQueryExtData) HasLogCounts() bool
+```
+
+HasLogCounts returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasLogCountsChart"></a>
+### func \(\*ReportsQueryExtData\) [HasLogCountsChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L339>)
+
+```go
+func (o *ReportsQueryExtData) HasLogCountsChart() bool
+```
+
+HasLogCountsChart returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasLogCountsTable"></a>
+### func \(\*ReportsQueryExtData\) [HasLogCountsTable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L367>)
+
+```go
+func (o *ReportsQueryExtData) HasLogCountsTable() bool
+```
+
+HasLogCountsTable returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasLogPositions"></a>
+### func \(\*ReportsQueryExtData\) [HasLogPositions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L171>)
+
+```go
+func (o *ReportsQueryExtData) HasLogPositions() bool
+```
+
+HasLogPositions returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasReportType"></a>
+### func \(\*ReportsQueryExtData\) [HasReportType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L87>)
+
+```go
+func (o *ReportsQueryExtData) HasReportType() bool
+```
+
+HasReportType returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasSystemInfo"></a>
+### func \(\*ReportsQueryExtData\) [HasSystemInfo](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L199>)
+
+```go
+func (o *ReportsQueryExtData) HasSystemInfo() bool
+```
+
+HasSystemInfo returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.HasTimeStamps"></a>
+### func \(\*ReportsQueryExtData\) [HasTimeStamps](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L311>)
+
+```go
+func (o *ReportsQueryExtData) HasTimeStamps() bool
+```
+
+HasTimeStamps returns a boolean if a field has been set.
+
+<a name="ReportsQueryExtData.MarshalJSON"></a>
+### func \(ReportsQueryExtData\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L545>)
+
+```go
+func (o ReportsQueryExtData) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsQueryExtData.SetAlerts"></a>
+### func \(\*ReportsQueryExtData\) [SetAlerts](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L148>)
+
+```go
+func (o *ReportsQueryExtData) SetAlerts(v bool)
+```
+
+SetAlerts gets a reference to the given bool and assigns it to the Alerts field.
+
+<a name="ReportsQueryExtData.SetClassifications"></a>
+### func \(\*ReportsQueryExtData\) [SetClassifications](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L260>)
+
+```go
+func (o *ReportsQueryExtData) SetClassifications(v bool)
+```
+
+SetClassifications gets a reference to the given bool and assigns it to the Classifications field.
+
+<a name="ReportsQueryExtData.SetClassificationsChart"></a>
+### func \(\*ReportsQueryExtData\) [SetClassificationsChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L400>)
+
+```go
+func (o *ReportsQueryExtData) SetClassificationsChart(v bool)
+```
+
+SetClassificationsChart gets a reference to the given bool and assigns it to the ClassificationsChart field.
+
+<a name="ReportsQueryExtData.SetClassificationsSvrChart"></a>
+### func \(\*ReportsQueryExtData\) [SetClassificationsSvrChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L428>)
+
+```go
+func (o *ReportsQueryExtData) SetClassificationsSvrChart(v bool)
+```
+
+SetClassificationsSvrChart gets a reference to the given bool and assigns it to the ClassificationsSvrChart field.
+
+<a name="ReportsQueryExtData.SetClassificationsTable"></a>
+### func \(\*ReportsQueryExtData\) [SetClassificationsTable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L456>)
+
+```go
+func (o *ReportsQueryExtData) SetClassificationsTable(v bool)
+```
+
+SetClassificationsTable gets a reference to the given bool and assigns it to the ClassificationsTable field.
+
+<a name="ReportsQueryExtData.SetCorrelation"></a>
+### func \(\*ReportsQueryExtData\) [SetCorrelation](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L288>)
+
+```go
+func (o *ReportsQueryExtData) SetCorrelation(v bool)
+```
+
+SetCorrelation gets a reference to the given bool and assigns it to the Correlation field.
+
+<a name="ReportsQueryExtData.SetCorrelationAlertChart"></a>
+### func \(\*ReportsQueryExtData\) [SetCorrelationAlertChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L484>)
+
+```go
+func (o *ReportsQueryExtData) SetCorrelationAlertChart(v bool)
+```
+
+SetCorrelationAlertChart gets a reference to the given bool and assigns it to the CorrelationAlertChart field.
+
+<a name="ReportsQueryExtData.SetCorrelationSvrChart"></a>
+### func \(\*ReportsQueryExtData\) [SetCorrelationSvrChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L512>)
+
+```go
+func (o *ReportsQueryExtData) SetCorrelationSvrChart(v bool)
+```
+
+SetCorrelationSvrChart gets a reference to the given bool and assigns it to the CorrelationSvrChart field.
+
+<a name="ReportsQueryExtData.SetCorrelationTable"></a>
+### func \(\*ReportsQueryExtData\) [SetCorrelationTable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L540>)
+
+```go
+func (o *ReportsQueryExtData) SetCorrelationTable(v bool)
+```
+
+SetCorrelationTable gets a reference to the given bool and assigns it to the CorrelationTable field.
+
+<a name="ReportsQueryExtData.SetDateTimeRange"></a>
+### func \(\*ReportsQueryExtData\) [SetDateTimeRange](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L120>)
+
+```go
+func (o *ReportsQueryExtData) SetDateTimeRange(v DateTimeRange)
+```
+
+SetDateTimeRange gets a reference to the given DateTimeRange and assigns it to the DateTimeRange field.
+
+<a name="ReportsQueryExtData.SetLogCounts"></a>
+### func \(\*ReportsQueryExtData\) [SetLogCounts](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L232>)
+
+```go
+func (o *ReportsQueryExtData) SetLogCounts(v bool)
+```
+
+SetLogCounts gets a reference to the given bool and assigns it to the LogCounts field.
+
+<a name="ReportsQueryExtData.SetLogCountsChart"></a>
+### func \(\*ReportsQueryExtData\) [SetLogCountsChart](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L344>)
+
+```go
+func (o *ReportsQueryExtData) SetLogCountsChart(v bool)
+```
+
+SetLogCountsChart gets a reference to the given bool and assigns it to the LogCountsChart field.
+
+<a name="ReportsQueryExtData.SetLogCountsTable"></a>
+### func \(\*ReportsQueryExtData\) [SetLogCountsTable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L372>)
+
+```go
+func (o *ReportsQueryExtData) SetLogCountsTable(v bool)
+```
+
+SetLogCountsTable gets a reference to the given bool and assigns it to the LogCountsTable field.
+
+<a name="ReportsQueryExtData.SetLogPositions"></a>
+### func \(\*ReportsQueryExtData\) [SetLogPositions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L176>)
+
+```go
+func (o *ReportsQueryExtData) SetLogPositions(v bool)
+```
+
+SetLogPositions gets a reference to the given bool and assigns it to the LogPositions field.
+
+<a name="ReportsQueryExtData.SetReportType"></a>
+### func \(\*ReportsQueryExtData\) [SetReportType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L92>)
+
+```go
+func (o *ReportsQueryExtData) SetReportType(v string)
+```
+
+SetReportType gets a reference to the given string and assigns it to the ReportType field.
+
+<a name="ReportsQueryExtData.SetSystemInfo"></a>
+### func \(\*ReportsQueryExtData\) [SetSystemInfo](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L204>)
+
+```go
+func (o *ReportsQueryExtData) SetSystemInfo(v bool)
+```
+
+SetSystemInfo gets a reference to the given bool and assigns it to the SystemInfo field.
+
+<a name="ReportsQueryExtData.SetTimeStamps"></a>
+### func \(\*ReportsQueryExtData\) [SetTimeStamps](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L316>)
+
+```go
+func (o *ReportsQueryExtData) SetTimeStamps(v bool)
+```
+
+SetTimeStamps gets a reference to the given bool and assigns it to the TimeStamps field.
+
+<a name="ReportsQueryExtData.UnMarshalJSON"></a>
+### func \(\*ReportsQueryExtData\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L609>)
+
+```go
+func (o *ReportsQueryExtData) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsSearchRequest"></a>
+## type [ReportsSearchRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L10-L25>)
+
+ReportsSearchRequest represents a request to search reports.
+
+```go
+type ReportsSearchRequest struct {
+    // Filter for the search.
+    SearchFilter *string `json:"searchFilter,omitempty"`
+    // Name of the application.
+    ApplicationName *string `json:"applicationName,omitempty"`
+    // Start date for the search.
+    StartDate common.NullableString `json:"startDate,omitempty"`
+    // Context for the Smart REST request.
+    SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
+    // Indicates whether to show passive reports.
+    ShowPassive *bool `json:"showPassive,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsSearchRequest"></a>
+### func [NewReportsSearchRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L31>)
+
+```go
+func NewReportsSearchRequest() *ReportsSearchRequest
+```
+
+NewReportsSearchRequest creates a new ReportsSearchRequest object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsSearchRequestWithDefaults"></a>
+### func [NewReportsSearchRequestWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L39>)
+
+```go
+func NewReportsSearchRequestWithDefaults() *ReportsSearchRequest
+```
+
+NewReportsSearchRequestWithDefaults creates a new ReportsSearchRequest object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsSearchRequest.GetApplicationName"></a>
+### func \(\*ReportsSearchRequest\) [GetApplicationName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L73>)
+
+```go
+func (o *ReportsSearchRequest) GetApplicationName() string
+```
+
+GetApplicationName returns the ApplicationName field value if set, zero value otherwise.
+
+<a name="ReportsSearchRequest.GetApplicationNameOk"></a>
+### func \(\*ReportsSearchRequest\) [GetApplicationNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L83>)
+
+```go
+func (o *ReportsSearchRequest) GetApplicationNameOk() (*string, bool)
+```
+
+GetApplicationNameOk returns a tuple with the ApplicationName field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchRequest.GetSearchFilter"></a>
+### func \(\*ReportsSearchRequest\) [GetSearchFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L45>)
+
+```go
+func (o *ReportsSearchRequest) GetSearchFilter() string
+```
+
+GetSearchFilter returns the SearchFilter field value if set, zero value otherwise.
+
+<a name="ReportsSearchRequest.GetSearchFilterOk"></a>
+### func \(\*ReportsSearchRequest\) [GetSearchFilterOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L55>)
+
+```go
+func (o *ReportsSearchRequest) GetSearchFilterOk() (*string, bool)
+```
+
+GetSearchFilterOk returns a tuple with the SearchFilter field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchRequest.GetShowPassive"></a>
+### func \(\*ReportsSearchRequest\) [GetShowPassive](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L168>)
+
+```go
+func (o *ReportsSearchRequest) GetShowPassive() bool
+```
+
+GetShowPassive returns the ShowPassive field value if set, zero value otherwise.
+
+<a name="ReportsSearchRequest.GetShowPassiveOk"></a>
+### func \(\*ReportsSearchRequest\) [GetShowPassiveOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L178>)
+
+```go
+func (o *ReportsSearchRequest) GetShowPassiveOk() (*bool, bool)
+```
+
+GetShowPassiveOk returns a tuple with the ShowPassive field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchRequest.GetSmartRestRequestContext"></a>
+### func \(\*ReportsSearchRequest\) [GetSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L140>)
+
+```go
+func (o *ReportsSearchRequest) GetSmartRestRequestContext() string
+```
+
+GetSmartRestRequestContext returns the SmartRestRequestContext field value if set, zero value otherwise.
+
+<a name="ReportsSearchRequest.GetSmartRestRequestContextOk"></a>
+### func \(\*ReportsSearchRequest\) [GetSmartRestRequestContextOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L150>)
+
+```go
+func (o *ReportsSearchRequest) GetSmartRestRequestContextOk() (*string, bool)
+```
+
+GetSmartRestRequestContextOk returns a tuple with the SmartRestRequestContext field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchRequest.GetStartDate"></a>
+### func \(\*ReportsSearchRequest\) [GetStartDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L101>)
+
+```go
+func (o *ReportsSearchRequest) GetStartDate() string
+```
+
+GetStartDate returns the StartDate field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsSearchRequest.GetStartDateOk"></a>
+### func \(\*ReportsSearchRequest\) [GetStartDateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L112>)
+
+```go
+func (o *ReportsSearchRequest) GetStartDateOk() (*string, bool)
+```
+
+GetStartDateOk returns a tuple with the StartDate field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsSearchRequest.HasApplicationName"></a>
+### func \(\*ReportsSearchRequest\) [HasApplicationName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L91>)
+
+```go
+func (o *ReportsSearchRequest) HasApplicationName() bool
+```
+
+HasApplicationName returns a boolean if a field has been set.
+
+<a name="ReportsSearchRequest.HasSearchFilter"></a>
+### func \(\*ReportsSearchRequest\) [HasSearchFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L63>)
+
+```go
+func (o *ReportsSearchRequest) HasSearchFilter() bool
+```
+
+HasSearchFilter returns a boolean if a field has been set.
+
+<a name="ReportsSearchRequest.HasShowPassive"></a>
+### func \(\*ReportsSearchRequest\) [HasShowPassive](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L186>)
+
+```go
+func (o *ReportsSearchRequest) HasShowPassive() bool
+```
+
+HasShowPassive returns a boolean if a field has been set.
+
+<a name="ReportsSearchRequest.HasSmartRestRequestContext"></a>
+### func \(\*ReportsSearchRequest\) [HasSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L158>)
+
+```go
+func (o *ReportsSearchRequest) HasSmartRestRequestContext() bool
+```
+
+HasSmartRestRequestContext returns a boolean if a field has been set.
+
+<a name="ReportsSearchRequest.HasStartDate"></a>
+### func \(\*ReportsSearchRequest\) [HasStartDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L120>)
+
+```go
+func (o *ReportsSearchRequest) HasStartDate() bool
+```
+
+HasStartDate returns a boolean if a StartDate has been set.
+
+<a name="ReportsSearchRequest.MarshalJSON"></a>
+### func \(ReportsSearchRequest\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L196>)
+
+```go
+func (o ReportsSearchRequest) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsSearchRequest.SetApplicationName"></a>
+### func \(\*ReportsSearchRequest\) [SetApplicationName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L96>)
+
+```go
+func (o *ReportsSearchRequest) SetApplicationName(v string)
+```
+
+SetApplicationName gets a reference to the given string and assigns it to the ApplicationName field.
+
+<a name="ReportsSearchRequest.SetSearchFilter"></a>
+### func \(\*ReportsSearchRequest\) [SetSearchFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L68>)
+
+```go
+func (o *ReportsSearchRequest) SetSearchFilter(v string)
+```
+
+SetSearchFilter gets a reference to the given string and assigns it to the SearchFilter field.
+
+<a name="ReportsSearchRequest.SetShowPassive"></a>
+### func \(\*ReportsSearchRequest\) [SetShowPassive](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L191>)
+
+```go
+func (o *ReportsSearchRequest) SetShowPassive(v bool)
+```
+
+SetShowPassive gets a reference to the given bool and assigns it to the ShowPassive field.
+
+<a name="ReportsSearchRequest.SetSmartRestRequestContext"></a>
+### func \(\*ReportsSearchRequest\) [SetSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L163>)
+
+```go
+func (o *ReportsSearchRequest) SetSmartRestRequestContext(v string)
+```
+
+SetSmartRestRequestContext gets a reference to the given string and assigns it to the SmartRestRequestContext field.
+
+<a name="ReportsSearchRequest.SetStartDate"></a>
+### func \(\*ReportsSearchRequest\) [SetStartDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L125>)
+
+```go
+func (o *ReportsSearchRequest) SetStartDate(v string)
+```
+
+SetStartDate gets a reference to the given datadog.NullableString and assigns it to the StartDate field.
+
+<a name="ReportsSearchRequest.SetStartDateNil"></a>
+### func \(\*ReportsSearchRequest\) [SetStartDateNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L130>)
+
+```go
+func (o *ReportsSearchRequest) SetStartDateNil()
+```
+
+SetStartDateNil sets the value for StartDate to be an explicit nil.
+
+<a name="ReportsSearchRequest.UnMarshalJSON"></a>
+### func \(\*ReportsSearchRequest\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L224>)
+
+```go
+func (o *ReportsSearchRequest) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsSearchRequest.UnsetStartDate"></a>
+### func \(\*ReportsSearchRequest\) [UnsetStartDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L135>)
+
+```go
+func (o *ReportsSearchRequest) UnsetStartDate()
+```
+
+UnsetStartDate ensures that no value is present for StartDate, not even an explicit nil.
+
+<a name="ReportsSearchResponse"></a>
+## type [ReportsSearchResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L10-L67>)
+
+ReportsSearchResponse represents a response from a report search operation.
+
+```go
+type ReportsSearchResponse struct {
+    // Date when the report was last modified.
+    ModifiedDate *string `json:"ModifiedDate,omitempty"`
+    // ID of the report.
+    ReportId *string `json:"ReportId,omitempty"`
+    // Username associated with the report.
+    Username *string `json:"Username,omitempty"`
+    // Name of the report.
+    Name *string `json:"Name,omitempty"`
+    // Description of the report.
+    Description *string `json:"Description,omitempty"`
+    // Indicates if the report is active.
+    IsActive *bool `json:"IsActive,omitempty"`
+    // Author of the report.
+    Author common.NullableString `json:"Author,omitempty"`
+    // Link to access the report.
+    ReportLink *string `json:"ReportLink,omitempty"`
+    // Users and groups with whom the report is shared.
+    SharedUsersAndGroups common.NullableList[string] `json:"SharedUsersAndGroups,omitempty"`
+    // Date when the report was created.
+    CreatedDate *string `json:"CreatedDate,omitempty"`
+    // Queries associated with the report.
+    ReportQuery []ReportsQuery `json:"ReportQuery,omitempty"`
+    // Data related to the report.
+    ReportData *ReportsData `json:"ReportData,omitempty"`
+    // Schedule configuration for generating the report.
+    Schedule *ScheduleConfig `json:"Schedule,omitempty"`
+    // Date and time when the report was last generated.
+    LastGenerationTime common.NullableString `json:"LastGenerationTime,omitempty"`
+    // Date and time when the report is scheduled to be generated next.
+    NextGenerationTime common.NullableString `json:"NextGenerationTime,omitempty"`
+    // Latest file associated with the report.
+    LatestReportFile *ReportsLatestReportFile `json:"LatestReportFile,omitempty"`
+    // Page settings for the report.
+    PageSettings common.NullableString `json:"PageSettings,omitempty"`
+    // Parameters for the report.
+    Parameters *ReportsParameters `json:"Parameters,omitempty"`
+    // Tags associated with the report.
+    Tags []string `json:"Tags,omitempty"`
+    // Actions associated with the report.
+    Actions *Actions `json:"Actions,omitempty"`
+    // Filter for the module.
+    ModuleFilter *string `json:"ModuleFilter,omitempty"`
+    // Name of the remote interface.
+    RemoteInterfaceName *string `json:"RemoteInterfaceName,omitempty"`
+    // Name of the remote method.
+    RemoteMethodName *string `json:"RemoteMethodName,omitempty"`
+    // Name of the application associated with the report.
+    ApplicationName *string `json:"ApplicationName,omitempty"`
+    // Filter for the sub-executor module.
+    SubExecutorModuleFilter *string `json:"SubExecutorModuleFilter,omitempty"`
+    // Version of the report.
+    Version *float64 `json:"Version,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsSearchResponse"></a>
+### func [NewReportsSearchResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L73>)
+
+```go
+func NewReportsSearchResponse() *ReportsSearchResponse
+```
+
+NewReportsSearchResponse creates a new ReportsSearchResponse object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsSearchResponseWithDefaults"></a>
+### func [NewReportsSearchResponseWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L81>)
+
+```go
+func NewReportsSearchResponseWithDefaults() *ReportsSearchResponse
+```
+
+NewReportsSearchResponseWithDefaults creates a new ReportsSearchResponse object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsSearchResponse.GetActions"></a>
+### func \(\*ReportsSearchResponse\) [GetActions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L675>)
+
+```go
+func (o *ReportsSearchResponse) GetActions() Actions
+```
+
+GetActions returns the Actions field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetActionsOk"></a>
+### func \(\*ReportsSearchResponse\) [GetActionsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L685>)
+
+```go
+func (o *ReportsSearchResponse) GetActionsOk() (*Actions, bool)
+```
+
+GetActionsOk returns a tuple with the Actions field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetApplicationName"></a>
+### func \(\*ReportsSearchResponse\) [GetApplicationName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L787>)
+
+```go
+func (o *ReportsSearchResponse) GetApplicationName() string
+```
+
+GetApplicationName returns the ApplicationName field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetApplicationNameOk"></a>
+### func \(\*ReportsSearchResponse\) [GetApplicationNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L797>)
+
+```go
+func (o *ReportsSearchResponse) GetApplicationNameOk() (*string, bool)
+```
+
+GetApplicationNameOk returns a tuple with the ApplicationName field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetAuthor"></a>
+### func \(\*ReportsSearchResponse\) [GetAuthor](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L255>)
+
+```go
+func (o *ReportsSearchResponse) GetAuthor() string
+```
+
+GetAuthor returns the Author field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsSearchResponse.GetAuthorOk"></a>
+### func \(\*ReportsSearchResponse\) [GetAuthorOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L266>)
+
+```go
+func (o *ReportsSearchResponse) GetAuthorOk() (*string, bool)
+```
+
+GetAuthorOk returns a tuple with the Author field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsSearchResponse.GetCreatedDate"></a>
+### func \(\*ReportsSearchResponse\) [GetCreatedDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L362>)
+
+```go
+func (o *ReportsSearchResponse) GetCreatedDate() string
+```
+
+GetCreatedDate returns the CreatedDate field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetCreatedDateOk"></a>
+### func \(\*ReportsSearchResponse\) [GetCreatedDateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L372>)
+
+```go
+func (o *ReportsSearchResponse) GetCreatedDateOk() (*string, bool)
+```
+
+GetCreatedDateOk returns a tuple with the CreatedDate field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetDescription"></a>
+### func \(\*ReportsSearchResponse\) [GetDescription](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L199>)
+
+```go
+func (o *ReportsSearchResponse) GetDescription() string
+```
+
+GetDescription returns the Description field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetDescriptionOk"></a>
+### func \(\*ReportsSearchResponse\) [GetDescriptionOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L209>)
+
+```go
+func (o *ReportsSearchResponse) GetDescriptionOk() (*string, bool)
+```
+
+GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetIsActive"></a>
+### func \(\*ReportsSearchResponse\) [GetIsActive](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L227>)
+
+```go
+func (o *ReportsSearchResponse) GetIsActive() bool
+```
+
+GetIsActive returns the IsActive field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetIsActiveOk"></a>
+### func \(\*ReportsSearchResponse\) [GetIsActiveOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L237>)
+
+```go
+func (o *ReportsSearchResponse) GetIsActiveOk() (*bool, bool)
+```
+
+GetIsActiveOk returns a tuple with the IsActive field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetLastGenerationTime"></a>
+### func \(\*ReportsSearchResponse\) [GetLastGenerationTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L474>)
+
+```go
+func (o *ReportsSearchResponse) GetLastGenerationTime() string
+```
+
+GetLastGenerationTime returns the LastGenerationTime field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsSearchResponse.GetLastGenerationTimeOk"></a>
+### func \(\*ReportsSearchResponse\) [GetLastGenerationTimeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L485>)
+
+```go
+func (o *ReportsSearchResponse) GetLastGenerationTimeOk() (*string, bool)
+```
+
+GetLastGenerationTimeOk returns a tuple with the LastGenerationTime field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsSearchResponse.GetLatestReportFile"></a>
+### func \(\*ReportsSearchResponse\) [GetLatestReportFile](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L552>)
+
+```go
+func (o *ReportsSearchResponse) GetLatestReportFile() ReportsLatestReportFile
+```
+
+GetLatestReportFile returns the LatestReportFile field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetLatestReportFileOk"></a>
+### func \(\*ReportsSearchResponse\) [GetLatestReportFileOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L562>)
+
+```go
+func (o *ReportsSearchResponse) GetLatestReportFileOk() (*ReportsLatestReportFile, bool)
+```
+
+GetLatestReportFileOk returns a tuple with the LatestReportFile field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetModifiedDate"></a>
+### func \(\*ReportsSearchResponse\) [GetModifiedDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L87>)
+
+```go
+func (o *ReportsSearchResponse) GetModifiedDate() string
+```
+
+GetModifiedDate returns the ModifiedDate field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetModifiedDateOk"></a>
+### func \(\*ReportsSearchResponse\) [GetModifiedDateOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L97>)
+
+```go
+func (o *ReportsSearchResponse) GetModifiedDateOk() (*string, bool)
+```
+
+GetModifiedDateOk returns a tuple with the ModifiedDate field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetModuleFilter"></a>
+### func \(\*ReportsSearchResponse\) [GetModuleFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L703>)
+
+```go
+func (o *ReportsSearchResponse) GetModuleFilter() string
+```
+
+GetModuleFilter returns the ModuleFilter field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetModuleFilterOk"></a>
+### func \(\*ReportsSearchResponse\) [GetModuleFilterOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L713>)
+
+```go
+func (o *ReportsSearchResponse) GetModuleFilterOk() (*string, bool)
+```
+
+GetModuleFilterOk returns a tuple with the ModuleFilter field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetName"></a>
+### func \(\*ReportsSearchResponse\) [GetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L171>)
+
+```go
+func (o *ReportsSearchResponse) GetName() string
+```
+
+GetName returns the Name field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetNameOk"></a>
+### func \(\*ReportsSearchResponse\) [GetNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L181>)
+
+```go
+func (o *ReportsSearchResponse) GetNameOk() (*string, bool)
+```
+
+GetNameOk returns a tuple with the Name field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetNextGenerationTime"></a>
+### func \(\*ReportsSearchResponse\) [GetNextGenerationTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L513>)
+
+```go
+func (o *ReportsSearchResponse) GetNextGenerationTime() string
+```
+
+GetNextGenerationTime returns the NextGenerationTime field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsSearchResponse.GetNextGenerationTimeOk"></a>
+### func \(\*ReportsSearchResponse\) [GetNextGenerationTimeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L524>)
+
+```go
+func (o *ReportsSearchResponse) GetNextGenerationTimeOk() (*string, bool)
+```
+
+GetNextGenerationTimeOk returns a tuple with the NextGenerationTime field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsSearchResponse.GetPageSettings"></a>
+### func \(\*ReportsSearchResponse\) [GetPageSettings](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L580>)
+
+```go
+func (o *ReportsSearchResponse) GetPageSettings() string
+```
+
+GetPageSettings returns the PageSettings field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="ReportsSearchResponse.GetPageSettingsOk"></a>
+### func \(\*ReportsSearchResponse\) [GetPageSettingsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L591>)
+
+```go
+func (o *ReportsSearchResponse) GetPageSettingsOk() (*string, bool)
+```
+
+GetPageSettingsOk returns a tuple with the PageSettings field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsSearchResponse.GetParameters"></a>
+### func \(\*ReportsSearchResponse\) [GetParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L619>)
+
+```go
+func (o *ReportsSearchResponse) GetParameters() ReportsParameters
+```
+
+GetParameters returns the Parameters field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetParametersOk"></a>
+### func \(\*ReportsSearchResponse\) [GetParametersOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L629>)
+
+```go
+func (o *ReportsSearchResponse) GetParametersOk() (*ReportsParameters, bool)
+```
+
+GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetRemoteInterfaceName"></a>
+### func \(\*ReportsSearchResponse\) [GetRemoteInterfaceName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L731>)
+
+```go
+func (o *ReportsSearchResponse) GetRemoteInterfaceName() string
+```
+
+GetRemoteInterfaceName returns the RemoteInterfaceName field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetRemoteInterfaceNameOk"></a>
+### func \(\*ReportsSearchResponse\) [GetRemoteInterfaceNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L741>)
+
+```go
+func (o *ReportsSearchResponse) GetRemoteInterfaceNameOk() (*string, bool)
+```
+
+GetRemoteInterfaceNameOk returns a tuple with the RemoteInterfaceName field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetRemoteMethodName"></a>
+### func \(\*ReportsSearchResponse\) [GetRemoteMethodName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L759>)
+
+```go
+func (o *ReportsSearchResponse) GetRemoteMethodName() string
+```
+
+GetRemoteMethodName returns the RemoteMethodName field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetRemoteMethodNameOk"></a>
+### func \(\*ReportsSearchResponse\) [GetRemoteMethodNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L769>)
+
+```go
+func (o *ReportsSearchResponse) GetRemoteMethodNameOk() (*string, bool)
+```
+
+GetRemoteMethodNameOk returns a tuple with the RemoteMethodName field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetReportData"></a>
+### func \(\*ReportsSearchResponse\) [GetReportData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L418>)
+
+```go
+func (o *ReportsSearchResponse) GetReportData() ReportsData
+```
+
+GetReportData returns the ReportData field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetReportDataOk"></a>
+### func \(\*ReportsSearchResponse\) [GetReportDataOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L428>)
+
+```go
+func (o *ReportsSearchResponse) GetReportDataOk() (*ReportsData, bool)
+```
+
+GetReportDataOk returns a tuple with the ReportData field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetReportId"></a>
+### func \(\*ReportsSearchResponse\) [GetReportId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L115>)
+
+```go
+func (o *ReportsSearchResponse) GetReportId() string
+```
+
+GetReportId returns the ReportId field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetReportIdOk"></a>
+### func \(\*ReportsSearchResponse\) [GetReportIdOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L125>)
+
+```go
+func (o *ReportsSearchResponse) GetReportIdOk() (*string, bool)
+```
+
+GetReportIdOk returns a tuple with the ReportId field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetReportLink"></a>
+### func \(\*ReportsSearchResponse\) [GetReportLink](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L294>)
+
+```go
+func (o *ReportsSearchResponse) GetReportLink() string
+```
+
+GetReportLink returns the ReportLink field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetReportLinkOk"></a>
+### func \(\*ReportsSearchResponse\) [GetReportLinkOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L304>)
+
+```go
+func (o *ReportsSearchResponse) GetReportLinkOk() (*string, bool)
+```
+
+GetReportLinkOk returns a tuple with the ReportLink field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetReportQuery"></a>
+### func \(\*ReportsSearchResponse\) [GetReportQuery](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L390>)
+
+```go
+func (o *ReportsSearchResponse) GetReportQuery() []ReportsQuery
+```
+
+GetReportQuery returns the ReportQuery field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetReportQueryOk"></a>
+### func \(\*ReportsSearchResponse\) [GetReportQueryOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L400>)
+
+```go
+func (o *ReportsSearchResponse) GetReportQueryOk() (*[]ReportsQuery, bool)
+```
+
+GetReportQueryOk returns a tuple with the ReportQuery field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetSchedule"></a>
+### func \(\*ReportsSearchResponse\) [GetSchedule](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L446>)
+
+```go
+func (o *ReportsSearchResponse) GetSchedule() ScheduleConfig
+```
+
+GetSchedule returns the Schedule field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetScheduleOk"></a>
+### func \(\*ReportsSearchResponse\) [GetScheduleOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L456>)
+
+```go
+func (o *ReportsSearchResponse) GetScheduleOk() (*ScheduleConfig, bool)
+```
+
+GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetSharedUsersAndGroups"></a>
+### func \(\*ReportsSearchResponse\) [GetSharedUsersAndGroups](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L324>)
+
+```go
+func (o *ReportsSearchResponse) GetSharedUsersAndGroups() (*[]string, bool)
+```
+
+GetSharedUsersAndGroups returns a tuple with the SharedUsersAndGroups field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsSearchResponse.GetSharedUsersAndGroupsOk"></a>
+### func \(\*ReportsSearchResponse\) [GetSharedUsersAndGroupsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L334>)
+
+```go
+func (o *ReportsSearchResponse) GetSharedUsersAndGroupsOk() (*[]string, bool)
+```
+
+GetSharedUsersAndGroupsOk returns a tuple with the SharedUsersAndGroups field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="ReportsSearchResponse.GetSubExecutorModuleFilter"></a>
+### func \(\*ReportsSearchResponse\) [GetSubExecutorModuleFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L815>)
+
+```go
+func (o *ReportsSearchResponse) GetSubExecutorModuleFilter() string
+```
+
+GetSubExecutorModuleFilter returns the SubExecutorModuleFilter field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetSubExecutorModuleFilterOk"></a>
+### func \(\*ReportsSearchResponse\) [GetSubExecutorModuleFilterOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L825>)
+
+```go
+func (o *ReportsSearchResponse) GetSubExecutorModuleFilterOk() (*string, bool)
+```
+
+GetSubExecutorModuleFilterOk returns a tuple with the SubExecutorModuleFilter field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetTags"></a>
+### func \(\*ReportsSearchResponse\) [GetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L647>)
+
+```go
+func (o *ReportsSearchResponse) GetTags() []string
+```
+
+GetTags returns the Tags field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetTagsOk"></a>
+### func \(\*ReportsSearchResponse\) [GetTagsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L657>)
+
+```go
+func (o *ReportsSearchResponse) GetTagsOk() (*[]string, bool)
+```
+
+GetTagsOk returns a tuple with the Tags field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetUsername"></a>
+### func \(\*ReportsSearchResponse\) [GetUsername](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L143>)
+
+```go
+func (o *ReportsSearchResponse) GetUsername() string
+```
+
+GetUsername returns the Username field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetUsernameOk"></a>
+### func \(\*ReportsSearchResponse\) [GetUsernameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L153>)
+
+```go
+func (o *ReportsSearchResponse) GetUsernameOk() (*string, bool)
+```
+
+GetUsernameOk returns a tuple with the Username field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.GetVersion"></a>
+### func \(\*ReportsSearchResponse\) [GetVersion](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L843>)
+
+```go
+func (o *ReportsSearchResponse) GetVersion() float64
+```
+
+GetVersion returns the Version field value if set, zero value otherwise.
+
+<a name="ReportsSearchResponse.GetVersionOk"></a>
+### func \(\*ReportsSearchResponse\) [GetVersionOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L853>)
+
+```go
+func (o *ReportsSearchResponse) GetVersionOk() (*float64, bool)
+```
+
+GetVersionOk returns a tuple with the Version field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsSearchResponse.HasActions"></a>
+### func \(\*ReportsSearchResponse\) [HasActions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L693>)
+
+```go
+func (o *ReportsSearchResponse) HasActions() bool
+```
+
+HasActions returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasApplicationName"></a>
+### func \(\*ReportsSearchResponse\) [HasApplicationName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L805>)
+
+```go
+func (o *ReportsSearchResponse) HasApplicationName() bool
+```
+
+HasApplicationName returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasAuthor"></a>
+### func \(\*ReportsSearchResponse\) [HasAuthor](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L274>)
+
+```go
+func (o *ReportsSearchResponse) HasAuthor() bool
+```
+
+HasAuthor returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasCreatedDate"></a>
+### func \(\*ReportsSearchResponse\) [HasCreatedDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L380>)
+
+```go
+func (o *ReportsSearchResponse) HasCreatedDate() bool
+```
+
+HasCreatedDate returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasDescription"></a>
+### func \(\*ReportsSearchResponse\) [HasDescription](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L217>)
+
+```go
+func (o *ReportsSearchResponse) HasDescription() bool
+```
+
+HasDescription returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasIsActive"></a>
+### func \(\*ReportsSearchResponse\) [HasIsActive](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L245>)
+
+```go
+func (o *ReportsSearchResponse) HasIsActive() bool
+```
+
+HasIsActive returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasLastGenerationTime"></a>
+### func \(\*ReportsSearchResponse\) [HasLastGenerationTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L493>)
+
+```go
+func (o *ReportsSearchResponse) HasLastGenerationTime() bool
+```
+
+HasLastGenerationTime returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasLatestReportFile"></a>
+### func \(\*ReportsSearchResponse\) [HasLatestReportFile](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L570>)
+
+```go
+func (o *ReportsSearchResponse) HasLatestReportFile() bool
+```
+
+HasLatestReportFile returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasModifiedDate"></a>
+### func \(\*ReportsSearchResponse\) [HasModifiedDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L105>)
+
+```go
+func (o *ReportsSearchResponse) HasModifiedDate() bool
+```
+
+HasModifiedDate returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasModuleFilter"></a>
+### func \(\*ReportsSearchResponse\) [HasModuleFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L721>)
+
+```go
+func (o *ReportsSearchResponse) HasModuleFilter() bool
+```
+
+HasModuleFilter returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasName"></a>
+### func \(\*ReportsSearchResponse\) [HasName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L189>)
+
+```go
+func (o *ReportsSearchResponse) HasName() bool
+```
+
+HasName returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasNextGenerationTime"></a>
+### func \(\*ReportsSearchResponse\) [HasNextGenerationTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L532>)
+
+```go
+func (o *ReportsSearchResponse) HasNextGenerationTime() bool
+```
+
+HasNextGenerationTime returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasPageSettings"></a>
+### func \(\*ReportsSearchResponse\) [HasPageSettings](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L599>)
+
+```go
+func (o *ReportsSearchResponse) HasPageSettings() bool
+```
+
+HasPageSettings returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasParameters"></a>
+### func \(\*ReportsSearchResponse\) [HasParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L637>)
+
+```go
+func (o *ReportsSearchResponse) HasParameters() bool
+```
+
+HasParameters returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasRemoteInterfaceName"></a>
+### func \(\*ReportsSearchResponse\) [HasRemoteInterfaceName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L749>)
+
+```go
+func (o *ReportsSearchResponse) HasRemoteInterfaceName() bool
+```
+
+HasRemoteInterfaceName returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasRemoteMethodName"></a>
+### func \(\*ReportsSearchResponse\) [HasRemoteMethodName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L777>)
+
+```go
+func (o *ReportsSearchResponse) HasRemoteMethodName() bool
+```
+
+HasRemoteMethodName returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasReportData"></a>
+### func \(\*ReportsSearchResponse\) [HasReportData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L436>)
+
+```go
+func (o *ReportsSearchResponse) HasReportData() bool
+```
+
+HasReportData returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasReportId"></a>
+### func \(\*ReportsSearchResponse\) [HasReportId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L133>)
+
+```go
+func (o *ReportsSearchResponse) HasReportId() bool
+```
+
+HasReportId returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasReportLink"></a>
+### func \(\*ReportsSearchResponse\) [HasReportLink](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L312>)
+
+```go
+func (o *ReportsSearchResponse) HasReportLink() bool
+```
+
+HasReportLink returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasReportQuery"></a>
+### func \(\*ReportsSearchResponse\) [HasReportQuery](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L408>)
+
+```go
+func (o *ReportsSearchResponse) HasReportQuery() bool
+```
+
+HasReportQuery returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasSchedule"></a>
+### func \(\*ReportsSearchResponse\) [HasSchedule](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L464>)
+
+```go
+func (o *ReportsSearchResponse) HasSchedule() bool
+```
+
+HasSchedule returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasSharedUsersAndGroups"></a>
+### func \(\*ReportsSearchResponse\) [HasSharedUsersAndGroups](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L342>)
+
+```go
+func (o *ReportsSearchResponse) HasSharedUsersAndGroups() bool
+```
+
+HasSharedUsersAndGroups returns a boolean if a SharedUsersAndGroups has been set.
+
+<a name="ReportsSearchResponse.HasSubExecutorModuleFilter"></a>
+### func \(\*ReportsSearchResponse\) [HasSubExecutorModuleFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L833>)
+
+```go
+func (o *ReportsSearchResponse) HasSubExecutorModuleFilter() bool
+```
+
+HasSubExecutorModuleFilter returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasTags"></a>
+### func \(\*ReportsSearchResponse\) [HasTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L665>)
+
+```go
+func (o *ReportsSearchResponse) HasTags() bool
+```
+
+HasTags returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasUsername"></a>
+### func \(\*ReportsSearchResponse\) [HasUsername](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L161>)
+
+```go
+func (o *ReportsSearchResponse) HasUsername() bool
+```
+
+HasUsername returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.HasVersion"></a>
+### func \(\*ReportsSearchResponse\) [HasVersion](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L861>)
+
+```go
+func (o *ReportsSearchResponse) HasVersion() bool
+```
+
+HasVersion returns a boolean if a field has been set.
+
+<a name="ReportsSearchResponse.MarshalJSON"></a>
+### func \(ReportsSearchResponse\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L871>)
+
+```go
+func (o ReportsSearchResponse) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsSearchResponse.SetActions"></a>
+### func \(\*ReportsSearchResponse\) [SetActions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L698>)
+
+```go
+func (o *ReportsSearchResponse) SetActions(v Actions)
+```
+
+SetActions gets a reference to the given Actions and assigns it to the Actions field.
+
+<a name="ReportsSearchResponse.SetApplicationName"></a>
+### func \(\*ReportsSearchResponse\) [SetApplicationName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L810>)
+
+```go
+func (o *ReportsSearchResponse) SetApplicationName(v string)
+```
+
+SetApplicationName gets a reference to the given string and assigns it to the ApplicationName field.
+
+<a name="ReportsSearchResponse.SetAuthor"></a>
+### func \(\*ReportsSearchResponse\) [SetAuthor](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L279>)
+
+```go
+func (o *ReportsSearchResponse) SetAuthor(v string)
+```
+
+SetAuthor gets a reference to the given datadog.NullableString and assigns it to the Author field.
+
+<a name="ReportsSearchResponse.SetAuthorNil"></a>
+### func \(\*ReportsSearchResponse\) [SetAuthorNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L284>)
+
+```go
+func (o *ReportsSearchResponse) SetAuthorNil()
+```
+
+SetAuthorNil sets the value for Author to be an explicit nil.
+
+<a name="ReportsSearchResponse.SetCreatedDate"></a>
+### func \(\*ReportsSearchResponse\) [SetCreatedDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L385>)
+
+```go
+func (o *ReportsSearchResponse) SetCreatedDate(v string)
+```
+
+SetCreatedDate gets a reference to the given string and assigns it to the CreatedDate field.
+
+<a name="ReportsSearchResponse.SetDescription"></a>
+### func \(\*ReportsSearchResponse\) [SetDescription](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L222>)
+
+```go
+func (o *ReportsSearchResponse) SetDescription(v string)
+```
+
+SetDescription gets a reference to the given string and assigns it to the Description field.
+
+<a name="ReportsSearchResponse.SetIsActive"></a>
+### func \(\*ReportsSearchResponse\) [SetIsActive](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L250>)
+
+```go
+func (o *ReportsSearchResponse) SetIsActive(v bool)
+```
+
+SetIsActive gets a reference to the given bool and assigns it to the IsActive field.
+
+<a name="ReportsSearchResponse.SetLastGenerationTime"></a>
+### func \(\*ReportsSearchResponse\) [SetLastGenerationTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L498>)
+
+```go
+func (o *ReportsSearchResponse) SetLastGenerationTime(v string)
+```
+
+SetLastGenerationTime gets a reference to the given datadog.NullableString and assigns it to the LastGenerationTime field.
+
+<a name="ReportsSearchResponse.SetLastGenerationTimeNil"></a>
+### func \(\*ReportsSearchResponse\) [SetLastGenerationTimeNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L503>)
+
+```go
+func (o *ReportsSearchResponse) SetLastGenerationTimeNil()
+```
+
+SetLastGenerationTimeNil sets the value for LastGenerationTime to be an explicit nil.
+
+<a name="ReportsSearchResponse.SetLatestReportFile"></a>
+### func \(\*ReportsSearchResponse\) [SetLatestReportFile](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L575>)
+
+```go
+func (o *ReportsSearchResponse) SetLatestReportFile(v ReportsLatestReportFile)
+```
+
+SetLatestReportFile gets a reference to the given ReportsLatestReportFile and assigns it to the LatestReportFile field.
+
+<a name="ReportsSearchResponse.SetModifiedDate"></a>
+### func \(\*ReportsSearchResponse\) [SetModifiedDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L110>)
+
+```go
+func (o *ReportsSearchResponse) SetModifiedDate(v string)
+```
+
+SetModifiedDate gets a reference to the given string and assigns it to the ModifiedDate field.
+
+<a name="ReportsSearchResponse.SetModuleFilter"></a>
+### func \(\*ReportsSearchResponse\) [SetModuleFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L726>)
+
+```go
+func (o *ReportsSearchResponse) SetModuleFilter(v string)
+```
+
+SetModuleFilter gets a reference to the given string and assigns it to the ModuleFilter field.
+
+<a name="ReportsSearchResponse.SetName"></a>
+### func \(\*ReportsSearchResponse\) [SetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L194>)
+
+```go
+func (o *ReportsSearchResponse) SetName(v string)
+```
+
+SetName gets a reference to the given string and assigns it to the Name field.
+
+<a name="ReportsSearchResponse.SetNextGenerationTime"></a>
+### func \(\*ReportsSearchResponse\) [SetNextGenerationTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L537>)
+
+```go
+func (o *ReportsSearchResponse) SetNextGenerationTime(v string)
+```
+
+SetNextGenerationTime gets a reference to the given datadog.NullableString and assigns it to the NextGenerationTime field.
+
+<a name="ReportsSearchResponse.SetNextGenerationTimeNil"></a>
+### func \(\*ReportsSearchResponse\) [SetNextGenerationTimeNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L542>)
+
+```go
+func (o *ReportsSearchResponse) SetNextGenerationTimeNil()
+```
+
+SetNextGenerationTimeNil sets the value for NextGenerationTime to be an explicit nil.
+
+<a name="ReportsSearchResponse.SetPageSettings"></a>
+### func \(\*ReportsSearchResponse\) [SetPageSettings](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L604>)
+
+```go
+func (o *ReportsSearchResponse) SetPageSettings(v string)
+```
+
+SetPageSettings gets a reference to the given datadog.NullableString and assigns it to the PageSettings field.
+
+<a name="ReportsSearchResponse.SetPageSettingsNil"></a>
+### func \(\*ReportsSearchResponse\) [SetPageSettingsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L609>)
+
+```go
+func (o *ReportsSearchResponse) SetPageSettingsNil()
+```
+
+SetPageSettingsNil sets the value for PageSettings to be an explicit nil.
+
+<a name="ReportsSearchResponse.SetParameters"></a>
+### func \(\*ReportsSearchResponse\) [SetParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L642>)
+
+```go
+func (o *ReportsSearchResponse) SetParameters(v ReportsParameters)
+```
+
+SetParameters gets a reference to the given ReportsParameters and assigns it to the Parameters field.
+
+<a name="ReportsSearchResponse.SetRemoteInterfaceName"></a>
+### func \(\*ReportsSearchResponse\) [SetRemoteInterfaceName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L754>)
+
+```go
+func (o *ReportsSearchResponse) SetRemoteInterfaceName(v string)
+```
+
+SetRemoteInterfaceName gets a reference to the given string and assigns it to the RemoteInterfaceName field.
+
+<a name="ReportsSearchResponse.SetRemoteMethodName"></a>
+### func \(\*ReportsSearchResponse\) [SetRemoteMethodName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L782>)
+
+```go
+func (o *ReportsSearchResponse) SetRemoteMethodName(v string)
+```
+
+SetRemoteMethodName gets a reference to the given string and assigns it to the RemoteMethodName field.
+
+<a name="ReportsSearchResponse.SetReportData"></a>
+### func \(\*ReportsSearchResponse\) [SetReportData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L441>)
+
+```go
+func (o *ReportsSearchResponse) SetReportData(v ReportsData)
+```
+
+SetReportData gets a reference to the given ReportsData and assigns it to the ReportData field.
+
+<a name="ReportsSearchResponse.SetReportId"></a>
+### func \(\*ReportsSearchResponse\) [SetReportId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L138>)
+
+```go
+func (o *ReportsSearchResponse) SetReportId(v string)
+```
+
+SetReportId gets a reference to the given string and assigns it to the ReportId field.
+
+<a name="ReportsSearchResponse.SetReportLink"></a>
+### func \(\*ReportsSearchResponse\) [SetReportLink](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L317>)
+
+```go
+func (o *ReportsSearchResponse) SetReportLink(v string)
+```
+
+SetReportLink gets a reference to the given string and assigns it to the ReportLink field.
+
+<a name="ReportsSearchResponse.SetReportQuery"></a>
+### func \(\*ReportsSearchResponse\) [SetReportQuery](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L413>)
+
+```go
+func (o *ReportsSearchResponse) SetReportQuery(v []ReportsQuery)
+```
+
+SetReportQuery gets a reference to the given \[\]ReportsQuery and assigns it to the ReportQuery field.
+
+<a name="ReportsSearchResponse.SetSchedule"></a>
+### func \(\*ReportsSearchResponse\) [SetSchedule](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L469>)
+
+```go
+func (o *ReportsSearchResponse) SetSchedule(v ScheduleConfig)
+```
+
+SetSchedule gets a reference to the given ScheduleConfig and assigns it to the Schedule field.
+
+<a name="ReportsSearchResponse.SetSharedUsersAndGroups"></a>
+### func \(\*ReportsSearchResponse\) [SetSharedUsersAndGroups](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L347>)
+
+```go
+func (o *ReportsSearchResponse) SetSharedUsersAndGroups(v []string)
+```
+
+SetSharedUsersAndGroups gets a reference to the given datadog.Nullable\[\]string and assigns it to the SharedUsersAndGroups field.
+
+<a name="ReportsSearchResponse.SetSharedUsersAndGroupsNil"></a>
+### func \(\*ReportsSearchResponse\) [SetSharedUsersAndGroupsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L352>)
+
+```go
+func (o *ReportsSearchResponse) SetSharedUsersAndGroupsNil()
+```
+
+SetSharedUsersAndGroupsNil sets the value for SharedUsersAndGroups to be an explicit nil.
+
+<a name="ReportsSearchResponse.SetSubExecutorModuleFilter"></a>
+### func \(\*ReportsSearchResponse\) [SetSubExecutorModuleFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L838>)
+
+```go
+func (o *ReportsSearchResponse) SetSubExecutorModuleFilter(v string)
+```
+
+SetSubExecutorModuleFilter gets a reference to the given string and assigns it to the SubExecutorModuleFilter field.
+
+<a name="ReportsSearchResponse.SetTags"></a>
+### func \(\*ReportsSearchResponse\) [SetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L670>)
+
+```go
+func (o *ReportsSearchResponse) SetTags(v []string)
+```
+
+SetTags gets a reference to the given \[\]string and assigns it to the Tags field.
+
+<a name="ReportsSearchResponse.SetUsername"></a>
+### func \(\*ReportsSearchResponse\) [SetUsername](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L166>)
+
+```go
+func (o *ReportsSearchResponse) SetUsername(v string)
+```
+
+SetUsername gets a reference to the given string and assigns it to the Username field.
+
+<a name="ReportsSearchResponse.SetVersion"></a>
+### func \(\*ReportsSearchResponse\) [SetVersion](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L866>)
+
+```go
+func (o *ReportsSearchResponse) SetVersion(v float64)
+```
+
+SetVersion gets a reference to the given float64 and assigns it to the Version field.
+
+<a name="ReportsSearchResponse.UnMarshalJSON"></a>
+### func \(\*ReportsSearchResponse\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L962>)
+
+```go
+func (o *ReportsSearchResponse) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ReportsSearchResponse.UnSetAuthor"></a>
+### func \(\*ReportsSearchResponse\) [UnSetAuthor](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L289>)
+
+```go
+func (o *ReportsSearchResponse) UnSetAuthor()
+```
+
+UnsetAuthor ensures that no value is present for Author, not even an explicit nil.
+
+<a name="ReportsSearchResponse.UnSetLastGenerationTime"></a>
+### func \(\*ReportsSearchResponse\) [UnSetLastGenerationTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L508>)
+
+```go
+func (o *ReportsSearchResponse) UnSetLastGenerationTime()
+```
+
+UnsetLastGenerationTime ensures that no value is present for LastGenerationTime, not even an explicit nil.
+
+<a name="ReportsSearchResponse.UnSetNextGenerationTime"></a>
+### func \(\*ReportsSearchResponse\) [UnSetNextGenerationTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L547>)
+
+```go
+func (o *ReportsSearchResponse) UnSetNextGenerationTime()
+```
+
+UnsetNextGenerationTime ensures that no value is present for NextGenerationTime, not even an explicit nil.
+
+<a name="ReportsSearchResponse.UnSetPageSettings"></a>
+### func \(\*ReportsSearchResponse\) [UnSetPageSettings](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L614>)
+
+```go
+func (o *ReportsSearchResponse) UnSetPageSettings()
+```
+
+UnsetPageSettings ensures that no value is present for PageSettings, not even an explicit nil.
+
+<a name="ReportsSearchResponse.UnSetSharedUsersAndGroups"></a>
+### func \(\*ReportsSearchResponse\) [UnSetSharedUsersAndGroups](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L357>)
+
+```go
+func (o *ReportsSearchResponse) UnSetSharedUsersAndGroups()
+```
+
+UnsetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
+
+<a name="ReportsTableVisualization"></a>
+## type [ReportsTableVisualization](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L10-L21>)
+
+ReportsTableVisualization defines the visualization options for a table in a report.
+
+```go
+type ReportsTableVisualization struct {
+    // Type of the chart.
+    ChartType *string `json:"ChartType,omitempty"`
+    // Maximum row count.
+    MaxRowCount *int64 `json:"MaxRowCount,omitempty"`
+    // Columns for the visualization.
+    Columns []string `json:"Columns,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewReportsTableVisualization"></a>
+### func [NewReportsTableVisualization](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L27>)
+
+```go
+func NewReportsTableVisualization() *ReportsTableVisualization
+```
+
+NewReportsTableVisualization creates a new ReportsTableVisualization object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewReportsTableVisualizationWithDefaults"></a>
+### func [NewReportsTableVisualizationWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L35>)
+
+```go
+func NewReportsTableVisualizationWithDefaults() *ReportsTableVisualization
+```
+
+NewReportsTableVisualizationWithDefaults creates a new ReportsTableVisualization object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ReportsTableVisualization.GetChartType"></a>
+### func \(\*ReportsTableVisualization\) [GetChartType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L41>)
+
+```go
+func (o *ReportsTableVisualization) GetChartType() string
+```
+
+GetChartType returns the ChartType field value if set, zero value otherwise.
+
+<a name="ReportsTableVisualization.GetChartTypeOk"></a>
+### func \(\*ReportsTableVisualization\) [GetChartTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L51>)
+
+```go
+func (o *ReportsTableVisualization) GetChartTypeOk() (*string, bool)
+```
+
+GetChartTypeOk returns a tuple with the ChartType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsTableVisualization.GetColumns"></a>
+### func \(\*ReportsTableVisualization\) [GetColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L97>)
+
+```go
+func (o *ReportsTableVisualization) GetColumns() []string
+```
+
+GetColumns returns the Columns field value if set, zero value otherwise.
+
+<a name="ReportsTableVisualization.GetColumnsOk"></a>
+### func \(\*ReportsTableVisualization\) [GetColumnsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L107>)
+
+```go
+func (o *ReportsTableVisualization) GetColumnsOk() (*[]string, bool)
+```
+
+GetColumnsOk returns a tuple with the Columns field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsTableVisualization.GetMaxRowCount"></a>
+### func \(\*ReportsTableVisualization\) [GetMaxRowCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L69>)
+
+```go
+func (o *ReportsTableVisualization) GetMaxRowCount() int64
+```
+
+GetMaxRowCount returns the MaxRowCount field value if set, zero value otherwise.
+
+<a name="ReportsTableVisualization.GetMaxRowCountOk"></a>
+### func \(\*ReportsTableVisualization\) [GetMaxRowCountOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L79>)
+
+```go
+func (o *ReportsTableVisualization) GetMaxRowCountOk() (*int64, bool)
+```
+
+GetMaxRowCountOk returns a tuple with the MaxRowCount field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ReportsTableVisualization.HasChartType"></a>
+### func \(\*ReportsTableVisualization\) [HasChartType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L59>)
+
+```go
+func (o *ReportsTableVisualization) HasChartType() bool
+```
+
+HasChartType returns a boolean if a field has been set.
+
+<a name="ReportsTableVisualization.HasColumns"></a>
+### func \(\*ReportsTableVisualization\) [HasColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L115>)
+
+```go
+func (o *ReportsTableVisualization) HasColumns() bool
+```
+
+HasColumns returns a boolean if a field has been set.
+
+<a name="ReportsTableVisualization.HasMaxRowCount"></a>
+### func \(\*ReportsTableVisualization\) [HasMaxRowCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L87>)
+
+```go
+func (o *ReportsTableVisualization) HasMaxRowCount() bool
+```
+
+HasMaxRowCount returns a boolean if a field has been set.
+
+<a name="ReportsTableVisualization.MarshalJSON"></a>
+### func \(ReportsTableVisualization\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L125>)
+
+```go
+func (o ReportsTableVisualization) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ReportsTableVisualization.SetChartType"></a>
+### func \(\*ReportsTableVisualization\) [SetChartType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L64>)
+
+```go
+func (o *ReportsTableVisualization) SetChartType(v string)
+```
+
+SetChartType gets a reference to the given string and assigns it to the ChartType field.
+
+<a name="ReportsTableVisualization.SetColumns"></a>
+### func \(\*ReportsTableVisualization\) [SetColumns](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L120>)
+
+```go
+func (o *ReportsTableVisualization) SetColumns(v []string)
+```
+
+SetColumns gets a reference to the given \[\]string and assigns it to the Columns field.
+
+<a name="ReportsTableVisualization.SetMaxRowCount"></a>
+### func \(\*ReportsTableVisualization\) [SetMaxRowCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L92>)
+
+```go
+func (o *ReportsTableVisualization) SetMaxRowCount(v int64)
+```
+
+SetMaxRowCount gets a reference to the given string and assigns it to the MaxRowCount field.
+
+<a name="ReportsTableVisualization.UnMarshalJSON"></a>
+### func \(\*ReportsTableVisualization\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L147>)
+
+```go
+func (o *ReportsTableVisualization) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="ScheduleConfig"></a>
+## type [ScheduleConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L10-L41>)
+
+ScheduleConfig represents the configuration for scheduling tasks.
+
+```go
+type ScheduleConfig struct {
+    // Full date and time of the schedule.
+    ScheduleFullDateTime *string `json:"ScheduleFullDateTime,omitempty"`
+    // Type of the schedule.
+    ScheduleType *string `json:"ScheduleType,omitempty"`
+    // Time ticks.
+    TimeTics *int64 `json:"TimeTics,omitempty"`
+    // Time for the schedule.
+    Time *string `json:"Time,omitempty"`
+    // Date string for the schedule.
+    DateStr *string `json:"DateStr,omitempty"`
+    // Days for the schedule.
+    Days []string `json:"Days,omitempty"`
+    // Numbers representing days for the schedule.
+    DaysNumber []int64 `json:"DaysNumber,omitempty"`
+    // Number of the day.
+    DayNo *int64 `json:"DayNo,omitempty"`
+    // Day of the schedule.
+    Day *string `json:"Day,omitempty"`
+    // Number representing the day.
+    DayNumber *int64 `json:"DayNumber,omitempty"`
+    // Type of the week for the schedule.
+    WeekType *string `json:"WeekType,omitempty"`
+    // Type of time for the schedule.
+    TimeType *string `json:"TimeType,omitempty"`
+    // Value representing time for the schedule.
+    TimeValue *int64 `json:"TimeValue,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{} `json:"-"`
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewScheduleConfig"></a>
+### func [NewScheduleConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L47>)
+
+```go
+func NewScheduleConfig() *ScheduleConfig
+```
+
+NewScheduleConfig creates a new ScheduleConfig object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewScheduleConfigWithDefaults"></a>
+### func [NewScheduleConfigWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L55>)
+
+```go
+func NewScheduleConfigWithDefaults() *ScheduleConfig
+```
+
+NewScheduleConfigWithDefaults creates a new ScheduleConfig object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="ScheduleConfig.GetDateStr"></a>
+### func \(\*ScheduleConfig\) [GetDateStr](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L173>)
+
+```go
+func (o *ScheduleConfig) GetDateStr() string
+```
+
+GetDateStr returns the DateStr field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetDateStrOk"></a>
+### func \(\*ScheduleConfig\) [GetDateStrOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L183>)
+
+```go
+func (o *ScheduleConfig) GetDateStrOk() (*string, bool)
+```
+
+GetDateStrOk returns a tuple with the DateStr field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.GetDay"></a>
+### func \(\*ScheduleConfig\) [GetDay](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L285>)
+
+```go
+func (o *ScheduleConfig) GetDay() string
+```
+
+GetDay returns the Day field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetDayNo"></a>
+### func \(\*ScheduleConfig\) [GetDayNo](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L257>)
+
+```go
+func (o *ScheduleConfig) GetDayNo() int64
+```
+
+GetDayNo returns the DayNo field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetDayNoOk"></a>
+### func \(\*ScheduleConfig\) [GetDayNoOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L267>)
+
+```go
+func (o *ScheduleConfig) GetDayNoOk() (*int64, bool)
+```
+
+GetDayNoOk returns a tuple with the DayNo field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.GetDayNumber"></a>
+### func \(\*ScheduleConfig\) [GetDayNumber](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L313>)
+
+```go
+func (o *ScheduleConfig) GetDayNumber() int64
+```
+
+GetDayNumber returns the DayNumber field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetDayNumberOk"></a>
+### func \(\*ScheduleConfig\) [GetDayNumberOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L323>)
+
+```go
+func (o *ScheduleConfig) GetDayNumberOk() (*int64, bool)
+```
+
+GetDayNumberOk returns a tuple with the DayNumber field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.GetDayOk"></a>
+### func \(\*ScheduleConfig\) [GetDayOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L295>)
+
+```go
+func (o *ScheduleConfig) GetDayOk() (*string, bool)
+```
+
+GetDayOk returns a tuple with the Day field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.GetDays"></a>
+### func \(\*ScheduleConfig\) [GetDays](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L201>)
+
+```go
+func (o *ScheduleConfig) GetDays() []string
+```
+
+GetDays returns the Days field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetDaysNumber"></a>
+### func \(\*ScheduleConfig\) [GetDaysNumber](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L229>)
+
+```go
+func (o *ScheduleConfig) GetDaysNumber() []int64
+```
+
+GetDaysNumber returns the DaysNumber field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetDaysNumberOk"></a>
+### func \(\*ScheduleConfig\) [GetDaysNumberOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L239>)
+
+```go
+func (o *ScheduleConfig) GetDaysNumberOk() (*[]int64, bool)
+```
+
+GetDaysNumberOk returns a tuple with the DaysNumber field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.GetDaysOk"></a>
+### func \(\*ScheduleConfig\) [GetDaysOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L211>)
+
+```go
+func (o *ScheduleConfig) GetDaysOk() (*[]string, bool)
+```
+
+GetDaysOk returns a tuple with the Days field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.GetScheduleFullDateTime"></a>
+### func \(\*ScheduleConfig\) [GetScheduleFullDateTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L61>)
+
+```go
+func (o *ScheduleConfig) GetScheduleFullDateTime() string
+```
+
+GetScheduleFullDateTime returns the ScheduleFullDateTime field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetScheduleFullDateTimeOk"></a>
+### func \(\*ScheduleConfig\) [GetScheduleFullDateTimeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L71>)
+
+```go
+func (o *ScheduleConfig) GetScheduleFullDateTimeOk() (*string, bool)
+```
+
+GetScheduleFullDateTimeOk returns a tuple with the ScheduleFullDateTime field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.GetScheduleType"></a>
+### func \(\*ScheduleConfig\) [GetScheduleType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L89>)
+
+```go
+func (o *ScheduleConfig) GetScheduleType() string
+```
+
+GetScheduleType returns the ScheduleType field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetScheduleTypeOk"></a>
+### func \(\*ScheduleConfig\) [GetScheduleTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L99>)
+
+```go
+func (o *ScheduleConfig) GetScheduleTypeOk() (*string, bool)
+```
+
+GetScheduleTypeOk returns a tuple with the ScheduleType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.GetTime"></a>
+### func \(\*ScheduleConfig\) [GetTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L145>)
+
+```go
+func (o *ScheduleConfig) GetTime() string
+```
+
+GetTime returns the Time field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetTimeOk"></a>
+### func \(\*ScheduleConfig\) [GetTimeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L155>)
+
+```go
+func (o *ScheduleConfig) GetTimeOk() (*string, bool)
+```
+
+GetTimeOk returns a tuple with the Time field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.GetTimeTics"></a>
+### func \(\*ScheduleConfig\) [GetTimeTics](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L117>)
+
+```go
+func (o *ScheduleConfig) GetTimeTics() int64
+```
+
+GetTimeTics returns the TimeTics field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetTimeTicsOk"></a>
+### func \(\*ScheduleConfig\) [GetTimeTicsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L127>)
+
+```go
+func (o *ScheduleConfig) GetTimeTicsOk() (*int64, bool)
+```
+
+GetTimeTicsOk returns a tuple with the TimeTics field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.GetTimeType"></a>
+### func \(\*ScheduleConfig\) [GetTimeType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L369>)
+
+```go
+func (o *ScheduleConfig) GetTimeType() string
+```
+
+GetTimeType returns the TimeType field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetTimeTypeOk"></a>
+### func \(\*ScheduleConfig\) [GetTimeTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L379>)
+
+```go
+func (o *ScheduleConfig) GetTimeTypeOk() (*string, bool)
+```
+
+GetTimeTypeOk returns a tuple with the TimeType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.GetTimeValue"></a>
+### func \(\*ScheduleConfig\) [GetTimeValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L397>)
+
+```go
+func (o *ScheduleConfig) GetTimeValue() int64
+```
+
+GetTimeValue returns the TimeValue field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetTimeValueOk"></a>
+### func \(\*ScheduleConfig\) [GetTimeValueOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L407>)
+
+```go
+func (o *ScheduleConfig) GetTimeValueOk() (*int64, bool)
+```
+
+GetTimeValueOk returns a tuple with the TimeValue field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.GetWeekType"></a>
+### func \(\*ScheduleConfig\) [GetWeekType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L341>)
+
+```go
+func (o *ScheduleConfig) GetWeekType() string
+```
+
+GetWeekType returns the WeekType field value if set, zero value otherwise.
+
+<a name="ScheduleConfig.GetWeekTypeOk"></a>
+### func \(\*ScheduleConfig\) [GetWeekTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L351>)
+
+```go
+func (o *ScheduleConfig) GetWeekTypeOk() (*string, bool)
+```
+
+GetWeekTypeOk returns a tuple with the WeekType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="ScheduleConfig.HasDateStr"></a>
+### func \(\*ScheduleConfig\) [HasDateStr](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L191>)
+
+```go
+func (o *ScheduleConfig) HasDateStr() bool
+```
+
+HasDateStr returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.HasDay"></a>
+### func \(\*ScheduleConfig\) [HasDay](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L303>)
+
+```go
+func (o *ScheduleConfig) HasDay() bool
+```
+
+HasDay returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.HasDayNo"></a>
+### func \(\*ScheduleConfig\) [HasDayNo](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L275>)
+
+```go
+func (o *ScheduleConfig) HasDayNo() bool
+```
+
+HasDayNo returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.HasDayNumber"></a>
+### func \(\*ScheduleConfig\) [HasDayNumber](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L331>)
+
+```go
+func (o *ScheduleConfig) HasDayNumber() bool
+```
+
+HasDayNumber returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.HasDays"></a>
+### func \(\*ScheduleConfig\) [HasDays](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L219>)
+
+```go
+func (o *ScheduleConfig) HasDays() bool
+```
+
+HasDays returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.HasDaysNumber"></a>
+### func \(\*ScheduleConfig\) [HasDaysNumber](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L247>)
+
+```go
+func (o *ScheduleConfig) HasDaysNumber() bool
+```
+
+HasDaysNumber returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.HasScheduleFullDateTime"></a>
+### func \(\*ScheduleConfig\) [HasScheduleFullDateTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L79>)
+
+```go
+func (o *ScheduleConfig) HasScheduleFullDateTime() bool
+```
+
+HasScheduleFullDateTime returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.HasScheduleType"></a>
+### func \(\*ScheduleConfig\) [HasScheduleType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L107>)
+
+```go
+func (o *ScheduleConfig) HasScheduleType() bool
+```
+
+HasScheduleType returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.HasTime"></a>
+### func \(\*ScheduleConfig\) [HasTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L163>)
+
+```go
+func (o *ScheduleConfig) HasTime() bool
+```
+
+HasTime returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.HasTimeTics"></a>
+### func \(\*ScheduleConfig\) [HasTimeTics](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L135>)
+
+```go
+func (o *ScheduleConfig) HasTimeTics() bool
+```
+
+HasTimeTics returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.HasTimeType"></a>
+### func \(\*ScheduleConfig\) [HasTimeType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L387>)
+
+```go
+func (o *ScheduleConfig) HasTimeType() bool
+```
+
+HasTimeType returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.HasTimeValue"></a>
+### func \(\*ScheduleConfig\) [HasTimeValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L415>)
+
+```go
+func (o *ScheduleConfig) HasTimeValue() bool
+```
+
+HasTimeValue returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.HasWeekType"></a>
+### func \(\*ScheduleConfig\) [HasWeekType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L359>)
+
+```go
+func (o *ScheduleConfig) HasWeekType() bool
+```
+
+HasWeekType returns a boolean if a field has been set.
+
+<a name="ScheduleConfig.MarshalJSON"></a>
+### func \(ScheduleConfig\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L425>)
+
+```go
+func (o ScheduleConfig) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="ScheduleConfig.SetDateStr"></a>
+### func \(\*ScheduleConfig\) [SetDateStr](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L196>)
+
+```go
+func (o *ScheduleConfig) SetDateStr(v string)
+```
+
+SetDateStr gets a reference to the given string and assigns it to the DateStr field.
+
+<a name="ScheduleConfig.SetDay"></a>
+### func \(\*ScheduleConfig\) [SetDay](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L308>)
+
+```go
+func (o *ScheduleConfig) SetDay(v string)
+```
+
+SetDay gets a reference to the given string and assigns it to the Day field.
+
+<a name="ScheduleConfig.SetDayNo"></a>
+### func \(\*ScheduleConfig\) [SetDayNo](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L280>)
+
+```go
+func (o *ScheduleConfig) SetDayNo(v int64)
+```
+
+SetDayNo gets a reference to the given int64 and assigns it to the DayNo field.
+
+<a name="ScheduleConfig.SetDayNumber"></a>
+### func \(\*ScheduleConfig\) [SetDayNumber](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L336>)
+
+```go
+func (o *ScheduleConfig) SetDayNumber(v int64)
+```
+
+SetDayNumber gets a reference to the given int64 and assigns it to the DayNumber field.
+
+<a name="ScheduleConfig.SetDays"></a>
+### func \(\*ScheduleConfig\) [SetDays](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L224>)
+
+```go
+func (o *ScheduleConfig) SetDays(v []string)
+```
+
+SetDays gets a reference to the given \[\]string and assigns it to the Days field.
+
+<a name="ScheduleConfig.SetDaysNumber"></a>
+### func \(\*ScheduleConfig\) [SetDaysNumber](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L252>)
+
+```go
+func (o *ScheduleConfig) SetDaysNumber(v []int64)
+```
+
+SetDaysNumber gets a reference to the given \[\]int64 and assigns it to the DaysNumber field.
+
+<a name="ScheduleConfig.SetScheduleFullDateTime"></a>
+### func \(\*ScheduleConfig\) [SetScheduleFullDateTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L84>)
+
+```go
+func (o *ScheduleConfig) SetScheduleFullDateTime(v string)
+```
+
+SetScheduleFullDateTime gets a reference to the given string and assigns it to the ScheduleFullDateTime field.
+
+<a name="ScheduleConfig.SetScheduleType"></a>
+### func \(\*ScheduleConfig\) [SetScheduleType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L112>)
+
+```go
+func (o *ScheduleConfig) SetScheduleType(v string)
+```
+
+SetScheduleType gets a reference to the given string and assigns it to the ScheduleType field.
+
+<a name="ScheduleConfig.SetTime"></a>
+### func \(\*ScheduleConfig\) [SetTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L168>)
+
+```go
+func (o *ScheduleConfig) SetTime(v string)
+```
+
+SetTime gets a reference to the given string and assigns it to the Time field.
+
+<a name="ScheduleConfig.SetTimeTics"></a>
+### func \(\*ScheduleConfig\) [SetTimeTics](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L140>)
+
+```go
+func (o *ScheduleConfig) SetTimeTics(v int64)
+```
+
+SetTimeTics gets a reference to the given int64 and assigns it to the TimeTics field.
+
+<a name="ScheduleConfig.SetTimeType"></a>
+### func \(\*ScheduleConfig\) [SetTimeType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L392>)
+
+```go
+func (o *ScheduleConfig) SetTimeType(v string)
+```
+
+SetTimeType gets a reference to the given string and assigns it to the TimeType field.
+
+<a name="ScheduleConfig.SetTimeValue"></a>
+### func \(\*ScheduleConfig\) [SetTimeValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L420>)
+
+```go
+func (o *ScheduleConfig) SetTimeValue(v int64)
+```
+
+SetTimeValue gets a reference to the given int64 and assigns it to the TimeValue field.
+
+<a name="ScheduleConfig.SetWeekType"></a>
+### func \(\*ScheduleConfig\) [SetWeekType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L364>)
+
+```go
+func (o *ScheduleConfig) SetWeekType(v string)
+```
+
+SetWeekType gets a reference to the given string and assigns it to the WeekType field.
+
+<a name="ScheduleConfig.UnMarshalJSON"></a>
+### func \(\*ScheduleConfig\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L477>)
+
+```go
+func (o *ScheduleConfig) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="SearchAlertsOptionalParameters"></a>
+## type [SearchAlertsOptionalParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_alerts.go#L15-L17>)
+
+SearcAlertsOptionalParamters holds optional parameters for SearchAlerts.
+
+```go
+type SearchAlertsOptionalParameters struct {
+    Body *AlertsSearchRequest
+}
+```
+
+<a name="NewSearchAlertsOptionalParameters"></a>
+### func [NewSearchAlertsOptionalParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_alerts.go#L20>)
+
+```go
+func NewSearchAlertsOptionalParameters() *SearchAlertsOptionalParameters
+```
+
+NewSearchAlertsOptionalParameters creates an empty struct for parameters.
+
+<a name="SearchAlertsOptionalParameters.WithBody"></a>
+### func \(\*SearchAlertsOptionalParameters\) [WithBody](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_alerts.go#L25>)
+
+```go
+func (r *SearchAlertsOptionalParameters) WithBody(body AlertsSearchRequest) *SearchAlertsOptionalParameters
+```
+
+
 
 <a name="SearchEventsOptionalParameters"></a>
 ## type [SearchEventsOptionalParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_events.go#L15-L17>)
@@ -2363,7 +13642,7 @@ SearchEventsOptionalParamters holds optional parameters for SearchEvents.
 
 ```go
 type SearchEventsOptionalParameters struct {
-    Body *EventsListRequest
+    Body *EventsSearchRequest
 }
 ```
 
@@ -2380,15 +13659,2397 @@ NewSearchEventsOptioanlParameters creates an empty struct for parameters.
 ### func \(\*SearchEventsOptionalParameters\) [WithBody](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_events.go#L26>)
 
 ```go
-func (r *SearchEventsOptionalParameters) WithBody(body EventsListRequest) *SearchEventsOptionalParameters
+func (r *SearchEventsOptionalParameters) WithBody(body EventsSearchRequest) *SearchEventsOptionalParameters
 ```
 
 WithBody sets the corresponding parameter name and returns the struct.
 
-# events
+<a name="SearchQueriesOptionalParameters"></a>
+## type [SearchQueriesOptionalParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_queries.go#L15-L17>)
+
+SearchQueriesOptionalParameters holds optional parameters for SearchQueries.
 
 ```go
-import "github.com/mtnmunuklu/davudpasha-api-client-go/examples/events"
+type SearchQueriesOptionalParameters struct {
+    Body *QueriesSearchRequest
+}
+```
+
+<a name="NewSearchQueriesOptionalParameters"></a>
+### func [NewSearchQueriesOptionalParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_queries.go#L20>)
+
+```go
+func NewSearchQueriesOptionalParameters() *SearchQueriesOptionalParameters
+```
+
+NewSearchQueriesOptionalParameters creates an empty struct for parameters.
+
+<a name="SearchQueriesOptionalParameters.WithBody"></a>
+### func \(\*SearchQueriesOptionalParameters\) [WithBody](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_queries.go#L26>)
+
+```go
+func (r *SearchQueriesOptionalParameters) WithBody(body QueriesSearchRequest) *SearchQueriesOptionalParameters
+```
+
+WithBody sets the corresponding parameter name and returns the struct.
+
+<a name="SearchReportsOptionalParameters"></a>
+## type [SearchReportsOptionalParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_reports.go#L15-L17>)
+
+SearchReportsOptionalParameters holds optional parameters for SearchQueries.
+
+```go
+type SearchReportsOptionalParameters struct {
+    Body *ReportsSearchRequest
+}
+```
+
+<a name="NewSearchReportsOptionalParameters"></a>
+### func [NewSearchReportsOptionalParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_reports.go#L20>)
+
+```go
+func NewSearchReportsOptionalParameters() *SearchReportsOptionalParameters
+```
+
+NewSearchReportsOptionalParameters creates an empty struct for parameters.
+
+<a name="SearchReportsOptionalParameters.WithBody"></a>
+### func \(\*SearchReportsOptionalParameters\) [WithBody](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_reports.go#L26>)
+
+```go
+func (r *SearchReportsOptionalParameters) WithBody(body ReportsSearchRequest) *SearchReportsOptionalParameters
+```
+
+WithBody sets the corresponding parameter name and returns the struct.
+
+<a name="SearchSourcesOptionalParameters"></a>
+## type [SearchSourcesOptionalParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_sources.go#L15-L17>)
+
+SearchSourcesOptionalParameters holds optional parameters for SearchSources.
+
+```go
+type SearchSourcesOptionalParameters struct {
+    Body *SourcesSearchRequest
+}
+```
+
+<a name="NewSearchSourcesOptionalParameters"></a>
+### func [NewSearchSourcesOptionalParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_sources.go#L20>)
+
+```go
+func NewSearchSourcesOptionalParameters() *SearchSourcesOptionalParameters
+```
+
+NewSearchSourcesOptionalParameters creates an empty struct for parameters.
+
+<a name="SearchSourcesOptionalParameters.WithBody"></a>
+### func \(\*SearchSourcesOptionalParameters\) [WithBody](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_sources.go#L25>)
+
+```go
+func (r *SearchSourcesOptionalParameters) WithBody(body SourcesSearchRequest) *SearchSourcesOptionalParameters
+```
+
+
+
+<a name="SelectedColumn"></a>
+## type [SelectedColumn](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L11-L22>)
+
+SelectedColumn represents a selected column in a query.
+
+```go
+type SelectedColumn struct {
+    // Value of the column.
+    Value *string `json:"Value,omitempty"`
+    // Text to display for the column.
+    DisplayText *string `json:"DisplayText,omitempty"`
+    // Lookup value for the column.
+    Lookup common.NullableString `json:"Lookup,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{}
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewSelectedColumn"></a>
+### func [NewSelectedColumn](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L28>)
+
+```go
+func NewSelectedColumn() *SelectedColumn
+```
+
+NewSelectedColumn creates a new SelectedColumn object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewSelectedColumnWithDefaults"></a>
+### func [NewSelectedColumnWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L36>)
+
+```go
+func NewSelectedColumnWithDefaults() *SelectedColumn
+```
+
+NewSelectedColumnWithDefaults creates a new SelectedColumn object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="SelectedColumn.GetDisplayText"></a>
+### func \(\*SelectedColumn\) [GetDisplayText](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L70>)
+
+```go
+func (o *SelectedColumn) GetDisplayText() string
+```
+
+GetDisplayText returns the DisplayText field DisplayText if set, zero DisplayText otherwise.
+
+<a name="SelectedColumn.GetDisplayTextOk"></a>
+### func \(\*SelectedColumn\) [GetDisplayTextOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L80>)
+
+```go
+func (o *SelectedColumn) GetDisplayTextOk() (*string, bool)
+```
+
+GetDisplayTextOk returns a tuple with the DisplayText field DisplayText if set, nil otherwise and a boolean to check if the DisplayText has been set.
+
+<a name="SelectedColumn.GetLookup"></a>
+### func \(\*SelectedColumn\) [GetLookup](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L98>)
+
+```go
+func (o *SelectedColumn) GetLookup() string
+```
+
+GetLookup returns the Lookup field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="SelectedColumn.GetLookupOk"></a>
+### func \(\*SelectedColumn\) [GetLookupOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L109>)
+
+```go
+func (o *SelectedColumn) GetLookupOk() (*string, bool)
+```
+
+GetLookupOk returns a tuple with the Lookup field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="SelectedColumn.GetValue"></a>
+### func \(\*SelectedColumn\) [GetValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L42>)
+
+```go
+func (o *SelectedColumn) GetValue() string
+```
+
+GetValue returns the Value field value if set, zero value otherwise.
+
+<a name="SelectedColumn.GetValueOk"></a>
+### func \(\*SelectedColumn\) [GetValueOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L52>)
+
+```go
+func (o *SelectedColumn) GetValueOk() (*string, bool)
+```
+
+GetValueOk returns a tuple with the Value field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SelectedColumn.HasDisplayText"></a>
+### func \(\*SelectedColumn\) [HasDisplayText](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L88>)
+
+```go
+func (o *SelectedColumn) HasDisplayText() bool
+```
+
+HasDisplayText returns a boolean if a field has been set.
+
+<a name="SelectedColumn.HasLookup"></a>
+### func \(\*SelectedColumn\) [HasLookup](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L117>)
+
+```go
+func (o *SelectedColumn) HasLookup() bool
+```
+
+HasLookup returns a boolean if a field has been set.
+
+<a name="SelectedColumn.HasValue"></a>
+### func \(\*SelectedColumn\) [HasValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L60>)
+
+```go
+func (o *SelectedColumn) HasValue() bool
+```
+
+HasValue returns a boolean if a field has been set.
+
+<a name="SelectedColumn.MarshalJSON"></a>
+### func \(SelectedColumn\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L137>)
+
+```go
+func (o SelectedColumn) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="SelectedColumn.SetDisplayText"></a>
+### func \(\*SelectedColumn\) [SetDisplayText](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L93>)
+
+```go
+func (o *SelectedColumn) SetDisplayText(v string)
+```
+
+SetDisplayText gets a reference to the given string and assigns it to the DisplayText field.
+
+<a name="SelectedColumn.SetLookup"></a>
+### func \(\*SelectedColumn\) [SetLookup](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L122>)
+
+```go
+func (o *SelectedColumn) SetLookup(v string)
+```
+
+SetLookup gets a reference to the given datadog.NullableString and assigns it to the Lookup field.
+
+<a name="SelectedColumn.SetLookupNil"></a>
+### func \(\*SelectedColumn\) [SetLookupNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L127>)
+
+```go
+func (o *SelectedColumn) SetLookupNil()
+```
+
+SetLookupNil sets the value for Lookup to be an explicit nil.
+
+<a name="SelectedColumn.SetValue"></a>
+### func \(\*SelectedColumn\) [SetValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L65>)
+
+```go
+func (o *SelectedColumn) SetValue(v string)
+```
+
+SetValue gets a reference to the given string and assigns it to the Value field.
+
+<a name="SelectedColumn.UnMarshalJSON"></a>
+### func \(\*SelectedColumn\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L159>)
+
+```go
+func (o *SelectedColumn) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="SelectedColumn.UnSetLookup"></a>
+### func \(\*SelectedColumn\) [UnSetLookup](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L132>)
+
+```go
+func (o *SelectedColumn) UnSetLookup()
+```
+
+UnsetLookup ensures that no value is present for Lookup, not even an explicit nil.
+
+<a name="SourcesApi"></a>
+## type [SourcesApi](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_sources.go#L12>)
+
+SourcesApi service type.
+
+```go
+type SourcesApi common.Service
+```
+
+<a name="NewSourcesApi"></a>
+### func [NewSourcesApi](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_sources.go#L117>)
+
+```go
+func NewSourcesApi(client *common.APIClient) *SourcesApi
+```
+
+NewSourcesApi returns SourcesApi.
+
+<a name="SourcesApi.SearchSources"></a>
+### func \(\*SourcesApi\) [SearchSources](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_sources.go#L32>)
+
+```go
+func (a *SourcesApi) SearchSources(ctx _context.Context, o ...SearchSourcesOptionalParameters) (SourcesSearchResponse, *_nethttp.Response, error)
+```
+
+SearchSources search sources. Returns sources that match an sources search query.
+
+<a name="SourcesItem"></a>
+## type [SourcesItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L11-L80>)
+
+SourcesItem represents an item in the sources.
+
+```go
+type SourcesItem struct {
+    // ID of the source item.
+    Id  *string `json:"Id,omitempty"`
+    // Indicates if the source item is enabled.
+    Enabled *bool `json:"Enabled,omitempty"`
+    // Name of the source item.
+    Name *string `json:"Name,omitempty"`
+    // Group of the source item.
+    Group common.NullableString `json:"Group,omitempty"`
+    // Author of the source item.
+    Author common.NullableString `json:"Author,omitempty"`
+    // Code defining the log source.
+    LogSourceDefCode *string `json:"LogSourceDefCode,omitempty"`
+    // Type of the log reader.
+    LogReaderType *string `json:"LogReaderType,omitempty"`
+    // Tags associated with the source item.
+    Tags []string `json:"Tags,omitempty"`
+    // Timeout for alerts.
+    AlertTimeout *int64 `json:"AlertTimeout,omitempty"`
+    // Data related to log reader.
+    LogReaderData *json.RawMessage `json:"LogReaderData,omitempty"`
+    // Log operations associated with the source item.
+    LogOperations []SourcesLogOperation `json:"LogOperations,omitempty"`
+    // Configuration for discarded logs.
+    DiscardedLogsConfig *string `json:"DiscardedLogsConfig,omitempty"`
+    // Value of the source item.
+    Value *string `json:"value,omitempty"`
+    // Label of the source item.
+    Label *string `json:"label,omitempty"`
+    // Indicates if the source item is deleted.
+    IsDeleted *bool `json:"IsDeleted,omitempty"`
+    // Indicates if the source item is an agent source.
+    IsAgentSource *bool `json:"IsAgentSource,omitempty"`
+    // IDs of associated agents.
+    AgentIds common.NullableList[string] `json:"AgentIds,omitempty"`
+    // Name of the index group.
+    IndexGroupName common.NullableString `json:"IndexGroupName,omitempty"`
+    // Name of the associated dashboard.
+    DashboardName *string `json:"dashboardName,omitempty"`
+    // ID of the associated dashboard.
+    DashboardId common.NullableString `json:"dashboardId,omitempty"`
+    // Asset tags associated with the source item.
+    AssetTags common.NullableList[string] `json:"AssetTags,omitempty"`
+    // Time to remove logs.
+    LogRemoveTime common.NullableString `json:"LogRemoveTime,omitempty"`
+    // Format to remove logs.
+    LogRemoveFormat common.NullableString `json:"LogRemoveFormat,omitempty"`
+    // ID of the associated agent.
+    AgentId common.NullableString `json:"AgentId,omitempty"`
+    // Indicates if raw logs should be written.
+    WriteRawLogs *bool `json:"WriteRawLogs,omitempty"`
+    // Indicates if a secondary writer should be used.
+    UseSecondaryWriter *bool `json:"UseSecondaryWriter,omitempty"`
+    // Parallel options for the source item.
+    ParallelOptions *ParallelOptions `json:"ParallelOptions,omitempty"`
+    // Block count for the source item.
+    BlockCount *int64 `json:"BlockCount,omitempty"`
+    // Schedule configuration for the source item.
+    ScheduleConfig NullableScheduleConfig `json:"ScheduleConfig,omitempty"`
+    // Indicates if raw logs should be stored.
+    StoreRawLogs *bool `json:"StoreRawLogs,omitempty"`
+    // Name of the LGS for storing raw logs.
+    StoreRawLogsLgs *string `json:"StoreRawLogsLgs,omitempty"`
+    // Indicates if the source item is editable.
+    IsEditable *bool `json:"IsEditable,omitempty"`
+    // Raw value if deserialization fails.
+    UnparsedObject map[string]interface{} `json:"-"`
+    // Additional properties not defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewSourcesItem"></a>
+### func [NewSourcesItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L86>)
+
+```go
+func NewSourcesItem() *SourcesItem
+```
+
+NewSourcesItem creates a new SourcesItem object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewSourcesItemWithDefaults"></a>
+### func [NewSourcesItemWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L94>)
+
+```go
+func NewSourcesItemWithDefaults() *SourcesItem
+```
+
+NewSourcesItemWithDefaults creates a new SourcesItem object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="SourcesItem.GetAgentId"></a>
+### func \(\*SourcesItem\) [GetAgentId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L822>)
+
+```go
+func (o *SourcesItem) GetAgentId() string
+```
+
+GetAgentId returns the AgentId field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="SourcesItem.GetAgentIdOk"></a>
+### func \(\*SourcesItem\) [GetAgentIdOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L833>)
+
+```go
+func (o *SourcesItem) GetAgentIdOk() (*string, bool)
+```
+
+GetAgentIdOk returns a tuple with the AgentId field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="SourcesItem.GetAgentIds"></a>
+### func \(\*SourcesItem\) [GetAgentIds](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L560>)
+
+```go
+func (o *SourcesItem) GetAgentIds() []string
+```
+
+GetAgentIds returns the AgentIds field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="SourcesItem.GetAgentIdsOk"></a>
+### func \(\*SourcesItem\) [GetAgentIdsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L571>)
+
+```go
+func (o *SourcesItem) GetAgentIdsOk() (*[]string, bool)
+```
+
+GetAgentIdsOk returns a tuple with the AgentIds field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="SourcesItem.GetAlertTimeout"></a>
+### func \(\*SourcesItem\) [GetAlertTimeout](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L336>)
+
+```go
+func (o *SourcesItem) GetAlertTimeout() int64
+```
+
+GetAlertTimeout returns the AlertTimeout field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetAlertTimeoutOk"></a>
+### func \(\*SourcesItem\) [GetAlertTimeoutOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L346>)
+
+```go
+func (o *SourcesItem) GetAlertTimeoutOk() (*int64, bool)
+```
+
+GetAlertTimeoutOk returns a tuple with the AlertTimeout field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetAssetTags"></a>
+### func \(\*SourcesItem\) [GetAssetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L705>)
+
+```go
+func (o *SourcesItem) GetAssetTags() []string
+```
+
+GetAssetTags returns the AssetTags field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="SourcesItem.GetAssetTagsOk"></a>
+### func \(\*SourcesItem\) [GetAssetTagsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L716>)
+
+```go
+func (o *SourcesItem) GetAssetTagsOk() (*[]string, bool)
+```
+
+GetAssetTagsOk returns a tuple with the AssetTags field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="SourcesItem.GetAuthor"></a>
+### func \(\*SourcesItem\) [GetAuthor](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L218>)
+
+```go
+func (o *SourcesItem) GetAuthor() string
+```
+
+GetAuthor returns the Author field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="SourcesItem.GetAuthorOk"></a>
+### func \(\*SourcesItem\) [GetAuthorOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L229>)
+
+```go
+func (o *SourcesItem) GetAuthorOk() (*string, bool)
+```
+
+GetAuthorOk returns a tuple with the Author field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="SourcesItem.GetBlockCount"></a>
+### func \(\*SourcesItem\) [GetBlockCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L945>)
+
+```go
+func (o *SourcesItem) GetBlockCount() int64
+```
+
+GetBlockCount returns the BlockCount field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetBlockCountOk"></a>
+### func \(\*SourcesItem\) [GetBlockCountOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L955>)
+
+```go
+func (o *SourcesItem) GetBlockCountOk() (*int64, bool)
+```
+
+GetBlockCountOk returns a tuple with the BlockCount field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetDashboardId"></a>
+### func \(\*SourcesItem\) [GetDashboardId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L666>)
+
+```go
+func (o *SourcesItem) GetDashboardId() string
+```
+
+GetDashboardId returns the DashboardId field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="SourcesItem.GetDashboardIdOk"></a>
+### func \(\*SourcesItem\) [GetDashboardIdOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L677>)
+
+```go
+func (o *SourcesItem) GetDashboardIdOk() (*string, bool)
+```
+
+GetDashboardIdOk returns a tuple with the DashboardId field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="SourcesItem.GetDashboardName"></a>
+### func \(\*SourcesItem\) [GetDashboardName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L638>)
+
+```go
+func (o *SourcesItem) GetDashboardName() string
+```
+
+GetDashboardName returns the DashboardName field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetDashboardNameOk"></a>
+### func \(\*SourcesItem\) [GetDashboardNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L648>)
+
+```go
+func (o *SourcesItem) GetDashboardNameOk() (*string, bool)
+```
+
+GetDashboardNameOk returns a tuple with the DashboardName field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetDiscardedLogsConfig"></a>
+### func \(\*SourcesItem\) [GetDiscardedLogsConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L420>)
+
+```go
+func (o *SourcesItem) GetDiscardedLogsConfig() string
+```
+
+GetDiscardedLogsConfig returns the DiscardedLogsConfig field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetDiscardedLogsConfigOk"></a>
+### func \(\*SourcesItem\) [GetDiscardedLogsConfigOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L430>)
+
+```go
+func (o *SourcesItem) GetDiscardedLogsConfigOk() (*string, bool)
+```
+
+GetDiscardedLogsConfigOk returns a tuple with the DiscardedLogsConfig field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetEnabled"></a>
+### func \(\*SourcesItem\) [GetEnabled](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L128>)
+
+```go
+func (o *SourcesItem) GetEnabled() bool
+```
+
+GetEnabled returns the Enabled field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetEnabledOk"></a>
+### func \(\*SourcesItem\) [GetEnabledOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L138>)
+
+```go
+func (o *SourcesItem) GetEnabledOk() (*bool, bool)
+```
+
+GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetGroup"></a>
+### func \(\*SourcesItem\) [GetGroup](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L184>)
+
+```go
+func (o *SourcesItem) GetGroup() string
+```
+
+GetGroup returns the Group field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="SourcesItem.GetGroupOk"></a>
+### func \(\*SourcesItem\) [GetGroupOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L195>)
+
+```go
+func (o *SourcesItem) GetGroupOk() (*string, bool)
+```
+
+GetGroupOk returns a tuple with the Group field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="SourcesItem.GetId"></a>
+### func \(\*SourcesItem\) [GetId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L100>)
+
+```go
+func (o *SourcesItem) GetId() string
+```
+
+GetId returns the Id field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetIdOk"></a>
+### func \(\*SourcesItem\) [GetIdOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L110>)
+
+```go
+func (o *SourcesItem) GetIdOk() (*string, bool)
+```
+
+GetIdOk returns a tuple with the Id field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetIndexGroupName"></a>
+### func \(\*SourcesItem\) [GetIndexGroupName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L599>)
+
+```go
+func (o *SourcesItem) GetIndexGroupName() string
+```
+
+GetIndexGroupName returns the IndexGroupName field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="SourcesItem.GetIndexGroupNameOk"></a>
+### func \(\*SourcesItem\) [GetIndexGroupNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L610>)
+
+```go
+func (o *SourcesItem) GetIndexGroupNameOk() (*string, bool)
+```
+
+GetIndexGroupNameOk returns a tuple with the IndexGroupName field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="SourcesItem.GetIsAgentSource"></a>
+### func \(\*SourcesItem\) [GetIsAgentSource](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L532>)
+
+```go
+func (o *SourcesItem) GetIsAgentSource() bool
+```
+
+GetIsAgentSource returns the IsAgentSource field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetIsAgentSourceOk"></a>
+### func \(\*SourcesItem\) [GetIsAgentSourceOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L542>)
+
+```go
+func (o *SourcesItem) GetIsAgentSourceOk() (*bool, bool)
+```
+
+GetIsAgentSourceOk returns a tuple with the IsAgentSource field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetIsDeleted"></a>
+### func \(\*SourcesItem\) [GetIsDeleted](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L504>)
+
+```go
+func (o *SourcesItem) GetIsDeleted() bool
+```
+
+GetIsDeleted returns the IsDeleted field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetIsDeletedOk"></a>
+### func \(\*SourcesItem\) [GetIsDeletedOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L514>)
+
+```go
+func (o *SourcesItem) GetIsDeletedOk() (*bool, bool)
+```
+
+GetIsDeletedOk returns a tuple with the IsDeleted field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetIsEditable"></a>
+### func \(\*SourcesItem\) [GetIsEditable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1068>)
+
+```go
+func (o *SourcesItem) GetIsEditable() bool
+```
+
+GetIsEditable returns the IsEditable field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetIsEditableOk"></a>
+### func \(\*SourcesItem\) [GetIsEditableOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1078>)
+
+```go
+func (o *SourcesItem) GetIsEditableOk() (*bool, bool)
+```
+
+GetIsEditableOk returns a tuple with the IsEditable field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetLabel"></a>
+### func \(\*SourcesItem\) [GetLabel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L476>)
+
+```go
+func (o *SourcesItem) GetLabel() string
+```
+
+GetLabel returns the Label field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetLabelOk"></a>
+### func \(\*SourcesItem\) [GetLabelOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L486>)
+
+```go
+func (o *SourcesItem) GetLabelOk() (*string, bool)
+```
+
+GetLabelOk returns a tuple with the Label field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetLogOperations"></a>
+### func \(\*SourcesItem\) [GetLogOperations](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L392>)
+
+```go
+func (o *SourcesItem) GetLogOperations() []SourcesLogOperation
+```
+
+GetLogOperations returns the LogOperations field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetLogOperationsOk"></a>
+### func \(\*SourcesItem\) [GetLogOperationsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L402>)
+
+```go
+func (o *SourcesItem) GetLogOperationsOk() (*[]SourcesLogOperation, bool)
+```
+
+GetLogOperationsOk returns a tuple with the LogOperations field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetLogReaderData"></a>
+### func \(\*SourcesItem\) [GetLogReaderData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L364>)
+
+```go
+func (o *SourcesItem) GetLogReaderData() json.RawMessage
+```
+
+GetLogReaderData returns the LogReaderData field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetLogReaderDataOk"></a>
+### func \(\*SourcesItem\) [GetLogReaderDataOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L374>)
+
+```go
+func (o *SourcesItem) GetLogReaderDataOk() (*json.RawMessage, bool)
+```
+
+GetLogReaderDataOk returns a tuple with the LogReaderData field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetLogReaderType"></a>
+### func \(\*SourcesItem\) [GetLogReaderType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L280>)
+
+```go
+func (o *SourcesItem) GetLogReaderType() string
+```
+
+GetLogReaderType returns the LogReaderType field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetLogReaderTypeOk"></a>
+### func \(\*SourcesItem\) [GetLogReaderTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L290>)
+
+```go
+func (o *SourcesItem) GetLogReaderTypeOk() (*string, bool)
+```
+
+GetLogReaderTypeOk returns a tuple with the LogReaderType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetLogRemoveFormat"></a>
+### func \(\*SourcesItem\) [GetLogRemoveFormat](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L783>)
+
+```go
+func (o *SourcesItem) GetLogRemoveFormat() string
+```
+
+GetLogRemoveFormat returns the LogRemoveFormat field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="SourcesItem.GetLogRemoveFormatOk"></a>
+### func \(\*SourcesItem\) [GetLogRemoveFormatOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L794>)
+
+```go
+func (o *SourcesItem) GetLogRemoveFormatOk() (*string, bool)
+```
+
+GetLogRemoveFormatOk returns a tuple with the LogRemoveFormat field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="SourcesItem.GetLogRemoveTime"></a>
+### func \(\*SourcesItem\) [GetLogRemoveTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L744>)
+
+```go
+func (o *SourcesItem) GetLogRemoveTime() string
+```
+
+GetLogRemoveTime returns the LogRemoveTime field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="SourcesItem.GetLogRemoveTimeOk"></a>
+### func \(\*SourcesItem\) [GetLogRemoveTimeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L755>)
+
+```go
+func (o *SourcesItem) GetLogRemoveTimeOk() (*string, bool)
+```
+
+GetLogRemoveTimeOk returns a tuple with the LogRemoveTime field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="SourcesItem.GetLogSourceDefCode"></a>
+### func \(\*SourcesItem\) [GetLogSourceDefCode](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L252>)
+
+```go
+func (o *SourcesItem) GetLogSourceDefCode() string
+```
+
+GetLogSourceDefCode returns the LogSourceDefCode field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetLogSourceDefCodeOk"></a>
+### func \(\*SourcesItem\) [GetLogSourceDefCodeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L262>)
+
+```go
+func (o *SourcesItem) GetLogSourceDefCodeOk() (*string, bool)
+```
+
+GetLogSourceDefCodeOk returns a tuple with the LogSourceDefCode field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetName"></a>
+### func \(\*SourcesItem\) [GetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L156>)
+
+```go
+func (o *SourcesItem) GetName() string
+```
+
+GetName returns the Name field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetNameOk"></a>
+### func \(\*SourcesItem\) [GetNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L166>)
+
+```go
+func (o *SourcesItem) GetNameOk() (*string, bool)
+```
+
+GetNameOk returns a tuple with the Name field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetParallelOptions"></a>
+### func \(\*SourcesItem\) [GetParallelOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L917>)
+
+```go
+func (o *SourcesItem) GetParallelOptions() ParallelOptions
+```
+
+GetParallelOptions returns the ParallelOptions field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetParallelOptionsOk"></a>
+### func \(\*SourcesItem\) [GetParallelOptionsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L927>)
+
+```go
+func (o *SourcesItem) GetParallelOptionsOk() (*ParallelOptions, bool)
+```
+
+GetParallelOptionsOk returns a tuple with the ParallelOptions field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetScheduleConfig"></a>
+### func \(\*SourcesItem\) [GetScheduleConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L973>)
+
+```go
+func (o *SourcesItem) GetScheduleConfig() ScheduleConfig
+```
+
+GetScheduleConfig returns the ScheduleConfig field value if set, zero value otherwise \(both if not set or set to explicit null\).
+
+<a name="SourcesItem.GetScheduleConfigOk"></a>
+### func \(\*SourcesItem\) [GetScheduleConfigOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L984>)
+
+```go
+func (o *SourcesItem) GetScheduleConfigOk() (*ScheduleConfig, bool)
+```
+
+GetScheduleConfigOk returns a tuple with the ScheduleConfig field value if set, nil otherwise and a boolean to check if the value has been set. NOTE: If the value is an explicit nil, \`nil, true\` will be returned.
+
+<a name="SourcesItem.GetStoreRawLogs"></a>
+### func \(\*SourcesItem\) [GetStoreRawLogs](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1012>)
+
+```go
+func (o *SourcesItem) GetStoreRawLogs() bool
+```
+
+GetStoreRawLogs returns the StoreRawLogs field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetStoreRawLogsLgs"></a>
+### func \(\*SourcesItem\) [GetStoreRawLogsLgs](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1040>)
+
+```go
+func (o *SourcesItem) GetStoreRawLogsLgs() string
+```
+
+GetStoreRawLogsLgs returns the StoreRawLogsLgs field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetStoreRawLogsLgsOk"></a>
+### func \(\*SourcesItem\) [GetStoreRawLogsLgsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1050>)
+
+```go
+func (o *SourcesItem) GetStoreRawLogsLgsOk() (*string, bool)
+```
+
+GetStoreRawLogsLgsOk returns a tuple with the StoreRawLogsLgs field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetStoreRawLogsOk"></a>
+### func \(\*SourcesItem\) [GetStoreRawLogsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1022>)
+
+```go
+func (o *SourcesItem) GetStoreRawLogsOk() (*bool, bool)
+```
+
+GetStoreRawLogsOk returns a tuple with the StoreRawLogs field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetTags"></a>
+### func \(\*SourcesItem\) [GetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L308>)
+
+```go
+func (o *SourcesItem) GetTags() []string
+```
+
+GetTags returns the Tags field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetTagsOk"></a>
+### func \(\*SourcesItem\) [GetTagsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L318>)
+
+```go
+func (o *SourcesItem) GetTagsOk() (*[]string, bool)
+```
+
+GetTagsOk returns a tuple with the Tags field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetUseSecondaryWriter"></a>
+### func \(\*SourcesItem\) [GetUseSecondaryWriter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L889>)
+
+```go
+func (o *SourcesItem) GetUseSecondaryWriter() bool
+```
+
+GetUseSecondaryWriter returns the UseSecondaryWriter field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetUseSecondaryWriterOk"></a>
+### func \(\*SourcesItem\) [GetUseSecondaryWriterOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L899>)
+
+```go
+func (o *SourcesItem) GetUseSecondaryWriterOk() (*bool, bool)
+```
+
+GetUseSecondaryWriterOk returns a tuple with the UseSecondaryWriter field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetValue"></a>
+### func \(\*SourcesItem\) [GetValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L448>)
+
+```go
+func (o *SourcesItem) GetValue() string
+```
+
+GetValue returns the Value field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetValueOk"></a>
+### func \(\*SourcesItem\) [GetValueOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L458>)
+
+```go
+func (o *SourcesItem) GetValueOk() (*string, bool)
+```
+
+GetValueOk returns a tuple with the Value field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.GetWriteRawLogs"></a>
+### func \(\*SourcesItem\) [GetWriteRawLogs](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L861>)
+
+```go
+func (o *SourcesItem) GetWriteRawLogs() bool
+```
+
+GetWriteRawLogs returns the WriteRawLogs field value if set, zero value otherwise.
+
+<a name="SourcesItem.GetWriteRawLogsOk"></a>
+### func \(\*SourcesItem\) [GetWriteRawLogsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L871>)
+
+```go
+func (o *SourcesItem) GetWriteRawLogsOk() (*bool, bool)
+```
+
+GetWriteRawLogsOk returns a tuple with the WriteRawLogs field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesItem.HasAgentId"></a>
+### func \(\*SourcesItem\) [HasAgentId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L841>)
+
+```go
+func (o *SourcesItem) HasAgentId() bool
+```
+
+HasAgentId returns a boolean if a AgentId has been set.
+
+<a name="SourcesItem.HasAgentIds"></a>
+### func \(\*SourcesItem\) [HasAgentIds](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L579>)
+
+```go
+func (o *SourcesItem) HasAgentIds() bool
+```
+
+HasAgentIds returns a boolean if a AgentIds has been set.
+
+<a name="SourcesItem.HasAlertTimeout"></a>
+### func \(\*SourcesItem\) [HasAlertTimeout](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L354>)
+
+```go
+func (o *SourcesItem) HasAlertTimeout() bool
+```
+
+HasAlertTimeout returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasAssetTags"></a>
+### func \(\*SourcesItem\) [HasAssetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L724>)
+
+```go
+func (o *SourcesItem) HasAssetTags() bool
+```
+
+HasAssetTags returns a boolean if a AssetTags has been set.
+
+<a name="SourcesItem.HasAuthor"></a>
+### func \(\*SourcesItem\) [HasAuthor](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L237>)
+
+```go
+func (o *SourcesItem) HasAuthor() bool
+```
+
+HasAuthor returns a boolean if a Author has been set.
+
+<a name="SourcesItem.HasBlockCount"></a>
+### func \(\*SourcesItem\) [HasBlockCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L963>)
+
+```go
+func (o *SourcesItem) HasBlockCount() bool
+```
+
+HasBlockCount returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasDashboardId"></a>
+### func \(\*SourcesItem\) [HasDashboardId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L685>)
+
+```go
+func (o *SourcesItem) HasDashboardId() bool
+```
+
+HasDashboardId returns a boolean if a DashboardId has been set.
+
+<a name="SourcesItem.HasDashboardName"></a>
+### func \(\*SourcesItem\) [HasDashboardName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L656>)
+
+```go
+func (o *SourcesItem) HasDashboardName() bool
+```
+
+HasDashboardName returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasDiscardedLogsConfig"></a>
+### func \(\*SourcesItem\) [HasDiscardedLogsConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L438>)
+
+```go
+func (o *SourcesItem) HasDiscardedLogsConfig() bool
+```
+
+HasDiscardedLogsConfig returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasEnabled"></a>
+### func \(\*SourcesItem\) [HasEnabled](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L146>)
+
+```go
+func (o *SourcesItem) HasEnabled() bool
+```
+
+HasEnabled returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasGroup"></a>
+### func \(\*SourcesItem\) [HasGroup](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L203>)
+
+```go
+func (o *SourcesItem) HasGroup() bool
+```
+
+HasGroup returns a boolean if a Group has been set.
+
+<a name="SourcesItem.HasId"></a>
+### func \(\*SourcesItem\) [HasId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L118>)
+
+```go
+func (o *SourcesItem) HasId() bool
+```
+
+HasId returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasIndexGroupName"></a>
+### func \(\*SourcesItem\) [HasIndexGroupName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L618>)
+
+```go
+func (o *SourcesItem) HasIndexGroupName() bool
+```
+
+HasIndexGroupName returns a boolean if a IndexGroupName has been set.
+
+<a name="SourcesItem.HasIsAgentSource"></a>
+### func \(\*SourcesItem\) [HasIsAgentSource](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L550>)
+
+```go
+func (o *SourcesItem) HasIsAgentSource() bool
+```
+
+HasIsAgentSource returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasIsDeleted"></a>
+### func \(\*SourcesItem\) [HasIsDeleted](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L522>)
+
+```go
+func (o *SourcesItem) HasIsDeleted() bool
+```
+
+HasIsDeleted returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasIsEditable"></a>
+### func \(\*SourcesItem\) [HasIsEditable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1086>)
+
+```go
+func (o *SourcesItem) HasIsEditable() bool
+```
+
+HasIsEditable returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasLabel"></a>
+### func \(\*SourcesItem\) [HasLabel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L494>)
+
+```go
+func (o *SourcesItem) HasLabel() bool
+```
+
+HasLabel returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasLogOperations"></a>
+### func \(\*SourcesItem\) [HasLogOperations](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L410>)
+
+```go
+func (o *SourcesItem) HasLogOperations() bool
+```
+
+HasLogOperations returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasLogReaderData"></a>
+### func \(\*SourcesItem\) [HasLogReaderData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L382>)
+
+```go
+func (o *SourcesItem) HasLogReaderData() bool
+```
+
+HasLogReaderData returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasLogReaderType"></a>
+### func \(\*SourcesItem\) [HasLogReaderType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L298>)
+
+```go
+func (o *SourcesItem) HasLogReaderType() bool
+```
+
+HasLogReaderType returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasLogRemoveFormat"></a>
+### func \(\*SourcesItem\) [HasLogRemoveFormat](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L802>)
+
+```go
+func (o *SourcesItem) HasLogRemoveFormat() bool
+```
+
+HasLogRemoveFormat returns a boolean if a LogRemoveFormat has been set.
+
+<a name="SourcesItem.HasLogRemoveTime"></a>
+### func \(\*SourcesItem\) [HasLogRemoveTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L763>)
+
+```go
+func (o *SourcesItem) HasLogRemoveTime() bool
+```
+
+HasLogRemoveTime returns a boolean if a LogRemoveTime has been set.
+
+<a name="SourcesItem.HasLogSourceDefCode"></a>
+### func \(\*SourcesItem\) [HasLogSourceDefCode](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L270>)
+
+```go
+func (o *SourcesItem) HasLogSourceDefCode() bool
+```
+
+HasLogSourceDefCode returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasName"></a>
+### func \(\*SourcesItem\) [HasName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L174>)
+
+```go
+func (o *SourcesItem) HasName() bool
+```
+
+HasName returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasParallelOptions"></a>
+### func \(\*SourcesItem\) [HasParallelOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L935>)
+
+```go
+func (o *SourcesItem) HasParallelOptions() bool
+```
+
+HasParallelOptions returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasScheduleConfig"></a>
+### func \(\*SourcesItem\) [HasScheduleConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L992>)
+
+```go
+func (o *SourcesItem) HasScheduleConfig() bool
+```
+
+HasScheduleConfig returns a boolean if a ScheduleConfig has been set.
+
+<a name="SourcesItem.HasStoreRawLogs"></a>
+### func \(\*SourcesItem\) [HasStoreRawLogs](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1030>)
+
+```go
+func (o *SourcesItem) HasStoreRawLogs() bool
+```
+
+HasStoreRawLogs returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasStoreRawLogsLgs"></a>
+### func \(\*SourcesItem\) [HasStoreRawLogsLgs](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1058>)
+
+```go
+func (o *SourcesItem) HasStoreRawLogsLgs() bool
+```
+
+HasStoreRawLogsLgs returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasTags"></a>
+### func \(\*SourcesItem\) [HasTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L326>)
+
+```go
+func (o *SourcesItem) HasTags() bool
+```
+
+HasTags returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasUseSecondaryWriter"></a>
+### func \(\*SourcesItem\) [HasUseSecondaryWriter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L907>)
+
+```go
+func (o *SourcesItem) HasUseSecondaryWriter() bool
+```
+
+HasUseSecondaryWriter returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasValue"></a>
+### func \(\*SourcesItem\) [HasValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L466>)
+
+```go
+func (o *SourcesItem) HasValue() bool
+```
+
+HasValue returns a boolean if a field has been set.
+
+<a name="SourcesItem.HasWriteRawLogs"></a>
+### func \(\*SourcesItem\) [HasWriteRawLogs](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L879>)
+
+```go
+func (o *SourcesItem) HasWriteRawLogs() bool
+```
+
+HasWriteRawLogs returns a boolean if a field has been set.
+
+<a name="SourcesItem.MarshalJSON"></a>
+### func \(SourcesItem\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1096>)
+
+```go
+func (o SourcesItem) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="SourcesItem.SetAgentId"></a>
+### func \(\*SourcesItem\) [SetAgentId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L846>)
+
+```go
+func (o *SourcesItem) SetAgentId(v string)
+```
+
+SetAgentId gets a reference to the given datadog.NullableString and assigns it to the AgentId field.
+
+<a name="SourcesItem.SetAgentIdNil"></a>
+### func \(\*SourcesItem\) [SetAgentIdNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L851>)
+
+```go
+func (o *SourcesItem) SetAgentIdNil()
+```
+
+SetAgentIdNil sets the value for AgentId to be an explicit nil.
+
+<a name="SourcesItem.SetAgentIds"></a>
+### func \(\*SourcesItem\) [SetAgentIds](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L584>)
+
+```go
+func (o *SourcesItem) SetAgentIds(v []string)
+```
+
+SetAgentIds gets a reference to the given datadog.Nullable\[\]string and assigns it to the AgentIds field.
+
+<a name="SourcesItem.SetAgentIdsNil"></a>
+### func \(\*SourcesItem\) [SetAgentIdsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L589>)
+
+```go
+func (o *SourcesItem) SetAgentIdsNil()
+```
+
+SetAgentIdsNil sets the value for AgentIds to be an explicit nil.
+
+<a name="SourcesItem.SetAlertTimeout"></a>
+### func \(\*SourcesItem\) [SetAlertTimeout](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L359>)
+
+```go
+func (o *SourcesItem) SetAlertTimeout(v int64)
+```
+
+SetAlertTimeout gets a reference to the given int64 and assigns it to the AlertTimeout field.
+
+<a name="SourcesItem.SetAssetTags"></a>
+### func \(\*SourcesItem\) [SetAssetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L729>)
+
+```go
+func (o *SourcesItem) SetAssetTags(v []string)
+```
+
+SetAssetTags gets a reference to the given datadog.Nullable\[\]string and assigns it to the AssetTags field.
+
+<a name="SourcesItem.SetAssetTagsNil"></a>
+### func \(\*SourcesItem\) [SetAssetTagsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L734>)
+
+```go
+func (o *SourcesItem) SetAssetTagsNil()
+```
+
+SetAssetTagsNil sets the value for AssetTags to be an explicit nil.
+
+<a name="SourcesItem.SetAuthor"></a>
+### func \(\*SourcesItem\) [SetAuthor](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L242>)
+
+```go
+func (o *SourcesItem) SetAuthor(v string)
+```
+
+SetAuthor gets a reference to the given datadog.NullableString and assigns it to the Author field.
+
+<a name="SourcesItem.SetAuthorNil"></a>
+### func \(\*SourcesItem\) [SetAuthorNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L247>)
+
+```go
+func (o *SourcesItem) SetAuthorNil()
+```
+
+SetAuthorNil sets the value for Author to be an explicit nil.
+
+<a name="SourcesItem.SetBlockCount"></a>
+### func \(\*SourcesItem\) [SetBlockCount](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L968>)
+
+```go
+func (o *SourcesItem) SetBlockCount(v int64)
+```
+
+SetBlockCount gets a reference to the given int64 and assigns it to the BlockCount field.
+
+<a name="SourcesItem.SetDashboardId"></a>
+### func \(\*SourcesItem\) [SetDashboardId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L690>)
+
+```go
+func (o *SourcesItem) SetDashboardId(v string)
+```
+
+SetDashboardId gets a reference to the given datadog.NullableString and assigns it to the DashboardId field.
+
+<a name="SourcesItem.SetDashboardIdNil"></a>
+### func \(\*SourcesItem\) [SetDashboardIdNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L695>)
+
+```go
+func (o *SourcesItem) SetDashboardIdNil()
+```
+
+SetDashboardIdNil sets the value for DashboardId to be an explicit nil.
+
+<a name="SourcesItem.SetDashboardName"></a>
+### func \(\*SourcesItem\) [SetDashboardName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L661>)
+
+```go
+func (o *SourcesItem) SetDashboardName(v string)
+```
+
+SetDashboardName gets a reference to the given string and assigns it to the DashboardName field.
+
+<a name="SourcesItem.SetDiscardedLogsConfig"></a>
+### func \(\*SourcesItem\) [SetDiscardedLogsConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L443>)
+
+```go
+func (o *SourcesItem) SetDiscardedLogsConfig(v string)
+```
+
+SetDiscardedLogsConfig gets a reference to the given string and assigns it to the DiscardedLogsConfig field.
+
+<a name="SourcesItem.SetEnabled"></a>
+### func \(\*SourcesItem\) [SetEnabled](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L151>)
+
+```go
+func (o *SourcesItem) SetEnabled(v bool)
+```
+
+SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
+
+<a name="SourcesItem.SetGroup"></a>
+### func \(\*SourcesItem\) [SetGroup](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L208>)
+
+```go
+func (o *SourcesItem) SetGroup(v string)
+```
+
+SetGroup gets a reference to the given datadog.NullableString and assigns it to the Group field.
+
+<a name="SourcesItem.SetGroupNil"></a>
+### func \(\*SourcesItem\) [SetGroupNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L213>)
+
+```go
+func (o *SourcesItem) SetGroupNil()
+```
+
+SetGroupNil sets the value for Group to be an explicit nil.
+
+<a name="SourcesItem.SetId"></a>
+### func \(\*SourcesItem\) [SetId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L123>)
+
+```go
+func (o *SourcesItem) SetId(v string)
+```
+
+SetId gets a reference to the given string and assigns it to the Id field.
+
+<a name="SourcesItem.SetIndexGroupName"></a>
+### func \(\*SourcesItem\) [SetIndexGroupName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L623>)
+
+```go
+func (o *SourcesItem) SetIndexGroupName(v string)
+```
+
+SetIndexGroupName gets a reference to the given datadog.NullableString and assigns it to the IndexGroupName field.
+
+<a name="SourcesItem.SetIndexGroupNameNil"></a>
+### func \(\*SourcesItem\) [SetIndexGroupNameNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L628>)
+
+```go
+func (o *SourcesItem) SetIndexGroupNameNil()
+```
+
+SetIndexGroupNameNil sets the value for IndexGroupName to be an explicit nil.
+
+<a name="SourcesItem.SetIsAgentSource"></a>
+### func \(\*SourcesItem\) [SetIsAgentSource](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L555>)
+
+```go
+func (o *SourcesItem) SetIsAgentSource(v bool)
+```
+
+SetIsAgentSource gets a reference to the given bool and assigns it to the IsAgentSource field.
+
+<a name="SourcesItem.SetIsDeleted"></a>
+### func \(\*SourcesItem\) [SetIsDeleted](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L527>)
+
+```go
+func (o *SourcesItem) SetIsDeleted(v bool)
+```
+
+SetIsDeleted gets a reference to the given bool and assigns it to the IsDeleted field.
+
+<a name="SourcesItem.SetIsEditable"></a>
+### func \(\*SourcesItem\) [SetIsEditable](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1091>)
+
+```go
+func (o *SourcesItem) SetIsEditable(v bool)
+```
+
+SetIsEditable gets a reference to the given bool and assigns it to the IsEditable field.
+
+<a name="SourcesItem.SetLabel"></a>
+### func \(\*SourcesItem\) [SetLabel](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L499>)
+
+```go
+func (o *SourcesItem) SetLabel(v string)
+```
+
+SetLabel gets a reference to the given string and assigns it to the Label field.
+
+<a name="SourcesItem.SetLogOperations"></a>
+### func \(\*SourcesItem\) [SetLogOperations](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L415>)
+
+```go
+func (o *SourcesItem) SetLogOperations(v []SourcesLogOperation)
+```
+
+SetLogOperations gets a reference to the given \[\]SourcesLogOperation and assigns it to the LogOperations field.
+
+<a name="SourcesItem.SetLogReaderData"></a>
+### func \(\*SourcesItem\) [SetLogReaderData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L387>)
+
+```go
+func (o *SourcesItem) SetLogReaderData(v json.RawMessage)
+```
+
+SetLogReaderData gets a reference to the given json.RawMessage and assigns it to the LogReaderData field.
+
+<a name="SourcesItem.SetLogReaderType"></a>
+### func \(\*SourcesItem\) [SetLogReaderType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L303>)
+
+```go
+func (o *SourcesItem) SetLogReaderType(v string)
+```
+
+SetLogReaderType gets a reference to the given string and assigns it to the LogReaderType field.
+
+<a name="SourcesItem.SetLogRemoveFormat"></a>
+### func \(\*SourcesItem\) [SetLogRemoveFormat](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L807>)
+
+```go
+func (o *SourcesItem) SetLogRemoveFormat(v string)
+```
+
+SetLogRemoveFormat gets a reference to the given datadog.NullableString and assigns it to the LogRemoveFormat field.
+
+<a name="SourcesItem.SetLogRemoveFormatNil"></a>
+### func \(\*SourcesItem\) [SetLogRemoveFormatNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L812>)
+
+```go
+func (o *SourcesItem) SetLogRemoveFormatNil()
+```
+
+SetLogRemoveFormatNil sets the value for LogRemoveFormat to be an explicit nil.
+
+<a name="SourcesItem.SetLogRemoveTime"></a>
+### func \(\*SourcesItem\) [SetLogRemoveTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L768>)
+
+```go
+func (o *SourcesItem) SetLogRemoveTime(v string)
+```
+
+SetLogRemoveTime gets a reference to the given datadog.NullableString and assigns it to the LogRemoveTime field.
+
+<a name="SourcesItem.SetLogRemoveTimeNil"></a>
+### func \(\*SourcesItem\) [SetLogRemoveTimeNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L773>)
+
+```go
+func (o *SourcesItem) SetLogRemoveTimeNil()
+```
+
+SetLogRemoveTimeNil sets the value for LogRemoveTime to be an explicit nil.
+
+<a name="SourcesItem.SetLogSourceDefCode"></a>
+### func \(\*SourcesItem\) [SetLogSourceDefCode](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L275>)
+
+```go
+func (o *SourcesItem) SetLogSourceDefCode(v string)
+```
+
+SetLogSourceDefCode gets a reference to the given string and assigns it to the LogSourceDefCode field.
+
+<a name="SourcesItem.SetName"></a>
+### func \(\*SourcesItem\) [SetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L179>)
+
+```go
+func (o *SourcesItem) SetName(v string)
+```
+
+SetName gets a reference to the given string and assigns it to the Name field.
+
+<a name="SourcesItem.SetParallelOptions"></a>
+### func \(\*SourcesItem\) [SetParallelOptions](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L940>)
+
+```go
+func (o *SourcesItem) SetParallelOptions(v ParallelOptions)
+```
+
+SetParallelOptions gets a reference to the given ParallelOptions and assigns it to the ParallelOptions field.
+
+<a name="SourcesItem.SetScheduleConfig"></a>
+### func \(\*SourcesItem\) [SetScheduleConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L997>)
+
+```go
+func (o *SourcesItem) SetScheduleConfig(v ScheduleConfig)
+```
+
+SetScheduleConfig gets a reference to the given datadog.NullableString and assigns it to the ScheduleConfig field.
+
+<a name="SourcesItem.SetScheduleConfigNil"></a>
+### func \(\*SourcesItem\) [SetScheduleConfigNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1002>)
+
+```go
+func (o *SourcesItem) SetScheduleConfigNil()
+```
+
+SetScheduleConfigNil sets the value for ScheduleConfig to be an explicit nil.
+
+<a name="SourcesItem.SetStoreRawLogs"></a>
+### func \(\*SourcesItem\) [SetStoreRawLogs](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1035>)
+
+```go
+func (o *SourcesItem) SetStoreRawLogs(v bool)
+```
+
+SetStoreRawLogs gets a reference to the given bool and assigns it to the StoreRawLogs field.
+
+<a name="SourcesItem.SetStoreRawLogsLgs"></a>
+### func \(\*SourcesItem\) [SetStoreRawLogsLgs](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1063>)
+
+```go
+func (o *SourcesItem) SetStoreRawLogsLgs(v string)
+```
+
+SetStoreRawLogsLgs gets a reference to the given string and assigns it to the StoreRawLogsLgs field.
+
+<a name="SourcesItem.SetTags"></a>
+### func \(\*SourcesItem\) [SetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L331>)
+
+```go
+func (o *SourcesItem) SetTags(v []string)
+```
+
+SetTags gets a reference to the given \[\]string and assigns it to the Tags field.
+
+<a name="SourcesItem.SetUseSecondaryWriter"></a>
+### func \(\*SourcesItem\) [SetUseSecondaryWriter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L912>)
+
+```go
+func (o *SourcesItem) SetUseSecondaryWriter(v bool)
+```
+
+SetUseSecondaryWriter gets a reference to the given bool and assigns it to the UseSecondaryWriter field.
+
+<a name="SourcesItem.SetValue"></a>
+### func \(\*SourcesItem\) [SetValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L471>)
+
+```go
+func (o *SourcesItem) SetValue(v string)
+```
+
+SetValue gets a reference to the given string and assigns it to the Value field.
+
+<a name="SourcesItem.SetWriteRawLogs"></a>
+### func \(\*SourcesItem\) [SetWriteRawLogs](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L884>)
+
+```go
+func (o *SourcesItem) SetWriteRawLogs(v bool)
+```
+
+SetWriteRawLogs gets a reference to the given bool and assigns it to the WriteRawLogs field.
+
+<a name="SourcesItem.UnMarshalJSON"></a>
+### func \(\*SourcesItem\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1208>)
+
+```go
+func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="SourcesItem.UnSetAgentIds"></a>
+### func \(\*SourcesItem\) [UnSetAgentIds](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L594>)
+
+```go
+func (o *SourcesItem) UnSetAgentIds()
+```
+
+UnsetAgentIds ensures that no value is present for AgentIds, not even an explicit nil.
+
+<a name="SourcesItem.UnSetAssetTags"></a>
+### func \(\*SourcesItem\) [UnSetAssetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L739>)
+
+```go
+func (o *SourcesItem) UnSetAssetTags()
+```
+
+UnsetAssetTags ensures that no value is present for AssetTags, not even an explicit nil.
+
+<a name="SourcesItem.UnsetAgentId"></a>
+### func \(\*SourcesItem\) [UnsetAgentId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L856>)
+
+```go
+func (o *SourcesItem) UnsetAgentId()
+```
+
+UnsetAgentId ensures that no value is present for AgentId, not even an explicit nil.
+
+<a name="SourcesItem.UnsetDashboardId"></a>
+### func \(\*SourcesItem\) [UnsetDashboardId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L700>)
+
+```go
+func (o *SourcesItem) UnsetDashboardId()
+```
+
+UnsetDashboardId ensures that no value is present for DashboardId, not even an explicit nil.
+
+<a name="SourcesItem.UnsetIndexGroupName"></a>
+### func \(\*SourcesItem\) [UnsetIndexGroupName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L633>)
+
+```go
+func (o *SourcesItem) UnsetIndexGroupName()
+```
+
+UnsetIndexGroupName ensures that no value is present for IndexGroupName, not even an explicit nil.
+
+<a name="SourcesItem.UnsetLogRemoveFormat"></a>
+### func \(\*SourcesItem\) [UnsetLogRemoveFormat](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L817>)
+
+```go
+func (o *SourcesItem) UnsetLogRemoveFormat()
+```
+
+UnsetLogRemoveFormat ensures that no value is present for LogRemoveFormat, not even an explicit nil.
+
+<a name="SourcesItem.UnsetLogRemoveTime"></a>
+### func \(\*SourcesItem\) [UnsetLogRemoveTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L778>)
+
+```go
+func (o *SourcesItem) UnsetLogRemoveTime()
+```
+
+UnsetLogRemoveTime ensures that no value is present for LogRemoveTime, not even an explicit nil.
+
+<a name="SourcesItem.UnsetScheduleConfig"></a>
+### func \(\*SourcesItem\) [UnsetScheduleConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1007>)
+
+```go
+func (o *SourcesItem) UnsetScheduleConfig()
+```
+
+UnsetScheduleConfig ensures that no value is present for ScheduleConfig, not even an explicit nil.
+
+<a name="SourcesLogOperation"></a>
+## type [SourcesLogOperation](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L10-L21>)
+
+SourcesLogOperation represents a log operation in the sources.
+
+```go
+type SourcesLogOperation struct {
+    // Name of the module.
+    ModuleName *string `json:"ModuleName,omitempty"`
+    // Priority of the log operation.
+    Priority *string `json:"Priority,omitempty"`
+    // Parameters for the log operation.
+    Parameters *json.RawMessage `json:"Parameters,omitempty"`
+    // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+    UnparsedObject map[string]interface{} `json:"-"`
+    // AdditionalProperties stores any additional properties not explicitly defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewSourcesLogOperation"></a>
+### func [NewSourcesLogOperation](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L27>)
+
+```go
+func NewSourcesLogOperation() *SourcesLogOperation
+```
+
+NewSourcesLogOperation creates a new SourcesLogOperation object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewSourcesLogOperationWithDefaults"></a>
+### func [NewSourcesLogOperationWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L35>)
+
+```go
+func NewSourcesLogOperationWithDefaults() *SourcesLogOperation
+```
+
+NewSourcesLogOperationWithDefaults creates a new SourcesLogOperation object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="SourcesLogOperation.GetModuleName"></a>
+### func \(\*SourcesLogOperation\) [GetModuleName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L41>)
+
+```go
+func (o *SourcesLogOperation) GetModuleName() string
+```
+
+GetModuleName returns the ModuleName field value if set, zero value otherwise.
+
+<a name="SourcesLogOperation.GetModuleNameOk"></a>
+### func \(\*SourcesLogOperation\) [GetModuleNameOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L51>)
+
+```go
+func (o *SourcesLogOperation) GetModuleNameOk() (*string, bool)
+```
+
+GetModuleNameOk returns a tuple with the ModuleName field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesLogOperation.GetParameters"></a>
+### func \(\*SourcesLogOperation\) [GetParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L97>)
+
+```go
+func (o *SourcesLogOperation) GetParameters() json.RawMessage
+```
+
+GetParameters returns the Parameters field value if set, zero value otherwise.
+
+<a name="SourcesLogOperation.GetParametersOk"></a>
+### func \(\*SourcesLogOperation\) [GetParametersOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L107>)
+
+```go
+func (o *SourcesLogOperation) GetParametersOk() (*json.RawMessage, bool)
+```
+
+GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesLogOperation.GetPriority"></a>
+### func \(\*SourcesLogOperation\) [GetPriority](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L69>)
+
+```go
+func (o *SourcesLogOperation) GetPriority() string
+```
+
+GetPriority returns the Priority field value if set, zero value otherwise.
+
+<a name="SourcesLogOperation.GetPriorityOk"></a>
+### func \(\*SourcesLogOperation\) [GetPriorityOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L79>)
+
+```go
+func (o *SourcesLogOperation) GetPriorityOk() (*string, bool)
+```
+
+GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesLogOperation.HasModuleName"></a>
+### func \(\*SourcesLogOperation\) [HasModuleName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L59>)
+
+```go
+func (o *SourcesLogOperation) HasModuleName() bool
+```
+
+HasModuleName returns a boolean if a field has been set.
+
+<a name="SourcesLogOperation.HasParameters"></a>
+### func \(\*SourcesLogOperation\) [HasParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L115>)
+
+```go
+func (o *SourcesLogOperation) HasParameters() bool
+```
+
+HasParameters returns a boolean if a field has been set.
+
+<a name="SourcesLogOperation.HasPriority"></a>
+### func \(\*SourcesLogOperation\) [HasPriority](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L87>)
+
+```go
+func (o *SourcesLogOperation) HasPriority() bool
+```
+
+HasPriority returns a boolean if a field has been set.
+
+<a name="SourcesLogOperation.MarshalJSON"></a>
+### func \(SourcesLogOperation\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L125>)
+
+```go
+func (o SourcesLogOperation) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="SourcesLogOperation.SetModuleName"></a>
+### func \(\*SourcesLogOperation\) [SetModuleName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L64>)
+
+```go
+func (o *SourcesLogOperation) SetModuleName(v string)
+```
+
+SetModuleName gets a reference to the given string and assigns it to the ModuleName field.
+
+<a name="SourcesLogOperation.SetParameters"></a>
+### func \(\*SourcesLogOperation\) [SetParameters](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L120>)
+
+```go
+func (o *SourcesLogOperation) SetParameters(v json.RawMessage)
+```
+
+SetParameters gets a reference to the given json.RawMessage and assigns it to the Parameters field.
+
+<a name="SourcesLogOperation.SetPriority"></a>
+### func \(\*SourcesLogOperation\) [SetPriority](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L92>)
+
+```go
+func (o *SourcesLogOperation) SetPriority(v string)
+```
+
+SetPriority gets a reference to the given string and assigns it to the Priority field.
+
+<a name="SourcesLogOperation.UnMarshalJSON"></a>
+### func \(\*SourcesLogOperation\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L148>)
+
+```go
+func (o *SourcesLogOperation) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="SourcesSearchRequest"></a>
+## type [SourcesSearchRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L11-L20>)
+
+SourcesSearchRequest represents a request for searching sources.
+
+```go
+type SourcesSearchRequest struct {
+    // Filter for searching sources.
+    SearchFilter *string `json:"searchFilter,omitempty"`
+    // Context for the Smart REST request.
+    SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
+    // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+    UnparsedObject map[string]interface{}
+    // AdditionalProperties stores any additional properties not explicitly defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewSourcesSearchRequest"></a>
+### func [NewSourcesSearchRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L26>)
+
+```go
+func NewSourcesSearchRequest() *SourcesSearchRequest
+```
+
+NewSourcesSearchRequest creates a new SourcesSearchRequest object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewSourcesSearchRequestWithDefaults"></a>
+### func [NewSourcesSearchRequestWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L34>)
+
+```go
+func NewSourcesSearchRequestWithDefaults() *SourcesSearchRequest
+```
+
+NewSourcesSearchRequestWithDefaults creates a new SourcesSearchRequest object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="SourcesSearchRequest.GetSearchFilter"></a>
+### func \(\*SourcesSearchRequest\) [GetSearchFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L40>)
+
+```go
+func (o *SourcesSearchRequest) GetSearchFilter() string
+```
+
+GetSearchFilter returns the SearchFilter field value if set, zero value otherwise.
+
+<a name="SourcesSearchRequest.GetSearchFilterOk"></a>
+### func \(\*SourcesSearchRequest\) [GetSearchFilterOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L50>)
+
+```go
+func (o *SourcesSearchRequest) GetSearchFilterOk() (*string, bool)
+```
+
+GetSearchFilterOk returns a tuple with the SearchFilter field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesSearchRequest.GetSmartRestRequestContext"></a>
+### func \(\*SourcesSearchRequest\) [GetSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L68>)
+
+```go
+func (o *SourcesSearchRequest) GetSmartRestRequestContext() string
+```
+
+GetSmartRestRequestContext returns the SmartRestRequestContext field value if set, zero value otherwise.
+
+<a name="SourcesSearchRequest.GetSmartRestRequestContextOk"></a>
+### func \(\*SourcesSearchRequest\) [GetSmartRestRequestContextOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L78>)
+
+```go
+func (o *SourcesSearchRequest) GetSmartRestRequestContextOk() (*string, bool)
+```
+
+GetSmartRestRequestContextOk returns a tuple with the SmartRestRequestContext field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesSearchRequest.HasSearchFilter"></a>
+### func \(\*SourcesSearchRequest\) [HasSearchFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L58>)
+
+```go
+func (o *SourcesSearchRequest) HasSearchFilter() bool
+```
+
+HasSearchFilter returns a boolean if a field has been set.
+
+<a name="SourcesSearchRequest.HasSmartRestRequestContext"></a>
+### func \(\*SourcesSearchRequest\) [HasSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L86>)
+
+```go
+func (o *SourcesSearchRequest) HasSmartRestRequestContext() bool
+```
+
+HasSmartRestRequestContext returns a boolean if a field has been set.
+
+<a name="SourcesSearchRequest.MarshalJSON"></a>
+### func \(SourcesSearchRequest\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L96>)
+
+```go
+func (o SourcesSearchRequest) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="SourcesSearchRequest.SetSearchFilter"></a>
+### func \(\*SourcesSearchRequest\) [SetSearchFilter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L63>)
+
+```go
+func (o *SourcesSearchRequest) SetSearchFilter(v string)
+```
+
+SetSearchFilter gets a reference to the given string and assigns it to the SearchFilter field.
+
+<a name="SourcesSearchRequest.SetSmartRestRequestContext"></a>
+### func \(\*SourcesSearchRequest\) [SetSmartRestRequestContext](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L91>)
+
+```go
+func (o *SourcesSearchRequest) SetSmartRestRequestContext(v string)
+```
+
+SetSmartRestRequestContext gets a reference to the given string and assigns it to the SmartRestRequestContext field.
+
+<a name="SourcesSearchRequest.UnMarshalJSON"></a>
+### func \(\*SourcesSearchRequest\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_request.go#L115>)
+
+```go
+func (o *SourcesSearchRequest) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="SourcesSearchResponse"></a>
+## type [SourcesSearchResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L10-L21>)
+
+SourcesSearchResponse represents a response for searching sources.
+
+```go
+type SourcesSearchResponse struct {
+    // Items retrieved from the search.
+    Items []SourcesItem `json:"Items,omitempty"`
+    // Items that failed during the search.
+    FailedItems []json.RawMessage `json:"FailedItems,omitempty"`
+    // Items that were successfully retrieved.
+    SuccessItems []SuccessItem `json:"SuccessItems,omitempty"`
+    // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+    UnparsedObject map[string]interface{}
+    // AdditionalProperties stores any additional properties not explicitly defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewSourcesSearchResponse"></a>
+### func [NewSourcesSearchResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L27>)
+
+```go
+func NewSourcesSearchResponse() *SourcesSearchResponse
+```
+
+NewSourcesSearchResponse creates a new SourcesSearchResponse object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewSourcesSearchResponseWithDefaults"></a>
+### func [NewSourcesSearchResponseWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L35>)
+
+```go
+func NewSourcesSearchResponseWithDefaults() *SourcesSearchResponse
+```
+
+NewSourcesSearchResponseWithDefaults creates a new SourcesSearchResponse object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="SourcesSearchResponse.GetFailedItems"></a>
+### func \(\*SourcesSearchResponse\) [GetFailedItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L69>)
+
+```go
+func (o *SourcesSearchResponse) GetFailedItems() []json.RawMessage
+```
+
+GetFailedItems returns the FailedItems field value if set, zero value otherwise.
+
+<a name="SourcesSearchResponse.GetFailedItemsOk"></a>
+### func \(\*SourcesSearchResponse\) [GetFailedItemsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L79>)
+
+```go
+func (o *SourcesSearchResponse) GetFailedItemsOk() (*[]json.RawMessage, bool)
+```
+
+GetFailedItemsOk returns a tuple with the FailedItems field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesSearchResponse.GetItems"></a>
+### func \(\*SourcesSearchResponse\) [GetItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L41>)
+
+```go
+func (o *SourcesSearchResponse) GetItems() []SourcesItem
+```
+
+GetItems returns the Items field value if set, zero value otherwise.
+
+<a name="SourcesSearchResponse.GetItemsOk"></a>
+### func \(\*SourcesSearchResponse\) [GetItemsOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L51>)
+
+```go
+func (o *SourcesSearchResponse) GetItemsOk() (*[]SourcesItem, bool)
+```
+
+GetItemsOk returns a tuple with the Items field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesSearchResponse.GetSuccessItem"></a>
+### func \(\*SourcesSearchResponse\) [GetSuccessItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L97>)
+
+```go
+func (o *SourcesSearchResponse) GetSuccessItem() []SuccessItem
+```
+
+GetSuccessItem returns the SuccessItem field value if set, zero value otherwise.
+
+<a name="SourcesSearchResponse.GetSuccessItemOk"></a>
+### func \(\*SourcesSearchResponse\) [GetSuccessItemOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L107>)
+
+```go
+func (o *SourcesSearchResponse) GetSuccessItemOk() (*[]SuccessItem, bool)
+```
+
+GetSuccessItemOk returns a tuple with the SuccessItem field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SourcesSearchResponse.HasFailedItems"></a>
+### func \(\*SourcesSearchResponse\) [HasFailedItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L87>)
+
+```go
+func (o *SourcesSearchResponse) HasFailedItems() bool
+```
+
+HasFailedItems returns a boolean if a field has been set.
+
+<a name="SourcesSearchResponse.HasItems"></a>
+### func \(\*SourcesSearchResponse\) [HasItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L59>)
+
+```go
+func (o *SourcesSearchResponse) HasItems() bool
+```
+
+HasItems returns a boolean if a field has been set.
+
+<a name="SourcesSearchResponse.HasSuccessItem"></a>
+### func \(\*SourcesSearchResponse\) [HasSuccessItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L115>)
+
+```go
+func (o *SourcesSearchResponse) HasSuccessItem() bool
+```
+
+HasSuccessItem returns a boolean if a field has been set.
+
+<a name="SourcesSearchResponse.MarshalJSON"></a>
+### func \(SourcesSearchResponse\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L125>)
+
+```go
+func (o SourcesSearchResponse) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="SourcesSearchResponse.SetFailedItems"></a>
+### func \(\*SourcesSearchResponse\) [SetFailedItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L92>)
+
+```go
+func (o *SourcesSearchResponse) SetFailedItems(v []json.RawMessage)
+```
+
+SetFailedItems sets field value
+
+<a name="SourcesSearchResponse.SetItems"></a>
+### func \(\*SourcesSearchResponse\) [SetItems](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L64>)
+
+```go
+func (o *SourcesSearchResponse) SetItems(v []SourcesItem)
+```
+
+SetItems gets a reference to the given \[\]SourcesItem and assigns it to the Items field.
+
+<a name="SourcesSearchResponse.SetSuccessItem"></a>
+### func \(\*SourcesSearchResponse\) [SetSuccessItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L120>)
+
+```go
+func (o *SourcesSearchResponse) SetSuccessItem(v []SuccessItem)
+```
+
+SetSuccessItem sets field value
+
+<a name="SourcesSearchResponse.UnMarshalJSON"></a>
+### func \(\*SourcesSearchResponse\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_search_response.go#L147>)
+
+```go
+func (o *SourcesSearchResponse) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+<a name="SuccessItem"></a>
+## type [SuccessItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L10-L21>)
+
+SuccessItem represents an item indicating a successful operation.
+
+```go
+type SuccessItem struct {
+    // Application associated with the success item.
+    Application *string `json:"Application,omitempty"`
+    // Keys related to the success item.
+    Keys []string `json:"Keys,omitempty"`
+    // Source type of the success item.
+    SourceType *string `json:"SourceType,omitempty"`
+    // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+    UnparsedObject map[string]interface{}
+    // AdditionalProperties stores any additional properties not explicitly defined in the struct.
+    AdditionalProperties map[string]interface{}
+}
+```
+
+<a name="NewSuccessItem"></a>
+### func [NewSuccessItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L27>)
+
+```go
+func NewSuccessItem() *SuccessItem
+```
+
+NewSuccessItem creates a new SuccessItem object. This constructor will assign default values to properties that have it defined, and makes sure properties required by API are set, but the set of arguments will change when the set of required properties is changed.
+
+<a name="NewSuccessItemWithDefaults"></a>
+### func [NewSuccessItemWithDefaults](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L35>)
+
+```go
+func NewSuccessItemWithDefaults() *SuccessItem
+```
+
+NewSuccessItemWithDefaults creates a new SuccessItem object. This constructor will only assign default values to properties that have it defined, but it doesn't guarantee that properties required by API are set.
+
+<a name="SuccessItem.GetApplication"></a>
+### func \(\*SuccessItem\) [GetApplication](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L41>)
+
+```go
+func (o *SuccessItem) GetApplication() string
+```
+
+GetApplication returns the Application field value if set, zero value otherwise.
+
+<a name="SuccessItem.GetApplicationOk"></a>
+### func \(\*SuccessItem\) [GetApplicationOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L51>)
+
+```go
+func (o *SuccessItem) GetApplicationOk() (*string, bool)
+```
+
+GetApplicationOk returns a tuple with the Application field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SuccessItem.GetKeys"></a>
+### func \(\*SuccessItem\) [GetKeys](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L69>)
+
+```go
+func (o *SuccessItem) GetKeys() []string
+```
+
+GetKeys returns the Keys field value if set, zero value otherwise.
+
+<a name="SuccessItem.GetKeysOk"></a>
+### func \(\*SuccessItem\) [GetKeysOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L79>)
+
+```go
+func (o *SuccessItem) GetKeysOk() (*[]string, bool)
+```
+
+GetKeysOk returns a tuple with the Keys field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SuccessItem.GetSourceType"></a>
+### func \(\*SuccessItem\) [GetSourceType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L97>)
+
+```go
+func (o *SuccessItem) GetSourceType() string
+```
+
+GetSourceType returns the SourceType field value if set, zero value otherwise.
+
+<a name="SuccessItem.GetSourceTypeOk"></a>
+### func \(\*SuccessItem\) [GetSourceTypeOk](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L107>)
+
+```go
+func (o *SuccessItem) GetSourceTypeOk() (*string, bool)
+```
+
+GetSourceTypeOk returns a tuple with the SourceType field value if set, nil otherwise and a boolean to check if the value has been set.
+
+<a name="SuccessItem.HasApplication"></a>
+### func \(\*SuccessItem\) [HasApplication](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L59>)
+
+```go
+func (o *SuccessItem) HasApplication() bool
+```
+
+HasApplication returns a boolean if a field has been set.
+
+<a name="SuccessItem.HasKeys"></a>
+### func \(\*SuccessItem\) [HasKeys](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L87>)
+
+```go
+func (o *SuccessItem) HasKeys() bool
+```
+
+HasKeys returns a boolean if a field has been set.
+
+<a name="SuccessItem.HasSourceType"></a>
+### func \(\*SuccessItem\) [HasSourceType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L115>)
+
+```go
+func (o *SuccessItem) HasSourceType() bool
+```
+
+HasSourceType returns a boolean if a field has been set.
+
+<a name="SuccessItem.MarshalJSON"></a>
+### func \(SuccessItem\) [MarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L125>)
+
+```go
+func (o SuccessItem) MarshalJSON() ([]byte, error)
+```
+
+MarshalJSON serializes the struct using spec logic.
+
+<a name="SuccessItem.SetApplication"></a>
+### func \(\*SuccessItem\) [SetApplication](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L64>)
+
+```go
+func (o *SuccessItem) SetApplication(v string)
+```
+
+SetApplication gets a reference to the given string and assigns it to the Application field.
+
+<a name="SuccessItem.SetKeys"></a>
+### func \(\*SuccessItem\) [SetKeys](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L92>)
+
+```go
+func (o *SuccessItem) SetKeys(v []string)
+```
+
+SetKeys gets a reference to the given \[\]string and assigns it to the Keys field.
+
+<a name="SuccessItem.SetSourceType"></a>
+### func \(\*SuccessItem\) [SetSourceType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L120>)
+
+```go
+func (o *SuccessItem) SetSourceType(v string)
+```
+
+SetSourceType gets a reference to the given string and assigns it to the SourceType field.
+
+<a name="SuccessItem.UnMarshalJSON"></a>
+### func \(\*SuccessItem\) [UnMarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_success_item.go#L147>)
+
+```go
+func (o *SuccessItem) UnMarshalJSON(bytes []byte) (err error)
+```
+
+UnMarshalJSON deserializes the given payload.
+
+# search
+
+```go
+import "github.com/mtnmunuklu/davudpasha-api-client-go/examples/alerts/search"
+```
+
+## Index
+
+
+
+# search
+
+```go
+import "github.com/mtnmunuklu/davudpasha-api-client-go/examples/events/search"
+```
+
+## Index
+
+
+
+# search
+
+```go
+import "github.com/mtnmunuklu/davudpasha-api-client-go/examples/queries/search"
+```
+
+## Index
+
+
+
+# search
+
+```go
+import "github.com/mtnmunuklu/davudpasha-api-client-go/examples/reports/search"
+```
+
+## Index
+
+
+
+# search
+
+```go
+import "github.com/mtnmunuklu/davudpasha-api-client-go/examples/sources/search"
 ```
 
 ## Index
