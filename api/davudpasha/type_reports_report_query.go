@@ -21,7 +21,7 @@ type ReportsQuery struct {
 	// Visualization settings for the chart.
 	ChartVisualization *ReportsChartVisualization `json:"ChartVisualization,omitempty"`
 	// Extended data for the query.
-	ExtData *ReportsQueryExtData `json:"ExtData,omitempty"`
+	ExtData NullableReportsQueryExtData `json:"ExtData,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
 	// Additional properties not defined in the struct.
@@ -213,32 +213,43 @@ func (o *ReportsQuery) SetChartVisualization(v ReportsChartVisualization) {
 	o.ChartVisualization = &v
 }
 
-// GetExtData returns the ExtData field value if set, zero value otherwise.
+// GetExtData returns the ExtData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReportsQuery) GetExtData() ReportsQueryExtData {
-	if o == nil || o.ExtData == nil {
+	if o == nil || o.ExtData.Get() == nil {
 		var ret ReportsQueryExtData
 		return ret
 	}
-	return *o.ExtData
+	return *o.ExtData.Get()
 }
 
 // GetExtDataOk returns a tuple with the ExtData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
 func (o *ReportsQuery) GetExtDataOk() (*ReportsQueryExtData, bool) {
-	if o == nil || o.ExtData == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExtData, true
+	return o.ExtData.Get(), o.ExtData.IsSet()
 }
 
-// HasExtData returns a boolean if a field has been set.
+// HasExtData returns a boolean if a ExtData has been set.
 func (o *ReportsQuery) HasExtData() bool {
-	return o != nil && o.ExtData != nil
+	return o != nil && o.ExtData.IsSet()
 }
 
-// SetExtData gets a reference to the given ReportsQueryExtData and assigns it to the ExtData field.
+// SetExtData gets a reference to the given datadog.NullableString and assigns it to the ExtData field.
 func (o *ReportsQuery) SetExtData(v ReportsQueryExtData) {
-	o.ExtData = &v
+	o.ExtData.Set(&v)
+}
+
+// SetExtDataNil sets the value for ExtData to be an explicit nil.
+func (o *ReportsQuery) SetExtDataNil() {
+	o.ExtData.Set(nil)
+}
+
+// UnsetExtData ensures that no value is present for ExtData, not even an explicit nil.
+func (o *ReportsQuery) UnsetExtData() {
+	o.ExtData.UnSet()
 }
 
 // MarshalJSON serializes the struct using spec logic.
@@ -265,8 +276,8 @@ func (o ReportsQuery) MarshalJSON() ([]byte, error) {
 	if o.ChartVisualization != nil {
 		toSerialize["ChartVisualization"] = o.ChartVisualization
 	}
-	if o.ExtData != nil {
-		toSerialize["ExtData"] = o.ExtData
+	if o.ExtData.IsSet() {
+		toSerialize["ExtData"] = o.ExtData.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -278,13 +289,13 @@ func (o ReportsQuery) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *ReportsQuery) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Name               *string                    `json:"Nane,omitempty"`
-		Data               *ReportsQueryData          `json:"Data,omitempty"`
-		ShowTable          *bool                      `json:"ShowTable,omitempty"`
-		TableVisualization *ReportsTableVisualization `json:"TableVisualization,omitempty"`
-		ShowChart          *bool                      `json:"ShowChart,omitempty"`
-		ChartVisualization *ReportsChartVisualization `json:"ChartVisualization,omitempty"`
-		ExtData            *ReportsQueryExtData       `json:"ExtData,omitempty"`
+		Name               *string                     `json:"Nane,omitempty"`
+		Data               *ReportsQueryData           `json:"Data,omitempty"`
+		ShowTable          *bool                       `json:"ShowTable,omitempty"`
+		TableVisualization *ReportsTableVisualization  `json:"TableVisualization,omitempty"`
+		ShowChart          *bool                       `json:"ShowChart,omitempty"`
+		ChartVisualization *ReportsChartVisualization  `json:"ChartVisualization,omitempty"`
+		ExtData            NullableReportsQueryExtData `json:"ExtData,omitempty"`
 	}{}
 
 	additionalProperties := make(map[string]interface{})
@@ -310,9 +321,6 @@ func (o *ReportsQuery) UnMarshalJSON(bytes []byte) (err error) {
 		hasInvalidField = true
 	}
 	o.ChartVisualization = all.ChartVisualization
-	if all.ExtData != nil && all.ExtData.UnparsedObject != nil && o.UnparsedObject == nil {
-		hasInvalidField = true
-	}
 	o.ExtData = all.ExtData
 
 	if len(additionalProperties) > 0 {
