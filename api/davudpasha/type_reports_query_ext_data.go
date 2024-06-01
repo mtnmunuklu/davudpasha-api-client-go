@@ -689,7 +689,7 @@ func (v NullableReportsQueryExtData) IsSet() bool {
 	return v.isSet
 }
 
-// Unset sets the value to nil and resets the set flag/
+// UnSet sets the value to nil and resets the set flag/
 func (v *NullableReportsQueryExtData) UnSet() {
 	v.value = nil
 	v.isSet = false

@@ -97,7 +97,7 @@ func (o *ReportsData) SetNameNil() {
 	o.Name.Set(nil)
 }
 
-// UnsetName ensures that no value is present for Name, not even an explicit nil.
+// UnSetName ensures that no value is present for Name, not even an explicit nil.
 func (o *ReportsData) UnSetName() {
 	o.Name.UnSet()
 }
@@ -136,7 +136,7 @@ func (o *ReportsData) SetFileNameNil() {
 	o.FileName.Set(nil)
 }
 
-// UnsetFileName ensures that no value is present for FileName, not even an explicit nil.
+// UnSetFileName ensures that no value is present for FileName, not even an explicit nil.
 func (o *ReportsData) UnSetFileName() {
 	o.FileName.UnSet()
 }
@@ -231,7 +231,7 @@ func (o *ReportsData) SetHeaderNil() {
 	o.Header.Set(nil)
 }
 
-// UnsetHeader ensures that no value is present for Header, not even an explicit nil.
+// UnSetHeader ensures that no value is present for Header, not even an explicit nil.
 func (o *ReportsData) UnSetHeader() {
 	o.Header.UnSet()
 }
@@ -270,7 +270,7 @@ func (o *ReportsData) SetFooterNil() {
 	o.Footer.Set(nil)
 }
 
-// UnsetFooter ensures that no value is present for Footer, not even an explicit nil.
+// UnSetFooter ensures that no value is present for Footer, not even an explicit nil.
 func (o *ReportsData) UnSetFooter() {
 	o.Footer.UnSet()
 }
@@ -309,7 +309,7 @@ func (o *ReportsData) SetCoverPageNil() {
 	o.CoverPage.Set(nil)
 }
 
-// UnsetCoverPage ensures that no value is present for CoverPage, not even an explicit nil.
+// UnSetCoverPage ensures that no value is present for CoverPage, not even an explicit nil.
 func (o *ReportsData) UnSetCoverPage() {
 	o.CoverPage.UnSet()
 }
@@ -404,7 +404,7 @@ func (o *ReportsData) SetThemeNil() {
 	o.Theme.Set(nil)
 }
 
-// UnsetTheme ensures that no value is present for Theme, not even an explicit nil.
+// UnSetTheme ensures that no value is present for Theme, not even an explicit nil.
 func (o *ReportsData) UnSetTheme() {
 	o.Theme.UnSet()
 }
@@ -499,7 +499,7 @@ func (o *ReportsData) SetFilePasswordNil() {
 	o.FilePassword.Set(nil)
 }
 
-// UnsetFilePassword ensures that no value is present for FilePassword, not even an explicit nil.
+// UnSetFilePassword ensures that no value is present for FilePassword, not even an explicit nil.
 func (o *ReportsData) UnSetFilePassword() {
 	o.FilePassword.UnSet()
 }
@@ -538,7 +538,7 @@ func (o *ReportsData) SetReportIdNil() {
 	o.ReportId.Set(nil)
 }
 
-// UnsetReportId ensures that no value is present for ReportId, not even an explicit nil.
+// UnSetReportId ensures that no value is present for ReportId, not even an explicit nil.
 func (o *ReportsData) UnSetReportId() {
 	o.ReportId.UnSet()
 }
@@ -577,7 +577,7 @@ func (o *ReportsData) SetReportThemeNil() {
 	o.ReportTheme.Set(nil)
 }
 
-// UnsetReportTheme ensures that no value is present for ReportTheme, not even an explicit nil.
+// UnSetReportTheme ensures that no value is present for ReportTheme, not even an explicit nil.
 func (o *ReportsData) UnSetReportTheme() {
 	o.ReportTheme.UnSet()
 }

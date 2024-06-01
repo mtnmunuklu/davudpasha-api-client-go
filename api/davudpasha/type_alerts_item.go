@@ -73,7 +73,7 @@ func (o *AlertsItem) SetLgsNameNil() {
 	o.LgsName.Set(nil)
 }
 
-// UnsetLgsName ensures that no value is present for LgsName, not even an explicit nil.
+// UnSetLgsName ensures that no value is present for LgsName, not even an explicit nil.
 func (o *AlertsItem) UnSetLgsName() {
 	o.LgsName.UnSet()
 }

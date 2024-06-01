@@ -131,8 +131,8 @@ func (o *ReportsSearchRequest) SetStartDateNil() {
 	o.StartDate.Set(nil)
 }
 
-// UnsetStartDate ensures that no value is present for StartDate, not even an explicit nil.
-func (o *ReportsSearchRequest) UnsetStartDate() {
+// UnSetStartDate ensures that no value is present for StartDate, not even an explicit nil.
+func (o *ReportsSearchRequest) UnSetStartDate() {
 	o.StartDate.UnSet()
 }
 

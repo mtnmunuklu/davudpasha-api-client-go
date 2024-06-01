@@ -154,7 +154,7 @@ func (o *DateTimeRange) SetFieldNil() {
 	o.Field.Set(nil)
 }
 
-// UnsetField ensures that no value is present for Field, not even an explicit nil.
+// UnSetField ensures that no value is present for Field, not even an explicit nil.
 func (o *DateTimeRange) UnSetField() {
 	o.Field.UnSet()
 }

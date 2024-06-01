@@ -129,7 +129,7 @@ func (o *ReportsChartYAxis) SetMinValueNil() {
 	o.MinValue.Set(nil)
 }
 
-// UnsetMinValue ensures that no value is present for MinValue, not even an explicit nil.
+// UnSetMinValue ensures that no value is present for MinValue, not even an explicit nil.
 func (o *ReportsChartYAxis) UnSetMinValue() {
 	o.MinValue.UnSet()
 }
@@ -168,7 +168,7 @@ func (o *ReportsChartYAxis) SetMaxValueNil() {
 	o.MaxValue.Set(nil)
 }
 
-// UnsetMaxValue ensures that no value is present for MaxValue, not even an explicit nil.
+// UnSetMaxValue ensures that no value is present for MaxValue, not even an explicit nil.
 func (o *ReportsChartYAxis) UnSetMaxValue() {
 	o.MaxValue.UnSet()
 }

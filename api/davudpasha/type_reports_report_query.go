@@ -247,8 +247,8 @@ func (o *ReportsQuery) SetExtDataNil() {
 	o.ExtData.Set(nil)
 }
 
-// UnsetExtData ensures that no value is present for ExtData, not even an explicit nil.
-func (o *ReportsQuery) UnsetExtData() {
+// UnSetExtData ensures that no value is present for ExtData, not even an explicit nil.
+func (o *ReportsQuery) UnSetExtData() {
 	o.ExtData.UnSet()
 }
 

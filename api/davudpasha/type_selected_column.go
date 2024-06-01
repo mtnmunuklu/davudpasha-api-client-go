@@ -128,7 +128,7 @@ func (o *SelectedColumn) SetLookupNil() {
 	o.Lookup.Set(nil)
 }
 
-// UnsetLookup ensures that no value is present for Lookup, not even an explicit nil.
+// UnSetLookup ensures that no value is present for Lookup, not even an explicit nil.
 func (o *SelectedColumn) UnSetLookup() {
 	o.Lookup.UnSet()
 }

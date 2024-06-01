@@ -129,8 +129,8 @@ func (o *Action) SetDataNil() {
 	o.Data.Set(nil)
 }
 
-// UnsetData ensures that no value is present for Data, not even an explicit nil.
-func (o *Action) UnsetData() {
+// UnSetData ensures that no value is present for Data, not even an explicit nil.
+func (o *Action) UnSetData() {
 	o.Data.UnSet()
 }
 
@@ -168,8 +168,8 @@ func (o *Action) SetActionRefIdNil() {
 	o.ActionRefId.Set(nil)
 }
 
-// UnsetActionRefId ensures that no value is present for ActionRefId, not even an explicit nil.
-func (o *Action) UnsetActionRefId() {
+// UnSetActionRefId ensures that no value is present for ActionRefId, not even an explicit nil.
+func (o *Action) UnSetActionRefId() {
 	o.ActionRefId.UnSet()
 }
 

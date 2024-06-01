@@ -109,7 +109,7 @@ func (o *ReportsQueryData) SetQueryIDNil() {
 	o.QueryID.Set(nil)
 }
 
-// UnsetQueryID ensures that no value is present for QueryID, not even an explicit nil.
+// UnSetQueryID ensures that no value is present for QueryID, not even an explicit nil.
 func (o *ReportsQueryData) UnSetQueryID() {
 	o.QueryID.UnSet()
 }
@@ -148,7 +148,7 @@ func (o *ReportsQueryData) SetQueryStrNil() {
 	o.QueryStr.Set(nil)
 }
 
-// UnsetQueryStr ensures that no value is present for QueryStr, not even an explicit nil.
+// UnSetQueryStr ensures that no value is present for QueryStr, not even an explicit nil.
 func (o *ReportsQueryData) UnSetQueryStr() {
 	o.QueryStr.UnSet()
 }
@@ -271,7 +271,7 @@ func (o *ReportsQueryData) SetScriptPathNil() {
 	o.ScriptPath.Set(nil)
 }
 
-// UnsetScriptPath ensures that no value is present for ScriptPath, not even an explicit nil.
+// UnSetScriptPath ensures that no value is present for ScriptPath, not even an explicit nil.
 func (o *ReportsQueryData) UnSetScriptPath() {
 	o.ScriptPath.UnSet()
 }
@@ -311,7 +311,7 @@ func (o *ReportsQueryData) SetScriptArgumentsNil() {
 	o.ScriptArguments.Set(nil)
 }
 
-// UnsetScriptArguments ensures that no value is present for ScriptArguments, not even an explicit nil.
+// UnSetScriptArguments ensures that no value is present for ScriptArguments, not even an explicit nil.
 func (o *ReportsQueryData) UnSetScriptArguments() {
 	o.ScriptArguments.UnSet()
 }

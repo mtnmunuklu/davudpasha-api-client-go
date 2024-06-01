@@ -1297,8 +1297,8 @@ import "github.com/mtnmunuklu/davudpasha-api-client-go/api/davudpasha"
   - [func \(o \*Action\) SetData\(v string\)](<#Action.SetData>)
   - [func \(o \*Action\) SetDataNil\(\)](<#Action.SetDataNil>)
   - [func \(o \*Action\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#Action.UnMarshalJSON>)
-  - [func \(o \*Action\) UnsetActionRefId\(\)](<#Action.UnsetActionRefId>)
-  - [func \(o \*Action\) UnsetData\(\)](<#Action.UnsetData>)
+  - [func \(o \*Action\) UnSetActionRefId\(\)](<#Action.UnSetActionRefId>)
+  - [func \(o \*Action\) UnSetData\(\)](<#Action.UnSetData>)
 - [type ActionParameter](<#ActionParameter>)
   - [func NewActionParameter\(\) \*ActionParameter](<#NewActionParameter>)
   - [func NewActionParameterWithDefaults\(\) \*ActionParameter](<#NewActionParameterWithDefaults>)
@@ -1721,10 +1721,10 @@ import "github.com/mtnmunuklu/davudpasha-api-client-go/api/davudpasha"
   - [func \(o \*QueriesItem\) UnSetMitreTags\(\)](<#QueriesItem.UnSetMitreTags>)
   - [func \(o \*QueriesItem\) UnSetSharedUsersAndGroups\(\)](<#QueriesItem.UnSetSharedUsersAndGroups>)
   - [func \(o \*QueriesItem\) UnSetTags\(\)](<#QueriesItem.UnSetTags>)
-  - [func \(o \*QueriesItem\) UnsetDescription\(\)](<#QueriesItem.UnsetDescription>)
-  - [func \(o \*QueriesItem\) UnsetKillChainPhase\(\)](<#QueriesItem.UnsetKillChainPhase>)
-  - [func \(o \*QueriesItem\) UnsetModuleGuid\(\)](<#QueriesItem.UnsetModuleGuid>)
-  - [func \(o \*QueriesItem\) UnsetModuleId\(\)](<#QueriesItem.UnsetModuleId>)
+  - [func \(o \*QueriesItem\) UnSetDescription\(\)](<#QueriesItem.UnSetDescription>)
+  - [func \(o \*QueriesItem\) UnSetKillChainPhase\(\)](<#QueriesItem.UnSetKillChainPhase>)
+  - [func \(o \*QueriesItem\) UnSetModuleGuid\(\)](<#QueriesItem.UnSetModuleGuid>)
+  - [func \(o \*QueriesItem\) UnSetModuleId\(\)](<#QueriesItem.UnSetModuleId>)
 - [type QueriesSearchRequest](<#QueriesSearchRequest>)
   - [func NewQueriesSearchRequest\(\) \*QueriesSearchRequest](<#NewQueriesSearchRequest>)
   - [func NewQueriesSearchRequestWithDefaults\(\) \*QueriesSearchRequest](<#NewQueriesSearchRequestWithDefaults>)
@@ -2080,7 +2080,7 @@ import "github.com/mtnmunuklu/davudpasha-api-client-go/api/davudpasha"
   - [func \(o \*ReportsQuery\) SetShowTable\(v bool\)](<#ReportsQuery.SetShowTable>)
   - [func \(o \*ReportsQuery\) SetTableVisualization\(v ReportsTableVisualization\)](<#ReportsQuery.SetTableVisualization>)
   - [func \(o \*ReportsQuery\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsQuery.UnMarshalJSON>)
-  - [func \(o \*ReportsQuery\) UnsetExtData\(\)](<#ReportsQuery.UnsetExtData>)
+  - [func \(o \*ReportsQuery\) UnSetExtData\(\)](<#ReportsQuery.UnSetExtData>)
 - [type ReportsQueryData](<#ReportsQueryData>)
   - [func NewReportsQueryData\(\) \*ReportsQueryData](<#NewReportsQueryData>)
   - [func NewReportsQueryDataWithDefaults\(\) \*ReportsQueryData](<#NewReportsQueryDataWithDefaults>)
@@ -2225,7 +2225,7 @@ import "github.com/mtnmunuklu/davudpasha-api-client-go/api/davudpasha"
   - [func \(o \*ReportsSearchRequest\) SetStartDate\(v string\)](<#ReportsSearchRequest.SetStartDate>)
   - [func \(o \*ReportsSearchRequest\) SetStartDateNil\(\)](<#ReportsSearchRequest.SetStartDateNil>)
   - [func \(o \*ReportsSearchRequest\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#ReportsSearchRequest.UnMarshalJSON>)
-  - [func \(o \*ReportsSearchRequest\) UnsetStartDate\(\)](<#ReportsSearchRequest.UnsetStartDate>)
+  - [func \(o \*ReportsSearchRequest\) UnSetStartDate\(\)](<#ReportsSearchRequest.UnSetStartDate>)
 - [type ReportsSearchResponse](<#ReportsSearchResponse>)
   - [func NewReportsSearchResponse\(\) \*ReportsSearchResponse](<#NewReportsSearchResponse>)
   - [func NewReportsSearchResponseWithDefaults\(\) \*ReportsSearchResponse](<#NewReportsSearchResponseWithDefaults>)
@@ -2601,12 +2601,12 @@ import "github.com/mtnmunuklu/davudpasha-api-client-go/api/davudpasha"
   - [func \(o \*SourcesItem\) UnMarshalJSON\(bytes \[\]byte\) \(err error\)](<#SourcesItem.UnMarshalJSON>)
   - [func \(o \*SourcesItem\) UnSetAgentIds\(\)](<#SourcesItem.UnSetAgentIds>)
   - [func \(o \*SourcesItem\) UnSetAssetTags\(\)](<#SourcesItem.UnSetAssetTags>)
-  - [func \(o \*SourcesItem\) UnsetAgentId\(\)](<#SourcesItem.UnsetAgentId>)
-  - [func \(o \*SourcesItem\) UnsetDashboardId\(\)](<#SourcesItem.UnsetDashboardId>)
-  - [func \(o \*SourcesItem\) UnsetIndexGroupName\(\)](<#SourcesItem.UnsetIndexGroupName>)
-  - [func \(o \*SourcesItem\) UnsetLogRemoveFormat\(\)](<#SourcesItem.UnsetLogRemoveFormat>)
-  - [func \(o \*SourcesItem\) UnsetLogRemoveTime\(\)](<#SourcesItem.UnsetLogRemoveTime>)
-  - [func \(o \*SourcesItem\) UnsetScheduleConfig\(\)](<#SourcesItem.UnsetScheduleConfig>)
+  - [func \(o \*SourcesItem\) UnSetAgentId\(\)](<#SourcesItem.UnSetAgentId>)
+  - [func \(o \*SourcesItem\) UnSetDashboardId\(\)](<#SourcesItem.UnSetDashboardId>)
+  - [func \(o \*SourcesItem\) UnSetIndexGroupName\(\)](<#SourcesItem.UnSetIndexGroupName>)
+  - [func \(o \*SourcesItem\) UnSetLogRemoveFormat\(\)](<#SourcesItem.UnSetLogRemoveFormat>)
+  - [func \(o \*SourcesItem\) UnSetLogRemoveTime\(\)](<#SourcesItem.UnSetLogRemoveTime>)
+  - [func \(o \*SourcesItem\) UnSetScheduleConfig\(\)](<#SourcesItem.UnSetScheduleConfig>)
 - [type SourcesLogOperation](<#SourcesLogOperation>)
   - [func NewSourcesLogOperation\(\) \*SourcesLogOperation](<#NewSourcesLogOperation>)
   - [func NewSourcesLogOperationWithDefaults\(\) \*SourcesLogOperation](<#NewSourcesLogOperationWithDefaults>)
@@ -2893,23 +2893,23 @@ func (o *Action) UnMarshalJSON(bytes []byte) (err error)
 
 UnMarshalJSON deserializes the given payload.
 
-<a name="Action.UnsetActionRefId"></a>
-### func \(\*Action\) [UnsetActionRefId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L172>)
+<a name="Action.UnSetActionRefId"></a>
+### func \(\*Action\) [UnSetActionRefId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L172>)
 
 ```go
-func (o *Action) UnsetActionRefId()
+func (o *Action) UnSetActionRefId()
 ```
 
-UnsetActionRefId ensures that no value is present for ActionRefId, not even an explicit nil.
+UnSetActionRefId ensures that no value is present for ActionRefId, not even an explicit nil.
 
-<a name="Action.UnsetData"></a>
-### func \(\*Action\) [UnsetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L133>)
+<a name="Action.UnSetData"></a>
+### func \(\*Action\) [UnSetData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L133>)
 
 ```go
-func (o *Action) UnsetData()
+func (o *Action) UnSetData()
 ```
 
-UnsetData ensures that no value is present for Data, not even an explicit nil.
+UnSetData ensures that no value is present for Data, not even an explicit nil.
 
 <a name="ActionParameter"></a>
 ## type [ActionParameter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action_parameter.go#L10-L19>)
@@ -3179,7 +3179,7 @@ UnMarshalJSON deserializes the given payload.
 func (o *Actions) UnSetActionRefIds()
 ```
 
-UnsetActionRefIds ensures that no value is present for ActionRefIds, not even an explicit nil.
+UnSetActionRefIds ensures that no value is present for ActionRefIds, not even an explicit nil.
 
 <a name="AlertsApi"></a>
 ## type [AlertsApi](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_alerts.go#L12>)
@@ -4128,7 +4128,7 @@ UnMarshalJSON deserializes the given payload.
 func (o *AlertsCorrelationData) UnSetLimiterColumns()
 ```
 
-UnsetLimiterColumns ensures that no value is present for LimiterColumns, not even an explicit nil.
+UnSetLimiterColumns ensures that no value is present for LimiterColumns, not even an explicit nil.
 
 <a name="AlertsCorrelationData.UnSetModuleGuid"></a>
 ### func \(\*AlertsCorrelationData\) [UnSetModuleGuid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L377>)
@@ -4137,7 +4137,7 @@ UnsetLimiterColumns ensures that no value is present for LimiterColumns, not eve
 func (o *AlertsCorrelationData) UnSetModuleGuid()
 ```
 
-UnsetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
+UnSetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
 
 <a name="AlertsCorrelationData.UnSetModuleId"></a>
 ### func \(\*AlertsCorrelationData\) [UnSetModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L338>)
@@ -4146,7 +4146,7 @@ UnsetModuleGuid ensures that no value is present for ModuleGuid, not even an exp
 func (o *AlertsCorrelationData) UnSetModuleId()
 ```
 
-UnsetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
+UnSetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
 
 <a name="AlertsItem"></a>
 ## type [AlertsItem](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L10-L23>)
@@ -4375,7 +4375,7 @@ UnMarshalJSON deserializes the given payload.
 func (o *AlertsItem) UnSetLgsName()
 ```
 
-UnsetLgsName ensures that no value is present for LgsName, not even an explicit nil.
+UnSetLgsName ensures that no value is present for LgsName, not even an explicit nil.
 
 <a name="AlertsSearchRequest"></a>
 ## type [AlertsSearchRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_search_request.go#L11-L20>)
@@ -4875,7 +4875,7 @@ UnMarshalJSON deserializes the given payload.
 func (o *DateTimeRange) UnSetField()
 ```
 
-UnsetField ensures that no value is present for Field, not even an explicit nil.
+UnSetField ensures that no value is present for Field, not even an explicit nil.
 
 <a name="DateTimeType"></a>
 ## type [DateTimeType](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_type.go#L9>)
@@ -5763,7 +5763,7 @@ Set changes the value and indicates it's been called.
 func (v *NullableReportsQueryExtData) UnSet()
 ```
 
-Unset sets the value to nil and resets the set flag/
+UnSet sets the value to nil and resets the set flag/
 
 <a name="NullableReportsQueryExtData.UnmarshalJSON"></a>
 ### func \(\*NullableReportsQueryExtData\) [UnmarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L709>)
@@ -5837,7 +5837,7 @@ Set changes the value and indicates it's been called.
 func (v *NullableScheduleConfig) UnSet()
 ```
 
-Unset sets the value to nil and resets the set flag/
+UnSet sets the value to nil and resets the set flag/
 
 <a name="NullableScheduleConfig.UnmarshalJSON"></a>
 ### func \(\*NullableScheduleConfig\) [UnmarshalJSON](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_schedule_config.go#L563>)
@@ -6930,7 +6930,7 @@ UnMarshalJSON deserializes the given payload.
 func (o *QueriesItem) UnSetColumns()
 ```
 
-UnsetColumns ensures that no value is present for Columns, not even an explicit nil.
+UnSetColumns ensures that no value is present for Columns, not even an explicit nil.
 
 <a name="QueriesItem.UnSetMitreTags"></a>
 ### func \(\*QueriesItem\) [UnSetMitreTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L423>)
@@ -6939,7 +6939,7 @@ UnsetColumns ensures that no value is present for Columns, not even an explicit 
 func (o *QueriesItem) UnSetMitreTags()
 ```
 
-UnsetMitreTags ensures that no value is present for MitreTags, not even an explicit nil.
+UnSetMitreTags ensures that no value is present for MitreTags, not even an explicit nil.
 
 <a name="QueriesItem.UnSetSharedUsersAndGroups"></a>
 ### func \(\*QueriesItem\) [UnSetSharedUsersAndGroups](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L663>)
@@ -6948,7 +6948,7 @@ UnsetMitreTags ensures that no value is present for MitreTags, not even an expli
 func (o *QueriesItem) UnSetSharedUsersAndGroups()
 ```
 
-UnsetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
+UnSetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
 
 <a name="QueriesItem.UnSetTags"></a>
 ### func \(\*QueriesItem\) [UnSetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L384>)
@@ -6957,43 +6957,43 @@ UnsetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGro
 func (o *QueriesItem) UnSetTags()
 ```
 
-UnsetTags ensures that no value is present for Tags, not even an explicit nil.
+UnSetTags ensures that no value is present for Tags, not even an explicit nil.
 
-<a name="QueriesItem.UnsetDescription"></a>
-### func \(\*QueriesItem\) [UnsetDescription](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L166>)
-
-```go
-func (o *QueriesItem) UnsetDescription()
-```
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil.
-
-<a name="QueriesItem.UnsetKillChainPhase"></a>
-### func \(\*QueriesItem\) [UnsetKillChainPhase](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L462>)
+<a name="QueriesItem.UnSetDescription"></a>
+### func \(\*QueriesItem\) [UnSetDescription](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L166>)
 
 ```go
-func (o *QueriesItem) UnsetKillChainPhase()
+func (o *QueriesItem) UnSetDescription()
 ```
 
-UnsetKillChainPhase ensures that no value is present for KillChainPhase, not even an explicit nil.
+UnSetDescription ensures that no value is present for Description, not even an explicit nil.
 
-<a name="QueriesItem.UnsetModuleGuid"></a>
-### func \(\*QueriesItem\) [UnsetModuleGuid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L624>)
+<a name="QueriesItem.UnSetKillChainPhase"></a>
+### func \(\*QueriesItem\) [UnSetKillChainPhase](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L462>)
 
 ```go
-func (o *QueriesItem) UnsetModuleGuid()
+func (o *QueriesItem) UnSetKillChainPhase()
 ```
 
-UnsetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
+UnSetKillChainPhase ensures that no value is present for KillChainPhase, not even an explicit nil.
 
-<a name="QueriesItem.UnsetModuleId"></a>
-### func \(\*QueriesItem\) [UnsetModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L585>)
+<a name="QueriesItem.UnSetModuleGuid"></a>
+### func \(\*QueriesItem\) [UnSetModuleGuid](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L624>)
 
 ```go
-func (o *QueriesItem) UnsetModuleId()
+func (o *QueriesItem) UnSetModuleGuid()
 ```
 
-UnsetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
+UnSetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
+
+<a name="QueriesItem.UnSetModuleId"></a>
+### func \(\*QueriesItem\) [UnSetModuleId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L585>)
+
+```go
+func (o *QueriesItem) UnSetModuleId()
+```
+
+UnSetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
 
 <a name="QueriesSearchRequest"></a>
 ## type [QueriesSearchRequest](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_search_request.go#L11-L22>)
@@ -8112,7 +8112,7 @@ UnMarshalJSON deserializes the given payload.
 func (o *ReportsChartVisualization) UnSetColorScheme()
 ```
 
-UnsetColorScheme ensures that no value is present for ColorScheme, not even an explicit nil.
+UnSetColorScheme ensures that no value is present for ColorScheme, not even an explicit nil.
 
 <a name="ReportsChartXAxis"></a>
 ## type [ReportsChartXAxis](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_xaxis.go#L10-L21>)
@@ -8505,7 +8505,7 @@ UnMarshalJSON deserializes the given payload.
 func (o *ReportsChartYAxis) UnSetMaxValue()
 ```
 
-UnsetMaxValue ensures that no value is present for MaxValue, not even an explicit nil.
+UnSetMaxValue ensures that no value is present for MaxValue, not even an explicit nil.
 
 <a name="ReportsChartYAxis.UnSetMinValue"></a>
 ### func \(\*ReportsChartYAxis\) [UnSetMinValue](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L133>)
@@ -8514,7 +8514,7 @@ UnsetMaxValue ensures that no value is present for MaxValue, not even an explici
 func (o *ReportsChartYAxis) UnSetMinValue()
 ```
 
-UnsetMinValue ensures that no value is present for MinValue, not even an explicit nil.
+UnSetMinValue ensures that no value is present for MinValue, not even an explicit nil.
 
 <a name="ReportsData"></a>
 ## type [ReportsData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L10-L47>)
@@ -9262,7 +9262,7 @@ UnMarshalJSON deserializes the given payload.
 func (o *ReportsData) UnSetCoverPage()
 ```
 
-UnsetCoverPage ensures that no value is present for CoverPage, not even an explicit nil.
+UnSetCoverPage ensures that no value is present for CoverPage, not even an explicit nil.
 
 <a name="ReportsData.UnSetFileName"></a>
 ### func \(\*ReportsData\) [UnSetFileName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L140>)
@@ -9271,7 +9271,7 @@ UnsetCoverPage ensures that no value is present for CoverPage, not even an expli
 func (o *ReportsData) UnSetFileName()
 ```
 
-UnsetFileName ensures that no value is present for FileName, not even an explicit nil.
+UnSetFileName ensures that no value is present for FileName, not even an explicit nil.
 
 <a name="ReportsData.UnSetFilePassword"></a>
 ### func \(\*ReportsData\) [UnSetFilePassword](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L503>)
@@ -9280,7 +9280,7 @@ UnsetFileName ensures that no value is present for FileName, not even an explici
 func (o *ReportsData) UnSetFilePassword()
 ```
 
-UnsetFilePassword ensures that no value is present for FilePassword, not even an explicit nil.
+UnSetFilePassword ensures that no value is present for FilePassword, not even an explicit nil.
 
 <a name="ReportsData.UnSetFooter"></a>
 ### func \(\*ReportsData\) [UnSetFooter](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L274>)
@@ -9289,7 +9289,7 @@ UnsetFilePassword ensures that no value is present for FilePassword, not even an
 func (o *ReportsData) UnSetFooter()
 ```
 
-UnsetFooter ensures that no value is present for Footer, not even an explicit nil.
+UnSetFooter ensures that no value is present for Footer, not even an explicit nil.
 
 <a name="ReportsData.UnSetHeader"></a>
 ### func \(\*ReportsData\) [UnSetHeader](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L235>)
@@ -9298,7 +9298,7 @@ UnsetFooter ensures that no value is present for Footer, not even an explicit ni
 func (o *ReportsData) UnSetHeader()
 ```
 
-UnsetHeader ensures that no value is present for Header, not even an explicit nil.
+UnSetHeader ensures that no value is present for Header, not even an explicit nil.
 
 <a name="ReportsData.UnSetName"></a>
 ### func \(\*ReportsData\) [UnSetName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L101>)
@@ -9307,7 +9307,7 @@ UnsetHeader ensures that no value is present for Header, not even an explicit ni
 func (o *ReportsData) UnSetName()
 ```
 
-UnsetName ensures that no value is present for Name, not even an explicit nil.
+UnSetName ensures that no value is present for Name, not even an explicit nil.
 
 <a name="ReportsData.UnSetReportId"></a>
 ### func \(\*ReportsData\) [UnSetReportId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L542>)
@@ -9316,7 +9316,7 @@ UnsetName ensures that no value is present for Name, not even an explicit nil.
 func (o *ReportsData) UnSetReportId()
 ```
 
-UnsetReportId ensures that no value is present for ReportId, not even an explicit nil.
+UnSetReportId ensures that no value is present for ReportId, not even an explicit nil.
 
 <a name="ReportsData.UnSetReportTheme"></a>
 ### func \(\*ReportsData\) [UnSetReportTheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L581>)
@@ -9325,7 +9325,7 @@ UnsetReportId ensures that no value is present for ReportId, not even an explici
 func (o *ReportsData) UnSetReportTheme()
 ```
 
-UnsetReportTheme ensures that no value is present for ReportTheme, not even an explicit nil.
+UnSetReportTheme ensures that no value is present for ReportTheme, not even an explicit nil.
 
 <a name="ReportsData.UnSetTheme"></a>
 ### func \(\*ReportsData\) [UnSetTheme](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L408>)
@@ -9334,7 +9334,7 @@ UnsetReportTheme ensures that no value is present for ReportTheme, not even an e
 func (o *ReportsData) UnSetTheme()
 ```
 
-UnsetTheme ensures that no value is present for Theme, not even an explicit nil.
+UnSetTheme ensures that no value is present for Theme, not even an explicit nil.
 
 <a name="ReportsLatestReportFile"></a>
 ## type [ReportsLatestReportFile](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_latest_report_file.go#L10-L23>)
@@ -10381,14 +10381,14 @@ func (o *ReportsQuery) UnMarshalJSON(bytes []byte) (err error)
 
 UnMarshalJSON deserializes the given payload.
 
-<a name="ReportsQuery.UnsetExtData"></a>
-### func \(\*ReportsQuery\) [UnsetExtData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L251>)
+<a name="ReportsQuery.UnSetExtData"></a>
+### func \(\*ReportsQuery\) [UnSetExtData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L251>)
 
 ```go
-func (o *ReportsQuery) UnsetExtData()
+func (o *ReportsQuery) UnSetExtData()
 ```
 
-UnsetExtData ensures that no value is present for ExtData, not even an explicit nil.
+UnSetExtData ensures that no value is present for ExtData, not even an explicit nil.
 
 <a name="ReportsQueryData"></a>
 ## type [ReportsQueryData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L10-L31>)
@@ -10787,7 +10787,7 @@ UnMarshalJSON deserializes the given payload.
 func (o *ReportsQueryData) UnSetQueryID()
 ```
 
-UnsetQueryID ensures that no value is present for QueryID, not even an explicit nil.
+UnSetQueryID ensures that no value is present for QueryID, not even an explicit nil.
 
 <a name="ReportsQueryData.UnSetQueryStr"></a>
 ### func \(\*ReportsQueryData\) [UnSetQueryStr](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L152>)
@@ -10796,7 +10796,7 @@ UnsetQueryID ensures that no value is present for QueryID, not even an explicit 
 func (o *ReportsQueryData) UnSetQueryStr()
 ```
 
-UnsetQueryStr ensures that no value is present for QueryStr, not even an explicit nil.
+UnSetQueryStr ensures that no value is present for QueryStr, not even an explicit nil.
 
 <a name="ReportsQueryData.UnSetScriptArguments"></a>
 ### func \(\*ReportsQueryData\) [UnSetScriptArguments](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L315>)
@@ -10805,7 +10805,7 @@ UnsetQueryStr ensures that no value is present for QueryStr, not even an explici
 func (o *ReportsQueryData) UnSetScriptArguments()
 ```
 
-UnsetScriptArguments ensures that no value is present for ScriptArguments, not even an explicit nil.
+UnSetScriptArguments ensures that no value is present for ScriptArguments, not even an explicit nil.
 
 <a name="ReportsQueryData.UnSetScriptPath"></a>
 ### func \(\*ReportsQueryData\) [UnSetScriptPath](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L275>)
@@ -10814,7 +10814,7 @@ UnsetScriptArguments ensures that no value is present for ScriptArguments, not e
 func (o *ReportsQueryData) UnSetScriptPath()
 ```
 
-UnsetScriptPath ensures that no value is present for ScriptPath, not even an explicit nil.
+UnSetScriptPath ensures that no value is present for ScriptPath, not even an explicit nil.
 
 <a name="ReportsQueryExtData"></a>
 ## type [ReportsQueryExtData](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_ext_data.go#L10-L49>)
@@ -11761,14 +11761,14 @@ func (o *ReportsSearchRequest) UnMarshalJSON(bytes []byte) (err error)
 
 UnMarshalJSON deserializes the given payload.
 
-<a name="ReportsSearchRequest.UnsetStartDate"></a>
-### func \(\*ReportsSearchRequest\) [UnsetStartDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L135>)
+<a name="ReportsSearchRequest.UnSetStartDate"></a>
+### func \(\*ReportsSearchRequest\) [UnSetStartDate](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L135>)
 
 ```go
-func (o *ReportsSearchRequest) UnsetStartDate()
+func (o *ReportsSearchRequest) UnSetStartDate()
 ```
 
-UnsetStartDate ensures that no value is present for StartDate, not even an explicit nil.
+UnSetStartDate ensures that no value is present for StartDate, not even an explicit nil.
 
 <a name="ReportsSearchResponse"></a>
 ## type [ReportsSearchResponse](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L10-L67>)
@@ -12860,7 +12860,7 @@ UnMarshalJSON deserializes the given payload.
 func (o *ReportsSearchResponse) UnSetAuthor()
 ```
 
-UnsetAuthor ensures that no value is present for Author, not even an explicit nil.
+UnSetAuthor ensures that no value is present for Author, not even an explicit nil.
 
 <a name="ReportsSearchResponse.UnSetLastGenerationTime"></a>
 ### func \(\*ReportsSearchResponse\) [UnSetLastGenerationTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L508>)
@@ -12869,7 +12869,7 @@ UnsetAuthor ensures that no value is present for Author, not even an explicit ni
 func (o *ReportsSearchResponse) UnSetLastGenerationTime()
 ```
 
-UnsetLastGenerationTime ensures that no value is present for LastGenerationTime, not even an explicit nil.
+UnSetLastGenerationTime ensures that no value is present for LastGenerationTime, not even an explicit nil.
 
 <a name="ReportsSearchResponse.UnSetNextGenerationTime"></a>
 ### func \(\*ReportsSearchResponse\) [UnSetNextGenerationTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L547>)
@@ -12878,7 +12878,7 @@ UnsetLastGenerationTime ensures that no value is present for LastGenerationTime,
 func (o *ReportsSearchResponse) UnSetNextGenerationTime()
 ```
 
-UnsetNextGenerationTime ensures that no value is present for NextGenerationTime, not even an explicit nil.
+UnSetNextGenerationTime ensures that no value is present for NextGenerationTime, not even an explicit nil.
 
 <a name="ReportsSearchResponse.UnSetPageSettings"></a>
 ### func \(\*ReportsSearchResponse\) [UnSetPageSettings](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L614>)
@@ -12887,7 +12887,7 @@ UnsetNextGenerationTime ensures that no value is present for NextGenerationTime,
 func (o *ReportsSearchResponse) UnSetPageSettings()
 ```
 
-UnsetPageSettings ensures that no value is present for PageSettings, not even an explicit nil.
+UnSetPageSettings ensures that no value is present for PageSettings, not even an explicit nil.
 
 <a name="ReportsSearchResponse.UnSetSharedUsersAndGroups"></a>
 ### func \(\*ReportsSearchResponse\) [UnSetSharedUsersAndGroups](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L357>)
@@ -12896,7 +12896,7 @@ UnsetPageSettings ensures that no value is present for PageSettings, not even an
 func (o *ReportsSearchResponse) UnSetSharedUsersAndGroups()
 ```
 
-UnsetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
+UnSetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
 
 <a name="ReportsTableVisualization"></a>
 ## type [ReportsTableVisualization](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_table_visualization.go#L10-L21>)
@@ -13931,7 +13931,7 @@ UnMarshalJSON deserializes the given payload.
 func (o *SelectedColumn) UnSetLookup()
 ```
 
-UnsetLookup ensures that no value is present for Lookup, not even an explicit nil.
+UnSetLookup ensures that no value is present for Lookup, not even an explicit nil.
 
 <a name="SourcesApi"></a>
 ## type [SourcesApi](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/api_sources.go#L12>)
@@ -15323,7 +15323,7 @@ UnMarshalJSON deserializes the given payload.
 func (o *SourcesItem) UnSetAgentIds()
 ```
 
-UnsetAgentIds ensures that no value is present for AgentIds, not even an explicit nil.
+UnSetAgentIds ensures that no value is present for AgentIds, not even an explicit nil.
 
 <a name="SourcesItem.UnSetAssetTags"></a>
 ### func \(\*SourcesItem\) [UnSetAssetTags](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L739>)
@@ -15332,61 +15332,61 @@ UnsetAgentIds ensures that no value is present for AgentIds, not even an explici
 func (o *SourcesItem) UnSetAssetTags()
 ```
 
-UnsetAssetTags ensures that no value is present for AssetTags, not even an explicit nil.
+UnSetAssetTags ensures that no value is present for AssetTags, not even an explicit nil.
 
-<a name="SourcesItem.UnsetAgentId"></a>
-### func \(\*SourcesItem\) [UnsetAgentId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L856>)
-
-```go
-func (o *SourcesItem) UnsetAgentId()
-```
-
-UnsetAgentId ensures that no value is present for AgentId, not even an explicit nil.
-
-<a name="SourcesItem.UnsetDashboardId"></a>
-### func \(\*SourcesItem\) [UnsetDashboardId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L700>)
+<a name="SourcesItem.UnSetAgentId"></a>
+### func \(\*SourcesItem\) [UnSetAgentId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L856>)
 
 ```go
-func (o *SourcesItem) UnsetDashboardId()
+func (o *SourcesItem) UnSetAgentId()
 ```
 
-UnsetDashboardId ensures that no value is present for DashboardId, not even an explicit nil.
+UnSetAgentId ensures that no value is present for AgentId, not even an explicit nil.
 
-<a name="SourcesItem.UnsetIndexGroupName"></a>
-### func \(\*SourcesItem\) [UnsetIndexGroupName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L633>)
+<a name="SourcesItem.UnSetDashboardId"></a>
+### func \(\*SourcesItem\) [UnSetDashboardId](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L700>)
 
 ```go
-func (o *SourcesItem) UnsetIndexGroupName()
+func (o *SourcesItem) UnSetDashboardId()
 ```
 
-UnsetIndexGroupName ensures that no value is present for IndexGroupName, not even an explicit nil.
+UnSetDashboardId ensures that no value is present for DashboardId, not even an explicit nil.
 
-<a name="SourcesItem.UnsetLogRemoveFormat"></a>
-### func \(\*SourcesItem\) [UnsetLogRemoveFormat](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L817>)
+<a name="SourcesItem.UnSetIndexGroupName"></a>
+### func \(\*SourcesItem\) [UnSetIndexGroupName](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L633>)
 
 ```go
-func (o *SourcesItem) UnsetLogRemoveFormat()
+func (o *SourcesItem) UnSetIndexGroupName()
 ```
 
-UnsetLogRemoveFormat ensures that no value is present for LogRemoveFormat, not even an explicit nil.
+UnSetIndexGroupName ensures that no value is present for IndexGroupName, not even an explicit nil.
 
-<a name="SourcesItem.UnsetLogRemoveTime"></a>
-### func \(\*SourcesItem\) [UnsetLogRemoveTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L778>)
+<a name="SourcesItem.UnSetLogRemoveFormat"></a>
+### func \(\*SourcesItem\) [UnSetLogRemoveFormat](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L817>)
 
 ```go
-func (o *SourcesItem) UnsetLogRemoveTime()
+func (o *SourcesItem) UnSetLogRemoveFormat()
 ```
 
-UnsetLogRemoveTime ensures that no value is present for LogRemoveTime, not even an explicit nil.
+UnSetLogRemoveFormat ensures that no value is present for LogRemoveFormat, not even an explicit nil.
 
-<a name="SourcesItem.UnsetScheduleConfig"></a>
-### func \(\*SourcesItem\) [UnsetScheduleConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1007>)
+<a name="SourcesItem.UnSetLogRemoveTime"></a>
+### func \(\*SourcesItem\) [UnSetLogRemoveTime](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L778>)
 
 ```go
-func (o *SourcesItem) UnsetScheduleConfig()
+func (o *SourcesItem) UnSetLogRemoveTime()
 ```
 
-UnsetScheduleConfig ensures that no value is present for ScheduleConfig, not even an explicit nil.
+UnSetLogRemoveTime ensures that no value is present for LogRemoveTime, not even an explicit nil.
+
+<a name="SourcesItem.UnSetScheduleConfig"></a>
+### func \(\*SourcesItem\) [UnSetScheduleConfig](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1007>)
+
+```go
+func (o *SourcesItem) UnSetScheduleConfig()
+```
+
+UnSetScheduleConfig ensures that no value is present for ScheduleConfig, not even an explicit nil.
 
 <a name="SourcesLogOperation"></a>
 ## type [SourcesLogOperation](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_log_operation.go#L10-L21>)

@@ -405,7 +405,7 @@ func (o *ReportsChartVisualization) SetColorSchemeNil() {
 	o.ColorScheme.Set(nil)
 }
 
-// UnsetColorScheme ensures that no value is present for ColorScheme, not even an explicit nil.
+// UnSetColorScheme ensures that no value is present for ColorScheme, not even an explicit nil.
 func (o *ReportsChartVisualization) UnSetColorScheme() {
 	o.ColorScheme.UnSet()
 }
