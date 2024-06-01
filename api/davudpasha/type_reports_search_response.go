@@ -33,7 +33,7 @@ type ReportsSearchResponse struct {
 	// Data related to the report.
 	ReportData *ReportsData `json:"ReportData,omitempty"`
 	// Schedule configuration for generating the report.
-	Schedule *ScheduleConfig `json:"Schedule,omitempty"`
+	Schedule NullableScheduleConfig `json:"Schedule,omitempty"`
 	// Date and time when the report was last generated.
 	LastGenerationTime common.NullableString `json:"LastGenerationTime,omitempty"`
 	// Date and time when the report is scheduled to be generated next.
@@ -285,7 +285,7 @@ func (o *ReportsSearchResponse) SetAuthorNil() {
 	o.Author.Set(nil)
 }
 
-// UnsetAuthor ensures that no value is present for Author, not even an explicit nil.
+// UnSetAuthor ensures that no value is present for Author, not even an explicit nil.
 func (o *ReportsSearchResponse) UnSetAuthor() {
 	o.Author.UnSet()
 }
@@ -353,7 +353,7 @@ func (o *ReportsSearchResponse) SetSharedUsersAndGroupsNil() {
 	o.SharedUsersAndGroups.Set(nil)
 }
 
-// UnsetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
+// UnSetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
 func (o *ReportsSearchResponse) UnSetSharedUsersAndGroups() {
 	o.SharedUsersAndGroups.UnSet()
 }
@@ -442,32 +442,43 @@ func (o *ReportsSearchResponse) SetReportData(v ReportsData) {
 	o.ReportData = &v
 }
 
-// GetSchedule returns the Schedule field value if set, zero value otherwise.
+// GetSchedule returns the Schedule field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReportsSearchResponse) GetSchedule() ScheduleConfig {
-	if o == nil || o.Schedule == nil {
+	if o == nil || o.Schedule.Get() == nil {
 		var ret ScheduleConfig
 		return ret
 	}
-	return *o.Schedule
+	return *o.Schedule.Get()
 }
 
 // GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
 func (o *ReportsSearchResponse) GetScheduleOk() (*ScheduleConfig, bool) {
-	if o == nil || o.Schedule == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Schedule, true
+	return o.Schedule.Get(), o.Schedule.IsSet()
 }
 
-// HasSchedule returns a boolean if a field has been set.
+// HasSchedule returns a boolean if a Schedule has been set.
 func (o *ReportsSearchResponse) HasSchedule() bool {
-	return o != nil && o.Schedule != nil
+	return o != nil && o.Schedule.IsSet()
 }
 
-// SetSchedule gets a reference to the given ScheduleConfig and assigns it to the Schedule field.
+// SetSchedule gets a reference to the given datadog.NullableScheduleConfig and assigns it to the Schedule field.
 func (o *ReportsSearchResponse) SetSchedule(v ScheduleConfig) {
-	o.Schedule = &v
+	o.Schedule.Set(&v)
+}
+
+// SetScheduleNil sets the value for Schedule to be an explicit nil.
+func (o *ReportsSearchResponse) SetScheduleNil() {
+	o.Schedule.Set(nil)
+}
+
+// UnSetSchedule ensures that no value is present for Schedule, not even an explicit nil.
+func (o *ReportsSearchResponse) UnSetSchedule() {
+	o.Schedule.UnSet()
 }
 
 // GetLastGenerationTime returns the LastGenerationTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -504,7 +515,7 @@ func (o *ReportsSearchResponse) SetLastGenerationTimeNil() {
 	o.LastGenerationTime.Set(nil)
 }
 
-// UnsetLastGenerationTime ensures that no value is present for LastGenerationTime, not even an explicit nil.
+// UnSetLastGenerationTime ensures that no value is present for LastGenerationTime, not even an explicit nil.
 func (o *ReportsSearchResponse) UnSetLastGenerationTime() {
 	o.LastGenerationTime.UnSet()
 }
@@ -543,7 +554,7 @@ func (o *ReportsSearchResponse) SetNextGenerationTimeNil() {
 	o.NextGenerationTime.Set(nil)
 }
 
-// UnsetNextGenerationTime ensures that no value is present for NextGenerationTime, not even an explicit nil.
+// UnSetNextGenerationTime ensures that no value is present for NextGenerationTime, not even an explicit nil.
 func (o *ReportsSearchResponse) UnSetNextGenerationTime() {
 	o.NextGenerationTime.UnSet()
 }
@@ -610,7 +621,7 @@ func (o *ReportsSearchResponse) SetPageSettingsNil() {
 	o.PageSettings.Set(nil)
 }
 
-// UnsetPageSettings ensures that no value is present for PageSettings, not even an explicit nil.
+// UnSetPageSettings ensures that no value is present for PageSettings, not even an explicit nil.
 func (o *ReportsSearchResponse) UnSetPageSettings() {
 	o.PageSettings.UnSet()
 }
@@ -909,7 +920,7 @@ func (o ReportsSearchResponse) MarshalJSON() ([]byte, error) {
 	if o.ReportData != nil {
 		toSerialize["ReportData"] = o.ReportData
 	}
-	if o.Schedule != nil {
+	if o.Schedule.IsSet() {
 		toSerialize["Schedule"] = o.Schedule
 	}
 	if o.LastGenerationTime.IsSet() {
@@ -973,7 +984,7 @@ func (o *ReportsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 		CreatedDate             *string                     `json:"CreatedDate,omitempty"`
 		ReportQuery             []ReportsQuery              `json:"ReportQuery,omitempty"`
 		ReportData              *ReportsData                `json:"ReportData,omitempty"`
-		Schedule                *ScheduleConfig             `json:"Schedule,omitempty"`
+		Schedule                NullableScheduleConfig      `json:"Schedule,omitempty"`
 		LastGenerationTime      common.NullableString       `json:"LastGenerationTime,omitempty"`
 		NextGenerationTime      common.NullableString       `json:"NextGenerationTime,omitempty"`
 		LatestReportFile        *ReportsLatestReportFile    `json:"LatestReportFile,omitempty"`
