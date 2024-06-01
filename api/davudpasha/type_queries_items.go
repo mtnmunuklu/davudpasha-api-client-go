@@ -32,7 +32,7 @@ type QueriesItem struct {
 	// Tags associated with the query.
 	Tags common.NullableList[string] `json:"Tags,omitempty"`
 	// MITRE tags associated with the query.
-	MitreTags common.NullableList[string] `json:"MitreTags,omitempty"`
+	MitreTags common.NullableList[MitreTag] `json:"MitreTags,omitempty"`
 	// Kill chain phase associated with the query.
 	KillChainPhase common.NullableString `json:"KillChainPhase,omitempty"`
 	// Whether the query is from the market.
@@ -162,8 +162,8 @@ func (o *QueriesItem) SetDescriptionNil() {
 	o.Description.Set(nil)
 }
 
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil.
-func (o *QueriesItem) UnsetDescription() {
+// UnSetDescription ensures that no value is present for Description, not even an explicit nil.
+func (o *QueriesItem) UnSetDescription() {
 	o.Description.UnSet()
 }
 
@@ -201,7 +201,7 @@ func (o *QueriesItem) SetColumnsNil() {
 	o.Columns.Set(nil)
 }
 
-// UnsetColumns ensures that no value is present for Columns, not even an explicit nil.
+// UnSetColumns ensures that no value is present for Columns, not even an explicit nil.
 func (o *QueriesItem) UnSetColumns() {
 	o.Columns.UnSet()
 }
@@ -380,15 +380,15 @@ func (o *QueriesItem) SetTagsNil() {
 	o.Tags.Set(nil)
 }
 
-// UnsetTags ensures that no value is present for Tags, not even an explicit nil.
+// UnSetTags ensures that no value is present for Tags, not even an explicit nil.
 func (o *QueriesItem) UnSetTags() {
 	o.Tags.UnSet()
 }
 
 // GetMitreTags returns the MitreTags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItem) GetMitreTags() []string {
+func (o *QueriesItem) GetMitreTags() []MitreTag {
 	if o == nil || o.MitreTags.Get() == nil {
-		var ret []string
+		var ret []MitreTag
 		return ret
 	}
 	return *o.MitreTags.Get()
@@ -397,7 +397,7 @@ func (o *QueriesItem) GetMitreTags() []string {
 // GetMitreTagsOk returns a tuple with the MitreTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItem) GetMitreTagsOk() (*[]string, bool) {
+func (o *QueriesItem) GetMitreTagsOk() (*[]MitreTag, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -410,7 +410,7 @@ func (o *QueriesItem) HasMitreTags() bool {
 }
 
 // SetMitreTags gets a reference to the given datadog.Nullable[]string and assigns it to the MitreTags field.
-func (o *QueriesItem) SetMitreTags(v []string) {
+func (o *QueriesItem) SetMitreTags(v []MitreTag) {
 	o.MitreTags.Set(&v)
 }
 
@@ -419,7 +419,7 @@ func (o *QueriesItem) SetMitreTagsNil() {
 	o.MitreTags.Set(nil)
 }
 
-// UnsetMitreTags ensures that no value is present for MitreTags, not even an explicit nil.
+// UnSetMitreTags ensures that no value is present for MitreTags, not even an explicit nil.
 func (o *QueriesItem) UnSetMitreTags() {
 	o.MitreTags.UnSet()
 }
@@ -458,8 +458,8 @@ func (o *QueriesItem) SetKillChainPhaseNil() {
 	o.KillChainPhase.Set(nil)
 }
 
-// UnsetKillChainPhase ensures that no value is present for KillChainPhase, not even an explicit nil.
-func (o *QueriesItem) UnsetKillChainPhase() {
+// UnSetKillChainPhase ensures that no value is present for KillChainPhase, not even an explicit nil.
+func (o *QueriesItem) UnSetKillChainPhase() {
 	o.KillChainPhase.UnSet()
 }
 
@@ -581,8 +581,8 @@ func (o *QueriesItem) SetModuleIdNil() {
 	o.ModuleId.Set(nil)
 }
 
-// UnsetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
-func (o *QueriesItem) UnsetModuleId() {
+// UnSetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
+func (o *QueriesItem) UnSetModuleId() {
 	o.ModuleId.UnSet()
 }
 
@@ -620,8 +620,8 @@ func (o *QueriesItem) SetModuleGuidNil() {
 	o.ModuleGuid.Set(nil)
 }
 
-// UnsetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
-func (o *QueriesItem) UnsetModuleGuid() {
+// UnSetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
+func (o *QueriesItem) UnSetModuleGuid() {
 	o.ModuleGuid.UnSet()
 }
 
@@ -659,7 +659,7 @@ func (o *QueriesItem) SetSharedUsersAndGroupsNil() {
 	o.SharedUsersAndGroups.Set(nil)
 }
 
-// UnsetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
+// UnSetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
 func (o *QueriesItem) UnSetSharedUsersAndGroups() {
 	o.SharedUsersAndGroups.UnSet()
 }
@@ -779,7 +779,7 @@ func (o *QueriesItem) UnMarshalJSON(bytes []byte) (err error) {
 		QueryType            *string                             `json:"QueryType,omitempty"`
 		DateTimeRange        *DateTimeRange                      `json:"DateTimeRange,omitempty"`
 		Tags                 common.NullableList[string]         `json:"Tags,omitempty"`
-		MitreTags            common.NullableList[string]         `json:"MitreTags,omitempty"`
+		MitreTags            common.NullableList[MitreTag]       `json:"MitreTags,omitempty"`
 		KillChainPhase       common.NullableString               `json:"KillChainPhase,omitempty"`
 		FromMarket           *bool                               `json:"FromMarket,omitempty"`
 		FromModules          *bool                               `json:"FromModules,omitempty"`
