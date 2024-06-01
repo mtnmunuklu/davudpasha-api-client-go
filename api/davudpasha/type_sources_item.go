@@ -214,6 +214,11 @@ func (o *SourcesItem) SetGroupNil() {
 	o.Group.Set(nil)
 }
 
+// UnSetGroup ensures that no value is present for Group, not even an explicit nil.
+func (o *SourcesItem) UnSetGroup() {
+	o.Group.UnSet()
+}
+
 // GetAuthor returns the Author field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SourcesItem) GetAuthor() string {
 	if o == nil || o.Author.Get() == nil {
@@ -246,6 +251,11 @@ func (o *SourcesItem) SetAuthor(v string) {
 // SetAuthorNil sets the value for Author to be an explicit nil.
 func (o *SourcesItem) SetAuthorNil() {
 	o.Author.Set(nil)
+}
+
+// UnSetAuthor ensures that no value is present for Author, not even an explicit nil.
+func (o *SourcesItem) UnSetAuthor() {
+	o.Author.UnSet()
 }
 
 // GetLogSourceDefCode returns the LogSourceDefCode field value if set, zero value otherwise.
@@ -590,7 +600,7 @@ func (o *SourcesItem) SetAgentIdsNil() {
 	o.AgentIds.Set(nil)
 }
 
-// UnsetAgentIds ensures that no value is present for AgentIds, not even an explicit nil.
+// UnSetAgentIds ensures that no value is present for AgentIds, not even an explicit nil.
 func (o *SourcesItem) UnSetAgentIds() {
 	o.AgentIds.UnSet()
 }
@@ -629,8 +639,8 @@ func (o *SourcesItem) SetIndexGroupNameNil() {
 	o.IndexGroupName.Set(nil)
 }
 
-// UnsetIndexGroupName ensures that no value is present for IndexGroupName, not even an explicit nil.
-func (o *SourcesItem) UnsetIndexGroupName() {
+// UnSetIndexGroupName ensures that no value is present for IndexGroupName, not even an explicit nil.
+func (o *SourcesItem) UnSetIndexGroupName() {
 	o.IndexGroupName.UnSet()
 }
 
@@ -696,8 +706,8 @@ func (o *SourcesItem) SetDashboardIdNil() {
 	o.DashboardId.Set(nil)
 }
 
-// UnsetDashboardId ensures that no value is present for DashboardId, not even an explicit nil.
-func (o *SourcesItem) UnsetDashboardId() {
+// UnSetDashboardId ensures that no value is present for DashboardId, not even an explicit nil.
+func (o *SourcesItem) UnSetDashboardId() {
 	o.DashboardId.UnSet()
 }
 
@@ -735,7 +745,7 @@ func (o *SourcesItem) SetAssetTagsNil() {
 	o.AssetTags.Set(nil)
 }
 
-// UnsetAssetTags ensures that no value is present for AssetTags, not even an explicit nil.
+// UnSetAssetTags ensures that no value is present for AssetTags, not even an explicit nil.
 func (o *SourcesItem) UnSetAssetTags() {
 	o.AssetTags.UnSet()
 }
@@ -774,8 +784,8 @@ func (o *SourcesItem) SetLogRemoveTimeNil() {
 	o.LogRemoveTime.Set(nil)
 }
 
-// UnsetLogRemoveTime ensures that no value is present for LogRemoveTime, not even an explicit nil.
-func (o *SourcesItem) UnsetLogRemoveTime() {
+// UnSetLogRemoveTime ensures that no value is present for LogRemoveTime, not even an explicit nil.
+func (o *SourcesItem) UnSetLogRemoveTime() {
 	o.LogRemoveTime.UnSet()
 }
 
@@ -813,8 +823,8 @@ func (o *SourcesItem) SetLogRemoveFormatNil() {
 	o.LogRemoveFormat.Set(nil)
 }
 
-// UnsetLogRemoveFormat ensures that no value is present for LogRemoveFormat, not even an explicit nil.
-func (o *SourcesItem) UnsetLogRemoveFormat() {
+// UnSetLogRemoveFormat ensures that no value is present for LogRemoveFormat, not even an explicit nil.
+func (o *SourcesItem) UnSetLogRemoveFormat() {
 	o.LogRemoveFormat.UnSet()
 }
 
@@ -852,8 +862,8 @@ func (o *SourcesItem) SetAgentIdNil() {
 	o.AgentId.Set(nil)
 }
 
-// UnsetAgentId ensures that no value is present for AgentId, not even an explicit nil.
-func (o *SourcesItem) UnsetAgentId() {
+// UnSetAgentId ensures that no value is present for AgentId, not even an explicit nil.
+func (o *SourcesItem) UnSetAgentId() {
 	o.AgentId.UnSet()
 }
 
@@ -1003,8 +1013,8 @@ func (o *SourcesItem) SetScheduleConfigNil() {
 	o.ScheduleConfig.Set(nil)
 }
 
-// UnsetScheduleConfig ensures that no value is present for ScheduleConfig, not even an explicit nil.
-func (o *SourcesItem) UnsetScheduleConfig() {
+// UnSetScheduleConfig ensures that no value is present for ScheduleConfig, not even an explicit nil.
+func (o *SourcesItem) UnSetScheduleConfig() {
 	o.ScheduleConfig.UnSet()
 }
 
