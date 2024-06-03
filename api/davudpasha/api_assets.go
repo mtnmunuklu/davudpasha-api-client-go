@@ -8,46 +8,47 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// SourcesApi service type.
-type SourceTypesApi common.Service
+// AssetsApi service type.
+type AssetsApi common.Service
 
-// SearchSourceTypesOptionalParameters holds optional parameters for SearchSourceTypes.
-type SearchSourceTypesOptionalParameters struct {
-	Body *SourceTypesSearchRequest
+// SearchAssetsOptionalParameters holds optional parameters for SearchAssets.
+type SearchAssetsOptionalParameters struct {
+	Body *AssetsSearchRequest
 }
 
-// NewSearchSourceTypesOptionalParameters creates an empty struct for parameters.
-func NewSearchSourceTypesOptionalParameters() *SearchSourceTypesOptionalParameters {
-	this := SearchSourceTypesOptionalParameters{}
+// NewSearchAssetsOptionalParameters creates an empty struct for parameters.
+func NewSearchAssetsOptionalParameters() *SearchAssetsOptionalParameters {
+	this := SearchAssetsOptionalParameters{}
 	return &this
 }
 
-func (r *SearchSourceTypesOptionalParameters) WithBody(body SourceTypesSearchRequest) *SearchSourceTypesOptionalParameters {
+// WithBody sets the corresponding parameter name and returns the struct.
+func (r *SearchAssetsOptionalParameters) WithBody(body AssetsSearchRequest) *SearchAssetsOptionalParameters {
 	r.Body = &body
 	return r
 }
 
-// SearchSourceTypes search sources.
-// Returns source typess that match an sources search query.
-func (a *SourceTypesApi) SearchSourceTypes(ctx _context.Context, o ...SearchSourceTypesOptionalParameters) (SourceTypesSearchResponse, *_nethttp.Response, error) {
+// SearchAssets search assets.
+// Returns assets that match an assets search filter.
+func (a *AssetsApi) SearchAssets(ctx _context.Context, o ...SearchAssetsOptionalParameters) (AssetsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost
 		localVarPostBody      interface{}
-		localVarReturnValue   SourceTypesSearchResponse
-		optionalParams        SearchSourceTypesOptionalParameters
-		localVarInterfaceCode = "ICSiemManagerLogSourceDefAct"
-		localVarMethodName    = "GetLogSourceDefDataList"
+		localVarReturnValue   AssetsSearchResponse
+		optionalParams        SearchAssetsOptionalParameters
+		localVarInterfaceCode = "IAssetAct"
+		localVarMethodName    = "GetAllAsset2"
 	)
 
 	if len(o) > 1 {
-		return localVarReturnValue, nil, common.ReportError("only one argument of type SearchSourceTypesOptionalParameters is allowed")
+		return localVarReturnValue, nil, common.ReportError("only one argument of type SearchAssetsOptionalParameters is allowed")
 	}
 
 	if len(o) == 1 {
 		optionalParams = o[0]
 	}
 
-	localBasePath, err := a.Client.Cfg.ServerURLWithContext(ctx, "SourceTypesApi.SearchSourceTypes")
+	localBasePath, err := a.Client.Cfg.ServerURLWithContext(ctx, "AssetsApi.SearchAssets")
 	if err != nil {
 		return localVarReturnValue, nil, common.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
@@ -113,9 +114,9 @@ func (a *SourceTypesApi) SearchSourceTypes(ctx _context.Context, o ...SearchSour
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// NewSourceTypesApi returns SourceTypesApi.
-func NewSourceTypesApi(client *common.APIClient) *SourceTypesApi {
-	return &SourceTypesApi{
+// NewAssetsApi returns AssetsApi.
+func NewAssetsApi(client *common.APIClient) *AssetsApi {
+	return &AssetsApi{
 		Client: client,
 	}
 }
