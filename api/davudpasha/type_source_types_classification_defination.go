@@ -9,7 +9,7 @@ import (
 
 type SourceTypesClassificationDefination struct {
 	ID                *string                       `json:"ID,omitempty"`
-	DefID             *string                       `json:"DefID,omitempty"`
+	DefID             *int64                        `json:"DefID,omitempty"`
 	Name              *string                       `json:"Name,omitempty"`
 	Severity          *string                       `json:"Severity,omitempty"`
 	MitreTags         common.NullableList[MitreTag] `json:"MitreTags,omitempty"`
@@ -69,9 +69,9 @@ func (o *SourceTypesClassificationDefination) SetID(v string) {
 }
 
 // GetDefID returns the DefID field value if set, zero value otherwise.
-func (o *SourceTypesClassificationDefination) GetDefID() string {
+func (o *SourceTypesClassificationDefination) GetDefID() int64 {
 	if o == nil || o.DefID == nil {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.DefID
@@ -79,7 +79,7 @@ func (o *SourceTypesClassificationDefination) GetDefID() string {
 
 // GetDefIDOk returns a tuple with the DefID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceTypesClassificationDefination) GetDefIDOk() (*string, bool) {
+func (o *SourceTypesClassificationDefination) GetDefIDOk() (*int64, bool) {
 	if o == nil || o.DefID == nil {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *SourceTypesClassificationDefination) HasDefID() bool {
 }
 
 // SetDefID gets a reference to the given string and assigns it to the DefID field.
-func (o *SourceTypesClassificationDefination) SetDefID(v string) {
+func (o *SourceTypesClassificationDefination) SetDefID(v int64) {
 	o.DefID = &v
 }
 
@@ -370,7 +370,7 @@ func (o SourceTypesClassificationDefination) MarshalJSON() ([]byte, error) {
 func (o *SourceTypesClassificationDefination) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		ID                *string                       `json:"ID,omitempty"`
-		DefID             *string                       `json:"DefID,omitempty"`
+		DefID             *int64                        `json:"DefID,omitempty"`
 		Name              *string                       `json:"Name,omitempty"`
 		Severity          *string                       `json:"Severity,omitempty"`
 		MitreTags         common.NullableList[MitreTag] `json:"MitreTags,omitempty"`
