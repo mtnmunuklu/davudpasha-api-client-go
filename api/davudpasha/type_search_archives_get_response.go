@@ -7,7 +7,7 @@ import (
 )
 
 type SearchArchivesGetResponse struct {
-	Data *SearchArchivesData `json:"Data,omitempty"`
+	Data []SearchArchivesData `json:"Data,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{}
 	// Additional properties not defined in the struct.
@@ -32,21 +32,21 @@ func NewSearchArchivesGetResponseWithDefaults() *SearchArchivesGetResponse {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *SearchArchivesGetResponse) GetData() SearchArchivesData {
+func (o *SearchArchivesGetResponse) GetData() []SearchArchivesData {
 	if o == nil || o.Data == nil {
-		var ret SearchArchivesData
+		var ret []SearchArchivesData
 		return ret
 	}
-	return *o.Data
+	return o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchArchivesGetResponse) GetDataOk() (*SearchArchivesData, bool) {
+func (o *SearchArchivesGetResponse) GetDataOk() (*[]SearchArchivesData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return o.Data, true
+	return &o.Data, true
 }
 
 // HasData returns a boolean if a field has been set.
@@ -54,9 +54,9 @@ func (o *SearchArchivesGetResponse) HasData() bool {
 	return o != nil && o.Data != nil
 }
 
-// SetData gets a reference to the given SearchArchivesData and assigns it to the Data field.
-func (o *SearchArchivesGetResponse) SetData(v SearchArchivesData) {
-	o.Data = &v
+// SetData gets a reference to the given []SearchArchivesData and assigns it to the Data field.
+func (o *SearchArchivesGetResponse) SetData(v []SearchArchivesData) {
+	o.Data = v
 }
 
 // MarshalJSON serializes the struct using spec logic.
@@ -78,7 +78,7 @@ func (o SearchArchivesGetResponse) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *SearchArchivesGetResponse) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Data *SearchArchivesData `json:"Data,omitempty"`
+		Data []SearchArchivesData `json:"Data,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
@@ -91,18 +91,10 @@ func (o *SearchArchivesGetResponse) UnMarshalJSON(bytes []byte) (err error) {
 		return err
 	}
 
-	hasInvalidField := false
-	if all.Data != nil && all.Data.UnparsedObject != nil && o.UnparsedObject == nil {
-		hasInvalidField = true
-	}
 	o.Data = all.Data
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
-	}
-
-	if hasInvalidField {
-		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
 	return nil
