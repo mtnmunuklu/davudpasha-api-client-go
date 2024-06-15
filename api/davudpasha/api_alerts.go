@@ -11,7 +11,7 @@ import (
 // AlertsApi service type.
 type AlertsApi common.Service
 
-// SearcAlertsOptionalParamters holds optional parameters for SearchAlerts.
+// SearchAlertsOptionalParamters holds optional parameters for SearchAlerts.
 type SearchAlertsOptionalParameters struct {
 	Body *AlertsSearchRequest
 }
@@ -27,7 +27,7 @@ func (r *SearchAlertsOptionalParameters) WithBody(body AlertsSearchRequest) *Sea
 	return r
 }
 
-// SearcAlerts search alerts.
+// SearchAlerts search alerts.
 // Returns alerts that match an alerts search query.
 func (a *AlertsApi) SearchAlerts(ctx _context.Context, o ...SearchAlertsOptionalParameters) (AlertsSearchResponse, *_nethttp.Response, error) {
 	var (
