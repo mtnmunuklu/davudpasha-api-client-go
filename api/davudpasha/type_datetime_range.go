@@ -165,7 +165,9 @@ func (o DateTimeRange) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	toSerialize["DateTimeType"] = o.DateTimeType
+	if o.DateTimeType.IsValid() {
+		toSerialize["DateTimeType"] = o.DateTimeType
+	}
 	if o.StartDate != nil {
 		toSerialize["StartDate"] = o.StartDate
 	}
