@@ -120,7 +120,9 @@ func (o TagsSearchRequest) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	toSerialize["category"] = o.Category
+	if o.Category.IsValid() {
+		toSerialize["category"] = o.Category
+	}
 	if o.SearchFilter != nil {
 		toSerialize["searchFilter"] = o.SearchFilter
 	}
