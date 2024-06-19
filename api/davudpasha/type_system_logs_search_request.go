@@ -341,9 +341,7 @@ func (o SystemLogsSearchRequest) MarshalJSON() ([]byte, error) {
 	if o.AppName != nil {
 		toSerialize["appName"] = o.AppName
 	}
-	if o.Severity.IsSet() {
-		toSerialize["severity"] = o.Severity.Get()
-	}
+	toSerialize["severity"] = o.Severity.Get()
 	if o.FromIndex != nil {
 		toSerialize["fromIndex"] = o.FromIndex
 	}
