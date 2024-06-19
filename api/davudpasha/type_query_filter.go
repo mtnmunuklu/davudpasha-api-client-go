@@ -7,43 +7,43 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// EventsQueryFilter represents the filter used for querying events.
-type EventsQueryFilter struct {
+// QueryFilter represents the filter used for querying events.
+type QueryFilter struct {
 	// QuerySQL is the SQL query for filtering events.
 	QuerySQL *string `json:"QuerySQL,omitempty"`
 	// DateTimeRange specifies the date time range for filtering events.
 	DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
 	// QueryOptions stores additional query options.
-	QueryOptions *EventsQueryOptions `json:"QueryOptions,omitempty"`
+	QueryOptions *QueryOptions `json:"QueryOptions,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 
-// NewEventsQueryFilter creates a new EventsQueryFilter object.
+// NewQueryFilter creates a new QueryFilter object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewEventsQueryFilter() *EventsQueryFilter {
-	this := EventsQueryFilter{}
+func NewQueryFilter() *QueryFilter {
+	this := QueryFilter{}
 	var querySQL string = "query"
 	this.QuerySQL = &querySQL
 	return &this
 }
 
-// NewEventsQueryFilterWithDefaults creates a new EventsQueryFilter object.
+// NewQueryFilterWithDefaults creates a new QueryFilter object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewEventsQueryFilterWithDefaults() *EventsQueryFilter {
-	this := EventsQueryFilter{}
+func NewQueryFilterWithDefaults() *QueryFilter {
+	this := QueryFilter{}
 	var querySQL string = "query"
 	this.QuerySQL = &querySQL
 	return &this
 }
 
 // GetQuerySQL returns the QuerySQL field value if set, zero value otherwise.
-func (o *EventsQueryFilter) GetQuerySQL() string {
+func (o *QueryFilter) GetQuerySQL() string {
 	if o == nil || o.QuerySQL == nil {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *EventsQueryFilter) GetQuerySQL() string {
 
 // GetQuerySQLOk returns a tuple with the QuerySQL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsQueryFilter) GetQuerySQLOk() (*string, bool) {
+func (o *QueryFilter) GetQuerySQLOk() (*string, bool) {
 	if o == nil || o.QuerySQL == nil {
 		return nil, false
 	}
@@ -61,17 +61,17 @@ func (o *EventsQueryFilter) GetQuerySQLOk() (*string, bool) {
 }
 
 // HasQuerySQL returns a boolean if a field has been set.
-func (o *EventsQueryFilter) HasQuerySQL() bool {
+func (o *QueryFilter) HasQuerySQL() bool {
 	return o != nil && o.QuerySQL != nil
 }
 
 // SetQuerySQL gets a reference to the given string and assigns it to the QuerySQL field.
-func (o *EventsQueryFilter) SetQuerySQL(v string) {
+func (o *QueryFilter) SetQuerySQL(v string) {
 	o.QuerySQL = &v
 }
 
 // GetDateTimeRange returns the DateTimeRange field value if set, zero value otherwise.
-func (o *EventsQueryFilter) GetDateTimeRange() DateTimeRange {
+func (o *QueryFilter) GetDateTimeRange() DateTimeRange {
 	if o == nil || o.DateTimeRange == nil {
 		var ret DateTimeRange
 		return ret
@@ -81,7 +81,7 @@ func (o *EventsQueryFilter) GetDateTimeRange() DateTimeRange {
 
 // GetDateTimeRangeOk returns a tuple with the DateTimeRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsQueryFilter) GetDateTimeRangeOk() (*DateTimeRange, bool) {
+func (o *QueryFilter) GetDateTimeRangeOk() (*DateTimeRange, bool) {
 	if o == nil || o.DateTimeRange == nil {
 		return nil, false
 	}
@@ -89,19 +89,19 @@ func (o *EventsQueryFilter) GetDateTimeRangeOk() (*DateTimeRange, bool) {
 }
 
 // HasDateTimeRange returns a boolean if a field has been set.
-func (o *EventsQueryFilter) HasDateTimeRange() bool {
+func (o *QueryFilter) HasDateTimeRange() bool {
 	return o != nil && o.DateTimeRange != nil
 }
 
 // SetDateTimeRange gets a reference to the given DateTimeRange and assigns it to the DateTimeRange field.
-func (o *EventsQueryFilter) SetDateTimeRange(v DateTimeRange) {
+func (o *QueryFilter) SetDateTimeRange(v DateTimeRange) {
 	o.DateTimeRange = &v
 }
 
 // GetQueryOptions returns the QueryOptions field value if set, zero value otherwise.
-func (o *EventsQueryFilter) GetQueryOptions() EventsQueryOptions {
+func (o *QueryFilter) GetQueryOptions() QueryOptions {
 	if o == nil || o.QueryOptions == nil {
-		var ret EventsQueryOptions
+		var ret QueryOptions
 		return ret
 	}
 	return *o.QueryOptions
@@ -109,7 +109,7 @@ func (o *EventsQueryFilter) GetQueryOptions() EventsQueryOptions {
 
 // GetQueryOptionsOk returns a tuple with the QueryOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsQueryFilter) GetQueryOptionsOk() (*EventsQueryOptions, bool) {
+func (o *QueryFilter) GetQueryOptionsOk() (*QueryOptions, bool) {
 	if o == nil || o.QueryOptions == nil {
 		return nil, false
 	}
@@ -117,17 +117,17 @@ func (o *EventsQueryFilter) GetQueryOptionsOk() (*EventsQueryOptions, bool) {
 }
 
 // HasQueryOptions returns a boolean if a field has been set.
-func (o *EventsQueryFilter) HasQueryOptions() bool {
+func (o *QueryFilter) HasQueryOptions() bool {
 	return o != nil && o.QueryOptions != nil
 }
 
-// SetQueryOptions gets a reference to the given EventsQueryOptions and assigns it to the QueryOptions field.
-func (o *EventsQueryFilter) SetQueryOptions(v EventsQueryOptions) {
+// SetQueryOptions gets a reference to the given QueryOptions and assigns it to the QueryOptions field.
+func (o *QueryFilter) SetQueryOptions(v QueryOptions) {
 	o.QueryOptions = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o EventsQueryFilter) MarshalJSON() ([]byte, error) {
+func (o QueryFilter) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -149,11 +149,11 @@ func (o EventsQueryFilter) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *EventsQueryFilter) UnMarshalJSON(bytes []byte) (err error) {
+func (o *QueryFilter) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		QuerySQL      *string             `json:"QuerySQL,omitempty"`
-		DateTimeRange *DateTimeRange      `json:"DateTimeRange,omitempty"`
-		QueryOptions  *EventsQueryOptions `json:"QueryOptions,omitempty"`
+		QuerySQL      *string        `json:"QuerySQL,omitempty"`
+		DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
+		QueryOptions  *QueryOptions  `json:"QueryOptions,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)

@@ -22,12 +22,12 @@ func init() {
 func main() {
 	body := davudpasha.EventsSearchRequest{
 		Reason: common.PtrString("query"),
-		Query: &davudpasha.EventsQueryFilter{
+		Query: &davudpasha.QueryFilter{
 			QuerySQL: common.PtrString("sourcetype=\"paloalto\" eql select * from _source_ where _condition_ limit 1"),
 			DateTimeRange: &davudpasha.DateTimeRange{
 				DateTimeType: davudpasha.DATETIMETYPE_LAST10MINUTES,
 			},
-			QueryOptions: &davudpasha.EventsQueryOptions{
+			QueryOptions: &davudpasha.QueryOptions{
 				ShowHighlight: common.PtrBool(true),
 			},
 		},

@@ -12,7 +12,7 @@ type EventsSearchRequest struct {
 	// Reason represents the reason for the event list request.
 	Reason *string `json:"reason,omitempty"`
 	// Query specifies the search and filter query settings.
-	Query *EventsQueryFilter `json:"query,omitempty"`
+	Query *QueryFilter `json:"query,omitempty"`
 	// SmartRestRequestContext is the context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
@@ -75,9 +75,9 @@ func (o *EventsSearchRequest) SetReason(v string) {
 }
 
 // GetQuery returns the Query field value if set, zero value otherwise.
-func (o *EventsSearchRequest) GetQuery() EventsQueryFilter {
+func (o *EventsSearchRequest) GetQuery() QueryFilter {
 	if o == nil || o.Query == nil {
-		var ret EventsQueryFilter
+		var ret QueryFilter
 		return ret
 	}
 	return *o.Query
@@ -85,7 +85,7 @@ func (o *EventsSearchRequest) GetQuery() EventsQueryFilter {
 
 // GetQueryOk returns a tuple with the Query field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsSearchRequest) GetQueryOk() (*EventsQueryFilter, bool) {
+func (o *EventsSearchRequest) GetQueryOk() (*QueryFilter, bool) {
 	if o == nil || o.Query == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *EventsSearchRequest) HasQuery() bool {
 	return o != nil && o.Query != nil
 }
 
-// SetQuery gets a reference to the given EventsQueryFilter and assigns it to the Query field.
-func (o *EventsSearchRequest) SetQuery(v EventsQueryFilter) {
+// SetQuery gets a reference to the given QueryFilter and assigns it to the Query field.
+func (o *EventsSearchRequest) SetQuery(v QueryFilter) {
 	o.Query = &v
 }
 
@@ -155,9 +155,9 @@ func (o EventsSearchRequest) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *EventsSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Reason                  *string            `json:"reason,omitempty"`
-		Query                   *EventsQueryFilter `json:"query,omitempty"`
-		SmartRestRequestContext *string            `json:"smartRestRequestContext,omitempty"`
+		Reason                  *string      `json:"reason,omitempty"`
+		Query                   *QueryFilter `json:"query,omitempty"`
+		SmartRestRequestContext *string      `json:"smartRestRequestContext,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
