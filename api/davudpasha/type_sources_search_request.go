@@ -9,7 +9,7 @@ import (
 
 // SourcesSearchRequest represents a request for searching sources.
 type SourcesSearchRequest struct {
-	// Filter for searching sources.
+	// SearchFilter for searching sources.
 	SearchFilter *string `json:"searchFilter,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
@@ -121,7 +121,7 @@ func (o *SourcesSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 	if all.SearchFilter == nil {
-		return fmt.Errorf("requiered field SearchFilter is missing")
+		return fmt.Errorf("requiered field searchFilter is missing")
 	}
 	if all.SmartRestRequestContext == nil {
 		return fmt.Errorf("requiered field smartRestRequestContext is missing")
