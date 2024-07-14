@@ -31,8 +31,8 @@ const (
 	DATETIMETYPE_DATERANGE      DateTimeType = "DateRange"
 )
 
-// allowedEventsDataTimeEnumValues contains the allowed values for DateTimeType.
-var allowedEventsDataTimeEnumValues = []DateTimeType{
+// allowedDataTimeEnumValues contains the allowed values for DateTimeType.
+var allowedDataTimeEnumValues = []DateTimeType{
 	DATETIMETYPE_LAST5MINUTES,
 	DATETIMETYPE_LAST10MINUTES,
 	DATETIMETYPE_LAST15MINUTES,
@@ -56,7 +56,7 @@ var allowedEventsDataTimeEnumValues = []DateTimeType{
 
 // GetAllowedValues returns the list of possible values.
 func (v *DateTimeType) GetAllowedValues() []DateTimeType {
-	return allowedEventsDataTimeEnumValues
+	return allowedDataTimeEnumValues
 }
 
 // UnMarshalJSON deserializes the given payload.
@@ -77,12 +77,12 @@ func NewDateTimeTypeFromValue(v string) (*DateTimeType, error) {
 	if ev.IsValid() {
 		return &ev, nil
 	}
-	return nil, fmt.Errorf("invalid value '%v' for DateTimeType: valid values are %v", v, allowedEventsDataTimeEnumValues)
+	return nil, fmt.Errorf("invalid value '%v' for DateTimeType: valid values are %v", v, allowedDataTimeEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise.
 func (v DateTimeType) IsValid() bool {
-	for _, existing := range allowedEventsDataTimeEnumValues {
+	for _, existing := range allowedDataTimeEnumValues {
 		if existing == v {
 			return true
 		}
