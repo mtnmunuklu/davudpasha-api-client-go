@@ -15,7 +15,7 @@ type Action struct {
 	// Data associated with the action.
 	Data common.NullableString `json:"Data,omitempty"`
 	// Reference ID for the action.
-	ActionRefId common.NullableString `json:"ActionRefId,omitempty"`
+	ActionRefID common.NullableString `json:"ActionRefId,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
@@ -119,7 +119,7 @@ func (o *Action) HasData() bool {
 	return o != nil && o.Data.IsSet()
 }
 
-// SetData gets a reference to the given datadog.NullableString and assigns it to the Data field.
+// SetData gets a reference to the given common.NullableString and assigns it to the Data field.
 func (o *Action) SetData(v string) {
 	o.Data.Set(&v)
 }
@@ -134,43 +134,43 @@ func (o *Action) UnSetData() {
 	o.Data.UnSet()
 }
 
-// GetActionRefId returns the ActionRefId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Action) GetActionRefId() string {
-	if o == nil || o.ActionRefId.Get() == nil {
+// GetActionRefID returns the ActionRefID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Action) GetActionRefID() string {
+	if o == nil || o.ActionRefID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ActionRefId.Get()
+	return *o.ActionRefID.Get()
 }
 
-// GetActionRefIdOk returns a tuple with the ActionRefId field value if set, nil otherwise
+// GetActionRefIDOk returns a tuple with the ActionRefID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *Action) GetActionRefIdOk() (*string, bool) {
+func (o *Action) GetActionRefIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ActionRefId.Get(), o.ActionRefId.IsSet()
+	return o.ActionRefID.Get(), o.ActionRefID.IsSet()
 }
 
-// HasActionRefId returns a boolean if a ActionRefId has been set.
-func (o *Action) HasActionRefId() bool {
-	return o != nil && o.ActionRefId.IsSet()
+// HasActionRefID returns a boolean if a ActionRefID has been set.
+func (o *Action) HasActionRefID() bool {
+	return o != nil && o.ActionRefID.IsSet()
 }
 
-// SetActionRefId gets a reference to the given datadog.NullableString and assigns it to the ActionRefId field.
-func (o *Action) SetActionRefId(v string) {
-	o.ActionRefId.Set(&v)
+// SetActionRefID gets a reference to the given common.NullableString and assigns it to the ActionRefID field.
+func (o *Action) SetActionRefID(v string) {
+	o.ActionRefID.Set(&v)
 }
 
-// SetActionRefIdNil sets the value for ActionRefId to be an explicit nil.
-func (o *Action) SetActionRefIdNil() {
-	o.ActionRefId.Set(nil)
+// SetActionRefIDNil sets the value for ActionRefID to be an explicit nil.
+func (o *Action) SetActionRefIDNil() {
+	o.ActionRefID.Set(nil)
 }
 
-// UnSetActionRefId ensures that no value is present for ActionRefId, not even an explicit nil.
-func (o *Action) UnSetActionRefId() {
-	o.ActionRefId.UnSet()
+// UnSetActionRefID ensures that no value is present for ActionRefID, not even an explicit nil.
+func (o *Action) UnSetActionRefID() {
+	o.ActionRefID.UnSet()
 }
 
 // MarshalJSON serializes the struct using spec logic.
@@ -188,8 +188,8 @@ func (o Action) MarshalJSON() ([]byte, error) {
 	if o.Data.IsSet() {
 		toSerialize["Data"] = o.Data.Get()
 	}
-	if o.ActionRefId.IsSet() {
-		toSerialize["ActionRefId"] = o.ActionRefId.Get()
+	if o.ActionRefID.IsSet() {
+		toSerialize["ActionRefId"] = o.ActionRefID.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -204,7 +204,7 @@ func (o *Action) UnMarshalJSON(bytes []byte) (err error) {
 		ActionType       *string               `json:"ActionType,omitempty"`
 		ActionParameters []ActionParameter     `json:"ActionParameters,omitempty"`
 		Data             common.NullableString `json:"Data,omitempty"`
-		ActionRefId      common.NullableString `json:"ActionRefId,omitempty"`
+		ActionRefID      common.NullableString `json:"ActionRefId,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
@@ -220,7 +220,7 @@ func (o *Action) UnMarshalJSON(bytes []byte) (err error) {
 	o.ActionType = all.ActionType
 	o.ActionParameters = all.ActionParameters
 	o.Data = all.Data
-	o.ActionRefId = all.ActionRefId
+	o.ActionRefID = all.ActionRefID
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties

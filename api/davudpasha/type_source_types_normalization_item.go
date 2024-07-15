@@ -7,8 +7,11 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourceTypesNormalizationItem represents an item in the normalization settings for source types.
 type SourceTypesNormalizationItem struct {
-	Key   *string `json:"Key,omitempty"`
+	// Key specifies the normalization key.
+	Key *string `json:"Key,omitempty"`
+	// Value specifies the normalization value.
 	Value *string `json:"Value,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`

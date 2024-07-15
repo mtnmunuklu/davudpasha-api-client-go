@@ -6,10 +6,12 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// AssetsInventoryInfo represents the inventory information of an asset.
 type AssetsInventoryInfo struct {
+	// Information about the operating system of the asset.
 	OperationSystemInfos *AssetsOperationSystemInfo `json:"OperationSystemInfos,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

@@ -6,12 +6,15 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourceTypesClassificationRule defines the structure for classification rules for source types.
 type SourceTypesClassificationRule struct {
-	QueryStr         *string `json:"QueryStr,omitempty"`
+	// QueryStr represents the query string for the classification rule.
+	QueryStr *string `json:"QueryStr,omitempty"`
+	// ClassificationID specifies the identifier for the classification rule.
 	ClassificationID *string `json:"ClassificationID,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Raw value if deserialization fails.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

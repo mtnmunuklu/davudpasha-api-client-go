@@ -6,15 +6,22 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// CasesLog represents the structure of a log entry in a case.
 type CasesLog struct {
-	DetailID *string                     `json:"DetailID,omitempty"`
-	Time     *string                     `json:"Time,omitempty"`
-	Source   *string                     `json:"Source,omitempty"`
-	Message  *string                     `json:"Message,omitempty"`
-	Type     *string                     `json:"Type,omitempty"`
-	Files    common.NullableList[string] `json:"Files,omitempty"`
+	// Unique identifier for the log detail.
+	DetailID *string `json:"DetailID,omitempty"`
+	// Timestamp of when the log entry was recorded.
+	Time *string `json:"Time,omitempty"`
+	// Source of the log entry.
+	Source *string `json:"Source,omitempty"`
+	// Content of the log message.
+	Message *string `json:"Message,omitempty"`
+	// Type or category of the log entry.
+	Type *string `json:"Type,omitempty"`
+	// List of files associated with the log entry, which can be null.
+	Files common.NullableList[string] `json:"Files,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -200,7 +207,7 @@ func (o *CasesLog) HasFiles() bool {
 	return o != nil && o.Files.IsSet()
 }
 
-// SetFiles gets a reference to the given datadog.Nullable[]string and assigns it to the Files field.
+// SetFiles gets a reference to the given common.Nullable[]string and assigns it to the Files field.
 func (o *CasesLog) SetFiles(v []string) {
 	o.Files.Set(&v)
 }

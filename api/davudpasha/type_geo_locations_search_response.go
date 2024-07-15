@@ -6,12 +6,16 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// GeoLocationsSearchResponse represents a search response structure for geographical locations.
 type GeoLocationsSearchResponse struct {
+	// Array of geographical location data.
 	GeolocationDatas []GeoLocationsData `json:"GeolocationDatas,omitempty"`
-	AfterKey         *string            `json:"AfterKey,omitempty"`
-	TotalQuantity    *int64             `json:"TotalQuantity,omitempty"`
+	// Pagination token indicating where the next page of results should start.
+	AfterKey *string `json:"AfterKey,omitempty"`
+	// Total quantity of results matching the search criteria.
+	TotalQuantity *int64 `json:"TotalQuantity,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

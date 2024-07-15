@@ -11,7 +11,7 @@ type Actions struct {
 	// List of actions.
 	Actions []Action `json:"Actions,omitempty"`
 	// List of action reference IDs.
-	ActionRefIds common.NullableList[string] `json:"ActionRefIds,omitempty"`
+	ActionRefIDs common.NullableList[string] `json:"ActionRefIds,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
@@ -63,44 +63,44 @@ func (o *Actions) SetActions(v []Action) {
 	o.Actions = v
 }
 
-// GetActionRefIds returns a tuple with the ActionRefIds field value if set, nil otherwise
+// GetActionRefIDs returns a tuple with the ActionRefIDs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *Actions) GetActionRefIds() (*[]string, bool) {
+func (o *Actions) GetActionRefIDs() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ActionRefIds.Get(), o.ActionRefIds.IsSet()
+	return o.ActionRefIDs.Get(), o.ActionRefIDs.IsSet()
 }
 
-// GetActionRefIdsOk returns a tuple with the ActionRefIds field value if set, nil otherwise
+// GetActionRefIDsOk returns a tuple with the ActionRefIDs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *Actions) GetActionRefIdsOk() (*[]string, bool) {
+func (o *Actions) GetActionRefIDsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ActionRefIds.Get(), o.ActionRefIds.IsSet()
+	return o.ActionRefIDs.Get(), o.ActionRefIDs.IsSet()
 }
 
-// HasActionRefIds returns a boolean if a ActionRefIds has been set.
-func (o *Actions) HasActionRefIds() bool {
-	return o != nil && o.ActionRefIds.IsSet()
+// HasActionRefIDs returns a boolean if a ActionRefIDs has been set.
+func (o *Actions) HasActionRefIDs() bool {
+	return o != nil && o.ActionRefIDs.IsSet()
 }
 
-// SetActionRefIds gets a reference to the given datadog.Nullable[]string and assigns it to the ActionRefIds field.
-func (o *Actions) SetActionRefIds(v []string) {
-	o.ActionRefIds.Set(&v)
+// SetActionRefIDs gets a reference to the given common.Nullable[]string and assigns it to the ActionRefIDs field.
+func (o *Actions) SetActionRefIDs(v []string) {
+	o.ActionRefIDs.Set(&v)
 }
 
-// SetActionRefIdsNil sets the value for ActionRefIds to be an explicit nil.
-func (o *Actions) SetActionRefIdsNil() {
-	o.ActionRefIds.Set(nil)
+// SetActionRefIDsNil sets the value for ActionRefIDs to be an explicit nil.
+func (o *Actions) SetActionRefIDsNil() {
+	o.ActionRefIDs.Set(nil)
 }
 
-// UnSetActionRefIds ensures that no value is present for ActionRefIds, not even an explicit nil.
-func (o *Actions) UnSetActionRefIds() {
-	o.ActionRefIds.UnSet()
+// UnSetActionRefIDs ensures that no value is present for ActionRefIDs, not even an explicit nil.
+func (o *Actions) UnSetActionRefIDs() {
+	o.ActionRefIDs.UnSet()
 }
 
 // MarshalJSON serializes the struct using spec logic.
@@ -112,8 +112,8 @@ func (o Actions) MarshalJSON() ([]byte, error) {
 	if o.Actions != nil {
 		toSerialize["Actions"] = o.Actions
 	}
-	if o.ActionRefIds.IsSet() {
-		toSerialize["ActionRefIds"] = o.ActionRefIds.Get()
+	if o.ActionRefIDs.IsSet() {
+		toSerialize["ActionRefIds"] = o.ActionRefIDs.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -126,7 +126,7 @@ func (o Actions) MarshalJSON() ([]byte, error) {
 func (o *Actions) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		Actions      []Action                    `json:"Actions,omitempty"`
-		ActionRefIds common.NullableList[string] `json:"ActionRefIds,omitempty"`
+		ActionRefIDs common.NullableList[string] `json:"ActionRefIds,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
@@ -140,7 +140,7 @@ func (o *Actions) UnMarshalJSON(bytes []byte) (err error) {
 	}
 
 	o.Actions = all.Actions
-	o.ActionRefIds = all.ActionRefIds
+	o.ActionRefIDs = all.ActionRefIDs
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties

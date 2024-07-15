@@ -6,12 +6,16 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// TagsItem represents a single tag item structure.
 type TagsItem struct {
-	ID       *string     `json:"ID,omitempty"`
-	Name     *string     `json:"Name,omitempty"`
+	// ID represents the identifier of the tag.
+	ID *string `json:"ID,omitempty"`
+	// Name specifies the name of the tag.
+	Name *string `json:"Name,omitempty"`
+	// Category specifies the category of the tag.
 	Category TagCategory `json:"Category,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

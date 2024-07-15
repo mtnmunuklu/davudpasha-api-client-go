@@ -7,13 +7,16 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// TagsSearchRequest represents a structure for searching tags.
 type TagsSearchRequest struct {
-	Category     TagCategory `json:"category,omitempty"`
-	SearchFilter *string     `json:"searchFilter,omitempty"`
-	// Context for the Smart REST request.
+	// Category specifies the category of tags to search for.
+	Category TagCategory `json:"category,omitempty"`
+	// SearchFilter specifies an optional filter string for tag search.
+	SearchFilter *string `json:"searchFilter,omitempty"`
+	// SmartRestRequestContext provides context for Smart REST requests.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

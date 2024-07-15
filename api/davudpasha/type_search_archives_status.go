@@ -6,26 +6,44 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SearchArchivesStatus defines the status structure for search archives.
 type SearchArchivesStatus struct {
-	SearchArchiveId       *string               `json:"SearchArchiveId,omitempty"`
-	Message               common.NullableString `json:"Message,omitempty"`
-	ExecutionStartTimeUtc *string               `json:"ExecutionStartTimeUtc,omitempty"`
-	ExecutionDurationMs   *int64                `json:"ExecutionDurationMs,omitempty"`
-	Status                *string               `json:"Status,omitempty"`
-	PauseRequest          *bool                 `json:"PauseRequest,omitempty"`
-	FoundLines            *int64                `json:"FoundLines,omitempty"`
-	ScannedLines          *int64                `json:"ScannedLines,omitempty"`
-	ProcessedFileCount    *int64                `json:"ProcessedFileCount,omitempty"`
-	ProcessedFileDate     *string               `json:"ProcessedFileDate,omitempty"`
-	ActualStartDate       *string               `json:"ActualStartDate,omitempty"`
-	ActualEndDate         *string               `json:"ActualEndDate,omitempty"`
-	LimitReached          *bool                 `json:"LimitReached,omitempty"`
-	RunningMachineIp      *string               `json:"RunningMachineIp,omitempty"`
-	TenantID              *string               `json:"TenantID,omitempty"`
-	Id                    *string               `json:"_id,omitempty"`
-	Timestamp             *string               `json:"Timestamp,omitempty"`
+	// SearchArchiveID represents the identifier of the search archive.
+	SearchArchiveID *string `json:"SearchArchiveId,omitempty"`
+	// Message contains an optional message related to the search archive status.
+	Message common.NullableString `json:"Message,omitempty"`
+	// ExecutionStartTimeUtc indicates the UTC start time of the search execution.
+	ExecutionStartTimeUtc *string `json:"ExecutionStartTimeUtc,omitempty"`
+	// ExecutionDurationMs specifies the duration of the search execution in milliseconds.
+	ExecutionDurationMs *int64 `json:"ExecutionDurationMs,omitempty"`
+	// Status indicates the current status of the search archive.
+	Status *string `json:"Status,omitempty"`
+	// PauseRequest specifies if there's a request to pause the search.
+	PauseRequest *bool `json:"PauseRequest,omitempty"`
+	// FoundLines represents the number of lines found during the search.
+	FoundLines *int64 `json:"FoundLines,omitempty"`
+	// ScannedLines indicates the number of lines scanned during the search.
+	ScannedLines *int64 `json:"ScannedLines,omitempty"`
+	// ProcessedFileCount specifies the number of files processed during the search.
+	ProcessedFileCount *int64 `json:"ProcessedFileCount,omitempty"`
+	// ProcessedFileDate indicates the date of the processed files.
+	ProcessedFileDate *string `json:"ProcessedFileDate,omitempty"`
+	// ActualStartDate indicates the actual start date of the search execution.
+	ActualStartDate *string `json:"ActualStartDate,omitempty"`
+	// ActualEndDate specifies the actual end date of the search execution.
+	ActualEndDate *string `json:"ActualEndDate,omitempty"`
+	// LimitReached specifies if any search limit was reached.
+	LimitReached *bool `json:"LimitReached,omitempty"`
+	// RunningMachineIP represents the IP address of the machine where the search is running.
+	RunningMachineIP *string `json:"RunningMachineIp,omitempty"`
+	// TenantID represents the identifier of the tenant associated with the search.
+	TenantID *string `json:"TenantID,omitempty"`
+	// ID represents the unique identifier of the search status.
+	ID *string `json:"_id,omitempty"`
+	// Timestamp indicates the timestamp associated with the search status.
+	Timestamp *string `json:"Timestamp,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -47,32 +65,32 @@ func NewSearchArchivesStatusWithDefaults() *SearchArchivesStatus {
 	return &this
 }
 
-// GetSearchArchiveId returns the SearchArchiveId field value if set, zero value otherwise.
-func (o *SearchArchivesStatus) GetSearchArchiveId() string {
-	if o == nil || o.SearchArchiveId == nil {
+// GetSearchArchiveID returns the SearchArchiveID field value if set, zero value otherwise.
+func (o *SearchArchivesStatus) GetSearchArchiveI() string {
+	if o == nil || o.SearchArchiveID == nil {
 		var ret string
 		return ret
 	}
-	return *o.SearchArchiveId
+	return *o.SearchArchiveID
 }
 
-// GetSearchArchiveIdOk returns a tuple with the SearchArchiveId field value if set, nil otherwise
+// GetSearchArchiveIDOk returns a tuple with the SearchArchiveID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchArchivesStatus) GetSearchArchiveIdOk() (*string, bool) {
-	if o == nil || o.SearchArchiveId == nil {
+func (o *SearchArchivesStatus) GetSearchArchiveIDOk() (*string, bool) {
+	if o == nil || o.SearchArchiveID == nil {
 		return nil, false
 	}
-	return o.SearchArchiveId, true
+	return o.SearchArchiveID, true
 }
 
-// HasSearchArchiveId returns a boolean if a field has been set.
-func (o *SearchArchivesStatus) HasSearchArchiveId() bool {
-	return o != nil && o.SearchArchiveId != nil
+// HasSearchArchiveID returns a boolean if a field has been set.
+func (o *SearchArchivesStatus) HasSearchArchiveID() bool {
+	return o != nil && o.SearchArchiveID != nil
 }
 
-// SetSearchArchiveId gets a reference to the given string and assigns it to the SearchArchiveId field.
-func (o *SearchArchivesStatus) SetSearchArchiveId(v string) {
-	o.SearchArchiveId = &v
+// SetSearchArchiveID gets a reference to the given string and assigns it to the SearchArchiveI field.
+func (o *SearchArchivesStatus) SetSearchArchiveID(v string) {
+	o.SearchArchiveID = &v
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -99,7 +117,7 @@ func (o *SearchArchivesStatus) HasMessage() bool {
 	return o != nil && o.Message.IsSet()
 }
 
-// SetMessage gets a reference to the given datadog.NullableString and assigns it to the Message field.
+// SetMessage gets a reference to the given common.NullableString and assigns it to the Message field.
 func (o *SearchArchivesStatus) SetMessage(v string) {
 	o.Message.Set(&v)
 }
@@ -394,32 +412,32 @@ func (o *SearchArchivesStatus) SetLimitReached(v bool) {
 	o.LimitReached = &v
 }
 
-// GetRunningMachineIp returns the RunningMachineIp field value if set, zero value otherwise.
-func (o *SearchArchivesStatus) GetRunningMachineIp() string {
-	if o == nil || o.RunningMachineIp == nil {
+// GetRunningMachineIP returns the RunningMachineIP field value if set, zero value otherwise.
+func (o *SearchArchivesStatus) GetRunningMachineIP() string {
+	if o == nil || o.RunningMachineIP == nil {
 		var ret string
 		return ret
 	}
-	return *o.RunningMachineIp
+	return *o.RunningMachineIP
 }
 
-// GetRunningMachineIpOk returns a tuple with the RunningMachineIp field value if set, nil otherwise
+// GetRunningMachineIPOk returns a tuple with the RunningMachineIP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchArchivesStatus) GetRunningMachineIpOk() (*string, bool) {
-	if o == nil || o.RunningMachineIp == nil {
+func (o *SearchArchivesStatus) GetRunningMachineIPOk() (*string, bool) {
+	if o == nil || o.RunningMachineIP == nil {
 		return nil, false
 	}
-	return o.RunningMachineIp, true
+	return o.RunningMachineIP, true
 }
 
-// HasRunningMachineIp returns a boolean if a field has been set.
-func (o *SearchArchivesStatus) HasRunningMachineIp() bool {
-	return o != nil && o.RunningMachineIp != nil
+// HasRunningMachineIP returns a boolean if a field has been set.
+func (o *SearchArchivesStatus) HasRunningMachineIP() bool {
+	return o != nil && o.RunningMachineIP != nil
 }
 
-// SetRunningMachineIp gets a reference to the given string and assigns it to the RunningMachineIp field.
-func (o *SearchArchivesStatus) SetRunningMachineIp(v string) {
-	o.RunningMachineIp = &v
+// SetRunningMachineIP gets a reference to the given string and assigns it to the RunningMachineIP field.
+func (o *SearchArchivesStatus) SetRunningMachineIP(v string) {
+	o.RunningMachineIP = &v
 }
 
 // GetTenantID returns the TenantID field value if set, zero value otherwise.
@@ -450,32 +468,32 @@ func (o *SearchArchivesStatus) SetTenantID(v string) {
 	o.TenantID = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SearchArchivesStatus) GetId() string {
-	if o == nil || o.Id == nil {
+// GetId returns the ID field value if set, zero value otherwise.
+func (o *SearchArchivesStatus) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchArchivesStatus) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *SearchArchivesStatus) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *SearchArchivesStatus) HasId() bool {
-	return o != nil && o.Id != nil
+// HasID returns a boolean if a field has been set.
+func (o *SearchArchivesStatus) HasID() bool {
+	return o != nil && o.ID != nil
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *SearchArchivesStatus) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *SearchArchivesStatus) SetID(v string) {
+	o.ID = &v
 }
 
 // GetTimestamp returns the Timestamp field value if set, zero value otherwise.
@@ -512,8 +530,8 @@ func (o SearchArchivesStatus) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.SearchArchiveId != nil {
-		toSerialize["SearchArchiveId"] = o.SearchArchiveId
+	if o.SearchArchiveID != nil {
+		toSerialize["SearchArchiveId"] = o.SearchArchiveID
 	}
 	if o.Message.IsSet() {
 		toSerialize["Message"] = o.Message.Get()
@@ -551,14 +569,14 @@ func (o SearchArchivesStatus) MarshalJSON() ([]byte, error) {
 	if o.LimitReached != nil {
 		toSerialize["LimitReached"] = o.LimitReached
 	}
-	if o.RunningMachineIp != nil {
-		toSerialize["RunningMachineIp"] = o.RunningMachineIp
+	if o.RunningMachineIP != nil {
+		toSerialize["RunningMachineIp"] = o.RunningMachineIP
 	}
 	if o.TenantID != nil {
 		toSerialize["TenantID"] = o.TenantID
 	}
-	if o.Id != nil {
-		toSerialize["Id"] = o.Id
+	if o.ID != nil {
+		toSerialize["Id"] = o.ID
 	}
 	if o.Timestamp != nil {
 		toSerialize["Timestamp"] = o.Timestamp
@@ -572,7 +590,7 @@ func (o SearchArchivesStatus) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *SearchArchivesStatus) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		SearchArchiveId       *string               `json:"SearchArchiveId,omitempty"`
+		SearchArchiveID       *string               `json:"SearchArchiveId,omitempty"`
 		Message               common.NullableString `json:"Message,omitempty"`
 		ExecutionStartTimeUtc *string               `json:"ExecutionStartTimeUtc,omitempty"`
 		ExecutionDurationMs   *int64                `json:"ExecutionDurationMs,omitempty"`
@@ -585,9 +603,9 @@ func (o *SearchArchivesStatus) UnMarshalJSON(bytes []byte) (err error) {
 		ActualStartDate       *string               `json:"ActualStartDate,omitempty"`
 		ActualEndDate         *string               `json:"ActualEndDate,omitempty"`
 		LimitReached          *bool                 `json:"LimitReached,omitempty"`
-		RunningMachineIp      *string               `json:"RunningMachineIp,omitempty"`
+		RunningMachineIP      *string               `json:"RunningMachineIp,omitempty"`
 		TenantID              *string               `json:"TenantID,omitempty"`
-		Id                    *string               `json:"_id,omitempty"`
+		ID                    *string               `json:"_id,omitempty"`
 		Timestamp             *string               `json:"Timestamp,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
@@ -601,7 +619,7 @@ func (o *SearchArchivesStatus) UnMarshalJSON(bytes []byte) (err error) {
 		return err
 	}
 
-	o.SearchArchiveId = all.SearchArchiveId
+	o.SearchArchiveID = all.SearchArchiveID
 	o.Message = all.Message
 	o.ExecutionStartTimeUtc = all.ExecutionStartTimeUtc
 	o.ExecutionDurationMs = all.ExecutionDurationMs
@@ -612,9 +630,9 @@ func (o *SearchArchivesStatus) UnMarshalJSON(bytes []byte) (err error) {
 	o.ProcessedFileCount = all.ProcessedFileCount
 	o.ProcessedFileDate = all.ProcessedFileDate
 	o.LimitReached = all.LimitReached
-	o.RunningMachineIp = all.RunningMachineIp
+	o.RunningMachineIP = all.RunningMachineIP
 	o.TenantID = all.TenantID
-	o.Id = all.Id
+	o.ID = all.ID
 	o.Timestamp = all.Timestamp
 
 	if len(additionalProperties) > 0 {

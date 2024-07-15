@@ -6,11 +6,14 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// AssetsSearchResponse represents the response structure for a search query for assets.
 type AssetsSearchResponse struct {
+	// List of assets matching the search criteria.
 	Assets []AssetsAsset `json:"assets,omitempty"`
-	Count  *int64        `json:"count,omitempty"`
+	// Total count of assets matching the search criteria.
+	Count *int64 `json:"count,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

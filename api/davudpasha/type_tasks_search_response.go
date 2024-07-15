@@ -6,40 +6,72 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// TasksSearchResponse represents the structure for task search responses.
 type TasksSearchResponse struct {
-	TaskID                      *string               `json:"TaskID,omitempty"`
-	ModelType                   *string               `json:"ModelType,omitempty"`
-	Name                        *string               `json:"Name,omitempty"`
-	IsPrivate                   *bool                 `json:"IsPrivate,omitempty"`
-	ModelID                     *string               `json:"ModelID,omitempty"`
-	OperationType               *string               `json:"OperationType,omitempty"`
-	TaskRunID                   common.NullableString `json:"TaskRunID,omitempty"`
-	ScheduleConfig              *ScheduleConfig       `json:"ScheduleConfig,omitempty"`
-	Active                      *bool                 `json:"Active,omitempty"`
-	NextPlannedTime             *string               `json:"NextPlannedTime,omitempty"`
-	LastExecutionStartTime      common.NullableString `json:"LastExecutionStartTime,omitempty"`
+	// TaskID represents the identifier of the task.
+	TaskID *string `json:"TaskID,omitempty"`
+	// ModelType specifies the type of the model associated with the task.
+	ModelType *string `json:"ModelType,omitempty"`
+	// Name specifies the name of the task.
+	Name *string `json:"Name,omitempty"`
+	// IsPrivate indicates whether the task is private.
+	IsPrivate *bool `json:"IsPrivate,omitempty"`
+	// ModelID represents the identifier of the model associated with the task.
+	ModelID *string `json:"ModelID,omitempty"`
+	// OperationType specifies the type of operation the task performs.
+	OperationType *string `json:"OperationType,omitempty"`
+	// TaskRunID represents the identifier of the task run.
+	TaskRunID common.NullableString `json:"TaskRunID,omitempty"`
+	// ScheduleConfig specifies the schedule configuration for the task.
+	ScheduleConfig *ScheduleConfig `json:"ScheduleConfig,omitempty"`
+	// Active indicates whether the task is active.
+	Active *bool `json:"Active,omitempty"`
+	// NextPlannedTime specifies the next planned execution time for the task.
+	NextPlannedTime *string `json:"NextPlannedTime,omitempty"`
+	// LastExecutionStartTime specifies the start time of the last execution of the task.
+	LastExecutionStartTime common.NullableString `json:"LastExecutionStartTime,omitempty"`
+	// LastSuccesufulExecutionTime specifies the time of the last successful execution of the task.
 	LastSuccesufulExecutionTime common.NullableString `json:"LastSuccesufulExecutionTime,omitempty"`
-	LastFailedExecutionTime     common.NullableString `json:"LastFailedExecutionTime,omitempty"`
-	CreatedDate                 *string               `json:"CreatedDate,omitempty"`
-	JwtLifeTimeSeconds          common.NullableString `json:"JwtLifeTimeSeconds,omitempty"`
-	ModuleFilter                *string               `json:"ModuleFilter,omitempty"`
-	RemoteInterfaceName         *string               `json:"RemoteInterfaceName,omitempty"`
-	RemoteMethodName            *string               `json:"RemoteMethodName,omitempty"`
-	Data                        common.NullableString `json:"Data,omitempty"`
-	MicroserviceAddress         common.NullableString `json:"MicroserviceAddress,omitempty"`
-	Result                      common.NullableString `json:"Result,omitempty"`
-	DisableRetryIfFail          *bool                 `json:"DisableRetryIfFail,omitempty"`
-	ExtraObject                 common.NullableString `json:"ExtraObject,omitempty"`
-	ExecutorName                common.NullableString `json:"ExecutorName,omitempty"`
-	ExecutorType                *string               `json:"ExecutorType,omitempty"`
-	TenantID                    *string               `json:"TenantID,omitempty"`
-	ModuleGuid                  common.NullableString `json:"ModuleGuid,omitempty"`
-	OwnerType                   *string               `json:"OwnerType,omitempty"`
-	OwnerName                   *string               `json:"OwnerName,omitempty"`
-	ApplicationName             *string               `json:"ApplicationName,omitempty"`
-	RunForAllTenants            *bool                 `json:"RunForAllTenants,omitempty"`
+	// LastFailedExecutionTime specifies the time of the last failed execution of the task.
+	LastFailedExecutionTime common.NullableString `json:"LastFailedExecutionTime,omitempty"`
+	// CreatedDate specifies the creation date of the task.
+	CreatedDate *string `json:"CreatedDate,omitempty"`
+	// JwtLifeTimeSeconds specifies the JWT lifetime in seconds.
+	JwtLifeTimeSeconds common.NullableString `json:"JwtLifeTimeSeconds,omitempty"`
+	// ModuleFilter specifies the module filter for the task.
+	ModuleFilter *string `json:"ModuleFilter,omitempty"`
+	// RemoteInterfaceName specifies the remote interface name for the task.
+	RemoteInterfaceName *string `json:"RemoteInterfaceName,omitempty"`
+	// RemoteMethodName specifies the remote method name for the task.
+	RemoteMethodName *string `json:"RemoteMethodName,omitempty"`
+	// Data specifies additional data associated with the task.
+	Data common.NullableString `json:"Data,omitempty"`
+	// MicroserviceAddress specifies the address of the microservice associated with the task.
+	MicroserviceAddress common.NullableString `json:"MicroserviceAddress,omitempty"`
+	// Result specifies the result of the task execution.
+	Result common.NullableString `json:"Result,omitempty"`
+	// DisableRetryIfFail indicates whether retry should be disabled if the task fails.
+	DisableRetryIfFail *bool `json:"DisableRetryIfFail,omitempty"`
+	// ExtraObject specifies additional object data associated with the task.
+	ExtraObject common.NullableString `json:"ExtraObject,omitempty"`
+	// ExecutorName specifies the name of the executor handling the task.
+	ExecutorName common.NullableString `json:"ExecutorName,omitempty"`
+	// ExecutorType specifies the type of the executor handling the task.
+	ExecutorType *string `json:"ExecutorType,omitempty"`
+	// TenantID represents the identifier of the tenant associated with the task.
+	TenantID *string `json:"TenantID,omitempty"`
+	// ModuleGUID specifies the GUID of the module associated with the task.
+	ModuleGUID common.NullableString `json:"ModuleGuid,omitempty"`
+	// OwnerType specifies the type of the owner associated with the task.
+	OwnerType *string `json:"OwnerType,omitempty"`
+	// OwnerName specifies the name of the owner associated with the task.
+	OwnerName *string `json:"OwnerName,omitempty"`
+	// ApplicationName specifies the name of the application associated with the task.
+	ApplicationName *string `json:"ApplicationName,omitempty"`
+	// RunForAllTenants indicates whether the task runs for all tenants.
+	RunForAllTenants *bool `json:"RunForAllTenants,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -337,7 +369,7 @@ func (o *TasksSearchResponse) HasLastExecutionStartTime() bool {
 	return o != nil && o.LastExecutionStartTime.IsSet()
 }
 
-// SetLastExecutionStartTime gets a reference to the given datadog.NullableString and assigns it to the LastExecutionStartTime field.
+// SetLastExecutionStartTime gets a reference to the given common.NullableString and assigns it to the LastExecutionStartTime field.
 func (o *TasksSearchResponse) SetLastExecutionStartTime(v string) {
 	o.LastExecutionStartTime.Set(&v)
 }
@@ -376,7 +408,7 @@ func (o *TasksSearchResponse) HasLastSuccesufulExecutionTime() bool {
 	return o != nil && o.LastSuccesufulExecutionTime.IsSet()
 }
 
-// SetLastSuccesufulExecutionTime gets a reference to the given datadog.NullableString and assigns it to the LastSuccesufulExecutionTime field.
+// SetLastSuccesufulExecutionTime gets a reference to the given common.NullableString and assigns it to the LastSuccesufulExecutionTime field.
 func (o *TasksSearchResponse) SetLastSuccesufulExecutionTime(v string) {
 	o.LastSuccesufulExecutionTime.Set(&v)
 }
@@ -415,7 +447,7 @@ func (o *TasksSearchResponse) HasLastFailedExecutionTime() bool {
 	return o != nil && o.LastFailedExecutionTime.IsSet()
 }
 
-// SetLastFailedExecutionTime gets a reference to the given datadog.NullableString and assigns it to the LastFailedExecutionTime field.
+// SetLastFailedExecutionTime gets a reference to the given common.NullableString and assigns it to the LastFailedExecutionTime field.
 func (o *TasksSearchResponse) SetLastFailedExecutionTime(v string) {
 	o.LastFailedExecutionTime.Set(&v)
 }
@@ -482,7 +514,7 @@ func (o *TasksSearchResponse) HasJwtLifeTimeSeconds() bool {
 	return o != nil && o.JwtLifeTimeSeconds.IsSet()
 }
 
-// SetJwtLifeTimeSeconds gets a reference to the given datadog.NullableString and assigns it to the JwtLifeTimeSeconds field.
+// SetJwtLifeTimeSeconds gets a reference to the given common.NullableString and assigns it to the JwtLifeTimeSeconds field.
 func (o *TasksSearchResponse) SetJwtLifeTimeSeconds(v string) {
 	o.JwtLifeTimeSeconds.Set(&v)
 }
@@ -605,7 +637,7 @@ func (o *TasksSearchResponse) HasData() bool {
 	return o != nil && o.Data.IsSet()
 }
 
-// SetData gets a reference to the given datadog.NullableString and assigns it to the Data field.
+// SetData gets a reference to the given common.NullableString and assigns it to the Data field.
 func (o *TasksSearchResponse) SetData(v string) {
 	o.Data.Set(&v)
 }
@@ -644,7 +676,7 @@ func (o *TasksSearchResponse) HasMicroserviceAddress() bool {
 	return o != nil && o.MicroserviceAddress.IsSet()
 }
 
-// SetMicroserviceAddress gets a reference to the given MicroserviceAddressdog.NullableString and assigns it to the MicroserviceAddress field.
+// SetMicroserviceAddress gets a reference to the given common.NullableString and assigns it to the MicroserviceAddress field.
 func (o *TasksSearchResponse) SetMicroserviceAddress(v string) {
 	o.MicroserviceAddress.Set(&v)
 }
@@ -683,7 +715,7 @@ func (o *TasksSearchResponse) HasResult() bool {
 	return o != nil && o.Result.IsSet()
 }
 
-// SetResult gets a reference to the given Resultdog.NullableString and assigns it to the Result field.
+// SetResult gets a reference to the given common.NullableString and assigns it to the Result field.
 func (o *TasksSearchResponse) SetResult(v string) {
 	o.Result.Set(&v)
 }
@@ -750,7 +782,7 @@ func (o *TasksSearchResponse) HasExtraObject() bool {
 	return o != nil && o.ExtraObject.IsSet()
 }
 
-// SetExtraObject gets a reference to the given ExtraObjectdog.NullableString and assigns it to the ExtraObject field.
+// SetExtraObject gets a reference to the given common.NullableString and assigns it to the ExtraObject field.
 func (o *TasksSearchResponse) SetExtraObject(v string) {
 	o.ExtraObject.Set(&v)
 }
@@ -789,7 +821,7 @@ func (o *TasksSearchResponse) HasExecutorName() bool {
 	return o != nil && o.ExecutorName.IsSet()
 }
 
-// SetExecutorName gets a reference to the given ExecutorNamedog.NullableString and assigns it to the ExecutorName field.
+// SetExecutorName gets a reference to the given common.NullableString and assigns it to the ExecutorName field.
 func (o *TasksSearchResponse) SetExecutorName(v string) {
 	o.ExecutorName.Set(&v)
 }
@@ -860,43 +892,43 @@ func (o *TasksSearchResponse) SetTenantID(v string) {
 	o.TenantID = &v
 }
 
-// GetModuleGuid returns the ModuleGuid field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TasksSearchResponse) GetModuleGuid() string {
-	if o == nil || o.ModuleGuid.Get() == nil {
+// GetModuleGUID returns the ModuleGUID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TasksSearchResponse) GetModuleGUID() string {
+	if o == nil || o.ModuleGUID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ModuleGuid.Get()
+	return *o.ModuleGUID.Get()
 }
 
-// GetModuleGuidOk returns a tuple with the ModuleGuid field value if set, nil otherwise
+// GetModuleGUIDOk returns a tuple with the ModuleGUID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *TasksSearchResponse) GetModuleGuidOk() (*string, bool) {
+func (o *TasksSearchResponse) GetModuleGUIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ModuleGuid.Get(), o.ModuleGuid.IsSet()
+	return o.ModuleGUID.Get(), o.ModuleGUID.IsSet()
 }
 
-// HasModuleGuid returns a boolean if a ModuleGuid has been set.
-func (o *TasksSearchResponse) HasModuleGuid() bool {
-	return o != nil && o.ModuleGuid.IsSet()
+// HasModuleGUID returns a boolean if a ModuleGUID has been set.
+func (o *TasksSearchResponse) HasModuleGUID() bool {
+	return o != nil && o.ModuleGUID.IsSet()
 }
 
-// SetModuleGuid gets a reference to the given ModuleGuiddog.NullableString and assigns it to the ModuleGuid field.
-func (o *TasksSearchResponse) SetModuleGuid(v string) {
-	o.ModuleGuid.Set(&v)
+// SetModuleGUID gets a reference to the given common.NullableString and assigns it to the ModuleGUID field.
+func (o *TasksSearchResponse) SetModuleGUID(v string) {
+	o.ModuleGUID.Set(&v)
 }
 
-// SetModuleGuidNil sets the value for ModuleGuid to be an explicit nil.
-func (o *TasksSearchResponse) SetModuleGuidNil() {
-	o.ModuleGuid.Set(nil)
+// SetModuleGUIDNil sets the value for ModuleGUID to be an explicit nil.
+func (o *TasksSearchResponse) SetModuleGUIDNil() {
+	o.ModuleGUID.Set(nil)
 }
 
-// UnSetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
-func (o *TasksSearchResponse) UnSetModuleGuid() {
-	o.ModuleGuid.UnSet()
+// UnSetModuleGUID ensures that no value is present for ModuleGUID, not even an explicit nil.
+func (o *TasksSearchResponse) UnSetModuleGUID() {
+	o.ModuleGUID.UnSet()
 }
 
 // GetOwnerType returns the OwnerType field value if set, zero value otherwise.
@@ -1095,8 +1127,8 @@ func (o TasksSearchResponse) MarshalJSON() ([]byte, error) {
 	if o.TenantID != nil {
 		toSerialize["TenantID"] = o.TenantID
 	}
-	if o.ModuleGuid.IsSet() {
-		toSerialize["ModuleGuid"] = o.ModuleGuid.Get()
+	if o.ModuleGUID.IsSet() {
+		toSerialize["ModuleGuid"] = o.ModuleGUID.Get()
 	}
 	if o.OwnerType != nil {
 		toSerialize["OwnerType"] = o.OwnerType
@@ -1146,7 +1178,7 @@ func (o *TasksSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 		ExecutorName                common.NullableString `json:"ExecutorName,omitempty"`
 		ExecutorType                *string               `json:"ExecutorType,omitempty"`
 		TenantID                    *string               `json:"TenantID,omitempty"`
-		ModuleGuid                  common.NullableString `json:"ModuleGuid,omitempty"`
+		ModuleGUID                  common.NullableString `json:"ModuleGuid,omitempty"`
 		OwnerType                   *string               `json:"OwnerType,omitempty"`
 		OwnerName                   *string               `json:"OwnerName,omitempty"`
 		ApplicationName             *string               `json:"ApplicationName,omitempty"`
@@ -1193,7 +1225,7 @@ func (o *TasksSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 	o.ExecutorName = all.ExecutorName
 	o.ExecutorType = all.ExecutorType
 	o.TenantID = all.TenantID
-	o.ModuleGuid = all.ModuleGuid
+	o.ModuleGUID = all.ModuleGUID
 	o.OwnerType = all.OwnerType
 	o.OwnerName = all.OwnerName
 	o.ApplicationName = all.ApplicationName

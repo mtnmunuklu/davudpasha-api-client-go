@@ -6,22 +6,36 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourceTypesLogParserData represents the structure for log parser data in source types.
 type SourceTypesLogParserData struct {
-	Delimiter              *string               `json:"Delimiter,omitempty"`
-	MustContain            common.NullableString `json:"MustContain,omitempty"`
-	MustContainParts       common.NullableInt64  `json:"MustContainParts,omitempty"`
-	Query                  *string               `json:"Query,omitempty"`
-	IDColumn               *string               `json:"IDColumn,omitempty"`
-	IDColumnType           *string               `json:"IDColumnType,omitempty"`
-	TableName              *string               `json:"TableName,omitempty"`
-	Limit                  common.NullableInt64  `json:"Limit,omitempty"`
-	LimitID                common.NullableString `json:"LimitID,omitempty"`
+	// Delimiter specifies the delimiter used in parsing logs.
+	Delimiter *string `json:"Delimiter,omitempty"`
+	// MustContain specifies a string that must be contained in the log.
+	MustContain common.NullableString `json:"MustContain,omitempty"`
+	// MustContainParts specifies the number of parts that must be contained in the log.
+	MustContainParts common.NullableInt64 `json:"MustContainParts,omitempty"`
+	// Query specifies the query associated with log parsing.
+	Query *string `json:"Query,omitempty"`
+	// IDColumn specifies the column used as the ID.
+	IDColumn *string `json:"IDColumn,omitempty"`
+	// IDColumnType specifies the type of the ID column.
+	IDColumnType *string `json:"IDColumnType,omitempty"`
+	// TableName specifies the table name associated with log parsing.
+	TableName *string `json:"TableName,omitempty"`
+	// Limit specifies the limit for log parsing.
+	Limit common.NullableInt64 `json:"Limit,omitempty"`
+	// LimitID specifies the ID limit associated with log parsing.
+	LimitID common.NullableString `json:"LimitID,omitempty"`
+	// IDDateTimeCustomFormat specifies the custom date-time format for ID.
 	IDDateTimeCustomFormat common.NullableString `json:"IDDateTimeCustomFormat,omitempty"`
-	CodeStr                *string               `json:"CodeStr,omitempty"`
-	RegexStr               *string               `json:"RegexStr,omitempty"`
-	ExpressionFieldLengths *string               `json:"ExpressionFieldLengths,omitempty"`
+	// CodeStr specifies the code string associated with log parsing.
+	CodeStr *string `json:"CodeStr,omitempty"`
+	// RegexStr specifies the regex string associated with log parsing.
+	RegexStr *string `json:"RegexStr,omitempty"`
+	// ExpressionFieldLengths specifies the lengths of expression fields associated with log parsing.
+	ExpressionFieldLengths *string `json:"ExpressionFieldLengths,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -95,7 +109,7 @@ func (o *SourceTypesLogParserData) HasMustContain() bool {
 	return o != nil && o.MustContain.IsSet()
 }
 
-// SetMustContain gets a reference to the given datadog.NullableString and assigns it to the MustContain field.
+// SetMustContain gets a reference to the given common.NullableString and assigns it to the MustContain field.
 func (o *SourceTypesLogParserData) SetMustContain(v string) {
 	o.MustContain.Set(&v)
 }
@@ -134,7 +148,7 @@ func (o *SourceTypesLogParserData) HasMustContainParts() bool {
 	return o != nil && o.MustContainParts.IsSet()
 }
 
-// SetMustContainParts gets a reference to the given datadog.Nullableint64 and assigns it to the MustContainParts field.
+// SetMustContainParts gets a reference to the given common.Nullableint64 and assigns it to the MustContainParts field.
 func (o *SourceTypesLogParserData) SetMustContainParts(v int64) {
 	o.MustContainParts.Set(&v)
 }
@@ -285,7 +299,7 @@ func (o *SourceTypesLogParserData) HasLimit() bool {
 	return o != nil && o.Limit.IsSet()
 }
 
-// SetLimit gets a reference to the given datadog.Nullableint64 and assigns it to the Limit field.
+// SetLimit gets a reference to the given common.Nullableint64 and assigns it to the Limit field.
 func (o *SourceTypesLogParserData) SetLimit(v int64) {
 	o.Limit.Set(&v)
 }
@@ -324,7 +338,7 @@ func (o *SourceTypesLogParserData) HasLimitID() bool {
 	return o != nil && o.LimitID.IsSet()
 }
 
-// SetLimitID gets a reference to the given datadog.Nullablestring and assigns it to the LimitID field.
+// SetLimitID gets a reference to the given common.Nullablestring and assigns it to the LimitID field.
 func (o *SourceTypesLogParserData) SetLimitID(v string) {
 	o.LimitID.Set(&v)
 }
@@ -363,7 +377,7 @@ func (o *SourceTypesLogParserData) HasIDDateTimeCustomFormat() bool {
 	return o != nil && o.IDDateTimeCustomFormat.IsSet()
 }
 
-// SetIDDateTimeCustomFormat gets a reference to the given datadog.Nullablestring and assigns it to the IDDateTimeCustomFormat field.
+// SetIDDateTimeCustomFormat gets a reference to the given common.Nullablestring and assigns it to the IDDateTimeCustomFormat field.
 func (o *SourceTypesLogParserData) SetIDDateTimeCustomFormat(v string) {
 	o.IDDateTimeCustomFormat.Set(&v)
 }

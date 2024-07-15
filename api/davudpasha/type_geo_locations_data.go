@@ -6,19 +6,30 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// GeoLocationsData represents geographical location data.
 type GeoLocationsData struct {
-	Id          *string               `json:"id,omitempty"`
-	StartIp     *string               `json:"startip,omitempty"`
-	EndIp       *string               `json:"endip,omitempty"`
-	CountryCode *string               `json:"countrycode,omitempty"`
-	Country     *string               `json:"country,omitempty"`
-	City        *string               `json:"city,omitempty"`
-	Region      *string               `json:"region,omitempty"`
-	Latitude    *float64              `json:"latitude,omitempty"`
-	Longitude   *float64              `json:"longitude,omitempty"`
-	IpRange     common.NullableString `json:"iprange,omitempty"`
+	// Unique identifier for the geographical location data.
+	ID *string `json:"id,omitempty"`
+	// Start IP address of the geographical range.
+	StartIP *string `json:"startip,omitempty"`
+	// End IP address of the geographical range.
+	EndIP *string `json:"endip,omitempty"`
+	// ISO 3166-1 alpha-2 country code.
+	CountryCode *string `json:"countrycode,omitempty"`
+	// Country name.
+	Country *string `json:"country,omitempty"`
+	// City name.
+	City *string `json:"city,omitempty"`
+	// Region or state name.
+	Region *string `json:"region,omitempty"`
+	// Latitude coordinate of the geographical location.
+	Latitude *float64 `json:"latitude,omitempty"`
+	// Longitude coordinate of the geographical location.
+	Longitude *float64 `json:"longitude,omitempty"`
+	// IP range associated with the geographical location.
+	IPRange common.NullableString `json:"iprange,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -40,88 +51,88 @@ func NewGeoLocationsDataWithDefaults() *GeoLocationsData {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GeoLocationsData) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *GeoLocationsData) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GeoLocationsData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *GeoLocationsData) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *GeoLocationsData) HasId() bool {
-	return o != nil && o.Id != nil
+// HasID returns a boolean if a field has been set.
+func (o *GeoLocationsData) HasID() bool {
+	return o != nil && o.ID != nil
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *GeoLocationsData) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *GeoLocationsData) SetID(v string) {
+	o.ID = &v
 }
 
-// GetStartIp returns the StartIp field value if set, zero value otherwise.
-func (o *GeoLocationsData) GetStartIp() string {
-	if o == nil || o.StartIp == nil {
+// GetStartIP returns the StartIP field value if set, zero value otherwise.
+func (o *GeoLocationsData) GetStartIP() string {
+	if o == nil || o.StartIP == nil {
 		var ret string
 		return ret
 	}
-	return *o.StartIp
+	return *o.StartIP
 }
 
-// GetStartIpOk returns a tuple with the StartIp field value if set, nil otherwise
+// GetStartIPOk returns a tuple with the StartIP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GeoLocationsData) GetStartIpOk() (*string, bool) {
-	if o == nil || o.StartIp == nil {
+func (o *GeoLocationsData) GetStartIPOk() (*string, bool) {
+	if o == nil || o.StartIP == nil {
 		return nil, false
 	}
-	return o.StartIp, true
+	return o.StartIP, true
 }
 
-// HasStartIp returns a boolean if a field has been set.
-func (o *GeoLocationsData) HasStartIp() bool {
-	return o != nil && o.StartIp != nil
+// HasStartIP returns a boolean if a field has been set.
+func (o *GeoLocationsData) HasStartIP() bool {
+	return o != nil && o.StartIP != nil
 }
 
-// SetStartIp gets a reference to the given string and assigns it to the StartIp field.
-func (o *GeoLocationsData) SetStartIp(v string) {
-	o.StartIp = &v
+// SetStartIP gets a reference to the given string and assigns it to the StartIP field.
+func (o *GeoLocationsData) SetStartIP(v string) {
+	o.StartIP = &v
 }
 
-// GetEndIp returns the EndIp field value if set, zero value otherwise.
-func (o *GeoLocationsData) GetEndIp() string {
-	if o == nil || o.EndIp == nil {
+// GetEndIP returns the EndIP field value if set, zero value otherwise.
+func (o *GeoLocationsData) GetEndIP() string {
+	if o == nil || o.EndIP == nil {
 		var ret string
 		return ret
 	}
-	return *o.EndIp
+	return *o.EndIP
 }
 
-// GetEndIpOk returns a tuple with the EndIp field value if set, nil otherwise
+// GetEndIPOk returns a tuple with the EndIP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GeoLocationsData) GetEndIpOk() (*string, bool) {
-	if o == nil || o.EndIp == nil {
+func (o *GeoLocationsData) GetEndIPOk() (*string, bool) {
+	if o == nil || o.EndIP == nil {
 		return nil, false
 	}
-	return o.EndIp, true
+	return o.EndIP, true
 }
 
-// HasEndIp returns a boolean if a field has been set.
-func (o *GeoLocationsData) HasEndIp() bool {
-	return o != nil && o.EndIp != nil
+// HasEndIP returns a boolean if a field has been set.
+func (o *GeoLocationsData) HasEndIP() bool {
+	return o != nil && o.EndIP != nil
 }
 
 // SetEndIp gets a reference to the given string and assigns it to the EndIp field.
 func (o *GeoLocationsData) SetEndIp(v string) {
-	o.EndIp = &v
+	o.EndIP = &v
 }
 
 // GetCountryCode returns the CountryCode field value if set, zero value otherwise.
@@ -294,41 +305,41 @@ func (o *GeoLocationsData) SetLongitude(v float64) {
 
 // GetIpRange returns the IpRange field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GeoLocationsData) GetIpRange() string {
-	if o == nil || o.IpRange.Get() == nil {
+	if o == nil || o.IPRange.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.IpRange.Get()
+	return *o.IPRange.Get()
 }
 
-// GetIpRangeOk returns a tuple with the IpRange field value if set, nil otherwise
+// GetIPRangeOk returns a tuple with the IPRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *GeoLocationsData) GetIpRangeOk() (*string, bool) {
+func (o *GeoLocationsData) GetIPRangeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.IpRange.Get(), o.IpRange.IsSet()
+	return o.IPRange.Get(), o.IPRange.IsSet()
 }
 
-// HasIpRange returns a boolean if a IpRange has been set.
-func (o *GeoLocationsData) HasIpRange() bool {
-	return o != nil && o.IpRange.IsSet()
+// HasIPRange returns a boolean if a IPRange has been set.
+func (o *GeoLocationsData) HasIPRange() bool {
+	return o != nil && o.IPRange.IsSet()
 }
 
-// SetIpRange gets a reference to the given datadog.NullableString and assigns it to the IpRange field.
-func (o *GeoLocationsData) SetIpRange(v string) {
-	o.IpRange.Set(&v)
+// SetIPRange gets a reference to the given common.NullableString and assigns it to the IPRange field.
+func (o *GeoLocationsData) SetIPRange(v string) {
+	o.IPRange.Set(&v)
 }
 
-// SetIpRangeNil sets the value for IpRange to be an explicit nil.
-func (o *GeoLocationsData) SetIpRangeNil() {
-	o.IpRange.Set(nil)
+// SetIPRangeNil sets the value for IPRange to be an explicit nil.
+func (o *GeoLocationsData) SetIPRangeNil() {
+	o.IPRange.Set(nil)
 }
 
-// UnSetIpRange ensures that no value is present for IpRange, not even an explicit nil.
-func (o *GeoLocationsData) UnSetIpRange() {
-	o.IpRange.UnSet()
+// UnSetIPRange ensures that no value is present for IPRange, not even an explicit nil.
+func (o *GeoLocationsData) UnSetIPRange() {
+	o.IPRange.UnSet()
 }
 
 // MarshalJSON serializes the struct using spec logic.
@@ -337,14 +348,14 @@ func (o GeoLocationsData) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
-	if o.StartIp != nil {
-		toSerialize["startip"] = o.StartIp
+	if o.StartIP != nil {
+		toSerialize["startip"] = o.StartIP
 	}
-	if o.EndIp != nil {
-		toSerialize["endip"] = o.EndIp
+	if o.EndIP != nil {
+		toSerialize["endip"] = o.EndIP
 	}
 	if o.CountryCode != nil {
 		toSerialize["countrycode"] = o.CountryCode
@@ -364,8 +375,8 @@ func (o GeoLocationsData) MarshalJSON() ([]byte, error) {
 	if o.Longitude != nil {
 		toSerialize["longitude"] = o.Longitude
 	}
-	if o.IpRange.IsSet() {
-		toSerialize["iprange"] = o.IpRange.Get()
+	if o.IPRange.IsSet() {
+		toSerialize["iprange"] = o.IPRange.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -377,16 +388,16 @@ func (o GeoLocationsData) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *GeoLocationsData) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Id          *string               `json:"id,omitempty"`
-		StartIp     *string               `json:"startip,omitempty"`
-		EndIp       *string               `json:"endip,omitempty"`
+		ID          *string               `json:"id,omitempty"`
+		StartIP     *string               `json:"startip,omitempty"`
+		EndIP       *string               `json:"endip,omitempty"`
 		CountryCode *string               `json:"countrycode,omitempty"`
 		Country     *string               `json:"country,omitempty"`
 		City        *string               `json:"city,omitempty"`
 		Region      *string               `json:"region,omitempty"`
 		Latitude    *float64              `json:"latitude,omitempty"`
 		Longitude   *float64              `json:"longitude,omitempty"`
-		IpRange     common.NullableString `json:"iprange,omitempty"`
+		IPRange     common.NullableString `json:"iprange,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
@@ -399,16 +410,16 @@ func (o *GeoLocationsData) UnMarshalJSON(bytes []byte) (err error) {
 		return err
 	}
 
-	o.Id = all.Id
-	o.StartIp = all.StartIp
-	o.EndIp = all.EndIp
+	o.ID = all.ID
+	o.StartIP = all.StartIP
+	o.EndIP = all.EndIP
 	o.CountryCode = all.CountryCode
 	o.Country = all.Country
 	o.City = all.City
 	o.Region = all.Region
 	o.Latitude = all.Latitude
 	o.Longitude = all.Longitude
-	o.IpRange = all.IpRange
+	o.IPRange = all.IPRange
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties

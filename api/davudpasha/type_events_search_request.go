@@ -15,9 +15,9 @@ type EventsSearchRequest struct {
 	Query *QueryFilter `json:"query,omitempty"`
 	// SmartRestRequestContext is the context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
+	// Raw value if deserialization fails.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

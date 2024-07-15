@@ -15,7 +15,7 @@ type QueriesSearchResponse struct {
 	// List of successful items.
 	SuccessItems []SuccessItem `json:"SuccessItems,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

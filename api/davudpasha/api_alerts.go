@@ -22,6 +22,7 @@ func NewSearchAlertsOptionalParameters() *SearchAlertsOptionalParameters {
 	return &this
 }
 
+// WithBody sets the corresponding parameter name and returns the struct.
 func (r *SearchAlertsOptionalParameters) WithBody(body AlertsSearchRequest) *SearchAlertsOptionalParameters {
 	r.Body = &body
 	return r

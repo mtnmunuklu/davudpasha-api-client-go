@@ -23,7 +23,7 @@ type ReportsQuery struct {
 	// Extended data for the query.
 	ExtData NullableReportsQueryExtData `json:"ExtData,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -237,7 +237,7 @@ func (o *ReportsQuery) HasExtData() bool {
 	return o != nil && o.ExtData.IsSet()
 }
 
-// SetExtData gets a reference to the given datadog.NullableString and assigns it to the ExtData field.
+// SetExtData gets a reference to the given common.NullableString and assigns it to the ExtData field.
 func (o *ReportsQuery) SetExtData(v ReportsQueryExtData) {
 	o.ExtData.Set(&v)
 }

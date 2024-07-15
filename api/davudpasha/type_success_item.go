@@ -14,9 +14,9 @@ type SuccessItem struct {
 	Keys []string `json:"Keys,omitempty"`
 	// Source type of the success item.
 	SourceType *string `json:"SourceType,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Raw value if deserialization fails.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

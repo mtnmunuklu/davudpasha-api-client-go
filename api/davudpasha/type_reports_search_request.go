@@ -19,7 +19,7 @@ type ReportsSearchRequest struct {
 	// Indicates whether to show passive reports.
 	ShowPassive *bool `json:"showPassive,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -121,7 +121,7 @@ func (o *ReportsSearchRequest) HasStartDate() bool {
 	return o != nil && o.StartDate.IsSet()
 }
 
-// SetStartDate gets a reference to the given datadog.NullableString and assigns it to the StartDate field.
+// SetStartDate gets a reference to the given common.NullableString and assigns it to the StartDate field.
 func (o *ReportsSearchRequest) SetStartDate(v string) {
 	o.StartDate.Set(&v)
 }

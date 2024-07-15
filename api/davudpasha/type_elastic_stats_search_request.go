@@ -7,13 +7,14 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ElasticStatsSearchRequest represents the request structure for searching Elasticsearch statistics.
 type ElasticStatsSearchRequest struct {
-	// Filter for searching sources.
+	// Filter criterion for searching Elasticsearch sources.
 	SearchFilter *string `json:"searchFilter,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

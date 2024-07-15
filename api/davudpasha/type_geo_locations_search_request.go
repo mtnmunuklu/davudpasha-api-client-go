@@ -6,14 +6,16 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// GeoLocationsSearchRequest represents a search request structure for geographical locations.
 type GeoLocationsSearchRequest struct {
+	// Query filter for searching geographical locations.
 	Query *QueryFilter `json:"query,omitempty"`
 	// Filter for searching sources.
 	Filter *string `json:"filter,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

@@ -7,22 +7,35 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourceTypesExpressionField represents the structure for expression fields in source types.
 type SourceTypesExpressionField struct {
-	Name                             *string                          `json:"Name,omitempty"`
-	ValueName                        common.NullableString            `json:"ValueName,omitempty"`
-	Type                             *string                          `json:"Type,omitempty"`
-	DateFormat                       common.NullableString            `json:"DateFormat,omitempty"`
-	DateLang                         common.NullableString            `json:"DateLang,omitempty"`
-	DateTrim                         *bool                            `json:"DateTrim,omitempty"`
-	StartIndex                       *int64                           `json:"StartIndex,omitempty"`
-	EndIndex                         *int64                           `json:"EndIndex,omitempty"`
-	Used                             *bool                            `json:"Used,omitempty"`
-	Index                            *bool                            `json:"Index,omitempty"`
-	Normalization                    NullableSourceTypesNormalization `json:"Normalization,omitempty"`
-	CorrectTwoDigitDayFormatPosition *int64                           `json:"CorrectTwoDigitDayFormat_Position,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Name specifies the name of the expression field.
+	Name *string `json:"Name,omitempty"`
+	// ValueName indicates the value name associated with the expression field.
+	ValueName common.NullableString `json:"ValueName,omitempty"`
+	// Type specifies the type of the expression field.
+	Type *string `json:"Type,omitempty"`
+	// DateFormat specifies the date format for the expression field.
+	DateFormat common.NullableString `json:"DateFormat,omitempty"`
+	// DateLang specifies the date language for the expression field.
+	DateLang common.NullableString `json:"DateLang,omitempty"`
+	// DateTrim specifies if date trimming is enabled for the expression field.
+	DateTrim *bool `json:"DateTrim,omitempty"`
+	// StartIndex specifies the starting index for the expression field.
+	StartIndex *int64 `json:"StartIndex,omitempty"`
+	// EndIndex specifies the ending index for the expression field.
+	EndIndex *int64 `json:"EndIndex,omitempty"`
+	// Used indicates if the expression field is used.
+	Used *bool `json:"Used,omitempty"`
+	// Index specifies if indexing is enabled for the expression field.
+	Index *bool `json:"Index,omitempty"`
+	// Normalization specifies the normalization settings for the expression field.
+	Normalization NullableSourceTypesNormalization `json:"Normalization,omitempty"`
+	// CorrectTwoDigitDayFormatPosition specifies the position for correcting two-digit day format.
+	CorrectTwoDigitDayFormatPosition *int64 `json:"CorrectTwoDigitDayFormat_Position,omitempty"`
+	// Raw value if deserialization fails.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 
@@ -95,7 +108,7 @@ func (o *SourceTypesExpressionField) HasValueName() bool {
 	return o != nil && o.ValueName.IsSet()
 }
 
-// SetValueName gets a reference to the given datadog.NullableString and assigns it to the ValueName field.
+// SetValueName gets a reference to the given common.NullableString and assigns it to the ValueName field.
 func (o *SourceTypesExpressionField) SetValueName(v string) {
 	o.ValueName.Set(&v)
 }
@@ -162,7 +175,7 @@ func (o *SourceTypesExpressionField) HasDateFormat() bool {
 	return o != nil && o.DateFormat.IsSet()
 }
 
-// SetDateFormat gets a reference to the given datadog.NullableString and assigns it to the DateFormat field.
+// SetDateFormat gets a reference to the given common.NullableString and assigns it to the DateFormat field.
 func (o *SourceTypesExpressionField) SetDateFormat(v string) {
 	o.DateFormat.Set(&v)
 }
@@ -201,7 +214,7 @@ func (o *SourceTypesExpressionField) HasDateLang() bool {
 	return o != nil && o.DateLang.IsSet()
 }
 
-// SetDateLang gets a reference to the given datadog.NullableString and assigns it to the DateLang field.
+// SetDateLang gets a reference to the given common.NullableString and assigns it to the DateLang field.
 func (o *SourceTypesExpressionField) SetDateLang(v string) {
 	o.DateLang.Set(&v)
 }
@@ -380,7 +393,7 @@ func (o *SourceTypesExpressionField) HasNormalization() bool {
 	return o != nil && o.Normalization.IsSet()
 }
 
-// SetNormalization gets a reference to the given datadog.NullableString and assigns it to the Normalization field.
+// SetNormalization gets a reference to the given common.NullableString and assigns it to the Normalization field.
 func (o *SourceTypesExpressionField) SetNormalization(v SourceTypesNormalization) {
 	o.Normalization.Set(&v)
 }

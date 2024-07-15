@@ -6,12 +6,16 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// CasesMitreData represents MITRE-related data associated with a case.
 type CasesMitreData struct {
-	CreationDate   *string               `json:"CreationDate,omitempty"`
+	// Date when the MITRE data was created.
+	CreationDate *string `json:"CreationDate,omitempty"`
+	// Kill chain phase associated with the MITRE data, which can be null.
 	KillChainPhase common.NullableString `json:"KillChainPhase,omitempty"`
-	MitreTags      []MitreTag            `json:"MitreTags,omitempty"`
+	// List of MITRE tags associated with the case.
+	MitreTags []MitreTag `json:"MitreTags,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -85,7 +89,7 @@ func (o *CasesMitreData) HasKillChainPhase() bool {
 	return o != nil && o.KillChainPhase.IsSet()
 }
 
-// SetKillChainPhase gets a reference to the given datadog.NullableString and assigns it to the KillChainPhase field.
+// SetKillChainPhase gets a reference to the given common.NullableString and assigns it to the KillChainPhase field.
 func (o *CasesMitreData) SetKillChainPhase(v string) {
 	o.KillChainPhase.Set(&v)
 }

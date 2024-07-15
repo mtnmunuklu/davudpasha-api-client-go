@@ -15,7 +15,7 @@ type ReportsParameters struct {
 	// Indicates if the report is active.
 	IsActive *bool `json:"IsActive,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

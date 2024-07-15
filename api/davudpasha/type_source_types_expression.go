@@ -7,14 +7,20 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourceTypesExpression represents the structure for expressions in source types.
 type SourceTypesExpression struct {
-	Name                  *string                   `json:"Name,omitempty"`
-	ExcludeThisExpression *bool                     `json:"ExcludeThisExpression,omitempty"`
-	LogParserType         *string                   `json:"LogParserType,omitempty"`
-	LogParserData         *SourceTypesLogParserData `json:"LogParserData,omitempty"`
-	Mapping               []SourceTypesMapping      `json:"Mapping,omitempty"`
+	// Name specifies the name of the expression.
+	Name *string `json:"Name,omitempty"`
+	// ExcludeThisExpression indicates whether to exclude this expression.
+	ExcludeThisExpression *bool `json:"ExcludeThisExpression,omitempty"`
+	// LogParserType specifies the type of the log parser used.
+	LogParserType *string `json:"LogParserType,omitempty"`
+	// LogParserData contains the log parser data for the expression.
+	LogParserData *SourceTypesLogParserData `json:"LogParserData,omitempty"`
+	// Mapping specifies the mappings associated with the expression.
+	Mapping []SourceTypesMapping `json:"Mapping,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

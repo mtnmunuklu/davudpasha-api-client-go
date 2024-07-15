@@ -22,6 +22,7 @@ func NewSearchGeoLocationsOptionalParameters() *SearchGeoLocationsOptionalParame
 	return &this
 }
 
+// WithBody sets the corresponding parameter name and returns the struct.
 func (r *SearchGeoLocationsOptionalParameters) WithBody(body GeoLocationsSearchRequest) *SearchGeoLocationsOptionalParameters {
 	r.Body = &body
 	return r

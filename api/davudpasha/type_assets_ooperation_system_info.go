@@ -6,17 +6,26 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// AssetsOperationSystemInfo represents detailed information about the operating system of an asset.
 type AssetsOperationSystemInfo struct {
-	Caption        *string `json:"Caption,omitempty"`
-	Manufacturer   *string `json:"Manufacturer,omitempty"`
+	// Caption or name of the operating system.
+	Caption *string `json:"Caption,omitempty"`
+	// Manufacturer of the operating system.
+	Manufacturer *string `json:"Manufacturer,omitempty"`
+	// Architecture of the operating system (e.g., 32-bit, 64-bit).
 	OSArchitecture *string `json:"OSArchitecture,omitempty"`
-	ServisPack     *string `json:"ServisPack,omitempty"`
-	SerialNumber   *string `json:"SerialNumber,omitempty"`
-	Version        *string `json:"Version,omitempty"`
-	BuildNumber    *string `json:"BuildNumber,omitempty"`
-	Description    *string `json:"Description,omitempty"`
+	// Service pack version of the operating system.
+	ServisPack *string `json:"ServisPack,omitempty"`
+	// Serial number of the operating system.
+	SerialNumber *string `json:"SerialNumber,omitempty"`
+	// Version of the operating system.
+	Version *string `json:"Version,omitempty"`
+	// Build number of the operating system.
+	BuildNumber *string `json:"BuildNumber,omitempty"`
+	// Description of the operating system.
+	Description *string `json:"Description,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

@@ -6,13 +6,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ElasticStatsResult represents the result structure for Elasticsearch statistics.
 type ElasticStatsResult struct {
-	Status         *bool                 `json:"Status,omitempty"`
-	ValidationList []string              `json:"ValidationList,omitempty"`
-	Data           common.NullableString `json:"Data,omitempty"`
-	OptErrorMsg    common.NullableString `json:"optErrorMsg,omitempty"`
+	// Status of the Elasticsearch operation.
+	Status *bool `json:"Status,omitempty"`
+	// List of validation messages.
+	ValidationList []string `json:"ValidationList,omitempty"`
+	// Data associated with the result, which can be null.
+	Data common.NullableString `json:"Data,omitempty"`
+	// Optional error message, which can be null.
+	OptErrorMsg common.NullableString `json:"optErrorMsg,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -114,7 +119,7 @@ func (o *ElasticStatsResult) HasData() bool {
 	return o != nil && o.Data.IsSet()
 }
 
-// SetData gets a reference to the given datadog.NullableString and assigns it to the Data field.
+// SetData gets a reference to the given common.NullableString and assigns it to the Data field.
 func (o *ElasticStatsResult) SetData(v string) {
 	o.Data.Set(&v)
 }
@@ -153,7 +158,7 @@ func (o *ElasticStatsResult) HasOptErrorMsg() bool {
 	return o != nil && o.OptErrorMsg.IsSet()
 }
 
-// SetOptErrorMsg gets a reference to the given OptErrorMsgdog.NullableString and assigns it to the OptErrorMsg field.
+// SetOptErrorMsg gets a reference to the given common.NullableString and assigns it to the OptErrorMsg field.
 func (o *ElasticStatsResult) SetOptErrorMsg(v string) {
 	o.OptErrorMsg.Set(&v)
 }

@@ -9,17 +9,18 @@ import (
 
 // DateTimeRange represents a range of date and time.
 type DateTimeRange struct {
-	// DateTimeType specifies the type of date time range
+	// DateTimeType specifies the type of date time range.
 	DateTimeType DateTimeType `json:"DateTimeType"`
-	// StartDate is the start date of the range
+	// StartDate is the start date of the range.
 	StartDate *string `json:"StartDate,omitempty"`
-	// EndDate is the end date of the range
-	EndDate *string               `json:"EndDate,omitempty"`
-	Field   common.NullableString `json:"Field,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct
-	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct
-	AdditionalProperties map[string]interface{}
+	// EndDate is the end date of the range.
+	EndDate *string `json:"EndDate,omitempty"`
+	// Field specifies the field related to the date time range.
+	Field common.NullableString `json:"Field,omitempty"`
+	// Raw value if deserialization fails.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// Additional properties not defined in the struct.
+	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
 // NewDateTimeRange creates a new DateTimeRange object.
@@ -144,7 +145,7 @@ func (o *DateTimeRange) HasField() bool {
 	return o != nil && o.Field.IsSet()
 }
 
-// SetField gets a reference to the given datadog.NullableString and assigns it to the Field field.
+// SetField gets a reference to the given common.NullableString and assigns it to the Field field.
 func (o *DateTimeRange) SetField(v string) {
 	o.Field.Set(&v)
 }

@@ -13,11 +13,11 @@ type ReportsLatestReportFile struct {
 	// Status of the latest report file.
 	Status *string `json:"Status,omitempty"`
 	// ID of the latest report file in GridFS.
-	ReportGridFSFileId *string `json:"ReportGridFSFileId,omitempty"`
+	ReportGridFSFileID *string `json:"ReportGridFSFileId,omitempty"`
 	// Run date of the latest report file.
 	RunDate *string `json:"RunDate,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -95,32 +95,32 @@ func (o *ReportsLatestReportFile) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetReportGridFSFileId returns the ReportGridFSFileId field value if set, zero value otherwise.
-func (o *ReportsLatestReportFile) GetReportGridFSFileId() string {
-	if o == nil || o.ReportGridFSFileId == nil {
+// GetReportGridFSFileID returns the ReportGridFSFileID field value if set, zero value otherwise.
+func (o *ReportsLatestReportFile) GetReportGridFSFileID() string {
+	if o == nil || o.ReportGridFSFileID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ReportGridFSFileId
+	return *o.ReportGridFSFileID
 }
 
-// GetReportGridFSFileIdOk returns a tuple with the ReportGridFSFileId field value if set, nil otherwise
+// GetReportGridFSFileIDOk returns a tuple with the ReportGridFSFileID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsLatestReportFile) GetReportGridFSFileIdOk() (*string, bool) {
-	if o == nil || o.ReportGridFSFileId == nil {
+func (o *ReportsLatestReportFile) GetReportGridFSFileIDOk() (*string, bool) {
+	if o == nil || o.ReportGridFSFileID == nil {
 		return nil, false
 	}
-	return o.ReportGridFSFileId, true
+	return o.ReportGridFSFileID, true
 }
 
-// HasReportGridFSFileId returns a boolean if a field has been set.
-func (o *ReportsLatestReportFile) HasReportGridFSFileId() bool {
-	return o != nil && o.ReportGridFSFileId != nil
+// HasReportGridFSFileID returns a boolean if a field has been set.
+func (o *ReportsLatestReportFile) HasReportGridFSFileID() bool {
+	return o != nil && o.ReportGridFSFileID != nil
 }
 
-// SetReportGridFSFileId gets a reference to the given string and assigns it to the ReportGridFSFileId field.
-func (o *ReportsLatestReportFile) SetReportGridFSFileId(v string) {
-	o.ReportGridFSFileId = &v
+// SetReportGridFSFileID gets a reference to the given string and assigns it to the ReportGridFSFileID field.
+func (o *ReportsLatestReportFile) SetReportGridFSFileID(v string) {
+	o.ReportGridFSFileID = &v
 }
 
 // GetRunDate returns the RunDate field value if set, zero value otherwise.
@@ -163,8 +163,8 @@ func (o ReportsLatestReportFile) MarshalJSON() ([]byte, error) {
 	if o.Status != nil {
 		toSerialize["Status"] = o.Status
 	}
-	if o.ReportGridFSFileId != nil {
-		toSerialize["ReportGridFSFileId"] = o.ReportGridFSFileId
+	if o.ReportGridFSFileID != nil {
+		toSerialize["ReportGridFSFileId"] = o.ReportGridFSFileID
 	}
 	if o.RunDate != nil {
 		toSerialize["RunDate"] = o.RunDate
@@ -181,7 +181,7 @@ func (o *ReportsLatestReportFile) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		Filename           *string `json:"Filename,omitempty"`
 		Status             *string `json:"Status,omitempty"`
-		ReportGridFSFileId *string `json:"ReportGridFSFileId,omitempty"`
+		ReportGridFSFileID *string `json:"ReportGridFSFileId,omitempty"`
 		RunDate            *string `json:"RunDate,omitempty"`
 	}{}
 
@@ -194,7 +194,7 @@ func (o *ReportsLatestReportFile) UnMarshalJSON(bytes []byte) (err error) {
 
 	o.Filename = all.Filename
 	o.Status = all.Status
-	o.ReportGridFSFileId = all.ReportGridFSFileId
+	o.ReportGridFSFileID = all.ReportGridFSFileID
 	o.RunDate = all.RunDate
 
 	if len(additionalProperties) > 0 {

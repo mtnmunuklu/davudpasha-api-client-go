@@ -14,9 +14,9 @@ type SourcesLogOperation struct {
 	Priority *string `json:"Priority,omitempty"`
 	// Parameters for the log operation.
 	Parameters *json.RawMessage `json:"Parameters,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

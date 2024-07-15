@@ -6,15 +6,22 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// CasesFileAttachment represents the structure of a file attachment in a case.
 type CasesFileAttachment struct {
-	FileId        *string `json:"FileId,omitempty"`
-	FileName      *string `json:"FileName,omitempty"`
-	MD5Hash       *string `json:"MD5Hash,omitempty"`
-	SHA256Hash    *string `json:"SHA256Hash,omitempty"`
-	FileSize      *string `json:"FileSize"`
+	// Unique identifier for the file.
+	FileID *string `json:"FileId,omitempty"`
+	// Name of the file.
+	FileName *string `json:"FileName,omitempty"`
+	// MD5 hash of the file.
+	MD5Hash *string `json:"MD5Hash,omitempty"`
+	// SHA-256 hash of the file.
+	SHA256Hash *string `json:"SHA256Hash,omitempty"`
+	// Size of the file.
+	FileSize *string `json:"FileSize"`
+	// Extension of the file.
 	FileExtension *string `json:"FileExtension,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -36,32 +43,32 @@ func NewCasesFileAttachmentWithDefaults() *CasesFileAttachment {
 	return &this
 }
 
-// GetFileId returns the FileId field value if set, zero value otherwise.
-func (o *CasesFileAttachment) GetFileId() string {
-	if o == nil || o.FileId == nil {
+// GetFileID returns the FileID field value if set, zero value otherwise.
+func (o *CasesFileAttachment) GetFileID() string {
+	if o == nil || o.FileID == nil {
 		var ret string
 		return ret
 	}
-	return *o.FileId
+	return *o.FileID
 }
 
-// GetFileIdOk returns a tuple with the FileId field value if set, nil otherwise
+// GetFileIDOk returns a tuple with the FileID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CasesFileAttachment) GetFileIdOk() (*string, bool) {
-	if o == nil || o.FileId == nil {
+func (o *CasesFileAttachment) GetFileIDOk() (*string, bool) {
+	if o == nil || o.FileID == nil {
 		return nil, false
 	}
-	return o.FileId, true
+	return o.FileID, true
 }
 
-// HasFileId returns a boolean if a field has been set.
-func (o *CasesFileAttachment) HasFileId() bool {
-	return o != nil && o.FileId != nil
+// HasFileID returns a boolean if a field has been set.
+func (o *CasesFileAttachment) HasFileID() bool {
+	return o != nil && o.FileID != nil
 }
 
-// SetFileId gets a reference to the given string and assigns it to the FileId field.
-func (o *CasesFileAttachment) SetFileId(v string) {
-	o.FileId = &v
+// SetFileID gets a reference to the given string and assigns it to the FileID field.
+func (o *CasesFileAttachment) SetFileID(v string) {
+	o.FileID = &v
 }
 
 // GetFileName returns the FileName field value if set, zero value otherwise.
@@ -182,8 +189,8 @@ func (o CasesFileAttachment) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.FileId != nil {
-		toSerialize["FileId"] = o.FileId
+	if o.FileID != nil {
+		toSerialize["FileId"] = o.FileID
 	}
 	if o.FileName != nil {
 		toSerialize["FileName"] = o.FileName
@@ -210,7 +217,7 @@ func (o CasesFileAttachment) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *CasesFileAttachment) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		FileId        *string `json:"FileId,omitempty"`
+		FileID        *string `json:"FileId,omitempty"`
 		FileName      *string `json:"FileName,omitempty"`
 		MD5Hash       *string `json:"MD5Hash,omitempty"`
 		SHA256Hash    *string `json:"SHA256Hash,omitempty"`
@@ -228,7 +235,7 @@ func (o *CasesFileAttachment) UnMarshalJSON(bytes []byte) (err error) {
 		return err
 	}
 
-	o.FileId = all.FileId
+	o.FileID = all.FileID
 	o.FileName = all.FileName
 	o.MD5Hash = all.MD5Hash
 	o.SHA256Hash = all.SHA256Hash

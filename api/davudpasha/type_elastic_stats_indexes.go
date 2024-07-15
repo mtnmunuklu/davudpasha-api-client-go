@@ -6,18 +6,28 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ElasticStatsIndexes represents statistics for Elasticsearch indexes.
 type ElasticStatsIndexes struct {
-	DocsCount        *int64   `json:"DocsCount,omitempty"`
-	Health           *string  `json:"Health,omitempty"`
-	Index            *string  `json:"Index,omitempty"`
-	StoreSizeMB      *float64 `json:"StoreSizeMB,omitempty"`
-	Status           *string  `json:"Status,omitempty"`
-	IndexType        *string  `json:"IndexType,omitempty"`
-	ReplicaCount     *string  `json:"ReplicaCount,omitempty"`
-	PrimaryCount     *string  `json:"PrimaryCount,omitempty"`
-	PrimaryStoreSize *string  `json:"PrimaryStoreSize,omitempty"`
+	// Number of documents in the index.
+	DocsCount *int64 `json:"DocsCount,omitempty"`
+	// Health status of the index.
+	Health *string `json:"Health,omitempty"`
+	// Name of the index.
+	Index *string `json:"Index,omitempty"`
+	// Store size of the index in megabytes.
+	StoreSizeMB *float64 `json:"StoreSizeMB,omitempty"`
+	// Status of the index.
+	Status *string `json:"Status,omitempty"`
+	// Type of the index.
+	IndexType *string `json:"IndexType,omitempty"`
+	// Replica count for the index.
+	ReplicaCount *string `json:"ReplicaCount,omitempty"`
+	// Primary shard count for the index.
+	PrimaryCount *string `json:"PrimaryCount,omitempty"`
+	// Size of primary shards for the index.
+	PrimaryStoreSize *string `json:"PrimaryStoreSize,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

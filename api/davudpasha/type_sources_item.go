@@ -10,7 +10,7 @@ import (
 // SourcesItem represents an item in the sources.
 type SourcesItem struct {
 	// ID of the source item.
-	Id *string `json:"Id,omitempty"`
+	ID *string `json:"Id,omitempty"`
 	// Indicates if the source item is enabled.
 	Enabled *bool `json:"Enabled,omitempty"`
 	// Name of the source item.
@@ -42,13 +42,13 @@ type SourcesItem struct {
 	// Indicates if the source item is an agent source.
 	IsAgentSource *bool `json:"IsAgentSource,omitempty"`
 	// IDs of associated agents.
-	AgentIds common.NullableList[string] `json:"AgentIds,omitempty"`
+	AgentIDs common.NullableList[string] `json:"AgentIds,omitempty"`
 	// Name of the index group.
 	IndexGroupName common.NullableString `json:"IndexGroupName,omitempty"`
 	// Name of the associated dashboard.
 	DashboardName *string `json:"dashboardName,omitempty"`
 	// ID of the associated dashboard.
-	DashboardId common.NullableString `json:"dashboardId,omitempty"`
+	DashboardID common.NullableString `json:"dashboardId,omitempty"`
 	// Asset tags associated with the source item.
 	AssetTags common.NullableList[string] `json:"AssetTags,omitempty"`
 	// Time to remove logs.
@@ -56,7 +56,7 @@ type SourcesItem struct {
 	// Format to remove logs.
 	LogRemoveFormat common.NullableString `json:"LogRemoveFormat,omitempty"`
 	// ID of the associated agent.
-	AgentId common.NullableString `json:"AgentId,omitempty"`
+	AgentID common.NullableString `json:"AgentId,omitempty"`
 	// Indicates if raw logs should be written.
 	WriteRawLogs *bool `json:"WriteRawLogs,omitempty"`
 	// Indicates if a secondary writer should be used.
@@ -96,32 +96,32 @@ func NewSourcesItemWithDefaults() *SourcesItem {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SourcesItem) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *SourcesItem) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItem) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *SourcesItem) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *SourcesItem) HasId() bool {
-	return o != nil && o.Id != nil
+// HasID returns a boolean if a field has been set.
+func (o *SourcesItem) HasID() bool {
+	return o != nil && o.ID != nil
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *SourcesItem) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *SourcesItem) SetID(v string) {
+	o.ID = &v
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -204,7 +204,7 @@ func (o *SourcesItem) HasGroup() bool {
 	return o != nil && o.Group.IsSet()
 }
 
-// SetGroup gets a reference to the given datadog.NullableString and assigns it to the Group field.
+// SetGroup gets a reference to the given common.NullableString and assigns it to the Group field.
 func (o *SourcesItem) SetGroup(v string) {
 	o.Group.Set(&v)
 }
@@ -243,7 +243,7 @@ func (o *SourcesItem) HasAuthor() bool {
 	return o != nil && o.Author.IsSet()
 }
 
-// SetAuthor gets a reference to the given datadog.NullableString and assigns it to the Author field.
+// SetAuthor gets a reference to the given common.NullableString and assigns it to the Author field.
 func (o *SourcesItem) SetAuthor(v string) {
 	o.Author.Set(&v)
 }
@@ -566,43 +566,43 @@ func (o *SourcesItem) SetIsAgentSource(v bool) {
 	o.IsAgentSource = &v
 }
 
-// GetAgentIds returns the AgentIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItem) GetAgentIds() []string {
-	if o == nil || o.AgentIds.Get() == nil {
+// GetAgentIDs returns the AgentIDs field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SourcesItem) GetAgentIDs() []string {
+	if o == nil || o.AgentIDs.Get() == nil {
 		var ret []string
 		return ret
 	}
-	return *o.AgentIds.Get()
+	return *o.AgentIDs.Get()
 }
 
-// GetAgentIdsOk returns a tuple with the AgentIds field value if set, nil otherwise
+// GetAgentIDsOk returns a tuple with the AgentIDs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItem) GetAgentIdsOk() (*[]string, bool) {
+func (o *SourcesItem) GetAgentIDsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.AgentIds.Get(), o.AgentIds.IsSet()
+	return o.AgentIDs.Get(), o.AgentIDs.IsSet()
 }
 
-// HasAgentIds returns a boolean if a AgentIds has been set.
-func (o *SourcesItem) HasAgentIds() bool {
-	return o != nil && o.AgentIds.IsSet()
+// HasAgentIDs returns a boolean if a AgentIds has been set.
+func (o *SourcesItem) HasAgentIDs() bool {
+	return o != nil && o.AgentIDs.IsSet()
 }
 
-// SetAgentIds gets a reference to the given datadog.Nullable[]string and assigns it to the AgentIds field.
-func (o *SourcesItem) SetAgentIds(v []string) {
-	o.AgentIds.Set(&v)
+// SetAgentIDs gets a reference to the given common.Nullable[]string and assigns it to the AgentIDs field.
+func (o *SourcesItem) SetAgentIDs(v []string) {
+	o.AgentIDs.Set(&v)
 }
 
-// SetAgentIdsNil sets the value for AgentIds to be an explicit nil.
-func (o *SourcesItem) SetAgentIdsNil() {
-	o.AgentIds.Set(nil)
+// SetAgentIDsNil sets the value for AgentIDs to be an explicit nil.
+func (o *SourcesItem) SetAgentIDsNil() {
+	o.AgentIDs.Set(nil)
 }
 
 // UnSetAgentIds ensures that no value is present for AgentIds, not even an explicit nil.
 func (o *SourcesItem) UnSetAgentIds() {
-	o.AgentIds.UnSet()
+	o.AgentIDs.UnSet()
 }
 
 // GetIndexGroupName returns the IndexGroupName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -629,7 +629,7 @@ func (o *SourcesItem) HasIndexGroupName() bool {
 	return o != nil && o.IndexGroupName.IsSet()
 }
 
-// SetIndexGroupName gets a reference to the given datadog.NullableString and assigns it to the IndexGroupName field.
+// SetIndexGroupName gets a reference to the given common.NullableString and assigns it to the IndexGroupName field.
 func (o *SourcesItem) SetIndexGroupName(v string) {
 	o.IndexGroupName.Set(&v)
 }
@@ -672,43 +672,43 @@ func (o *SourcesItem) SetDashboardName(v string) {
 	o.DashboardName = &v
 }
 
-// GetDashboardId returns the DashboardId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItem) GetDashboardId() string {
-	if o == nil || o.DashboardId.Get() == nil {
+// GetDashboardID returns the DashboardID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SourcesItem) GetDashboardID() string {
+	if o == nil || o.DashboardID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.DashboardId.Get()
+	return *o.DashboardID.Get()
 }
 
-// GetDashboardIdOk returns a tuple with the DashboardId field value if set, nil otherwise
+// GetDashboardIDOk returns a tuple with the DashboardID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItem) GetDashboardIdOk() (*string, bool) {
+func (o *SourcesItem) GetDashboardIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.DashboardId.Get(), o.DashboardId.IsSet()
+	return o.DashboardID.Get(), o.DashboardID.IsSet()
 }
 
-// HasDashboardId returns a boolean if a DashboardId has been set.
-func (o *SourcesItem) HasDashboardId() bool {
-	return o != nil && o.DashboardId.IsSet()
+// HasDashboardID returns a boolean if a DashboardID has been set.
+func (o *SourcesItem) HasDashboardID() bool {
+	return o != nil && o.DashboardID.IsSet()
 }
 
-// SetDashboardId gets a reference to the given datadog.NullableString and assigns it to the DashboardId field.
-func (o *SourcesItem) SetDashboardId(v string) {
-	o.DashboardId.Set(&v)
+// SetDashboardID gets a reference to the given common.NullableString and assigns it to the DashboardID field.
+func (o *SourcesItem) SetDashboardID(v string) {
+	o.DashboardID.Set(&v)
 }
 
-// SetDashboardIdNil sets the value for DashboardId to be an explicit nil.
-func (o *SourcesItem) SetDashboardIdNil() {
-	o.DashboardId.Set(nil)
+// SetDashboardIDNil sets the value for DashboardID to be an explicit nil.
+func (o *SourcesItem) SetDashboardIDNil() {
+	o.DashboardID.Set(nil)
 }
 
-// UnSetDashboardId ensures that no value is present for DashboardId, not even an explicit nil.
-func (o *SourcesItem) UnSetDashboardId() {
-	o.DashboardId.UnSet()
+// UnSetDashboardID ensures that no value is present for DashboardID, not even an explicit nil.
+func (o *SourcesItem) UnSetDashboardID() {
+	o.DashboardID.UnSet()
 }
 
 // GetAssetTags returns the AssetTags field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -735,7 +735,7 @@ func (o *SourcesItem) HasAssetTags() bool {
 	return o != nil && o.AssetTags.IsSet()
 }
 
-// SetAssetTags gets a reference to the given datadog.Nullable[]string and assigns it to the AssetTags field.
+// SetAssetTags gets a reference to the given common.Nullable[]string and assigns it to the AssetTags field.
 func (o *SourcesItem) SetAssetTags(v []string) {
 	o.AssetTags.Set(&v)
 }
@@ -774,7 +774,7 @@ func (o *SourcesItem) HasLogRemoveTime() bool {
 	return o != nil && o.LogRemoveTime.IsSet()
 }
 
-// SetLogRemoveTime gets a reference to the given datadog.NullableString and assigns it to the LogRemoveTime field.
+// SetLogRemoveTime gets a reference to the given common.NullableString and assigns it to the LogRemoveTime field.
 func (o *SourcesItem) SetLogRemoveTime(v string) {
 	o.LogRemoveTime.Set(&v)
 }
@@ -813,7 +813,7 @@ func (o *SourcesItem) HasLogRemoveFormat() bool {
 	return o != nil && o.LogRemoveFormat.IsSet()
 }
 
-// SetLogRemoveFormat gets a reference to the given datadog.NullableString and assigns it to the LogRemoveFormat field.
+// SetLogRemoveFormat gets a reference to the given common.NullableString and assigns it to the LogRemoveFormat field.
 func (o *SourcesItem) SetLogRemoveFormat(v string) {
 	o.LogRemoveFormat.Set(&v)
 }
@@ -828,43 +828,43 @@ func (o *SourcesItem) UnSetLogRemoveFormat() {
 	o.LogRemoveFormat.UnSet()
 }
 
-// GetAgentId returns the AgentId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesItem) GetAgentId() string {
-	if o == nil || o.AgentId.Get() == nil {
+// GetAgentID returns the AgentID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SourcesItem) GetAgentID() string {
+	if o == nil || o.AgentID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.AgentId.Get()
+	return *o.AgentID.Get()
 }
 
-// GetAgentIdOk returns a tuple with the AgentId field value if set, nil otherwise
+// GetAgentIDOk returns a tuple with the AgentID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesItem) GetAgentIdOk() (*string, bool) {
+func (o *SourcesItem) GetAgentIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.AgentId.Get(), o.AgentId.IsSet()
+	return o.AgentID.Get(), o.AgentID.IsSet()
 }
 
-// HasAgentId returns a boolean if a AgentId has been set.
-func (o *SourcesItem) HasAgentId() bool {
-	return o != nil && o.AgentId.IsSet()
+// HasAgentID returns a boolean if a AgentID has been set.
+func (o *SourcesItem) HasAgentID() bool {
+	return o != nil && o.AgentID.IsSet()
 }
 
-// SetAgentId gets a reference to the given datadog.NullableString and assigns it to the AgentId field.
-func (o *SourcesItem) SetAgentId(v string) {
-	o.AgentId.Set(&v)
+// SetAgentID gets a reference to the given common.NullableString and assigns it to the AgentID field.
+func (o *SourcesItem) SetAgentID(v string) {
+	o.AgentID.Set(&v)
 }
 
-// SetAgentIdNil sets the value for AgentId to be an explicit nil.
-func (o *SourcesItem) SetAgentIdNil() {
-	o.AgentId.Set(nil)
+// SetAgentIDNil sets the value for AgentID to be an explicit nil.
+func (o *SourcesItem) SetAgentIDNil() {
+	o.AgentID.Set(nil)
 }
 
-// UnSetAgentId ensures that no value is present for AgentId, not even an explicit nil.
-func (o *SourcesItem) UnSetAgentId() {
-	o.AgentId.UnSet()
+// UnSetAgentID ensures that no value is present for AgentID, not even an explicit nil.
+func (o *SourcesItem) UnSetAgentID() {
+	o.AgentID.UnSet()
 }
 
 // GetWriteRawLogs returns the WriteRawLogs field value if set, zero value otherwise.
@@ -1003,7 +1003,7 @@ func (o *SourcesItem) HasScheduleConfig() bool {
 	return o != nil && o.ScheduleConfig.IsSet()
 }
 
-// SetScheduleConfig gets a reference to the given datadog.NullableString and assigns it to the ScheduleConfig field.
+// SetScheduleConfig gets a reference to the given common.NullableString and assigns it to the ScheduleConfig field.
 func (o *SourcesItem) SetScheduleConfig(v ScheduleConfig) {
 	o.ScheduleConfig.Set(&v)
 }
@@ -1108,8 +1108,8 @@ func (o SourcesItem) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.Id != nil {
-		toSerialize["Id"] = o.Id
+	if o.ID != nil {
+		toSerialize["Id"] = o.ID
 	}
 	if o.Enabled != nil {
 		toSerialize["Enabled"] = o.Enabled
@@ -1156,8 +1156,8 @@ func (o SourcesItem) MarshalJSON() ([]byte, error) {
 	if o.IsAgentSource != nil {
 		toSerialize["IsAgentSource"] = o.IsAgentSource
 	}
-	if o.AgentIds.IsSet() {
-		toSerialize["AgentIds"] = o.AgentIds.Get()
+	if o.AgentIDs.IsSet() {
+		toSerialize["AgentIds"] = o.AgentIDs.Get()
 	}
 	if o.IndexGroupName.IsSet() {
 		toSerialize["IndexGroupName"] = o.IndexGroupName.Get()
@@ -1165,8 +1165,8 @@ func (o SourcesItem) MarshalJSON() ([]byte, error) {
 	if o.DashboardName != nil {
 		toSerialize["DashboardName"] = o.DashboardName
 	}
-	if o.DashboardId.IsSet() {
-		toSerialize["DashboardId"] = o.DashboardId.Get()
+	if o.DashboardID.IsSet() {
+		toSerialize["DashboardID"] = o.DashboardID.Get()
 	}
 	if o.AssetTags.IsSet() {
 		toSerialize["AssetTags"] = o.AssetTags.Get()
@@ -1177,8 +1177,8 @@ func (o SourcesItem) MarshalJSON() ([]byte, error) {
 	if o.LogRemoveFormat.IsSet() {
 		toSerialize["LogRemoveFormat"] = o.LogRemoveFormat.Get()
 	}
-	if o.AgentId.IsSet() {
-		toSerialize["AgentId"] = o.AgentId.Get()
+	if o.AgentID.IsSet() {
+		toSerialize["AgentId"] = o.AgentID.Get()
 	}
 	if o.WriteRawLogs != nil {
 		toSerialize["WriteRawLogs"] = o.WriteRawLogs
@@ -1217,7 +1217,7 @@ func (o SourcesItem) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Id                  *string                     `json:"Id,omitempty"`
+		ID                  *string                     `json:"Id,omitempty"`
 		Enabled             *bool                       `json:"Enabled,omitempty"`
 		Name                *string                     `json:"Name,omitempty"`
 		Group               common.NullableString       `json:"Group,omitempty"`
@@ -1233,14 +1233,14 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 		Label               *string                     `json:"label,omitempty"`
 		IsDeleted           *bool                       `json:"IsDeleted,omitempty"`
 		IsAgentSource       *bool                       `json:"IsAgentSource,omitempty"`
-		AgentIds            common.NullableList[string] `json:"AgentIds,omitempty"`
+		AgentIDs            common.NullableList[string] `json:"AgentIds,omitempty"`
 		IndexGroupName      common.NullableString       `json:"IndexGroupName,omitempty"`
 		DashboardName       *string                     `json:"dashboardName,omitempty"`
-		DashboardId         common.NullableString       `json:"dashboardId,omitempty"`
+		DashboardID         common.NullableString       `json:"dashboardId,omitempty"`
 		AssetTags           common.NullableList[string] `json:"AssetTags,omitempty"`
 		LogRemoveTime       common.NullableString       `json:"LogRemoveTime,omitempty"`
 		LogRemoveFormat     common.NullableString       `json:"LogRemoveFormat,omitempty"`
-		AgentId             common.NullableString       `json:"AgentId,omitempty"`
+		AgentID             common.NullableString       `json:"AgentId,omitempty"`
 		WriteRawLogs        *bool                       `json:"WriteRawLogs,omitempty"`
 		UseSecondaryWriter  *bool                       `json:"UseSecondaryWriter,omitempty"`
 		ParallelOptions     *ParallelOptions            `json:"ParallelOptions,omitempty"`
@@ -1254,7 +1254,7 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
-	if all.Id == nil {
+	if all.ID == nil {
 		return fmt.Errorf("requiered field Id is missing")
 	}
 	if all.Name == nil {
@@ -1263,12 +1263,12 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"Id", "Enabled", "Name", "Group", "Author", "LogSourceDefCode", "LogReaderType", "Tags", "AlertTimeout", "LogReaderData", "LogOperations", "DiscardedLogsConfig", "Value", "Label", "IsDeleted", "IsAgentSource", "AgentIds", "IndexGroupName", "DashboardName", "DashboardId", "AssetTags", "LogRemoveTime", "LogRemoveFormat", "AgentId", "WriteRawLogs", "UseSecondaryWriter", "ParallelOptions", "BlockCount", "ScheduleConfig", "StoreRawLogs", "StoreRawLogsLgs", "IsEditable"})
+		common.DeleteKeys(additionalProperties, &[]string{"Id", "Enabled", "Name", "Group", "Author", "LogSourceDefCode", "LogReaderType", "Tags", "AlertTimeout", "LogReaderData", "LogOperations", "DiscardedLogsConfig", "Value", "Label", "IsDeleted", "IsAgentSource", "AgentIds", "IndexGroupName", "DashboardName", "DashboardID", "AssetTags", "LogRemoveTime", "LogRemoveFormat", "AgentId", "WriteRawLogs", "UseSecondaryWriter", "ParallelOptions", "BlockCount", "ScheduleConfig", "StoreRawLogs", "StoreRawLogsLgs", "IsEditable"})
 	} else {
 		return err
 	}
 
-	o.Id = all.Id
+	o.ID = all.ID
 	o.Enabled = all.Enabled
 	o.Name = all.Name
 	o.Group = all.Group
@@ -1284,13 +1284,13 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 	o.Label = all.Label
 	o.IsDeleted = all.IsDeleted
 	o.IsAgentSource = all.IsAgentSource
-	o.AgentIds = all.AgentIds
+	o.AgentIDs = all.AgentIDs
 	o.IndexGroupName = all.IndexGroupName
 	o.DashboardName = all.DashboardName
-	o.DashboardId = all.DashboardId
+	o.DashboardID = all.DashboardID
 	o.AssetTags = all.AssetTags
 	o.LogRemoveTime = all.LogRemoveTime
-	o.AgentId = all.AgentId
+	o.AgentID = all.AgentID
 	o.WriteRawLogs = all.WriteRawLogs
 	o.UseSecondaryWriter = all.UseSecondaryWriter
 	hasInvalidField := false

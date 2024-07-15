@@ -6,12 +6,16 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ElasticStatsSearchResponse represents the response structure for searching Elasticsearch statistics.
 type ElasticStatsSearchResponse struct {
-	Status  *string               `json:"Status,omitempty"`
+	// Status of the Elasticsearch statistics search operation.
+	Status *string `json:"Status,omitempty"`
+	// List of Elasticsearch indexes with their respective statistics.
 	Indexes []ElasticStatsIndexes `json:"Indexes,omitempty"`
-	Result  *ElasticStatsResult   `json:"Result,omitempty"`
+	// Result of the Elasticsearch statistics search.
+	Result *ElasticStatsResult `json:"Result,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

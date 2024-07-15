@@ -6,13 +6,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// CasesSearchResponse represents the response structure for searching cases.
 type CasesSearchResponse struct {
-	Items      []CasesItem `json:"Items,omitempty"`
-	TotalCount *int64      `json:"TotalCount,omitempty"`
-	PageSize   *int64      `json:"PageSize,omitempty"`
-	FromIndex  *int64      `json:"FromIndex,omitempty"`
+	// List of case items matching the search criteria.
+	Items []CasesItem `json:"Items,omitempty"`
+	// Total count of cases matching the search criteria.
+	TotalCount *int64 `json:"TotalCount,omitempty"`
+	// Number of items per page for pagination.
+	PageSize *int64 `json:"PageSize,omitempty"`
+	// Starting index for pagination.
+	FromIndex *int64 `json:"FromIndex,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

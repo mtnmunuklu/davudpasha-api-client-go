@@ -15,7 +15,7 @@ type ReportsTableVisualization struct {
 	// Columns for the visualization.
 	Columns []string `json:"Columns,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

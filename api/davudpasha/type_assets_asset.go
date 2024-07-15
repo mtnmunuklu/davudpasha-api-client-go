@@ -6,35 +6,62 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// AssetsAsset represents the structure of an asset.
 type AssetsAsset struct {
-	ID                *string                     `json:"_id,omitempty"`
-	Timestamp         common.NullableString       `json:"Timestamp,omitempty"`
-	ParentGroupIds    common.NullableList[string] `json:"ParentGroupIds,omitempty"`
-	TenantID          *string                     `json:"TenantID,omitempty"`
-	AssetId           *string                     `json:"AssetId,omitempty"`
-	CustomerId        common.NullableString       `json:"CustomerId,omitempty"`
-	Name              *string                     `json:"Name,omitempty"`
-	Ip                *string                     `json:"Ip,omitempty"`
-	HostName          *string                     `json:"HostName,omitempty"`
-	MacAddress        *string                     `json:"MacAddress,omitempty"`
-	OsInfo            *string                     `json:"OsInfo,omitempty"`
-	EnterDate         *string                     `json:"EnterDate,omitempty"`
-	IsPassive         *bool                       `json:"IsPassive,omitempty"`
-	IsDeleted         *bool                       `json:"IsDeleted,omitempty"`
-	Credential        common.NullableString       `json:"Credential,omitempty"`
-	GroupId           *string                     `json:"GroupId,omitempty"`
-	Tag               []string                    `json:"Tag,omitempty"`
-	TagData           common.NullableString       `json:"TagData,omitempty"`
-	ObjectGUID        *string                     `json:"ObjectGUID,omitempty"`
-	DistinguishedName *string                     `json:"DistinguishedName,omitempty"`
-	IsManuel          *bool                       `json:"IsManuel,omitempty"`
-	InventoryInfo     *AssetsInventoryInfo        `json:"InventoryInfo,omitempty"`
-	AssetType         *string                     `json:"AssetType,omitempty"`
-	LastAccessDate    *string                     `json:"LastAccessDate,omitempty"`
-	IsManage          *bool                       `json:"IsManage,omitempty"`
-	LastUserOfSession *string                     `json:"LastUserOfSession,omitempty"`
+	// Unique identifier for the asset.
+	ID *string `json:"_id,omitempty"`
+	// Timestamp of when the asset was created or last updated.
+	Timestamp common.NullableString `json:"Timestamp,omitempty"`
+	// List of parent group IDs to which the asset belongs.
+	ParentGroupIDs common.NullableList[string] `json:"ParentGroupIds,omitempty"`
+	// Unique identifier for the tenant.
+	TenantID *string `json:"TenantID,omitempty"`
+	// Unique identifier for the asset.
+	AssetID *string `json:"AssetId,omitempty"`
+	// Identifier for the customer associated with the asset.
+	CustomerID common.NullableString `json:"CustomerId,omitempty"`
+	// Name of the asset.
+	Name *string `json:"Name,omitempty"`
+	// IP address of the asset.
+	IP *string `json:"Ip,omitempty"`
+	// Hostname of the asset.
+	HostName *string `json:"HostName,omitempty"`
+	// MAC address of the asset.
+	MacAddress *string `json:"MacAddress,omitempty"`
+	// Information about the operating system of the asset.
+	OsInfo *string `json:"OsInfo,omitempty"`
+	// Date when the asset was entered into the system.
+	EnterDate *string `json:"EnterDate,omitempty"`
+	// Indicates whether the asset is passive.
+	IsPassive *bool `json:"IsPassive,omitempty"`
+	// Indicates whether the asset is deleted.
+	IsDeleted *bool `json:"IsDeleted,omitempty"`
+	// Credential information for the asset, which can be null.
+	Credential common.NullableString `json:"Credential,omitempty"`
+	// Identifier for the group to which the asset belongs.
+	GroupId *string `json:"GroupId,omitempty"`
+	// List of tags associated with the asset.
+	Tag []string `json:"Tag,omitempty"`
+	// Additional tag data, which can be null.
+	TagData common.NullableString `json:"TagData,omitempty"`
+	// Unique object GUID for the asset.
+	ObjectGUID *string `json:"ObjectGUID,omitempty"`
+	// Distinguished name of the asset.
+	DistinguishedName *string `json:"DistinguishedName,omitempty"`
+	// Indicates whether the asset was manually added.
+	IsManuel *bool `json:"IsManuel,omitempty"`
+	// Inventory information for the asset.
+	InventoryInfo *AssetsInventoryInfo `json:"InventoryInfo,omitempty"`
+	// Type of the asset.
+	AssetType *string `json:"AssetType,omitempty"`
+	// Date of the last access to the asset.
+	LastAccessDate *string `json:"LastAccessDate,omitempty"`
+	// Indicates whether the asset is manageable.
+	IsManage *bool `json:"IsManage,omitempty"`
+	// Last user who accessed the asset's session.
+	LastUserOfSession *string `json:"LastUserOfSession,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -108,7 +135,7 @@ func (o *AssetsAsset) HasTimestamp() bool {
 	return o != nil && o.Timestamp.IsSet()
 }
 
-// SetTimestamp gets a reference to the given datadog.NullableString and assigns it to the Timestamp field.
+// SetTimestamp gets a reference to the given common.NullableString and assigns it to the Timestamp field.
 func (o *AssetsAsset) SetTimestamp(v string) {
 	o.Timestamp.Set(&v)
 }
@@ -123,44 +150,44 @@ func (o *AssetsAsset) UnSetTimestamp() {
 	o.Timestamp.UnSet()
 }
 
-// GetParentGroupIds returns a tuple with the ParentGroupIds field value if set, nil otherwise
+// GetParentGroupIDs returns a tuple with the ParentGroupIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AssetsAsset) GetParentGroupIds() (*[]string, bool) {
+func (o *AssetsAsset) GetParentGroupIDs() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ParentGroupIds.Get(), o.ParentGroupIds.IsSet()
+	return o.ParentGroupIDs.Get(), o.ParentGroupIDs.IsSet()
 }
 
-// GetParentGroupIdsOk returns a tuple with the ParentGroupIds field value if set, nil otherwise
+// GetParentGroupIDsOk returns a tuple with the ParentGroupIDs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AssetsAsset) GetParentGroupIdsOk() (*[]string, bool) {
+func (o *AssetsAsset) GetParentGroupIDsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ParentGroupIds.Get(), o.ParentGroupIds.IsSet()
+	return o.ParentGroupIDs.Get(), o.ParentGroupIDs.IsSet()
 }
 
-// HasParentGroupIds returns a boolean if a ParentGroupIds has been set.
-func (o *AssetsAsset) HasParentGroupIds() bool {
-	return o != nil && o.ParentGroupIds.IsSet()
+// HasParentGroupIDs returns a boolean if a ParentGroupIDs has been set.
+func (o *AssetsAsset) HasParentGroupIDs() bool {
+	return o != nil && o.ParentGroupIDs.IsSet()
 }
 
-// SetParentGroupIds gets a reference to the given datadog.Nullable[]string and assigns it to the ParentGroupIds field.
-func (o *AssetsAsset) SetParentGroupIds(v []string) {
-	o.ParentGroupIds.Set(&v)
+// SetParentGroupIDs gets a reference to the given common.Nullable[]string and assigns it to the ParentGroupIDs field.
+func (o *AssetsAsset) SetParentGroupIDs(v []string) {
+	o.ParentGroupIDs.Set(&v)
 }
 
-// SetParentGroupIdsNil sets the value for ParentGroupIds to be an explicit nil.
-func (o *AssetsAsset) SetParentGroupIdsNil() {
-	o.ParentGroupIds.Set(nil)
+// SetParentGroupIDsNil sets the value for ParentGroupIDs to be an explicit nil.
+func (o *AssetsAsset) SetParentGroupIDsNil() {
+	o.ParentGroupIDs.Set(nil)
 }
 
-// UnSetParentGroupIds ensures that no value is present for ParentGroupIds, not even an explicit nil.
-func (o *AssetsAsset) UnSetParentGroupIds() {
-	o.ParentGroupIds.UnSet()
+// UnSetParentGroupIDs ensures that no value is present for ParentGroupIDs, not even an explicit nil.
+func (o *AssetsAsset) UnSetParentGroupIDs() {
+	o.ParentGroupIDs.UnSet()
 }
 
 // GetTenantID returns the TenantID field value if set, zero value otherwise.
@@ -191,71 +218,71 @@ func (o *AssetsAsset) SetTenantID(v string) {
 	o.TenantID = &v
 }
 
-// GetAssetId returns the AssetId field value if set, zero value otherwise.
-func (o *AssetsAsset) GetAssetId() string {
-	if o == nil || o.AssetId == nil {
+// GetAssetID returns the AssetID field value if set, zero value otherwise.
+func (o *AssetsAsset) GetAssetID() string {
+	if o == nil || o.AssetID == nil {
 		var ret string
 		return ret
 	}
-	return *o.AssetId
+	return *o.AssetID
 }
 
-// GetAssetIdOk returns a tuple with the AssetId field value if set, nil otherwise
+// GetAssetIDOk returns a tuple with the AssetID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AssetsAsset) GetAssetIdOk() (*string, bool) {
-	if o == nil || o.AssetId == nil {
+func (o *AssetsAsset) GetAssetIDOk() (*string, bool) {
+	if o == nil || o.AssetID == nil {
 		return nil, false
 	}
-	return o.AssetId, true
+	return o.AssetID, true
 }
 
-// HasAssetId returns a boolean if a field has been set.
-func (o *AssetsAsset) HasAssetId() bool {
-	return o != nil && o.AssetId != nil
+// HasAssetID returns a boolean if a field has been set.
+func (o *AssetsAsset) HasAssetID() bool {
+	return o != nil && o.AssetID != nil
 }
 
-// SetAssetId gets a reference to the given string and assigns it to the AssetId field.
-func (o *AssetsAsset) SetAssetId(v string) {
-	o.AssetId = &v
+// SetAssetID gets a reference to the given string and assigns it to the AssetID field.
+func (o *AssetsAsset) SetAssetID(v string) {
+	o.AssetID = &v
 }
 
-// GetCustomerId returns the CustomerId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AssetsAsset) GetCustomerId() string {
-	if o == nil || o.CustomerId.Get() == nil {
+// GetCustomerID returns the CustomerID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AssetsAsset) GetCustomerID() string {
+	if o == nil || o.CustomerID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerId.Get()
+	return *o.CustomerID.Get()
 }
 
-// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
+// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AssetsAsset) GetCustomerIdOk() (*string, bool) {
+func (o *AssetsAsset) GetCustomerIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.CustomerId.Get(), o.CustomerId.IsSet()
+	return o.CustomerID.Get(), o.CustomerID.IsSet()
 }
 
-// HasCustomerId returns a boolean if a CustomerId has been set.
-func (o *AssetsAsset) HasCustomerId() bool {
-	return o != nil && o.CustomerId.IsSet()
+// HasCustomerID returns a boolean if a CustomerID has been set.
+func (o *AssetsAsset) HasCustomerID() bool {
+	return o != nil && o.CustomerID.IsSet()
 }
 
-// SetCustomerId gets a reference to the given datadog.NullableString and assigns it to the CustomerId field.
-func (o *AssetsAsset) SetCustomerId(v string) {
-	o.CustomerId.Set(&v)
+// SetCustomerID gets a reference to the given common.NullableString and assigns it to the CustomerID field.
+func (o *AssetsAsset) SetCustomerID(v string) {
+	o.CustomerID.Set(&v)
 }
 
-// SetCustomerIdNil sets the value for CustomerId to be an explicit nil.
-func (o *AssetsAsset) SetCustomerIdNil() {
-	o.CustomerId.Set(nil)
+// SetCustomerIDNil sets the value for CustomerID to be an explicit nil.
+func (o *AssetsAsset) SetCustomerIDNil() {
+	o.CustomerID.Set(nil)
 }
 
-// UnSetCustomerId ensures that no value is present for CustomerId, not even an explicit nil.
-func (o *AssetsAsset) UnSetCustomerId() {
-	o.CustomerId.UnSet()
+// UnSetCustomerID ensures that no value is present for CustomerID, not even an explicit nil.
+func (o *AssetsAsset) UnSetCustomerID() {
+	o.CustomerID.UnSet()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -288,30 +315,30 @@ func (o *AssetsAsset) SetName(v string) {
 
 // GetIp returns the Ip field value if set, zero value otherwise.
 func (o *AssetsAsset) GetIp() string {
-	if o == nil || o.Ip == nil {
+	if o == nil || o.IP == nil {
 		var ret string
 		return ret
 	}
-	return *o.Ip
+	return *o.IP
 }
 
-// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
+// GetIPOk returns a tuple with the IP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AssetsAsset) GetIpOk() (*string, bool) {
-	if o == nil || o.Ip == nil {
+func (o *AssetsAsset) GetIPOk() (*string, bool) {
+	if o == nil || o.IP == nil {
 		return nil, false
 	}
-	return o.Ip, true
+	return o.IP, true
 }
 
-// HasIp returns a boolean if a field has been set.
-func (o *AssetsAsset) HasIp() bool {
-	return o != nil && o.Ip != nil
+// HasIP returns a boolean if a field has been set.
+func (o *AssetsAsset) HasIP() bool {
+	return o != nil && o.IP != nil
 }
 
-// SetIp gets a reference to the given string and assigns it to the Ip field.
-func (o *AssetsAsset) SetIp(v string) {
-	o.Ip = &v
+// SetIP gets a reference to the given string and assigns it to the IP field.
+func (o *AssetsAsset) SetIP(v string) {
+	o.IP = &v
 }
 
 // GetHostName returns the HostName field value if set, zero value otherwise.
@@ -506,7 +533,7 @@ func (o *AssetsAsset) HasCredential() bool {
 	return o != nil && o.Credential.IsSet()
 }
 
-// SetCredential gets a reference to the given datadog.NullableString and assigns it to the Credential field.
+// SetCredential gets a reference to the given common.NullableString and assigns it to the Credential field.
 func (o *AssetsAsset) SetCredential(v string) {
 	o.Credential.Set(&v)
 }
@@ -521,8 +548,8 @@ func (o *AssetsAsset) UnSetCredential() {
 	o.Credential.UnSet()
 }
 
-// GetGroupId returns the GroupId field value if set, zero value otherwise.
-func (o *AssetsAsset) GetGroupId() string {
+// GetGroupID returns the GroupID field value if set, zero value otherwise.
+func (o *AssetsAsset) GetGroupID() string {
 	if o == nil || o.GroupId == nil {
 		var ret string
 		return ret
@@ -530,22 +557,22 @@ func (o *AssetsAsset) GetGroupId() string {
 	return *o.GroupId
 }
 
-// GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
+// GetGroupIDOk returns a tuple with the GroupID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AssetsAsset) GetGroupIdOk() (*string, bool) {
+func (o *AssetsAsset) GetGroupIDOk() (*string, bool) {
 	if o == nil || o.GroupId == nil {
 		return nil, false
 	}
 	return o.GroupId, true
 }
 
-// HasGroupId returns a boolean if a field has been set.
-func (o *AssetsAsset) HasGroupId() bool {
+// HasGroupID returns a boolean if a field has been set.
+func (o *AssetsAsset) HasGroupID() bool {
 	return o != nil && o.GroupId != nil
 }
 
-// SetGroupId gets a reference to the given string and assigns it to the GroupId field.
-func (o *AssetsAsset) SetGroupId(v string) {
+// SetGroupID gets a reference to the given string and assigns it to the GroupID field.
+func (o *AssetsAsset) SetGroupID(v string) {
 	o.GroupId = &v
 }
 
@@ -601,7 +628,7 @@ func (o *AssetsAsset) HasTagData() bool {
 	return o != nil && o.TagData.IsSet()
 }
 
-// SetTagData gets a reference to the given datadog.NullableString and assigns it to the TagData field.
+// SetTagData gets a reference to the given common.NullableString and assigns it to the TagData field.
 func (o *AssetsAsset) SetTagData(v string) {
 	o.TagData.Set(&v)
 }
@@ -740,23 +767,23 @@ func (o AssetsAsset) MarshalJSON() ([]byte, error) {
 	if o.Timestamp.IsSet() {
 		toSerialize["Timestamp"] = o.Timestamp.Get()
 	}
-	if o.ParentGroupIds.IsSet() {
-		toSerialize["ParentGroupIds"] = o.ParentGroupIds.Get()
+	if o.ParentGroupIDs.IsSet() {
+		toSerialize["ParentGroupIds"] = o.ParentGroupIDs.Get()
 	}
 	if o.TenantID != nil {
 		toSerialize["TenantID"] = o.TenantID
 	}
-	if o.AssetId != nil {
-		toSerialize["AssetId"] = o.AssetId
+	if o.AssetID != nil {
+		toSerialize["AssetId"] = o.AssetID
 	}
-	if o.CustomerId.IsSet() {
-		toSerialize["CustomerId"] = o.CustomerId
+	if o.CustomerID.IsSet() {
+		toSerialize["CustomerId"] = o.CustomerID
 	}
 	if o.Name != nil {
 		toSerialize["Name"] = o.Name
 	}
-	if o.Ip != nil {
-		toSerialize["Ip"] = o.Ip
+	if o.IP != nil {
+		toSerialize["Ip"] = o.IP
 	}
 	if o.HostName != nil {
 		toSerialize["HostName"] = o.HostName
@@ -824,12 +851,12 @@ func (o *AssetsAsset) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		ID                *string                     `json:"_id,omitempty"`
 		Timestamp         common.NullableString       `json:"Timestamp,omitempty"`
-		ParentGroupIds    common.NullableList[string] `json:"ParentGroupIds,omitempty"`
+		ParentGroupIDs    common.NullableList[string] `json:"ParentGroupIds,omitempty"`
 		TenantID          *string                     `json:"TenantID,omitempty"`
-		AssetId           *string                     `json:"AssetId,omitempty"`
-		CustomerId        common.NullableString       `json:"CustomerId,omitempty"`
+		AssetID           *string                     `json:"AssetId,omitempty"`
+		CustomerID        common.NullableString       `json:"CustomerId,omitempty"`
 		Name              *string                     `json:"Name,omitempty"`
-		Ip                *string                     `json:"Ip,omitempty"`
+		IP                *string                     `json:"Ip,omitempty"`
 		HostName          *string                     `json:"HostName,omitempty"`
 		MacAddress        *string                     `json:"MacAddress,omitempty"`
 		OsInfo            *string                     `json:"OsInfo,omitempty"`
@@ -837,7 +864,7 @@ func (o *AssetsAsset) UnMarshalJSON(bytes []byte) (err error) {
 		IsPassive         *bool                       `json:"IsPassive,omitempty"`
 		IsDeleted         *bool                       `json:"IsDeleted,omitempty"`
 		Credential        common.NullableString       `json:"Credential,omitempty"`
-		GroupId           *string                     `json:"GroupId,omitempty"`
+		GroupID           *string                     `json:"GroupId,omitempty"`
 		Tag               []string                    `json:"Tag,omitempty"`
 		TagData           common.NullableString       `json:"TagData,omitempty"`
 		ObjectGUID        *string                     `json:"ObjectGUID,omitempty"`
@@ -862,12 +889,12 @@ func (o *AssetsAsset) UnMarshalJSON(bytes []byte) (err error) {
 
 	o.ID = all.ID
 	o.Timestamp = all.Timestamp
-	o.ParentGroupIds = all.ParentGroupIds
+	o.ParentGroupIDs = all.ParentGroupIDs
 	o.TenantID = all.TenantID
-	o.AssetId = all.AssetId
-	o.CustomerId = all.CustomerId
+	o.AssetID = all.AssetID
+	o.CustomerID = all.CustomerID
 	o.Name = all.Name
-	o.Ip = all.Ip
+	o.IP = all.IP
 	o.HostName = all.HostName
 	o.MacAddress = all.MacAddress
 	o.OsInfo = all.OsInfo
@@ -875,7 +902,7 @@ func (o *AssetsAsset) UnMarshalJSON(bytes []byte) (err error) {
 	o.IsPassive = all.IsPassive
 	o.IsDeleted = all.IsDeleted
 	o.Credential = all.Credential
-	o.GroupId = all.GroupId
+	o.GroupId = all.GroupID
 	o.Tag = all.Tag
 	o.TagData = all.TagData
 	o.ObjectGUID = all.ObjectGUID

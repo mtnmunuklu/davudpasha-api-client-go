@@ -22,6 +22,7 @@ func NewSearchElasticStatsOptionalParameters() *SearchElasticStatsOptionalParame
 	return &this
 }
 
+// WithBody sets the corresponding parameter name and returns the struct.
 func (r *SearchElasticStatsOptionalParameters) WithBody(body ElasticStatsSearchRequest) *SearchElasticStatsOptionalParameters {
 	r.Body = &body
 	return r

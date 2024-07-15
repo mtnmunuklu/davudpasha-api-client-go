@@ -6,18 +6,28 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// LookupsSearchResponse represents a search response structure for lookups.
 type LookupsSearchResponse struct {
-	Id                *string               `json:"Id,omitempty"`
-	Name              *string               `json:"Name,omitempty"`
-	Description       common.NullableString `json:"Description,omitempty"`
-	OtherValues       common.NullableString `json:"OtherValues,omitempty"`
-	Data              *json.RawMessage      `json:"Data,omitempty"`
-	LookupType        LookupType            `json:"LookupType,omitempty"`
-	Columns           []string              `json:"Columns,omitempty"`
-	Count             *int64                `json:"Count,omitempty"`
-	LastExecutionTime *string               `json:"LastExecutionTime,omitempty"`
+	// Identifier of the lookup.
+	ID *string `json:"Id,omitempty"`
+	// Name of the lookup.
+	Name *string `json:"Name,omitempty"`
+	// Description of the lookup.
+	Description common.NullableString `json:"Description,omitempty"`
+	// Other values associated with the lookup.
+	OtherValues common.NullableString `json:"OtherValues,omitempty"`
+	// Raw data of the lookup.
+	Data *json.RawMessage `json:"Data,omitempty"`
+	// Type of the lookup.
+	LookupType LookupType `json:"LookupType,omitempty"`
+	// Columns of the lookup.
+	Columns []string `json:"Columns,omitempty"`
+	// Count of results matching the lookup criteria.
+	Count *int64 `json:"Count,omitempty"`
+	// Last execution time of the lookup.
+	LastExecutionTime *string `json:"LastExecutionTime,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -39,32 +49,32 @@ func NewLookupsSearchResponseWithDefaults() *LookupsSearchResponse {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *LookupsSearchResponse) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *LookupsSearchResponse) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LookupsSearchResponse) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *LookupsSearchResponse) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *LookupsSearchResponse) HasId() bool {
-	return o != nil && o.Id != nil
+// HasID returns a boolean if a field has been set.
+func (o *LookupsSearchResponse) HasID() bool {
+	return o != nil && o.ID != nil
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *LookupsSearchResponse) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *LookupsSearchResponse) SetID(v string) {
+	o.ID = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -119,7 +129,7 @@ func (o *LookupsSearchResponse) HasDescription() bool {
 	return o != nil && o.Description.IsSet()
 }
 
-// SetDescription gets a reference to the given datadog.NullableString and assigns it to the Description field.
+// SetDescription gets a reference to the given common.NullableString and assigns it to the Description field.
 func (o *LookupsSearchResponse) SetDescription(v string) {
 	o.Description.Set(&v)
 }
@@ -158,7 +168,7 @@ func (o *LookupsSearchResponse) HasOtherValues() bool {
 	return o != nil && o.OtherValues.IsSet()
 }
 
-// SetOtherValues gets a reference to the given datadog.NullableString and assigns it to the OtherValues field.
+// SetOtherValues gets a reference to the given common.NullableString and assigns it to the OtherValues field.
 func (o *LookupsSearchResponse) SetOtherValues(v string) {
 	o.OtherValues.Set(&v)
 }
@@ -314,8 +324,8 @@ func (o LookupsSearchResponse) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.Id != nil {
-		toSerialize["Id"] = o.Id
+	if o.ID != nil {
+		toSerialize["Id"] = o.ID
 	}
 	if o.Name != nil {
 		toSerialize["Name"] = o.Name
@@ -372,7 +382,7 @@ func (o *LookupsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 		return err
 	}
 
-	o.Id = all.Id
+	o.ID = all.Id
 	o.Name = all.Name
 	o.Description = all.Description
 	o.OtherValues = all.OtherValues

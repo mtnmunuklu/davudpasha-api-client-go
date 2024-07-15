@@ -7,12 +7,13 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// ErrorResponse API Error response
+// ErrorResponse API Error response.
 type ErrorResponse struct {
 	// A list of errors
 	Errors []string `json:"errors"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-	UnparsedObject       map[string]interface{} `json:"-"`
+	// Raw value if deserialization fails.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

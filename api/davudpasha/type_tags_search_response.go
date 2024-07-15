@@ -6,15 +6,16 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// TagsSearchResponse represents the response structure for tag search.
 type TagsSearchResponse struct {
-	// List of tags items.
+	// Items contains the list of tags retrieved from the search.
 	Items []TagsItem `json:"Items,omitempty"`
-	// List of failed items in raw JSON format.
+	// FailedItems contains a list of failed items in raw JSON format.
 	FailedItems []json.RawMessage `json:"FailedItems,omitempty"`
-	// List of successful items.
+	// SuccessItems contains a list of successful items.
 	SuccessItems []SuccessItem `json:"SuccessItems,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

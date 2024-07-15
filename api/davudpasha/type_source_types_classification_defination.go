@@ -7,19 +7,29 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourceTypesClassificationDefination represents the classification definition structure for source types.
 type SourceTypesClassificationDefination struct {
-	ID                *string                       `json:"ID,omitempty"`
-	DefID             *int64                        `json:"DefID,omitempty"`
-	Name              *string                       `json:"Name,omitempty"`
-	Severity          *string                       `json:"Severity,omitempty"`
-	MitreTags         common.NullableList[MitreTag] `json:"MitreTags,omitempty"`
-	KillChainPhase    common.NullableString         `json:"KillChainPhase,omitempty"`
-	MitreCreationDate common.NullableString         `json:"MitreCreationDate,omitempty"`
-	FromMarket        *bool                         `json:"FromMarket,omitempty"`
-	FromModules       *bool                         `json:"FromModules,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// ID represents the identifier of the classification definition.
+	ID *string `json:"ID,omitempty"`
+	// DefID specifies the definition ID associated with the classification.
+	DefID *int64 `json:"DefID,omitempty"`
+	// Name specifies the name of the classification definition.
+	Name *string `json:"Name,omitempty"`
+	// Severity indicates the severity level associated with the classification.
+	Severity *string `json:"Severity,omitempty"`
+	// MitreTags contains a list of MITRE tags associated with the classification.
+	MitreTags common.NullableList[MitreTag] `json:"MitreTags,omitempty"`
+	// KillChainPhase specifies the kill chain phase associated with the classification.
+	KillChainPhase common.NullableString `json:"KillChainPhase,omitempty"`
+	// MitreCreationDate indicates the MITRE creation date of the classification.
+	MitreCreationDate common.NullableString `json:"MitreCreationDate,omitempty"`
+	// FromMarket specifies if the classification is from the market.
+	FromMarket *bool `json:"FromMarket,omitempty"`
+	// FromModules specifies if the classification is from modules.
+	FromModules *bool `json:"FromModules,omitempty"`
+	// Raw value if deserialization fails.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 
@@ -177,7 +187,7 @@ func (o *SourceTypesClassificationDefination) HasMitreTags() bool {
 	return o != nil && o.MitreTags.IsSet()
 }
 
-// SetMitreTags gets a reference to the given datadog.Nullable[]MitreTag and assigns it to the MitreTags field.
+// SetMitreTags gets a reference to the given common.Nullable[]MitreTag and assigns it to the MitreTags field.
 func (o *SourceTypesClassificationDefination) SetMitreTags(v []MitreTag) {
 	o.MitreTags.Set(&v)
 }
@@ -216,7 +226,7 @@ func (o *SourceTypesClassificationDefination) HasKillChainPhase() bool {
 	return o != nil && o.KillChainPhase.IsSet()
 }
 
-// SetKillChainPhase gets a reference to the given datadog.NullableString and assigns it to the KillChainPhase field.
+// SetKillChainPhase gets a reference to the given common.NullableString and assigns it to the KillChainPhase field.
 func (o *SourceTypesClassificationDefination) SetKillChainPhase(v string) {
 	o.KillChainPhase.Set(&v)
 }
@@ -255,7 +265,7 @@ func (o *SourceTypesClassificationDefination) HasMitreCreationDate() bool {
 	return o != nil && o.MitreCreationDate.IsSet()
 }
 
-// SetMitreCreationDate gets a reference to the given datadog.NullableString and assigns it to the MitreCreationDate field.
+// SetMitreCreationDate gets a reference to the given common.NullableString and assigns it to the MitreCreationDate field.
 func (o *SourceTypesClassificationDefination) SetMitreCreationDate(v string) {
 	o.MitreCreationDate.Set(&v)
 }

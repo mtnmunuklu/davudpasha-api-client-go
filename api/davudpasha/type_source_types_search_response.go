@@ -6,6 +6,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourceTypesSearchResponse defines the structure for the response of a source types search.
 type SourceTypesSearchResponse struct {
 	// Items retrieved from the search.
 	Items []SourceTypesItem `json:"Items,omitempty"`
@@ -13,9 +14,9 @@ type SourceTypesSearchResponse struct {
 	FailedItems []json.RawMessage `json:"FailedItems,omitempty"`
 	// Items that were successfully retrieved.
 	SuccessItems []SuccessItem `json:"SuccessItems,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Raw value if deserialization fails.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

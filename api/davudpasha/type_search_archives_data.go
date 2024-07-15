@@ -6,11 +6,14 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SearchArchivesData represents data structure for searching archives.
 type SearchArchivesData struct {
-	Query  *SearchArchivesQuery  `json:"Query,omitempty"`
+	// Query contains the search query parameters.
+	Query *SearchArchivesQuery `json:"Query,omitempty"`
+	// Status represents the status of the search operation.
 	Status *SearchArchivesStatus `json:"Status,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

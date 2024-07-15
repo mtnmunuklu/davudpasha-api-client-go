@@ -7,19 +7,30 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SystemLogsSearchRequest represents a search request for system logs.
 type SystemLogsSearchRequest struct {
-	AppName                 *string               `json:"appName,omitempty"`
-	Severity                common.NullableString `json:"severity,omitempty"`
-	FromIndex               *int64                `json:"fromIndex,omitempty"`
-	PageSize                *int64                `json:"pageSize,omitempty"`
-	DateTimeRange           *DateTimeRange        `json:"dateTimeRange,omitempty"`
-	Filter                  *string               `json:"filter,omitempty"`
-	ShowServicesData        *bool                 `json:"showServicesData,omitempty"`
-	ShowAllTenantsData      *bool                 `json:"showAllTenantsData,omitempty"`
-	SmartRestRequestContext *string               `json:"smartRestRequestContext,omitempty"`
-	VisualStyled            *bool                 `json:"visualStyled,omitempty"`
+	// AppName specifies the name of the application to filter logs.
+	AppName *string `json:"appName,omitempty"`
+	// Severity specifies the severity level of logs to filter.
+	Severity common.NullableString `json:"severity,omitempty"`
+	// FromIndex specifies the starting index for pagination.
+	FromIndex *int64 `json:"fromIndex,omitempty"`
+	// PageSize specifies the number of logs per page in pagination.
+	PageSize *int64 `json:"pageSize,omitempty"`
+	// DateTimeRange specifies the date and time range for log filtering.
+	DateTimeRange *DateTimeRange `json:"dateTimeRange,omitempty"`
+	// Filter specifies additional filtering criteria for logs.
+	Filter *string `json:"filter,omitempty"`
+	// ShowServicesData indicates whether to include service-related data in the results.
+	ShowServicesData *bool `json:"showServicesData,omitempty"`
+	// ShowAllTenantsData indicates whether to include data from all tenants in the results.
+	ShowAllTenantsData *bool `json:"showAllTenantsData,omitempty"`
+	// SmartRestRequestContext specifies the context for a smart REST request.
+	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
+	// VisualStyled indicates whether the search results are visually styled.
+	VisualStyled *bool `json:"visualStyled,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -93,7 +104,7 @@ func (o *SystemLogsSearchRequest) HasSeverity() bool {
 	return o != nil && o.Severity.IsSet()
 }
 
-// SetSeverity gets a reference to the given datadog.NullableString and assigns it to the Severity field.
+// SetSeverity gets a reference to the given common.NullableString and assigns it to the Severity field.
 func (o *SystemLogsSearchRequest) SetSeverity(v string) {
 	o.Severity.Set(&v)
 }

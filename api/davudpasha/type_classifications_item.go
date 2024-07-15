@@ -6,18 +6,27 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ClassificationsItem represents an item in classifications.
 type ClassificationsItem struct {
-	ID             *string                       `json:"ID,omitempty"`
-	DefID          *int64                        `json:"DefID,omitempty"`
-	Name           *string                       `json:"Name,omitempty"`
-	Severity       *string                       `json:"Severity,omitempty"`
-	MitreTags      common.NullableList[MitreTag] `json:"MitreTags,omitempty"`
-	KillChainPhase common.NullableString         `json:"KillChainPhase,omitempty"`
-	FromMarket     *bool                         `json:"FromMarket,omitempty"`
-	FromModules    *bool                         `json:"FromModules,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Unique identifier for the classification item.
+	ID *string `json:"ID,omitempty"`
+	// Definition ID associated with the classification item.
+	DefID *int64 `json:"DefID,omitempty"`
+	// Name of the classification item.
+	Name *string `json:"Name,omitempty"`
+	// Severity level associated with the classification item.
+	Severity *string `json:"Severity,omitempty"`
+	// List of MITRE tags associated with the classification item, which can be null.
+	MitreTags common.NullableList[MitreTag] `json:"MitreTags,omitempty"`
+	// Kill chain phase associated with the classification item, which can be null.
+	KillChainPhase common.NullableString `json:"KillChainPhase,omitempty"`
+	// Flag indicating if the classification item is from the market.
+	FromMarket *bool `json:"FromMarket,omitempty"`
+	// Flag indicating if the classification item is from modules.
+	FromModules *bool `json:"FromModules,omitempty"`
+	// Raw value if deserialization fails.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 
@@ -174,7 +183,7 @@ func (o *ClassificationsItem) HasMitreTags() bool {
 	return o != nil && o.MitreTags.IsSet()
 }
 
-// SetMitreTags gets a reference to the given datadog.Nullable[]MitreTag and assigns it to the MitreTags field.
+// SetMitreTags gets a reference to the given common.Nullable[]MitreTag and assigns it to the MitreTags field.
 func (o *ClassificationsItem) SetMitreTags(v []MitreTag) {
 	o.MitreTags.Set(&v)
 }
@@ -213,7 +222,7 @@ func (o *ClassificationsItem) HasKillChainPhase() bool {
 	return o != nil && o.KillChainPhase.IsSet()
 }
 
-// SetKillChainPhase gets a reference to the given datadog.NullableString and assigns it to the KillChainPhase field.
+// SetKillChainPhase gets a reference to the given common.NullableString and assigns it to the KillChainPhase field.
 func (o *ClassificationsItem) SetKillChainPhase(v string) {
 	o.KillChainPhase.Set(&v)
 }

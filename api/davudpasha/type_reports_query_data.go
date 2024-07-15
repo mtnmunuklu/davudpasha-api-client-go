@@ -25,7 +25,7 @@ type ReportsQueryData struct {
 	// Arguments for the script.
 	ScriptArguments common.NullableList[string] `json:"ScriptArguments,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -99,7 +99,7 @@ func (o *ReportsQueryData) HasQueryID() bool {
 	return o != nil && o.QueryID.IsSet()
 }
 
-// SetQueryID gets a reference to the given datadog.NullableString and assigns it to the QueryID field.
+// SetQueryID gets a reference to the given common.NullableString and assigns it to the QueryID field.
 func (o *ReportsQueryData) SetQueryID(v string) {
 	o.QueryID.Set(&v)
 }
@@ -138,7 +138,7 @@ func (o *ReportsQueryData) HasQueryStr() bool {
 	return o != nil && o.QueryStr.IsSet()
 }
 
-// SetQueryStr gets a reference to the given datadog.NullableString and assigns it to the QueryStr field.
+// SetQueryStr gets a reference to the given common.NullableString and assigns it to the QueryStr field.
 func (o *ReportsQueryData) SetQueryStr(v string) {
 	o.QueryStr.Set(&v)
 }
@@ -261,7 +261,7 @@ func (o *ReportsQueryData) HasScriptPath() bool {
 	return o != nil && o.ScriptPath.IsSet()
 }
 
-// SetScriptPath gets a reference to the given datadog.NullableString and assigns it to the ScriptPath field.
+// SetScriptPath gets a reference to the given common.NullableString and assigns it to the ScriptPath field.
 func (o *ReportsQueryData) SetScriptPath(v string) {
 	o.ScriptPath.Set(&v)
 }
@@ -301,7 +301,7 @@ func (o *ReportsQueryData) HasScriptArguments() bool {
 	return o != nil && o.ScriptArguments.IsSet()
 }
 
-// SetScriptArguments gets a reference to the given datadog.Nullable[]string and assigns it to the ScriptArguments field.
+// SetScriptArguments gets a reference to the given common.Nullable[]string and assigns it to the ScriptArguments field.
 func (o *ReportsQueryData) SetScriptArguments(v []string) {
 	o.ScriptArguments.Set(&v)
 }

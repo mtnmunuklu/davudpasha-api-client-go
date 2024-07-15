@@ -22,6 +22,7 @@ func NewSearchClassificationsOptionalParameters() *SearchClassificationsOptional
 	return &this
 }
 
+// WithBody sets the corresponding parameter name and returns the struct.
 func (r *SearchClassificationsOptionalParameters) WithBody(body ClassificationsSearchRequest) *SearchClassificationsOptionalParameters {
 	r.Body = &body
 	return r

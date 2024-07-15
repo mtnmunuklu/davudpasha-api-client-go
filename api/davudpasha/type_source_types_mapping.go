@@ -6,10 +6,12 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourceTypesMapping represents the mapping structure for source types.
 type SourceTypesMapping struct {
+	// Field specifies the field for mapping.
 	Field *string `json:"Field,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

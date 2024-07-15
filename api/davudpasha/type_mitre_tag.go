@@ -6,13 +6,17 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// MitreTag represents MITRE ATT&CK tags associated with a classification.
 type MitreTag struct {
-	Tactic        *string  `json:"Tactic,omitempty"`
-	Technique     []string `json:"Technique,omitempty"`
+	// MITRE ATT&CK tactic associated with the classification.
+	Tactic *string `json:"Tactic,omitempty"`
+	// List of MITRE ATT&CK techniques associated with the classification.
+	Technique []string `json:"Technique,omitempty"`
+	// List of MITRE ATT&CK sub-techniques associated with the classification.
 	SubTechniques []string `json:"SubTechniques,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Raw value if deserialization fails.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 

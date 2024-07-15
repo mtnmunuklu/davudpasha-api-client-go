@@ -6,17 +6,24 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// CasesSearchRequest represents the request structure for searching cases.
 type CasesSearchRequest struct {
-	FromIndex     *int64         `json:"fromIndex,omitempty"`
-	PageSize      *int64         `json:"pageSize,omitempty"`
+	// Starting index for pagination.
+	FromIndex *int64 `json:"fromIndex,omitempty"`
+	// Number of items per page for pagination.
+	PageSize *int64 `json:"pageSize,omitempty"`
+	// Date-time range filter for cases.
 	DateTimeRange *DateTimeRange `json:"dateTimeRange,omitempty"`
-	Filter        *string        `json:"filter,omitempty"`
-	App           *string        `json:"app,omitempty"`
-	ShowSubCases  *bool          `json:"showSubCases"`
+	// Additional filter criteria for cases.
+	Filter *string `json:"filter,omitempty"`
+	// Application associated with the cases.
+	App *string `json:"app,omitempty"`
+	// Flag indicating whether to include sub-cases in the search results.
+	ShowSubCases *bool `json:"showSubCases"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

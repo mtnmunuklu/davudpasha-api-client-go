@@ -22,6 +22,7 @@ func NewSearchSourceTypesOptionalParameters() *SearchSourceTypesOptionalParamete
 	return &this
 }
 
+// WithBody sets the corresponding parameter name and returns the struct.
 func (r *SearchSourceTypesOptionalParameters) WithBody(body SourceTypesSearchRequest) *SearchSourceTypesOptionalParameters {
 	r.Body = &body
 	return r

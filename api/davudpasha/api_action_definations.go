@@ -22,6 +22,7 @@ func NewSearchActionDefinationsOptionalParameters() *SearchActionDefinationsOpti
 	return &this
 }
 
+// WithBody sets the corresponding parameter name and returns the struct.
 func (r *SearchActionDefinationsOptionalParameters) WithBody(body ActionDefinationsSearchRequest) *SearchActionDefinationsOptionalParameters {
 	r.Body = &body
 	return r

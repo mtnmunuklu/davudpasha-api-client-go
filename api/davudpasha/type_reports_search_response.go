@@ -11,7 +11,7 @@ type ReportsSearchResponse struct {
 	// Date when the report was last modified.
 	ModifiedDate *string `json:"ModifiedDate,omitempty"`
 	// ID of the report.
-	ReportId *string `json:"ReportId,omitempty"`
+	ReportID *string `json:"ReportId,omitempty"`
 	// Username associated with the report.
 	Username *string `json:"Username,omitempty"`
 	// Name of the report.
@@ -61,7 +61,7 @@ type ReportsSearchResponse struct {
 	// Version of the report.
 	Version *float64 `json:"Version,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -111,32 +111,32 @@ func (o *ReportsSearchResponse) SetModifiedDate(v string) {
 	o.ModifiedDate = &v
 }
 
-// GetReportId returns the ReportId field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetReportId() string {
-	if o == nil || o.ReportId == nil {
+// GetReportID returns the ReportID field value if set, zero value otherwise.
+func (o *ReportsSearchResponse) GetReportID() string {
+	if o == nil || o.ReportID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ReportId
+	return *o.ReportID
 }
 
-// GetReportIdOk returns a tuple with the ReportId field value if set, nil otherwise
+// GetReportIDOk returns a tuple with the ReportID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetReportIdOk() (*string, bool) {
-	if o == nil || o.ReportId == nil {
+func (o *ReportsSearchResponse) GetReportIDOk() (*string, bool) {
+	if o == nil || o.ReportID == nil {
 		return nil, false
 	}
-	return o.ReportId, true
+	return o.ReportID, true
 }
 
-// HasReportId returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasReportId() bool {
-	return o != nil && o.ReportId != nil
+// HasReportID returns a boolean if a field has been set.
+func (o *ReportsSearchResponse) HasReportID() bool {
+	return o != nil && o.ReportID != nil
 }
 
-// SetReportId gets a reference to the given string and assigns it to the ReportId field.
-func (o *ReportsSearchResponse) SetReportId(v string) {
-	o.ReportId = &v
+// SetReportID gets a reference to the given string and assigns it to the ReportID field.
+func (o *ReportsSearchResponse) SetReportID(v string) {
+	o.ReportID = &v
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise.
@@ -275,7 +275,7 @@ func (o *ReportsSearchResponse) HasAuthor() bool {
 	return o != nil && o.Author.IsSet()
 }
 
-// SetAuthor gets a reference to the given datadog.NullableString and assigns it to the Author field.
+// SetAuthor gets a reference to the given common.NullableString and assigns it to the Author field.
 func (o *ReportsSearchResponse) SetAuthor(v string) {
 	o.Author.Set(&v)
 }
@@ -343,7 +343,7 @@ func (o *ReportsSearchResponse) HasSharedUsersAndGroups() bool {
 	return o != nil && o.SharedUsersAndGroups.IsSet()
 }
 
-// SetSharedUsersAndGroups gets a reference to the given datadog.Nullable[]string and assigns it to the SharedUsersAndGroups field.
+// SetSharedUsersAndGroups gets a reference to the given common.Nullable[]string and assigns it to the SharedUsersAndGroups field.
 func (o *ReportsSearchResponse) SetSharedUsersAndGroups(v []string) {
 	o.SharedUsersAndGroups.Set(&v)
 }
@@ -466,7 +466,7 @@ func (o *ReportsSearchResponse) HasSchedule() bool {
 	return o != nil && o.Schedule.IsSet()
 }
 
-// SetSchedule gets a reference to the given datadog.NullableScheduleConfig and assigns it to the Schedule field.
+// SetSchedule gets a reference to the given common.NullableScheduleConfig and assigns it to the Schedule field.
 func (o *ReportsSearchResponse) SetSchedule(v ScheduleConfig) {
 	o.Schedule.Set(&v)
 }
@@ -505,7 +505,7 @@ func (o *ReportsSearchResponse) HasLastGenerationTime() bool {
 	return o != nil && o.LastGenerationTime.IsSet()
 }
 
-// SetLastGenerationTime gets a reference to the given datadog.NullableString and assigns it to the LastGenerationTime field.
+// SetLastGenerationTime gets a reference to the given common.NullableString and assigns it to the LastGenerationTime field.
 func (o *ReportsSearchResponse) SetLastGenerationTime(v string) {
 	o.LastGenerationTime.Set(&v)
 }
@@ -544,7 +544,7 @@ func (o *ReportsSearchResponse) HasNextGenerationTime() bool {
 	return o != nil && o.NextGenerationTime.IsSet()
 }
 
-// SetNextGenerationTime gets a reference to the given datadog.NullableString and assigns it to the NextGenerationTime field.
+// SetNextGenerationTime gets a reference to the given common.NullableString and assigns it to the NextGenerationTime field.
 func (o *ReportsSearchResponse) SetNextGenerationTime(v string) {
 	o.NextGenerationTime.Set(&v)
 }
@@ -611,7 +611,7 @@ func (o *ReportsSearchResponse) HasPageSettings() bool {
 	return o != nil && o.PageSettings.IsSet()
 }
 
-// SetPageSettings gets a reference to the given datadog.NullableString and assigns it to the PageSettings field.
+// SetPageSettings gets a reference to the given common.NullableString and assigns it to the PageSettings field.
 func (o *ReportsSearchResponse) SetPageSettings(v string) {
 	o.PageSettings.Set(&v)
 }
@@ -887,8 +887,8 @@ func (o ReportsSearchResponse) MarshalJSON() ([]byte, error) {
 	if o.ModifiedDate != nil {
 		toSerialize["ModifiedDate"] = o.ModifiedDate
 	}
-	if o.ReportId != nil {
-		toSerialize["ReportId"] = o.ReportId
+	if o.ReportID != nil {
+		toSerialize["ReportId"] = o.ReportID
 	}
 	if o.Username != nil {
 		toSerialize["Username"] = o.Username
@@ -973,7 +973,7 @@ func (o ReportsSearchResponse) MarshalJSON() ([]byte, error) {
 func (o *ReportsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		ModifiedDate            *string                     `json:"ModifiedDate,omitempty"`
-		ReportId                *string                     `jsom:"ReportId,omitempty"`
+		ReportID                *string                     `jsom:"ReportId,omitempty"`
 		Username                *string                     `json:"Username,omitempty"`
 		Name                    *string                     `json:"Name,omitempty"`
 		Description             *string                     `json:"Description,omitempty"`
@@ -1008,7 +1008,7 @@ func (o *ReportsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 	}
 
 	o.ModifiedDate = all.ModifiedDate
-	o.ReportId = all.ReportId
+	o.ReportID = all.ReportID
 	o.Username = all.Username
 	o.Name = all.Name
 	o.Description = all.Description

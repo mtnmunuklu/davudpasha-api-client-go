@@ -63,7 +63,7 @@ func (o *AlertsItem) HasLgsName() bool {
 	return o != nil && o.LgsName.IsSet()
 }
 
-// SetLgsName gets a reference to the given datadog.NullableString and assigns it to the LgsName field.
+// SetLgsName gets a reference to the given common.NullableString and assigns it to the LgsName field.
 func (o *AlertsItem) SetLgsName(v string) {
 	o.LgsName.Set(&v)
 }
@@ -158,7 +158,7 @@ func (o *AlertsItem) HasActionMessage() bool {
 	return o != nil && o.ActionMessage.IsSet()
 }
 
-// SetActionMessage gets a reference to the given datadog.NullableString and assigns it to the ActionMessage field.
+// SetActionMessage gets a reference to the given common.NullableString and assigns it to the ActionMessage field.
 func (o *AlertsItem) SetActionMessage(v string) {
 	o.ActionMessage.Set(&v)
 }

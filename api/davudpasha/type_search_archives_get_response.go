@@ -6,10 +6,12 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SearchArchivesGetResponse represents the response structure for retrieving search archives.
 type SearchArchivesGetResponse struct {
+	// Data contains an array of SearchArchivesData retrieved from the search archives.
 	Data []SearchArchivesData `json:"Data,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

@@ -43,7 +43,7 @@ type ReportsQueryExtData struct {
 	// Indicates if correlation table should be included.
 	CorrelationTable *bool `json:"Correlation_Table,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

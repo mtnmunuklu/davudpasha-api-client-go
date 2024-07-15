@@ -42,15 +42,15 @@ type QueriesItem struct {
 	// Whether the query has an update.
 	HasUpdate *bool `json:"HasUpdate,omitempty"`
 	// ID of the module.
-	ModuleId common.NullableString `json:"ModuleId,omitempty"`
+	ModuleID common.NullableString `json:"ModuleId,omitempty"`
 	// GUID of the module.
-	ModuleGuid common.NullableString `json:"ModuleGuid,omitempty"`
+	ModuleGUID common.NullableString `json:"ModuleGuid,omitempty"`
 	// Users and groups with whom the query is shared.
 	SharedUsersAndGroups common.NullableList[string] `json:"SharedUsersAndGroups,omitempty"`
 	// Version of the query.
 	Version *float64 `json:"Version,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -152,7 +152,7 @@ func (o *QueriesItem) HasDescription() bool {
 	return o != nil && o.Description.IsSet()
 }
 
-// SetDescription gets a reference to the given datadog.NullableString and assigns it to the Description field.
+// SetDescription gets a reference to the given common.NullableString and assigns it to the Description field.
 func (o *QueriesItem) SetDescription(v string) {
 	o.Description.Set(&v)
 }
@@ -191,7 +191,7 @@ func (o *QueriesItem) HasColumns() bool {
 	return o != nil && o.Columns.IsSet()
 }
 
-// SetColumns gets a reference to the given datadog.Nullable[SelectedColumns] and assigns it to the Columns field.
+// SetColumns gets a reference to the given common.Nullable[SelectedColumns] and assigns it to the Columns field.
 func (o *QueriesItem) SetColumns(v []SelectedColumn) {
 	o.Columns.Set(&v)
 }
@@ -370,7 +370,7 @@ func (o *QueriesItem) HasTags() bool {
 	return o != nil && o.Tags.IsSet()
 }
 
-// SetTags gets a reference to the given datadog.Nullable[]string and assigns it to the Tags field.
+// SetTags gets a reference to the given common.Nullable[]string and assigns it to the Tags field.
 func (o *QueriesItem) SetTags(v []string) {
 	o.Tags.Set(&v)
 }
@@ -409,7 +409,7 @@ func (o *QueriesItem) HasMitreTags() bool {
 	return o != nil && o.MitreTags.IsSet()
 }
 
-// SetMitreTags gets a reference to the given datadog.Nullable[]string and assigns it to the MitreTags field.
+// SetMitreTags gets a reference to the given common.Nullable[]string and assigns it to the MitreTags field.
 func (o *QueriesItem) SetMitreTags(v []MitreTag) {
 	o.MitreTags.Set(&v)
 }
@@ -448,7 +448,7 @@ func (o *QueriesItem) HasKillChainPhase() bool {
 	return o != nil && o.KillChainPhase.IsSet()
 }
 
-// SetKillChainPhase gets a reference to the given datadog.NullableString and assigns it to the KillChainPhase field.
+// SetKillChainPhase gets a reference to the given common.NullableString and assigns it to the KillChainPhase field.
 func (o *QueriesItem) SetKillChainPhase(v string) {
 	o.KillChainPhase.Set(&v)
 }
@@ -547,82 +547,82 @@ func (o *QueriesItem) SetHasUpdate(v bool) {
 	o.HasUpdate = &v
 }
 
-// GetModuleId returns the ModuleId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItem) GetModuleId() string {
-	if o == nil || o.ModuleId.Get() == nil {
+// GetModuleID returns the ModuleID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *QueriesItem) GetModuleID() string {
+	if o == nil || o.ModuleID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ModuleId.Get()
+	return *o.ModuleID.Get()
 }
 
-// GetModuleIdOk returns a tuple with the ModuleId field value if set, nil otherwise
+// GetModuleIDOk returns a tuple with the ModuleID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItem) GetModuleIdOk() (*string, bool) {
+func (o *QueriesItem) GetModuleIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ModuleId.Get(), o.ModuleId.IsSet()
+	return o.ModuleID.Get(), o.ModuleID.IsSet()
 }
 
-// HasModuleId returns a boolean if a ModuleId has been set.
-func (o *QueriesItem) HasModuleId() bool {
-	return o != nil && o.ModuleId.IsSet()
+// HasModuleID returns a boolean if a ModuleID has been set.
+func (o *QueriesItem) HasModuleID() bool {
+	return o != nil && o.ModuleID.IsSet()
 }
 
-// SetModuleId gets a reference to the given datadog.NullableString and assigns it to the ModuleId field.
-func (o *QueriesItem) SetModuleId(v string) {
-	o.ModuleId.Set(&v)
+// SetModuleID gets a reference to the given common.NullableString and assigns it to the ModuleID field.
+func (o *QueriesItem) SetModuleID(v string) {
+	o.ModuleID.Set(&v)
 }
 
-// SetModuleIdNil sets the value for ModuleId to be an explicit nil.
-func (o *QueriesItem) SetModuleIdNil() {
-	o.ModuleId.Set(nil)
+// SetModuleIDNil sets the value for ModuleID to be an explicit nil.
+func (o *QueriesItem) SetModuleIDNil() {
+	o.ModuleID.Set(nil)
 }
 
-// UnSetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
-func (o *QueriesItem) UnSetModuleId() {
-	o.ModuleId.UnSet()
+// UnSetModuleID ensures that no value is present for ModuleID, not even an explicit nil.
+func (o *QueriesItem) UnSetModuleID() {
+	o.ModuleID.UnSet()
 }
 
-// GetModuleGuid returns the ModuleGuid field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItem) GetModuleGuid() string {
-	if o == nil || o.ModuleGuid.Get() == nil {
+// GetModuleGUID returns the ModuleGUID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *QueriesItem) GetModuleGUID() string {
+	if o == nil || o.ModuleGUID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ModuleGuid.Get()
+	return *o.ModuleGUID.Get()
 }
 
-// GetModuleGuidOk returns a tuple with the ModuleGuid field value if set, nil otherwise
+// GetModuleGUIDOk returns a tuple with the ModuleGUID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItem) GetModuleGuidOk() (*string, bool) {
+func (o *QueriesItem) GetModuleGUIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ModuleGuid.Get(), o.ModuleGuid.IsSet()
+	return o.ModuleGUID.Get(), o.ModuleGUID.IsSet()
 }
 
-// HasModuleGuid returns a boolean if a ModuleGuid has been set.
-func (o *QueriesItem) HasModuleGuid() bool {
-	return o != nil && o.ModuleGuid.IsSet()
+// HasModuleGUID returns a boolean if a ModuleGUID has been set.
+func (o *QueriesItem) HasModuleGUID() bool {
+	return o != nil && o.ModuleGUID.IsSet()
 }
 
-// SetModuleGuid gets a reference to the given datadog.NullableString and assigns it to the ModuleGuid field.
-func (o *QueriesItem) SetModuleGuid(v string) {
-	o.ModuleGuid.Set(&v)
+// SetModuleGUID gets a reference to the given common.NullableString and assigns it to the ModuleGUID field.
+func (o *QueriesItem) SetModuleGUID(v string) {
+	o.ModuleGUID.Set(&v)
 }
 
-// SetModuleGuidNil sets the value for ModuleGuid to be an explicit nil.
-func (o *QueriesItem) SetModuleGuidNil() {
-	o.ModuleGuid.Set(nil)
+// SetModuleGUIDNil sets the value for ModuleGGUID to be an explicit nil.
+func (o *QueriesItem) SetModuleGUIDNil() {
+	o.ModuleGUID.Set(nil)
 }
 
-// UnSetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
-func (o *QueriesItem) UnSetModuleGuid() {
-	o.ModuleGuid.UnSet()
+// UnSetModuleGUID ensures that no value is present for ModuleGUID, not even an explicit nil.
+func (o *QueriesItem) UnSetModuleGUID() {
+	o.ModuleGUID.UnSet()
 }
 
 // GetSharedUsersAndGroups returns the SharedUsersAndGroups field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -649,7 +649,7 @@ func (o *QueriesItem) HasSharedUsersAndGroups() bool {
 	return o != nil && o.SharedUsersAndGroups.IsSet()
 }
 
-// SetSharedUsersAndGroups gets a reference to the given datadog.Nullable[]string and assigns it to the SharedUsersAndGroups field.
+// SetSharedUsersAndGroups gets a reference to the given common.Nullable[]string and assigns it to the SharedUsersAndGroups field.
 func (o *QueriesItem) SetSharedUsersAndGroups(v []string) {
 	o.SharedUsersAndGroups.Set(&v)
 }
@@ -746,11 +746,11 @@ func (o QueriesItem) MarshalJSON() ([]byte, error) {
 	if o.HasUpdate != nil {
 		toSerialize["HasUpdate"] = o.HasUpdate
 	}
-	if o.ModuleId.IsSet() {
-		toSerialize["ModuleId"] = o.ModuleId.Get()
+	if o.ModuleID.IsSet() {
+		toSerialize["ModuleId"] = o.ModuleID.Get()
 	}
-	if o.ModuleGuid.IsSet() {
-		toSerialize["ModuleGuid"] = o.ModuleGuid.Get()
+	if o.ModuleGUID.IsSet() {
+		toSerialize["ModuleGuid"] = o.ModuleGUID.Get()
 	}
 	if o.SharedUsersAndGroups.IsSet() {
 		toSerialize["SharedUsersAndGroups"] = o.SharedUsersAndGroups.Get()
@@ -784,8 +784,8 @@ func (o *QueriesItem) UnMarshalJSON(bytes []byte) (err error) {
 		FromMarket           *bool                               `json:"FromMarket,omitempty"`
 		FromModules          *bool                               `json:"FromModules,omitempty"`
 		HasUpdate            *bool                               `json:"HasUpdate,omitempty"`
-		ModuleId             common.NullableString               `json:"ModuleId,omitempty"`
-		ModuleGuid           common.NullableString               `json:"ModuleGuid,omitempty"`
+		ModuleID             common.NullableString               `json:"ModuleId,omitempty"`
+		ModuleGUID           common.NullableString               `json:"ModuleGuid,omitempty"`
 		SharedUsersAndGroups common.NullableList[string]         `json:"SharedUsersAndGroups,omitempty"`
 		Version              *float64                            `json:"Version,omitempty"`
 	}{}
@@ -828,8 +828,8 @@ func (o *QueriesItem) UnMarshalJSON(bytes []byte) (err error) {
 	o.FromMarket = all.FromMarket
 	o.FromModules = all.FromModules
 	o.HasUpdate = all.HasUpdate
-	o.ModuleId = all.ModuleId
-	o.ModuleGuid = all.ModuleGuid
+	o.ModuleID = all.ModuleID
+	o.ModuleGUID = all.ModuleGUID
 	o.SharedUsersAndGroups = all.SharedUsersAndGroups
 	o.Version = all.Version
 

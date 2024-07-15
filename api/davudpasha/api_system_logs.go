@@ -22,6 +22,7 @@ func NewSearchSystemLogsOptionalParameters() *SearchSystemLogsOptionalParameters
 	return &this
 }
 
+// WithBody sets the corresponding parameter name and returns the struct.
 func (r *SearchSystemLogsOptionalParameters) WithBody(body SystemLogsSearchRequest) *SearchSystemLogsOptionalParameters {
 	r.Body = &body
 	return r

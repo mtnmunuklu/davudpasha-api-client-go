@@ -7,13 +7,14 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// LookupsSearchRequest represents a search request structure for lookups.
 type LookupsSearchRequest struct {
 	// Filter for searching sources.
 	Filter *string `json:"filter,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

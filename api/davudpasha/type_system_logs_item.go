@@ -6,33 +6,58 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SystemLogsItem represents an item in the system logs.
 type SystemLogsItem struct {
-	TS                   *string               `json:"ts,omitempty"`
-	Severity             *string               `json:"svr,omitempty"`
-	EventId              *string               `json:"eventid,omitempty"`
-	Message              *string               `json:"msg,omitempty"`
-	Title                common.NullableString `json:"title,omitempty"`
-	App                  *string               `json:"app,omitempty"`
-	Version              common.NullableString `json:"ver,omitempty"`
-	Data                 common.NullableString `json:"data,omitempty"`
-	EntityType           *string               `json:"entitytype,omitempty"`
-	EntityId             *string               `json:"entityid,omitempty"`
-	EntityName           common.NullableString `json:"entityname,omitempty"`
-	OptId1               *string               `json:"optid1,omitempty"`
-	OptId2               *string               `json:"optid2,omitempty"`
-	Link                 common.NullableString `json:"link,omitempty"`
-	Producer             *string               `json:"producer,omitempty"`
-	Reason               common.NullableString `json:"reason,omitempty"`
-	DeviceName           common.NullableString `json:"dvcname,omitempty"`
-	DeviceIp             *string               `json:"dvcip,omitempty"`
-	Tags                 []string              `json:"tags,omitempty"`
-	StackTrace           common.NullableString `json:"stacktrace,omitempty"`
+	// TS specifies the timestamp of the log item.
+	TS *string `json:"ts,omitempty"`
+	// Severity specifies the severity level of the log item.
+	Severity *string `json:"svr,omitempty"`
+	// EventID specifies the event ID associated with the log item.
+	EventID *string `json:"eventid,omitempty"`
+	// Message contains the main message of the log item.
+	Message *string `json:"msg,omitempty"`
+	// Title specifies the title associated with the log item.
+	Title common.NullableString `json:"title,omitempty"`
+	// App specifies the application name related to the log item.
+	App *string `json:"app,omitempty"`
+	// Version specifies the version information related to the log item.
+	Version common.NullableString `json:"ver,omitempty"`
+	// Data specifies additional data associated with the log item.
+	Data common.NullableString `json:"data,omitempty"`
+	// EntityType specifies the entity type associated with the log item.
+	EntityType *string `json:"entitytype,omitempty"`
+	// EntityID specifies the entity ID associated with the log item.
+	EntityID *string `json:"entityid,omitempty"`
+	// EntityName specifies the entity name associated with the log item.
+	EntityName common.NullableString `json:"entityname,omitempty"`
+	// OptID1 specifies optional ID 1 associated with the log item.
+	OptID1 *string `json:"optid1,omitempty"`
+	// OptID2 specifies optional ID 2 associated with the log item.
+	OptID2 *string `json:"optid2,omitempty"`
+	// Link specifies a link associated with the log item.
+	Link common.NullableString `json:"link,omitempty"`
+	// Producer specifies the producer of the log item.
+	Producer *string `json:"producer,omitempty"`
+	// Reason specifies the reason associated with the log item.
+	Reason common.NullableString `json:"reason,omitempty"`
+	// DeviceName specifies the device name related to the log item.
+	DeviceName common.NullableString `json:"dvcname,omitempty"`
+	// DeviceIP specifies the device IP related to the log item.
+	DeviceIP *string `json:"dvcip,omitempty"`
+	// Tags specifies tags associated with the log item.
+	Tags []string `json:"tags,omitempty"`
+	// StackTrace specifies the stack trace associated with the log item.
+	StackTrace common.NullableString `json:"stacktrace,omitempty"`
+	// StackTraceJsonStyled specifies the JSON-styled stack trace associated with the log item.
 	StackTraceJsonStyled common.NullableString `json:"stacktrace_JsonStyled,omitempty"`
-	TenantID             common.NullableString `json:"TenantID,omitempty"`
-	ID                   *string               `json:"_id,omitempty"`
-	Timestamp            common.NullableString `json:"Timestamp,omitempty"`
+	// TenantID specifies the ID of the tenant associated with the log item.
+	TenantID common.NullableString `json:"TenantID,omitempty"`
+	// ID specifies the ID of the log item.
+	ID *string `json:"_id,omitempty"`
+	// Timestamp specifies the timestamp associated with the log item.
+	Timestamp common.NullableString `json:"Timestamp,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -110,32 +135,32 @@ func (o *SystemLogsItem) SetSeverity(v string) {
 	o.Severity = &v
 }
 
-// GetEventId returns the EventId field value if set, zero value otherwise.
-func (o *SystemLogsItem) GetEventId() string {
-	if o == nil || o.EventId == nil {
+// GetEventID returns the EventID field value if set, zero value otherwise.
+func (o *SystemLogsItem) GetEventID() string {
+	if o == nil || o.EventID == nil {
 		var ret string
 		return ret
 	}
-	return *o.EventId
+	return *o.EventID
 }
 
-// GetEventIdOk returns a tuple with the EventId field value if set, nil otherwise
+// GetEventIDOk returns a tuple with the EventID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SystemLogsItem) GetEventIdOk() (*string, bool) {
-	if o == nil || o.EventId == nil {
+func (o *SystemLogsItem) GetEventIDOk() (*string, bool) {
+	if o == nil || o.EventID == nil {
 		return nil, false
 	}
-	return o.EventId, true
+	return o.EventID, true
 }
 
-// HasEventId returns a boolean if a field has been set.
-func (o *SystemLogsItem) HasEventId() bool {
-	return o != nil && o.EventId != nil
+// HasEventID returns a boolean if a field has been set.
+func (o *SystemLogsItem) HasEventID() bool {
+	return o != nil && o.EventID != nil
 }
 
-// SetEventId geEventId a reference to the given string and assigns it to the EventId field.
-func (o *SystemLogsItem) SetEventId(v string) {
-	o.EventId = &v
+// SetEventID geEventID a reference to the given string and assigns it to the EventID field.
+func (o *SystemLogsItem) SetEventID(v string) {
+	o.EventID = &v
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise.
@@ -190,7 +215,7 @@ func (o *SystemLogsItem) HasTitle() bool {
 	return o != nil && o.Title.IsSet()
 }
 
-// SetTitle gets a reference to the given datadog.NullableString and assigns it to the Title field.
+// SetTitle gets a reference to the given common.NullableString and assigns it to the Title field.
 func (o *SystemLogsItem) SetTitle(v string) {
 	o.Title.Set(&v)
 }
@@ -257,7 +282,7 @@ func (o *SystemLogsItem) HasVersion() bool {
 	return o != nil && o.Version.IsSet()
 }
 
-// SetVersion gets a reference to the given datadog.NullableString and assigns it to the Version field.
+// SetVersion gets a reference to the given common.NullableString and assigns it to the Version field.
 func (o *SystemLogsItem) SetVersion(v string) {
 	o.Version.Set(&v)
 }
@@ -296,7 +321,7 @@ func (o *SystemLogsItem) HasData() bool {
 	return o != nil && o.Data.IsSet()
 }
 
-// SetData gets a reference to the given datadog.NullableString and assigns it to the Data field.
+// SetData gets a reference to the given common.NullableString and assigns it to the Data field.
 func (o *SystemLogsItem) SetData(v string) {
 	o.Data.Set(&v)
 }
@@ -339,32 +364,32 @@ func (o *SystemLogsItem) SetEntityType(v string) {
 	o.EntityType = &v
 }
 
-// GetEntityId returns the EntityId field value if set, zero value otherwise.
-func (o *SystemLogsItem) GetEntityId() string {
-	if o == nil || o.EntityId == nil {
+// GetEntityID returns the EntityID field value if set, zero value otherwise.
+func (o *SystemLogsItem) GetEntityID() string {
+	if o == nil || o.EntityID == nil {
 		var ret string
 		return ret
 	}
-	return *o.EntityId
+	return *o.EntityID
 }
 
-// GetEntityIdOk returns a tuple with the EntityId field value if set, nil otherwise
+// GetEntityIDOk returns a tuple with the EntityID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SystemLogsItem) GetEntityIdOk() (*string, bool) {
-	if o == nil || o.EntityId == nil {
+func (o *SystemLogsItem) GetEntityIDOk() (*string, bool) {
+	if o == nil || o.EntityID == nil {
 		return nil, false
 	}
-	return o.EntityId, true
+	return o.EntityID, true
 }
 
-// HasEntityId returns a boolean if a field has been set.
-func (o *SystemLogsItem) HasEntityId() bool {
-	return o != nil && o.EntityId != nil
+// HasEntityID returns a boolean if a field has been set.
+func (o *SystemLogsItem) HasEntityID() bool {
+	return o != nil && o.EntityID != nil
 }
 
-// SetEntityId geEntityId a reference to the given string and assigns it to the EntityId field.
-func (o *SystemLogsItem) SetEntityId(v string) {
-	o.EntityId = &v
+// SetEntityID geEntityID a reference to the given string and assigns it to the EntityID field.
+func (o *SystemLogsItem) SetEntityID(v string) {
+	o.EntityID = &v
 }
 
 // GetEntityName returns the EntityName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -391,7 +416,7 @@ func (o *SystemLogsItem) HasEntityName() bool {
 	return o != nil && o.EntityName.IsSet()
 }
 
-// SetEntityName gets a reference to the given EntityNamedog.NullableString and assigns it to the EntityName field.
+// SetEntityName gets a reference to the given common.NullableString and assigns it to the EntityName field.
 func (o *SystemLogsItem) SetEntityName(v string) {
 	o.EntityName.Set(&v)
 }
@@ -406,60 +431,60 @@ func (o *SystemLogsItem) UnSetEntityName() {
 	o.EntityName.UnSet()
 }
 
-// GetOptId1 returns the OptId1 field value if set, zero value otherwise.
-func (o *SystemLogsItem) GetOptId1() string {
-	if o == nil || o.OptId1 == nil {
+// GetOptID1 returns the OptID1 field value if set, zero value otherwise.
+func (o *SystemLogsItem) GetOptID1() string {
+	if o == nil || o.OptID1 == nil {
 		var ret string
 		return ret
 	}
-	return *o.OptId1
+	return *o.OptID1
 }
 
-// GetOptId1Ok returns a tuple with the OptId1 field value if set, nil otherwise
+// GetOptID1Ok returns a tuple with the OptID1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SystemLogsItem) GetOptId1Ok() (*string, bool) {
-	if o == nil || o.OptId1 == nil {
+func (o *SystemLogsItem) GetOptID1Ok() (*string, bool) {
+	if o == nil || o.OptID1 == nil {
 		return nil, false
 	}
-	return o.OptId1, true
+	return o.OptID1, true
 }
 
-// HasOptId1 returns a boolean if a field has been set.
-func (o *SystemLogsItem) HasOptId1() bool {
-	return o != nil && o.OptId1 != nil
+// HasOptID1 returns a boolean if a field has been set.
+func (o *SystemLogsItem) HasOptID1() bool {
+	return o != nil && o.OptID1 != nil
 }
 
-// SetOptId1 geOptId1 a reference to the given string and assigns it to the OptId1 field.
-func (o *SystemLogsItem) SetOptId1(v string) {
-	o.OptId1 = &v
+// SetOptID1 geOptID1 a reference to the given string and assigns it to the OptID1 field.
+func (o *SystemLogsItem) SetOptID1(v string) {
+	o.OptID1 = &v
 }
 
-// GetOptId2 returns the OptId2 field value if set, zero value otherwise.
-func (o *SystemLogsItem) GetOptId2() string {
-	if o == nil || o.OptId2 == nil {
+// GetOptID2 returns the OptID2 field value if set, zero value otherwise.
+func (o *SystemLogsItem) GetOptID2() string {
+	if o == nil || o.OptID2 == nil {
 		var ret string
 		return ret
 	}
-	return *o.OptId2
+	return *o.OptID2
 }
 
-// GetOptId2Ok returns a tuple with the OptId2 field value if set, nil otherwise
+// GetOptID2Ok returns a tuple with the OptID2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SystemLogsItem) GetOptId2Ok() (*string, bool) {
-	if o == nil || o.OptId2 == nil {
+func (o *SystemLogsItem) GetOptID2Ok() (*string, bool) {
+	if o == nil || o.OptID2 == nil {
 		return nil, false
 	}
-	return o.OptId2, true
+	return o.OptID2, true
 }
 
-// HasOptId2 returns a boolean if a field has been set.
-func (o *SystemLogsItem) HasOptId2() bool {
-	return o != nil && o.OptId2 != nil
+// HasOptID2 returns a boolean if a field has been set.
+func (o *SystemLogsItem) HasOptID2() bool {
+	return o != nil && o.OptID2 != nil
 }
 
-// SetOptId2 geOptId2 a reference to the given string and assigns it to the OptId2 field.
-func (o *SystemLogsItem) SetOptId2(v string) {
-	o.OptId2 = &v
+// SetOptID2 geOptID2 a reference to the given string and assigns it to the OptID2 field.
+func (o *SystemLogsItem) SetOptID2(v string) {
+	o.OptID2 = &v
 }
 
 // GetLink returns the Link field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -486,7 +511,7 @@ func (o *SystemLogsItem) HasLink() bool {
 	return o != nil && o.Link.IsSet()
 }
 
-// SetLink gets a reference to the given Linkdog.NullableString and assigns it to the Link field.
+// SetLink gets a reference to the given common.NullableString and assigns it to the Link field.
 func (o *SystemLogsItem) SetLink(v string) {
 	o.Link.Set(&v)
 }
@@ -553,7 +578,7 @@ func (o *SystemLogsItem) HasReason() bool {
 	return o != nil && o.Reason.IsSet()
 }
 
-// SetReason gets a reference to the given Reasondog.NullableString and assigns it to the Reason field.
+// SetReason gets a reference to the given common.NullableString and assigns it to the Reason field.
 func (o *SystemLogsItem) SetReason(v string) {
 	o.Reason.Set(&v)
 }
@@ -592,7 +617,7 @@ func (o *SystemLogsItem) HasDeviceName() bool {
 	return o != nil && o.DeviceName.IsSet()
 }
 
-// SetDeviceName gets a reference to the given DeviceNamedog.NullableString and assigns it to the DeviceName field.
+// SetDeviceName gets a reference to the given common.NullableString and assigns it to the DeviceName field.
 func (o *SystemLogsItem) SetDeviceName(v string) {
 	o.DeviceName.Set(&v)
 }
@@ -607,32 +632,32 @@ func (o *SystemLogsItem) UnSetDeviceName() {
 	o.DeviceName.UnSet()
 }
 
-// GetDeviceIp returns the DeviceIp field value if set, zero value otherwise.
-func (o *SystemLogsItem) GetDeviceIp() string {
-	if o == nil || o.DeviceIp == nil {
+// GetDeviceIP returns the DeviceIP field value if set, zero value otherwise.
+func (o *SystemLogsItem) GetDeviceIP() string {
+	if o == nil || o.DeviceIP == nil {
 		var ret string
 		return ret
 	}
-	return *o.DeviceIp
+	return *o.DeviceIP
 }
 
-// GetDeviceIpOk returns a tuple with the DeviceIp field value if set, nil otherwise
+// GetDeviceIPOk returns a tuple with the DeviceIP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SystemLogsItem) GetDeviceIpOk() (*string, bool) {
-	if o == nil || o.DeviceIp == nil {
+func (o *SystemLogsItem) GetDeviceIPOk() (*string, bool) {
+	if o == nil || o.DeviceIP == nil {
 		return nil, false
 	}
-	return o.DeviceIp, true
+	return o.DeviceIP, true
 }
 
-// HasDeviceIp returns a boolean if a field has been set.
-func (o *SystemLogsItem) HasDeviceIp() bool {
-	return o != nil && o.DeviceIp != nil
+// HasDeviceIP returns a boolean if a field has been set.
+func (o *SystemLogsItem) HasDeviceIP() bool {
+	return o != nil && o.DeviceIP != nil
 }
 
-// SetDeviceIp geDeviceIp a reference to the given string and assigns it to the DeviceIp field.
-func (o *SystemLogsItem) SetDeviceIp(v string) {
-	o.DeviceIp = &v
+// SetDeviceIP geDeviceIP a reference to the given string and assigns it to the DeviceIP field.
+func (o *SystemLogsItem) SetDeviceIP(v string) {
+	o.DeviceIP = &v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
@@ -687,7 +712,7 @@ func (o *SystemLogsItem) HasStackTrace() bool {
 	return o != nil && o.StackTrace.IsSet()
 }
 
-// SetStackTrace gets a reference to the given StackTracedog.NullableString and assigns it to the StackTrace field.
+// SetStackTrace gets a reference to the given common.NullableString and assigns it to the StackTrace field.
 func (o *SystemLogsItem) SetStackTrace(v string) {
 	o.StackTrace.Set(&v)
 }
@@ -726,7 +751,7 @@ func (o *SystemLogsItem) HasStackTraceJsonStyled() bool {
 	return o != nil && o.StackTraceJsonStyled.IsSet()
 }
 
-// SetStackTraceJsonStyled gets a reference to the given StackTraceJsonStyleddog.NullableString and assigns it to the StackTraceJsonStyled field.
+// SetStackTraceJsonStyled gets a reference to the given common.NullableString and assigns it to the StackTraceJsonStyled field.
 func (o *SystemLogsItem) SetStackTraceJsonStyled(v string) {
 	o.StackTraceJsonStyled.Set(&v)
 }
@@ -765,7 +790,7 @@ func (o *SystemLogsItem) HasTenantID() bool {
 	return o != nil && o.TenantID.IsSet()
 }
 
-// SetTenantID gets a reference to the given TenantIDdog.NullableString and assigns it to the TenantID field.
+// SetTenantID gets a reference to the given common.NullableString and assigns it to the TenantID field.
 func (o *SystemLogsItem) SetTenantID(v string) {
 	o.TenantID.Set(&v)
 }
@@ -832,7 +857,7 @@ func (o *SystemLogsItem) HasTimestamp() bool {
 	return o != nil && o.Timestamp.IsSet()
 }
 
-// SetTimestamp gets a reference to the given Timestampdog.NullableString and assigns it to the Timestamp field.
+// SetTimestamp gets a reference to the given common.NullableString and assigns it to the Timestamp field.
 func (o *SystemLogsItem) SetTimestamp(v string) {
 	o.Timestamp.Set(&v)
 }
@@ -859,8 +884,8 @@ func (o SystemLogsItem) MarshalJSON() ([]byte, error) {
 	if o.Severity != nil {
 		toSerialize["svr"] = o.Severity
 	}
-	if o.EventId != nil {
-		toSerialize["eventid"] = o.EventId
+	if o.EventID != nil {
+		toSerialize["eventid"] = o.EventID
 	}
 	if o.Message != nil {
 		toSerialize["msg"] = o.Message
@@ -880,17 +905,17 @@ func (o SystemLogsItem) MarshalJSON() ([]byte, error) {
 	if o.EntityType != nil {
 		toSerialize["entitytype"] = o.EntityType
 	}
-	if o.EntityId != nil {
-		toSerialize["entityid"] = o.EntityId
+	if o.EntityID != nil {
+		toSerialize["entityid"] = o.EntityID
 	}
 	if o.EntityName.IsSet() {
 		toSerialize["entityname"] = o.EntityName.Get()
 	}
-	if o.OptId1 != nil {
-		toSerialize["optid1"] = o.OptId1
+	if o.OptID1 != nil {
+		toSerialize["optid1"] = o.OptID1
 	}
-	if o.OptId2 != nil {
-		toSerialize["optid2"] = o.OptId2
+	if o.OptID2 != nil {
+		toSerialize["optid2"] = o.OptID2
 	}
 	if o.Link.IsSet() {
 		toSerialize["link"] = o.Link.Get()
@@ -904,8 +929,8 @@ func (o SystemLogsItem) MarshalJSON() ([]byte, error) {
 	if o.DeviceName.IsSet() {
 		toSerialize["dvcname"] = o.DeviceName.Get()
 	}
-	if o.DeviceIp != nil {
-		toSerialize["dvcip"] = o.DeviceIp
+	if o.DeviceIP != nil {
+		toSerialize["dvcip"] = o.DeviceIP
 	}
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
@@ -937,22 +962,22 @@ func (o *SystemLogsItem) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		TS                   *string               `json:"ts,omitempty"`
 		Severity             *string               `json:"svr,omitempty"`
-		EventId              *string               `json:"eventid,omitempty"`
+		EventID              *string               `json:"eventid,omitempty"`
 		Message              *string               `json:"msg,omitempty"`
 		Title                common.NullableString `json:"title,omitempty"`
 		App                  *string               `json:"app,omitempty"`
 		Version              common.NullableString `json:"ver,omitempty"`
 		Data                 common.NullableString `json:"data,omitempty"`
 		EntityType           *string               `json:"entitytype,omitempty"`
-		EntityId             *string               `json:"entityid,omitempty"`
+		EntityID             *string               `json:"entityid,omitempty"`
 		EntityName           common.NullableString `json:"entityname,omitempty"`
-		OptId1               *string               `json:"optid1,omitempty"`
-		OptId2               *string               `json:"optid2,omitempty"`
+		OptID1               *string               `json:"optid1,omitempty"`
+		OptID2               *string               `json:"optid2,omitempty"`
 		Link                 common.NullableString `json:"link,omitempty"`
 		Producer             *string               `json:"producer,omitempty"`
 		Reason               common.NullableString `json:"reason,omitempty"`
 		DeviceName           common.NullableString `json:"dvcname,omitempty"`
-		DeviceIp             *string               `json:"dvcip,omitempty"`
+		DeviceIP             *string               `json:"dvcip,omitempty"`
 		Tags                 []string              `json:"tags,omitempty"`
 		StackTrace           common.NullableString `json:"stacktrace,omitempty"`
 		StackTraceJsonStyled common.NullableString `json:"stacktrace_JsonStyled,omitempty"`
@@ -973,22 +998,22 @@ func (o *SystemLogsItem) UnMarshalJSON(bytes []byte) (err error) {
 
 	o.TS = all.TS
 	o.Severity = all.Severity
-	o.EventId = all.EventId
+	o.EventID = all.EventID
 	o.Message = all.Message
 	o.Title = all.Title
 	o.App = all.App
 	o.Version = all.Version
 	o.Data = all.Data
 	o.EntityType = all.EntityType
-	o.EntityId = all.EntityId
+	o.EntityID = all.EntityID
 	o.EntityName = all.EntityName
-	o.OptId1 = all.OptId1
-	o.OptId2 = all.OptId2
+	o.OptID1 = all.OptID1
+	o.OptID2 = all.OptID2
 	o.Link = all.Link
 	o.Producer = all.Producer
 	o.Reason = all.Reason
 	o.DeviceName = all.DeviceName
-	o.DeviceIp = all.DeviceIp
+	o.DeviceIP = all.DeviceIP
 	o.Tags = all.Tags
 	o.StackTrace = all.StackTrace
 	o.StackTraceJsonStyled = all.StackTraceJsonStyled

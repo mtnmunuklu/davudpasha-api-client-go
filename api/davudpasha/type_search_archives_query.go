@@ -6,24 +6,40 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SearchArchivesQuery defines the structure for search queries in the archives.
 type SearchArchivesQuery struct {
-	Id                  *string                     `json:"Id,omitempty"`
-	Name                *string                     `json:"Name,omitempty"`
-	CreateDate          *string                     `json:"CreateDate,omitempty"`
-	Includes            common.NullableList[string] `json:"Includes,omitempty"`
-	Excludes            common.NullableList[string] `json:"Excludes,omitempty"`
-	DateTimeRange       *DateTimeRange              `json:"DateTimeRange,omitempty"`
-	LgsIds              common.NullableList[string] `json:"LgsIds,omitempty"`
-	LgsNames            common.NullableList[string] `json:"LgsNames,omitempty"`
-	Size                *int64                      `json:"Size,omitempty"`
-	DeleteAfterDay      *int64                      `json:"DeleteAfterDay,omitempty"`
-	ParallelCount       *int64                      `json:"ParallelCount,omitempty"`
-	SearchOnRawLogs     *bool                       `json:"SearchOnRawLogs,omitempty"`
-	SearchActiveLgsOnly *bool                       `json:"SearchActiveLgsOnly,omitempty"`
-	PauseRequest        *bool                       `json:"PauseRequest,omitempty"`
-	ReportColNames      common.NullableList[string] `json:"ReportColNames,omitempty"`
+	// ID represents the identifier of the search query.
+	ID *string `json:"Id,omitempty"`
+	// Name specifies the name of the search query.
+	Name *string `json:"Name,omitempty"`
+	// CreateDate indicates the creation date of the search query.
+	CreateDate *string `json:"CreateDate,omitempty"`
+	// Includes contains a list of strings to include in the search.
+	Includes common.NullableList[string] `json:"Includes,omitempty"`
+	// Excludes contains a list of strings to exclude from the search.
+	Excludes common.NullableList[string] `json:"Excludes,omitempty"`
+	// DateTimeRange specifies the date and time range for the search.
+	DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
+	// LgsIDs contains a list of IDs associated with the logs for the search.
+	LgsIDs common.NullableList[string] `json:"LgsIds,omitempty"`
+	// LgsNames contains a list of names associated with the logs for the search.
+	LgsNames common.NullableList[string] `json:"LgsNames,omitempty"`
+	// Size specifies the size of the search query.
+	Size *int64 `json:"Size,omitempty"`
+	// DeleteAfterDay specifies the number of days after which the search results will be deleted.
+	DeleteAfterDay *int64 `json:"DeleteAfterDay,omitempty"`
+	// ParallelCount specifies the number of parallel searches to be conducted.
+	ParallelCount *int64 `json:"ParallelCount,omitempty"`
+	// SearchOnRawLogs indicates whether to search on raw log data.
+	SearchOnRawLogs *bool `json:"SearchOnRawLogs,omitempty"`
+	// SearchActiveLgsOnly indicates whether to search only on active logs.
+	SearchActiveLgsOnly *bool `json:"SearchActiveLgsOnly,omitempty"`
+	// PauseRequest indicates whether the search request is paused.
+	PauseRequest *bool `json:"PauseRequest,omitempty"`
+	// ReportColNames contains a list of column names for the search report.
+	ReportColNames common.NullableList[string] `json:"ReportColNames,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -45,32 +61,32 @@ func NewSearchArchivesQueryWithDefaults() *SearchArchivesQuery {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SearchArchivesQuery) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *SearchArchivesQuery) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchArchivesQuery) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *SearchArchivesQuery) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *SearchArchivesQuery) HasId() bool {
-	return o != nil && o.Id != nil
+// HasID returns a boolean if a field has been set.
+func (o *SearchArchivesQuery) HasID() bool {
+	return o != nil && o.ID != nil
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *SearchArchivesQuery) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *SearchArchivesQuery) SetID(v string) {
+	o.ID = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -153,7 +169,7 @@ func (o *SearchArchivesQuery) HasIncludes() bool {
 	return o != nil && o.Includes.IsSet()
 }
 
-// SetIncludes gets a reference to the given datadog.Nullable[]string and assigns it to the Includes field.
+// SetIncludes gets a reference to the given common.Nullable[]string and assigns it to the Includes field.
 func (o *SearchArchivesQuery) SetIncludes(v []string) {
 	o.Includes.Set(&v)
 }
@@ -192,7 +208,7 @@ func (o *SearchArchivesQuery) HasExcludes() bool {
 	return o != nil && o.Excludes.IsSet()
 }
 
-// SetExcludes gets a reference to the given datadog.Nullable[]string and assigns it to the Excludes field.
+// SetExcludes gets a reference to the given common.Nullable[]string and assigns it to the Excludes field.
 func (o *SearchArchivesQuery) SetExcludes(v []string) {
 	o.Excludes.Set(&v)
 }
@@ -237,41 +253,41 @@ func (o *SearchArchivesQuery) SetDateTimeRange(v DateTimeRange) {
 
 // GetLgsIds returns the LgsIds field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SearchArchivesQuery) GetLgsIds() []string {
-	if o == nil || o.LgsIds.Get() == nil {
+	if o == nil || o.LgsIDs.Get() == nil {
 		var ret []string
 		return ret
 	}
-	return *o.LgsIds.Get()
+	return *o.LgsIDs.Get()
 }
 
-// GetLgsIdsOk returns a tuple with the LgsIds field value if set, nil otherwise
+// GetLgsIDsOk returns a tuple with the LgsIDs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SearchArchivesQuery) GetLgsIdsOk() (*[]string, bool) {
+func (o *SearchArchivesQuery) GetLgsIDsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.LgsIds.Get(), o.LgsIds.IsSet()
+	return o.LgsIDs.Get(), o.LgsIDs.IsSet()
 }
 
-// HasLgsIds returns a boolean if a LgsIds has been set.
-func (o *SearchArchivesQuery) HasLgsIds() bool {
-	return o != nil && o.LgsIds.IsSet()
+// HasLgsIDs returns a boolean if a LgsIds has been set.
+func (o *SearchArchivesQuery) HasLgsIDs() bool {
+	return o != nil && o.LgsIDs.IsSet()
 }
 
-// SetLgsIds gets a reference to the given datadog.Nullable[]string and assigns it to the LgsIds field.
-func (o *SearchArchivesQuery) SetLgsIds(v []string) {
-	o.LgsIds.Set(&v)
+// SetLgsIDs gets a reference to the given common.Nullable[]string and assigns it to the LgsIDs field.
+func (o *SearchArchivesQuery) SetLgsIDs(v []string) {
+	o.LgsIDs.Set(&v)
 }
 
-// SetLgsIdsNil sets the value for LgsIds to be an explicit nil.
-func (o *SearchArchivesQuery) SetLgsIdsNil() {
-	o.LgsIds.Set(nil)
+// SetLgsIDsNil sets the value for LgsIDs to be an explicit nil.
+func (o *SearchArchivesQuery) SetLgsIDsNil() {
+	o.LgsIDs.Set(nil)
 }
 
-// UnSetLgsIds ensures that no value is present for LgsIds, not even an explicit nil.
-func (o *SearchArchivesQuery) UnSetLgsIds() {
-	o.LgsIds.UnSet()
+// UnSetLgsIDs ensures that no value is present for LgsIDs, not even an explicit nil.
+func (o *SearchArchivesQuery) UnSetLgsIDs() {
+	o.LgsIDs.UnSet()
 }
 
 // GetLgsNames returns the LgsNames field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -298,7 +314,7 @@ func (o *SearchArchivesQuery) HasLgsNames() bool {
 	return o != nil && o.LgsNames.IsSet()
 }
 
-// SetLgsNames gets a reference to the given datadog.Nullable[]string and assigns it to the LgsNames field.
+// SetLgsNames gets a reference to the given common.Nullable[]string and assigns it to the LgsNames field.
 func (o *SearchArchivesQuery) SetLgsNames(v []string) {
 	o.LgsNames.Set(&v)
 }
@@ -505,7 +521,7 @@ func (o *SearchArchivesQuery) HasReportColNames() bool {
 	return o != nil && o.ReportColNames.IsSet()
 }
 
-// SetReportColNames gets a reference to the given datadog.Nullable[]string and assigns it to the ReportColNames field.
+// SetReportColNames gets a reference to the given common.Nullable[]string and assigns it to the ReportColNames field.
 func (o *SearchArchivesQuery) SetReportColNames(v []string) {
 	o.ReportColNames.Set(&v)
 }
@@ -526,8 +542,8 @@ func (o SearchArchivesQuery) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.Id != nil {
-		toSerialize["Id"] = o.Id
+	if o.ID != nil {
+		toSerialize["Id"] = o.ID
 	}
 	if o.Name != nil {
 		toSerialize["Name"] = o.Name
@@ -544,8 +560,8 @@ func (o SearchArchivesQuery) MarshalJSON() ([]byte, error) {
 	if o.DateTimeRange != nil {
 		toSerialize["DateTimeRange"] = o.DateTimeRange
 	}
-	if o.LgsIds.IsSet() {
-		toSerialize["LgsIds"] = o.LgsIds.Get()
+	if o.LgsIDs.IsSet() {
+		toSerialize["LgsIds"] = o.LgsIDs.Get()
 	}
 	if o.LgsNames.IsSet() {
 		toSerialize["LgsNames"] = o.LgsNames.Get()
@@ -581,13 +597,13 @@ func (o SearchArchivesQuery) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *SearchArchivesQuery) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Id                  *string                     `json:"Id,omitempty"`
+		ID                  *string                     `json:"Id,omitempty"`
 		Name                *string                     `json:"Name,omitempty"`
 		CreateDate          *string                     `json:"CreateDate,omitempty"`
 		Includes            common.NullableList[string] `json:"Includes,omitempty"`
 		Excludes            common.NullableList[string] `json:"Excludes,omitempty"`
 		DateTimeRange       *DateTimeRange              `json:"DateTimeRange,omitempty"`
-		LgsIds              common.NullableList[string] `json:"LgsIds,omitempty"`
+		LgsIDs              common.NullableList[string] `json:"LgsIds,omitempty"`
 		LgsNames            common.NullableList[string] `json:"LgsNames,omitempty"`
 		Size                *int64                      `json:"Size,omitempty"`
 		DeleteAfterDay      *int64                      `json:"DeleteAfterDay,omitempty"`
@@ -608,7 +624,7 @@ func (o *SearchArchivesQuery) UnMarshalJSON(bytes []byte) (err error) {
 		return err
 	}
 
-	o.Id = all.Id
+	o.ID = all.ID
 	o.Name = all.Name
 	o.CreateDate = all.CreateDate
 	o.Includes = all.Includes
@@ -618,7 +634,7 @@ func (o *SearchArchivesQuery) UnMarshalJSON(bytes []byte) (err error) {
 		hasInvalidField = true
 	}
 	o.DateTimeRange = all.DateTimeRange
-	o.LgsIds = all.LgsIds
+	o.LgsIDs = all.LgsIDs
 	o.LgsNames = all.LgsNames
 	o.Size = all.Size
 	o.DeleteAfterDay = all.DeleteAfterDay

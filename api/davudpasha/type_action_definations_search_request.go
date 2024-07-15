@@ -7,14 +7,16 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ActionDefinationsSearchRequest represents a request structure for searching action definitions.
 type ActionDefinationsSearchRequest struct {
+	// Specifies the application for which the action definitions are being searched.
 	Application *string `json:"application,omitempty"`
 	// Filter for searching action definations.
 	SearchFilter *string `json:"searchFilter,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

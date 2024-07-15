@@ -35,13 +35,13 @@ type ReportsData struct {
 	// Password for the report file.
 	FilePassword common.NullableString `json:"FilePassword,omitempty"`
 	// ID of the report.
-	ReportId common.NullableString `json:"ReportId,omitempty"`
+	ReportID common.NullableString `json:"ReportId,omitempty"`
 	// Theme of the report.
 	ReportTheme common.NullableString `json:"ReportTheme,omitempty"`
 	// Maximum row count for the report data.
 	MaxRowCount *int64 `json:"MaxRowCount,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -87,7 +87,7 @@ func (o *ReportsData) HasName() bool {
 	return o != nil && o.Name.IsSet()
 }
 
-// SetName gets a reference to the given datadog.NullableString and assigns it to the Name field.
+// SetName gets a reference to the given common.NullableString and assigns it to the Name field.
 func (o *ReportsData) SetName(v string) {
 	o.Name.Set(&v)
 }
@@ -126,7 +126,7 @@ func (o *ReportsData) HasFileName() bool {
 	return o != nil && o.FileName.IsSet()
 }
 
-// SetFileName gets a reference to the given datadog.NullableString and assigns it to the FileName field.
+// SetFileName gets a reference to the given common.NullableString and assigns it to the FileName field.
 func (o *ReportsData) SetFileName(v string) {
 	o.FileName.Set(&v)
 }
@@ -221,7 +221,7 @@ func (o *ReportsData) HasHeader() bool {
 	return o != nil && o.Header.IsSet()
 }
 
-// SetHeader gets a reference to the given datadog.NullableString and assigns it to the Header field.
+// SetHeader gets a reference to the given common.NullableString and assigns it to the Header field.
 func (o *ReportsData) SetHeader(v string) {
 	o.Header.Set(&v)
 }
@@ -260,7 +260,7 @@ func (o *ReportsData) HasFooter() bool {
 	return o != nil && o.Footer.IsSet()
 }
 
-// SetFooter gets a reference to the given datadog.NullableString and assigns it to the Footer field.
+// SetFooter gets a reference to the given common.NullableString and assigns it to the Footer field.
 func (o *ReportsData) SetFooter(v string) {
 	o.Footer.Set(&v)
 }
@@ -299,7 +299,7 @@ func (o *ReportsData) HasCoverPage() bool {
 	return o != nil && o.CoverPage.IsSet()
 }
 
-// SetCoverPage gets a reference to the given datadog.NullableString and assigns it to the CoverPage field.
+// SetCoverPage gets a reference to the given common.NullableString and assigns it to the CoverPage field.
 func (o *ReportsData) SetCoverPage(v string) {
 	o.CoverPage.Set(&v)
 }
@@ -394,7 +394,7 @@ func (o *ReportsData) HasTheme() bool {
 	return o != nil && o.Theme.IsSet()
 }
 
-// SetTheme gets a reference to the given datadog.NullableString and assigns it to the Theme field.
+// SetTheme gets a reference to the given common.NullableString and assigns it to the Theme field.
 func (o *ReportsData) SetTheme(v string) {
 	o.Theme.Set(&v)
 }
@@ -489,7 +489,7 @@ func (o *ReportsData) HasFilePassword() bool {
 	return o != nil && o.FilePassword.IsSet()
 }
 
-// SetFilePassword gets a reference to the given datadog.NullableString and assigns it to the FilePassword field.
+// SetFilePassword gets a reference to the given common.NullableString and assigns it to the FilePassword field.
 func (o *ReportsData) SetFilePassword(v string) {
 	o.FilePassword.Set(&v)
 }
@@ -504,43 +504,43 @@ func (o *ReportsData) UnSetFilePassword() {
 	o.FilePassword.UnSet()
 }
 
-// GetReportId returns the ReportId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReportsData) GetReportId() string {
-	if o == nil || o.ReportId.Get() == nil {
+// GetReportID returns the ReportID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReportsData) GetReportID() string {
+	if o == nil || o.ReportID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ReportId.Get()
+	return *o.ReportID.Get()
 }
 
-// GetReportIdOk returns a tuple with the ReportId field value if set, nil otherwise
+// GetReportIDOk returns a tuple with the ReportID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *ReportsData) GetReportIdOk() (*string, bool) {
+func (o *ReportsData) GetReportIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ReportId.Get(), o.ReportId.IsSet()
+	return o.ReportID.Get(), o.ReportID.IsSet()
 }
 
-// HasReportId returns a boolean if a field has been set.
-func (o *ReportsData) HasReportId() bool {
-	return o != nil && o.ReportId.IsSet()
+// HasReportID returns a boolean if a field has been set.
+func (o *ReportsData) HasReportID() bool {
+	return o != nil && o.ReportID.IsSet()
 }
 
-// SetReportId gets a reference to the given datadog.NullableString and assigns it to the ReportId field.
-func (o *ReportsData) SetReportId(v string) {
-	o.ReportId.Set(&v)
+// SetReportID gets a reference to the given common.NullableString and assigns it to the ReportID field.
+func (o *ReportsData) SetReportID(v string) {
+	o.ReportID.Set(&v)
 }
 
-// SetReportIdNil sets the value for ReportId to be an explicit nil.
-func (o *ReportsData) SetReportIdNil() {
-	o.ReportId.Set(nil)
+// SetReportIDNil sets the value for ReportID to be an explicit nil.
+func (o *ReportsData) SetReportIDNil() {
+	o.ReportID.Set(nil)
 }
 
-// UnSetReportId ensures that no value is present for ReportId, not even an explicit nil.
-func (o *ReportsData) UnSetReportId() {
-	o.ReportId.UnSet()
+// UnSetReportID ensures that no value is present for ReportID, not even an explicit nil.
+func (o *ReportsData) UnSetReportID() {
+	o.ReportID.UnSet()
 }
 
 // GetReportTheme returns the ReportTheme field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -567,7 +567,7 @@ func (o *ReportsData) HasReportTheme() bool {
 	return o != nil && o.ReportTheme.IsSet()
 }
 
-// SetReportTheme gets a reference to the given datadog.NullableString and assigns it to the ReportTheme field.
+// SetReportTheme gets a reference to the given common.NullableString and assigns it to the ReportTheme field.
 func (o *ReportsData) SetReportTheme(v string) {
 	o.ReportTheme.Set(&v)
 }
@@ -655,8 +655,8 @@ func (o ReportsData) MarshalJSON() ([]byte, error) {
 	if o.FilePassword.IsSet() {
 		toSerialize["FilePassword"] = o.FilePassword.Get()
 	}
-	if o.ReportId.IsSet() {
-		toSerialize["ReportId"] = o.ReportId.Get()
+	if o.ReportID.IsSet() {
+		toSerialize["ReportId"] = o.ReportID.Get()
 	}
 	if o.ReportTheme.IsSet() {
 		toSerialize["ReportTheme"] = o.ReportTheme.Get()
@@ -687,7 +687,7 @@ func (o *ReportsData) UnMarshalJSON(bytes []byte) (err error) {
 		Language     *string               `json:"Language,omitempty"`
 		AddCoverPage *bool                 `json:"AddCoverPage,omitempty"`
 		FilePassword common.NullableString `json:"FilePassword,omitempty"`
-		ReportId     common.NullableString `json:"ReportId,omitempty"`
+		ReportID     common.NullableString `json:"ReportId,omitempty"`
 		ReportTheme  common.NullableString `json:"ReportTheme,omitempty"`
 		MaxRowCount  *int64                `json:"MaxRowCount,omitempty"`
 	}{}
@@ -716,7 +716,7 @@ func (o *ReportsData) UnMarshalJSON(bytes []byte) (err error) {
 	o.Language = all.Language
 	o.AddCoverPage = all.AddCoverPage
 	o.FilePassword = all.FilePassword
-	o.ReportId = all.ReportId
+	o.ReportID = all.ReportID
 	o.ReportTheme = all.ReportTheme
 	o.MaxRowCount = all.MaxRowCount
 

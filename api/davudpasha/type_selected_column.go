@@ -16,7 +16,7 @@ type SelectedColumn struct {
 	// Lookup value for the column.
 	Lookup common.NullableString `json:"Lookup,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -118,7 +118,7 @@ func (o *SelectedColumn) HasLookup() bool {
 	return o != nil && o.Lookup.IsSet()
 }
 
-// SetLookup gets a reference to the given datadog.NullableString and assigns it to the Lookup field.
+// SetLookup gets a reference to the given common.NullableString and assigns it to the Lookup field.
 func (o *SelectedColumn) SetLookup(v string) {
 	o.Lookup.Set(&v)
 }

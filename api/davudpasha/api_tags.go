@@ -22,6 +22,7 @@ func NewSearchTagsOptionalParameters() *SearchTagsOptionalParameters {
 	return &this
 }
 
+// WithBody sets the corresponding parameter name and returns the struct.
 func (r *SearchTagsOptionalParameters) WithBody(body TagsSearchRequest) *SearchTagsOptionalParameters {
 	r.Body = &body
 	return r

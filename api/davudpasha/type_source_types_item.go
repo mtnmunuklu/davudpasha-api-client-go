@@ -7,29 +7,49 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourceTypesItem represents the structure for items in source types.
 type SourceTypesItem struct {
-	Name                *string                               `json:"Name,omitempty"`
-	DefCode             *string                               `json:"DefCode,omitempty"`
-	Author              common.NullableString                 `json:"Author,omitempty"`
-	Icon                common.NullableString                 `json:"Icon,omitempty"`
-	CatCode             *string                               `json:"CatCode,omitempty"`
-	SourceReaderType    *string                               `json:"SourceReaderType,omitempty"`
-	ReleaseDate         *string                               `json:"ReleaseDate,omitempty"`
-	Version             *float64                              `json:"Version,omitempty"`
-	Expressions         []SourceTypesExpression               `json:"Expression,omitempty"`
-	ExpressionFields    []SourceTypesExpressionField          `json:"ExpressionFields,omitempty"`
-	DashboardItems      []string                              `json:"DashboardItems,omitempty"`
-	ClassificationRules []SourceTypesClassificationRule       `json:"ClassificationRules,omitempty"`
-	FromMarket          *bool                                 `json:"FromMarket,omitempty"`
-	FromModules         *bool                                 `json:"FromModules,omitempty"`
-	CopyFromMarket      *bool                                 `json:"CopyFromMarket,omitempty"`
-	HasUpdate           *bool                                 `json:"HasUpdate,omitempty"`
-	ModuleId            common.NullableString                 `json:"ModuleId,omitempty"`
-	ModuleGuid          common.NullableString                 `json:"ModuleGuid,omitempty"`
-	ClassificationDefs  []SourceTypesClassificationDefination `json:"ClassificationDefs,omitempty"`
-	// UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-	UnparsedObject map[string]interface{}
-	// AdditionalProperties stores any additional properties not explicitly defined in the struct.
+	// Name specifies the name of the item.
+	Name *string `json:"Name,omitempty"`
+	// DefCode specifies the definition code of the item.
+	DefCode *string `json:"DefCode,omitempty"`
+	// Author specifies the author of the item.
+	Author common.NullableString `json:"Author,omitempty"`
+	// Icon specifies the icon associated with the item.
+	Icon common.NullableString `json:"Icon,omitempty"`
+	// CatCode specifies the category code of the item.
+	CatCode *string `json:"CatCode,omitempty"`
+	// SourceReaderType specifies the type of source reader used.
+	SourceReaderType *string `json:"SourceReaderType,omitempty"`
+	// ReleaseDate specifies the release date of the item.
+	ReleaseDate *string `json:"ReleaseDate,omitempty"`
+	// Version specifies the version number of the item.
+	Version *float64 `json:"Version,omitempty"`
+	// Expressions contains expressions associated with the item.
+	Expressions []SourceTypesExpression `json:"Expression,omitempty"`
+	// ExpressionFields contains expression fields associated with the item.
+	ExpressionFields []SourceTypesExpressionField `json:"ExpressionFields,omitempty"`
+	// DashboardItems contains items associated with the dashboard.
+	DashboardItems []string `json:"DashboardItems,omitempty"`
+	// ClassificationRules contains classification rules associated with the item.
+	ClassificationRules []SourceTypesClassificationRule `json:"ClassificationRules,omitempty"`
+	// FromMarket indicates if the item is sourced from the market.
+	FromMarket *bool `json:"FromMarket,omitempty"`
+	// FromModules indicates if the item is sourced from modules.
+	FromModules *bool `json:"FromModules,omitempty"`
+	// CopyFromMarket indicates if the item is copied from the market.
+	CopyFromMarket *bool `json:"CopyFromMarket,omitempty"`
+	// HasUpdate indicates if the item has updates available.
+	HasUpdate *bool `json:"HasUpdate,omitempty"`
+	// ModuleID specifies the ID of the module associated with the item.
+	ModuleID common.NullableString `json:"ModuleId,omitempty"`
+	// ModuleGGUID specifies the GUID of the module associated with the item.
+	ModuleGUID common.NullableString `json:"ModuleGuid,omitempty"`
+	// ClassificationDefs contains classification definitions associated with the item.
+	ClassificationDefs []SourceTypesClassificationDefination `json:"ClassificationDefs,omitempty"`
+	// Raw value if deserialization fails.
+	UnparsedObject map[string]interface{} `json:"-"`
+	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
 
@@ -130,7 +150,7 @@ func (o *SourceTypesItem) HasAuthor() bool {
 	return o != nil && o.Author.IsSet()
 }
 
-// SetAuthor gets a reference to the given datadog.NullableString and assigns it to the Author field.
+// SetAuthor gets a reference to the given common.NullableString and assigns it to the Author field.
 func (o *SourceTypesItem) SetAuthor(v string) {
 	o.Author.Set(&v)
 }
@@ -169,7 +189,7 @@ func (o *SourceTypesItem) HasIcon() bool {
 	return o != nil && o.Icon.IsSet()
 }
 
-// SetIcon gets a reference to the given datadog.NullableString and assigns it to the Icon field.
+// SetIcon gets a reference to the given common.NullableString and assigns it to the Icon field.
 func (o *SourceTypesItem) SetIcon(v string) {
 	o.Icon.Set(&v)
 }
@@ -520,82 +540,82 @@ func (o *SourceTypesItem) SetHasUpdate(v bool) {
 	o.HasUpdate = &v
 }
 
-// GetModuleId returns the ModuleId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourceTypesItem) GetModuleId() string {
-	if o == nil || o.ModuleId.Get() == nil {
+// GetModuleID returns the ModuleID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SourceTypesItem) GetModuleID() string {
+	if o == nil || o.ModuleID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ModuleId.Get()
+	return *o.ModuleID.Get()
 }
 
-// GetModuleIdOk returns a tuple with the ModuleId field value if set, nil otherwise
+// GetModuleIDOk returns a tuple with the ModuleID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourceTypesItem) GetModuleIdOk() (*string, bool) {
+func (o *SourceTypesItem) GetModuleIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ModuleId.Get(), o.ModuleId.IsSet()
+	return o.ModuleID.Get(), o.ModuleID.IsSet()
 }
 
-// HasModuleId returns a boolean if a ModuleId has been set.
-func (o *SourceTypesItem) HasModuleId() bool {
-	return o != nil && o.ModuleId.IsSet()
+// HasModuleID returns a boolean if a ModuleID has been set.
+func (o *SourceTypesItem) HasModuleID() bool {
+	return o != nil && o.ModuleID.IsSet()
 }
 
-// SetModuleId gets a reference to the given datadog.NullableString and assigns it to the ModuleId field.
-func (o *SourceTypesItem) SetModuleId(v string) {
-	o.ModuleId.Set(&v)
+// SetModuleID gets a reference to the given common.NullableString and assigns it to the ModuleID field.
+func (o *SourceTypesItem) SetModuleID(v string) {
+	o.ModuleID.Set(&v)
 }
 
-// SetModuleIdNil sets the value for ModuleId to be an explicit nil.
-func (o *SourceTypesItem) SetModuleIdNil() {
-	o.ModuleId.Set(nil)
+// SetModuleIDNil sets the value for ModuleID to be an explicit nil.
+func (o *SourceTypesItem) SetModuleIDNil() {
+	o.ModuleID.Set(nil)
 }
 
-// UnSetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
-func (o *SourceTypesItem) UnSetModuleId() {
-	o.ModuleId.UnSet()
+// UnSetModuleID ensures that no value is present for ModuleID, not even an explicit nil.
+func (o *SourceTypesItem) UnSetModuleID() {
+	o.ModuleID.UnSet()
 }
 
-// GetModuleGuid returns the ModuleGuid field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourceTypesItem) GetModuleGuid() string {
-	if o == nil || o.ModuleGuid.Get() == nil {
+// GetModuleGUID returns the ModuleGUID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SourceTypesItem) GetModuleGUID() string {
+	if o == nil || o.ModuleGUID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ModuleGuid.Get()
+	return *o.ModuleGUID.Get()
 }
 
-// GetModuleGuidOk returns a tuple with the ModuleGuid field value if set, nil otherwise
+// GetModuleGUIDOk returns a tuple with the ModuleGUID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourceTypesItem) GetModuleGuidOk() (*string, bool) {
+func (o *SourceTypesItem) GetModuleGUIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ModuleGuid.Get(), o.ModuleGuid.IsSet()
+	return o.ModuleGUID.Get(), o.ModuleGUID.IsSet()
 }
 
-// HasModuleGuid returns a boolean if a ModuleGuid has been set.
-func (o *SourceTypesItem) HasModuleGuid() bool {
-	return o != nil && o.ModuleGuid.IsSet()
+// HasModuleGUID returns a boolean if a ModuleGUID has been set.
+func (o *SourceTypesItem) HasModuleGUID() bool {
+	return o != nil && o.ModuleGUID.IsSet()
 }
 
-// SetModuleGuid gets a reference to the given datadog.NullableString and assigns it to the ModuleGuid field.
-func (o *SourceTypesItem) SetModuleGuid(v string) {
-	o.ModuleGuid.Set(&v)
+// SetModuleGUID gets a reference to the given common.NullableString and assigns it to the ModuleGUID field.
+func (o *SourceTypesItem) SetModuleGUID(v string) {
+	o.ModuleGUID.Set(&v)
 }
 
-// SetModuleGuidNil sets the value for ModuleGuid to be an explicit nil.
-func (o *SourceTypesItem) SetModuleGuidNil() {
-	o.ModuleGuid.Set(nil)
+// SetModuleGUIDNil sets the value for ModuleGUID to be an explicit nil.
+func (o *SourceTypesItem) SetModuleGUIDNil() {
+	o.ModuleGUID.Set(nil)
 }
 
-// UnSetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
-func (o *SourceTypesItem) UnSetModuleGuid() {
-	o.ModuleGuid.UnSet()
+// UnSetModuleGUID ensures that no value is present for ModuleGUID, not even an explicit nil.
+func (o *SourceTypesItem) UnSetModuleGUID() {
+	o.ModuleGUID.UnSet()
 }
 
 // GetClassificationDefs returns the ClassificationDefs field value if set, zero value otherwise.
@@ -683,11 +703,11 @@ func (o SourceTypesItem) MarshalJSON() ([]byte, error) {
 	if o.HasUpdate != nil {
 		toSerialize["HasUpdate"] = o.HasUpdate
 	}
-	if o.ModuleId.IsSet() {
-		toSerialize["ModuleId"] = o.ModuleId.Get()
+	if o.ModuleID.IsSet() {
+		toSerialize["ModuleId"] = o.ModuleID.Get()
 	}
-	if o.ModuleGuid.IsSet() {
-		toSerialize["ModuleGuid"] = o.ModuleGuid.Get()
+	if o.ModuleGUID.IsSet() {
+		toSerialize["ModuleGuid"] = o.ModuleGUID.Get()
 	}
 	if o.ClassificationDefs != nil {
 		toSerialize["ClassificationDefs"] = o.ClassificationDefs
@@ -718,8 +738,8 @@ func (o *SourceTypesItem) UnMarshalJSON(bytes []byte) (err error) {
 		FromModules         *bool                                 `json:"FromModules,omitempty"`
 		CopyFromMarket      *bool                                 `json:"CopyFromMarket,omitempty"`
 		HasUpdate           *bool                                 `json:"HasUpdate,omitempty"`
-		ModuleId            common.NullableString                 `json:"ModuleId,omitempty"`
-		ModuleGuid          common.NullableString                 `json:"ModuleGuid,omitempty"`
+		ModuleID            common.NullableString                 `json:"ModuleId,omitempty"`
+		ModuleGUID          common.NullableString                 `json:"ModuleGuid,omitempty"`
 		ClassificationDefs  []SourceTypesClassificationDefination `json:"ClassificationDefs,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
@@ -759,8 +779,8 @@ func (o *SourceTypesItem) UnMarshalJSON(bytes []byte) (err error) {
 	o.FromModules = all.FromModules
 	o.CopyFromMarket = all.CopyFromMarket
 	o.HasUpdate = all.HasUpdate
-	o.ModuleId = all.ModuleId
-	o.ModuleGuid = all.ModuleGuid
+	o.ModuleID = all.ModuleID
+	o.ModuleGUID = all.ModuleGUID
 	o.ClassificationDefs = all.ClassificationDefs
 
 	if len(additionalProperties) > 0 {

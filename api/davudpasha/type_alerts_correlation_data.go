@@ -10,7 +10,7 @@ import (
 // AlertsCorrelationData represents correlation data for alerts.
 type AlertsCorrelationData struct {
 	// ID of the alert correlation.
-	Id *string `json:"Id,omitempty"`
+	ID *string `json:"Id,omitempty"`
 	// Whether the correlation is enabled.
 	Enabled *bool `json:"Enabled,omitempty"`
 	// Name of the correlation.
@@ -26,9 +26,9 @@ type AlertsCorrelationData struct {
 	// Whether the correlation has an update.
 	HasUpdate *bool `json:"HasUpdate,omitempty"`
 	// ID of the module.
-	ModuleId common.NullableString `json:"ModuleId,omitempty"`
+	ModuleID common.NullableString `json:"ModuleId,omitempty"`
 	// GUID of the module.
-	ModuleGuid common.NullableString `json:"ModuleGuid,omitempty"`
+	ModuleGUID common.NullableString `json:"ModuleGuid,omitempty"`
 	// Risk level of the correlation.
 	RiskLevel *int64 `json:"RiskLevel,omitempty"`
 	// Maximum alert count.
@@ -76,32 +76,32 @@ func NewAlertsCorrelationDataWithDefaults() *AlertsCorrelationData {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *AlertsCorrelationData) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *AlertsCorrelationData) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasId() bool {
-	return o != nil && o.Id != nil
+// HasID returns a boolean if a field has been set.
+func (o *AlertsCorrelationData) HasID() bool {
+	return o != nil && o.ID != nil
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AlertsCorrelationData) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *AlertsCorrelationData) SetID(v string) {
+	o.ID = &v
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -300,82 +300,82 @@ func (o *AlertsCorrelationData) SetHasUpdate(v bool) {
 	o.HasUpdate = &v
 }
 
-// GetModuleId returns the ModuleId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AlertsCorrelationData) GetModuleId() string {
-	if o == nil || o.ModuleId.Get() == nil {
+// GetModuleID returns the ModuleID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AlertsCorrelationData) GetModuleID() string {
+	if o == nil || o.ModuleID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ModuleId.Get()
+	return *o.ModuleID.Get()
 }
 
-// GetModuleIdOk returns a tuple with the ModuleId field value if set, nil otherwise
+// GetModuleIDOk returns a tuple with the ModuleID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AlertsCorrelationData) GetModuleIdOk() (*string, bool) {
+func (o *AlertsCorrelationData) GetModuleIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ModuleId.Get(), o.ModuleId.IsSet()
+	return o.ModuleID.Get(), o.ModuleID.IsSet()
 }
 
-// HasModuleId returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasModuleId() bool {
-	return o != nil && o.ModuleId.IsSet()
+// HasModuleID returns a boolean if a field has been set.
+func (o *AlertsCorrelationData) HasModuleID() bool {
+	return o != nil && o.ModuleID.IsSet()
 }
 
-// SetModuleId gets a reference to the given datadog.NullableString and assigns it to the ModuleId field.
-func (o *AlertsCorrelationData) SetModuleId(v string) {
-	o.ModuleId.Set(&v)
+// SetModuleID gets a reference to the given common.NullableString and assigns it to the ModuleID field.
+func (o *AlertsCorrelationData) SetModuleID(v string) {
+	o.ModuleID.Set(&v)
 }
 
-// SetModuleIdNil sets the value for ModuleId to be an explicit nil.
-func (o *AlertsCorrelationData) SetModuleIdNil() {
-	o.ModuleId.Set(nil)
+// SetModuleIDNil sets the value for ModuleID to be an explicit nil.
+func (o *AlertsCorrelationData) SetModuleIDNil() {
+	o.ModuleID.Set(nil)
 }
 
-// UnSetModuleId ensures that no value is present for ModuleId, not even an explicit nil.
-func (o *AlertsCorrelationData) UnSetModuleId() {
-	o.ModuleId.UnSet()
+// UnSetModuleID ensures that no value is present for ModuleID, not even an explicit nil.
+func (o *AlertsCorrelationData) UnSetModuleID() {
+	o.ModuleID.UnSet()
 }
 
-// GetModuleGuid returns the ModuleGuid field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AlertsCorrelationData) GetModuleGuid() string {
-	if o == nil || o.ModuleGuid.Get() == nil {
+// GetModuleGUID returns the ModuleGUID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AlertsCorrelationData) GetModuleGUID() string {
+	if o == nil || o.ModuleGUID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ModuleGuid.Get()
+	return *o.ModuleGUID.Get()
 }
 
-// GetModuleGuidOk returns a tuple with the ModuleGuid field value if set, nil otherwise
+// GetModuleGUIDOk returns a tuple with the ModuleGUID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AlertsCorrelationData) GetModuleGuidOk() (*string, bool) {
+func (o *AlertsCorrelationData) GetModuleGUIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ModuleGuid.Get(), o.ModuleGuid.IsSet()
+	return o.ModuleGUID.Get(), o.ModuleGUID.IsSet()
 }
 
-// HasModuleGuid returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasModuleGuid() bool {
-	return o != nil && o.ModuleGuid.IsSet()
+// HasModuleGUID returns a boolean if a field has been set.
+func (o *AlertsCorrelationData) HasModuleGUID() bool {
+	return o != nil && o.ModuleGUID.IsSet()
 }
 
-// SetModuleGuid gets a reference to the given datadog.NullableString and assigns it to the ModuleGuid field.
-func (o *AlertsCorrelationData) SetModuleGuid(v string) {
-	o.ModuleGuid.Set(&v)
+// SetModuleGUID gets a reference to the given common.NullableString and assigns it to the ModuleGUID field.
+func (o *AlertsCorrelationData) SetModuleGUID(v string) {
+	o.ModuleGUID.Set(&v)
 }
 
-// SetModuleGuidNil sets the value for ModuleGuid to be an explicit nil.
-func (o *AlertsCorrelationData) SetModuleGuidNil() {
-	o.ModuleGuid.Set(nil)
+// SetModuleGUIDNil sets the value for ModuleGUID to be an explicit nil.
+func (o *AlertsCorrelationData) SetModuleGUIDNil() {
+	o.ModuleGUID.Set(nil)
 }
 
-// UnSetModuleGuid ensures that no value is present for ModuleGuid, not even an explicit nil.
-func (o *AlertsCorrelationData) UnSetModuleGuid() {
-	o.ModuleGuid.UnSet()
+// UnSetModuleGUID ensures that no value is present for ModuleGUID, not even an explicit nil.
+func (o *AlertsCorrelationData) UnSetModuleGUID() {
+	o.ModuleGUID.UnSet()
 }
 
 // GetRiskLevel returns the RiskLevel field value if set, zero value otherwise.
@@ -515,7 +515,7 @@ func (o *AlertsCorrelationData) HasLimiterColumns() bool {
 	return o != nil && o.LimiterColumns.IsSet()
 }
 
-// SetLimiterColumns gets a reference to the given datadog.Nullable[]string and assigns it to the LimiterColumns field.
+// SetLimiterColumns gets a reference to the given common.Nullable[]string and assigns it to the LimiterColumns field.
 func (o *AlertsCorrelationData) SetLimiterColumns(v []string) {
 	o.LimiterColumns.Set(&v)
 }
@@ -732,8 +732,8 @@ func (o AlertsCorrelationData) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.Id != nil {
-		toSerialize["Id"] = o.Id
+	if o.ID != nil {
+		toSerialize["Id"] = o.ID
 	}
 	if o.Enabled != nil {
 		toSerialize["Enabled"] = o.Enabled
@@ -756,11 +756,11 @@ func (o AlertsCorrelationData) MarshalJSON() ([]byte, error) {
 	if o.HasUpdate != nil {
 		toSerialize["HasUpdate"] = o.HasUpdate
 	}
-	if o.ModuleId.IsSet() {
-		toSerialize["ModuleId"] = o.ModuleId.Get()
+	if o.ModuleID.IsSet() {
+		toSerialize["ModuleId"] = o.ModuleID.Get()
 	}
-	if o.ModuleGuid.IsSet() {
-		toSerialize["ModuleGuid"] = o.ModuleGuid.Get()
+	if o.ModuleGUID.IsSet() {
+		toSerialize["ModuleGuid"] = o.ModuleGUID.Get()
 	}
 	if o.RiskLevel != nil {
 		toSerialize["RiskLevel"] = o.RiskLevel
@@ -808,7 +808,7 @@ func (o AlertsCorrelationData) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Id                    *string                     `json:"Id,omitempty"`
+		ID                    *string                     `json:"Id,omitempty"`
 		Enabled               *bool                       `json:"Enabled,omitempty"`
 		Name                  *string                     `json:"Name,omitempty"`
 		Description           *string                     `json:"Description,omitempty"`
@@ -816,8 +816,8 @@ func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 		FromMarket            *bool                       `json:"FromMarket,omitempty"`
 		FromModules           *bool                       `json:"FromModules,omitempty"`
 		HasUpdate             *bool                       `json:"HasUpdate,omitempty"`
-		ModuleId              common.NullableString       `json:"ModuleId,omitempty"`
-		ModuleGuid            common.NullableString       `json:"ModuleGuid,omitempty"`
+		ModuleID              common.NullableString       `json:"ModuleId,omitempty"`
+		ModuleGUID            common.NullableString       `json:"ModuleGuid,omitempty"`
 		RiskLevel             *int64                      `json:"RiskLevel,omitempty"`
 		MaxAlertCount         *int64                      `json:"MaxAlertCount,omitempty"`
 		LimiterTimeFrameType  *string                     `json:"LimiterTimeFrameType,omitempty"`
@@ -834,7 +834,7 @@ func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
-	if all.Id == nil {
+	if all.ID == nil {
 		return fmt.Errorf("requiered field Id is missing")
 	}
 	if all.Name == nil {
@@ -850,7 +850,7 @@ func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 		return err
 	}
 
-	o.Id = all.Id
+	o.ID = all.ID
 	o.Enabled = all.Enabled
 	o.Name = all.Name
 	o.Description = all.Description
@@ -858,8 +858,8 @@ func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 	o.FromMarket = all.FromMarket
 	o.FromModules = all.FromModules
 	o.HasUpdate = all.HasUpdate
-	o.ModuleId = all.ModuleId
-	o.ModuleGuid = all.ModuleGuid
+	o.ModuleID = all.ModuleID
+	o.ModuleGUID = all.ModuleGUID
 	o.RiskLevel = all.RiskLevel
 	o.MaxAlertCount = all.MaxAlertCount
 	o.LimiterTimeFrameType = all.LimiterTimeFrameType

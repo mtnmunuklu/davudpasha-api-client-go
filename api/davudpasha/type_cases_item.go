@@ -6,56 +6,104 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// CasesItem represents the structure of a case item.
 type CasesItem struct {
-	CaseId                           *string                     `json:"CaseId,omitempty"`
-	Name                             *string                     `json:"Name,omitempty"`
-	Description                      common.NullableString       `json:"Description,omitempty"`
-	Owner                            *string                     `json:"Owner,omitempty"`
-	OccuredDate                      *string                     `json:"OccuredDate,omitempty"`
-	CreatedDate                      *string                     `json:"CreatedDate,omitempty"`
-	ModifiedDate                     *string                     `json:"ModifiedDate,omitempty"`
-	ReminderDate                     common.NullableString       `json:"ReminderDate,omitempty"`
-	ExpectedFinishTime               common.NullableString       `json:"ExpectedFinishTime,omitempty"`
-	RealFinishTime                   common.NullableString       `json:"RealFinishTime,omitempty"`
-	LastSentReminderEmailDate        common.NullableString       `json:"LastSentReminderEmailDate,omitempty"`
-	PriorityValueLastCalculationDate common.NullableString       `json:"PriorityValueLastCalculationDate,omitempty"`
-	CaseType                         *string                     `json:"CaseType,omitempty"`
-	CaseCategory                     *string                     `json:"CaseCategory,omitempty"`
-	CaseCategoryId                   *string                     `json:"CaseCategoryId,omitempty"`
-	ParentCaseId                     common.NullableString       `json:"ParentCaseId,omitempty"`
-	ParentCaseName                   common.NullableString       `json:"ParentCaseName,omitempty"`
-	State                            *string                     `json:"State,omitempty"`
-	Severity                         *string                     `json:"Severity,omitempty"`
-	App                              *string                     `json:"App,omitempty"`
-	AssignedUserId                   common.NullableString       `json:"AssignedUserId,omitempty"`
-	AssignedUserName                 common.NullableString       `json:"AssignedUserName,omitempty"`
-	Roles                            common.NullableList[string] `json:"Roles,omitempty"`
-	Data                             *json.RawMessage            `json:"Data,omitempty"`
-	ExtData                          common.NullableString       `json:"ExtData,omitempty"`
-	Logs                             []CasesLog                  `json:"Logs,omitempty"`
-	Comments                         []CasesComment              `json:"Comments,omitempty"`
-	CommentsToAppend                 common.NullableList[string] `json:"CommentsToAppend,omitempty"`
-	NumberOfRepetitions              *int64                      `json:"NumberOfRepetitions,omitempty"`
-	SimilarityHash                   *string                     `json:"SimilarityHash,omitempty"`
-	Tags                             common.NullableList[string] `json:"Tags,omitempty"`
-	FileAttachments                  []CasesFileAttachment       `json:"FileAttachments,omitempty"`
-	ReminderPeriotsAsHour            common.NullableInt64        `json:"ReminderPeriotsAsHour,omitempty"`
-	ReminderEmailCount               *int64                      `json:"ReminderEmailCount,omitempty"`
-	DataVector                       common.NullableString       `json:"DataVector,omitempty"`
-	FilterTags                       common.NullableList[string] `json:"FilterTags,omitempty"`
-	MappedFields                     *json.RawMessage            `json:"MappedFields,omitempty"`
-	SourceType                       common.NullableString       `json:"SourceType,omitempty"`
-	PriorityValue                    common.NullableString       `json:"PriorityValue,omitempty"`
-	RemainingTimeAsHour              *int64                      `json:"RemainingTimeAsHour,omitempty"`
-	WaitingTimeAsHour                *int64                      `json:"WaitingTimeAsHour,omitempty"`
-	MitreData                        NullableCasesMitreData      `json:"MitreData,omitempty"`
-	AssetList                        common.NullableList[string] `json:"AssetList,omitempty"`
-	Approvals                        common.NullableList[string] `json:"Approvals,omitempty"`
-	TenantID                         *string                     `json:"TenantID,omitempty"`
-	ID                               *string                     `json:"_id,omitempty"`
-	Timestamp                        *string                     `json:"Timestamp,omitempty"`
+	// Unique identifier for the case.
+	CaseID *string `json:"CaseId,omitempty"`
+	// Name of the case.
+	Name *string `json:"Name,omitempty"`
+	// Description of the case, which can be null.
+	Description common.NullableString `json:"Description,omitempty"`
+	// Owner of the case.
+	Owner *string `json:"Owner,omitempty"`
+	// Date when the case occurred.
+	OccuredDate *string `json:"OccuredDate,omitempty"`
+	// Date when the case was created.
+	CreatedDate *string `json:"CreatedDate,omitempty"`
+	// Date when the case was last modified.
+	ModifiedDate *string `json:"ModifiedDate,omitempty"`
+	// Date for reminders related to the case, which can be null.
+	ReminderDate common.NullableString `json:"ReminderDate,omitempty"`
+	// Expected finish time for the case, which can be null.
+	ExpectedFinishTime common.NullableString `json:"ExpectedFinishTime,omitempty"`
+	// Real finish time for the case, which can be null.
+	RealFinishTime common.NullableString `json:"RealFinishTime,omitempty"`
+	// Date when the last reminder email was sent related to the case, which can be null.
+	LastSentReminderEmailDate common.NullableString `json:"LastSentReminderEmailDate,omitempty"`
+	// Date of the last calculation for priority value related to the case, which can be null.
+	PriorityValueLastCalculationDate common.NullableString `json:"PriorityValueLastCalculationDate,omitempty"`
+	// Type of the case.
+	CaseType *string `json:"CaseType,omitempty"`
+	// Category of the case.
+	CaseCategory *string `json:"CaseCategory,omitempty"`
+	// Unique identifier for the case category.
+	CaseCategoryID *string `json:"CaseCategoryId,omitempty"`
+	// Parent case ID, which can be null.
+	ParentCaseID common.NullableString `json:"ParentCaseId,omitempty"`
+	// Name of the parent case, which can be null.
+	ParentCaseName common.NullableString `json:"ParentCaseName,omitempty"`
+	// Current state of the case.
+	State *string `json:"State,omitempty"`
+	// Severity level of the case.
+	Severity *string `json:"Severity,omitempty"`
+	// Application associated with the case.
+	App *string `json:"App,omitempty"`
+	// ID of the user assigned to the case, which can be null.
+	AssignedUserID common.NullableString `json:"AssignedUserId,omitempty"`
+	// Name of the user assigned to the case, which can be null.
+	AssignedUserName common.NullableString `json:"AssignedUserName,omitempty"`
+	// Roles associated with the case, which can be null.
+	Roles common.NullableList[string] `json:"Roles,omitempty"`
+	// Additional data associated with the case in raw JSON format, which can be null.
+	Data *json.RawMessage `json:"Data,omitempty"`
+	// Extended data associated with the case, which can be null.
+	ExtData common.NullableString `json:"ExtData,omitempty"`
+	// Logs related to the case.
+	Logs []CasesLog `json:"Logs,omitempty"`
+	// Comments related to the case.
+	Comments []CasesComment `json:"Comments,omitempty"`
+	// List of comments to append to the case, which can be null.
+	CommentsToAppend common.NullableList[string] `json:"CommentsToAppend,omitempty"`
+	// Number of repetitions related to the case, which can be null.
+	NumberOfRepetitions *int64 `json:"NumberOfRepetitions,omitempty"`
+	// Hash value representing similarity with other cases, which can be null.
+	SimilarityHash *string `json:"SimilarityHash,omitempty"`
+	// Tags associated with the case, which can be null.
+	Tags common.NullableList[string] `json:"Tags,omitempty"`
+	// File attachments related to the case.
+	FileAttachments []CasesFileAttachment `json:"FileAttachments,omitempty"`
+	// Reminder periods related to the case in hours, which can be null.
+	ReminderPeriotsAsHour common.NullableInt64 `json:"ReminderPeriotsAsHour,omitempty"`
+	// Count of reminder emails related to the case, which can be null.
+	ReminderEmailCount *int64 `json:"ReminderEmailCount,omitempty"`
+	// Data vector associated with the case, which can be null.
+	DataVector common.NullableString `json:"DataVector,omitempty"`
+	// Filter tags associated with the case, which can be null.
+	FilterTags common.NullableList[string] `json:"FilterTags,omitempty"`
+	// Mapped fields associated with the case in raw JSON format, which can be null.
+	MappedFields *json.RawMessage `json:"MappedFields,omitempty"`
+	// Source type of the case, which can be null.
+	SourceType common.NullableString `json:"SourceType,omitempty"`
+	// Priority value associated with the case, which can be null.
+	PriorityValue common.NullableString `json:"PriorityValue,omitempty"`
+	// Remaining time related to the case in hours, which can be null.
+	RemainingTimeAsHour *int64 `json:"RemainingTimeAsHour,omitempty"`
+	// Waiting time related to the case in hours, which can be null.
+	WaitingTimeAsHour *int64 `json:"WaitingTimeAsHour,omitempty"`
+	// MITRE data associated with the case, which can be null.
+	MitreData NullableCasesMitreData `json:"MitreData,omitempty"`
+	// List of assets associated with the case, which can be null.
+	AssetList common.NullableList[string] `json:"AssetList,omitempty"`
+	// List of approvals related to the case, which can be null.
+	Approvals common.NullableList[string] `json:"Approvals,omitempty"`
+	// Unique identifier for the tenant associated with the case, which can be null.
+	TenantID *string `json:"TenantID,omitempty"`
+	// Unique identifier for the case item.
+	ID *string `json:"_id,omitempty"`
+	// Timestamp of when the case item was created or last updated.
+	Timestamp *string `json:"Timestamp,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -77,32 +125,32 @@ func NewCasesItemWithDefaults() *CasesItem {
 	return &this
 }
 
-// GetCaseId returns the CaseId field value if set, zero value otherwise.
-func (o *CasesItem) GetCaseId() string {
-	if o == nil || o.CaseId == nil {
+// GetCaseID returns the CaseID field value if set, zero value otherwise.
+func (o *CasesItem) GetCaseID() string {
+	if o == nil || o.CaseID == nil {
 		var ret string
 		return ret
 	}
-	return *o.CaseId
+	return *o.CaseID
 }
 
-// GetCaseIdOk returns a tuple with the CaseId field value if set, nil otherwise
+// GetCaseIDOk returns a tuple with the CaseID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CasesItem) GetCaseIdOk() (*string, bool) {
-	if o == nil || o.CaseId == nil {
+func (o *CasesItem) GetCaseIDOk() (*string, bool) {
+	if o == nil || o.CaseID == nil {
 		return nil, false
 	}
-	return o.CaseId, true
+	return o.CaseID, true
 }
 
 // HasCaseId returns a boolean if a field has been set.
-func (o *CasesItem) HasCaseId() bool {
-	return o != nil && o.CaseId != nil
+func (o *CasesItem) HasCaseID() bool {
+	return o != nil && o.CaseID != nil
 }
 
-// SetCaseId gets a reference to the given string and assigns it to the CaseId field.
-func (o *CasesItem) SetCaseId(v string) {
-	o.CaseId = &v
+// SetCaseId gets a reference to the given string and assigns it to the CaseID field.
+func (o *CasesItem) SetCaseID(v string) {
+	o.CaseID = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -157,7 +205,7 @@ func (o *CasesItem) HasDescription() bool {
 	return o != nil && o.Description.IsSet()
 }
 
-// SetDescription gets a reference to the given datadog.NullableString and assigns it to the Description field.
+// SetDescription gets a reference to the given common.NullableString and assigns it to the Description field.
 func (o *CasesItem) SetDescription(v string) {
 	o.Description.Set(&v)
 }
@@ -308,7 +356,7 @@ func (o *CasesItem) HasReminderDate() bool {
 	return o != nil && o.ReminderDate.IsSet()
 }
 
-// SetReminderDate gets a reference to the given datadog.NullableString and assigns it to the ReminderDate field.
+// SetReminderDate gets a reference to the given common.NullableString and assigns it to the ReminderDate field.
 func (o *CasesItem) SetReminderDate(v string) {
 	o.ReminderDate.Set(&v)
 }
@@ -347,7 +395,7 @@ func (o *CasesItem) HasExpectedFinishTime() bool {
 	return o != nil && o.ExpectedFinishTime.IsSet()
 }
 
-// SetExpectedFinishTime gets a reference to the given datadog.NullableString and assigns it to the ExpectedFinishTime field.
+// SetExpectedFinishTime gets a reference to the given common.NullableString and assigns it to the ExpectedFinishTime field.
 func (o *CasesItem) SetExpectedFinishTime(v string) {
 	o.ExpectedFinishTime.Set(&v)
 }
@@ -386,7 +434,7 @@ func (o *CasesItem) HasRealFinishTime() bool {
 	return o != nil && o.RealFinishTime.IsSet()
 }
 
-// SetRealFinishTime gets a reference to the given datadog.NullableString and assigns it to the RealFinishTime field.
+// SetRealFinishTime gets a reference to the given common.NullableString and assigns it to the RealFinishTime field.
 func (o *CasesItem) SetRealFinishTime(v string) {
 	o.RealFinishTime.Set(&v)
 }
@@ -425,7 +473,7 @@ func (o *CasesItem) HasLastSentReminderEmailDate() bool {
 	return o != nil && o.LastSentReminderEmailDate.IsSet()
 }
 
-// SetLastSentReminderEmailDate gets a reference to the given datadog.NullableString and assigns it to the LastSentReminderEmailDate field.
+// SetLastSentReminderEmailDate gets a reference to the given common.NullableString and assigns it to the LastSentReminderEmailDate field.
 func (o *CasesItem) SetLastSentReminderEmailDate(v string) {
 	o.LastSentReminderEmailDate.Set(&v)
 }
@@ -464,7 +512,7 @@ func (o *CasesItem) HasPriorityValueLastCalculationDate() bool {
 	return o != nil && o.PriorityValueLastCalculationDate.IsSet()
 }
 
-// SetPriorityValueLastCalculationDate gets a reference to the given datadog.NullableString and assigns it to the PriorityValueLastCalculationDate field.
+// SetPriorityValueLastCalculationDate gets a reference to the given common.NullableString and assigns it to the PriorityValueLastCalculationDate field.
 func (o *CasesItem) SetPriorityValueLastCalculationDate(v string) {
 	o.PriorityValueLastCalculationDate.Set(&v)
 }
@@ -535,71 +583,71 @@ func (o *CasesItem) SetCaseCategory(v string) {
 	o.CaseCategory = &v
 }
 
-// GetCaseCategoryId returns the CaseCategoryId field value if set, zero value otherwise.
-func (o *CasesItem) GetCaseCategoryId() string {
-	if o == nil || o.CaseCategoryId == nil {
+// GetCaseCategoryID returns the CaseCategoryID field value if set, zero value otherwise.
+func (o *CasesItem) GetCaseCategoryID() string {
+	if o == nil || o.CaseCategoryID == nil {
 		var ret string
 		return ret
 	}
-	return *o.CaseCategoryId
+	return *o.CaseCategoryID
 }
 
-// GetCaseCategoryIdOk returns a tuple with the CaseCategoryId field value if set, nil otherwise
+// GetCaseCategoryIDOk returns a tuple with the CaseCategoryID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CasesItem) GetCaseCategoryIdOk() (*string, bool) {
-	if o == nil || o.CaseCategoryId == nil {
+func (o *CasesItem) GetCaseCategoryIDOk() (*string, bool) {
+	if o == nil || o.CaseCategoryID == nil {
 		return nil, false
 	}
-	return o.CaseCategoryId, true
+	return o.CaseCategoryID, true
 }
 
-// HasCaseCategoryId returns a boolean if a field has been set.
-func (o *CasesItem) HasCaseCategoryId() bool {
-	return o != nil && o.CaseCategoryId != nil
+// HasCaseCategoryID returns a boolean if a field has been set.
+func (o *CasesItem) HasCaseCategoryID() bool {
+	return o != nil && o.CaseCategoryID != nil
 }
 
-// SetCaseCategoryId gets a reference to the given string and assigns it to the CaseCategoryId field.
-func (o *CasesItem) SetCaseCategoryId(v string) {
-	o.CaseCategoryId = &v
+// SetCaseCategoryID gets a reference to the given string and assigns it to the CaseCategoryID field.
+func (o *CasesItem) SetCaseCategoryID(v string) {
+	o.CaseCategoryID = &v
 }
 
-// GetParentCaseId returns the ParentCaseId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CasesItem) GetParentCaseId() string {
-	if o == nil || o.ParentCaseId.Get() == nil {
+// GetParentCaseID returns the ParentCaseID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CasesItem) GetParentCaseID() string {
+	if o == nil || o.ParentCaseID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ParentCaseId.Get()
+	return *o.ParentCaseID.Get()
 }
 
-// GetParentCaseIdOk returns a tuple with the ParentCaseId field value if set, nil otherwise
+// GetParentCaseIDOk returns a tuple with the ParentCaseID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *CasesItem) GetParentCaseIdOk() (*string, bool) {
+func (o *CasesItem) GetParentCaseIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ParentCaseId.Get(), o.ParentCaseId.IsSet()
+	return o.ParentCaseID.Get(), o.ParentCaseID.IsSet()
 }
 
-// HasParentCaseId returns a boolean if a ParentCaseId has been set.
-func (o *CasesItem) HasParentCaseId() bool {
-	return o != nil && o.ParentCaseId.IsSet()
+// HasParentCaseID returns a boolean if a ParentCaseID has been set.
+func (o *CasesItem) HasParentCaseID() bool {
+	return o != nil && o.ParentCaseID.IsSet()
 }
 
-// SetParentCaseId gets a reference to the given datadog.NullableString and assigns it to the ParentCaseId field.
-func (o *CasesItem) SetParentCaseId(v string) {
-	o.ParentCaseId.Set(&v)
+// SetParentCaseID gets a reference to the given common.NullableString and assigns it to the ParentCaseID field.
+func (o *CasesItem) SetParentCaseID(v string) {
+	o.ParentCaseID.Set(&v)
 }
 
-// SetParentCaseIdNil sets the value for ParentCaseId to be an explicit nil.
-func (o *CasesItem) SetParentCaseIdNil() {
-	o.ParentCaseId.Set(nil)
+// SetParentCaseIDNil sets the value for ParentCaseID to be an explicit nil.
+func (o *CasesItem) SetParentCaseIDNil() {
+	o.ParentCaseID.Set(nil)
 }
 
-// UnSetParentCaseId ensures that no value is present for ParentCaseId, not even an explicit nil.
-func (o *CasesItem) UnSetParentCaseId() {
-	o.ParentCaseId.UnSet()
+// UnSetParentCaseID ensures that no value is present for ParentCaseID, not even an explicit nil.
+func (o *CasesItem) UnSetParentCaseID() {
+	o.ParentCaseID.UnSet()
 }
 
 // GetParentCaseName returns the ParentCaseName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -626,7 +674,7 @@ func (o *CasesItem) HasParentCaseName() bool {
 	return o != nil && o.ParentCaseName.IsSet()
 }
 
-// SetParentCaseName gets a reference to the given datadog.NullableString and assigns it to the ParentCaseName field.
+// SetParentCaseName gets a reference to the given common.NullableString and assigns it to the ParentCaseName field.
 func (o *CasesItem) SetParentCaseName(v string) {
 	o.ParentCaseName.Set(&v)
 }
@@ -725,43 +773,43 @@ func (o *CasesItem) SetApp(v string) {
 	o.App = &v
 }
 
-// GetAssignedUserId returns the AssignedUserId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CasesItem) GetAssignedUserId() string {
-	if o == nil || o.AssignedUserId.Get() == nil {
+// GetAssignedUserID returns the AssignedUserID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CasesItem) GetAssignedUserID() string {
+	if o == nil || o.AssignedUserID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.AssignedUserId.Get()
+	return *o.AssignedUserID.Get()
 }
 
-// GetAssignedUserIdOk returns a tuple with the AssignedUserId field value if set, nil otherwise
+// GetAssignedUserIDOk returns a tuple with the AssignedUserID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *CasesItem) GetAssignedUserIdOk() (*string, bool) {
+func (o *CasesItem) GetAssignedUserIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.AssignedUserId.Get(), o.AssignedUserId.IsSet()
+	return o.AssignedUserID.Get(), o.AssignedUserID.IsSet()
 }
 
-// HasAssignedUserId returns a boolean if a AssignedUserId has been set.
-func (o *CasesItem) HasAssignedUserId() bool {
-	return o != nil && o.AssignedUserId.IsSet()
+// HasAssignedUserID returns a boolean if a AssignedUserID has been set.
+func (o *CasesItem) HasAssignedUserID() bool {
+	return o != nil && o.AssignedUserID.IsSet()
 }
 
-// SetAssignedUserId gets a reference to the given datadog.NullableString and assigns it to the AssignedUserId field.
-func (o *CasesItem) SetAssignedUserId(v string) {
-	o.AssignedUserId.Set(&v)
+// SetAssignedUserID gets a reference to the given common.NullableString and assigns it to the AssignedUserID field.
+func (o *CasesItem) SetAssignedUserID(v string) {
+	o.AssignedUserID.Set(&v)
 }
 
-// SetAssignedUserIdNil sets the value for AssignedUserId to be an explicit nil.
-func (o *CasesItem) SetAssignedUserIdNil() {
-	o.AssignedUserId.Set(nil)
+// SetAssignedUserIDNil sets the value for AssignedUserId to be an explicit nil.
+func (o *CasesItem) SetAssignedUserIDNil() {
+	o.AssignedUserID.Set(nil)
 }
 
-// UnSetAssignedUserId ensures that no value is present for AssignedUserId, not even an explicit nil.
-func (o *CasesItem) UnSetAssignedUserId() {
-	o.AssignedUserId.UnSet()
+// UnSetAssignedUserID ensures that no value is present for AssignedUserID, not even an explicit nil.
+func (o *CasesItem) UnSetAssignedUserID() {
+	o.AssignedUserID.UnSet()
 }
 
 // GetAssignedUserName returns the AssignedUserName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -788,7 +836,7 @@ func (o *CasesItem) HasAssignedUserName() bool {
 	return o != nil && o.AssignedUserName.IsSet()
 }
 
-// SetAssignedUserName gets a reference to the given datadog.NullableString and assigns it to the AssignedUserName field.
+// SetAssignedUserName gets a reference to the given common.NullableString and assigns it to the AssignedUserName field.
 func (o *CasesItem) SetAssignedUserName(v string) {
 	o.AssignedUserName.Set(&v)
 }
@@ -827,7 +875,7 @@ func (o *CasesItem) HasRoles() bool {
 	return o != nil && o.Roles.IsSet()
 }
 
-// SetRoles gets a reference to the given datadog.Nullable[]string and assigns it to the Roles field.
+// SetRoles gets a reference to the given common.Nullable[]string and assigns it to the Roles field.
 func (o *CasesItem) SetRoles(v []string) {
 	o.Roles.Set(&v)
 }
@@ -894,7 +942,7 @@ func (o *CasesItem) HasExtData() bool {
 	return o != nil && o.ExtData.IsSet()
 }
 
-// SetExtData gets a reference to the given datadog.NullableString and assigns it to the ExtData field.
+// SetExtData gets a reference to the given common.NullableString and assigns it to the ExtData field.
 func (o *CasesItem) SetExtData(v string) {
 	o.ExtData.Set(&v)
 }
@@ -989,7 +1037,7 @@ func (o *CasesItem) HasCommentsToAppend() bool {
 	return o != nil && o.CommentsToAppend.IsSet()
 }
 
-// SetCommentsToAppend gets a reference to the given datadog.Nullable[]string and assigns it to the CommentsToAppend field.
+// SetCommentsToAppend gets a reference to the given common.Nullable[]string and assigns it to the CommentsToAppend field.
 func (o *CasesItem) SetCommentsToAppend(v []string) {
 	o.CommentsToAppend.Set(&v)
 }
@@ -1084,7 +1132,7 @@ func (o *CasesItem) HasTags() bool {
 	return o != nil && o.Tags.IsSet()
 }
 
-// SetTags gets a reference to the given datadog.Nullable[]string and assigns it to the Tags field.
+// SetTags gets a reference to the given common.Nullable[]string and assigns it to the Tags field.
 func (o *CasesItem) SetTags(v []string) {
 	o.Tags.Set(&v)
 }
@@ -1151,7 +1199,7 @@ func (o *CasesItem) HasReminderPeriotsAsHour() bool {
 	return o != nil && o.ReminderPeriotsAsHour.IsSet()
 }
 
-// SetReminderPeriotsAsHour gets a reference to the given datadog.NullableInt64 and assigns it to the ReminderPeriotsAsHour field.
+// SetReminderPeriotsAsHour gets a reference to the given common.NullableInt64 and assigns it to the ReminderPeriotsAsHour field.
 func (o *CasesItem) SetReminderPeriotsAsHour(v int64) {
 	o.ReminderPeriotsAsHour.Set(&v)
 }
@@ -1218,7 +1266,7 @@ func (o *CasesItem) HasDataVector() bool {
 	return o != nil && o.DataVector.IsSet()
 }
 
-// SetDataVector gets a reference to the given datadog.NullableString and assigns it to the DataVector field.
+// SetDataVector gets a reference to the given common.NullableString and assigns it to the DataVector field.
 func (o *CasesItem) SetDataVector(v string) {
 	o.DataVector.Set(&v)
 }
@@ -1257,7 +1305,7 @@ func (o *CasesItem) HasFilterTags() bool {
 	return o != nil && o.FilterTags.IsSet()
 }
 
-// SetFilterTags gets a reference to the given datadog.Nullable[]string and assigns it to the FilterTags field.
+// SetFilterTags gets a reference to the given common.Nullable[]string and assigns it to the FilterTags field.
 func (o *CasesItem) SetFilterTags(v []string) {
 	o.FilterTags.Set(&v)
 }
@@ -1324,7 +1372,7 @@ func (o *CasesItem) HasSourceType() bool {
 	return o != nil && o.SourceType.IsSet()
 }
 
-// SetSourceType gets a reference to the given datadog.NullableString and assigns it to the SourceType field.
+// SetSourceType gets a reference to the given common.NullableString and assigns it to the SourceType field.
 func (o *CasesItem) SetSourceType(v string) {
 	o.SourceType.Set(&v)
 }
@@ -1363,7 +1411,7 @@ func (o *CasesItem) HasPriorityValue() bool {
 	return o != nil && o.PriorityValue.IsSet()
 }
 
-// SetPriorityValue gets a reference to the given datadog.NullableString and assigns it to the PriorityValue field.
+// SetPriorityValue gets a reference to the given common.NullableString and assigns it to the PriorityValue field.
 func (o *CasesItem) SetPriorityValue(v string) {
 	o.PriorityValue.Set(&v)
 }
@@ -1458,7 +1506,7 @@ func (o *CasesItem) HasMitreData() bool {
 	return o != nil && o.MitreData.IsSet()
 }
 
-// SetMitreData gets a reference to the given datadog.NullableString and assigns it to the MitreData field.
+// SetMitreData gets a reference to the given common.NullableString and assigns it to the MitreData field.
 func (o *CasesItem) SetMitreData(v CasesMitreData) {
 	o.MitreData.Set(&v)
 }
@@ -1497,7 +1545,7 @@ func (o *CasesItem) HasAssetList() bool {
 	return o != nil && o.AssetList.IsSet()
 }
 
-// SetAssetList gets a reference to the given datadog.Nullable[]string and assigns it to the AssetList field.
+// SetAssetList gets a reference to the given common.Nullable[]string and assigns it to the AssetList field.
 func (o *CasesItem) SetAssetList(v []string) {
 	o.AssetList.Set(&v)
 }
@@ -1536,7 +1584,7 @@ func (o *CasesItem) HasApprovals() bool {
 	return o != nil && o.Approvals.IsSet()
 }
 
-// SetApprovals gets a reference to the given datadog.Nullable[]string and assigns it to the Approvals field.
+// SetApprovals gets a reference to the given common.Nullable[]string and assigns it to the Approvals field.
 func (o *CasesItem) SetApprovals(v []string) {
 	o.Approvals.Set(&v)
 }
@@ -1641,8 +1689,8 @@ func (o CasesItem) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.CaseId != nil {
-		toSerialize["CaseId"] = o.CaseId
+	if o.CaseID != nil {
+		toSerialize["CaseId"] = o.CaseID
 	}
 	if o.Name != nil {
 		toSerialize["Name"] = o.Name
@@ -1683,11 +1731,11 @@ func (o CasesItem) MarshalJSON() ([]byte, error) {
 	if o.CaseCategory != nil {
 		toSerialize["CaseCategory"] = o.CaseCategory
 	}
-	if o.CaseCategoryId != nil {
-		toSerialize["CaseCategoryId"] = o.CaseCategoryId
+	if o.CaseCategoryID != nil {
+		toSerialize["CaseCategoryId"] = o.CaseCategoryID
 	}
-	if o.ParentCaseId.IsSet() {
-		toSerialize["ParentCaseId"] = o.ParentCaseId.Get()
+	if o.ParentCaseID.IsSet() {
+		toSerialize["ParentCaseId"] = o.ParentCaseID.Get()
 	}
 	if o.ParentCaseName.IsSet() {
 		toSerialize["ParentCaseName"] = o.ParentCaseName.Get()
@@ -1701,8 +1749,8 @@ func (o CasesItem) MarshalJSON() ([]byte, error) {
 	if o.App != nil {
 		toSerialize["App"] = o.App
 	}
-	if o.AssignedUserId.IsSet() {
-		toSerialize["AssignedUserId"] = o.AssignedUserId.Get()
+	if o.AssignedUserID.IsSet() {
+		toSerialize["AssignedUserId"] = o.AssignedUserID.Get()
 	}
 	if o.AssignedUserName.IsSet() {
 		toSerialize["AssignedUserName"] = o.AssignedUserName.Get()
@@ -1792,7 +1840,7 @@ func (o CasesItem) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *CasesItem) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		CaseId                           *string                     `json:"CaseId,omitempty"`
+		CaseID                           *string                     `json:"CaseId,omitempty"`
 		Name                             *string                     `json:"Name,omitempty"`
 		Description                      common.NullableString       `json:"Description,omitempty"`
 		Owner                            *string                     `json:"Owner,omitempty"`
@@ -1806,13 +1854,13 @@ func (o *CasesItem) UnMarshalJSON(bytes []byte) (err error) {
 		PriorityValueLastCalculationDate common.NullableString       `json:"PriorityValueLastCalculationDate,omitempty"`
 		CaseType                         *string                     `json:"CaseType,omitempty"`
 		CaseCategory                     *string                     `json:"CaseCategory,omitempty"`
-		CaseCategoryId                   *string                     `json:"CaseCategoryId,omitempty"`
-		ParentCaseId                     common.NullableString       `json:"ParentCaseId,omitempty"`
+		CaseCategoryID                   *string                     `json:"CaseCategoryId,omitempty"`
+		ParentCaseID                     common.NullableString       `json:"ParentCaseId,omitempty"`
 		ParentCaseName                   common.NullableString       `json:"ParentCaseName,omitempty"`
 		State                            *string                     `json:"State,omitempty"`
 		Severity                         *string                     `json:"Severity,omitempty"`
 		App                              *string                     `json:"App,omitempty"`
-		AssignedUserId                   common.NullableString       `json:"AssignedUserId,omitempty"`
+		AssignedUserID                   common.NullableString       `json:"AssignedUserId,omitempty"`
 		AssignedUserName                 common.NullableString       `json:"AssignedUserName,omitempty"`
 		Roles                            common.NullableList[string] `json:"Roles,omitempty"`
 		Data                             *json.RawMessage            `json:"Data,omitempty"`
@@ -1851,7 +1899,7 @@ func (o *CasesItem) UnMarshalJSON(bytes []byte) (err error) {
 		return err
 	}
 
-	o.CaseId = all.CaseId
+	o.CaseID = all.CaseID
 	o.Name = all.Name
 	o.Description = all.Description
 	o.Owner = all.Owner
@@ -1865,13 +1913,13 @@ func (o *CasesItem) UnMarshalJSON(bytes []byte) (err error) {
 	o.PriorityValueLastCalculationDate = all.PriorityValueLastCalculationDate
 	o.CaseType = all.CaseType
 	o.CaseCategory = all.CaseCategory
-	o.CaseCategoryId = all.CaseCategoryId
-	o.ParentCaseId = all.ParentCaseId
+	o.CaseCategoryID = all.CaseCategoryID
+	o.ParentCaseID = all.ParentCaseID
 	o.ParentCaseName = all.ParentCaseName
 	o.State = all.State
 	o.Severity = all.Severity
 	o.App = all.App
-	o.AssignedUserId = all.AssignedUserId
+	o.AssignedUserID = all.AssignedUserID
 	o.AssignedUserName = all.AssignedUserName
 	o.Roles = all.Roles
 	o.Data = all.Data

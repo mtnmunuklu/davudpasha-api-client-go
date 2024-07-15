@@ -7,15 +7,20 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// AssetsSearchRequest represents the request structure for searching assets.
 type AssetsSearchRequest struct {
-	SearchFilter  *string `json:"searchFilter,omitempty"`
+	// Primary filter for searching assets.
+	SearchFilter *string `json:"searchFilter,omitempty"`
+	// Secondary filter for searching assets.
 	SearchFilter2 *string `json:"searchFilter2,omitempty"`
-	PageNumber    *int64  `json:"pageNumber,omitempty"`
-	PageSize      *int64  `json:"pageSize,omitempty"`
+	// Page number for pagination.
+	PageNumber *int64 `json:"pageNumber,omitempty"`
+	// Number of items per page for pagination.
+	PageSize *int64 `json:"pageSize,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

@@ -2846,7 +2846,7 @@ SetActionParameters gets a reference to the given \[\]ActionParameter and assign
 func (o *Action) SetActionRefId(v string)
 ```
 
-SetActionRefId gets a reference to the given datadog.NullableString and assigns it to the ActionRefId field.
+SetActionRefId gets a reference to the given common.NullableString and assigns it to the ActionRefId field.
 
 <a name="Action.SetActionRefIdNil"></a>
 ### func \(\*Action\) [SetActionRefIdNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L167>)
@@ -2873,7 +2873,7 @@ SetActionType gets a reference to the given string and assigns it to the ActionT
 func (o *Action) SetData(v string)
 ```
 
-SetData gets a reference to the given datadog.NullableString and assigns it to the Data field.
+SetData gets a reference to the given common.NullableString and assigns it to the Data field.
 
 <a name="Action.SetDataNil"></a>
 ### func \(\*Action\) [SetDataNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_action.go#L128>)
@@ -3143,7 +3143,7 @@ MarshalJSON serializes the struct using spec logic.
 func (o *Actions) SetActionRefIds(v []string)
 ```
 
-SetActionRefIds gets a reference to the given datadog.Nullable\[\]string and assigns it to the ActionRefIds field.
+SetActionRefIds gets a reference to the given common.Nullable\[\]string and assigns it to the ActionRefIds field.
 
 <a name="Actions.SetActionRefIdsNil"></a>
 ### func \(\*Actions\) [SetActionRefIdsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_actions.go#L97>)
@@ -3984,7 +3984,7 @@ SetId gets a reference to the given string and assigns it to the Id field.
 func (o *AlertsCorrelationData) SetLimiterColumns(v []string)
 ```
 
-SetLimiterColumns gets a reference to the given datadog.Nullable\[\]string and assigns it to the LimiterColumns field.
+SetLimiterColumns gets a reference to the given common.Nullable\[\]string and assigns it to the LimiterColumns field.
 
 <a name="AlertsCorrelationData.SetLimiterColumnsNil"></a>
 ### func \(\*AlertsCorrelationData\) [SetLimiterColumnsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L524>)
@@ -4047,7 +4047,7 @@ SetMessage gets a reference to the given string and assigns it to the Message fi
 func (o *AlertsCorrelationData) SetModuleGuid(v string)
 ```
 
-SetModuleGuid gets a reference to the given datadog.NullableString and assigns it to the ModuleGuid field.
+SetModuleGuid gets a reference to the given common.NullableString and assigns it to the ModuleGuid field.
 
 <a name="AlertsCorrelationData.SetModuleGuidNil"></a>
 ### func \(\*AlertsCorrelationData\) [SetModuleGuidNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L372>)
@@ -4065,7 +4065,7 @@ SetModuleGuidNil sets the value for ModuleGuid to be an explicit nil.
 func (o *AlertsCorrelationData) SetModuleId(v string)
 ```
 
-SetModuleId gets a reference to the given datadog.NullableString and assigns it to the ModuleId field.
+SetModuleId gets a reference to the given common.NullableString and assigns it to the ModuleId field.
 
 <a name="AlertsCorrelationData.SetModuleIdNil"></a>
 ### func \(\*AlertsCorrelationData\) [SetModuleIdNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_correlation_data.go#L333>)
@@ -4312,7 +4312,7 @@ MarshalJSON serializes the struct using spec logic.
 func (o *AlertsItem) SetActionMessage(v string)
 ```
 
-SetActionMessage gets a reference to the given datadog.NullableString and assigns it to the ActionMessage field.
+SetActionMessage gets a reference to the given common.NullableString and assigns it to the ActionMessage field.
 
 <a name="AlertsItem.SetActionMessageNil"></a>
 ### func \(\*AlertsItem\) [SetActionMessageNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L167>)
@@ -4348,7 +4348,7 @@ SetCorrelationData gets a reference to the given CorrelationData and assigns it 
 func (o *AlertsItem) SetLgsName(v string)
 ```
 
-SetLgsName gets a reference to the given datadog.NullableString and assigns it to the LgsName field.
+SetLgsName gets a reference to the given common.NullableString and assigns it to the LgsName field.
 
 <a name="AlertsItem.SetLgsNameNil"></a>
 ### func \(\*AlertsItem\) [SetLgsNameNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_alerts_item.go#L72>)
@@ -4389,7 +4389,7 @@ type AlertsSearchRequest struct {
     // Context for the Smart REST request.
     SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -4517,7 +4517,7 @@ type AlertsSearchResponse struct {
     // List of successful items.
     SuccessItems []SuccessItem `json:"SuccessItems,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -4682,7 +4682,7 @@ type DateTimeRange struct {
     EndDate *string               `json:"EndDate,omitempty"`
     Field   common.NullableString `json:"Field,omitempty"`
     // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // AdditionalProperties stores any additional properties not explicitly defined in the struct
     AdditionalProperties map[string]interface{}
 }
@@ -4839,7 +4839,7 @@ SetEndDate gets a reference to the given string and assigns it to the EndDate fi
 func (o *DateTimeRange) SetField(v string)
 ```
 
-SetField gets a reference to the given datadog.NullableString and assigns it to the Field field.
+SetField gets a reference to the given common.NullableString and assigns it to the Field field.
 
 <a name="DateTimeRange.SetFieldNil"></a>
 ### func \(\*DateTimeRange\) [SetFieldNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_datetime_range.go#L153>)
@@ -4967,7 +4967,7 @@ type ErrorResponse struct {
     // A list of errors
     Errors []string `json:"errors"`
     // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-    UnparsedObject       map[string]interface{} `json:"-"`
+    UnparsedObject       map[string]interface{}
     AdditionalProperties map[string]interface{}
 }
 ```
@@ -5310,7 +5310,7 @@ type EventsSearchRequest struct {
     // SmartRestRequestContext is the context for the Smart REST request.
     SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
     // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // AdditionalProperties stores any additional properties not explicitly defined in the struct
     AdditionalProperties map[string]interface{}
 }
@@ -6125,7 +6125,7 @@ type QueriesItem struct {
     // Version of the query.
     Version *float64 `json:"Version,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -6687,7 +6687,7 @@ SetAuthor gets a reference to the given string and assigns it to the Author fiel
 func (o *QueriesItem) SetColumns(v []SelectedColumn)
 ```
 
-SetColumns gets a reference to the given datadog.Nullable\[SelectedColumns\] and assigns it to the Columns field.
+SetColumns gets a reference to the given common.Nullable\[SelectedColumns\] and assigns it to the Columns field.
 
 <a name="QueriesItem.SetColumnsNil"></a>
 ### func \(\*QueriesItem\) [SetColumnsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L200>)
@@ -6714,7 +6714,7 @@ SetDateTimeRange gets a reference to the given DateTimeRange and assigns it to t
 func (o *QueriesItem) SetDescription(v string)
 ```
 
-SetDescription gets a reference to the given datadog.NullableString and assigns it to the Description field.
+SetDescription gets a reference to the given common.NullableString and assigns it to the Description field.
 
 <a name="QueriesItem.SetDescriptionNil"></a>
 ### func \(\*QueriesItem\) [SetDescriptionNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L161>)
@@ -6777,7 +6777,7 @@ SetInsertDate gets a reference to the given string and assigns it to the InsertD
 func (o *QueriesItem) SetKillChainPhase(v string)
 ```
 
-SetKillChainPhase gets a reference to the given datadog.NullableString and assigns it to the KillChainPhase field.
+SetKillChainPhase gets a reference to the given common.NullableString and assigns it to the KillChainPhase field.
 
 <a name="QueriesItem.SetKillChainPhaseNil"></a>
 ### func \(\*QueriesItem\) [SetKillChainPhaseNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L457>)
@@ -6804,7 +6804,7 @@ SetLastUpdateDate gets a reference to the given string and assigns it to the Las
 func (o *QueriesItem) SetMitreTags(v []string)
 ```
 
-SetMitreTags gets a reference to the given datadog.Nullable\[\]string and assigns it to the MitreTags field.
+SetMitreTags gets a reference to the given common.Nullable\[\]string and assigns it to the MitreTags field.
 
 <a name="QueriesItem.SetMitreTagsNil"></a>
 ### func \(\*QueriesItem\) [SetMitreTagsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L418>)
@@ -6822,7 +6822,7 @@ SetMitreTagsNil sets the value for MitreTags to be an explicit nil.
 func (o *QueriesItem) SetModuleGuid(v string)
 ```
 
-SetModuleGuid gets a reference to the given datadog.NullableString and assigns it to the ModuleGuid field.
+SetModuleGuid gets a reference to the given common.NullableString and assigns it to the ModuleGuid field.
 
 <a name="QueriesItem.SetModuleGuidNil"></a>
 ### func \(\*QueriesItem\) [SetModuleGuidNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L619>)
@@ -6840,7 +6840,7 @@ SetModuleGuidNil sets the value for ModuleGuid to be an explicit nil.
 func (o *QueriesItem) SetModuleId(v string)
 ```
 
-SetModuleId gets a reference to the given datadog.NullableString and assigns it to the ModuleId field.
+SetModuleId gets a reference to the given common.NullableString and assigns it to the ModuleId field.
 
 <a name="QueriesItem.SetModuleIdNil"></a>
 ### func \(\*QueriesItem\) [SetModuleIdNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L580>)
@@ -6876,7 +6876,7 @@ SetQueryType gets a reference to the given string and assigns it to the QueryTyp
 func (o *QueriesItem) SetSharedUsersAndGroups(v []string)
 ```
 
-SetSharedUsersAndGroups gets a reference to the given datadog.Nullable\[\]string and assigns it to the SharedUsersAndGroups field.
+SetSharedUsersAndGroups gets a reference to the given common.Nullable\[\]string and assigns it to the SharedUsersAndGroups field.
 
 <a name="QueriesItem.SetSharedUsersAndGroupsNil"></a>
 ### func \(\*QueriesItem\) [SetSharedUsersAndGroupsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L658>)
@@ -6894,7 +6894,7 @@ SetSharedUsersAndGroupsNil sets the value for SharedUsersAndGroups to be an expl
 func (o *QueriesItem) SetTags(v []string)
 ```
 
-SetTags gets a reference to the given datadog.Nullable\[\]string and assigns it to the Tags field.
+SetTags gets a reference to the given common.Nullable\[\]string and assigns it to the Tags field.
 
 <a name="QueriesItem.SetTagsNil"></a>
 ### func \(\*QueriesItem\) [SetTagsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_queries_items.go#L379>)
@@ -7009,7 +7009,7 @@ type QueriesSearchRequest struct {
     // Context for the Smart REST request.
     SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -7173,7 +7173,7 @@ type QueriesSearchResponse struct {
     // List of successful items.
     SuccessItems []SuccessItem `json:"SuccessItems,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -7360,7 +7360,7 @@ type ReportsChartLegend struct {
     // Position of the legend.
     LegendPosition *string `json:"LegendPosition,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -7478,7 +7478,7 @@ type ReportsChartVisualization struct {
     // Indicates whether to show labels on the chart.
     ShowLabel *bool `json:"ShowLabel,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -7959,7 +7959,7 @@ SetChartType gets a reference to the given string and assigns it to the ChartTyp
 func (o *ReportsChartVisualization) SetColorScheme(v string)
 ```
 
-SetColorScheme gets a reference to the given datadog.NullableString and assigns it to the ColorScheme field.
+SetColorScheme gets a reference to the given common.NullableString and assigns it to the ColorScheme field.
 
 <a name="ReportsChartVisualization.SetColorSchemeNil"></a>
 ### func \(\*ReportsChartVisualization\) [SetColorSchemeNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_visualization.go#L404>)
@@ -8128,7 +8128,7 @@ type ReportsChartXAxis struct {
     // Angle for x-axis labels.
     Angle *int64 `json:"Angle,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -8294,7 +8294,7 @@ type ReportsChartYAxis struct {
     // Maximum value for the y-axis.
     MaxValue common.NullableInt64 `json:"MaxValue,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -8460,7 +8460,7 @@ SetLabel gets a reference to the given string and assigns it to the Label field.
 func (o *ReportsChartYAxis) SetMaxValue(v int64)
 ```
 
-SetMaxValue gets a reference to the given datadog.NullableString and assigns it to the MaxValue field.
+SetMaxValue gets a reference to the given common.NullableString and assigns it to the MaxValue field.
 
 <a name="ReportsChartYAxis.SetMaxValueNil"></a>
 ### func \(\*ReportsChartYAxis\) [SetMaxValueNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L167>)
@@ -8478,7 +8478,7 @@ SetMaxValueNil sets the value for MaxValue to be an explicit nil.
 func (o *ReportsChartYAxis) SetMinValue(v int64)
 ```
 
-SetMinValue gets a reference to the given datadog.NullableString and assigns it to the MinValue field.
+SetMinValue gets a reference to the given common.NullableString and assigns it to the MinValue field.
 
 <a name="ReportsChartYAxis.SetMinValueNil"></a>
 ### func \(\*ReportsChartYAxis\) [SetMinValueNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_chart_yaxis.go#L128>)
@@ -8556,7 +8556,7 @@ type ReportsData struct {
     // Maximum row count for the report data.
     MaxRowCount *int64 `json:"MaxRowCount,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -9037,7 +9037,7 @@ SetAddCoverPage gets a reference to the given bool and assigns it to the AddCove
 func (o *ReportsData) SetCoverPage(v string)
 ```
 
-SetCoverPage gets a reference to the given datadog.NullableString and assigns it to the CoverPage field.
+SetCoverPage gets a reference to the given common.NullableString and assigns it to the CoverPage field.
 
 <a name="ReportsData.SetCoverPageNil"></a>
 ### func \(\*ReportsData\) [SetCoverPageNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L308>)
@@ -9064,7 +9064,7 @@ SetCreateDate gets a reference to the given string and assigns it to the CreateD
 func (o *ReportsData) SetFileName(v string)
 ```
 
-SetFileName gets a reference to the given datadog.NullableString and assigns it to the FileName field.
+SetFileName gets a reference to the given common.NullableString and assigns it to the FileName field.
 
 <a name="ReportsData.SetFileNameNil"></a>
 ### func \(\*ReportsData\) [SetFileNameNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L135>)
@@ -9082,7 +9082,7 @@ SetFileNameNil sets the value for FileName to be an explicit nil.
 func (o *ReportsData) SetFilePassword(v string)
 ```
 
-SetFilePassword gets a reference to the given datadog.NullableString and assigns it to the FilePassword field.
+SetFilePassword gets a reference to the given common.NullableString and assigns it to the FilePassword field.
 
 <a name="ReportsData.SetFilePasswordNil"></a>
 ### func \(\*ReportsData\) [SetFilePasswordNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L498>)
@@ -9100,7 +9100,7 @@ SetFilePasswordNil sets the value for FilePassword to be an explicit nil.
 func (o *ReportsData) SetFooter(v string)
 ```
 
-SetFooter gets a reference to the given datadog.NullableString and assigns it to the Footer field.
+SetFooter gets a reference to the given common.NullableString and assigns it to the Footer field.
 
 <a name="ReportsData.SetFooterNil"></a>
 ### func \(\*ReportsData\) [SetFooterNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L269>)
@@ -9118,7 +9118,7 @@ SetFooterNil sets the value for Footer to be an explicit nil.
 func (o *ReportsData) SetHeader(v string)
 ```
 
-SetHeader gets a reference to the given datadog.NullableString and assigns it to the Header field.
+SetHeader gets a reference to the given common.NullableString and assigns it to the Header field.
 
 <a name="ReportsData.SetHeaderNil"></a>
 ### func \(\*ReportsData\) [SetHeaderNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L230>)
@@ -9154,7 +9154,7 @@ SetMaxRowCount gets a reference to the given int64 and assigns it to the MaxRowC
 func (o *ReportsData) SetName(v string)
 ```
 
-SetName gets a reference to the given datadog.NullableString and assigns it to the Name field.
+SetName gets a reference to the given common.NullableString and assigns it to the Name field.
 
 <a name="ReportsData.SetNameNil"></a>
 ### func \(\*ReportsData\) [SetNameNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L96>)
@@ -9181,7 +9181,7 @@ SetPage gets a reference to the given ReportsPage and assigns it to the Page fie
 func (o *ReportsData) SetReportId(v string)
 ```
 
-SetReportId gets a reference to the given datadog.NullableString and assigns it to the ReportId field.
+SetReportId gets a reference to the given common.NullableString and assigns it to the ReportId field.
 
 <a name="ReportsData.SetReportIdNil"></a>
 ### func \(\*ReportsData\) [SetReportIdNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L537>)
@@ -9199,7 +9199,7 @@ SetReportIdNil sets the value for ReportId to be an explicit nil.
 func (o *ReportsData) SetReportTheme(v string)
 ```
 
-SetReportTheme gets a reference to the given datadog.NullableString and assigns it to the ReportTheme field.
+SetReportTheme gets a reference to the given common.NullableString and assigns it to the ReportTheme field.
 
 <a name="ReportsData.SetReportThemeNil"></a>
 ### func \(\*ReportsData\) [SetReportThemeNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L576>)
@@ -9235,7 +9235,7 @@ SetSections gets a reference to the given \[\]string and assigns it to the Secti
 func (o *ReportsData) SetTheme(v string)
 ```
 
-SetTheme gets a reference to the given datadog.NullableString and assigns it to the Theme field.
+SetTheme gets a reference to the given common.NullableString and assigns it to the Theme field.
 
 <a name="ReportsData.SetThemeNil"></a>
 ### func \(\*ReportsData\) [SetThemeNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_data.go#L403>)
@@ -9352,7 +9352,7 @@ type ReportsLatestReportFile struct {
     // Run date of the latest report file.
     RunDate *string `json:"RunDate,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -9562,7 +9562,7 @@ type ReportsPage struct {
     // Distance of the footer from the bottom of the page.
     FooterDistance *int64 `json:"FooterDistance,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -9906,7 +9906,7 @@ type ReportsParameters struct {
     // Indicates if the report is active.
     IsActive *bool `json:"IsActive,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -10078,7 +10078,7 @@ type ReportsQuery struct {
     // Extended data for the query.
     ExtData NullableReportsQueryExtData `json:"ExtData,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -10325,7 +10325,7 @@ SetData gets a reference to the given ReportsQueryData and assigns it to the Dat
 func (o *ReportsQuery) SetExtData(v ReportsQueryExtData)
 ```
 
-SetExtData gets a reference to the given datadog.NullableString and assigns it to the ExtData field.
+SetExtData gets a reference to the given common.NullableString and assigns it to the ExtData field.
 
 <a name="ReportsQuery.SetExtDataNil"></a>
 ### func \(\*ReportsQuery\) [SetExtDataNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_report_query.go#L246>)
@@ -10414,7 +10414,7 @@ type ReportsQueryData struct {
     // Arguments for the script.
     ScriptArguments common.NullableList[string] `json:"ScriptArguments,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -10706,7 +10706,7 @@ SetMaxRowCount gets a reference to the given int64 and assigns it to the MaxRowC
 func (o *ReportsQueryData) SetQueryID(v string)
 ```
 
-SetQueryID gets a reference to the given datadog.NullableString and assigns it to the QueryID field.
+SetQueryID gets a reference to the given common.NullableString and assigns it to the QueryID field.
 
 <a name="ReportsQueryData.SetQueryIDNil"></a>
 ### func \(\*ReportsQueryData\) [SetQueryIDNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L108>)
@@ -10724,7 +10724,7 @@ SetQueryIDNil sets the value for QueryID to be an explicit nil.
 func (o *ReportsQueryData) SetQueryStr(v string)
 ```
 
-SetQueryStr gets a reference to the given datadog.NullableString and assigns it to the QueryStr field.
+SetQueryStr gets a reference to the given common.NullableString and assigns it to the QueryStr field.
 
 <a name="ReportsQueryData.SetQueryStrNil"></a>
 ### func \(\*ReportsQueryData\) [SetQueryStrNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L147>)
@@ -10742,7 +10742,7 @@ SetQueryStrNil sets the value for QueryStr to be an explicit nil.
 func (o *ReportsQueryData) SetScriptArguments(v []string)
 ```
 
-SetScriptArguments gets a reference to the given datadog.Nullable\[\]string and assigns it to the ScriptArguments field.
+SetScriptArguments gets a reference to the given common.Nullable\[\]string and assigns it to the ScriptArguments field.
 
 <a name="ReportsQueryData.SetScriptArgumentsNil"></a>
 ### func \(\*ReportsQueryData\) [SetScriptArgumentsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L310>)
@@ -10760,7 +10760,7 @@ SetScriptArgumentsNil sets the value for ScriptArguments to be an explicit nil.
 func (o *ReportsQueryData) SetScriptPath(v string)
 ```
 
-SetScriptPath gets a reference to the given datadog.NullableString and assigns it to the ScriptPath field.
+SetScriptPath gets a reference to the given common.NullableString and assigns it to the ScriptPath field.
 
 <a name="ReportsQueryData.SetScriptPathNil"></a>
 ### func \(\*ReportsQueryData\) [SetScriptPathNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_query_data.go#L270>)
@@ -10858,7 +10858,7 @@ type ReportsQueryExtData struct {
     // Indicates if correlation table should be included.
     CorrelationTable *bool `json:"Correlation_Table,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -11530,7 +11530,7 @@ type ReportsSearchRequest struct {
     // Indicates whether to show passive reports.
     ShowPassive *bool `json:"showPassive,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -11741,7 +11741,7 @@ SetSmartRestRequestContext gets a reference to the given string and assigns it t
 func (o *ReportsSearchRequest) SetStartDate(v string)
 ```
 
-SetStartDate gets a reference to the given datadog.NullableString and assigns it to the StartDate field.
+SetStartDate gets a reference to the given common.NullableString and assigns it to the StartDate field.
 
 <a name="ReportsSearchRequest.SetStartDateNil"></a>
 ### func \(\*ReportsSearchRequest\) [SetStartDateNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_request.go#L130>)
@@ -11830,7 +11830,7 @@ type ReportsSearchResponse struct {
     // Version of the report.
     Version *float64 `json:"Version,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -12590,7 +12590,7 @@ SetApplicationName gets a reference to the given string and assigns it to the Ap
 func (o *ReportsSearchResponse) SetAuthor(v string)
 ```
 
-SetAuthor gets a reference to the given datadog.NullableString and assigns it to the Author field.
+SetAuthor gets a reference to the given common.NullableString and assigns it to the Author field.
 
 <a name="ReportsSearchResponse.SetAuthorNil"></a>
 ### func \(\*ReportsSearchResponse\) [SetAuthorNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L284>)
@@ -12635,7 +12635,7 @@ SetIsActive gets a reference to the given bool and assigns it to the IsActive fi
 func (o *ReportsSearchResponse) SetLastGenerationTime(v string)
 ```
 
-SetLastGenerationTime gets a reference to the given datadog.NullableString and assigns it to the LastGenerationTime field.
+SetLastGenerationTime gets a reference to the given common.NullableString and assigns it to the LastGenerationTime field.
 
 <a name="ReportsSearchResponse.SetLastGenerationTimeNil"></a>
 ### func \(\*ReportsSearchResponse\) [SetLastGenerationTimeNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L503>)
@@ -12689,7 +12689,7 @@ SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ReportsSearchResponse) SetNextGenerationTime(v string)
 ```
 
-SetNextGenerationTime gets a reference to the given datadog.NullableString and assigns it to the NextGenerationTime field.
+SetNextGenerationTime gets a reference to the given common.NullableString and assigns it to the NextGenerationTime field.
 
 <a name="ReportsSearchResponse.SetNextGenerationTimeNil"></a>
 ### func \(\*ReportsSearchResponse\) [SetNextGenerationTimeNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L542>)
@@ -12707,7 +12707,7 @@ SetNextGenerationTimeNil sets the value for NextGenerationTime to be an explicit
 func (o *ReportsSearchResponse) SetPageSettings(v string)
 ```
 
-SetPageSettings gets a reference to the given datadog.NullableString and assigns it to the PageSettings field.
+SetPageSettings gets a reference to the given common.NullableString and assigns it to the PageSettings field.
 
 <a name="ReportsSearchResponse.SetPageSettingsNil"></a>
 ### func \(\*ReportsSearchResponse\) [SetPageSettingsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L609>)
@@ -12797,7 +12797,7 @@ SetSchedule gets a reference to the given ScheduleConfig and assigns it to the S
 func (o *ReportsSearchResponse) SetSharedUsersAndGroups(v []string)
 ```
 
-SetSharedUsersAndGroups gets a reference to the given datadog.Nullable\[\]string and assigns it to the SharedUsersAndGroups field.
+SetSharedUsersAndGroups gets a reference to the given common.Nullable\[\]string and assigns it to the SharedUsersAndGroups field.
 
 <a name="ReportsSearchResponse.SetSharedUsersAndGroupsNil"></a>
 ### func \(\*ReportsSearchResponse\) [SetSharedUsersAndGroupsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_reports_search_response.go#L352>)
@@ -12912,7 +12912,7 @@ type ReportsTableVisualization struct {
     // Columns for the visualization.
     Columns []string `json:"Columns,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -13765,7 +13765,7 @@ type SelectedColumn struct {
     // Lookup value for the column.
     Lookup common.NullableString `json:"Lookup,omitempty"`
     // Raw value if deserialization fails.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -13895,7 +13895,7 @@ SetDisplayText gets a reference to the given string and assigns it to the Displa
 func (o *SelectedColumn) SetLookup(v string)
 ```
 
-SetLookup gets a reference to the given datadog.NullableString and assigns it to the Lookup field.
+SetLookup gets a reference to the given common.NullableString and assigns it to the Lookup field.
 
 <a name="SelectedColumn.SetLookupNil"></a>
 ### func \(\*SelectedColumn\) [SetLookupNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_selected_column.go#L127>)
@@ -14936,7 +14936,7 @@ MarshalJSON serializes the struct using spec logic.
 func (o *SourcesItem) SetAgentId(v string)
 ```
 
-SetAgentId gets a reference to the given datadog.NullableString and assigns it to the AgentId field.
+SetAgentId gets a reference to the given common.NullableString and assigns it to the AgentId field.
 
 <a name="SourcesItem.SetAgentIdNil"></a>
 ### func \(\*SourcesItem\) [SetAgentIdNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L851>)
@@ -14954,7 +14954,7 @@ SetAgentIdNil sets the value for AgentId to be an explicit nil.
 func (o *SourcesItem) SetAgentIds(v []string)
 ```
 
-SetAgentIds gets a reference to the given datadog.Nullable\[\]string and assigns it to the AgentIds field.
+SetAgentIds gets a reference to the given common.Nullable\[\]string and assigns it to the AgentIds field.
 
 <a name="SourcesItem.SetAgentIdsNil"></a>
 ### func \(\*SourcesItem\) [SetAgentIdsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L589>)
@@ -14981,7 +14981,7 @@ SetAlertTimeout gets a reference to the given int64 and assigns it to the AlertT
 func (o *SourcesItem) SetAssetTags(v []string)
 ```
 
-SetAssetTags gets a reference to the given datadog.Nullable\[\]string and assigns it to the AssetTags field.
+SetAssetTags gets a reference to the given common.Nullable\[\]string and assigns it to the AssetTags field.
 
 <a name="SourcesItem.SetAssetTagsNil"></a>
 ### func \(\*SourcesItem\) [SetAssetTagsNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L734>)
@@ -14999,7 +14999,7 @@ SetAssetTagsNil sets the value for AssetTags to be an explicit nil.
 func (o *SourcesItem) SetAuthor(v string)
 ```
 
-SetAuthor gets a reference to the given datadog.NullableString and assigns it to the Author field.
+SetAuthor gets a reference to the given common.NullableString and assigns it to the Author field.
 
 <a name="SourcesItem.SetAuthorNil"></a>
 ### func \(\*SourcesItem\) [SetAuthorNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L247>)
@@ -15026,7 +15026,7 @@ SetBlockCount gets a reference to the given int64 and assigns it to the BlockCou
 func (o *SourcesItem) SetDashboardId(v string)
 ```
 
-SetDashboardId gets a reference to the given datadog.NullableString and assigns it to the DashboardId field.
+SetDashboardId gets a reference to the given common.NullableString and assigns it to the DashboardId field.
 
 <a name="SourcesItem.SetDashboardIdNil"></a>
 ### func \(\*SourcesItem\) [SetDashboardIdNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L695>)
@@ -15071,7 +15071,7 @@ SetEnabled gets a reference to the given bool and assigns it to the Enabled fiel
 func (o *SourcesItem) SetGroup(v string)
 ```
 
-SetGroup gets a reference to the given datadog.NullableString and assigns it to the Group field.
+SetGroup gets a reference to the given common.NullableString and assigns it to the Group field.
 
 <a name="SourcesItem.SetGroupNil"></a>
 ### func \(\*SourcesItem\) [SetGroupNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L213>)
@@ -15098,7 +15098,7 @@ SetId gets a reference to the given string and assigns it to the Id field.
 func (o *SourcesItem) SetIndexGroupName(v string)
 ```
 
-SetIndexGroupName gets a reference to the given datadog.NullableString and assigns it to the IndexGroupName field.
+SetIndexGroupName gets a reference to the given common.NullableString and assigns it to the IndexGroupName field.
 
 <a name="SourcesItem.SetIndexGroupNameNil"></a>
 ### func \(\*SourcesItem\) [SetIndexGroupNameNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L628>)
@@ -15179,7 +15179,7 @@ SetLogReaderType gets a reference to the given string and assigns it to the LogR
 func (o *SourcesItem) SetLogRemoveFormat(v string)
 ```
 
-SetLogRemoveFormat gets a reference to the given datadog.NullableString and assigns it to the LogRemoveFormat field.
+SetLogRemoveFormat gets a reference to the given common.NullableString and assigns it to the LogRemoveFormat field.
 
 <a name="SourcesItem.SetLogRemoveFormatNil"></a>
 ### func \(\*SourcesItem\) [SetLogRemoveFormatNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L812>)
@@ -15197,7 +15197,7 @@ SetLogRemoveFormatNil sets the value for LogRemoveFormat to be an explicit nil.
 func (o *SourcesItem) SetLogRemoveTime(v string)
 ```
 
-SetLogRemoveTime gets a reference to the given datadog.NullableString and assigns it to the LogRemoveTime field.
+SetLogRemoveTime gets a reference to the given common.NullableString and assigns it to the LogRemoveTime field.
 
 <a name="SourcesItem.SetLogRemoveTimeNil"></a>
 ### func \(\*SourcesItem\) [SetLogRemoveTimeNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L773>)
@@ -15242,7 +15242,7 @@ SetParallelOptions gets a reference to the given ParallelOptions and assigns it 
 func (o *SourcesItem) SetScheduleConfig(v ScheduleConfig)
 ```
 
-SetScheduleConfig gets a reference to the given datadog.NullableString and assigns it to the ScheduleConfig field.
+SetScheduleConfig gets a reference to the given common.NullableString and assigns it to the ScheduleConfig field.
 
 <a name="SourcesItem.SetScheduleConfigNil"></a>
 ### func \(\*SourcesItem\) [SetScheduleConfigNil](<https://github.com/mtnmunuklu/davudpasha-api-client-go/blob/main/api/davudpasha/type_sources_item.go#L1002>)
@@ -15564,7 +15564,7 @@ type SourcesSearchRequest struct {
     // Context for the Smart REST request.
     SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
     // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // AdditionalProperties stores any additional properties not explicitly defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -15692,7 +15692,7 @@ type SourcesSearchResponse struct {
     // Items that were successfully retrieved.
     SuccessItems []SuccessItem `json:"SuccessItems,omitempty"`
     // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // AdditionalProperties stores any additional properties not explicitly defined in the struct.
     AdditionalProperties map[string]interface{}
 }
@@ -15856,7 +15856,7 @@ type SuccessItem struct {
     // Source type of the success item.
     SourceType *string `json:"SourceType,omitempty"`
     // UnparsedObject contains the raw value of the object if there was an error when deserializing into the struct.
-    UnparsedObject map[string]interface{}
+    UnparsedObject map[string]interface{} `json:"-"`
     // AdditionalProperties stores any additional properties not explicitly defined in the struct.
     AdditionalProperties map[string]interface{}
 }

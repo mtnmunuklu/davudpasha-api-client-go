@@ -7,14 +7,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// TasksSearchRequest represents the structure for task search requests.
 type TasksSearchRequest struct {
-	Filter          *string `json:"filter,omitempty"`
-	ExtraFilter     *string `json:"extraFilter,omitempty"`
-	ShowServiceData *bool   `json:"showServiceData,omitempty"`
+	// Filter specifies the main filter criteria for task search.
+	Filter *string `json:"filter,omitempty"`
+	// ExtraFilter specifies additional filter criteria for task search.
+	ExtraFilter *string `json:"extraFilter,omitempty"`
+	// ShowServiceData indicates whether to include service data in the search results.
+	ShowServiceData *bool `json:"showServiceData,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }

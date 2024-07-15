@@ -17,7 +17,7 @@ type ReportsChartYAxis struct {
 	// Maximum value for the y-axis.
 	MaxValue common.NullableInt64 `json:"MaxValue,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -119,7 +119,7 @@ func (o *ReportsChartYAxis) HasMinValue() bool {
 	return o != nil && o.MinValue.IsSet()
 }
 
-// SetMinValue gets a reference to the given datadog.NullableString and assigns it to the MinValue field.
+// SetMinValue gets a reference to the given common.NullableString and assigns it to the MinValue field.
 func (o *ReportsChartYAxis) SetMinValue(v int64) {
 	o.MinValue.Set(&v)
 }
@@ -158,7 +158,7 @@ func (o *ReportsChartYAxis) HasMaxValue() bool {
 	return o != nil && o.MaxValue.IsSet()
 }
 
-// SetMaxValue gets a reference to the given datadog.NullableString and assigns it to the MaxValue field.
+// SetMaxValue gets a reference to the given common.NullableString and assigns it to the MaxValue field.
 func (o *ReportsChartYAxis) SetMaxValue(v int64) {
 	o.MaxValue.Set(&v)
 }

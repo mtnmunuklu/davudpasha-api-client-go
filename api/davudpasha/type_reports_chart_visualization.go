@@ -29,7 +29,7 @@ type ReportsChartVisualization struct {
 	// Legend configuration for the chart.
 	Legend *ReportsChartLegend `json:"Legend,omitempty"`
 	// ID of the UI DP module.
-	UiDPModuleId *string `json:"UiDPModuleId,omitempty"`
+	UiDPModuleID *string `json:"UiDPModuleId,omitempty"`
 	// Color scheme for the chart.
 	ColorScheme common.NullableString `json:"ColorScheme,omitempty"`
 	// Additional settings for the chart.
@@ -41,7 +41,7 @@ type ReportsChartVisualization struct {
 	// Indicates whether to show labels on the chart.
 	ShowLabel *bool `json:"ShowLabel,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -343,32 +343,32 @@ func (o *ReportsChartVisualization) SetLegend(v ReportsChartLegend) {
 	o.Legend = &v
 }
 
-// GetUiDPModuleId returns the UiDPModuleId field value if set, zero value otherwise.
-func (o *ReportsChartVisualization) GetUiDPModuleId() string {
-	if o == nil || o.UiDPModuleId == nil {
+// GetUiDPModuleID returns the UiDPModuleID field value if set, zero value otherwise.
+func (o *ReportsChartVisualization) GetUiDPModuleID() string {
+	if o == nil || o.UiDPModuleID == nil {
 		var ret string
 		return ret
 	}
-	return *o.UiDPModuleId
+	return *o.UiDPModuleID
 }
 
-// GetUiDPModuleIdOk returns a tuple with the UiDPModuleId field value if set, nil otherwise
+// GetUiDPModuleIDOk returns a tuple with the UiDPModuleID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsChartVisualization) GetUiDPModuleIdOk() (*string, bool) {
-	if o == nil || o.UiDPModuleId == nil {
+func (o *ReportsChartVisualization) GetUiDPModuleIDOk() (*string, bool) {
+	if o == nil || o.UiDPModuleID == nil {
 		return nil, false
 	}
-	return o.UiDPModuleId, true
+	return o.UiDPModuleID, true
 }
 
-// HasUiDPModuleId returns a boolean if a field has been set.
-func (o *ReportsChartVisualization) HasUiDPModuleId() bool {
-	return o != nil && o.UiDPModuleId != nil
+// HasUiDPModuleID returns a boolean if a field has been set.
+func (o *ReportsChartVisualization) HasUiDPModuleID() bool {
+	return o != nil && o.UiDPModuleID != nil
 }
 
-// SetUiDPModuleId gets a reference to the given string and assigns it to the UiDPModuleId field.
-func (o *ReportsChartVisualization) SetUiDPModuleId(v string) {
-	o.UiDPModuleId = &v
+// SetUiDPModuleID gets a reference to the given string and assigns it to the UiDPModuleID field.
+func (o *ReportsChartVisualization) SetUiDPModuleID(v string) {
+	o.UiDPModuleID = &v
 }
 
 // GetColorScheme returns the ColorScheme field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -395,7 +395,7 @@ func (o *ReportsChartVisualization) HasColorScheme() bool {
 	return o != nil && o.ColorScheme.IsSet()
 }
 
-// SetColorScheme gets a reference to the given datadog.NullableString and assigns it to the ColorScheme field.
+// SetColorScheme gets a reference to the given common.NullableString and assigns it to the ColorScheme field.
 func (o *ReportsChartVisualization) SetColorScheme(v string) {
 	o.ColorScheme.Set(&v)
 }
@@ -558,8 +558,8 @@ func (o ReportsChartVisualization) MarshalJSON() ([]byte, error) {
 	if o.Legend != nil {
 		toSerialize["Legend"] = o.Legend
 	}
-	if o.UiDPModuleId != nil {
-		toSerialize["UiDPModuleId"] = o.UiDPModuleId
+	if o.UiDPModuleID != nil {
+		toSerialize["UiDPModuleId"] = o.UiDPModuleID
 	}
 	if o.ColorScheme.IsSet() {
 		toSerialize["ColorScheme"] = o.ColorScheme.Get()
@@ -596,7 +596,7 @@ func (o *ReportsChartVisualization) UnMarshalJSON(bytes []byte) (err error) {
 		XAxis          *ReportsChartXAxis    `json:"XAxis,omitempty"`
 		YAxis          *ReportsChartYAxis    `json:"YAxis,omitempty"`
 		Legend         *ReportsChartLegend   `json:"Legend,omitempty"`
-		UiDPModuleId   *string               `json:"UiDPModuleId,omitempty"`
+		UiDPModuleID   *string               `json:"UiDPModuleId,omitempty"`
 		ColorScheme    common.NullableString `json:"ColorScheme,omitempty"`
 		Settings       *string               `json:"Settings,omitempty"`
 		MaxRowCount    *int64                `json:"MaxRowCount,omitempty"`
@@ -631,7 +631,7 @@ func (o *ReportsChartVisualization) UnMarshalJSON(bytes []byte) (err error) {
 		hasInvalidField = true
 	}
 	o.Legend = all.Legend
-	o.UiDPModuleId = all.UiDPModuleId
+	o.UiDPModuleID = all.UiDPModuleID
 	o.ColorScheme = all.ColorScheme
 	o.Settings = all.Settings
 	o.MaxRowCount = all.MaxRowCount

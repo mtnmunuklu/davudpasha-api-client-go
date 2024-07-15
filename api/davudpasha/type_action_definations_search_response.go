@@ -6,17 +6,26 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ActionDefinationsSearchResponse represents the response structure for searching action definitions.
 type ActionDefinationsSearchResponse struct {
-	Action             *Action               `json:"Action,omitempty"`
-	ActionDefinitionId *string               `json:"ActionDefinitionId,omitempty"`
-	Application        *string               `json:"Application,omitempty"`
-	Author             *string               `json:"Author,omitempty"`
-	Description        common.NullableString `json:"Description,omitempty"`
-	IsPublic           *bool                 `json:"IsPublic,omitempty"`
-	Name               *string               `json:"Name,omitempty"`
-	Type               *string               `json:"Type,omitempty"`
+	// Contains the details of the action.
+	Action *Action `json:"Action,omitempty"`
+	// Unique identifier for the action definition.
+	ActionDefinitionID *string `json:"ActionDefinitionId,omitempty"`
+	// Specifies the application to which the action definition belongs.
+	Application *string `json:"Application,omitempty"`
+	// The author of the action definition.
+	Author *string `json:"Author,omitempty"`
+	// Description of the action definition, which can be null.
+	Description common.NullableString `json:"Description,omitempty"`
+	// Indicates whether the action definition is public.
+	IsPublic *bool `json:"IsPublic,omitempty"`
+	// Name of the action definition.
+	Name *string `json:"Name,omitempty"`
+	// Type of the action definition.
+	Type *string `json:"Type,omitempty"`
 	// Raw value if deserialization fails.
-	UnparsedObject map[string]interface{}
+	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{}
 }
@@ -66,32 +75,32 @@ func (o *ActionDefinationsSearchResponse) SetAction(v Action) {
 	o.Action = &v
 }
 
-// GetActionDefinitionId returns the ActionDefinitionId field value if set, zero value otherwise.
-func (o *ActionDefinationsSearchResponse) GetActionDefinitionId() string {
-	if o == nil || o.ActionDefinitionId == nil {
+// GetActionDefinitionID returns the ActionDefinitionID field value if set, zero value otherwise.
+func (o *ActionDefinationsSearchResponse) GetActionDefinitionID() string {
+	if o == nil || o.ActionDefinitionID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ActionDefinitionId
+	return *o.ActionDefinitionID
 }
 
-// GetActionDefinitionIdOk returns a tuple with the ActionDefinitionId field value if set, nil otherwise
+// GetActionDefinitionIDOk returns a tuple with the ActionDefinitionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ActionDefinationsSearchResponse) GetActionDefinitionIdOk() (*string, bool) {
-	if o == nil || o.ActionDefinitionId == nil {
+func (o *ActionDefinationsSearchResponse) GetActionDefinitionIDOk() (*string, bool) {
+	if o == nil || o.ActionDefinitionID == nil {
 		return nil, false
 	}
-	return o.ActionDefinitionId, true
+	return o.ActionDefinitionID, true
 }
 
-// HasActionDefinitionId returns a boolean if a field has been set.
-func (o *ActionDefinationsSearchResponse) HasActionDefinitionId() bool {
-	return o != nil && o.ActionDefinitionId != nil
+// HasActionDefinitionID returns a boolean if a field has been set.
+func (o *ActionDefinationsSearchResponse) HasActionDefinitionID() bool {
+	return o != nil && o.ActionDefinitionID != nil
 }
 
-// SetActionDefinitionId gets a reference to the given string and assigns it to the ActionDefinitionId field.
-func (o *ActionDefinationsSearchResponse) SetActionDefinitionId(v string) {
-	o.ActionDefinitionId = &v
+// SetActionDefinitionID gets a reference to the given string and assigns it to the ActionDefinitionID field.
+func (o *ActionDefinationsSearchResponse) SetActionDefinitionID(v string) {
+	o.ActionDefinitionID = &v
 }
 
 // GetApplication returns the Application field value if set, zero value otherwise.
@@ -174,7 +183,7 @@ func (o *ActionDefinationsSearchResponse) HasDescription() bool {
 	return o != nil && o.Description.IsSet()
 }
 
-// SetDescription gets a reference to the given datadog.NullableString and assigns it to the Description field.
+// SetDescription gets a reference to the given common.NullableString and assigns it to the Description field.
 func (o *ActionDefinationsSearchResponse) SetDescription(v string) {
 	o.Description.Set(&v)
 }
@@ -282,8 +291,8 @@ func (o ActionDefinationsSearchResponse) MarshalJSON() ([]byte, error) {
 	if o.Action != nil {
 		toSerialize["Action"] = o.Action
 	}
-	if o.ActionDefinitionId != nil {
-		toSerialize["ActionDefinitionId"] = o.ActionDefinitionId
+	if o.ActionDefinitionID != nil {
+		toSerialize["ActionDefinitionId"] = o.ActionDefinitionID
 	}
 	if o.Application != nil {
 		toSerialize["Application"] = o.Application
@@ -314,7 +323,7 @@ func (o ActionDefinationsSearchResponse) MarshalJSON() ([]byte, error) {
 func (o *ActionDefinationsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		Action             *Action               `json:"Action,omitempty"`
-		ActionDefinitionId *string               `json:"ActionDefinitionId,omitempty"`
+		ActionDefinitionID *string               `json:"ActionDefinitionId,omitempty"`
 		Application        *string               `json:"Application,omitempty"`
 		Author             *string               `json:"Author,omitempty"`
 		Description        common.NullableString `json:"Description,omitempty"`
@@ -334,7 +343,7 @@ func (o *ActionDefinationsSearchResponse) UnMarshalJSON(bytes []byte) (err error
 	}
 
 	o.Action = all.Action
-	o.ActionDefinitionId = all.ActionDefinitionId
+	o.ActionDefinitionID = all.ActionDefinitionID
 	o.Application = all.Application
 	o.Author = all.Author
 	o.Description = all.Description

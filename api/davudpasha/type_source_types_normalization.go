@@ -2,9 +2,12 @@ package davudpasha
 
 import "encoding/json"
 
+// SourceTypesNormalization represents the normalization settings for source types.
 type SourceTypesNormalization struct {
-	OtherValue *string                        `json:"OtherValue,omitempty"`
-	Items      []SourceTypesNormalizationItem `json:"Items,omitempty"`
+	// OtherValue specifies another value related to normalization.
+	OtherValue *string `json:"OtherValue,omitempty"`
+	// Items contains a list of normalization items.
+	Items []SourceTypesNormalizationItem `json:"Items,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
