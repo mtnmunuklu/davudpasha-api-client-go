@@ -28,16 +28,28 @@ func (r *SearchActionDefinationsOptionalParameters) WithBody(body ActionDefinati
 	return r
 }
 
-// SearchActionDefinations search ActionDefinations.
-// Returns ActionDefinations that match an ActionDefinations search query.
+// SearchActionDefinations searches for action definitions.
+//
+// @Summary Search Action Definitions
+// @Description Search for action definitions based on a query.
+// @Tags ActionDefinations
+// @Accept  json
+// @Produce  json
+// @Param body body ActionDefinationsSearchRequest true "Search Action Definitions Request"
+// @Success 200 {array} ActionDefinationsSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /IAlertAct/GetActionDefinitions [post]
+// @Security ApiKeyAuth
 func (a *ActionDefinationsApi) SearchActionDefinations(ctx _context.Context, o ...SearchActionDefinationsOptionalParameters) ([]ActionDefinationsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost
 		localVarPostBody      interface{}
 		localVarReturnValue   []ActionDefinationsSearchResponse
 		optionalParams        SearchActionDefinationsOptionalParameters
-		localVarInterfaceCode = "ICSiemManagerLogSourceAct"
-		localVarMethodName    = "GetLogSourceList"
+		localVarInterfaceCode = "IAlertAct"
+		localVarMethodName    = "GetActionDefinitions"
 	)
 
 	if len(o) > 1 {

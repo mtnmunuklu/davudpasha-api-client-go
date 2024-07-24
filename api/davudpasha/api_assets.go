@@ -28,8 +28,20 @@ func (r *SearchAssetsOptionalParameters) WithBody(body AssetsSearchRequest) *Sea
 	return r
 }
 
-// SearchAssets search assets.
-// Returns assets that match an assets search filter.
+// SearchAssets searches for assets based on a search filter.
+//
+// @Summary Search Assets
+// @Description Retrieve assets that match a search filter.
+// @Tags Assets
+// @Accept  json
+// @Produce  json
+// @Param body body AssetsSearchRequest true "Search Assets Request"
+// @Success 200 {object} AssetsSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /IAssetAct/GetAllAsset2 [post]
+// @Security ApiKeyAuth
 func (a *AssetsApi) SearchAssets(ctx _context.Context, o ...SearchAssetsOptionalParameters) (AssetsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost
