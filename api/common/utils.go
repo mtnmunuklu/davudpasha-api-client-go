@@ -430,6 +430,83 @@ func (v *NullableList[T]) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+// Optional is a struct to hold any optional value.
+type Optional struct {
+	value interface{}
+	isSet bool
+}
+
+// Set sets the value for the Optional.
+func (o *Optional) Set(val interface{}) {
+	o.value = val
+	o.isSet = true
+}
+
+// Get returns the value of the Optional.
+func (o *Optional) Get() interface{} {
+	return o.value
+}
+
+// IsSet returns true if the value has been set.
+func (o Optional) IsSet() bool {
+	return o.isSet
+}
+
+// UnSet resets fields of the Optional.
+func (o *Optional) UnSet() {
+	o.value = nil
+	o.isSet = false
+}
+
+// NewOptional creates a new Optional.
+func NewOptional(val interface{}) *Optional {
+	return &Optional{value: val, isSet: true}
+}
+
+// MarshalJSON serializes the associated value.
+func (o Optional) MarshalJSON() ([]byte, error) {
+	if !o.isSet {
+		return json.Marshal(nil)
+	}
+	return json.Marshal(o.value)
+}
+
+// UnmarshalJSON deserializes to the associated value.
+func (o *Optional) UnmarshalJSON(src []byte) error {
+	var raw interface{}
+	if err := json.Unmarshal(src, &raw); err != nil {
+		return err
+	}
+	switch v := raw.(type) {
+	case map[string]interface{}:
+		if len(v) == 0 {
+			o.value = nil
+		} else {
+			o.value = v
+		}
+	case []interface{}:
+		if len(v) == 0 {
+			o.value = nil
+		} else {
+			o.value = v
+		}
+	case string:
+		if v == "" {
+			o.value = nil
+		} else {
+			o.value = v
+		}
+	case float64:
+		o.value = v
+	case bool:
+		o.value = v
+	case nil:
+		o.value = nil
+	}
+	o.isSet = true
+	return nil
+}
+
 // Copy the original request so it doesn't get lost when retrying
 func copyRequest(r *http.Request, rawBody *[]byte) *http.Request {
 	newRequest := *r

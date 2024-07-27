@@ -11,7 +11,7 @@ type ActionParameter struct {
 	// Key of the action parameter.
 	Key *string `json:"Key,omitempty"`
 	// Value of the action parameter.
-	Value *string `json:"Value,omitempty"`
+	Value *common.Optional `json:"Value,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
@@ -64,31 +64,34 @@ func (o *ActionParameter) SetKey(v string) {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *ActionParameter) GetValue() string {
-	if o == nil || o.Value == nil {
-		var ret string
-		return ret
+func (o *ActionParameter) GetValue() interface{} {
+	if o == nil || o.Value == nil || !o.Value.IsSet() {
+		return nil
 	}
-	return *o.Value
+	return o.Value.Get()
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ActionParameter) GetValueOk() (*string, bool) {
-	if o == nil || o.Value == nil {
+func (o *ActionParameter) GetValueOk() (interface{}, bool) {
+	if o == nil || o.Value == nil || !o.Value.IsSet() {
 		return nil, false
 	}
-	return o.Value, true
+	return o.Value.Get(), true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *ActionParameter) HasValue() bool {
-	return o != nil && o.Value != nil
+	return o != nil && o.Value != nil && o.Value.IsSet()
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *ActionParameter) SetValue(v string) {
-	o.Value = &v
+// SetValue sets the value for the Value field.
+func (o *ActionParameter) SetValue(v interface{}) {
+	if o.Value == nil {
+		o.Value = common.NewOptional(v)
+	} else {
+		o.Value.Set(v)
+	}
 }
 
 // MarshalJSON serializes the struct using spec logic.
@@ -113,8 +116,8 @@ func (o ActionParameter) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *ActionParameter) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Key   *string `json:"Key,omitempty"`
-		Value *string `json:"Value,omitempty"`
+		Key   *string          `json:"Key,omitempty"`
+		Value *common.Optional `json:"Value,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
