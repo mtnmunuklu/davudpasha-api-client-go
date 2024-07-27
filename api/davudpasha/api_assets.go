@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // AssetsApi service type.
 type AssetsApi common.Service
 
@@ -35,7 +47,7 @@ func (r *SearchAssetsOptionalParameters) WithBody(body AssetsSearchRequest) *Sea
 // @Tags Assets
 // @Accept  json
 // @Produce  json
-// @Param body body AssetsSearchRequest true "Search Assets Request"
+// @Param body body AssetsSearchRequest true "Assets Search Request"
 // @Success 200 {object} AssetsSearchResponse "Successful operation"
 // @Failure 400 {object} ErrorResponse "Bad Request"
 // @Failure 403 {object} ErrorResponse "Forbidden"

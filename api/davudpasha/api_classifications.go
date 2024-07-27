@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // ClassificationsApi service type.
 type ClassificationsApi common.Service
 
@@ -28,8 +40,20 @@ func (r *SearchClassificationsOptionalParameters) WithBody(body ClassificationsS
 	return r
 }
 
-// SearchClassifications search Classifications.
-// Returns Classifications that match an Classifications search query.
+// SearchClassifications searches for classifications.
+//
+// @Summary Search Classifications
+// @Description Search for classifications based on a query.
+// @Tags Classifications
+// @Accept  json
+// @Produce  json
+// @Param body body ClassificationsSearchRequest true "Classifications Search Request"
+// @Success 200 {object} ClassificationsSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /ICsiemManagerClassificationAct/GetList [post]
+// @Security ApiKeyAuth
 func (a *ClassificationsApi) SearchClassifications(ctx _context.Context, o ...SearchClassificationsOptionalParameters) (ClassificationsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost

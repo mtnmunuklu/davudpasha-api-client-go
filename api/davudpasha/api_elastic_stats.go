@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // ElasticStatsApi service type.
 type ElasticStatsApi common.Service
 
@@ -28,8 +40,20 @@ func (r *SearchElasticStatsOptionalParameters) WithBody(body ElasticStatsSearchR
 	return r
 }
 
-// SearchElasticStats search ElasticStats.
-// Returns ElasticStats that match an ElasticStats search query.
+// SearchElasticStats searches for ElasticStats.
+//
+// @Summary Search ElasticStats
+// @Description Search for ElasticStats based on a query.
+// @Tags ElasticStats
+// @Accept  json
+// @Produce  json
+// @Param body body ElasticStatsSearchRequest true "ElasticStats Search Request"
+// @Success 200 {object} ElasticStatsSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /ICSiemManagerElasticIndexListAct/GetElasticStats [post]
+// @Security ApiKeyAuth
 func (a *ElasticStatsApi) SearchElasticStats(ctx _context.Context, o ...SearchElasticStatsOptionalParameters) (ElasticStatsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost

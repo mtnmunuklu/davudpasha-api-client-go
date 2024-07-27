@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // QueriesApi service type.
 type QueriesApi common.Service
 
@@ -28,8 +40,20 @@ func (r *SearchQueriesOptionalParameters) WithBody(body QueriesSearchRequest) *S
 	return r
 }
 
-// SerchQueries search queries.
-// Returns queries that match an queries search filter.
+// SearchQueries searches for Queries.
+//
+// @Summary Search Queries
+// @Description Search for Queries based on a filter.
+// @Tags Queries
+// @Accept  json
+// @Produce  json
+// @Param body body QueriesSearchRequest true "Queries Search Request"
+// @Success 200 {object} QueriesSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /ICSiemQueryAct/GetList [post]
+// @Security ApiKeyAuth
 func (a *QueriesApi) SearchQueries(ctx _context.Context, o ...SearchQueriesOptionalParameters) (QueriesSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost

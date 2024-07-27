@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // CasesApi service type.
 type CasesApi common.Service
 
@@ -28,8 +40,20 @@ func (r *SearchCasesOptionalParameters) WithBody(body CasesSearchRequest) *Searc
 	return r
 }
 
-// SearchCases search cases.
-// Returns cases that match an cases search filter.
+// SearchCases searches for cases.
+//
+// @Summary Search Cases
+// @Description Search for cases based on a filter.
+// @Tags Cases
+// @Accept  json
+// @Produce  json
+// @Param body body CasesSearchRequest true "Cases Search Request"
+// @Success 200 {object} CasesSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /ICaseManagerAct/GetCaseGridPageData [post]
+// @Security ApiKeyAuth
 func (a *CasesApi) SearchCases(ctx _context.Context, o ...SearchCasesOptionalParameters) (CasesSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost

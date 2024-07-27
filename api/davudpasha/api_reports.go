@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // ReportsApi service type.
 type ReportsApi common.Service
 
@@ -28,8 +40,20 @@ func (r *SearchReportsOptionalParameters) WithBody(body ReportsSearchRequest) *S
 	return r
 }
 
-// SerchQueries search queries.
-// Returns reports that match an reports search filter.
+// SearchReports searches for Reports.
+//
+// @Summary Search Reports
+// @Description Search for Reports based on a filter.
+// @Tags Reports
+// @Accept  json
+// @Produce  json
+// @Param body body ReportsSearchRequest true "Reports Search Request"
+// @Success 200 {array} ReportsSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /IDPReportScheduleAct/GetListWithSchedule [post]
+// @Security ApiKeyAuth
 func (a *ReportsApi) SearchReports(ctx _context.Context, o ...SearchReportsOptionalParameters) ([]ReportsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost

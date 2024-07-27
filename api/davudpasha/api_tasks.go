@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // TasksApi service type.
 type TasksApi common.Service
 
@@ -28,8 +40,20 @@ func (r *SearchTasksOptionalParameters) WithBody(body TasksSearchRequest) *Searc
 	return r
 }
 
-// SearchTasks search Tasks.
-// Returns Tasks that match an Tasks search query.
+// SearchTasks searches for tasks.
+//
+// @Summary Search Tasks
+// @Description Retrieves tasks that match a search query.
+// @Tags Tasks
+// @Accept  json
+// @Produce  json
+// @Param body body TasksSearchRequest true "Tasks Search Request"
+// @Success 200 {array} TasksSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /ITaskManagerAct/GetList [post]
+// @Security ApiKeyAuth
 func (a *TasksApi) SearchTasks(ctx _context.Context, o ...SearchTasksOptionalParameters) ([]TasksSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost

@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // TagsApi service type.
 type TagsApi common.Service
 
@@ -28,8 +40,20 @@ func (r *SearchTagsOptionalParameters) WithBody(body TagsSearchRequest) *SearchT
 	return r
 }
 
-// SearchTags search Tags.
-// Returns Tags that match an Tags search query.
+// SearchTags searches for tags.
+//
+// @Summary Search Tags
+// @Description Retrieves tags that match a search query.
+// @Tags Tags
+// @Accept  json
+// @Produce  json
+// @Param body body TagsSearchRequest true "Tags Search Request"
+// @Success 200 {object} TagsSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /ICsiemManagerTagAct/GetTagListByCategory [post]
+// @Security ApiKeyAuth
 func (a *TagsApi) SearchTags(ctx _context.Context, o ...SearchTagsOptionalParameters) (TagsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost

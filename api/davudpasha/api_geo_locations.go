@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // GeoLocationsApi service type.
 type GeoLocationsApi common.Service
 
@@ -28,8 +40,20 @@ func (r *SearchGeoLocationsOptionalParameters) WithBody(body GeoLocationsSearchR
 	return r
 }
 
-// SearchGeoLocations search GeoLocations.
-// Returns GeoLocations that match an GeoLocations search query.
+// SearchGeoLocations searches for GeoLocations.
+//
+// @Summary Search GeoLocations
+// @Description Search for GeoLocations based on a query.
+// @Tags GeoLocations
+// @Accept  json
+// @Produce  json
+// @Param body body GeoLocationsSearchRequest true "GeoLocations Search Request"
+// @Success 200 {object} GeoLocationsSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /ICSiemManagerGeolocationAct/GetGeolocations [post]
+// @Security ApiKeyAuth
 func (a *GeoLocationsApi) SearchGeoLocations(ctx _context.Context, o ...SearchGeoLocationsOptionalParameters) (GeoLocationsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost

@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // SourcesApi service type.
 type SourcesApi common.Service
 
@@ -28,8 +40,20 @@ func (r *SearchSourcesOptionalParameters) WithBody(body SourcesSearchRequest) *S
 	return r
 }
 
-// SearchSources search sources.
-// Returns sources that match an sources search query.
+// SearchSources searches for sources.
+//
+// @Summary Search Sources
+// @Description Retrieves sources that match a search query.
+// @Tags Sources
+// @Accept  json
+// @Produce  json
+// @Param body body SourcesSearchRequest true "Sources Search Request"
+// @Success 200 {object} SourcesSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /ICSiemManagerLogSourceAct/GetLogSourceList [post]
+// @Security ApiKeyAuth
 func (a *SourcesApi) SearchSources(ctx _context.Context, o ...SearchSourcesOptionalParameters) (SourcesSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost

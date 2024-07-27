@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // ActionDefinationsApi service type.
 type ActionDefinationsApi common.Service
 
@@ -35,7 +47,7 @@ func (r *SearchActionDefinationsOptionalParameters) WithBody(body ActionDefinati
 // @Tags ActionDefinations
 // @Accept  json
 // @Produce  json
-// @Param body body ActionDefinationsSearchRequest true "Search Action Definitions Request"
+// @Param body body ActionDefinationsSearchRequest true "Action Definitions Search Request"
 // @Success 200 {array} ActionDefinationsSearchResponse "Successful operation"
 // @Failure 400 {object} ErrorResponse "Bad Request"
 // @Failure 403 {object} ErrorResponse "Forbidden"

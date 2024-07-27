@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // EventsApi service type.
 type EventsApi common.Service
 
@@ -28,8 +40,20 @@ func (r *SearchEventsOptionalParameters) WithBody(body EventsSearchRequest) *Sea
 	return r
 }
 
-// SearcEvents search events.
-// Returns events that match an events search query.
+// SearchEvents searches for events.
+//
+// @Summary Search Events
+// @Description Search for events based on a query.
+// @Tags Events
+// @Accept  json
+// @Produce  json
+// @Param body body EventsSearchRequest true "Events Search Request"
+// @Success 200 {object} EventsSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /ISearchAct/Execute [post]
+// @Security ApiKeyAuth
 func (a *EventsApi) SearchEvents(ctx _context.Context, o ...SearchEventsOptionalParameters) (EventsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost

@@ -8,6 +8,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// @title Davudpasha API
+// @version 1.0.0
+// @description Davudpasha API to demonstrate OpenAPI documentation for client-go
+// @contact.name API Support
+// @contact.url http://www.example.com/support
+// @contact.email support@example.com
+// @basePath /api
+// @securityDefinitions.apiKey ApiKeyAuth
+// @type apiKey
+// @in header
+// @name Authorization
+
 // SystemLogsApi service type.
 type SystemLogsApi common.Service
 
@@ -28,8 +40,20 @@ func (r *SearchSystemLogsOptionalParameters) WithBody(body SystemLogsSearchReque
 	return r
 }
 
-// SearchSystemLogs search SystemLogs.
-// Returns SystemLogs that match an SystemLogs search query.
+// SearchSystemLogs searches for system logs.
+//
+// @Summary Search System Logs
+// @Description Retrieves system logs that match a search query.
+// @Tags System Logs
+// @Accept  json
+// @Produce  json
+// @Param body body SystemLogsSearchRequest true "System Logs Search Request"
+// @Success 200 {object} SystemLogsSearchResponse "Successful operation"
+// @Failure 400 {object} ErrorResponse "Bad Request"
+// @Failure 403 {object} ErrorResponse "Forbidden"
+// @Failure 429 {object} ErrorResponse "Too Many Requests"
+// @Router /ISystemLogAct/Get [post]
+// @Security ApiKeyAuth
 func (a *SystemLogsApi) SearchSystemLogs(ctx _context.Context, o ...SearchSystemLogsOptionalParameters) (SystemLogsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost
