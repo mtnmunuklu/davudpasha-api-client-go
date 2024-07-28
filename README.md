@@ -41,7 +41,10 @@ To use the DavudPasha API Client, follow these steps:
 3. **Set up the API client and make the request:**
     ```go
     ctx := context.Background()
-    api := davudpasha.NewYourApi(davudpasha.NewAPIClient(nil))
+    configuration := common.NewConfiguration()
+	//configuration.SetHTTPClientWithInsecureSkipVerify()
+    apiClient := common.NewAPIClient(configuration)
+    api := davudpasha.NewYourApi(apiClient)
     resp, _, _ := api.YourApiMethod(ctx, *davudpasha.NewYourApiOptionalParameters().WithBody(body))
     ```
 
