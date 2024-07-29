@@ -13,8 +13,8 @@ type TasksSearchRequest struct {
 	Filter *string `json:"filter,omitempty"`
 	// ExtraFilter specifies additional filter criteria for task search.
 	ExtraFilter *string `json:"extraFilter,omitempty"`
-	// ShowServiceData indicates whether to include service data in the search results.
-	ShowServiceData *bool `json:"showServiceData,omitempty"`
+	// ShowServicesData indicates whether to include service data in the search results.
+	ShowServicesData *bool `json:"showServicesData,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.
@@ -96,32 +96,32 @@ func (o *TasksSearchRequest) SetExtraFilter(v string) {
 	o.ExtraFilter = &v
 }
 
-// GetShowServiceData returns the ShowServiceData field value if set, zero value otherwise.
-func (o *TasksSearchRequest) GetShowServiceData() bool {
-	if o == nil || o.ShowServiceData == nil {
+// GetShowServicesData returns the ShowServicesData field value if set, zero value otherwise.
+func (o *TasksSearchRequest) GetShowServicesData() bool {
+	if o == nil || o.ShowServicesData == nil {
 		var ret bool
 		return ret
 	}
-	return *o.ShowServiceData
+	return *o.ShowServicesData
 }
 
-// GetShowServiceDataOk returns a tuple with the ShowServiceData field value if set, nil otherwise
+// GetShowServicesDataOk returns a tuple with the ShowServicesData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TasksSearchRequest) GetShowServiceDataOk() (*bool, bool) {
-	if o == nil || o.ShowServiceData == nil {
+func (o *TasksSearchRequest) GetShowServicesDataOk() (*bool, bool) {
+	if o == nil || o.ShowServicesData == nil {
 		return nil, false
 	}
-	return o.ShowServiceData, true
+	return o.ShowServicesData, true
 }
 
-// HasShowServiceData returns a boolean if a field has been set.
-func (o *TasksSearchRequest) HasShowServiceData() bool {
-	return o != nil && o.ShowServiceData != nil
+// HasShowServicesData returns a boolean if a field has been set.
+func (o *TasksSearchRequest) HasShowServicesData() bool {
+	return o != nil && o.ShowServicesData != nil
 }
 
-// SetShowServiceData gets a reference to the given bool and assigns it to the ShowServiceData field.
-func (o *TasksSearchRequest) SetShowServiceData(v bool) {
-	o.ShowServiceData = &v
+// SetShowServicesData gets a reference to the given bool and assigns it to the ShowServicesData field.
+func (o *TasksSearchRequest) SetShowServicesData(v bool) {
+	o.ShowServicesData = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
@@ -136,8 +136,8 @@ func (o TasksSearchRequest) MarshalJSON() ([]byte, error) {
 	if o.ExtraFilter != nil {
 		toSerialize["extraFilter"] = o.ExtraFilter
 	}
-	if o.ShowServiceData != nil {
-		toSerialize["showServiceData"] = o.ShowServiceData
+	if o.ShowServicesData != nil {
+		toSerialize["showServicesData"] = o.ShowServicesData
 	}
 	if o.SmartRestRequestContext != nil {
 		toSerialize["smartRestRequestContext"] = o.SmartRestRequestContext
@@ -154,7 +154,7 @@ func (o *TasksSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		Filter                  *string `json:"filter,omitempty"`
 		ExtraFilter             *string `json:"extraFilter,omitempty"`
-		ShowServiceData         *bool   `json:"showServiceData,omitempty"`
+		ShowServicesData        *bool   `json:"showServicesData,omitempty"`
 		SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
@@ -168,13 +168,13 @@ func (o *TasksSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 	}
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"filter", "extraFilter", "showServiceData", "smartRestRequestContext"})
+		common.DeleteKeys(additionalProperties, &[]string{"filter", "extraFilter", "showServicesData", "smartRestRequestContext"})
 	} else {
 		return err
 	}
 	o.Filter = all.Filter
 	o.ExtraFilter = all.ExtraFilter
-	o.ShowServiceData = all.ShowServiceData
+	o.ShowServicesData = all.ShowServicesData
 	o.SmartRestRequestContext = all.SmartRestRequestContext
 
 	if len(additionalProperties) > 0 {

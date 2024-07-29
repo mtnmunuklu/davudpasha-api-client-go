@@ -24,9 +24,9 @@ func main() {
 		FromIndex: common.PtrInt64(0),
 		PageSize:  common.PtrInt64(10),
 		DateTimeRange: &davudpasha.DateTimeRange{
-			DateTimeType: davudpasha.DATETIMETYPE_LAST10MINUTES,
+			DateTimeType: davudpasha.DATETIMETYPE_TODAY,
 		},
-		Filter:                  common.PtrString("test-cases"),
+		Filter:                  common.PtrString("test-case"),
 		App:                     common.PtrString("csiem"),
 		ShowSubCases:            common.PtrBool(false),
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),

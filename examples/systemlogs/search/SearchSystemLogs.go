@@ -27,7 +27,7 @@ func main() {
 		DateTimeRange: &davudpasha.DateTimeRange{
 			DateTimeType: davudpasha.DATETIMETYPE_LAST10MINUTES,
 		},
-		Filter:                  common.PtrString("keyword"),
+		Filter:                  common.PtrString("test-system-log"),
 		ShowServicesData:        common.PtrBool(true),
 		ShowAllTenantsData:      common.PtrBool(true),
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),

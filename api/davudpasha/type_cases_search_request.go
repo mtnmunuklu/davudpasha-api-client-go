@@ -248,22 +248,25 @@ func (o CasesSearchRequest) MarshalJSON() ([]byte, error) {
 		return json.Marshal(o.UnparsedObject)
 	}
 	if o.FromIndex != nil {
-		toSerialize["FromIndex"] = o.FromIndex
+		toSerialize["fromIndex"] = o.FromIndex
 	}
 	if o.PageSize != nil {
-		toSerialize["PageSize"] = o.PageSize
+		toSerialize["pageSize"] = o.PageSize
 	}
 	if o.DateTimeRange != nil {
-		toSerialize["DateTimeRange"] = o.DateTimeRange
+		toSerialize["dateTimeRange"] = o.DateTimeRange
 	}
 	if o.Filter != nil {
-		toSerialize["Filter"] = o.Filter
+		toSerialize["filter"] = o.Filter
 	}
 	if o.App != nil {
-		toSerialize["App"] = o.App
+		toSerialize["app"] = o.App
 	}
 	if o.ShowSubCases != nil {
-		toSerialize["ShowSubCases"] = o.ShowSubCases
+		toSerialize["showSubCases"] = o.ShowSubCases
+	}
+	if o.SmartRestRequestContext != nil {
+		toSerialize["smartRestRequestContext"] = o.SmartRestRequestContext
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -275,12 +278,13 @@ func (o CasesSearchRequest) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *CasesSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		FromIndex     *int64         `json:"fromIndex,omitempty"`
-		PageSize      *int64         `json:"pageSize,omitempty"`
-		DateTimeRange *DateTimeRange `json:"dateTimeRange,omitempty"`
-		Filter        *string        `json:"filter,omitempty"`
-		App           *string        `json:"app,omitempty"`
-		ShowSubCases  *bool          `json:"showSubCases"`
+		FromIndex               *int64         `json:"fromIndex,omitempty"`
+		PageSize                *int64         `json:"pageSize,omitempty"`
+		DateTimeRange           *DateTimeRange `json:"dateTimeRange,omitempty"`
+		Filter                  *string        `json:"filter,omitempty"`
+		App                     *string        `json:"app,omitempty"`
+		ShowSubCases            *bool          `json:"showSubCases"`
+		SmartRestRequestContext *string        `json:"smartRestRequestContext,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
@@ -288,7 +292,7 @@ func (o *CasesSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"FromIndex", "PageSize", "DateTimeRange", "Filter", "App", "ShowSubCases"})
+		common.DeleteKeys(additionalProperties, &[]string{"fromIndex", "pageSize", "dateTimeRange", "filter", "app", "showSubCases", "smartRestRequestContext"})
 	} else {
 		return err
 	}
@@ -303,6 +307,7 @@ func (o *CasesSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 	o.Filter = all.Filter
 	o.App = all.App
 	o.ShowSubCases = all.ShowSubCases
+	o.SmartRestRequestContext = all.SmartRestRequestContext
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties

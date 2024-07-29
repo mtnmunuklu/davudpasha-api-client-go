@@ -21,9 +21,9 @@ func init() {
 
 func main() {
 	body := davudpasha.TasksSearchRequest{
-		Filter:                  common.PtrString("task-name"),
+		Filter:                  common.PtrString("test-task"),
 		ExtraFilter:             common.PtrString(""),
-		ShowServiceData:         common.PtrBool(true),
+		ShowServicesData:        common.PtrBool(true),
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
 	ctx := common.NewDefaultContext(context.Background())

@@ -21,7 +21,7 @@ func init() {
 
 func main() {
 	body := davudpasha.ElasticStatsSearchRequest{
-		SearchFilter:            common.PtrString("test-index"),
+		SearchFilter:            common.PtrString("test-indice"),
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
 	ctx := common.NewDefaultContext(context.Background())

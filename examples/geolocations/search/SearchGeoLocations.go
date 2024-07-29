@@ -21,7 +21,11 @@ func init() {
 
 func main() {
 	body := davudpasha.GeoLocationsSearchRequest{
-		Filter:                  common.PtrString("test-geolocation"),
+		Filter: common.PtrString("test-geolocation"),
+		Query: &davudpasha.QueryFilter{
+			QuerySQL:        common.PtrString(""),
+			SearchAfterKeys: []string{""},
+		},
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
 	ctx := common.NewDefaultContext(context.Background())

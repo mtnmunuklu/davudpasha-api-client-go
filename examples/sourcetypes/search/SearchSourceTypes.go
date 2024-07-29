@@ -21,7 +21,7 @@ func init() {
 
 func main() {
 	body := davudpasha.SourceTypesSearchRequest{
-		Filter:                  common.PtrString("test-sourcetype"),
+		Filter:                  common.PtrString("test-source-type"),
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
 	ctx := common.NewDefaultContext(context.Background())

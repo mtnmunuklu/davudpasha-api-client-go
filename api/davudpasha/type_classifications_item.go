@@ -19,7 +19,7 @@ type ClassificationsItem struct {
 	// List of MITRE tags associated with the classification item, which can be null.
 	MitreTags common.NullableList[MitreTag] `json:"MitreTags,omitempty"`
 	// Kill chain phase associated with the classification item, which can be null.
-	KillChainPhase common.NullableString `json:"KillChainPhase,omitempty"`
+	KillChainPhase common.NullableList[string] `json:"KillChainPhase,omitempty"`
 	// Flag indicating if the classification item is from the market.
 	FromMarket *bool `json:"FromMarket,omitempty"`
 	// Flag indicating if the classification item is from modules.
@@ -199,9 +199,9 @@ func (o *ClassificationsItem) UnSetMitreTags() {
 }
 
 // GetKillChainPhase returns the KillChainPhase field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ClassificationsItem) GetKillChainPhase() string {
+func (o *ClassificationsItem) GetKillChainPhase() []string {
 	if o == nil || o.KillChainPhase.Get() == nil {
-		var ret string
+		var ret []string
 		return ret
 	}
 	return *o.KillChainPhase.Get()
@@ -210,7 +210,7 @@ func (o *ClassificationsItem) GetKillChainPhase() string {
 // GetKillChainPhaseOk returns a tuple with the KillChainPhase field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *ClassificationsItem) GetKillChainPhaseOk() (*string, bool) {
+func (o *ClassificationsItem) GetKillChainPhaseOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -222,8 +222,8 @@ func (o *ClassificationsItem) HasKillChainPhase() bool {
 	return o != nil && o.KillChainPhase.IsSet()
 }
 
-// SetKillChainPhase gets a reference to the given common.NullableString and assigns it to the KillChainPhase field.
-func (o *ClassificationsItem) SetKillChainPhase(v string) {
+// SetKillChainPhase gets a reference to the given common.Nullable[]string and assigns it to the KillChainPhase field.
+func (o *ClassificationsItem) SetKillChainPhase(v []string) {
 	o.KillChainPhase.Set(&v)
 }
 
@@ -338,7 +338,7 @@ func (o *ClassificationsItem) UnMarshalJSON(bytes []byte) (err error) {
 		Name           *string                       `json:"Name,omitempty"`
 		Severity       *string                       `json:"Severity,omitempty"`
 		MitreTags      common.NullableList[MitreTag] `json:"MitreTags,omitempty"`
-		KillChainPhase common.NullableString         `json:"KillChainPhase,omitempty"`
+		KillChainPhase common.NullableList[string]   `json:"KillChainPhase,omitempty"`
 		FromMarket     *bool                         `json:"FromMarket,omitempty"`
 		FromModules    *bool                         `json:"FromModules,omitempty"`
 	}{}

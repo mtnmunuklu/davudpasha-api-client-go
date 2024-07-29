@@ -11,7 +11,7 @@ type CasesMitreData struct {
 	// Date when the MITRE data was created.
 	CreationDate *string `json:"CreationDate,omitempty"`
 	// Kill chain phase associated with the MITRE data, which can be null.
-	KillChainPhase common.NullableString `json:"KillChainPhase,omitempty"`
+	KillChainPhase common.NullableList[string] `json:"KillChainPhase,omitempty"`
 	// List of MITRE tags associated with the case.
 	MitreTags []MitreTag `json:"MitreTags,omitempty"`
 	// Raw value if deserialization fails.
@@ -66,9 +66,9 @@ func (o *CasesMitreData) SetCreationDate(v string) {
 }
 
 // GetKillChainPhase returns the KillChainPhase field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CasesMitreData) GetKillChainPhase() string {
+func (o *CasesMitreData) GetKillChainPhase() []string {
 	if o == nil || o.KillChainPhase.Get() == nil {
-		var ret string
+		var ret []string
 		return ret
 	}
 	return *o.KillChainPhase.Get()
@@ -77,7 +77,7 @@ func (o *CasesMitreData) GetKillChainPhase() string {
 // GetKillChainPhaseOk returns a tuple with the KillChainPhase field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *CasesMitreData) GetKillChainPhaseOk() (*string, bool) {
+func (o *CasesMitreData) GetKillChainPhaseOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -89,8 +89,8 @@ func (o *CasesMitreData) HasKillChainPhase() bool {
 	return o != nil && o.KillChainPhase.IsSet()
 }
 
-// SetKillChainPhase gets a reference to the given common.NullableString and assigns it to the KillChainPhase field.
-func (o *CasesMitreData) SetKillChainPhase(v string) {
+// SetKillChainPhase gets a reference to the given common.Nullable[]string and assigns it to the KillChainPhase field.
+func (o *CasesMitreData) SetKillChainPhase(v []string) {
 	o.KillChainPhase.Set(&v)
 }
 
@@ -157,9 +157,9 @@ func (o CasesMitreData) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *CasesMitreData) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		CreationDate   *string               `json:"CreationDate,omitempty"`
-		KillChainPhase common.NullableString `json:"KillChainPhase,omitempty"`
-		MitreTags      []MitreTag            `json:"MitreTags,omitempty"`
+		CreationDate   *string                     `json:"CreationDate,omitempty"`
+		KillChainPhase common.NullableList[string] `json:"KillChainPhase,omitempty"`
+		MitreTags      []MitreTag                  `json:"MitreTags,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)

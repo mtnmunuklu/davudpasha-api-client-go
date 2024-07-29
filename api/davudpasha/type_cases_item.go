@@ -73,7 +73,7 @@ type CasesItem struct {
 	// File attachments related to the case.
 	FileAttachments []CasesFileAttachment `json:"FileAttachments,omitempty"`
 	// Reminder periods related to the case in hours, which can be null.
-	ReminderPeriotsAsHour common.NullableInt64 `json:"ReminderPeriotsAsHour,omitempty"`
+	ReminderPeriotsAsHour common.NullableList[int64] `json:"ReminderPeriotsAsHour,omitempty"`
 	// Count of reminder emails related to the case, which can be null.
 	ReminderEmailCount *int64 `json:"ReminderEmailCount,omitempty"`
 	// Data vector associated with the case, which can be null.
@@ -1176,9 +1176,9 @@ func (o *CasesItem) SetFileAttachments(v []CasesFileAttachment) {
 }
 
 // GetReminderPeriotsAsHour returns the ReminderPeriotsAsHour field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CasesItem) GetReminderPeriotsAsHour() int64 {
+func (o *CasesItem) GetReminderPeriotsAsHour() []int64 {
 	if o == nil || o.ReminderPeriotsAsHour.Get() == nil {
-		var ret int64
+		var ret []int64
 		return ret
 	}
 	return *o.ReminderPeriotsAsHour.Get()
@@ -1187,7 +1187,7 @@ func (o *CasesItem) GetReminderPeriotsAsHour() int64 {
 // GetReminderPeriotsAsHourOk returns a tuple with the ReminderPeriotsAsHour field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *CasesItem) GetReminderPeriotsAsHourOk() (*int64, bool) {
+func (o *CasesItem) GetReminderPeriotsAsHourOk() (*[]int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -1199,8 +1199,8 @@ func (o *CasesItem) HasReminderPeriotsAsHour() bool {
 	return o != nil && o.ReminderPeriotsAsHour.IsSet()
 }
 
-// SetReminderPeriotsAsHour gets a reference to the given common.NullableInt64 and assigns it to the ReminderPeriotsAsHour field.
-func (o *CasesItem) SetReminderPeriotsAsHour(v int64) {
+// SetReminderPeriotsAsHour gets a reference to the given common.Nullable[]int64 and assigns it to the ReminderPeriotsAsHour field.
+func (o *CasesItem) SetReminderPeriotsAsHour(v []int64) {
 	o.ReminderPeriotsAsHour.Set(&v)
 }
 
@@ -1872,7 +1872,7 @@ func (o *CasesItem) UnMarshalJSON(bytes []byte) (err error) {
 		SimilarityHash                   *string                     `json:"SimilarityHash,omitempty"`
 		Tags                             common.NullableList[string] `json:"Tags,omitempty"`
 		FileAttachments                  []CasesFileAttachment       `json:"FileAttachments,omitempty"`
-		ReminderPeriotsAsHour            common.NullableInt64        `json:"ReminderPeriotsAsHour,omitempty"`
+		ReminderPeriotsAsHour            common.NullableList[int64]  `json:"ReminderPeriotsAsHour,omitempty"`
 		ReminderEmailCount               *int64                      `json:"ReminderEmailCount,omitempty"`
 		DataVector                       common.NullableString       `json:"DataVector,omitempty"`
 		FilterTags                       common.NullableList[string] `json:"FilterTags,omitempty"`

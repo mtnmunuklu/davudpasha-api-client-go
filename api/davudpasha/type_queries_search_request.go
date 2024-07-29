@@ -9,8 +9,6 @@ import (
 
 // QueriesSearchRequest is the object sent with a request to retrieve a list of queries from your organization.
 type QueriesSearchRequest struct {
-	// Username for the search request.
-	Username *string `json:"username,omitempty"`
 	// Filter for the search request.
 	Filter *string `json:"filter,omitempty"`
 	// Context for the Smart REST request.
@@ -36,34 +34,6 @@ func NewQueriesSearchRequest() *QueriesSearchRequest {
 func NewQueriesSearchRequestWithDefaults() *QueriesSearchRequest {
 	this := QueriesSearchRequest{}
 	return &this
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *QueriesSearchRequest) GetUsername() string {
-	if o == nil || o.Username == nil {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *QueriesSearchRequest) GetUsernameOk() (*string, bool) {
-	if o == nil || o.Username == nil {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// HasUsername returns a boolean if a field has been set.
-func (o *QueriesSearchRequest) HasUsername() bool {
-	return o != nil && o.Username != nil
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *QueriesSearchRequest) SetUsername(v string) {
-	o.Username = &v
 }
 
 // GetFilter returns the Filter field value if set, zero value otherwise.
@@ -128,9 +98,6 @@ func (o QueriesSearchRequest) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.Username != nil {
-		toSerialize["username"] = o.Username
-	}
 	if o.Filter != nil {
 		toSerialize["filter"] = o.Filter
 	}
@@ -147,15 +114,11 @@ func (o QueriesSearchRequest) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *QueriesSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Username                *string `json:"username,omitempty"`
 		Filter                  *string `json:"filter,omitempty"`
 		SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
-	}
-	if all.Username == nil {
-		return fmt.Errorf("requiered field username is missing")
 	}
 	if all.Filter == nil {
 		return fmt.Errorf("requiered field filter is missing")
@@ -165,11 +128,10 @@ func (o *QueriesSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
 	}
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"Username", "filter", "smartRestRequestContext"})
+		common.DeleteKeys(additionalProperties, &[]string{"filter", "smartRestRequestContext"})
 	} else {
 		return err
 	}
-	o.Username = all.Username
 	o.Filter = all.Filter
 	o.SmartRestRequestContext = all.SmartRestRequestContext
 

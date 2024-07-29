@@ -21,8 +21,7 @@ func init() {
 
 func main() {
 	body := davudpasha.QueriesSearchRequest{
-		Username:                common.PtrString("ct-admin"),
-		Filter:                  common.PtrString("Top Users By Login"),
+		Filter:                  common.PtrString("test-query"),
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
 	ctx := common.NewDefaultContext(context.Background())
