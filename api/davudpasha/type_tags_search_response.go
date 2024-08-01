@@ -17,7 +17,7 @@ type TagsSearchResponse struct {
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
 // NewTagsSearchResponse creates a new TagsSearchResponse object.

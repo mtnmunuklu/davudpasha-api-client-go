@@ -4683,7 +4683,7 @@ type Action struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -4946,7 +4946,7 @@ type ActionDefinationsSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -5120,7 +5120,7 @@ type ActionDefinationsSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -5480,7 +5480,7 @@ type ActionParameter struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -5606,7 +5606,7 @@ type Actions struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -5817,7 +5817,7 @@ type AlertsCorrelationData struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -6721,7 +6721,7 @@ type AlertsItem struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -6946,7 +6946,7 @@ type AlertsSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -7074,7 +7074,7 @@ type AlertsSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -7311,7 +7311,7 @@ type AssetsAsset struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -8245,7 +8245,7 @@ type AssetsInventoryInfo struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -8347,7 +8347,7 @@ type AssetsOperationSystemInfo struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -8695,7 +8695,7 @@ type AssetsSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -8929,7 +8929,7 @@ type AssetsSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -9090,7 +9090,7 @@ type CasesComment struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -9386,7 +9386,7 @@ type CasesFileAttachment struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -9710,7 +9710,7 @@ type CasesItem struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -11860,7 +11860,7 @@ type CasesLog struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -12150,7 +12150,7 @@ type CasesMitreData struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -12340,7 +12340,7 @@ type CasesSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -12650,7 +12650,7 @@ type CasesSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -12887,7 +12887,7 @@ type ClassificationsItem struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -13265,7 +13265,7 @@ type ClassificationsSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -13393,7 +13393,7 @@ type ClassificationsSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -13559,7 +13559,7 @@ type DateTimeRange struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{} `json:"-"`
+    AdditionalProperties map[string]interface{} `json:"-"` `json:"-"`
 }
 ```
 
@@ -13887,7 +13887,7 @@ type ElasticStatsIndexes struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -14233,7 +14233,7 @@ type ElasticStatsResult struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -14467,7 +14467,7 @@ type ElasticStatsSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -14595,7 +14595,7 @@ type ElasticStatsSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -14755,7 +14755,7 @@ type ErrorResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -14865,7 +14865,7 @@ type EventsSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -15033,7 +15033,7 @@ type EventsSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -15310,7 +15310,7 @@ type GeoLocationsData struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -15744,7 +15744,7 @@ type GeoLocationsSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -15908,7 +15908,7 @@ type GeoLocationsSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -16196,7 +16196,7 @@ type LookupsSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -16336,7 +16336,7 @@ type LookupsSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -16743,7 +16743,7 @@ type MitreTag struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -17169,7 +17169,7 @@ type ParallelOptions struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -17430,7 +17430,7 @@ type QueriesItem struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -18314,7 +18314,7 @@ type QueriesSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -18478,7 +18478,7 @@ type QueriesSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -18642,7 +18642,7 @@ type QueryFilter struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -18802,7 +18802,7 @@ type QueryOptions struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -18899,7 +18899,7 @@ type ReportsChartLegend struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -19017,7 +19017,7 @@ type ReportsChartVisualization struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -19667,7 +19667,7 @@ type ReportsChartXAxis struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -19833,7 +19833,7 @@ type ReportsChartYAxis struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -20095,7 +20095,7 @@ type ReportsData struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -20891,7 +20891,7 @@ type ReportsLatestReportFile struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -21101,7 +21101,7 @@ type ReportsPage struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -21445,7 +21445,7 @@ type ReportsParameters struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -21617,7 +21617,7 @@ type ReportsQuery struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -21953,7 +21953,7 @@ type ReportsQueryData struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -22397,7 +22397,7 @@ type ReportsQueryExtData struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -23069,7 +23069,7 @@ type ReportsSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -23369,7 +23369,7 @@ type ReportsSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -24469,7 +24469,7 @@ type ReportsTableVisualization struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -24653,7 +24653,7 @@ type ScheduleConfig struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -25260,7 +25260,7 @@ type SearchArchivesData struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -25384,7 +25384,7 @@ type SearchArchivesGetRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -25472,7 +25472,7 @@ type SearchArchivesGetResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -25588,7 +25588,7 @@ type SearchArchivesQuery struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -26302,7 +26302,7 @@ type SearchArchivesStatus struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -27358,7 +27358,7 @@ type SelectedColumn struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -27579,7 +27579,7 @@ type SourceTypesClassificationDefination struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -28011,7 +28011,7 @@ type SourceTypesClassificationRule struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -28143,7 +28143,7 @@ type SourceTypesExpression struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -28397,7 +28397,7 @@ type SourceTypesExpressionField struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -28989,7 +28989,7 @@ type SourceTypesItem struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -29821,7 +29821,7 @@ type SourceTypesLogParserData struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -30431,7 +30431,7 @@ type SourceTypesMapping struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -30521,7 +30521,7 @@ type SourceTypesNormalization struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -30539,7 +30539,7 @@ type SourceTypesNormalizationItem struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -30665,7 +30665,7 @@ type SourceTypesSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -30793,7 +30793,7 @@ type SourceTypesSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -31042,7 +31042,7 @@ type SourcesItem struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -32430,7 +32430,7 @@ type SourcesLogOperation struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -32592,7 +32592,7 @@ type SourcesSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -32720,7 +32720,7 @@ type SourcesSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -32884,7 +32884,7 @@ type SuccessItem struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -33117,7 +33117,7 @@ type SystemLogsItem struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -34249,7 +34249,7 @@ type SystemLogsSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -34685,7 +34685,7 @@ type SystemLogsSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -34977,7 +34977,7 @@ type TagsItem struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -35132,7 +35132,7 @@ type TagsSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -35287,7 +35287,7 @@ type TagsSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -35480,7 +35480,7 @@ type TasksSearchRequest struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 
@@ -35700,7 +35700,7 @@ type TasksSearchResponse struct {
     // Raw value if deserialization fails.
     UnparsedObject map[string]interface{} `json:"-"`
     // Additional properties not defined in the struct.
-    AdditionalProperties map[string]interface{}
+    AdditionalProperties map[string]interface{} `json:"-"`
 }
 ```
 

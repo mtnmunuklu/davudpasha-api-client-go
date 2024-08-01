@@ -1031,22 +1031,12 @@ const docTemplate = `{
                             "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
                         }
                     ]
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.ActionDefinationsSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "application": {
                     "description": "Specifies the application for which the action definitions are being searched.",
                     "type": "string"
@@ -1103,11 +1093,6 @@ const docTemplate = `{
                 "Type": {
                     "description": "Type of the action definition.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -1125,11 +1110,6 @@ const docTemplate = `{
                             "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.Optional"
                         }
                     ]
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -1150,11 +1130,6 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/api_davudpasha.Action"
                     }
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -1273,11 +1248,6 @@ const docTemplate = `{
                 "Version": {
                     "description": "Version of the correlation.",
                     "type": "number"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -1311,22 +1281,12 @@ const docTemplate = `{
                             "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
                         }
                     ]
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.AlertsSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "filter": {
                     "description": "Filter for the search request.",
                     "type": "string"
@@ -1363,11 +1323,6 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/api_davudpasha.SuccessItem"
                     }
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -1504,11 +1459,6 @@ const docTemplate = `{
                 "_id": {
                     "description": "Unique identifier for the asset.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -1522,11 +1472,6 @@ const docTemplate = `{
                             "$ref": "#/definitions/api_davudpasha.AssetsOperationSystemInfo"
                         }
                     ]
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -1564,22 +1509,12 @@ const docTemplate = `{
                 "Version": {
                     "description": "Version of the operating system.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.AssetsSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "pageNumber": {
                     "description": "Page number for pagination.",
                     "type": "integer"
@@ -1605,11 +1540,6 @@ const docTemplate = `{
         "api_davudpasha.AssetsSearchResponse": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "assets": {
                     "description": "List of assets matching the search criteria.",
                     "type": "array",
@@ -1653,11 +1583,6 @@ const docTemplate = `{
                 "Type": {
                     "description": "Type or category of the comment.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -1687,11 +1612,6 @@ const docTemplate = `{
                 "SHA256Hash": {
                     "description": "SHA-256 hash of the file.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -1933,7 +1853,7 @@ const docTemplate = `{
                     "description": "Reminder periods related to the case in hours, which can be null.",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableInt64"
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-int64"
                         }
                     ]
                 },
@@ -1988,11 +1908,6 @@ const docTemplate = `{
                 "_id": {
                     "description": "Unique identifier for the case item.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -2026,22 +1941,12 @@ const docTemplate = `{
                 "Type": {
                     "description": "Type or category of the log entry.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.CasesSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "app": {
                     "description": "Application associated with the cases.",
                     "type": "string"
@@ -2097,11 +2002,6 @@ const docTemplate = `{
                 "TotalCount": {
                     "description": "Total count of cases matching the search criteria.",
                     "type": "integer"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -2128,7 +2028,7 @@ const docTemplate = `{
                     "description": "Kill chain phase associated with the classification item, which can be null.",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string"
                         }
                     ]
                 },
@@ -2147,22 +2047,12 @@ const docTemplate = `{
                 "Severity": {
                     "description": "Severity level associated with the classification item.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.ClassificationsSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "filter": {
                     "description": "Additional filter criteria for classifications.",
                     "type": "string"
@@ -2199,11 +2089,6 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/api_davudpasha.SuccessItem"
                     }
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -2319,11 +2204,6 @@ const docTemplate = `{
                 "StoreSizeMB": {
                     "description": "Store size of the index in megabytes.",
                     "type": "number"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -2349,11 +2229,6 @@ const docTemplate = `{
                         "type": "string"
                     }
                 },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "optErrorMsg": {
                     "description": "Optional error message, which can be null.",
                     "allOf": [
@@ -2367,11 +2242,6 @@ const docTemplate = `{
         "api_davudpasha.ElasticStatsSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "searchFilter": {
                     "description": "Filter criterion for searching Elasticsearch sources.",
                     "type": "string"
@@ -2403,22 +2273,12 @@ const docTemplate = `{
                 "Status": {
                     "description": "Status of the Elasticsearch statistics search operation.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.ErrorResponse": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "errors": {
                     "description": "A list of errors",
                     "type": "array",
@@ -2431,11 +2291,6 @@ const docTemplate = `{
         "api_davudpasha.EventsSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "query": {
                     "description": "Query specifies the search and filter query settings.",
                     "allOf": [
@@ -2485,22 +2340,12 @@ const docTemplate = `{
                 "TotalSize": {
                     "description": "TotalSize is the total number of events.",
                     "type": "integer"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.GeoLocationsData": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "city": {
                     "description": "City name.",
                     "type": "string"
@@ -2550,11 +2395,6 @@ const docTemplate = `{
         "api_davudpasha.GeoLocationsSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "filter": {
                     "description": "Filter for searching sources.",
                     "type": "string"
@@ -2590,11 +2430,6 @@ const docTemplate = `{
                 "TotalQuantity": {
                     "description": "Total quantity of results matching the search criteria.",
                     "type": "integer"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -2626,11 +2461,6 @@ const docTemplate = `{
         "api_davudpasha.LookupsSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "filter": {
                     "description": "Filter for searching sources.",
                     "type": "string"
@@ -2697,11 +2527,6 @@ const docTemplate = `{
                             "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
                         }
                     ]
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -2735,11 +2560,6 @@ const docTemplate = `{
                 "TimeoutSec": {
                     "description": "Timeout duration for parallel processing, in seconds.",
                     "type": "integer"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -2861,32 +2681,18 @@ const docTemplate = `{
                 "Version": {
                     "description": "Version of the query.",
                     "type": "number"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.QueriesSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "filter": {
                     "description": "Filter for the search request.",
                     "type": "string"
                 },
                 "smartRestRequestContext": {
                     "description": "Context for the Smart REST request.",
-                    "type": "string"
-                },
-                "username": {
-                    "description": "Username for the search request.",
                     "type": "string"
                 }
             }
@@ -2917,11 +2723,6 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/api_davudpasha.SuccessItem"
                     }
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -2948,10 +2749,12 @@ const docTemplate = `{
                     "description": "QuerySQL is the SQL query for filtering events.",
                     "type": "string"
                 },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
+                "SearchAfterKeys": {
+                    "description": "SearchAfterKeys specifies the keys to use for pagination in search results.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         },
@@ -2961,11 +2764,6 @@ const docTemplate = `{
                 "ShowHighlight": {
                     "description": "ShowHighlight indicates whether to show highlight.",
                     "type": "boolean"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -2975,11 +2773,6 @@ const docTemplate = `{
                 "LegendPosition": {
                     "description": "Position of the legend.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3068,11 +2861,6 @@ const docTemplate = `{
                             "$ref": "#/definitions/api_davudpasha.ReportsChartYAxis"
                         }
                     ]
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3090,11 +2878,6 @@ const docTemplate = `{
                 "Label": {
                     "description": "Label for the x-axis.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3124,11 +2907,6 @@ const docTemplate = `{
                             "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableInt64"
                         }
                     ]
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3241,11 +3019,6 @@ const docTemplate = `{
                             "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
                         }
                     ]
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3267,11 +3040,6 @@ const docTemplate = `{
                 "Status": {
                     "description": "Status of the latest report file.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3309,11 +3077,6 @@ const docTemplate = `{
                 "TopMargin": {
                     "description": "Top margin of the page.",
                     "type": "integer"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3337,11 +3100,6 @@ const docTemplate = `{
                     "items": {
                         "type": "string"
                     }
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3391,11 +3149,6 @@ const docTemplate = `{
                             "$ref": "#/definitions/api_davudpasha.ReportsTableVisualization"
                         }
                     ]
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3453,22 +3206,12 @@ const docTemplate = `{
                             "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
                         }
                     ]
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.ReportsSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "applicationName": {
                     "description": "Name of the application.",
                     "type": "string"
@@ -3647,11 +3390,6 @@ const docTemplate = `{
                 "Version": {
                     "description": "Version of the report.",
                     "type": "number"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3672,11 +3410,6 @@ const docTemplate = `{
                 "MaxRowCount": {
                     "description": "Maximum row count.",
                     "type": "integer"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3740,11 +3473,6 @@ const docTemplate = `{
                 "WeekType": {
                     "description": "Type of the week for the schedule.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3766,22 +3494,12 @@ const docTemplate = `{
                             "$ref": "#/definitions/api_davudpasha.SearchArchivesStatus"
                         }
                     ]
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.SearchArchivesGetRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "smartRestRequestContext": {
                     "description": "Context for the Smart REST request.",
                     "type": "string"
@@ -3797,11 +3515,6 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/api_davudpasha.SearchArchivesData"
                     }
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3891,11 +3604,6 @@ const docTemplate = `{
                 "Size": {
                     "description": "Size specifies the size of the search query.",
                     "type": "integer"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3973,11 +3681,6 @@ const docTemplate = `{
                 "_id": {
                     "description": "ID represents the unique identifier of the search status.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -3999,11 +3702,6 @@ const docTemplate = `{
                 "Value": {
                     "description": "Value of the column.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -4057,11 +3755,6 @@ const docTemplate = `{
                 "Severity": {
                     "description": "Severity indicates the severity level associated with the classification.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -4075,11 +3768,6 @@ const docTemplate = `{
                 "QueryStr": {
                     "description": "QueryStr represents the query string for the classification rule.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -4112,11 +3800,6 @@ const docTemplate = `{
                 "Name": {
                     "description": "Name specifies the name of the expression.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -4186,11 +3869,6 @@ const docTemplate = `{
                             "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
                         }
                     ]
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -4303,11 +3981,6 @@ const docTemplate = `{
                 "Version": {
                     "description": "Version specifies the version number of the item.",
                     "type": "number"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -4385,11 +4058,6 @@ const docTemplate = `{
                 "TableName": {
                     "description": "TableName specifies the table name associated with log parsing.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -4399,22 +4067,12 @@ const docTemplate = `{
                 "Field": {
                     "description": "Field specifies the field for mapping.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.SourceTypesSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "filter": {
                     "description": "Filter for searching source types.",
                     "type": "string"
@@ -4451,11 +4109,6 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/api_davudpasha.SuccessItem"
                     }
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -4623,11 +4276,6 @@ const docTemplate = `{
                     "description": "Indicates if raw logs should be written.",
                     "type": "boolean"
                 },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "dashboardId": {
                     "description": "ID of the associated dashboard.",
                     "allOf": [
@@ -4667,22 +4315,12 @@ const docTemplate = `{
                 "Priority": {
                     "description": "Priority of the log operation.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.SourcesSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "searchFilter": {
                     "description": "SearchFilter for searching sources.",
                     "type": "string"
@@ -4719,11 +4357,6 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/api_davudpasha.SuccessItem"
                     }
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -4744,11 +4377,6 @@ const docTemplate = `{
                 "SourceType": {
                     "description": "Source type of the success item.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -4774,11 +4402,6 @@ const docTemplate = `{
                 "_id": {
                     "description": "ID specifies the ID of the log item.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 },
                 "app": {
                     "description": "App specifies the application name related to the log item.",
@@ -4908,11 +4531,6 @@ const docTemplate = `{
         "api_davudpasha.SystemLogsSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "appName": {
                     "description": "AppName specifies the name of the application to filter logs.",
                     "type": "string"
@@ -4984,11 +4602,6 @@ const docTemplate = `{
                 "TotalCount": {
                     "description": "TotalCount specifies the total count of logs matching the search criteria.",
                     "type": "integer"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -5025,22 +4638,12 @@ const docTemplate = `{
                 "Name": {
                     "description": "Name specifies the name of the tag.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.TagsSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "category": {
                     "description": "Category specifies the category of tags to search for.",
                     "allOf": [
@@ -5085,22 +4688,12 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/api_davudpasha.SuccessItem"
                     }
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
         "api_davudpasha.TasksSearchRequest": {
             "type": "object",
             "properties": {
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
-                },
                 "extraFilter": {
                     "description": "ExtraFilter specifies additional filter criteria for task search.",
                     "type": "string"
@@ -5109,8 +4702,8 @@ const docTemplate = `{
                     "description": "Filter specifies the main filter criteria for task search.",
                     "type": "string"
                 },
-                "showServiceData": {
-                    "description": "ShowServiceData indicates whether to include service data in the search results.",
+                "showServicesData": {
+                    "description": "ShowServicesData indicates whether to include service data in the search results.",
                     "type": "boolean"
                 },
                 "smartRestRequestContext": {
@@ -5293,11 +4886,6 @@ const docTemplate = `{
                 "TenantID": {
                     "description": "TenantID represents the identifier of the tenant associated with the task.",
                     "type": "string"
-                },
-                "additionalProperties": {
-                    "description": "Additional properties not defined in the struct.",
-                    "type": "object",
-                    "additionalProperties": true
                 }
             }
         },
@@ -5308,6 +4896,9 @@ const docTemplate = `{
             "type": "object"
         },
         "github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-api_davudpasha_SelectedColumn": {
+            "type": "object"
+        },
+        "github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-int64": {
             "type": "object"
         },
         "github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string": {

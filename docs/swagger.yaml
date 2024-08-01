@@ -18,17 +18,9 @@ definitions:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Data associated with the action.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ActionDefinationsSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       application:
         description: Specifies the application for which the action definitions are
           being searched.
@@ -68,10 +60,6 @@ definitions:
       Type:
         description: Type of the action definition.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ActionParameter:
     properties:
@@ -82,10 +70,6 @@ definitions:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.Optional'
         description: Value of the action parameter.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.Actions:
     properties:
@@ -98,10 +82,6 @@ definitions:
         items:
           $ref: '#/definitions/api_davudpasha.Action'
         type: array
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.AlertsCorrelationData:
     properties:
@@ -181,10 +161,6 @@ definitions:
       Version:
         description: Version of the correlation.
         type: number
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.AlertsItem:
     properties:
@@ -203,17 +179,9 @@ definitions:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: LGS name.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.AlertsSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       filter:
         description: Filter for the search request.
         type: string
@@ -240,10 +208,6 @@ definitions:
         items:
           $ref: '#/definitions/api_davudpasha.SuccessItem'
         type: array
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.AssetsAsset:
     properties:
@@ -333,10 +297,6 @@ definitions:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Timestamp of when the asset was created or last updated.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.AssetsInventoryInfo:
     properties:
@@ -344,10 +304,6 @@ definitions:
         allOf:
         - $ref: '#/definitions/api_davudpasha.AssetsOperationSystemInfo'
         description: Information about the operating system of the asset.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.AssetsOperationSystemInfo:
     properties:
@@ -375,17 +331,9 @@ definitions:
       Version:
         description: Version of the operating system.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.AssetsSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       pageNumber:
         description: Page number for pagination.
         type: integer
@@ -404,10 +352,6 @@ definitions:
     type: object
   api_davudpasha.AssetsSearchResponse:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       assets:
         description: List of assets matching the search criteria.
         items:
@@ -438,10 +382,6 @@ definitions:
       Type:
         description: Type or category of the comment.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.CasesFileAttachment:
     properties:
@@ -463,10 +403,6 @@ definitions:
       SHA256Hash:
         description: SHA-256 hash of the file.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.CasesItem:
     properties:
@@ -615,7 +551,7 @@ definitions:
         type: integer
       ReminderPeriotsAsHour:
         allOf:
-        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableInt64'
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-int64'
         description: Reminder periods related to the case in hours, which can be null.
       Roles:
         allOf:
@@ -649,10 +585,6 @@ definitions:
       WaitingTimeAsHour:
         description: Waiting time related to the case in hours, which can be null.
         type: integer
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.CasesLog:
     properties:
@@ -675,17 +607,9 @@ definitions:
       Type:
         description: Type or category of the log entry.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.CasesSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       app:
         description: Application associated with the cases.
         type: string
@@ -725,10 +649,6 @@ definitions:
       TotalCount:
         description: Total count of cases matching the search criteria.
         type: integer
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ClassificationsItem:
     properties:
@@ -746,7 +666,7 @@ definitions:
         type: string
       KillChainPhase:
         allOf:
-        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string'
         description: Kill chain phase associated with the classification item, which
           can be null.
       MitreTags:
@@ -760,17 +680,9 @@ definitions:
       Severity:
         description: Severity level associated with the classification item.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ClassificationsSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       filter:
         description: Additional filter criteria for classifications.
         type: string
@@ -797,10 +709,6 @@ definitions:
         items:
           $ref: '#/definitions/api_davudpasha.SuccessItem'
         type: array
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.DateTimeRange:
     properties:
@@ -890,10 +798,6 @@ definitions:
       StoreSizeMB:
         description: Store size of the index in megabytes.
         type: number
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ElasticStatsResult:
     properties:
@@ -909,10 +813,6 @@ definitions:
         items:
           type: string
         type: array
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       optErrorMsg:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
@@ -920,10 +820,6 @@ definitions:
     type: object
   api_davudpasha.ElasticStatsSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       searchFilter:
         description: Filter criterion for searching Elasticsearch sources.
         type: string
@@ -945,17 +841,9 @@ definitions:
       Status:
         description: Status of the Elasticsearch statistics search operation.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ErrorResponse:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       errors:
         description: A list of errors
         items:
@@ -964,10 +852,6 @@ definitions:
     type: object
   api_davudpasha.EventsSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       query:
         allOf:
         - $ref: '#/definitions/api_davudpasha.QueryFilter'
@@ -1002,17 +886,9 @@ definitions:
       TotalSize:
         description: TotalSize is the total number of events.
         type: integer
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.GeoLocationsData:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       city:
         description: City name.
         type: string
@@ -1047,10 +923,6 @@ definitions:
     type: object
   api_davudpasha.GeoLocationsSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       filter:
         description: Filter for searching sources.
         type: string
@@ -1076,10 +948,6 @@ definitions:
       TotalQuantity:
         description: Total quantity of results matching the search criteria.
         type: integer
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.LookupType:
     enum:
@@ -1105,10 +973,6 @@ definitions:
     - LookupType_ACTIVELIST
   api_davudpasha.LookupsSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       filter:
         description: Filter for searching sources.
         type: string
@@ -1152,10 +1016,6 @@ definitions:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Other values associated with the lookup.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.NullableCasesMitreData:
     type: object
@@ -1179,10 +1039,6 @@ definitions:
       TimeoutSec:
         description: Timeout duration for parallel processing, in seconds.
         type: integer
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.QueriesItem:
     properties:
@@ -1255,25 +1111,14 @@ definitions:
       Version:
         description: Version of the query.
         type: number
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.QueriesSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       filter:
         description: Filter for the search request.
         type: string
       smartRestRequestContext:
         description: Context for the Smart REST request.
-        type: string
-      username:
-        description: Username for the search request.
         type: string
     type: object
   api_davudpasha.QueriesSearchResponse:
@@ -1295,10 +1140,6 @@ definitions:
         items:
           $ref: '#/definitions/api_davudpasha.SuccessItem'
         type: array
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.QueryFilter:
     properties:
@@ -1313,30 +1154,24 @@ definitions:
       QuerySQL:
         description: QuerySQL is the SQL query for filtering events.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
+      SearchAfterKeys:
+        description: SearchAfterKeys specifies the keys to use for pagination in search
+          results.
+        items:
+          type: string
+        type: array
     type: object
   api_davudpasha.QueryOptions:
     properties:
       ShowHighlight:
         description: ShowHighlight indicates whether to show highlight.
         type: boolean
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ReportsChartLegend:
     properties:
       LegendPosition:
         description: Position of the legend.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ReportsChartVisualization:
     properties:
@@ -1394,10 +1229,6 @@ definitions:
         allOf:
         - $ref: '#/definitions/api_davudpasha.ReportsChartYAxis'
         description: Y-axis configuration for the chart.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ReportsChartXAxis:
     properties:
@@ -1410,10 +1241,6 @@ definitions:
       Label:
         description: Label for the x-axis.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ReportsChartYAxis:
     properties:
@@ -1431,10 +1258,6 @@ definitions:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableInt64'
         description: Minimum value for the y-axis.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ReportsData:
     properties:
@@ -1498,10 +1321,6 @@ definitions:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Theme of the report.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ReportsLatestReportFile:
     properties:
@@ -1517,10 +1336,6 @@ definitions:
       Status:
         description: Status of the latest report file.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ReportsPage:
     properties:
@@ -1548,10 +1363,6 @@ definitions:
       TopMargin:
         description: Top margin of the page.
         type: integer
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ReportsParameters:
     properties:
@@ -1568,10 +1379,6 @@ definitions:
         items:
           type: string
         type: array
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ReportsQuery:
     properties:
@@ -1600,10 +1407,6 @@ definitions:
         allOf:
         - $ref: '#/definitions/api_davudpasha.ReportsTableVisualization'
         description: Visualization settings for the table.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ReportsQueryData:
     properties:
@@ -1636,17 +1439,9 @@ definitions:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Path to the script related to the query.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ReportsSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       applicationName:
         description: Name of the application.
         type: string
@@ -1758,10 +1553,6 @@ definitions:
       Version:
         description: Version of the report.
         type: number
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ReportsTableVisualization:
     properties:
@@ -1776,10 +1567,6 @@ definitions:
       MaxRowCount:
         description: Maximum row count.
         type: integer
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.ScheduleConfig:
     properties:
@@ -1826,10 +1613,6 @@ definitions:
       WeekType:
         description: Type of the week for the schedule.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SearchArchivesData:
     properties:
@@ -1841,17 +1624,9 @@ definitions:
         allOf:
         - $ref: '#/definitions/api_davudpasha.SearchArchivesStatus'
         description: Status represents the status of the search operation.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SearchArchivesGetRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       smartRestRequestContext:
         description: Context for the Smart REST request.
         type: string
@@ -1864,10 +1639,6 @@ definitions:
         items:
           $ref: '#/definitions/api_davudpasha.SearchArchivesData'
         type: array
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SearchArchivesQuery:
     properties:
@@ -1928,10 +1699,6 @@ definitions:
       Size:
         description: Size specifies the size of the search query.
         type: integer
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SearchArchivesStatus:
     properties:
@@ -1996,10 +1763,6 @@ definitions:
         description: Timestamp indicates the timestamp associated with the search
           status.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SelectedColumn:
     properties:
@@ -2013,10 +1776,6 @@ definitions:
       Value:
         description: Value of the column.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SourceTypesClassificationDefination:
     properties:
@@ -2051,10 +1810,6 @@ definitions:
       Severity:
         description: Severity indicates the severity level associated with the classification.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SourceTypesClassificationRule:
     properties:
@@ -2065,10 +1820,6 @@ definitions:
       QueryStr:
         description: QueryStr represents the query string for the classification rule.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SourceTypesExpression:
     properties:
@@ -2090,10 +1841,6 @@ definitions:
       Name:
         description: Name specifies the name of the expression.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SourceTypesExpressionField:
     properties:
@@ -2141,10 +1888,6 @@ definitions:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: ValueName indicates the value name associated with the expression
           field.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SourceTypesItem:
     properties:
@@ -2223,10 +1966,6 @@ definitions:
       Version:
         description: Version specifies the version number of the item.
         type: number
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SourceTypesLogParserData:
     properties:
@@ -2278,27 +2017,15 @@ definitions:
       TableName:
         description: TableName specifies the table name associated with log parsing.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SourceTypesMapping:
     properties:
       Field:
         description: Field specifies the field for mapping.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SourceTypesSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       filter:
         description: Filter for searching source types.
         type: string
@@ -2325,10 +2052,6 @@ definitions:
         items:
           $ref: '#/definitions/api_davudpasha.SuccessItem'
         type: array
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SourcesItem:
     properties:
@@ -2432,10 +2155,6 @@ definitions:
       WriteRawLogs:
         description: Indicates if raw logs should be written.
         type: boolean
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       dashboardId:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
@@ -2463,17 +2182,9 @@ definitions:
       Priority:
         description: Priority of the log operation.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SourcesSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       searchFilter:
         description: SearchFilter for searching sources.
         type: string
@@ -2500,10 +2211,6 @@ definitions:
         items:
           $ref: '#/definitions/api_davudpasha.SuccessItem'
         type: array
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SuccessItem:
     properties:
@@ -2518,10 +2225,6 @@ definitions:
       SourceType:
         description: Source type of the success item.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.SystemLogsItem:
     properties:
@@ -2537,10 +2240,6 @@ definitions:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Timestamp specifies the timestamp associated with the log item.
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       app:
         description: App specifies the application name related to the log item.
         type: string
@@ -2623,10 +2322,6 @@ definitions:
     type: object
   api_davudpasha.SystemLogsSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       appName:
         description: AppName specifies the name of the application to filter logs.
         type: string
@@ -2682,10 +2377,6 @@ definitions:
         description: TotalCount specifies the total count of logs matching the search
           criteria.
         type: integer
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.TagCategory:
     enum:
@@ -2711,17 +2402,9 @@ definitions:
       Name:
         description: Name specifies the name of the tag.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.TagsSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       category:
         allOf:
         - $ref: '#/definitions/api_davudpasha.TagCategory'
@@ -2752,25 +2435,17 @@ definitions:
         items:
           $ref: '#/definitions/api_davudpasha.SuccessItem'
         type: array
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   api_davudpasha.TasksSearchRequest:
     properties:
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
       extraFilter:
         description: ExtraFilter specifies additional filter criteria for task search.
         type: string
       filter:
         description: Filter specifies the main filter criteria for task search.
         type: string
-      showServiceData:
-        description: ShowServiceData indicates whether to include service data in
+      showServicesData:
+        description: ShowServicesData indicates whether to include service data in
           the search results.
         type: boolean
       smartRestRequestContext:
@@ -2901,16 +2576,14 @@ definitions:
         description: TenantID represents the identifier of the tenant associated with
           the task.
         type: string
-      additionalProperties:
-        additionalProperties: true
-        description: Additional properties not defined in the struct.
-        type: object
     type: object
   github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableInt64:
     type: object
   github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-api_davudpasha_MitreTag:
     type: object
   github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-api_davudpasha_SelectedColumn:
+    type: object
+  github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-int64:
     type: object
   github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string:
     type: object

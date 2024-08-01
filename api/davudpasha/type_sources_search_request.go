@@ -16,7 +16,7 @@ type SourcesSearchRequest struct {
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
 // NewSourcesSearchRequest creates a new SourcesSearchRequest object.

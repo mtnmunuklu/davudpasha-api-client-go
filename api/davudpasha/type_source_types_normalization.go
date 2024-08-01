@@ -11,7 +11,7 @@ type SourceTypesNormalization struct {
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
 // NullableSourceTypesNormalization handles when a null is used for SourceTypesNormalization.

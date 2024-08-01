@@ -63,7 +63,7 @@ type AssetsAsset struct {
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
 // NewAssetsAsset creates a new AssetsAsset object.

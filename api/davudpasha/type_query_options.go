@@ -13,7 +13,7 @@ type QueryOptions struct {
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
 // GetShowHighlight returns the ShowHighlight field value if set, zero value otherwise.

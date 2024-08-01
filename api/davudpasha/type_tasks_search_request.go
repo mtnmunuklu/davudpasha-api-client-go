@@ -20,7 +20,7 @@ type TasksSearchRequest struct {
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
 // NewTasksSearchRequest creates a new TasksSearchRequest object.

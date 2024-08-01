@@ -32,7 +32,7 @@ type SystemLogsSearchRequest struct {
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
 // NewSystemLogsSearchRequest creates a new SystemLogsSearchRequest object.

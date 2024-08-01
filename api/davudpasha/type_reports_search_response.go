@@ -63,7 +63,7 @@ type ReportsSearchResponse struct {
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
 // NewReportsSearchResponse creates a new ReportsSearchResponse object.
