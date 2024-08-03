@@ -34,7 +34,7 @@ type QueriesItem struct {
 	// MITRE tags associated with the query.
 	MitreTags common.NullableList[MitreTag] `json:"MitreTags,omitempty"`
 	// Kill chain phase associated with the query.
-	KillChainPhase common.NullableString `json:"KillChainPhase,omitempty"`
+	KillChainPhase common.NullableList[string] `json:"KillChainPhase,omitempty"`
 	// Whether the query is from the market.
 	FromMarket *bool `json:"FromMarket,omitempty"`
 	// Whether the query is from modules.
@@ -425,9 +425,9 @@ func (o *QueriesItem) UnSetMitreTags() {
 }
 
 // GetKillChainPhase returns the KillChainPhase field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueriesItem) GetKillChainPhase() string {
+func (o *QueriesItem) GetKillChainPhase() []string {
 	if o == nil || o.KillChainPhase.Get() == nil {
-		var ret string
+		var ret []string
 		return ret
 	}
 	return *o.KillChainPhase.Get()
@@ -436,7 +436,7 @@ func (o *QueriesItem) GetKillChainPhase() string {
 // GetKillChainPhaseOk returns a tuple with the KillChainPhase field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *QueriesItem) GetKillChainPhaseOk() (*string, bool) {
+func (o *QueriesItem) GetKillChainPhaseOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -448,8 +448,8 @@ func (o *QueriesItem) HasKillChainPhase() bool {
 	return o != nil && o.KillChainPhase.IsSet()
 }
 
-// SetKillChainPhase gets a reference to the given common.NullableString and assigns it to the KillChainPhase field.
-func (o *QueriesItem) SetKillChainPhase(v string) {
+// SetKillChainPhase gets a reference to the given common.Nullable[]string and assigns it to the KillChainPhase field.
+func (o *QueriesItem) SetKillChainPhase(v []string) {
 	o.KillChainPhase.Set(&v)
 }
 
@@ -780,7 +780,7 @@ func (o *QueriesItem) UnMarshalJSON(bytes []byte) (err error) {
 		DateTimeRange        *DateTimeRange                      `json:"DateTimeRange,omitempty"`
 		Tags                 common.NullableList[string]         `json:"Tags,omitempty"`
 		MitreTags            common.NullableList[MitreTag]       `json:"MitreTags,omitempty"`
-		KillChainPhase       common.NullableString               `json:"KillChainPhase,omitempty"`
+		KillChainPhase       common.NullableList[string]         `json:"KillChainPhase,omitempty"`
 		FromMarket           *bool                               `json:"FromMarket,omitempty"`
 		FromModules          *bool                               `json:"FromModules,omitempty"`
 		HasUpdate            *bool                               `json:"HasUpdate,omitempty"`

@@ -20,7 +20,7 @@ type SourceTypesClassificationDefination struct {
 	// MitreTags contains a list of MITRE tags associated with the classification.
 	MitreTags common.NullableList[MitreTag] `json:"MitreTags,omitempty"`
 	// KillChainPhase specifies the kill chain phase associated with the classification.
-	KillChainPhase common.NullableString `json:"KillChainPhase,omitempty"`
+	KillChainPhase common.NullableList[string] `json:"KillChainPhase,omitempty"`
 	// MitreCreationDate indicates the MITRE creation date of the classification.
 	MitreCreationDate common.NullableString `json:"MitreCreationDate,omitempty"`
 	// FromMarket specifies if the classification is from the market.
@@ -203,9 +203,9 @@ func (o *SourceTypesClassificationDefination) UnSetMitreTags() {
 }
 
 // GetKillChainPhase returns the KillChainPhase field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourceTypesClassificationDefination) GetKillChainPhase() string {
+func (o *SourceTypesClassificationDefination) GetKillChainPhase() []string {
 	if o == nil || o.KillChainPhase.Get() == nil {
-		var ret string
+		var ret []string
 		return ret
 	}
 	return *o.KillChainPhase.Get()
@@ -214,20 +214,20 @@ func (o *SourceTypesClassificationDefination) GetKillChainPhase() string {
 // GetKillChainPhaseOk returns a tuple with the KillChainPhase field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourceTypesClassificationDefination) GetKillChainPhaseOk() (*string, bool) {
+func (o *SourceTypesClassificationDefination) GetKillChainPhaseOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
 	return o.KillChainPhase.Get(), o.KillChainPhase.IsSet()
 }
 
-// HasKillChainPhase returns a boolean if a field has been set.
+// HasKillChainPhase returns a boolean if a KillChainPhase has been set.
 func (o *SourceTypesClassificationDefination) HasKillChainPhase() bool {
 	return o != nil && o.KillChainPhase.IsSet()
 }
 
-// SetKillChainPhase gets a reference to the given common.NullableString and assigns it to the KillChainPhase field.
-func (o *SourceTypesClassificationDefination) SetKillChainPhase(v string) {
+// SetKillChainPhase gets a reference to the given common.Nullable[]string and assigns it to the KillChainPhase field.
+func (o *SourceTypesClassificationDefination) SetKillChainPhase(v []string) {
 	o.KillChainPhase.Set(&v)
 }
 
@@ -384,7 +384,7 @@ func (o *SourceTypesClassificationDefination) UnMarshalJSON(bytes []byte) (err e
 		Name              *string                       `json:"Name,omitempty"`
 		Severity          *string                       `json:"Severity,omitempty"`
 		MitreTags         common.NullableList[MitreTag] `json:"MitreTags,omitempty"`
-		KillChainPhase    common.NullableString         `json:"KillChainPhase,omitempty"`
+		KillChainPhase    common.NullableList[string]   `json:"KillChainPhase,omitempty"`
 		MitreCreationDate common.NullableString         `json:"MitreCreationDate,omitempty"`
 		FromMarket        *bool                         `json:"FromMarket,omitempty"`
 		FromModules       *bool                         `json:"FromModules,omitempty"`
