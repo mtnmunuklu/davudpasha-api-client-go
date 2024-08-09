@@ -19,7 +19,7 @@ type LookupsSearchResponse struct {
 	// Raw data of the lookup.
 	Data *json.RawMessage `json:"Data,omitempty"`
 	// Type of the lookup.
-	LookupType LookupType `json:"LookupType,omitempty"`
+	LookupType LookupsLookupType `json:"LookupType,omitempty"`
 	// Columns of the lookup.
 	Columns []string `json:"Columns,omitempty"`
 	// Count of results matching the lookup criteria.
@@ -212,9 +212,9 @@ func (o *LookupsSearchResponse) SetData(v json.RawMessage) {
 }
 
 // GetLookupType returns the LookupType field value if set, zero value otherwise.
-func (o *LookupsSearchResponse) GetLookupType() LookupType {
+func (o *LookupsSearchResponse) GetLookupType() LookupsLookupType {
 	if o == nil {
-		var ret LookupType
+		var ret LookupsLookupType
 		return ret
 	}
 	return o.LookupType
@@ -222,7 +222,7 @@ func (o *LookupsSearchResponse) GetLookupType() LookupType {
 
 // GetLookupTypeOk returns a tuple with the LookupType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LookupsSearchResponse) GetLookupTypeOk() (*LookupType, bool) {
+func (o *LookupsSearchResponse) GetLookupTypeOk() (*LookupsLookupType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -230,7 +230,7 @@ func (o *LookupsSearchResponse) GetLookupTypeOk() (*LookupType, bool) {
 }
 
 // SetLookupType gets a reference to the given string and assigns it to the LookupType field.
-func (o *LookupsSearchResponse) SetLookupType(v LookupType) {
+func (o *LookupsSearchResponse) SetLookupType(v LookupsLookupType) {
 	o.LookupType = v
 }
 
@@ -366,7 +366,7 @@ func (o *LookupsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 		Description       common.NullableString `json:"Description,omitempty"`
 		OtherValues       common.NullableString `json:"OtherValues,omitempty"`
 		Data              *json.RawMessage      `json:"Data,omitempty"`
-		LookupType        *LookupType           `json:"LookupType,omitempty"`
+		LookupType        *LookupsLookupType    `json:"LookupType,omitempty"`
 		Columns           []string              `json:"Columns,omitempty"`
 		Count             *int64                `json:"Count,omitempty"`
 		LastExecutionTime *string               `json:"LastExecutionTime,omitempty"`
