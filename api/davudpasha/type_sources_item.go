@@ -62,7 +62,7 @@ type SourcesItem struct {
 	// Indicates if a secondary writer should be used.
 	UseSecondaryWriter *bool `json:"UseSecondaryWriter,omitempty"`
 	// Parallel options for the source item.
-	ParallelOptions *ParallelOptions `json:"ParallelOptions,omitempty"`
+	ParallelOptions *SourcesParallelOptions `json:"ParallelOptions,omitempty"`
 	// Block count for the source item.
 	BlockCount *int64 `json:"BlockCount,omitempty"`
 	// Schedule configuration for the source item.
@@ -924,9 +924,9 @@ func (o *SourcesItem) SetUseSecondaryWriter(v bool) {
 }
 
 // GetParallelOptions returns the ParallelOptions field value if set, zero value otherwise.
-func (o *SourcesItem) GetParallelOptions() ParallelOptions {
+func (o *SourcesItem) GetParallelOptions() SourcesParallelOptions {
 	if o == nil || o.ParallelOptions == nil {
-		var ret ParallelOptions
+		var ret SourcesParallelOptions
 		return ret
 	}
 	return *o.ParallelOptions
@@ -934,7 +934,7 @@ func (o *SourcesItem) GetParallelOptions() ParallelOptions {
 
 // GetParallelOptionsOk returns a tuple with the ParallelOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItem) GetParallelOptionsOk() (*ParallelOptions, bool) {
+func (o *SourcesItem) GetParallelOptionsOk() (*SourcesParallelOptions, bool) {
 	if o == nil || o.ParallelOptions == nil {
 		return nil, false
 	}
@@ -947,7 +947,7 @@ func (o *SourcesItem) HasParallelOptions() bool {
 }
 
 // SetParallelOptions gets a reference to the given ParallelOptions and assigns it to the ParallelOptions field.
-func (o *SourcesItem) SetParallelOptions(v ParallelOptions) {
+func (o *SourcesItem) SetParallelOptions(v SourcesParallelOptions) {
 	o.ParallelOptions = &v
 }
 
@@ -1243,7 +1243,7 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 		AgentID             common.NullableString       `json:"AgentId,omitempty"`
 		WriteRawLogs        *bool                       `json:"WriteRawLogs,omitempty"`
 		UseSecondaryWriter  *bool                       `json:"UseSecondaryWriter,omitempty"`
-		ParallelOptions     *ParallelOptions            `json:"ParallelOptions,omitempty"`
+		ParallelOptions     *SourcesParallelOptions     `json:"ParallelOptions,omitempty"`
 		BlockCount          *int64                      `json:"BlockCount,omitempty"`
 		ScheduleConfig      NullableScheduleConfig      `json:"ScheduleConfig,omitempty"`
 		StoreRawLogs        *bool                       `json:"StoreRawLogs,omitempty"`
