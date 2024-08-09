@@ -28,11 +28,11 @@ func main() {
 	apiClient := common.NewAPIClient(configuration)
 	api := davudpasha.NewQueriesApi(apiClient)
 
-	searcBody := davudpasha.QueriesSearchRequest{
+	searchBody := davudpasha.QueriesSearchRequest{
 		Filter:                  common.PtrString("test-query"),
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
-	searchResp, r, err := api.SearchQueries(ctx, *davudpasha.NewSearchQueriesOptionalParameters().WithBody(searcBody))
+	searchResp, r, err := api.SearchQueries(ctx, *davudpasha.NewSearchQueriesOptionalParameters().WithBody(searchBody))
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QueriesApi.SearchQueries`: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
