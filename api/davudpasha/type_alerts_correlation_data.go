@@ -16,9 +16,9 @@ type AlertsCorrelationData struct {
 	// Name of the correlation.
 	Name *string `json:"Name,omitempty"`
 	// Description of the correlation.
-	Description *string `json:"Description,omitempty"`
+	Description common.NullableString `json:"Description,omitempty"`
 	// Tags associated with the correlation.
-	Tags []string `json:"Tags,omitempty"`
+	Tags common.NullableList[string] `json:"Tags,omitempty"`
 	// Whether the correlation is from the market.
 	FromMarket *bool `json:"FromMarket,omitempty"`
 	// Whether the correlation is from modules.
@@ -34,9 +34,9 @@ type AlertsCorrelationData struct {
 	// Maximum alert count.
 	MaxAlertCount *int64 `json:"MaxAlertCount,omitempty"`
 	// Time frame type for limiter.
-	LimiterTimeFrameType *string `json:"LimiterTimeFrameType,omitempty"`
+	LimiterTimeFrameType common.NullableString `json:"LimiterTimeFrameType,omitempty"`
 	// Time frame value for limiter.
-	LimiterTimeFrameValue *int64 `json:"LimiterTimeFrameValue,omitempty"`
+	LimiterTimeFrameValue common.NullableInt64 `json:"LimiterTimeFrameValue,omitempty"`
 	// Columns used for limiting.
 	LimiterColumns common.NullableList[string] `json:"LimiterColumns,omitempty"`
 	// Actions related to the correlation.
@@ -44,13 +44,15 @@ type AlertsCorrelationData struct {
 	// Maximum send count.
 	MaxSendCount *int64 `json:"MaxSendCount,omitempty"`
 	// Raw data in JSON format.
-	Data *json.RawMessage `json:"Data,omitempty"`
+	Data *AlertsQueryData `json:"Data,omitempty"`
 	// Type of correlation.
-	CorrelationType *string `json:"CorrelationType,omitempty"`
+	CorrelationType AlertsCorrelationType `json:"CorrelationType,omitempty"`
 	// Message of the correlation.
 	Message *string `json:"Message,omitempty"`
 	// Columns grouped by the correlation.
 	GroupedColumns []string `json:"GroupedColumns,omitempty"`
+	// Options for columns that can be grouped.
+	GroupedColumnsOptions []SelectedColumn `json:"GroupedColumnsOptions,omitempty"`
 	// Version of the correlation.
 	Version *float64 `json:"Version,omitempty"`
 	// Raw value if deserialization fails.
@@ -160,60 +162,83 @@ func (o *AlertsCorrelationData) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlertsCorrelationData) GetDescription() string {
-	if o == nil || o.Description == nil {
+	if o == nil || o.Description.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
 func (o *AlertsCorrelationData) GetDescriptionOk() (*string, bool) {
-	if o == nil || o.Description == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AlertsCorrelationData) HasDescription() bool {
-	return o != nil && o.Description != nil
+	return o != nil && o.Description.IsSet()
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given common.NullableString and assigns it to the Description field.
 func (o *AlertsCorrelationData) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetTags returns the Tags field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetTags() []string {
-	if o == nil || o.Tags == nil {
-		var ret []string
-		return ret
+// SetDescriptionNil sets the value for Description to be an explicit nil.
+func (o *AlertsCorrelationData) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnSetDescription ensures that no value is present for Description, not even an explicit nil.
+func (o *AlertsCorrelationData) UnSetDescription() {
+	o.Description.UnSet()
+}
+
+// GetTags returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
+func (o *AlertsCorrelationData) GetTags() (*[]string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Tags
+	return o.Tags.Get(), o.Tags.IsSet()
 }
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
 func (o *AlertsCorrelationData) GetTagsOk() (*[]string, bool) {
-	if o == nil || o.Tags == nil {
+	if o == nil {
 		return nil, false
 	}
-	return &o.Tags, true
+	return o.Tags.Get(), o.Tags.IsSet()
 }
 
-// HasTags returns a boolean if a field has been set.
+// HasTags returns a boolean if a Tags has been set.
 func (o *AlertsCorrelationData) HasTags() bool {
-	return o != nil && o.Tags != nil
+	return o != nil && o.Tags.IsSet()
 }
 
-// SetTags gets a reference to the given []string and assigns it to the Tags field.
+// SetTags gets a reference to the given common.Nullable[]string and assigns it to the Tags field.
 func (o *AlertsCorrelationData) SetTags(v []string) {
-	o.Tags = v
+	o.Tags.Set(&v)
+}
+
+// SetTagsNil sets the value for Tags to be an explicit nil.
+func (o *AlertsCorrelationData) SetTagsNil() {
+	o.Tags.Set(nil)
+}
+
+// UnSetTags ensures that no value is present for Tags, not even an explicit nil.
+func (o *AlertsCorrelationData) UnSetTags() {
+	o.Tags.UnSet()
 }
 
 // GetFromMarket returns the FromMarket field value if set, zero value otherwise.
@@ -434,60 +459,43 @@ func (o *AlertsCorrelationData) SetMaxAlertCount(v int64) {
 	o.MaxAlertCount = &v
 }
 
-// GetLimiterTimeFrameType returns the LimiterTimeFrameType field value if set, zero value otherwise.
+// GetLimiterTimeFrameType returns the LimiterTimeFrameType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlertsCorrelationData) GetLimiterTimeFrameType() string {
-	if o == nil || o.LimiterTimeFrameType == nil {
+	if o == nil || o.LimiterTimeFrameType.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.LimiterTimeFrameType
+	return *o.LimiterTimeFrameType.Get()
 }
 
 // GetLimiterTimeFrameTypeOk returns a tuple with the LimiterTimeFrameType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
 func (o *AlertsCorrelationData) GetLimiterTimeFrameTypeOk() (*string, bool) {
-	if o == nil || o.LimiterTimeFrameType == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.LimiterTimeFrameType, true
+	return o.LimiterTimeFrameType.Get(), o.LimiterTimeFrameType.IsSet()
 }
 
 // HasLimiterTimeFrameType returns a boolean if a field has been set.
 func (o *AlertsCorrelationData) HasLimiterTimeFrameType() bool {
-	return o != nil && o.LimiterTimeFrameType != nil
+	return o != nil && o.LimiterTimeFrameType.IsSet()
 }
 
-// SetLimiterTimeFrameType gets a reference to the given string and assigns it to the LimiterTimeFrameType field.
+// SetLimiterTimeFrameType gets a reference to the given common.NullableString and assigns it to the LimiterTimeFrameType field.
 func (o *AlertsCorrelationData) SetLimiterTimeFrameType(v string) {
-	o.LimiterTimeFrameType = &v
+	o.LimiterTimeFrameType.Set(&v)
 }
 
-// GetLimiterTimeFrameValue returns the LimiterTimeFrameValue field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetLimiterTimeFrameValue() int64 {
-	if o == nil || o.LimiterTimeFrameValue == nil {
-		var ret int64
-		return ret
-	}
-	return *o.LimiterTimeFrameValue
+// SetLimiterTimeFrameTypeNil sets the value for LimiterTimeFrameType to be an explicit nil.
+func (o *AlertsCorrelationData) SetLimiterTimeFrameTypeNil() {
+	o.LimiterTimeFrameType.Set(nil)
 }
 
-// GetLimiterTimeFrameValueOk returns a tuple with the LimiterTimeFrameValue field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetLimiterTimeFrameValueOk() (*int64, bool) {
-	if o == nil || o.LimiterTimeFrameValue == nil {
-		return nil, false
-	}
-	return o.LimiterTimeFrameValue, true
-}
-
-// HasLimiterTimeFrameValue returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasLimiterTimeFrameValue() bool {
-	return o != nil && o.LimiterTimeFrameValue != nil
-}
-
-// SetLimiterTimeFrameValue gets a reference to the given int64 and assigns it to the LimiterTimeFrameValue field.
-func (o *AlertsCorrelationData) SetLimiterTimeFrameValue(v int64) {
-	o.LimiterTimeFrameValue = &v
+// UnSetLimiterTimeFrameType ensures that no value is present for LimiterTimeFrameType, not even an explicit nil.
+func (o *AlertsCorrelationData) UnSetLimiterTimeFrameType() {
+	o.LimiterTimeFrameType.UnSet()
 }
 
 // GetLimiterColumns returns a tuple with the LimiterColumns field value if set, nil otherwise
@@ -587,9 +595,9 @@ func (o *AlertsCorrelationData) SetMaxSendCount(v int64) {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetData() json.RawMessage {
+func (o *AlertsCorrelationData) GetData() AlertsQueryData {
 	if o == nil || o.Data == nil {
-		var ret json.RawMessage
+		var ret AlertsQueryData
 		return ret
 	}
 	return *o.Data
@@ -597,7 +605,7 @@ func (o *AlertsCorrelationData) GetData() json.RawMessage {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetDataOk() (*json.RawMessage, bool) {
+func (o *AlertsCorrelationData) GetDataOk() (*AlertsQueryData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -609,37 +617,32 @@ func (o *AlertsCorrelationData) HasData() bool {
 	return o != nil && o.Data != nil
 }
 
-// SetData gets a reference to the given json.RawMessage and assigns it to the Data field.
-func (o *AlertsCorrelationData) SetData(v json.RawMessage) {
+// SetData gets a reference to the given AlertsQueryData and assigns it to the Data field.
+func (o *AlertsCorrelationData) SetData(v AlertsQueryData) {
 	o.Data = &v
 }
 
 // GetCorrelationType returns the CorrelationType field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetCorrelationType() string {
-	if o == nil || o.CorrelationType == nil {
-		var ret string
+func (o *AlertsCorrelationData) GetCorrelationType() AlertsCorrelationType {
+	if o == nil {
+		var ret AlertsCorrelationType
 		return ret
 	}
-	return *o.CorrelationType
+	return o.CorrelationType
 }
 
 // GetCorrelationTypeOk returns a tuple with the CorrelationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetCorrelationTypeOk() (*string, bool) {
-	if o == nil || o.CorrelationType == nil {
+func (o *AlertsCorrelationData) GetCorrelationTypeOk() (*AlertsCorrelationType, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CorrelationType, true
-}
-
-// HasCorrelationType returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasCorrelationType() bool {
-	return o != nil && o.CorrelationType != nil
+	return &o.CorrelationType, true
 }
 
 // SetCorrelationType gets a reference to the given string and assigns it to the CorrelationType field.
-func (o *AlertsCorrelationData) SetCorrelationType(v string) {
-	o.CorrelationType = &v
+func (o *AlertsCorrelationData) SetCorrelationType(v AlertsCorrelationType) {
+	o.CorrelationType = v
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise.
@@ -698,6 +701,34 @@ func (o *AlertsCorrelationData) SetGroupedColumns(v []string) {
 	o.GroupedColumns = v
 }
 
+// GetGroupedColumnsOptions returns the GroupedColumnsOptions field value if set, zero value otherwise.
+func (o *AlertsCorrelationData) GetGroupedColumnsOptions() []SelectedColumn {
+	if o == nil || o.GroupedColumnsOptions == nil {
+		var ret []SelectedColumn
+		return ret
+	}
+	return o.GroupedColumnsOptions
+}
+
+// GetGroupedColumnsOptionsOk returns a tuple with the GroupedColumnsOptions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AlertsCorrelationData) GetGroupedColumnsOptionsOk() (*[]SelectedColumn, bool) {
+	if o == nil || o.GroupedColumnsOptions == nil {
+		return nil, false
+	}
+	return &o.GroupedColumnsOptions, true
+}
+
+// HasGroupedColumnsOptions returns a boolean if a field has been set.
+func (o *AlertsCorrelationData) HasGroupedColumnsOptions() bool {
+	return o != nil && o.GroupedColumnsOptions != nil
+}
+
+// SetGroupedColumnsOptions gets a reference to the given []SelectedColumn and assigns it to the GroupedColumnsOptions field.
+func (o *AlertsCorrelationData) SetGroupedColumnsOptions(v []SelectedColumn) {
+	o.GroupedColumnsOptions = v
+}
+
 // GetVersion returns the Version field value if set, zero value otherwise.
 func (o *AlertsCorrelationData) GetVersion() float64 {
 	if o == nil || o.Version == nil {
@@ -741,11 +772,11 @@ func (o AlertsCorrelationData) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["Name"] = o.Name
 	}
-	if o.Description != nil {
-		toSerialize["Description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["Description"] = o.Description.Get()
 	}
-	if o.Tags != nil {
-		toSerialize["Tags"] = o.Tags
+	if o.Tags.IsSet() {
+		toSerialize["Tags"] = o.Tags.Get()
 	}
 	if o.FromMarket != nil {
 		toSerialize["FromMarket"] = o.FromMarket
@@ -768,11 +799,11 @@ func (o AlertsCorrelationData) MarshalJSON() ([]byte, error) {
 	if o.MaxAlertCount != nil {
 		toSerialize["MaxAlertCount"] = o.MaxAlertCount
 	}
-	if o.LimiterTimeFrameType != nil {
-		toSerialize["LimiterTimeFrameType"] = o.LimiterTimeFrameType
+	if o.LimiterTimeFrameType.IsSet() {
+		toSerialize["LimiterTimeFrameType"] = o.LimiterTimeFrameType.Get()
 	}
-	if o.LimiterTimeFrameValue != nil {
-		toSerialize["LimiterTimeFrameValue"] = o.LimiterTimeFrameValue
+	if o.LimiterTimeFrameValue.IsSet() {
+		toSerialize["LimiterTimeFrameValue"] = o.LimiterTimeFrameValue.Get()
 	}
 	if o.LimiterColumns.IsSet() {
 		toSerialize["LimiterColumns"] = o.LimiterColumns.Get()
@@ -786,7 +817,7 @@ func (o AlertsCorrelationData) MarshalJSON() ([]byte, error) {
 	if o.Data != nil {
 		toSerialize["Data"] = o.Data
 	}
-	if o.CorrelationType != nil {
+	if o.CorrelationType.IsValid() {
 		toSerialize["CorrelationType"] = o.CorrelationType
 	}
 	if o.Message != nil {
@@ -794,6 +825,9 @@ func (o AlertsCorrelationData) MarshalJSON() ([]byte, error) {
 	}
 	if o.GroupedColumns != nil {
 		toSerialize["GroupedColumns"] = o.GroupedColumns
+	}
+	if o.GroupedColumnsOptions != nil {
+		toSerialize["GroupedColumnsOptions"] = o.GroupedColumnsOptions
 	}
 	if o.Version != nil {
 		toSerialize["Version"] = o.Version
@@ -811,8 +845,8 @@ func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 		ID                    *string                     `json:"Id,omitempty"`
 		Enabled               *bool                       `json:"Enabled,omitempty"`
 		Name                  *string                     `json:"Name,omitempty"`
-		Description           *string                     `json:"Description,omitempty"`
-		Tags                  []string                    `json:"Tags,omitempty"`
+		Description           common.NullableString       `json:"Description,omitempty"`
+		Tags                  common.NullableList[string] `json:"Tags,omitempty"`
 		FromMarket            *bool                       `json:"FromMarket,omitempty"`
 		FromModules           *bool                       `json:"FromModules,omitempty"`
 		HasUpdate             *bool                       `json:"HasUpdate,omitempty"`
@@ -820,22 +854,20 @@ func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 		ModuleGUID            common.NullableString       `json:"ModuleGuid,omitempty"`
 		RiskLevel             *int64                      `json:"RiskLevel,omitempty"`
 		MaxAlertCount         *int64                      `json:"MaxAlertCount,omitempty"`
-		LimiterTimeFrameType  *string                     `json:"LimiterTimeFrameType,omitempty"`
-		LimiterTimeFrameValue *int64                      `json:"LimiterTimeFrameValue,omitempty"`
+		LimiterTimeFrameType  common.NullableString       `json:"LimiterTimeFrameType,omitempty"`
+		LimiterTimeFrameValue common.NullableInt64        `json:"LimiterTimeFrameValue,omitempty"`
 		LimiterColumns        common.NullableList[string] `json:"LimiterColumns,omitempty"`
 		Actions               *Actions                    `json:"Actions,omitempty"`
 		MaxSendCount          *int64                      `json:"MaxSendCount,omitempty"`
-		Data                  *json.RawMessage            `json:"Data,omitempty"`
-		CorrelationType       *string                     `json:"CorrelationType,omitempty"`
+		Data                  *AlertsQueryData            `json:"Data,omitempty"`
+		CorrelationType       *AlertsCorrelationType      `json:"CorrelationType,omitempty"`
 		Message               *string                     `json:"Message,omitempty"`
 		GroupedColumns        []string                    `json:"GroupedColumns,omitempty"`
+		GroupedColumnsOptions []SelectedColumn            `json:"GroupedColumnsOptions,omitempty"`
 		Version               *float64                    `json:"Version,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
-	}
-	if all.ID == nil {
-		return fmt.Errorf("requiered field Id is missing")
 	}
 	if all.Name == nil {
 		return fmt.Errorf("requiered field Name is missing")
@@ -843,9 +875,12 @@ func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 	if all.Message == nil {
 		return fmt.Errorf("requiered field Message is missing")
 	}
+	if all.CorrelationType == nil {
+		return fmt.Errorf("requiered field CorrelationType is missing")
+	}
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"Id", "Enabled", "Name", "Query", "Description", "Tags", "FromMarket", "FromModules", "HasUpdate", "ModuleId", "ModuleGuid", "RiskLevel", "MaxAlertCount", "LimiterTimeFrameType", "LimiterTimeFrameValue", "LimiterColumns", "Actions", "MaxSendCount", "Data", "CorrelationType", "Message", "GroupedColumns", "Version"})
+		common.DeleteKeys(additionalProperties, &[]string{"Id", "Enabled", "Name", "Query", "Description", "Tags", "FromMarket", "FromModules", "HasUpdate", "ModuleId", "ModuleGuid", "RiskLevel", "MaxAlertCount", "LimiterTimeFrameType", "LimiterTimeFrameValue", "LimiterColumns", "Actions", "MaxSendCount", "Data", "CorrelationType", "Message", "GroupedColumns", "GroupedColumnsOptions", "Version"})
 	} else {
 		return err
 	}
@@ -872,9 +907,14 @@ func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 	o.Actions = all.Actions
 	o.MaxSendCount = all.MaxSendCount
 	o.Data = all.Data
-	o.CorrelationType = all.CorrelationType
+	if !all.CorrelationType.IsValid() {
+		hasInvalidField = true
+	} else {
+		o.CorrelationType = *all.CorrelationType
+	}
 	o.Message = all.Message
 	o.GroupedColumns = all.GroupedColumns
+	o.GroupedColumnsOptions = all.GroupedColumnsOptions
 	o.Version = all.Version
 
 	if len(additionalProperties) > 0 {
