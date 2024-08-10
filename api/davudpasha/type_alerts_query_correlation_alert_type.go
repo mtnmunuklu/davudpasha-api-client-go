@@ -11,11 +11,15 @@ type AlertsQueryCorrelationAlertType string
 // Allowed values for AlertsQueryCorrelationAlertType.
 const (
 	QUERYCORRELATIONALERTTYPE_WHENONEORMOREROW AlertsQueryCorrelationAlertType = "WhenOneOrMoreRow"
+	QUERYCORRELATIONALERTTYPE_WHENNOROW        AlertsQueryCorrelationAlertType = "WhenNoRow"
+	QUERYCORRELATIONALERTTYPE_ALERTFOREACHROW  AlertsQueryCorrelationAlertType = "AlertForEachRow"
 )
 
 // allowedQueryCorrelationAlertEnumValues contains the allowed values for AlertsQueryCorrelationAlertType.
 var allowedQueryCorrelationAlertEnumValues = []AlertsQueryCorrelationAlertType{
 	QUERYCORRELATIONALERTTYPE_WHENONEORMOREROW,
+	QUERYCORRELATIONALERTTYPE_WHENNOROW,
+	QUERYCORRELATIONALERTTYPE_ALERTFOREACHROW,
 }
 
 // GetAllowedValues returns the list of possible values.

@@ -26,7 +26,7 @@ type QueriesItem struct {
 	// Date of the last update to the query.
 	LastUpdateDate *string `json:"LastUpdateDate,omitempty"`
 	// Type of the query.
-	QueryType *string `json:"QueryType,omitempty"`
+	QueryType QueriesQueryType `json:"QueryType,omitempty"`
 	// Date-time range for the query.
 	DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
 	// Tags associated with the query.
@@ -291,31 +291,26 @@ func (o *QueriesItem) SetLastUpdateDate(v string) {
 }
 
 // GetQueryType returns the QueryType field value if set, zero value otherwise.
-func (o *QueriesItem) GetQueryType() string {
-	if o == nil || o.QueryType == nil {
-		var ret string
+func (o *QueriesItem) GetQueryType() QueriesQueryType {
+	if o == nil {
+		var ret QueriesQueryType
 		return ret
 	}
-	return *o.QueryType
+	return o.QueryType
 }
 
 // GetQueryTypeOk returns a tuple with the QueryType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueriesItem) GetQueryTypeOk() (*string, bool) {
-	if o == nil || o.QueryType == nil {
+func (o *QueriesItem) GetQueryTypeOk() (*QueriesQueryType, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.QueryType, true
-}
-
-// HasQueryType returns a boolean if a field has been set.
-func (o *QueriesItem) HasQueryType() bool {
-	return o != nil && o.QueryType != nil
+	return &o.QueryType, true
 }
 
 // SetQueryType gets a reference to the given string and assigns it to the QueryType field.
-func (o *QueriesItem) SetQueryType(v string) {
-	o.QueryType = &v
+func (o *QueriesItem) SetQueryType(v QueriesQueryType) {
+	o.QueryType = v
 }
 
 // GetDateTimeRange returns the DateTimeRange field value if set, zero value otherwise.
@@ -722,7 +717,7 @@ func (o QueriesItem) MarshalJSON() ([]byte, error) {
 	if o.LastUpdateDate != nil {
 		toSerialize["LastUpdateDate"] = o.LastUpdateDate
 	}
-	if o.QueryType != nil {
+	if o.QueryType.IsValid() {
 		toSerialize["QueryType"] = o.QueryType
 	}
 	if o.DateTimeRange != nil {
@@ -776,7 +771,7 @@ func (o *QueriesItem) UnMarshalJSON(bytes []byte) (err error) {
 		Author               *string                             `json:"Author,omitempty"`
 		InsertDate           *string                             `json:"InsertDate,omitempty"`
 		LastUpdateDate       *string                             `json:"LastUpdateDate,omitempty"`
-		QueryType            *string                             `json:"QueryType,omitempty"`
+		QueryType            *QueriesQueryType                   `json:"QueryType,omitempty"`
 		DateTimeRange        *DateTimeRange                      `json:"DateTimeRange,omitempty"`
 		Tags                 common.NullableList[string]         `json:"Tags,omitempty"`
 		MitreTags            common.NullableList[MitreTag]       `json:"MitreTags,omitempty"`
@@ -821,7 +816,11 @@ func (o *QueriesItem) UnMarshalJSON(bytes []byte) (err error) {
 	o.Author = all.Author
 	o.InsertDate = all.InsertDate
 	o.LastUpdateDate = all.LastUpdateDate
-	o.QueryType = all.QueryType
+	if !all.QueryType.IsValid() {
+		hasInvalidField = true
+	} else {
+		o.QueryType = *all.QueryType
+	}
 	o.Tags = all.Tags
 	o.MitreTags = all.MitreTags
 	o.KillChainPhase = all.KillChainPhase

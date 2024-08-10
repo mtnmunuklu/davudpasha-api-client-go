@@ -11,11 +11,17 @@ type AlertsTimeFrameType string
 // Allowed values for AlertsTimeFrameType.
 const (
 	TIMEFRAMETYPE_MINUTES AlertsTimeFrameType = "minutes"
+	TIMEFRAMETYPE_HOURS   AlertsTimeFrameType = "hours"
+	TIMEFRAMETYPE_DAYS    AlertsTimeFrameType = "days"
+	TIMEFRAMETYPE_WEEKS   AlertsTimeFrameType = "weeks"
 )
 
 // allowedTimeFrameEnumValues contains the allowed values for AlertsTimeFrameType.
 var allowedTimeFrameEnumValues = []AlertsTimeFrameType{
 	TIMEFRAMETYPE_MINUTES,
+	TIMEFRAMETYPE_HOURS,
+	TIMEFRAMETYPE_DAYS,
+	TIMEFRAMETYPE_WEEKS,
 }
 
 // GetAllowedValues returns the list of possible values.
