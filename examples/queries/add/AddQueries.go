@@ -29,7 +29,7 @@ func main() {
 			},
 			Description: *common.NewNullableString(common.PtrString("tes-description")),
 			Query:       common.PtrString("sourcetype='windows-security' eql select * from _source_ where _condition_"),
-			QueryType:   common.PtrString("Normal"),
+			QueryType:   davudpasha.QUERYTYPE_NORMAL,
 			Tags:        *common.NewNullableList(&[]string{"tag1", "tag2"}),
 			KillChainPhase: *common.NewNullableList(&[]string{
 				"Initial Access",
