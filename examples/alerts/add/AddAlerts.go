@@ -45,6 +45,7 @@ func main() {
 			Tags:          *common.NewNullableList(&[]string{"tag1", "tag2"}),
 			RiskLevel:     common.PtrInt64(3),
 			MaxAlertCount: common.PtrInt64(4),
+			MaxSendCount:  common.PtrInt64(10),
 			Data: &davudpasha.AlertsQueryData{
 				TimeFrameValue:            common.PtrInt64(5),
 				TimeFrameType:             davudpasha.TIMEFRAMETYPE_MINUTES,
@@ -53,6 +54,9 @@ func main() {
 				QueryID:                   queriesResp.Items[0].ID,
 				Query:                     queriesResp.Items[0].Query,
 			},
+			CorrelationType: davudpasha.CORRELATIONTYPE_INTERFACEIQUERYCORRELATION,
+			Message:         common.PtrString("test-alert"),
+			Version:         common.PtrFloat64(1.0),
 		},
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
