@@ -6,18 +6,20 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// ReportsSearchResponse represents a response from a report search operation.
-type ReportsSearchResponse struct {
+// ReportsItem represents a response from a report search operation.
+type ReportsItem struct {
 	// Date when the report was last modified.
 	ModifiedDate *string `json:"ModifiedDate,omitempty"`
 	// ID of the report.
 	ReportID *string `json:"ReportId,omitempty"`
+	// ID of the report.
+	ID *string `json:"ID,omitempty"`
 	// Username associated with the report.
 	Username *string `json:"Username,omitempty"`
 	// Name of the report.
 	Name *string `json:"Name,omitempty"`
 	// Description of the report.
-	Description *string `json:"Description,omitempty"`
+	Description common.NullableString `json:"Description,omitempty"`
 	// Indicates if the report is active.
 	IsActive *bool `json:"IsActive,omitempty"`
 	// Author of the report.
@@ -34,18 +36,20 @@ type ReportsSearchResponse struct {
 	ReportData *ReportsData `json:"ReportData,omitempty"`
 	// Schedule configuration for generating the report.
 	Schedule NullableScheduleConfig `json:"Schedule,omitempty"`
+	// Email configuration for the report.
+	EmailConfigs *ReportsEmailConfigs `json:"EmailConfigs,omitempty"`
 	// Date and time when the report was last generated.
 	LastGenerationTime common.NullableString `json:"LastGenerationTime,omitempty"`
 	// Date and time when the report is scheduled to be generated next.
 	NextGenerationTime common.NullableString `json:"NextGenerationTime,omitempty"`
 	// Latest file associated with the report.
-	LatestReportFile *ReportsLatestReportFile `json:"LatestReportFile,omitempty"`
+	LatestReportFile NullableReportsLatestReportFile `json:"LatestReportFile,omitempty"`
 	// Page settings for the report.
 	PageSettings common.NullableString `json:"PageSettings,omitempty"`
 	// Parameters for the report.
 	Parameters *ReportsParameters `json:"Parameters,omitempty"`
 	// Tags associated with the report.
-	Tags []string `json:"Tags,omitempty"`
+	Tags common.NullableList[string] `json:"Tags,omitempty"`
 	// Actions associated with the report.
 	Actions *Actions `json:"Actions,omitempty"`
 	// Filter for the module.
@@ -59,32 +63,33 @@ type ReportsSearchResponse struct {
 	// Filter for the sub-executor module.
 	SubExecutorModuleFilter *string `json:"SubExecutorModuleFilter,omitempty"`
 	// Version of the report.
-	Version *float64 `json:"Version,omitempty"`
+	Version        *float64 `json:"Version,omitempty"`
+	CheckBoxWeekly []string `json:"chechboxWeekly,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
-// NewReportsSearchResponse creates a new ReportsSearchResponse object.
+// NewReportsItem creates a new ReportsItem object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewReportsSearchResponse() *ReportsSearchResponse {
-	this := ReportsSearchResponse{}
+func NewReportsItem() *ReportsItem {
+	this := ReportsItem{}
 	return &this
 }
 
-// NewReportsSearchResponseWithDefaults creates a new ReportsSearchResponse object.
+// NewReportsItemWithDefaults creates a new ReportsItem object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewReportsSearchResponseWithDefaults() *ReportsSearchResponse {
-	this := ReportsSearchResponse{}
+func NewReportsItemWithDefaults() *ReportsItem {
+	this := ReportsItem{}
 	return &this
 }
 
 // GetModifiedDate returns the ModifiedDate field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetModifiedDate() string {
+func (o *ReportsItem) GetModifiedDate() string {
 	if o == nil || o.ModifiedDate == nil {
 		var ret string
 		return ret
@@ -94,7 +99,7 @@ func (o *ReportsSearchResponse) GetModifiedDate() string {
 
 // GetModifiedDateOk returns a tuple with the ModifiedDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetModifiedDateOk() (*string, bool) {
+func (o *ReportsItem) GetModifiedDateOk() (*string, bool) {
 	if o == nil || o.ModifiedDate == nil {
 		return nil, false
 	}
@@ -102,17 +107,17 @@ func (o *ReportsSearchResponse) GetModifiedDateOk() (*string, bool) {
 }
 
 // HasModifiedDate returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasModifiedDate() bool {
+func (o *ReportsItem) HasModifiedDate() bool {
 	return o != nil && o.ModifiedDate != nil
 }
 
 // SetModifiedDate gets a reference to the given string and assigns it to the ModifiedDate field.
-func (o *ReportsSearchResponse) SetModifiedDate(v string) {
+func (o *ReportsItem) SetModifiedDate(v string) {
 	o.ModifiedDate = &v
 }
 
 // GetReportID returns the ReportID field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetReportID() string {
+func (o *ReportsItem) GetReportID() string {
 	if o == nil || o.ReportID == nil {
 		var ret string
 		return ret
@@ -122,7 +127,7 @@ func (o *ReportsSearchResponse) GetReportID() string {
 
 // GetReportIDOk returns a tuple with the ReportID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetReportIDOk() (*string, bool) {
+func (o *ReportsItem) GetReportIDOk() (*string, bool) {
 	if o == nil || o.ReportID == nil {
 		return nil, false
 	}
@@ -130,17 +135,45 @@ func (o *ReportsSearchResponse) GetReportIDOk() (*string, bool) {
 }
 
 // HasReportID returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasReportID() bool {
+func (o *ReportsItem) HasReportID() bool {
 	return o != nil && o.ReportID != nil
 }
 
 // SetReportID gets a reference to the given string and assigns it to the ReportID field.
-func (o *ReportsSearchResponse) SetReportID(v string) {
+func (o *ReportsItem) SetReportID(v string) {
 	o.ReportID = &v
 }
 
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *ReportsItem) GetID() string {
+	if o == nil || o.ID == nil {
+		var ret string
+		return ret
+	}
+	return *o.ID
+}
+
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReportsItem) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
+		return nil, false
+	}
+	return o.ID, true
+}
+
+// HasID returns a boolean if a field has been set.
+func (o *ReportsItem) HasID() bool {
+	return o != nil && o.ID != nil
+}
+
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *ReportsItem) SetID(v string) {
+	o.ID = &v
+}
+
 // GetUsername returns the Username field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetUsername() string {
+func (o *ReportsItem) GetUsername() string {
 	if o == nil || o.Username == nil {
 		var ret string
 		return ret
@@ -150,7 +183,7 @@ func (o *ReportsSearchResponse) GetUsername() string {
 
 // GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetUsernameOk() (*string, bool) {
+func (o *ReportsItem) GetUsernameOk() (*string, bool) {
 	if o == nil || o.Username == nil {
 		return nil, false
 	}
@@ -158,17 +191,17 @@ func (o *ReportsSearchResponse) GetUsernameOk() (*string, bool) {
 }
 
 // HasUsername returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasUsername() bool {
+func (o *ReportsItem) HasUsername() bool {
 	return o != nil && o.Username != nil
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *ReportsSearchResponse) SetUsername(v string) {
+func (o *ReportsItem) SetUsername(v string) {
 	o.Username = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetName() string {
+func (o *ReportsItem) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -178,7 +211,7 @@ func (o *ReportsSearchResponse) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetNameOk() (*string, bool) {
+func (o *ReportsItem) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -186,45 +219,56 @@ func (o *ReportsSearchResponse) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasName() bool {
+func (o *ReportsItem) HasName() bool {
 	return o != nil && o.Name != nil
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ReportsSearchResponse) SetName(v string) {
+func (o *ReportsItem) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetDescription() string {
-	if o == nil || o.Description == nil {
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReportsItem) GetDescription() string {
+	if o == nil || o.Description.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || o.Description == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
+func (o *ReportsItem) GetDescriptionOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasDescription() bool {
-	return o != nil && o.Description != nil
+func (o *ReportsItem) HasDescription() bool {
+	return o != nil && o.Description.IsSet()
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *ReportsSearchResponse) SetDescription(v string) {
-	o.Description = &v
+// SetDescription gets a reference to the given common.NullableString and assigns it to the Description field.
+func (o *ReportsItem) SetDescription(v string) {
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil.
+func (o *ReportsItem) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnSetDescription ensures that no value is present for Description, not even an explicit nil.
+func (o *ReportsItem) UnSetDescription() {
+	o.Description.UnSet()
 }
 
 // GetIsActive returns the IsActive field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetIsActive() bool {
+func (o *ReportsItem) GetIsActive() bool {
 	if o == nil || o.IsActive == nil {
 		var ret bool
 		return ret
@@ -234,7 +278,7 @@ func (o *ReportsSearchResponse) GetIsActive() bool {
 
 // GetIsActiveOk returns a tuple with the IsActive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetIsActiveOk() (*bool, bool) {
+func (o *ReportsItem) GetIsActiveOk() (*bool, bool) {
 	if o == nil || o.IsActive == nil {
 		return nil, false
 	}
@@ -242,17 +286,17 @@ func (o *ReportsSearchResponse) GetIsActiveOk() (*bool, bool) {
 }
 
 // HasIsActive returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasIsActive() bool {
+func (o *ReportsItem) HasIsActive() bool {
 	return o != nil && o.IsActive != nil
 }
 
 // SetIsActive gets a reference to the given bool and assigns it to the IsActive field.
-func (o *ReportsSearchResponse) SetIsActive(v bool) {
+func (o *ReportsItem) SetIsActive(v bool) {
 	o.IsActive = &v
 }
 
 // GetAuthor returns the Author field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReportsSearchResponse) GetAuthor() string {
+func (o *ReportsItem) GetAuthor() string {
 	if o == nil || o.Author.Get() == nil {
 		var ret string
 		return ret
@@ -263,7 +307,7 @@ func (o *ReportsSearchResponse) GetAuthor() string {
 // GetAuthorOk returns a tuple with the Author field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *ReportsSearchResponse) GetAuthorOk() (*string, bool) {
+func (o *ReportsItem) GetAuthorOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -271,27 +315,27 @@ func (o *ReportsSearchResponse) GetAuthorOk() (*string, bool) {
 }
 
 // HasAuthor returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasAuthor() bool {
+func (o *ReportsItem) HasAuthor() bool {
 	return o != nil && o.Author.IsSet()
 }
 
 // SetAuthor gets a reference to the given common.NullableString and assigns it to the Author field.
-func (o *ReportsSearchResponse) SetAuthor(v string) {
+func (o *ReportsItem) SetAuthor(v string) {
 	o.Author.Set(&v)
 }
 
 // SetAuthorNil sets the value for Author to be an explicit nil.
-func (o *ReportsSearchResponse) SetAuthorNil() {
+func (o *ReportsItem) SetAuthorNil() {
 	o.Author.Set(nil)
 }
 
 // UnSetAuthor ensures that no value is present for Author, not even an explicit nil.
-func (o *ReportsSearchResponse) UnSetAuthor() {
+func (o *ReportsItem) UnSetAuthor() {
 	o.Author.UnSet()
 }
 
 // GetReportLink returns the ReportLink field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetReportLink() string {
+func (o *ReportsItem) GetReportLink() string {
 	if o == nil || o.ReportLink == nil {
 		var ret string
 		return ret
@@ -301,7 +345,7 @@ func (o *ReportsSearchResponse) GetReportLink() string {
 
 // GetReportLinkOk returns a tuple with the ReportLink field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetReportLinkOk() (*string, bool) {
+func (o *ReportsItem) GetReportLinkOk() (*string, bool) {
 	if o == nil || o.ReportLink == nil {
 		return nil, false
 	}
@@ -309,19 +353,19 @@ func (o *ReportsSearchResponse) GetReportLinkOk() (*string, bool) {
 }
 
 // HasReportLink returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasReportLink() bool {
+func (o *ReportsItem) HasReportLink() bool {
 	return o != nil && o.ReportLink != nil
 }
 
 // SetReportLink gets a reference to the given string and assigns it to the ReportLink field.
-func (o *ReportsSearchResponse) SetReportLink(v string) {
+func (o *ReportsItem) SetReportLink(v string) {
 	o.ReportLink = &v
 }
 
 // GetSharedUsersAndGroups returns a tuple with the SharedUsersAndGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *ReportsSearchResponse) GetSharedUsersAndGroups() (*[]string, bool) {
+func (o *ReportsItem) GetSharedUsersAndGroups() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -331,7 +375,7 @@ func (o *ReportsSearchResponse) GetSharedUsersAndGroups() (*[]string, bool) {
 // GetSharedUsersAndGroupsOk returns a tuple with the SharedUsersAndGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *ReportsSearchResponse) GetSharedUsersAndGroupsOk() (*[]string, bool) {
+func (o *ReportsItem) GetSharedUsersAndGroupsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -339,27 +383,27 @@ func (o *ReportsSearchResponse) GetSharedUsersAndGroupsOk() (*[]string, bool) {
 }
 
 // HasSharedUsersAndGroups returns a boolean if a SharedUsersAndGroups has been set.
-func (o *ReportsSearchResponse) HasSharedUsersAndGroups() bool {
+func (o *ReportsItem) HasSharedUsersAndGroups() bool {
 	return o != nil && o.SharedUsersAndGroups.IsSet()
 }
 
 // SetSharedUsersAndGroups gets a reference to the given common.Nullable[]string and assigns it to the SharedUsersAndGroups field.
-func (o *ReportsSearchResponse) SetSharedUsersAndGroups(v []string) {
+func (o *ReportsItem) SetSharedUsersAndGroups(v []string) {
 	o.SharedUsersAndGroups.Set(&v)
 }
 
 // SetSharedUsersAndGroupsNil sets the value for SharedUsersAndGroups to be an explicit nil.
-func (o *ReportsSearchResponse) SetSharedUsersAndGroupsNil() {
+func (o *ReportsItem) SetSharedUsersAndGroupsNil() {
 	o.SharedUsersAndGroups.Set(nil)
 }
 
 // UnSetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
-func (o *ReportsSearchResponse) UnSetSharedUsersAndGroups() {
+func (o *ReportsItem) UnSetSharedUsersAndGroups() {
 	o.SharedUsersAndGroups.UnSet()
 }
 
 // GetCreatedDate returns the CreatedDate field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetCreatedDate() string {
+func (o *ReportsItem) GetCreatedDate() string {
 	if o == nil || o.CreatedDate == nil {
 		var ret string
 		return ret
@@ -369,7 +413,7 @@ func (o *ReportsSearchResponse) GetCreatedDate() string {
 
 // GetCreatedDateOk returns a tuple with the CreatedDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetCreatedDateOk() (*string, bool) {
+func (o *ReportsItem) GetCreatedDateOk() (*string, bool) {
 	if o == nil || o.CreatedDate == nil {
 		return nil, false
 	}
@@ -377,17 +421,17 @@ func (o *ReportsSearchResponse) GetCreatedDateOk() (*string, bool) {
 }
 
 // HasCreatedDate returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasCreatedDate() bool {
+func (o *ReportsItem) HasCreatedDate() bool {
 	return o != nil && o.CreatedDate != nil
 }
 
 // SetCreatedDate gets a reference to the given string and assigns it to the CreatedDate field.
-func (o *ReportsSearchResponse) SetCreatedDate(v string) {
+func (o *ReportsItem) SetCreatedDate(v string) {
 	o.CreatedDate = &v
 }
 
 // GetReportQuery returns the ReportQuery field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetReportQuery() []ReportsQuery {
+func (o *ReportsItem) GetReportQuery() []ReportsQuery {
 	if o == nil || o.ReportQuery == nil {
 		var ret []ReportsQuery
 		return ret
@@ -397,7 +441,7 @@ func (o *ReportsSearchResponse) GetReportQuery() []ReportsQuery {
 
 // GetReportQueryOk returns a tuple with the ReportQuery field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetReportQueryOk() (*[]ReportsQuery, bool) {
+func (o *ReportsItem) GetReportQueryOk() (*[]ReportsQuery, bool) {
 	if o == nil || o.ReportQuery == nil {
 		return nil, false
 	}
@@ -405,17 +449,17 @@ func (o *ReportsSearchResponse) GetReportQueryOk() (*[]ReportsQuery, bool) {
 }
 
 // HasReportQuery returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasReportQuery() bool {
+func (o *ReportsItem) HasReportQuery() bool {
 	return o != nil && o.ReportQuery != nil
 }
 
 // SetReportQuery gets a reference to the given []ReportsQuery and assigns it to the ReportQuery field.
-func (o *ReportsSearchResponse) SetReportQuery(v []ReportsQuery) {
+func (o *ReportsItem) SetReportQuery(v []ReportsQuery) {
 	o.ReportQuery = v
 }
 
 // GetReportData returns the ReportData field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetReportData() ReportsData {
+func (o *ReportsItem) GetReportData() ReportsData {
 	if o == nil || o.ReportData == nil {
 		var ret ReportsData
 		return ret
@@ -425,7 +469,7 @@ func (o *ReportsSearchResponse) GetReportData() ReportsData {
 
 // GetReportDataOk returns a tuple with the ReportData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetReportDataOk() (*ReportsData, bool) {
+func (o *ReportsItem) GetReportDataOk() (*ReportsData, bool) {
 	if o == nil || o.ReportData == nil {
 		return nil, false
 	}
@@ -433,17 +477,17 @@ func (o *ReportsSearchResponse) GetReportDataOk() (*ReportsData, bool) {
 }
 
 // HasReportData returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasReportData() bool {
+func (o *ReportsItem) HasReportData() bool {
 	return o != nil && o.ReportData != nil
 }
 
 // SetReportData gets a reference to the given ReportsData and assigns it to the ReportData field.
-func (o *ReportsSearchResponse) SetReportData(v ReportsData) {
+func (o *ReportsItem) SetReportData(v ReportsData) {
 	o.ReportData = &v
 }
 
 // GetSchedule returns the Schedule field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReportsSearchResponse) GetSchedule() ScheduleConfig {
+func (o *ReportsItem) GetSchedule() ScheduleConfig {
 	if o == nil || o.Schedule.Get() == nil {
 		var ret ScheduleConfig
 		return ret
@@ -454,7 +498,7 @@ func (o *ReportsSearchResponse) GetSchedule() ScheduleConfig {
 // GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *ReportsSearchResponse) GetScheduleOk() (*ScheduleConfig, bool) {
+func (o *ReportsItem) GetScheduleOk() (*ScheduleConfig, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -462,27 +506,55 @@ func (o *ReportsSearchResponse) GetScheduleOk() (*ScheduleConfig, bool) {
 }
 
 // HasSchedule returns a boolean if a Schedule has been set.
-func (o *ReportsSearchResponse) HasSchedule() bool {
+func (o *ReportsItem) HasSchedule() bool {
 	return o != nil && o.Schedule.IsSet()
 }
 
 // SetSchedule gets a reference to the given common.NullableScheduleConfig and assigns it to the Schedule field.
-func (o *ReportsSearchResponse) SetSchedule(v ScheduleConfig) {
+func (o *ReportsItem) SetSchedule(v ScheduleConfig) {
 	o.Schedule.Set(&v)
 }
 
 // SetScheduleNil sets the value for Schedule to be an explicit nil.
-func (o *ReportsSearchResponse) SetScheduleNil() {
+func (o *ReportsItem) SetScheduleNil() {
 	o.Schedule.Set(nil)
 }
 
 // UnSetSchedule ensures that no value is present for Schedule, not even an explicit nil.
-func (o *ReportsSearchResponse) UnSetSchedule() {
+func (o *ReportsItem) UnSetSchedule() {
 	o.Schedule.UnSet()
 }
 
+// GetEmailConfigs returns the EmailConfigs field value if set, zero value otherwise.
+func (o *ReportsItem) GetEmailConfigs() ReportsEmailConfigs {
+	if o == nil || o.EmailConfigs == nil {
+		var ret ReportsEmailConfigs
+		return ret
+	}
+	return *o.EmailConfigs
+}
+
+// GetEmailConfigsOk returns a tuple with the EmailConfigs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReportsItem) GetEmailConfigsOk() (*ReportsEmailConfigs, bool) {
+	if o == nil || o.EmailConfigs == nil {
+		return nil, false
+	}
+	return o.EmailConfigs, true
+}
+
+// HasEmailConfigs returns a boolean if a field has been set.
+func (o *ReportsItem) HasEmailConfigs() bool {
+	return o != nil && o.EmailConfigs != nil
+}
+
+// SetEmailConfigs gets a reference to the given ReportsEmailConfigs and assigns it to the EmailConfigs field.
+func (o *ReportsItem) SetEmailConfigs(v ReportsEmailConfigs) {
+	o.EmailConfigs = &v
+}
+
 // GetLastGenerationTime returns the LastGenerationTime field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReportsSearchResponse) GetLastGenerationTime() string {
+func (o *ReportsItem) GetLastGenerationTime() string {
 	if o == nil || o.LastGenerationTime.Get() == nil {
 		var ret string
 		return ret
@@ -493,7 +565,7 @@ func (o *ReportsSearchResponse) GetLastGenerationTime() string {
 // GetLastGenerationTimeOk returns a tuple with the LastGenerationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *ReportsSearchResponse) GetLastGenerationTimeOk() (*string, bool) {
+func (o *ReportsItem) GetLastGenerationTimeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -501,27 +573,27 @@ func (o *ReportsSearchResponse) GetLastGenerationTimeOk() (*string, bool) {
 }
 
 // HasLastGenerationTime returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasLastGenerationTime() bool {
+func (o *ReportsItem) HasLastGenerationTime() bool {
 	return o != nil && o.LastGenerationTime.IsSet()
 }
 
 // SetLastGenerationTime gets a reference to the given common.NullableString and assigns it to the LastGenerationTime field.
-func (o *ReportsSearchResponse) SetLastGenerationTime(v string) {
+func (o *ReportsItem) SetLastGenerationTime(v string) {
 	o.LastGenerationTime.Set(&v)
 }
 
 // SetLastGenerationTimeNil sets the value for LastGenerationTime to be an explicit nil.
-func (o *ReportsSearchResponse) SetLastGenerationTimeNil() {
+func (o *ReportsItem) SetLastGenerationTimeNil() {
 	o.LastGenerationTime.Set(nil)
 }
 
 // UnSetLastGenerationTime ensures that no value is present for LastGenerationTime, not even an explicit nil.
-func (o *ReportsSearchResponse) UnSetLastGenerationTime() {
+func (o *ReportsItem) UnSetLastGenerationTime() {
 	o.LastGenerationTime.UnSet()
 }
 
 // GetNextGenerationTime returns the NextGenerationTime field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReportsSearchResponse) GetNextGenerationTime() string {
+func (o *ReportsItem) GetNextGenerationTime() string {
 	if o == nil || o.NextGenerationTime.Get() == nil {
 		var ret string
 		return ret
@@ -532,7 +604,7 @@ func (o *ReportsSearchResponse) GetNextGenerationTime() string {
 // GetNextGenerationTimeOk returns a tuple with the NextGenerationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *ReportsSearchResponse) GetNextGenerationTimeOk() (*string, bool) {
+func (o *ReportsItem) GetNextGenerationTimeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -540,55 +612,66 @@ func (o *ReportsSearchResponse) GetNextGenerationTimeOk() (*string, bool) {
 }
 
 // HasNextGenerationTime returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasNextGenerationTime() bool {
+func (o *ReportsItem) HasNextGenerationTime() bool {
 	return o != nil && o.NextGenerationTime.IsSet()
 }
 
 // SetNextGenerationTime gets a reference to the given common.NullableString and assigns it to the NextGenerationTime field.
-func (o *ReportsSearchResponse) SetNextGenerationTime(v string) {
+func (o *ReportsItem) SetNextGenerationTime(v string) {
 	o.NextGenerationTime.Set(&v)
 }
 
 // SetNextGenerationTimeNil sets the value for NextGenerationTime to be an explicit nil.
-func (o *ReportsSearchResponse) SetNextGenerationTimeNil() {
+func (o *ReportsItem) SetNextGenerationTimeNil() {
 	o.NextGenerationTime.Set(nil)
 }
 
 // UnSetNextGenerationTime ensures that no value is present for NextGenerationTime, not even an explicit nil.
-func (o *ReportsSearchResponse) UnSetNextGenerationTime() {
+func (o *ReportsItem) UnSetNextGenerationTime() {
 	o.NextGenerationTime.UnSet()
 }
 
-// GetLatestReportFile returns the LatestReportFile field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetLatestReportFile() ReportsLatestReportFile {
-	if o == nil || o.LatestReportFile == nil {
+// GetLatestReportFile returns the LatestReportFile field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReportsItem) GetLatestReportFile() ReportsLatestReportFile {
+	if o == nil || o.LatestReportFile.Get() == nil {
 		var ret ReportsLatestReportFile
 		return ret
 	}
-	return *o.LatestReportFile
+	return *o.LatestReportFile.Get()
 }
 
 // GetLatestReportFileOk returns a tuple with the LatestReportFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetLatestReportFileOk() (*ReportsLatestReportFile, bool) {
-	if o == nil || o.LatestReportFile == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
+func (o *ReportsItem) GetLatestReportFileOk() (*ReportsLatestReportFile, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LatestReportFile, true
+	return o.LatestReportFile.Get(), o.LatestReportFile.IsSet()
 }
 
-// HasLatestReportFile returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasLatestReportFile() bool {
-	return o != nil && o.LatestReportFile != nil
+// HasLatestReportFile returns a boolean if a LatestReportFile has been set.
+func (o *ReportsItem) HasLatestReportFile() bool {
+	return o != nil && o.LatestReportFile.IsSet()
 }
 
-// SetLatestReportFile gets a reference to the given ReportsLatestReportFile and assigns it to the LatestReportFile field.
-func (o *ReportsSearchResponse) SetLatestReportFile(v ReportsLatestReportFile) {
-	o.LatestReportFile = &v
+// SetLatestReportFile gets a reference to the given common.NullableString and assigns it to the LatestReportFile field.
+func (o *ReportsItem) SetLatestReportFile(v ReportsLatestReportFile) {
+	o.LatestReportFile.Set(&v)
+}
+
+// SetLatestReportFileNil sets the value for LatestReportFile to be an explicit nil.
+func (o *ReportsItem) SetLatestReportFileNil() {
+	o.LatestReportFile.Set(nil)
+}
+
+// UnSetLatestReportFile ensures that no value is present for LatestReportFile, not even an explicit nil.
+func (o *ReportsItem) UnSetLatestReportFile() {
+	o.LatestReportFile.UnSet()
 }
 
 // GetPageSettings returns the PageSettings field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReportsSearchResponse) GetPageSettings() string {
+func (o *ReportsItem) GetPageSettings() string {
 	if o == nil || o.PageSettings.Get() == nil {
 		var ret string
 		return ret
@@ -599,7 +682,7 @@ func (o *ReportsSearchResponse) GetPageSettings() string {
 // GetPageSettingsOk returns a tuple with the PageSettings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *ReportsSearchResponse) GetPageSettingsOk() (*string, bool) {
+func (o *ReportsItem) GetPageSettingsOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -607,27 +690,27 @@ func (o *ReportsSearchResponse) GetPageSettingsOk() (*string, bool) {
 }
 
 // HasPageSettings returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasPageSettings() bool {
+func (o *ReportsItem) HasPageSettings() bool {
 	return o != nil && o.PageSettings.IsSet()
 }
 
 // SetPageSettings gets a reference to the given common.NullableString and assigns it to the PageSettings field.
-func (o *ReportsSearchResponse) SetPageSettings(v string) {
+func (o *ReportsItem) SetPageSettings(v string) {
 	o.PageSettings.Set(&v)
 }
 
 // SetPageSettingsNil sets the value for PageSettings to be an explicit nil.
-func (o *ReportsSearchResponse) SetPageSettingsNil() {
+func (o *ReportsItem) SetPageSettingsNil() {
 	o.PageSettings.Set(nil)
 }
 
 // UnSetPageSettings ensures that no value is present for PageSettings, not even an explicit nil.
-func (o *ReportsSearchResponse) UnSetPageSettings() {
+func (o *ReportsItem) UnSetPageSettings() {
 	o.PageSettings.UnSet()
 }
 
 // GetParameters returns the Parameters field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetParameters() ReportsParameters {
+func (o *ReportsItem) GetParameters() ReportsParameters {
 	if o == nil || o.Parameters == nil {
 		var ret ReportsParameters
 		return ret
@@ -637,7 +720,7 @@ func (o *ReportsSearchResponse) GetParameters() ReportsParameters {
 
 // GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetParametersOk() (*ReportsParameters, bool) {
+func (o *ReportsItem) GetParametersOk() (*ReportsParameters, bool) {
 	if o == nil || o.Parameters == nil {
 		return nil, false
 	}
@@ -645,45 +728,57 @@ func (o *ReportsSearchResponse) GetParametersOk() (*ReportsParameters, bool) {
 }
 
 // HasParameters returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasParameters() bool {
+func (o *ReportsItem) HasParameters() bool {
 	return o != nil && o.Parameters != nil
 }
 
 // SetParameters gets a reference to the given ReportsParameters and assigns it to the Parameters field.
-func (o *ReportsSearchResponse) SetParameters(v ReportsParameters) {
+func (o *ReportsItem) SetParameters(v ReportsParameters) {
 	o.Parameters = &v
 }
 
-// GetTags returns the Tags field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetTags() []string {
-	if o == nil || o.Tags == nil {
-		var ret []string
-		return ret
+// GetTags returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
+func (o *ReportsItem) GetTags() (*[]string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Tags
+	return o.Tags.Get(), o.Tags.IsSet()
 }
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetTagsOk() (*[]string, bool) {
-	if o == nil || o.Tags == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
+func (o *ReportsItem) GetTagsOk() (*[]string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return &o.Tags, true
+	return o.Tags.Get(), o.Tags.IsSet()
 }
 
-// HasTags returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasTags() bool {
-	return o != nil && o.Tags != nil
+// HasTags returns a boolean if a Tags has been set.
+func (o *ReportsItem) HasTags() bool {
+	return o != nil && o.Tags.IsSet()
 }
 
-// SetTags gets a reference to the given []string and assigns it to the Tags field.
-func (o *ReportsSearchResponse) SetTags(v []string) {
-	o.Tags = v
+// SetTags gets a reference to the given common.Nullable[]string and assigns it to the Tags field.
+func (o *ReportsItem) SetTags(v []string) {
+	o.Tags.Set(&v)
+}
+
+// SetTagsNil sets the value for Tags to be an explicit nil.
+func (o *ReportsItem) SetTagsNil() {
+	o.Tags.Set(nil)
+}
+
+// UnSetTags ensures that no value is present for Tags, not even an explicit nil.
+func (o *ReportsItem) UnSetTags() {
+	o.Tags.UnSet()
 }
 
 // GetActions returns the Actions field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetActions() Actions {
+func (o *ReportsItem) GetActions() Actions {
 	if o == nil || o.Actions == nil {
 		var ret Actions
 		return ret
@@ -693,7 +788,7 @@ func (o *ReportsSearchResponse) GetActions() Actions {
 
 // GetActionsOk returns a tuple with the Actions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetActionsOk() (*Actions, bool) {
+func (o *ReportsItem) GetActionsOk() (*Actions, bool) {
 	if o == nil || o.Actions == nil {
 		return nil, false
 	}
@@ -701,17 +796,17 @@ func (o *ReportsSearchResponse) GetActionsOk() (*Actions, bool) {
 }
 
 // HasActions returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasActions() bool {
+func (o *ReportsItem) HasActions() bool {
 	return o != nil && o.Actions != nil
 }
 
 // SetActions gets a reference to the given Actions and assigns it to the Actions field.
-func (o *ReportsSearchResponse) SetActions(v Actions) {
+func (o *ReportsItem) SetActions(v Actions) {
 	o.Actions = &v
 }
 
 // GetModuleFilter returns the ModuleFilter field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetModuleFilter() string {
+func (o *ReportsItem) GetModuleFilter() string {
 	if o == nil || o.ModuleFilter == nil {
 		var ret string
 		return ret
@@ -721,7 +816,7 @@ func (o *ReportsSearchResponse) GetModuleFilter() string {
 
 // GetModuleFilterOk returns a tuple with the ModuleFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetModuleFilterOk() (*string, bool) {
+func (o *ReportsItem) GetModuleFilterOk() (*string, bool) {
 	if o == nil || o.ModuleFilter == nil {
 		return nil, false
 	}
@@ -729,17 +824,17 @@ func (o *ReportsSearchResponse) GetModuleFilterOk() (*string, bool) {
 }
 
 // HasModuleFilter returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasModuleFilter() bool {
+func (o *ReportsItem) HasModuleFilter() bool {
 	return o != nil && o.ModuleFilter != nil
 }
 
 // SetModuleFilter gets a reference to the given string and assigns it to the ModuleFilter field.
-func (o *ReportsSearchResponse) SetModuleFilter(v string) {
+func (o *ReportsItem) SetModuleFilter(v string) {
 	o.ModuleFilter = &v
 }
 
 // GetRemoteInterfaceName returns the RemoteInterfaceName field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetRemoteInterfaceName() string {
+func (o *ReportsItem) GetRemoteInterfaceName() string {
 	if o == nil || o.RemoteInterfaceName == nil {
 		var ret string
 		return ret
@@ -749,7 +844,7 @@ func (o *ReportsSearchResponse) GetRemoteInterfaceName() string {
 
 // GetRemoteInterfaceNameOk returns a tuple with the RemoteInterfaceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetRemoteInterfaceNameOk() (*string, bool) {
+func (o *ReportsItem) GetRemoteInterfaceNameOk() (*string, bool) {
 	if o == nil || o.RemoteInterfaceName == nil {
 		return nil, false
 	}
@@ -757,17 +852,17 @@ func (o *ReportsSearchResponse) GetRemoteInterfaceNameOk() (*string, bool) {
 }
 
 // HasRemoteInterfaceName returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasRemoteInterfaceName() bool {
+func (o *ReportsItem) HasRemoteInterfaceName() bool {
 	return o != nil && o.RemoteInterfaceName != nil
 }
 
 // SetRemoteInterfaceName gets a reference to the given string and assigns it to the RemoteInterfaceName field.
-func (o *ReportsSearchResponse) SetRemoteInterfaceName(v string) {
+func (o *ReportsItem) SetRemoteInterfaceName(v string) {
 	o.RemoteInterfaceName = &v
 }
 
 // GetRemoteMethodName returns the RemoteMethodName field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetRemoteMethodName() string {
+func (o *ReportsItem) GetRemoteMethodName() string {
 	if o == nil || o.RemoteMethodName == nil {
 		var ret string
 		return ret
@@ -777,7 +872,7 @@ func (o *ReportsSearchResponse) GetRemoteMethodName() string {
 
 // GetRemoteMethodNameOk returns a tuple with the RemoteMethodName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetRemoteMethodNameOk() (*string, bool) {
+func (o *ReportsItem) GetRemoteMethodNameOk() (*string, bool) {
 	if o == nil || o.RemoteMethodName == nil {
 		return nil, false
 	}
@@ -785,17 +880,17 @@ func (o *ReportsSearchResponse) GetRemoteMethodNameOk() (*string, bool) {
 }
 
 // HasRemoteMethodName returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasRemoteMethodName() bool {
+func (o *ReportsItem) HasRemoteMethodName() bool {
 	return o != nil && o.RemoteMethodName != nil
 }
 
 // SetRemoteMethodName gets a reference to the given string and assigns it to the RemoteMethodName field.
-func (o *ReportsSearchResponse) SetRemoteMethodName(v string) {
+func (o *ReportsItem) SetRemoteMethodName(v string) {
 	o.RemoteMethodName = &v
 }
 
 // GetApplicationName returns the ApplicationName field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetApplicationName() string {
+func (o *ReportsItem) GetApplicationName() string {
 	if o == nil || o.ApplicationName == nil {
 		var ret string
 		return ret
@@ -805,7 +900,7 @@ func (o *ReportsSearchResponse) GetApplicationName() string {
 
 // GetApplicationNameOk returns a tuple with the ApplicationName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetApplicationNameOk() (*string, bool) {
+func (o *ReportsItem) GetApplicationNameOk() (*string, bool) {
 	if o == nil || o.ApplicationName == nil {
 		return nil, false
 	}
@@ -813,17 +908,17 @@ func (o *ReportsSearchResponse) GetApplicationNameOk() (*string, bool) {
 }
 
 // HasApplicationName returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasApplicationName() bool {
+func (o *ReportsItem) HasApplicationName() bool {
 	return o != nil && o.ApplicationName != nil
 }
 
 // SetApplicationName gets a reference to the given string and assigns it to the ApplicationName field.
-func (o *ReportsSearchResponse) SetApplicationName(v string) {
+func (o *ReportsItem) SetApplicationName(v string) {
 	o.ApplicationName = &v
 }
 
 // GetSubExecutorModuleFilter returns the SubExecutorModuleFilter field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetSubExecutorModuleFilter() string {
+func (o *ReportsItem) GetSubExecutorModuleFilter() string {
 	if o == nil || o.SubExecutorModuleFilter == nil {
 		var ret string
 		return ret
@@ -833,7 +928,7 @@ func (o *ReportsSearchResponse) GetSubExecutorModuleFilter() string {
 
 // GetSubExecutorModuleFilterOk returns a tuple with the SubExecutorModuleFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetSubExecutorModuleFilterOk() (*string, bool) {
+func (o *ReportsItem) GetSubExecutorModuleFilterOk() (*string, bool) {
 	if o == nil || o.SubExecutorModuleFilter == nil {
 		return nil, false
 	}
@@ -841,17 +936,17 @@ func (o *ReportsSearchResponse) GetSubExecutorModuleFilterOk() (*string, bool) {
 }
 
 // HasSubExecutorModuleFilter returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasSubExecutorModuleFilter() bool {
+func (o *ReportsItem) HasSubExecutorModuleFilter() bool {
 	return o != nil && o.SubExecutorModuleFilter != nil
 }
 
 // SetSubExecutorModuleFilter gets a reference to the given string and assigns it to the SubExecutorModuleFilter field.
-func (o *ReportsSearchResponse) SetSubExecutorModuleFilter(v string) {
+func (o *ReportsItem) SetSubExecutorModuleFilter(v string) {
 	o.SubExecutorModuleFilter = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *ReportsSearchResponse) GetVersion() float64 {
+func (o *ReportsItem) GetVersion() float64 {
 	if o == nil || o.Version == nil {
 		var ret float64
 		return ret
@@ -861,7 +956,7 @@ func (o *ReportsSearchResponse) GetVersion() float64 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsSearchResponse) GetVersionOk() (*float64, bool) {
+func (o *ReportsItem) GetVersionOk() (*float64, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -869,17 +964,17 @@ func (o *ReportsSearchResponse) GetVersionOk() (*float64, bool) {
 }
 
 // HasVersion returns a boolean if a field has been set.
-func (o *ReportsSearchResponse) HasVersion() bool {
+func (o *ReportsItem) HasVersion() bool {
 	return o != nil && o.Version != nil
 }
 
 // SetVersion gets a reference to the given float64 and assigns it to the Version field.
-func (o *ReportsSearchResponse) SetVersion(v float64) {
+func (o *ReportsItem) SetVersion(v float64) {
 	o.Version = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o ReportsSearchResponse) MarshalJSON() ([]byte, error) {
+func (o ReportsItem) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -896,8 +991,8 @@ func (o ReportsSearchResponse) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["Name"] = o.Name
 	}
-	if o.Description != nil {
-		toSerialize["Description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["Description"] = o.Description.Get()
 	}
 	if o.IsActive != nil {
 		toSerialize["IsActive"] = o.IsActive
@@ -929,8 +1024,8 @@ func (o ReportsSearchResponse) MarshalJSON() ([]byte, error) {
 	if o.NextGenerationTime.IsSet() {
 		toSerialize["NextGenerationTime"] = o.NextGenerationTime.Get()
 	}
-	if o.LatestReportFile != nil {
-		toSerialize["LatestReportFile"] = o.LatestReportFile
+	if o.LatestReportFile.IsSet() {
+		toSerialize["LatestReportFile"] = o.LatestReportFile.Get()
 	}
 	if o.PageSettings.IsSet() {
 		toSerialize["PageSettings"] = o.PageSettings.Get()
@@ -938,7 +1033,7 @@ func (o ReportsSearchResponse) MarshalJSON() ([]byte, error) {
 	if o.Parameters != nil {
 		toSerialize["Parameters"] = o.Parameters
 	}
-	if o.Tags != nil {
+	if o.Tags.IsSet() {
 		toSerialize["Tags"] = o.Tags
 	}
 	if o.Actions != nil {
@@ -970,34 +1065,35 @@ func (o ReportsSearchResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *ReportsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
+func (o *ReportsItem) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		ModifiedDate            *string                     `json:"ModifiedDate,omitempty"`
-		ReportID                *string                     `jsom:"ReportId,omitempty"`
-		Username                *string                     `json:"Username,omitempty"`
-		Name                    *string                     `json:"Name,omitempty"`
-		Description             *string                     `json:"Description,omitempty"`
-		IsActive                *bool                       `json:"IsActive,omitempty"`
-		Author                  common.NullableString       `json:"Author,omitempty"`
-		ReportLink              *string                     `json:"ReportLink,omitempty"`
-		SharedUsersAndGroups    common.NullableList[string] `json:"SharedUsersAndGroups,omitempty"`
-		CreatedDate             *string                     `json:"CreatedDate,omitempty"`
-		ReportQuery             []ReportsQuery              `json:"ReportQuery,omitempty"`
-		ReportData              *ReportsData                `json:"ReportData,omitempty"`
-		Schedule                NullableScheduleConfig      `json:"Schedule,omitempty"`
-		LastGenerationTime      common.NullableString       `json:"LastGenerationTime,omitempty"`
-		NextGenerationTime      common.NullableString       `json:"NextGenerationTime,omitempty"`
-		LatestReportFile        *ReportsLatestReportFile    `json:"LatestReportFile,omitempty"`
-		PageSettings            common.NullableString       `json:"PageSettings,omitempty"`
-		Parameters              *ReportsParameters          `json:"Parameters,omitempty"`
-		Tags                    []string                    `json:"Tags,omitempty"`
-		Actions                 *Actions                    `json:"Actions,omitempty"`
-		ModuleFilter            *string                     `json:"ModuleFilter,omitempty"`
-		RemoteInterfaceName     *string                     `json:"RemoteInterfaceName,omitempty"`
-		RemoteMethodName        *string                     `json:"RemoteMethodName,omitempty"`
-		ApplicationName         *string                     `json:"ApplicationName,omitempty"`
-		SubExecutorModuleFilter *string                     `json:"SubExecutorModuleFilter,omitempty"`
-		Version                 *float64                    `json:"Version,omitempty"`
+		ModifiedDate            *string                         `json:"ModifiedDate,omitempty"`
+		ReportID                *string                         `jsom:"ReportId,omitempty"`
+		Username                *string                         `json:"Username,omitempty"`
+		Name                    *string                         `json:"Name,omitempty"`
+		Description             common.NullableString           `json:"Description,omitempty"`
+		IsActive                *bool                           `json:"IsActive,omitempty"`
+		Author                  common.NullableString           `json:"Author,omitempty"`
+		ReportLink              *string                         `json:"ReportLink,omitempty"`
+		SharedUsersAndGroups    common.NullableList[string]     `json:"SharedUsersAndGroups,omitempty"`
+		CreatedDate             *string                         `json:"CreatedDate,omitempty"`
+		ReportQuery             []ReportsQuery                  `json:"ReportQuery,omitempty"`
+		ReportData              *ReportsData                    `json:"ReportData,omitempty"`
+		Schedule                NullableScheduleConfig          `json:"Schedule,omitempty"`
+		EmailConfigs            *ReportsEmailConfigs            `json:"EmailConfigs,omitempty"`
+		LastGenerationTime      common.NullableString           `json:"LastGenerationTime,omitempty"`
+		NextGenerationTime      common.NullableString           `json:"NextGenerationTime,omitempty"`
+		LatestReportFile        NullableReportsLatestReportFile `json:"LatestReportFile,omitempty"`
+		PageSettings            common.NullableString           `json:"PageSettings,omitempty"`
+		Parameters              *ReportsParameters              `json:"Parameters,omitempty"`
+		Tags                    common.NullableList[string]     `json:"Tags,omitempty"`
+		Actions                 *Actions                        `json:"Actions,omitempty"`
+		ModuleFilter            *string                         `json:"ModuleFilter,omitempty"`
+		RemoteInterfaceName     *string                         `json:"RemoteInterfaceName,omitempty"`
+		RemoteMethodName        *string                         `json:"RemoteMethodName,omitempty"`
+		ApplicationName         *string                         `json:"ApplicationName,omitempty"`
+		SubExecutorModuleFilter *string                         `json:"SubExecutorModuleFilter,omitempty"`
+		Version                 *float64                        `json:"Version,omitempty"`
 	}{}
 
 	additionalProperties := make(map[string]interface{})
@@ -1024,6 +1120,7 @@ func (o *ReportsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 	}
 	o.ReportData = all.ReportData
 	o.Schedule = all.Schedule
+	o.EmailConfigs = all.EmailConfigs
 	o.LastGenerationTime = all.LastGenerationTime
 	o.NextGenerationTime = all.NextGenerationTime
 	o.LatestReportFile = all.LatestReportFile

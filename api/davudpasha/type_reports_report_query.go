@@ -8,6 +8,8 @@ import (
 
 // ReportsQuery represents a report query.
 type ReportsQuery struct {
+	// Represents a key value, possibly used as an identifier or index.
+	Key *float64 `json:"Key,omitempty"`
 	// Name of the query.
 	Name *string `json:"Nane,omitempty"`
 	// Data related to the query.
@@ -16,6 +18,8 @@ type ReportsQuery struct {
 	ShowTable *bool `json:"ShowTable,omitempty"`
 	// Visualization settings for the table.
 	TableVisualization *ReportsTableVisualization `json:"TableVisualization,omitempty"`
+	// Reference to the form used for generating the report.
+	FormRef *ReportsFormRef `json:"FormRef"`
 	// Indicates if the chart should be shown.
 	ShowChart *bool `json:"ShowChart,omitempty"`
 	// Visualization settings for the chart.
@@ -43,6 +47,34 @@ func NewReportsQuery() *ReportsQuery {
 func NewReportsQueryWithDefaults() *ReportsQuery {
 	this := ReportsQuery{}
 	return &this
+}
+
+// GetKey returns the Key field value if set, zero value otherwise.
+func (o *ReportsQuery) GetKey() float64 {
+	if o == nil || o.Key == nil {
+		var ret float64
+		return ret
+	}
+	return *o.Key
+}
+
+// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReportsQuery) GetKeyOk() (*float64, bool) {
+	if o == nil || o.Key == nil {
+		return nil, false
+	}
+	return o.Key, true
+}
+
+// HasKey returns a boolean if a field has been set.
+func (o *ReportsQuery) HasKey() bool {
+	return o != nil && o.Key != nil
+}
+
+// SetKey gets a reference to the given float64 and assigns it to the Key field.
+func (o *ReportsQuery) SetKey(v float64) {
+	o.Key = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -157,6 +189,34 @@ func (o *ReportsQuery) SetTableVisualization(v ReportsTableVisualization) {
 	o.TableVisualization = &v
 }
 
+// GetFormRef returns the FormRef field value if set, zero value otherwise.
+func (o *ReportsQuery) GetFormRef() ReportsFormRef {
+	if o == nil || o.FormRef == nil {
+		var ret ReportsFormRef
+		return ret
+	}
+	return *o.FormRef
+}
+
+// GetFormRefOk returns a tuple with the FormRef field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReportsQuery) GetFormRefOk() (*ReportsFormRef, bool) {
+	if o == nil || o.FormRef == nil {
+		return nil, false
+	}
+	return o.FormRef, true
+}
+
+// HasFormRef returns a boolean if a field has been set.
+func (o *ReportsQuery) HasFormRef() bool {
+	return o != nil && o.FormRef != nil
+}
+
+// SetFormRef gets a reference to the given ReportsFormRef and assigns it to the FormRef field.
+func (o *ReportsQuery) SetFormRef(v ReportsFormRef) {
+	o.FormRef = &v
+}
+
 // GetShowChart returns the ShowChart field value if set, zero value otherwise.
 func (o *ReportsQuery) GetShowChart() bool {
 	if o == nil || o.ShowChart == nil {
@@ -258,6 +318,9 @@ func (o ReportsQuery) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
+	if o.Key != nil {
+		toSerialize["Key"] = o.Key
+	}
 	if o.Name != nil {
 		toSerialize["Name"] = o.Name
 	}
@@ -269,6 +332,9 @@ func (o ReportsQuery) MarshalJSON() ([]byte, error) {
 	}
 	if o.TableVisualization != nil {
 		toSerialize["TableVisualization"] = o.TableVisualization
+	}
+	if o.FormRef != nil {
+		toSerialize["FormRef"] = o.FormRef
 	}
 	if o.ShowChart != nil {
 		toSerialize["ShowChart"] = o.ShowChart
@@ -289,10 +355,12 @@ func (o ReportsQuery) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *ReportsQuery) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
+		Key                *float64                    `json:"Key,omitempty"`
 		Name               *string                     `json:"Nane,omitempty"`
 		Data               *ReportsQueryData           `json:"Data,omitempty"`
 		ShowTable          *bool                       `json:"ShowTable,omitempty"`
 		TableVisualization *ReportsTableVisualization  `json:"TableVisualization,omitempty"`
+		FormRef            *ReportsFormRef             `json:"FormRef"`
 		ShowChart          *bool                       `json:"ShowChart,omitempty"`
 		ChartVisualization *ReportsChartVisualization  `json:"ChartVisualization,omitempty"`
 		ExtData            NullableReportsQueryExtData `json:"ExtData,omitempty"`
@@ -300,11 +368,12 @@ func (o *ReportsQuery) UnMarshalJSON(bytes []byte) (err error) {
 
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"Name", "Data", "ShowTable", "TableVisualization", "ShowChart", "ChartVisualization", "ExtData"})
+		common.DeleteKeys(additionalProperties, &[]string{"Key", "Name", "Data", "ShowTable", "TableVisualization", "FormRef", "ShowChart", "ChartVisualization", "ExtData"})
 	} else {
 		return err
 	}
 
+	o.Key = all.Key
 	o.Name = all.Name
 	hasInvalidField := false
 	if all.Data != nil && all.Data.UnparsedObject != nil && o.UnparsedObject == nil {
@@ -316,6 +385,7 @@ func (o *ReportsQuery) UnMarshalJSON(bytes []byte) (err error) {
 		hasInvalidField = true
 	}
 	o.TableVisualization = all.TableVisualization
+	o.FormRef = all.FormRef
 	o.ShowChart = all.ShowChart
 	if all.ChartVisualization != nil && all.ChartVisualization.UnparsedObject != nil && o.UnparsedObject == nil {
 		hasInvalidField = true

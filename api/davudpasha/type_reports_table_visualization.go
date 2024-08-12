@@ -14,6 +14,8 @@ type ReportsTableVisualization struct {
 	MaxRowCount *int64 `json:"MaxRowCount,omitempty"`
 	// Columns for the visualization.
 	Columns []string `json:"Columns,omitempty"`
+	// List of values corresponding to specific columns in a dataset.
+	ColumnValues []string `json:"ColumnValues,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
@@ -121,6 +123,34 @@ func (o *ReportsTableVisualization) SetColumns(v []string) {
 	o.Columns = v
 }
 
+// GetColumnValues returns the ColumnValues field value if set, zero value otherwise.
+func (o *ReportsTableVisualization) GetColumnValues() []string {
+	if o == nil || o.ColumnValues == nil {
+		var ret []string
+		return ret
+	}
+	return o.ColumnValues
+}
+
+// GetColumnValuesOk returns a tuple with the ColumnValues field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReportsTableVisualization) GetColumnValuesOk() (*[]string, bool) {
+	if o == nil || o.ColumnValues == nil {
+		return nil, false
+	}
+	return &o.ColumnValues, true
+}
+
+// HasColumnValues returns a boolean if a field has been set.
+func (o *ReportsTableVisualization) HasColumnValues() bool {
+	return o != nil && o.ColumnValues != nil
+}
+
+// SetColumnValues gets a reference to the given []string and assigns it to the ColumnValues field.
+func (o *ReportsTableVisualization) SetColumnValues(v []string) {
+	o.ColumnValues = v
+}
+
 // MarshalJSON serializes the struct using spec logic.
 func (o ReportsTableVisualization) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
@@ -136,6 +166,9 @@ func (o ReportsTableVisualization) MarshalJSON() ([]byte, error) {
 	if o.Columns != nil {
 		toSerialize["Columns"] = o.Columns
 	}
+	if o.ColumnValues != nil {
+		toSerialize["ColumnValues"] = o.ColumnValues
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -146,14 +179,15 @@ func (o ReportsTableVisualization) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *ReportsTableVisualization) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		ChartType   *string  `json:"ChartType,omitempty"`
-		MaxRowCount *int64   `json:"MaxRowCount,omitempty"`
-		Columns     []string `json:"Columns,omitempty"`
+		ChartType    *string  `json:"ChartType,omitempty"`
+		MaxRowCount  *int64   `json:"MaxRowCount,omitempty"`
+		Columns      []string `json:"Columns,omitempty"`
+		ColumnValues []string `json:"ColumnValues,omitempty"`
 	}{}
 
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"ChartType", "MaxRowCount", "Columns"})
+		common.DeleteKeys(additionalProperties, &[]string{"ChartType", "MaxRowCount", "Columns", "ColumnValues"})
 	} else {
 		return err
 	}
@@ -161,6 +195,7 @@ func (o *ReportsTableVisualization) UnMarshalJSON(bytes []byte) (err error) {
 	o.ChartType = all.ChartType
 	o.MaxRowCount = all.MaxRowCount
 	o.Columns = all.Columns
+	o.ColumnValues = all.ColumnValues
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties

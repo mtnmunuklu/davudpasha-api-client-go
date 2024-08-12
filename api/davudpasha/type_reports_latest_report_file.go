@@ -203,3 +203,53 @@ func (o *ReportsLatestReportFile) UnMarshalJSON(bytes []byte) (err error) {
 
 	return nil
 }
+
+// NullableReportsLatestReportFile handles when a null is used for ReportsLatestReportFile.
+type NullableReportsLatestReportFile struct {
+	value *ReportsLatestReportFile
+	isSet bool
+}
+
+// Get returns the associated value.
+func (v NullableReportsLatestReportFile) Get() *ReportsLatestReportFile {
+	return v.value
+}
+
+// Set changes the value and indicates it's been called.
+func (v *NullableReportsLatestReportFile) Set(val *ReportsLatestReportFile) {
+	v.value = val
+	v.isSet = true
+}
+
+// IsSet returns whether Set has been called.
+func (v NullableReportsLatestReportFile) IsSet() bool {
+	return v.isSet
+}
+
+// UnSet sets the value to nil and resets the set flag/
+func (v *NullableReportsLatestReportFile) UnSet() {
+	v.value = nil
+	v.isSet = false
+}
+
+// NewNullableReportsLatestReportFile initializes the struct as if Set has been called.
+func NewNullableReportsLatestReportFile(val *ReportsLatestReportFile) *NullableReportsLatestReportFile {
+	return &NullableReportsLatestReportFile{value: val, isSet: true}
+}
+
+// MarshalJSON serializes the associated value.
+func (v NullableReportsLatestReportFile) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+// UnmarshalJSON deserializes the payload and sets the flag as if Set has been called.
+func (v *NullableReportsLatestReportFile) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+
+	// this object is nullable so check if the payload is null or empty string
+	if string(src) == "" || string(src) == "{}" {
+		return nil
+	}
+
+	return json.Unmarshal(src, &v.value)
+}

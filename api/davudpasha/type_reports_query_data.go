@@ -8,7 +8,7 @@ import (
 
 // ReportsQueryData represents the data for a report query.
 type ReportsQueryData struct {
-	// Type of the item.
+	// Type of the item. ItemType: PythonScript, Query, Custom, Code
 	ItemType *string `json:"ItemType,omitempty"`
 	// ID of the query.
 	QueryID common.NullableString `json:"QueryID,omitempty"`

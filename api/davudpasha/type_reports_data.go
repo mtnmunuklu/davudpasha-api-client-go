@@ -24,7 +24,7 @@ type ReportsData struct {
 	CoverPage common.NullableString `json:"CoverPage,omitempty"`
 	// Sections included in the report.
 	Sections []string `json:"Sections,omitempty"`
-	// Type of the report.
+	// Type of the report. ReportType: csv
 	ReportType *string `json:"ReportType,omitempty"`
 	// Theme of the report.
 	Theme common.NullableString `json:"Theme,omitempty"`
