@@ -130,11 +130,20 @@ func (o *AlertsSaveRequest) UnMarshalJSON(bytes []byte) (err error) {
 	} else {
 		return err
 	}
+
+	hasInvalidField := false
+	if all.Correlation != nil && all.Correlation.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.Correlation = all.Correlation
 	o.SmartRestRequestContext = all.SmartRestRequestContext
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
+	}
+
+	if hasInvalidField {
+		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
 	return nil
