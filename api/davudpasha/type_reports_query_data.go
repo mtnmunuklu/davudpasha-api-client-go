@@ -9,7 +9,7 @@ import (
 // ReportsQueryData represents the data for a report query.
 type ReportsQueryData struct {
 	// Type of the item. ItemType: PythonScript, Query, Custom, Code
-	ItemType *string `json:"ItemType,omitempty"`
+	ItemType ReportsItemType `json:"ItemType,omitempty"`
 	// ID of the query.
 	QueryID common.NullableString `json:"QueryID,omitempty"`
 	// Query string.
@@ -48,31 +48,26 @@ func NewReportsQueryDataWithDefaults() *ReportsQueryData {
 }
 
 // GetItemType returns the ItemType field value if set, zero value otherwise.
-func (o *ReportsQueryData) GetItemType() string {
-	if o == nil || o.ItemType == nil {
-		var ret string
+func (o *ReportsQueryData) GetItemType() ReportsItemType {
+	if o == nil {
+		var ret ReportsItemType
 		return ret
 	}
-	return *o.ItemType
+	return o.ItemType
 }
 
 // GetItemTypeOk returns a tuple with the ItemType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsQueryData) GetItemTypeOk() (*string, bool) {
-	if o == nil || o.ItemType == nil {
+func (o *ReportsQueryData) GetItemTypeOk() (*ReportsItemType, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ItemType, true
-}
-
-// HasItemType returns a boolean if a field has been set.
-func (o *ReportsQueryData) HasItemType() bool {
-	return o != nil && o.ItemType != nil
+	return &o.ItemType, true
 }
 
 // SetItemType gets a reference to the given string and assigns it to the ItemType field.
-func (o *ReportsQueryData) SetItemType(v string) {
-	o.ItemType = &v
+func (o *ReportsQueryData) SetItemType(v ReportsItemType) {
+	o.ItemType = v
 }
 
 // GetQueryID returns the QueryID field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -322,7 +317,7 @@ func (o ReportsQueryData) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.ItemType != nil {
+	if o.ItemType.IsValid() {
 		toSerialize["ItemType"] = o.ItemType
 	}
 	if o.QueryID.IsSet() {
@@ -356,7 +351,7 @@ func (o ReportsQueryData) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *ReportsQueryData) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		ItemType        *string                     `json:"ItemType,omitempty"`
+		ItemType        *ReportsItemType            `json:"ItemType,omitempty"`
 		QueryID         common.NullableString       `json:"QueryID,omitempty"`
 		QueryStr        common.NullableString       `json:"QueryStr,omitempty"`
 		Code            *string                     `json:"Code,omitempty"`
@@ -375,13 +370,16 @@ func (o *ReportsQueryData) UnMarshalJSON(bytes []byte) (err error) {
 	} else {
 		return err
 	}
-
-	o.ItemType = all.ItemType
+	hasInvalidField := false
+	if !all.ItemType.IsValid() {
+		hasInvalidField = true
+	} else {
+		o.ItemType = *all.ItemType
+	}
 	o.QueryID = all.QueryID
 	o.QueryStr = all.QueryStr
 	o.Code = all.Code
 	o.MaxRowCount = all.MaxRowCount
-	hasInvalidField := false
 	if all.DateTimeRange != nil && all.DateTimeRange.UnparsedObject != nil && o.UnparsedObject == nil {
 		hasInvalidField = true
 	}
