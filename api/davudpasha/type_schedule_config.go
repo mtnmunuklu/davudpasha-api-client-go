@@ -16,6 +16,8 @@ type ScheduleConfig struct {
 	TimeTics *int64 `json:"TimeTics,omitempty"`
 	// Time for the schedule.
 	Time *string `json:"Time,omitempty"`
+	// Date for the schedule.
+	Date *string `json:"Date,omitempty"`
 	// Date string for the schedule.
 	DateStr *string `json:"DateStr,omitempty"`
 	// Days for the schedule.
@@ -167,6 +169,34 @@ func (o *ScheduleConfig) HasTime() bool {
 // SetTime gets a reference to the given string and assigns it to the Time field.
 func (o *ScheduleConfig) SetTime(v string) {
 	o.Time = &v
+}
+
+// GetDate returns the Date field value if set, zero value otherwise.
+func (o *ScheduleConfig) GetDate() string {
+	if o == nil || o.Date == nil {
+		var ret string
+		return ret
+	}
+	return *o.Date
+}
+
+// GetDateOk returns a tuple with the Date field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScheduleConfig) GetDateOk() (*string, bool) {
+	if o == nil || o.Date == nil {
+		return nil, false
+	}
+	return o.Date, true
+}
+
+// HasDate returns a boolean if a field has been set.
+func (o *ScheduleConfig) HasDate() bool {
+	return o != nil && o.Date != nil
+}
+
+// SetDate gets a reference to the given string and assigns it to the Date field.
+func (o *ScheduleConfig) SetDate(v string) {
+	o.Date = &v
 }
 
 // GetDateStr returns the DateStr field value if set, zero value otherwise.
@@ -439,6 +469,9 @@ func (o ScheduleConfig) MarshalJSON() ([]byte, error) {
 	if o.Time != nil {
 		toSerialize["Time"] = o.Time
 	}
+	if o.Date != nil {
+		toSerialize["Date"] = o.Date
+	}
 	if o.DateStr != nil {
 		toSerialize["DateStr"] = o.DateStr
 	}
@@ -480,6 +513,7 @@ func (o *ScheduleConfig) UnMarshalJSON(bytes []byte) (err error) {
 		ScheduleType         *string  `json:"ScheduleType,omitempty"`
 		TimeTics             *int64   `json:"TimeTics,omitempty"`
 		Time                 *string  `json:"Time,omitempty"`
+		Date                 *string  `json:"Date,omitempty"`
 		DateStr              *string  `json:"DateStr,omitempty"`
 		Days                 []string `json:"Days,omitempty"`
 		DaysNumber           []int64  `json:"DaysNumber,omitempty"`
@@ -495,7 +529,7 @@ func (o *ScheduleConfig) UnMarshalJSON(bytes []byte) (err error) {
 	}
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"ScheduleFullDateTime", "ScheduleType", "TimeTics", "Time", "DateStr", "Days", "DaysNumber", "DayNo", "Day", "DayNumber", "WeekType", "TimeType", "TimeValue"})
+		common.DeleteKeys(additionalProperties, &[]string{"ScheduleFullDateTime", "ScheduleType", "TimeTics", "Time", "Date", "DateStr", "Days", "DaysNumber", "DayNo", "Day", "DayNumber", "WeekType", "TimeType", "TimeValue"})
 	} else {
 		return err
 	}
@@ -504,6 +538,7 @@ func (o *ScheduleConfig) UnMarshalJSON(bytes []byte) (err error) {
 	o.ScheduleType = all.ScheduleType
 	o.TimeTics = all.TimeTics
 	o.Time = all.Time
+	o.Date = all.Date
 	o.DateStr = all.DateStr
 	o.Days = all.Days
 	o.DaysNumber = all.DaysNumber
