@@ -9,7 +9,7 @@ import (
 // ReportsQueryExtData represents the extended data for a report query.
 type ReportsQueryExtData struct {
 	// Type of the report. ReportType: PythonScript, Query, SearchArchive, NonRepudiation, Timestamp, Code
-	ReportType *string `json:"ReportType,omitempty"`
+	ReportType ReportsReportType `json:"ReportType,omitempty"`
 	// Date-time range for the report.
 	DateTimeRange *DateTimeRange `json:"DateTimeRange,omitempty"`
 	// Indicates if alerts should be included.
@@ -92,31 +92,26 @@ func NewReportsQueryExtDataWithDefaults() *ReportsQueryExtData {
 }
 
 // GetReportType returns the ReportType field value if set, zero value otherwise.
-func (o *ReportsQueryExtData) GetReportType() string {
-	if o == nil || o.ReportType == nil {
-		var ret string
+func (o *ReportsQueryExtData) GetReportType() ReportsReportType {
+	if o == nil {
+		var ret ReportsReportType
 		return ret
 	}
-	return *o.ReportType
+	return o.ReportType
 }
 
 // GetReportTypeOk returns a tuple with the ReportType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsQueryExtData) GetReportTypeOk() (*string, bool) {
-	if o == nil || o.ReportType == nil {
+func (o *ReportsQueryExtData) GetReportTypeOk() (*ReportsReportType, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ReportType, true
-}
-
-// HasReportType returns a boolean if a field has been set.
-func (o *ReportsQueryExtData) HasReportType() bool {
-	return o != nil && o.ReportType != nil
+	return &o.ReportType, true
 }
 
 // SetReportType gets a reference to the given string and assigns it to the ReportType field.
-func (o *ReportsQueryExtData) SetReportType(v string) {
-	o.ReportType = &v
+func (o *ReportsQueryExtData) SetReportType(v ReportsReportType) {
+	o.ReportType = v
 }
 
 // GetDateTimeRange returns the DateTimeRange field value if set, zero value otherwise.
@@ -1006,7 +1001,7 @@ func (o ReportsQueryExtData) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.ReportType != nil {
+	if o.ReportType.IsValid() {
 		toSerialize["ReportType"] = o.ReportType
 	}
 	if o.DateTimeRange != nil {
@@ -1106,7 +1101,7 @@ func (o ReportsQueryExtData) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *ReportsQueryExtData) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		ReportType              *string                     `json:"ReportType,omitempty"`
+		ReportType              *ReportsReportType          `json:"ReportType,omitempty"`
 		DateTimeRange           *DateTimeRange              `json:"DateTimeRange,omitempty"`
 		Alerts                  *bool                       `json:"Alerts,omitempty"`
 		LogStatus               *bool                       `json:"LogStatus,omitempty"`
@@ -1144,9 +1139,12 @@ func (o *ReportsQueryExtData) UnMarshalJSON(bytes []byte) (err error) {
 	} else {
 		return err
 	}
-
-	o.ReportType = all.ReportType
 	hasInvalidField := false
+	if !all.ReportType.IsValid() {
+		hasInvalidField = true
+	} else {
+		o.ReportType = *all.ReportType
+	}
 	if all.DateTimeRange != nil && all.DateTimeRange.UnparsedObject != nil && o.UnparsedObject == nil {
 		hasInvalidField = true
 	}
