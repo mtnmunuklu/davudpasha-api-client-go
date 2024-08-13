@@ -27,18 +27,18 @@ func main() {
 	configuration.SetHTTPClientWithInsecureSkipVerify()
 	apiClient := common.NewAPIClient(configuration)
 
-	queriesBody := davudpasha.QueriesSearchRequest{
+	searchQueriesBody := davudpasha.QueriesSearchRequest{
 		Filter:                  common.PtrString("test-query"),
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
 	queriesApi := davudpasha.NewQueriesApi(apiClient)
-	queriesResp, r, err := queriesApi.SearchQueries(ctx, *davudpasha.NewSearchQueriesOptionalParameters().WithBody(queriesBody))
+	searchQueriesResp, r, err := queriesApi.SearchQueries(ctx, *davudpasha.NewSearchQueriesOptionalParameters().WithBody(searchQueriesBody))
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QueriesApi.SearchQueries`: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 
-	alertsBody := davudpasha.AlertsSaveRequest{
+	saveAlertsBody := davudpasha.AlertsSaveRequest{
 		Correlation: &davudpasha.AlertsCorrelationData{
 			Name:          common.PtrString("test-alert"),
 			Description:   *common.NewNullableString(common.PtrString("tes-alert")),
@@ -51,8 +51,8 @@ func main() {
 				TimeFrameType:             davudpasha.TIMEFRAMETYPE_MINUTES,
 				RuleType:                  davudpasha.RULETYPE_ANY,
 				QueryCorrelationAlertType: davudpasha.QUERYCORRELATIONALERTTYPE_WHENONEORMOREROW,
-				QueryID:                   queriesResp.Items[0].ID,
-				Query:                     queriesResp.Items[0].Query,
+				QueryID:                   searchQueriesResp.Items[0].ID,
+				Query:                     searchQueriesResp.Items[0].Query,
 			},
 			CorrelationType: davudpasha.CORRELATIONTYPE_INTERFACEIQUERYCORRELATION,
 			Message:         common.PtrString("test-alert"),
@@ -61,7 +61,7 @@ func main() {
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
 	alertsApi := davudpasha.NewAlertsApi(apiClient)
-	alertsResp, r, err := alertsApi.SaveAlerts(ctx, *davudpasha.NewSaveAlertsOptionalParameters().WithBody(alertsBody))
+	alertsResp, r, err := alertsApi.SaveAlerts(ctx, *davudpasha.NewSaveAlertsOptionalParameters().WithBody(saveAlertsBody))
 
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlertsApi.SaveAlerts`: %v\n", err)

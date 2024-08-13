@@ -26,20 +26,20 @@ func main() {
 	configuration.SetHTTPClientWithInsecureSkipVerify()
 	apiClient := common.NewAPIClient(configuration)
 
-	queriesBody := davudpasha.QueriesSearchRequest{
+	searchQueriesBody := davudpasha.QueriesSearchRequest{
 		Filter:                  common.PtrString("test-query"),
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
 	queriesApi := davudpasha.NewQueriesApi(apiClient)
-	queriesResp, r, err := queriesApi.SearchQueries(ctx, *davudpasha.NewSearchQueriesOptionalParameters().WithBody(queriesBody))
+	searchQueriesResp, r, err := queriesApi.SearchQueries(ctx, *davudpasha.NewSearchQueriesOptionalParameters().WithBody(searchQueriesBody))
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QueriesApi.SearchQueries`: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 
-	alertsBody := davudpasha.AlertsSaveRequest{
+	saveAlertsBody := davudpasha.AlertsSaveRequest{
 		Correlation: &davudpasha.AlertsCorrelationData{
-			ID:          queriesResp.Items[0].ID,
+			ID:          searchQueriesResp.Items[0].ID,
 			Name:        common.PtrString("updated-test-alert"),
 			Description: *common.NewNullableString(common.PtrString("updated-test-alert")),
 			Tags:        *common.NewNullableList(&[]string{"updated-tag1", "updated-tag2"}),
@@ -48,14 +48,14 @@ func main() {
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
 	alertsApi := davudpasha.NewAlertsApi(apiClient)
-	alertsResp, r, err := alertsApi.SaveAlerts(ctx, *davudpasha.NewSaveAlertsOptionalParameters().WithBody(alertsBody))
+	saveAlertsResp, r, err := alertsApi.SaveAlerts(ctx, *davudpasha.NewSaveAlertsOptionalParameters().WithBody(saveAlertsBody))
 
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlertsApi.SaveAlerts`: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 
-	responseContent, _ := json.MarshalIndent(alertsResp, "", " ")
+	responseContent, _ := json.MarshalIndent(saveAlertsResp, "", " ")
 	fmt.Fprintf(os.Stdout, "Response from `AlertsApi.SaveAlerts`:\n%s\n", responseContent)
 
 }

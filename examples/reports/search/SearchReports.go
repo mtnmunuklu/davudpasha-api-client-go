@@ -24,7 +24,6 @@ func main() {
 		SearchFilter:            common.PtrString("test-report"),
 		ApplicationName:         common.PtrString("csiem"),
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
-		ShowPassive:             common.PtrBool(true),
 	}
 
 	ctx := common.NewDefaultContext(context.Background())
