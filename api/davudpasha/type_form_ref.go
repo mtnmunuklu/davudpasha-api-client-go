@@ -6,7 +6,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-type ReportsFormRef struct {
+type FormRef struct {
 	Current common.NullableString `json:"current,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
@@ -14,25 +14,25 @@ type ReportsFormRef struct {
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
-// NewReportsFormRef creates a new ReportsFormRef object.
+// NewFormRef creates a new FormRef object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewReportsFormRef() *ReportsFormRef {
-	this := ReportsFormRef{}
+func NewFormRef() *FormRef {
+	this := FormRef{}
 	return &this
 }
 
-// NewReportsFormRefWithDefaults creates a new ReportsFormRef object.
+// NewFormRefWithDefaults creates a new FormRef object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewReportsFormRefWithDefaults() *ReportsFormRef {
-	this := ReportsFormRef{}
+func NewFormRefWithDefaults() *FormRef {
+	this := FormRef{}
 	return &this
 }
 
 // GetCurrent returns the Current field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReportsFormRef) GetCurrent() string {
+func (o *FormRef) GetCurrent() string {
 	if o == nil || o.Current.Get() == nil {
 		var ret string
 		return ret
@@ -43,7 +43,7 @@ func (o *ReportsFormRef) GetCurrent() string {
 // GetCurrentOk returns a tuple with the Current field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *ReportsFormRef) GetCurrentOk() (*string, bool) {
+func (o *FormRef) GetCurrentOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -51,27 +51,27 @@ func (o *ReportsFormRef) GetCurrentOk() (*string, bool) {
 }
 
 // HasCurrent returns a boolean if a field has been set.
-func (o *ReportsFormRef) HasCurrent() bool {
+func (o *FormRef) HasCurrent() bool {
 	return o != nil && o.Current.IsSet()
 }
 
 // SetCurrent gets a reference to the given common.NullableString and assigns it to the Current field.
-func (o *ReportsFormRef) SetCurrent(v string) {
+func (o *FormRef) SetCurrent(v string) {
 	o.Current.Set(&v)
 }
 
 // SetCurrentNil sets the value for Current to be an explicit nil.
-func (o *ReportsFormRef) SetCurrentNil() {
+func (o *FormRef) SetCurrentNil() {
 	o.Current.Set(nil)
 }
 
 // UnSetCurrent ensures that no value is present for Current, not even an explicit nil.
-func (o *ReportsFormRef) UnSetCurrent() {
+func (o *FormRef) UnSetCurrent() {
 	o.Current.UnSet()
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o ReportsFormRef) MarshalJSON() ([]byte, error) {
+func (o FormRef) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -87,7 +87,7 @@ func (o ReportsFormRef) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *ReportsFormRef) UnMarshalJSON(bytes []byte) (err error) {
+func (o *FormRef) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		Current common.NullableString `json:"current,omitempty"`
 	}{}
