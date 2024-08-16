@@ -37,8 +37,8 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 
-	saveAlertsBody := davudpasha.AlertsSaveRequest{
-		Correlation: &davudpasha.AlertsCorrelationData{
+	saveAlertDefinitionsBody := davudpasha.AlertDefinitionsSaveRequest{
+		Correlation: &davudpasha.AlertDefinitionsCorrelationData{
 			ID:          searchQueriesResp.Items[0].ID,
 			Name:        common.PtrString("updated-test-alert"),
 			Description: *common.NewNullableString(common.PtrString("updated-test-alert")),
@@ -47,15 +47,15 @@ func main() {
 		},
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
-	alertsApi := davudpasha.NewAlertsApi(apiClient)
-	saveAlertsResp, r, err := alertsApi.SaveAlerts(ctx, *davudpasha.NewSaveAlertsOptionalParameters().WithBody(saveAlertsBody))
+	alertsApi := davudpasha.NewAlertDefinitionsApi(apiClient)
+	saveAlertDefinitionsResp, r, err := alertsApi.SaveAlertDefinitions(ctx, *davudpasha.NewSaveAlertDefinitionsOptionalParameters().WithBody(saveAlertDefinitionsBody))
 
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AlertsApi.SaveAlerts`: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionsApi.SaveAlertDefinitions`: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 
-	responseContent, _ := json.MarshalIndent(saveAlertsResp, "", " ")
-	fmt.Fprintf(os.Stdout, "Response from `AlertsApi.SaveAlerts`:\n%s\n", responseContent)
+	responseContent, _ := json.MarshalIndent(saveAlertDefinitionsResp, "", " ")
+	fmt.Fprintf(os.Stdout, "Response from `AlertDefinitionsApi.SaveAlertDefinitions`:\n%s\n", responseContent)
 
 }

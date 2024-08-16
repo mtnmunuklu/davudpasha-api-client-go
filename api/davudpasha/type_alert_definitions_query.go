@@ -7,7 +7,7 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-type AlertsQuery struct {
+type AlertDefinitionsQuery struct {
 	QueryID        *string          `json:"QueryID,omitempty"`
 	Query          *string          `json:"Query,omitempty"`
 	TimeFrameValue *int64           `json:"TimeFrameValue,omitempty"`
@@ -19,25 +19,25 @@ type AlertsQuery struct {
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
-// NewAlertsQuery creates a new AlertsQuery object.
+// NewAlertDefinitionsQuery creates a new AlertDefinitionsQuery object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewAlertsQuery() *AlertsQuery {
-	this := AlertsQuery{}
+func NewAlertDefinitionsQuery() *AlertDefinitionsQuery {
+	this := AlertDefinitionsQuery{}
 	return &this
 }
 
-// NewAlertsQueryWithDefaults creates a new AlertsQuery object.
+// NewAlertDefinitionsQueryWithDefaults creates a new AlertDefinitionsQuery object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewAlertsQueryWithDefaults() *AlertsQuery {
-	this := AlertsQuery{}
+func NewAlertDefinitionsQueryWithDefaults() *AlertDefinitionsQuery {
+	this := AlertDefinitionsQuery{}
 	return &this
 }
 
 // GetQueryID returns the QueryID field value if set, zero value otherwise.
-func (o *AlertsQuery) GetQueryID() string {
+func (o *AlertDefinitionsQuery) GetQueryID() string {
 	if o == nil || o.QueryID == nil {
 		var ret string
 		return ret
@@ -47,7 +47,7 @@ func (o *AlertsQuery) GetQueryID() string {
 
 // GetQueryIDOk returns a tuple with the QueryID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQuery) GetQueryIDOk() (*string, bool) {
+func (o *AlertDefinitionsQuery) GetQueryIDOk() (*string, bool) {
 	if o == nil || o.QueryID == nil {
 		return nil, false
 	}
@@ -55,17 +55,17 @@ func (o *AlertsQuery) GetQueryIDOk() (*string, bool) {
 }
 
 // HasQueryID returns a boolean if a field has been set.
-func (o *AlertsQuery) HasQueryID() bool {
+func (o *AlertDefinitionsQuery) HasQueryID() bool {
 	return o != nil && o.QueryID != nil
 }
 
 // SetQueryID gets a reference to the given string and assigns it to the QueryID field.
-func (o *AlertsQuery) SetQueryID(v string) {
+func (o *AlertDefinitionsQuery) SetQueryID(v string) {
 	o.QueryID = &v
 }
 
 // GetQuery returns the Query field value if set, zero value otherwise.
-func (o *AlertsQuery) GetQuery() string {
+func (o *AlertDefinitionsQuery) GetQuery() string {
 	if o == nil || o.Query == nil {
 		var ret string
 		return ret
@@ -75,7 +75,7 @@ func (o *AlertsQuery) GetQuery() string {
 
 // GetQueryOk returns a tuple with the Query field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQuery) GetQueryOk() (*string, bool) {
+func (o *AlertDefinitionsQuery) GetQueryOk() (*string, bool) {
 	if o == nil || o.Query == nil {
 		return nil, false
 	}
@@ -83,17 +83,17 @@ func (o *AlertsQuery) GetQueryOk() (*string, bool) {
 }
 
 // HasQuery returns a boolean if a field has been set.
-func (o *AlertsQuery) HasQuery() bool {
+func (o *AlertDefinitionsQuery) HasQuery() bool {
 	return o != nil && o.Query != nil
 }
 
 // SetQuery gets a reference to the given string and assigns it to the Query field.
-func (o *AlertsQuery) SetQuery(v string) {
+func (o *AlertDefinitionsQuery) SetQuery(v string) {
 	o.Query = &v
 }
 
 // GetTimeFrameValue returns the TimeFrameValue field value if set, zero value otherwise.
-func (o *AlertsQuery) GetTimeFrameValue() int64 {
+func (o *AlertDefinitionsQuery) GetTimeFrameValue() int64 {
 	if o == nil || o.TimeFrameValue == nil {
 		var ret int64
 		return ret
@@ -103,7 +103,7 @@ func (o *AlertsQuery) GetTimeFrameValue() int64 {
 
 // GetTimeFrameValueOk returns a tuple with the TimeFrameValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQuery) GetTimeFrameValueOk() (*int64, bool) {
+func (o *AlertDefinitionsQuery) GetTimeFrameValueOk() (*int64, bool) {
 	if o == nil || o.TimeFrameValue == nil {
 		return nil, false
 	}
@@ -111,17 +111,17 @@ func (o *AlertsQuery) GetTimeFrameValueOk() (*int64, bool) {
 }
 
 // HasTimeFrameValue returns a boolean if a field has been set.
-func (o *AlertsQuery) HasTimeFrameValue() bool {
+func (o *AlertDefinitionsQuery) HasTimeFrameValue() bool {
 	return o != nil && o.TimeFrameValue != nil
 }
 
 // SetTimeFrameValue gets a reference to the given int64 and assigns it to the TimeFrameValue field.
-func (o *AlertsQuery) SetTimeFrameValue(v int64) {
+func (o *AlertDefinitionsQuery) SetTimeFrameValue(v int64) {
 	o.TimeFrameValue = &v
 }
 
 // GetTimeFrameType returns the TimeFrameType field value if set, zero value otherwise.
-func (o *AlertsQuery) GetTimeFrameType() string {
+func (o *AlertDefinitionsQuery) GetTimeFrameType() string {
 	if o == nil || o.TimeFrameType == nil {
 		var ret string
 		return ret
@@ -131,7 +131,7 @@ func (o *AlertsQuery) GetTimeFrameType() string {
 
 // GetTimeFrameTypeOk returns a tuple with the TimeFrameType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQuery) GetTimeFrameTypeOk() (*string, bool) {
+func (o *AlertDefinitionsQuery) GetTimeFrameTypeOk() (*string, bool) {
 	if o == nil || o.TimeFrameType == nil {
 		return nil, false
 	}
@@ -139,17 +139,17 @@ func (o *AlertsQuery) GetTimeFrameTypeOk() (*string, bool) {
 }
 
 // HasTimeFrameType returns a boolean if a field has been set.
-func (o *AlertsQuery) HasTimeFrameType() bool {
+func (o *AlertDefinitionsQuery) HasTimeFrameType() bool {
 	return o != nil && o.TimeFrameType != nil
 }
 
 // SetTimeFrameType gets a reference to the given string and assigns it to the TimeFrameType field.
-func (o *AlertsQuery) SetTimeFrameType(v string) {
+func (o *AlertDefinitionsQuery) SetTimeFrameType(v string) {
 	o.TimeFrameType = &v
 }
 
 // GetQueryColumns returns the QueryColumns field value if set, zero value otherwise.
-func (o *AlertsQuery) GetQueryColumns() []SelectedColumn {
+func (o *AlertDefinitionsQuery) GetQueryColumns() []SelectedColumn {
 	if o == nil || o.QueryColumns == nil {
 		var ret []SelectedColumn
 		return ret
@@ -159,7 +159,7 @@ func (o *AlertsQuery) GetQueryColumns() []SelectedColumn {
 
 // GetQueryColumnsOk returns a tuple with the QueryColumns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQuery) GetQueryColumnsOk() (*[]SelectedColumn, bool) {
+func (o *AlertDefinitionsQuery) GetQueryColumnsOk() (*[]SelectedColumn, bool) {
 	if o == nil || o.QueryColumns == nil {
 		return nil, false
 	}
@@ -167,17 +167,17 @@ func (o *AlertsQuery) GetQueryColumnsOk() (*[]SelectedColumn, bool) {
 }
 
 // HasQueryColumns returns a boolean if a field has been set.
-func (o *AlertsQuery) HasQueryColumns() bool {
+func (o *AlertDefinitionsQuery) HasQueryColumns() bool {
 	return o != nil && o.QueryColumns != nil
 }
 
 // SetQueryColumns gets a reference to the given []SelectedColumn and assigns it to the QueryColumns field.
-func (o *AlertsQuery) SetQueryColumns(v []SelectedColumn) {
+func (o *AlertDefinitionsQuery) SetQueryColumns(v []SelectedColumn) {
 	o.QueryColumns = v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o AlertsQuery) MarshalJSON() ([]byte, error) {
+func (o AlertDefinitionsQuery) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -205,7 +205,7 @@ func (o AlertsQuery) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *AlertsQuery) UnMarshalJSON(bytes []byte) (err error) {
+func (o *AlertDefinitionsQuery) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		QueryID        *string          `json:"QueryID,omitempty"`
 		Query          *string          `json:"Query,omitempty"`

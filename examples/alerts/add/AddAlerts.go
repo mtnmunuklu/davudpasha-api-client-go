@@ -38,15 +38,15 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 
-	saveAlertsBody := davudpasha.AlertsSaveRequest{
-		Correlation: &davudpasha.AlertsCorrelationData{
+	saveAlertDefinitionsBody := davudpasha.AlertDefinitionsSaveRequest{
+		Correlation: &davudpasha.AlertDefinitionsCorrelationData{
 			Name:          common.PtrString("test-alert"),
 			Description:   *common.NewNullableString(common.PtrString("tes-alert")),
 			Tags:          *common.NewNullableList(&[]string{"tag1", "tag2"}),
 			RiskLevel:     common.PtrInt64(3),
 			MaxAlertCount: common.PtrInt64(4),
 			MaxSendCount:  common.PtrInt64(10),
-			Data: &davudpasha.AlertsQueryData{
+			Data: &davudpasha.AlertDefinitionsQueryData{
 				TimeFrameValue:            common.PtrInt64(5),
 				TimeFrameType:             davudpasha.TIMEFRAMETYPE_MINUTES,
 				RuleType:                  davudpasha.RULETYPE_ANY,
@@ -60,15 +60,15 @@ func main() {
 		},
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
-	alertsApi := davudpasha.NewAlertsApi(apiClient)
-	alertsResp, r, err := alertsApi.SaveAlerts(ctx, *davudpasha.NewSaveAlertsOptionalParameters().WithBody(saveAlertsBody))
+	alertsApi := davudpasha.NewAlertDefinitionsApi(apiClient)
+	alertsResp, r, err := alertsApi.SaveAlertDefinitions(ctx, *davudpasha.NewSaveAlertDefinitionsOptionalParameters().WithBody(saveAlertDefinitionsBody))
 
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AlertsApi.SaveAlerts`: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionsApi.SaveAlertDefinitions`: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 
 	responseContent, _ := json.MarshalIndent(alertsResp, "", " ")
-	fmt.Fprintf(os.Stdout, "Response from `AlertsApi.SaveAlerts`:\n%s\n", responseContent)
+	fmt.Fprintf(os.Stdout, "Response from `AlertDefinitionsApi.SaveAlertDefinitions`:\n%s\n", responseContent)
 
 }

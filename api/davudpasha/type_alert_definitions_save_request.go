@@ -7,10 +7,8 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// AlertsSearchRequest contains the search criteria for alerts.
-type AlertsSearchRequest struct {
-	// Filter for the search request.
-	Filter *string `json:"filter,omitempty"`
+type AlertDefinitionsSaveRequest struct {
+	Correlation *AlertDefinitionsCorrelationData `json:"correlation,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.
@@ -19,53 +17,53 @@ type AlertsSearchRequest struct {
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
-// NewAlertsSearchRequest creates a new AlertsSearchRequest object.
+// NewAlertDefinitionsSaveRequest creates a new AlertDefinitionsSaveRequest object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewAlertsSearchRequest() *AlertsSearchRequest {
-	this := AlertsSearchRequest{}
+func NewAlertDefinitionsSaveRequest() *AlertDefinitionsSaveRequest {
+	this := AlertDefinitionsSaveRequest{}
 	return &this
 }
 
-// NewAlertsSearchRequestWithDefaults creates a new AlertsSearchRequest object.
+// NewAlertDefinitionsSaveRequestWithDefaults creates a new AlertDefinitionsSaveRequest object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewAlertsSearchRequestWithDefaults() *AlertsSearchRequest {
-	this := AlertsSearchRequest{}
+func NewAlertDefinitionsSaveRequestWithDefaults() *AlertDefinitionsSaveRequest {
+	this := AlertDefinitionsSaveRequest{}
 	return &this
 }
 
-// GetFilter returns the Filter field value if set, zero value otherwise.
-func (o *AlertsSearchRequest) GetFilter() string {
-	if o == nil || o.Filter == nil {
-		var ret string
+// GetCorrelation returns the Correlation field value if set, zero value otherwise.
+func (o *AlertDefinitionsSaveRequest) GetCorrelation() AlertDefinitionsCorrelationData {
+	if o == nil || o.Correlation == nil {
+		var ret AlertDefinitionsCorrelationData
 		return ret
 	}
-	return *o.Filter
+	return *o.Correlation
 }
 
-// GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
+// GetCorrelationOk returns a tuple with the Correlation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsSearchRequest) GetFilterOk() (*string, bool) {
-	if o == nil || o.Filter == nil {
+func (o *AlertDefinitionsSaveRequest) GetCorrelationOk() (*AlertDefinitionsCorrelationData, bool) {
+	if o == nil || o.Correlation == nil {
 		return nil, false
 	}
-	return o.Filter, true
+	return o.Correlation, true
 }
 
-// HasFilter returns a boolean if a field has been set.
-func (o *AlertsSearchRequest) HasFilter() bool {
-	return o != nil && o.Filter != nil
+// HasCorrelation returns a boolean if a field has been set.
+func (o *AlertDefinitionsSaveRequest) HasCorrelation() bool {
+	return o != nil && o.Correlation != nil
 }
 
-// SetFilter gets a reference to the given string and assigns it to the Filter field.
-func (o *AlertsSearchRequest) SetFilter(v string) {
-	o.Filter = &v
+// SetCorrelation gets a reference to the given AlertDefinitionsCorrelationData and assigns it to the Correlation field.
+func (o *AlertDefinitionsSaveRequest) SetCorrelation(v AlertDefinitionsCorrelationData) {
+	o.Correlation = &v
 }
 
 // GetSmartRestRequestContext returns the SmartRestRequestContext field value if set, zero value otherwise.
-func (o *AlertsSearchRequest) GetSmartRestRequestContext() string {
+func (o *AlertDefinitionsSaveRequest) GetSmartRestRequestContext() string {
 	if o == nil || o.SmartRestRequestContext == nil {
 		var ret string
 		return ret
@@ -75,7 +73,7 @@ func (o *AlertsSearchRequest) GetSmartRestRequestContext() string {
 
 // GetSmartRestRequestContextOk returns a tuple with the SmartRestRequestContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsSearchRequest) GetSmartRestRequestContextOk() (*string, bool) {
+func (o *AlertDefinitionsSaveRequest) GetSmartRestRequestContextOk() (*string, bool) {
 	if o == nil || o.SmartRestRequestContext == nil {
 		return nil, false
 	}
@@ -83,23 +81,23 @@ func (o *AlertsSearchRequest) GetSmartRestRequestContextOk() (*string, bool) {
 }
 
 // HasSmartRestRequestContext returns a boolean if a field has been set.
-func (o *AlertsSearchRequest) HasSmartRestRequestContext() bool {
+func (o *AlertDefinitionsSaveRequest) HasSmartRestRequestContext() bool {
 	return o != nil && o.SmartRestRequestContext != nil
 }
 
 // SetSmartRestRequestContext gets a reference to the given string and assigns it to the SmartRestRequestContext field.
-func (o *AlertsSearchRequest) SetSmartRestRequestContext(v string) {
+func (o *AlertDefinitionsSaveRequest) SetSmartRestRequestContext(v string) {
 	o.SmartRestRequestContext = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o AlertsSearchRequest) MarshalJSON() ([]byte, error) {
+func (o AlertDefinitionsSaveRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
-	if o.Filter != nil {
-		toSerialize["filter"] = o.Filter
+	if o.Correlation != nil {
+		toSerialize["correlation"] = o.Correlation
 	}
 	if o.SmartRestRequestContext != nil {
 		toSerialize["smartRestRequestContext"] = o.SmartRestRequestContext
@@ -112,31 +110,40 @@ func (o AlertsSearchRequest) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *AlertsSearchRequest) UnMarshalJSON(bytes []byte) (err error) {
+func (o *AlertDefinitionsSaveRequest) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Filter                  *string `json:"filter,omitempty"`
-		SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
+		Correlation             *AlertDefinitionsCorrelationData `json:"correlation,omitempty"`
+		SmartRestRequestContext *string                          `json:"smartRestRequestContext,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
-	if all.Filter == nil {
-		return fmt.Errorf("requiered field filter is missing")
+	if all.Correlation == nil {
+		return fmt.Errorf("requiered field correlation is missing")
 	}
 	if all.SmartRestRequestContext == nil {
 		return fmt.Errorf("requiered field smartRestRequestContext is missing")
 	}
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"filter", "smartRestRequestContext"})
+		common.DeleteKeys(additionalProperties, &[]string{"correlation", "smartRestRequestContext"})
 	} else {
 		return err
 	}
-	o.Filter = all.Filter
+
+	hasInvalidField := false
+	if all.Correlation != nil && all.Correlation.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
+	o.Correlation = all.Correlation
 	o.SmartRestRequestContext = all.SmartRestRequestContext
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
+	}
+
+	if hasInvalidField {
+		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
 	return nil

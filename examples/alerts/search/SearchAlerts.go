@@ -20,7 +20,7 @@ func init() {
 }
 
 func main() {
-	body := davudpasha.AlertsSearchRequest{
+	body := davudpasha.AlertDefinitionsSearchRequest{
 		Filter:                  common.PtrString("test-alert"),
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
 	}
@@ -29,14 +29,14 @@ func main() {
 	configuration := common.NewConfiguration()
 	configuration.SetHTTPClientWithInsecureSkipVerify()
 	apiClient := common.NewAPIClient(configuration)
-	api := davudpasha.NewAlertsApi(apiClient)
-	resp, r, err := api.SearchAlerts(ctx, *davudpasha.NewSearchAlertsOptionalParameters().WithBody(body))
+	api := davudpasha.NewAlertDefinitionsApi(apiClient)
+	resp, r, err := api.SearchAlertDefinitions(ctx, *davudpasha.NewSearchAlertDefinitionsOptionalParameters().WithBody(body))
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AlertsApi.SearchAlerts`: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionsApi.SearchAlertDefinitions`: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 
 	responseContent, _ := json.MarshalIndent(resp, "", " ")
-	fmt.Fprintf(os.Stdout, "Response from `AlertsApi.SearchAlerts`:\n%s\n", responseContent)
+	fmt.Fprintf(os.Stdout, "Response from `AlertDefinitionsApi.SearchAlertDefinitions`:\n%s\n", responseContent)
 
 }

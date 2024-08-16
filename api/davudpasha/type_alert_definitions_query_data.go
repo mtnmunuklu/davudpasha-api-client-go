@@ -7,41 +7,41 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-type AlertsQueryData struct {
-	TimeFrameValue            *int64                          `json:"TimeFrameValue,omitempty"`
-	TimeFrameType             AlertsTimeFrameType             `json:"TimeFrameType,omitempty"`
-	RuleType                  AlertsRuleType                  `json:"RuleType,omitempty"`
-	QueryCorrelationAlertType AlertsQueryCorrelationAlertType `json:"QueryCorrelationAlertType,omitempty"`
-	QueryID                   *string                         `json:"QueryID,omitempty"`
-	LgsID                     *string                         `json:"LgsID,omitempty"`
-	Query                     *string                         `json:"Query,omitempty"`
-	LastReadTime              *string                         `json:"LastReadTime,omitempty"`
-	Queries                   []AlertsQuery                   `json:"Queries,omitempty"`
+type AlertDefinitionsQueryData struct {
+	TimeFrameValue            *int64                                    `json:"TimeFrameValue,omitempty"`
+	TimeFrameType             AlertDefinitionsTimeFrameType             `json:"TimeFrameType,omitempty"`
+	RuleType                  AlertDefinitionsRuleType                  `json:"RuleType,omitempty"`
+	QueryCorrelationAlertType AlertDefinitionsQueryCorrelationAlertType `json:"QueryCorrelationAlertType,omitempty"`
+	QueryID                   *string                                   `json:"QueryID,omitempty"`
+	LgsID                     *string                                   `json:"LgsID,omitempty"`
+	Query                     *string                                   `json:"Query,omitempty"`
+	LastReadTime              *string                                   `json:"LastReadTime,omitempty"`
+	Queries                   []AlertDefinitionsQuery                   `json:"Queries,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
-// NewAlertsQueryData creates a new AlertsQueryData object.
+// NewAlertDefinitionsQueryData creates a new AlertDefinitionsQueryData object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewAlertsQueryData() *AlertsQueryData {
-	this := AlertsQueryData{}
+func NewAlertDefinitionsQueryData() *AlertDefinitionsQueryData {
+	this := AlertDefinitionsQueryData{}
 	return &this
 }
 
-// NewAlertsQueryDataWithDefaults creates a new AlertsQueryData object.
+// NewAlertDefinitionsQueryDataWithDefaults creates a new AlertDefinitionsQueryData object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewAlertsQueryDataWithDefaults() *AlertsQueryData {
-	this := AlertsQueryData{}
+func NewAlertDefinitionsQueryDataWithDefaults() *AlertDefinitionsQueryData {
+	this := AlertDefinitionsQueryData{}
 	return &this
 }
 
 // GetTimeFrameValue returns the TimeFrameValue field value if set, zero value otherwise.
-func (o *AlertsQueryData) GetTimeFrameValue() int64 {
+func (o *AlertDefinitionsQueryData) GetTimeFrameValue() int64 {
 	if o == nil || o.TimeFrameValue == nil {
 		var ret int64
 		return ret
@@ -51,7 +51,7 @@ func (o *AlertsQueryData) GetTimeFrameValue() int64 {
 
 // GetTimeFrameValueOk returns a tuple with the TimeFrameValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQueryData) GetTimeFrameValueOk() (*int64, bool) {
+func (o *AlertDefinitionsQueryData) GetTimeFrameValueOk() (*int64, bool) {
 	if o == nil || o.TimeFrameValue == nil {
 		return nil, false
 	}
@@ -59,19 +59,19 @@ func (o *AlertsQueryData) GetTimeFrameValueOk() (*int64, bool) {
 }
 
 // HasTimeFrameValue returns a boolean if a field has been set.
-func (o *AlertsQueryData) HasTimeFrameValue() bool {
+func (o *AlertDefinitionsQueryData) HasTimeFrameValue() bool {
 	return o != nil && o.TimeFrameValue != nil
 }
 
 // SetTimeFrameValue gets a reference to the given int64 and assigns it to the TimeFrameValue field.
-func (o *AlertsQueryData) SetTimeFrameValue(v int64) {
+func (o *AlertDefinitionsQueryData) SetTimeFrameValue(v int64) {
 	o.TimeFrameValue = &v
 }
 
 // GetTimeFrameType returns the TimeFrameType field value if set, zero value otherwise.
-func (o *AlertsQueryData) GetTimeFrameType() AlertsTimeFrameType {
+func (o *AlertDefinitionsQueryData) GetTimeFrameType() AlertDefinitionsTimeFrameType {
 	if o == nil {
-		var ret AlertsTimeFrameType
+		var ret AlertDefinitionsTimeFrameType
 		return ret
 	}
 	return o.TimeFrameType
@@ -79,7 +79,7 @@ func (o *AlertsQueryData) GetTimeFrameType() AlertsTimeFrameType {
 
 // GetTimeFrameTypeOk returns a tuple with the TimeFrameType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQueryData) GetTimeFrameTypeOk() (*AlertsTimeFrameType, bool) {
+func (o *AlertDefinitionsQueryData) GetTimeFrameTypeOk() (*AlertDefinitionsTimeFrameType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -87,14 +87,14 @@ func (o *AlertsQueryData) GetTimeFrameTypeOk() (*AlertsTimeFrameType, bool) {
 }
 
 // SetTimeFrameType gets a reference to the given string and assigns it to the TimeFrameType field.
-func (o *AlertsQueryData) SetTimeFrameType(v AlertsTimeFrameType) {
+func (o *AlertDefinitionsQueryData) SetTimeFrameType(v AlertDefinitionsTimeFrameType) {
 	o.TimeFrameType = v
 }
 
 // GetRuleType returns the RuleType field value if set, zero value otherwise.
-func (o *AlertsQueryData) GetRuleType() AlertsRuleType {
+func (o *AlertDefinitionsQueryData) GetRuleType() AlertDefinitionsRuleType {
 	if o == nil {
-		var ret AlertsRuleType
+		var ret AlertDefinitionsRuleType
 		return ret
 	}
 	return o.RuleType
@@ -102,7 +102,7 @@ func (o *AlertsQueryData) GetRuleType() AlertsRuleType {
 
 // GetRuleTypeOk returns a tuple with the RuleType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQueryData) GetRuleTypeOk() (*AlertsRuleType, bool) {
+func (o *AlertDefinitionsQueryData) GetRuleTypeOk() (*AlertDefinitionsRuleType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -110,14 +110,14 @@ func (o *AlertsQueryData) GetRuleTypeOk() (*AlertsRuleType, bool) {
 }
 
 // SetRuleType gets a reference to the given string and assigns it to the RuleType field.
-func (o *AlertsQueryData) SetRuleType(v AlertsRuleType) {
+func (o *AlertDefinitionsQueryData) SetRuleType(v AlertDefinitionsRuleType) {
 	o.RuleType = v
 }
 
 // GetQueryCorrelationAlertType returns the QueryCorrelationAlertType field value if set, zero value otherwise.
-func (o *AlertsQueryData) GetQueryCorrelationAlertType() AlertsQueryCorrelationAlertType {
+func (o *AlertDefinitionsQueryData) GetQueryCorrelationAlertType() AlertDefinitionsQueryCorrelationAlertType {
 	if o == nil {
-		var ret AlertsQueryCorrelationAlertType
+		var ret AlertDefinitionsQueryCorrelationAlertType
 		return ret
 	}
 	return o.QueryCorrelationAlertType
@@ -125,7 +125,7 @@ func (o *AlertsQueryData) GetQueryCorrelationAlertType() AlertsQueryCorrelationA
 
 // GetQueryCorrelationAlertTypeOk returns a tuple with the QueryCorrelationAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQueryData) GetQueryCorrelationAlertTypeOk() (*AlertsQueryCorrelationAlertType, bool) {
+func (o *AlertDefinitionsQueryData) GetQueryCorrelationAlertTypeOk() (*AlertDefinitionsQueryCorrelationAlertType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -133,12 +133,12 @@ func (o *AlertsQueryData) GetQueryCorrelationAlertTypeOk() (*AlertsQueryCorrelat
 }
 
 // SetQueryCorrelationAlertType gets a reference to the given string and assigns it to the QueryCorrelationAlertType field.
-func (o *AlertsQueryData) SetQueryCorrelationAlertType(v AlertsQueryCorrelationAlertType) {
+func (o *AlertDefinitionsQueryData) SetQueryCorrelationAlertType(v AlertDefinitionsQueryCorrelationAlertType) {
 	o.QueryCorrelationAlertType = v
 }
 
 // GetQueryID returns the QueryID field value if set, zero value otherwise.
-func (o *AlertsQueryData) GetQueryID() string {
+func (o *AlertDefinitionsQueryData) GetQueryID() string {
 	if o == nil || o.QueryID == nil {
 		var ret string
 		return ret
@@ -148,7 +148,7 @@ func (o *AlertsQueryData) GetQueryID() string {
 
 // GetQueryIDOk returns a tuple with the QueryID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQueryData) GetQueryIDOk() (*string, bool) {
+func (o *AlertDefinitionsQueryData) GetQueryIDOk() (*string, bool) {
 	if o == nil || o.QueryID == nil {
 		return nil, false
 	}
@@ -156,17 +156,17 @@ func (o *AlertsQueryData) GetQueryIDOk() (*string, bool) {
 }
 
 // HasQueryID returns a boolean if a field has been set.
-func (o *AlertsQueryData) HasQueryID() bool {
+func (o *AlertDefinitionsQueryData) HasQueryID() bool {
 	return o != nil && o.QueryID != nil
 }
 
 // SetQueryID gets a reference to the given string and assigns it to the QueryID field.
-func (o *AlertsQueryData) SetQueryID(v string) {
+func (o *AlertDefinitionsQueryData) SetQueryID(v string) {
 	o.QueryID = &v
 }
 
 // GetLgsID returns the LgsID field value if set, zero value otherwise.
-func (o *AlertsQueryData) GetLgsID() string {
+func (o *AlertDefinitionsQueryData) GetLgsID() string {
 	if o == nil || o.LgsID == nil {
 		var ret string
 		return ret
@@ -176,7 +176,7 @@ func (o *AlertsQueryData) GetLgsID() string {
 
 // GetLgsIDOk returns a tuple with the LgsID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQueryData) GetLgsIDOk() (*string, bool) {
+func (o *AlertDefinitionsQueryData) GetLgsIDOk() (*string, bool) {
 	if o == nil || o.LgsID == nil {
 		return nil, false
 	}
@@ -184,17 +184,17 @@ func (o *AlertsQueryData) GetLgsIDOk() (*string, bool) {
 }
 
 // HasLgsID returns a boolean if a field has been set.
-func (o *AlertsQueryData) HasLgsID() bool {
+func (o *AlertDefinitionsQueryData) HasLgsID() bool {
 	return o != nil && o.LgsID != nil
 }
 
 // SetLgsID gets a reference to the given string and assigns it to the LgsID field.
-func (o *AlertsQueryData) SetLgsID(v string) {
+func (o *AlertDefinitionsQueryData) SetLgsID(v string) {
 	o.LgsID = &v
 }
 
 // GetQuery returns the Query field value if set, zero value otherwise.
-func (o *AlertsQueryData) GetQuery() string {
+func (o *AlertDefinitionsQueryData) GetQuery() string {
 	if o == nil || o.Query == nil {
 		var ret string
 		return ret
@@ -204,7 +204,7 @@ func (o *AlertsQueryData) GetQuery() string {
 
 // GetQueryOk returns a tuple with the Query field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQueryData) GetQueryOk() (*string, bool) {
+func (o *AlertDefinitionsQueryData) GetQueryOk() (*string, bool) {
 	if o == nil || o.Query == nil {
 		return nil, false
 	}
@@ -212,17 +212,17 @@ func (o *AlertsQueryData) GetQueryOk() (*string, bool) {
 }
 
 // HasQuery returns a boolean if a field has been set.
-func (o *AlertsQueryData) HasQuery() bool {
+func (o *AlertDefinitionsQueryData) HasQuery() bool {
 	return o != nil && o.Query != nil
 }
 
 // SetQuery gets a reference to the given string and assigns it to the Query field.
-func (o *AlertsQueryData) SetQuery(v string) {
+func (o *AlertDefinitionsQueryData) SetQuery(v string) {
 	o.Query = &v
 }
 
 // GetLastReadTime returns the LastReadTime field value if set, zero value otherwise.
-func (o *AlertsQueryData) GetLastReadTime() string {
+func (o *AlertDefinitionsQueryData) GetLastReadTime() string {
 	if o == nil || o.LastReadTime == nil {
 		var ret string
 		return ret
@@ -232,7 +232,7 @@ func (o *AlertsQueryData) GetLastReadTime() string {
 
 // GetLastReadTimeOk returns a tuple with the LastReadTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQueryData) GetLastReadTimeOk() (*string, bool) {
+func (o *AlertDefinitionsQueryData) GetLastReadTimeOk() (*string, bool) {
 	if o == nil || o.LastReadTime == nil {
 		return nil, false
 	}
@@ -240,19 +240,19 @@ func (o *AlertsQueryData) GetLastReadTimeOk() (*string, bool) {
 }
 
 // HasLastReadTime returns a boolean if a field has been set.
-func (o *AlertsQueryData) HasLastReadTime() bool {
+func (o *AlertDefinitionsQueryData) HasLastReadTime() bool {
 	return o != nil && o.LastReadTime != nil
 }
 
 // SetLastReadTime gets a reference to the given string and assigns it to the LastReadTime field.
-func (o *AlertsQueryData) SetLastReadTime(v string) {
+func (o *AlertDefinitionsQueryData) SetLastReadTime(v string) {
 	o.LastReadTime = &v
 }
 
 // GetQueries returns the Queries field value if set, zero value otherwise.
-func (o *AlertsQueryData) GetQueries() []AlertsQuery {
+func (o *AlertDefinitionsQueryData) GetQueries() []AlertDefinitionsQuery {
 	if o == nil || o.Queries == nil {
-		var ret []AlertsQuery
+		var ret []AlertDefinitionsQuery
 		return ret
 	}
 	return o.Queries
@@ -260,7 +260,7 @@ func (o *AlertsQueryData) GetQueries() []AlertsQuery {
 
 // GetQueriesOk returns a tuple with the Queries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsQueryData) GetQueriesOk() (*[]AlertsQuery, bool) {
+func (o *AlertDefinitionsQueryData) GetQueriesOk() (*[]AlertDefinitionsQuery, bool) {
 	if o == nil || o.Queries == nil {
 		return nil, false
 	}
@@ -268,17 +268,17 @@ func (o *AlertsQueryData) GetQueriesOk() (*[]AlertsQuery, bool) {
 }
 
 // HasQueries returns a boolean if a field has been set.
-func (o *AlertsQueryData) HasQueries() bool {
+func (o *AlertDefinitionsQueryData) HasQueries() bool {
 	return o != nil && o.Queries != nil
 }
 
-// SetQueries gets a reference to the given []AlertsQuery and assigns it to the Queries field.
-func (o *AlertsQueryData) SetQueries(v []AlertsQuery) {
+// SetQueries gets a reference to the given []AlertDefinitionsQuery and assigns it to the Queries field.
+func (o *AlertDefinitionsQueryData) SetQueries(v []AlertDefinitionsQuery) {
 	o.Queries = v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o AlertsQueryData) MarshalJSON() ([]byte, error) {
+func (o AlertDefinitionsQueryData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -321,17 +321,17 @@ func (o AlertsQueryData) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *AlertsQueryData) UnMarshalJSON(bytes []byte) (err error) {
+func (o *AlertDefinitionsQueryData) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		TimeFrameValue            *int64                           `json:"TimeFrameValue,omitempty"`
-		TimeFrameType             *AlertsTimeFrameType             `json:"TimeFrameType,omitempty"`
-		RuleType                  *AlertsRuleType                  `json:"RuleType,omitempty"`
-		QueryCorrelationAlertType *AlertsQueryCorrelationAlertType `json:"QueryCorrelationAlertType,omitempty"`
-		QueryID                   *string                          `json:"QueryID,omitempty"`
-		LgsID                     *string                          `json:"LgsID,omitempty"`
-		Query                     *string                          `json:"Query,omitempty"`
-		LastReadTime              *string                          `json:"LastReadTime,omitempty"`
-		Queries                   []AlertsQuery                    `json:"Queries,omitempty"`
+		TimeFrameValue            *int64                                     `json:"TimeFrameValue,omitempty"`
+		TimeFrameType             *AlertDefinitionsTimeFrameType             `json:"TimeFrameType,omitempty"`
+		RuleType                  *AlertDefinitionsRuleType                  `json:"RuleType,omitempty"`
+		QueryCorrelationAlertType *AlertDefinitionsQueryCorrelationAlertType `json:"QueryCorrelationAlertType,omitempty"`
+		QueryID                   *string                                    `json:"QueryID,omitempty"`
+		LgsID                     *string                                    `json:"LgsID,omitempty"`
+		Query                     *string                                    `json:"Query,omitempty"`
+		LastReadTime              *string                                    `json:"LastReadTime,omitempty"`
+		Queries                   []AlertDefinitionsQuery                    `json:"Queries,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)

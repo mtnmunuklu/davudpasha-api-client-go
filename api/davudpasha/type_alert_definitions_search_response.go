@@ -6,10 +6,10 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// AlertsSearchResponse contains the response data for an alerts search.
-type AlertsSearchResponse struct {
+// AlertDefinitionsSearchResponse contains the response data for an alerts search.
+type AlertDefinitionsSearchResponse struct {
 	// List of alert items.
-	Items []AlertsItem `json:"Items,omitempty"`
+	Items []AlertDefinitionsItem `json:"Items,omitempty"`
 	// List of failed items in raw JSON format.
 	FailedItems []json.RawMessage `json:"FailedItems,omitempty"`
 	// List of successful items.
@@ -20,27 +20,27 @@ type AlertsSearchResponse struct {
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
-// NewAlertsSearchResponse creates a new AlertsSearchResponse object.
+// NewAlertDefinitionsSearchResponse creates a new AlertDefinitionsSearchResponse object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewAlertsSearchResponse() *AlertsSearchResponse {
-	this := AlertsSearchResponse{}
+func NewAlertDefinitionsSearchResponse() *AlertDefinitionsSearchResponse {
+	this := AlertDefinitionsSearchResponse{}
 	return &this
 }
 
-// NewAlertsSearchResponseWithDefaults creates a new AlertsSearchResponse object.
+// NewAlertDefinitionsSearchResponseWithDefaults creates a new AlertDefinitionsSearchResponse object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewAlertsSearchResponseWithDefaults() *AlertsSearchResponse {
-	this := AlertsSearchResponse{}
+func NewAlertDefinitionsSearchResponseWithDefaults() *AlertDefinitionsSearchResponse {
+	this := AlertDefinitionsSearchResponse{}
 	return &this
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *AlertsSearchResponse) GetItems() []AlertsItem {
+func (o *AlertDefinitionsSearchResponse) GetItems() []AlertDefinitionsItem {
 	if o == nil || o.Items == nil {
-		var ret []AlertsItem
+		var ret []AlertDefinitionsItem
 		return ret
 	}
 	return o.Items
@@ -48,7 +48,7 @@ func (o *AlertsSearchResponse) GetItems() []AlertsItem {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsSearchResponse) GetItemsOk() (*[]AlertsItem, bool) {
+func (o *AlertDefinitionsSearchResponse) GetItemsOk() (*[]AlertDefinitionsItem, bool) {
 	if o == nil || o.Items == nil {
 		return nil, false
 	}
@@ -56,17 +56,17 @@ func (o *AlertsSearchResponse) GetItemsOk() (*[]AlertsItem, bool) {
 }
 
 // HasItems returns a boolean if a field has been set.
-func (o *AlertsSearchResponse) HasItems() bool {
+func (o *AlertDefinitionsSearchResponse) HasItems() bool {
 	return o != nil && o.Items != nil
 }
 
-// SetItems gets a reference to the given []AlertsItem and assigns it to the Items field.
-func (o *AlertsSearchResponse) SetItems(v []AlertsItem) {
+// SetItems gets a reference to the given []AlertDefinitionsItem and assigns it to the Items field.
+func (o *AlertDefinitionsSearchResponse) SetItems(v []AlertDefinitionsItem) {
 	o.Items = v
 }
 
 // GetFailedItems returns the FailedItems field value if set, zero value otherwise.
-func (o *AlertsSearchResponse) GetFailedItems() []json.RawMessage {
+func (o *AlertDefinitionsSearchResponse) GetFailedItems() []json.RawMessage {
 	if o == nil || o.FailedItems == nil {
 		var ret []json.RawMessage
 		return ret
@@ -76,7 +76,7 @@ func (o *AlertsSearchResponse) GetFailedItems() []json.RawMessage {
 
 // GetFailedItemsOk returns a tuple with the FailedItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsSearchResponse) GetFailedItemsOk() (*[]json.RawMessage, bool) {
+func (o *AlertDefinitionsSearchResponse) GetFailedItemsOk() (*[]json.RawMessage, bool) {
 	if o == nil || o.FailedItems == nil {
 		return nil, false
 	}
@@ -84,17 +84,17 @@ func (o *AlertsSearchResponse) GetFailedItemsOk() (*[]json.RawMessage, bool) {
 }
 
 // HasFailedItems returns a boolean if a field has been set.
-func (o *AlertsSearchResponse) HasFailedItems() bool {
+func (o *AlertDefinitionsSearchResponse) HasFailedItems() bool {
 	return o != nil && o.FailedItems != nil
 }
 
 // SetFailedItems sets field value
-func (o *AlertsSearchResponse) SetFailedItems(v []json.RawMessage) {
+func (o *AlertDefinitionsSearchResponse) SetFailedItems(v []json.RawMessage) {
 	o.FailedItems = v
 }
 
 // GetSuccessItem returns the SuccessItem field value if set, zero value otherwise.
-func (o *AlertsSearchResponse) GetSuccessItem() []SuccessItem {
+func (o *AlertDefinitionsSearchResponse) GetSuccessItem() []SuccessItem {
 	if o == nil || o.SuccessItems == nil {
 		var ret []SuccessItem
 		return ret
@@ -104,7 +104,7 @@ func (o *AlertsSearchResponse) GetSuccessItem() []SuccessItem {
 
 // GetSuccessItemOk returns a tuple with the SuccessItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsSearchResponse) GetSuccessItemOk() (*[]SuccessItem, bool) {
+func (o *AlertDefinitionsSearchResponse) GetSuccessItemOk() (*[]SuccessItem, bool) {
 	if o == nil || o.SuccessItems == nil {
 		return nil, false
 	}
@@ -112,17 +112,17 @@ func (o *AlertsSearchResponse) GetSuccessItemOk() (*[]SuccessItem, bool) {
 }
 
 // HasSuccessItem returns a boolean if a field has been set.
-func (o *AlertsSearchResponse) HasSuccessItem() bool {
+func (o *AlertDefinitionsSearchResponse) HasSuccessItem() bool {
 	return o != nil && o.SuccessItems != nil
 }
 
 // SetSuccessItem sets field value
-func (o *AlertsSearchResponse) SetSuccessItem(v []SuccessItem) {
+func (o *AlertDefinitionsSearchResponse) SetSuccessItem(v []SuccessItem) {
 	o.SuccessItems = v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o AlertsSearchResponse) MarshalJSON() ([]byte, error) {
+func (o AlertDefinitionsSearchResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -144,11 +144,11 @@ func (o AlertsSearchResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *AlertsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
+func (o *AlertDefinitionsSearchResponse) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		Items        []AlertsItem      `json:"Items,omitempty"`
-		FailedItems  []json.RawMessage `json:"FailedItems,omitempty"`
-		SuccessItems []SuccessItem     `json:"SuccessItems,omitempty"`
+		Items        []AlertDefinitionsItem `json:"Items,omitempty"`
+		FailedItems  []json.RawMessage      `json:"FailedItems,omitempty"`
+		SuccessItems []SuccessItem          `json:"SuccessItems,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)

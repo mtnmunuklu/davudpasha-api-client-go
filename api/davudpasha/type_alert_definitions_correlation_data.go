@@ -7,8 +7,8 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// AlertsCorrelationData represents correlation data for alerts.
-type AlertsCorrelationData struct {
+// AlertDefinitionsCorrelationData represents correlation data for alerts.
+type AlertDefinitionsCorrelationData struct {
 	// ID of the alert correlation.
 	ID *string `json:"Id,omitempty"`
 	// Whether the correlation is enabled.
@@ -44,9 +44,9 @@ type AlertsCorrelationData struct {
 	// Maximum send count.
 	MaxSendCount *int64 `json:"MaxSendCount,omitempty"`
 	// Raw data in JSON format.
-	Data *AlertsQueryData `json:"Data,omitempty"`
+	Data *AlertDefinitionsQueryData `json:"Data,omitempty"`
 	// Type of correlation.
-	CorrelationType AlertsCorrelationType `json:"CorrelationType,omitempty"`
+	CorrelationType AlertDefinitionsCorrelationType `json:"CorrelationType,omitempty"`
 	// Message of the correlation.
 	Message *string `json:"Message,omitempty"`
 	// Columns grouped by the correlation.
@@ -61,25 +61,25 @@ type AlertsCorrelationData struct {
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
-// NewAlertsCorrelationData creates a new AlertsCorrelationData object.
+// NewAlertDefinitionsCorrelationData creates a new AlertDefinitionsCorrelationData object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewAlertsCorrelationData() *AlertsCorrelationData {
-	this := AlertsCorrelationData{}
+func NewAlertDefinitionsCorrelationData() *AlertDefinitionsCorrelationData {
+	this := AlertDefinitionsCorrelationData{}
 	return &this
 }
 
-// NewAlertsCorrelationDataWithDefaults creates a new AlertsCorrelationData object.
+// NewAlertDefinitionsCorrelationDataWithDefaults creates a new AlertDefinitionsCorrelationData object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewAlertsCorrelationDataWithDefaults() *AlertsCorrelationData {
-	this := AlertsCorrelationData{}
+func NewAlertDefinitionsCorrelationDataWithDefaults() *AlertDefinitionsCorrelationData {
+	this := AlertDefinitionsCorrelationData{}
 	return &this
 }
 
 // GetID returns the ID field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetID() string {
+func (o *AlertDefinitionsCorrelationData) GetID() string {
 	if o == nil || o.ID == nil {
 		var ret string
 		return ret
@@ -89,7 +89,7 @@ func (o *AlertsCorrelationData) GetID() string {
 
 // GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetIDOk() (*string, bool) {
+func (o *AlertDefinitionsCorrelationData) GetIDOk() (*string, bool) {
 	if o == nil || o.ID == nil {
 		return nil, false
 	}
@@ -97,17 +97,17 @@ func (o *AlertsCorrelationData) GetIDOk() (*string, bool) {
 }
 
 // HasID returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasID() bool {
+func (o *AlertDefinitionsCorrelationData) HasID() bool {
 	return o != nil && o.ID != nil
 }
 
 // SetID gets a reference to the given string and assigns it to the ID field.
-func (o *AlertsCorrelationData) SetID(v string) {
+func (o *AlertDefinitionsCorrelationData) SetID(v string) {
 	o.ID = &v
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetEnabled() bool {
+func (o *AlertDefinitionsCorrelationData) GetEnabled() bool {
 	if o == nil || o.Enabled == nil {
 		var ret bool
 		return ret
@@ -117,7 +117,7 @@ func (o *AlertsCorrelationData) GetEnabled() bool {
 
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetEnabledOk() (*bool, bool) {
+func (o *AlertDefinitionsCorrelationData) GetEnabledOk() (*bool, bool) {
 	if o == nil || o.Enabled == nil {
 		return nil, false
 	}
@@ -125,17 +125,17 @@ func (o *AlertsCorrelationData) GetEnabledOk() (*bool, bool) {
 }
 
 // HasEnabled returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasEnabled() bool {
+func (o *AlertDefinitionsCorrelationData) HasEnabled() bool {
 	return o != nil && o.Enabled != nil
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
-func (o *AlertsCorrelationData) SetEnabled(v bool) {
+func (o *AlertDefinitionsCorrelationData) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetName() string {
+func (o *AlertDefinitionsCorrelationData) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -145,7 +145,7 @@ func (o *AlertsCorrelationData) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetNameOk() (*string, bool) {
+func (o *AlertDefinitionsCorrelationData) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -153,17 +153,17 @@ func (o *AlertsCorrelationData) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasName() bool {
+func (o *AlertDefinitionsCorrelationData) HasName() bool {
 	return o != nil && o.Name != nil
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AlertsCorrelationData) SetName(v string) {
+func (o *AlertDefinitionsCorrelationData) SetName(v string) {
 	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AlertsCorrelationData) GetDescription() string {
+func (o *AlertDefinitionsCorrelationData) GetDescription() string {
 	if o == nil || o.Description.Get() == nil {
 		var ret string
 		return ret
@@ -174,7 +174,7 @@ func (o *AlertsCorrelationData) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AlertsCorrelationData) GetDescriptionOk() (*string, bool) {
+func (o *AlertDefinitionsCorrelationData) GetDescriptionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -182,29 +182,29 @@ func (o *AlertsCorrelationData) GetDescriptionOk() (*string, bool) {
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasDescription() bool {
+func (o *AlertDefinitionsCorrelationData) HasDescription() bool {
 	return o != nil && o.Description.IsSet()
 }
 
 // SetDescription gets a reference to the given common.NullableString and assigns it to the Description field.
-func (o *AlertsCorrelationData) SetDescription(v string) {
+func (o *AlertDefinitionsCorrelationData) SetDescription(v string) {
 	o.Description.Set(&v)
 }
 
 // SetDescriptionNil sets the value for Description to be an explicit nil.
-func (o *AlertsCorrelationData) SetDescriptionNil() {
+func (o *AlertDefinitionsCorrelationData) SetDescriptionNil() {
 	o.Description.Set(nil)
 }
 
 // UnSetDescription ensures that no value is present for Description, not even an explicit nil.
-func (o *AlertsCorrelationData) UnSetDescription() {
+func (o *AlertDefinitionsCorrelationData) UnSetDescription() {
 	o.Description.UnSet()
 }
 
 // GetTags returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AlertsCorrelationData) GetTags() (*[]string, bool) {
+func (o *AlertDefinitionsCorrelationData) GetTags() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -214,7 +214,7 @@ func (o *AlertsCorrelationData) GetTags() (*[]string, bool) {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AlertsCorrelationData) GetTagsOk() (*[]string, bool) {
+func (o *AlertDefinitionsCorrelationData) GetTagsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -222,27 +222,27 @@ func (o *AlertsCorrelationData) GetTagsOk() (*[]string, bool) {
 }
 
 // HasTags returns a boolean if a Tags has been set.
-func (o *AlertsCorrelationData) HasTags() bool {
+func (o *AlertDefinitionsCorrelationData) HasTags() bool {
 	return o != nil && o.Tags.IsSet()
 }
 
 // SetTags gets a reference to the given common.Nullable[]string and assigns it to the Tags field.
-func (o *AlertsCorrelationData) SetTags(v []string) {
+func (o *AlertDefinitionsCorrelationData) SetTags(v []string) {
 	o.Tags.Set(&v)
 }
 
 // SetTagsNil sets the value for Tags to be an explicit nil.
-func (o *AlertsCorrelationData) SetTagsNil() {
+func (o *AlertDefinitionsCorrelationData) SetTagsNil() {
 	o.Tags.Set(nil)
 }
 
 // UnSetTags ensures that no value is present for Tags, not even an explicit nil.
-func (o *AlertsCorrelationData) UnSetTags() {
+func (o *AlertDefinitionsCorrelationData) UnSetTags() {
 	o.Tags.UnSet()
 }
 
 // GetFromMarket returns the FromMarket field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetFromMarket() bool {
+func (o *AlertDefinitionsCorrelationData) GetFromMarket() bool {
 	if o == nil || o.FromMarket == nil {
 		var ret bool
 		return ret
@@ -252,7 +252,7 @@ func (o *AlertsCorrelationData) GetFromMarket() bool {
 
 // GetFromMarketOk returns a tuple with the FromMarket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetFromMarketOk() (*bool, bool) {
+func (o *AlertDefinitionsCorrelationData) GetFromMarketOk() (*bool, bool) {
 	if o == nil || o.FromMarket == nil {
 		return nil, false
 	}
@@ -260,17 +260,17 @@ func (o *AlertsCorrelationData) GetFromMarketOk() (*bool, bool) {
 }
 
 // HasFromMarket returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasFromMarket() bool {
+func (o *AlertDefinitionsCorrelationData) HasFromMarket() bool {
 	return o != nil && o.FromMarket != nil
 }
 
 // SetFromMarket gets a reference to the given bool and assigns it to the FromMarket field.
-func (o *AlertsCorrelationData) SetFromMarket(v bool) {
+func (o *AlertDefinitionsCorrelationData) SetFromMarket(v bool) {
 	o.FromMarket = &v
 }
 
 // GetFromModules returns the FromModules field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetFromModules() bool {
+func (o *AlertDefinitionsCorrelationData) GetFromModules() bool {
 	if o == nil || o.FromModules == nil {
 		var ret bool
 		return ret
@@ -280,7 +280,7 @@ func (o *AlertsCorrelationData) GetFromModules() bool {
 
 // GetFromModulesOk returns a tuple with the FromModules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetFromModulesOk() (*bool, bool) {
+func (o *AlertDefinitionsCorrelationData) GetFromModulesOk() (*bool, bool) {
 	if o == nil || o.FromModules == nil {
 		return nil, false
 	}
@@ -288,17 +288,17 @@ func (o *AlertsCorrelationData) GetFromModulesOk() (*bool, bool) {
 }
 
 // HasFromModules returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasFromModules() bool {
+func (o *AlertDefinitionsCorrelationData) HasFromModules() bool {
 	return o != nil && o.FromModules != nil
 }
 
 // SetFromModules gets a reference to the given bool and assigns it to the FromModules field.
-func (o *AlertsCorrelationData) SetFromModules(v bool) {
+func (o *AlertDefinitionsCorrelationData) SetFromModules(v bool) {
 	o.FromModules = &v
 }
 
 // GetHasUpdate returns the HasUpdate field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetHasUpdate() bool {
+func (o *AlertDefinitionsCorrelationData) GetHasUpdate() bool {
 	if o == nil || o.HasUpdate == nil {
 		var ret bool
 		return ret
@@ -308,7 +308,7 @@ func (o *AlertsCorrelationData) GetHasUpdate() bool {
 
 // GetHasUpdateOk returns a tuple with the HasUpdate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetHasUpdateOk() (*bool, bool) {
+func (o *AlertDefinitionsCorrelationData) GetHasUpdateOk() (*bool, bool) {
 	if o == nil || o.HasUpdate == nil {
 		return nil, false
 	}
@@ -316,17 +316,17 @@ func (o *AlertsCorrelationData) GetHasUpdateOk() (*bool, bool) {
 }
 
 // HasHasUpdate returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasHasUpdate() bool {
+func (o *AlertDefinitionsCorrelationData) HasHasUpdate() bool {
 	return o != nil && o.HasUpdate != nil
 }
 
 // SetHasUpdate gets a reference to the given bool and assigns it to the HasUpdate field.
-func (o *AlertsCorrelationData) SetHasUpdate(v bool) {
+func (o *AlertDefinitionsCorrelationData) SetHasUpdate(v bool) {
 	o.HasUpdate = &v
 }
 
 // GetModuleID returns the ModuleID field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AlertsCorrelationData) GetModuleID() string {
+func (o *AlertDefinitionsCorrelationData) GetModuleID() string {
 	if o == nil || o.ModuleID.Get() == nil {
 		var ret string
 		return ret
@@ -337,7 +337,7 @@ func (o *AlertsCorrelationData) GetModuleID() string {
 // GetModuleIDOk returns a tuple with the ModuleID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AlertsCorrelationData) GetModuleIDOk() (*string, bool) {
+func (o *AlertDefinitionsCorrelationData) GetModuleIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -345,27 +345,27 @@ func (o *AlertsCorrelationData) GetModuleIDOk() (*string, bool) {
 }
 
 // HasModuleID returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasModuleID() bool {
+func (o *AlertDefinitionsCorrelationData) HasModuleID() bool {
 	return o != nil && o.ModuleID.IsSet()
 }
 
 // SetModuleID gets a reference to the given common.NullableString and assigns it to the ModuleID field.
-func (o *AlertsCorrelationData) SetModuleID(v string) {
+func (o *AlertDefinitionsCorrelationData) SetModuleID(v string) {
 	o.ModuleID.Set(&v)
 }
 
 // SetModuleIDNil sets the value for ModuleID to be an explicit nil.
-func (o *AlertsCorrelationData) SetModuleIDNil() {
+func (o *AlertDefinitionsCorrelationData) SetModuleIDNil() {
 	o.ModuleID.Set(nil)
 }
 
 // UnSetModuleID ensures that no value is present for ModuleID, not even an explicit nil.
-func (o *AlertsCorrelationData) UnSetModuleID() {
+func (o *AlertDefinitionsCorrelationData) UnSetModuleID() {
 	o.ModuleID.UnSet()
 }
 
 // GetModuleGUID returns the ModuleGUID field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AlertsCorrelationData) GetModuleGUID() string {
+func (o *AlertDefinitionsCorrelationData) GetModuleGUID() string {
 	if o == nil || o.ModuleGUID.Get() == nil {
 		var ret string
 		return ret
@@ -376,7 +376,7 @@ func (o *AlertsCorrelationData) GetModuleGUID() string {
 // GetModuleGUIDOk returns a tuple with the ModuleGUID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AlertsCorrelationData) GetModuleGUIDOk() (*string, bool) {
+func (o *AlertDefinitionsCorrelationData) GetModuleGUIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -384,27 +384,27 @@ func (o *AlertsCorrelationData) GetModuleGUIDOk() (*string, bool) {
 }
 
 // HasModuleGUID returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasModuleGUID() bool {
+func (o *AlertDefinitionsCorrelationData) HasModuleGUID() bool {
 	return o != nil && o.ModuleGUID.IsSet()
 }
 
 // SetModuleGUID gets a reference to the given common.NullableString and assigns it to the ModuleGUID field.
-func (o *AlertsCorrelationData) SetModuleGUID(v string) {
+func (o *AlertDefinitionsCorrelationData) SetModuleGUID(v string) {
 	o.ModuleGUID.Set(&v)
 }
 
 // SetModuleGUIDNil sets the value for ModuleGUID to be an explicit nil.
-func (o *AlertsCorrelationData) SetModuleGUIDNil() {
+func (o *AlertDefinitionsCorrelationData) SetModuleGUIDNil() {
 	o.ModuleGUID.Set(nil)
 }
 
 // UnSetModuleGUID ensures that no value is present for ModuleGUID, not even an explicit nil.
-func (o *AlertsCorrelationData) UnSetModuleGUID() {
+func (o *AlertDefinitionsCorrelationData) UnSetModuleGUID() {
 	o.ModuleGUID.UnSet()
 }
 
 // GetRiskLevel returns the RiskLevel field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetRiskLevel() int64 {
+func (o *AlertDefinitionsCorrelationData) GetRiskLevel() int64 {
 	if o == nil || o.RiskLevel == nil {
 		var ret int64
 		return ret
@@ -414,7 +414,7 @@ func (o *AlertsCorrelationData) GetRiskLevel() int64 {
 
 // GetRiskLevelOk returns a tuple with the RiskLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetRiskLevelOk() (*int64, bool) {
+func (o *AlertDefinitionsCorrelationData) GetRiskLevelOk() (*int64, bool) {
 	if o == nil || o.RiskLevel == nil {
 		return nil, false
 	}
@@ -422,17 +422,17 @@ func (o *AlertsCorrelationData) GetRiskLevelOk() (*int64, bool) {
 }
 
 // HasRiskLevel returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasRiskLevel() bool {
+func (o *AlertDefinitionsCorrelationData) HasRiskLevel() bool {
 	return o != nil && o.RiskLevel != nil
 }
 
 // SetRiskLevel gets a reference to the given int64 and assigns it to the RiskLevel field.
-func (o *AlertsCorrelationData) SetRiskLevel(v int64) {
+func (o *AlertDefinitionsCorrelationData) SetRiskLevel(v int64) {
 	o.RiskLevel = &v
 }
 
 // GetMaxAlertCount returns the MaxAlertCount field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetMaxAlertCount() int64 {
+func (o *AlertDefinitionsCorrelationData) GetMaxAlertCount() int64 {
 	if o == nil || o.MaxAlertCount == nil {
 		var ret int64
 		return ret
@@ -442,7 +442,7 @@ func (o *AlertsCorrelationData) GetMaxAlertCount() int64 {
 
 // GetMaxAlertCountOk returns a tuple with the MaxAlertCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetMaxAlertCountOk() (*int64, bool) {
+func (o *AlertDefinitionsCorrelationData) GetMaxAlertCountOk() (*int64, bool) {
 	if o == nil || o.MaxAlertCount == nil {
 		return nil, false
 	}
@@ -450,17 +450,17 @@ func (o *AlertsCorrelationData) GetMaxAlertCountOk() (*int64, bool) {
 }
 
 // HasMaxAlertCount returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasMaxAlertCount() bool {
+func (o *AlertDefinitionsCorrelationData) HasMaxAlertCount() bool {
 	return o != nil && o.MaxAlertCount != nil
 }
 
 // SetMaxAlertCount gets a reference to the given int64 and assigns it to the MaxAlertCount field.
-func (o *AlertsCorrelationData) SetMaxAlertCount(v int64) {
+func (o *AlertDefinitionsCorrelationData) SetMaxAlertCount(v int64) {
 	o.MaxAlertCount = &v
 }
 
 // GetLimiterTimeFrameType returns the LimiterTimeFrameType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AlertsCorrelationData) GetLimiterTimeFrameType() string {
+func (o *AlertDefinitionsCorrelationData) GetLimiterTimeFrameType() string {
 	if o == nil || o.LimiterTimeFrameType.Get() == nil {
 		var ret string
 		return ret
@@ -471,7 +471,7 @@ func (o *AlertsCorrelationData) GetLimiterTimeFrameType() string {
 // GetLimiterTimeFrameTypeOk returns a tuple with the LimiterTimeFrameType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AlertsCorrelationData) GetLimiterTimeFrameTypeOk() (*string, bool) {
+func (o *AlertDefinitionsCorrelationData) GetLimiterTimeFrameTypeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -479,29 +479,29 @@ func (o *AlertsCorrelationData) GetLimiterTimeFrameTypeOk() (*string, bool) {
 }
 
 // HasLimiterTimeFrameType returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasLimiterTimeFrameType() bool {
+func (o *AlertDefinitionsCorrelationData) HasLimiterTimeFrameType() bool {
 	return o != nil && o.LimiterTimeFrameType.IsSet()
 }
 
 // SetLimiterTimeFrameType gets a reference to the given common.NullableString and assigns it to the LimiterTimeFrameType field.
-func (o *AlertsCorrelationData) SetLimiterTimeFrameType(v string) {
+func (o *AlertDefinitionsCorrelationData) SetLimiterTimeFrameType(v string) {
 	o.LimiterTimeFrameType.Set(&v)
 }
 
 // SetLimiterTimeFrameTypeNil sets the value for LimiterTimeFrameType to be an explicit nil.
-func (o *AlertsCorrelationData) SetLimiterTimeFrameTypeNil() {
+func (o *AlertDefinitionsCorrelationData) SetLimiterTimeFrameTypeNil() {
 	o.LimiterTimeFrameType.Set(nil)
 }
 
 // UnSetLimiterTimeFrameType ensures that no value is present for LimiterTimeFrameType, not even an explicit nil.
-func (o *AlertsCorrelationData) UnSetLimiterTimeFrameType() {
+func (o *AlertDefinitionsCorrelationData) UnSetLimiterTimeFrameType() {
 	o.LimiterTimeFrameType.UnSet()
 }
 
 // GetLimiterColumns returns a tuple with the LimiterColumns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AlertsCorrelationData) GetLimiterColumns() (*[]string, bool) {
+func (o *AlertDefinitionsCorrelationData) GetLimiterColumns() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -511,7 +511,7 @@ func (o *AlertsCorrelationData) GetLimiterColumns() (*[]string, bool) {
 // GetLimiterColumnsOk returns a tuple with the LimiterColumns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *AlertsCorrelationData) GetLimiterColumnsOk() (*[]string, bool) {
+func (o *AlertDefinitionsCorrelationData) GetLimiterColumnsOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -519,27 +519,27 @@ func (o *AlertsCorrelationData) GetLimiterColumnsOk() (*[]string, bool) {
 }
 
 // HasLimiterColumns returns a boolean if a LimiterColumns has been set.
-func (o *AlertsCorrelationData) HasLimiterColumns() bool {
+func (o *AlertDefinitionsCorrelationData) HasLimiterColumns() bool {
 	return o != nil && o.LimiterColumns.IsSet()
 }
 
 // SetLimiterColumns gets a reference to the given common.Nullable[]string and assigns it to the LimiterColumns field.
-func (o *AlertsCorrelationData) SetLimiterColumns(v []string) {
+func (o *AlertDefinitionsCorrelationData) SetLimiterColumns(v []string) {
 	o.LimiterColumns.Set(&v)
 }
 
 // SetLimiterColumnsNil sets the value for LimiterColumns to be an explicit nil.
-func (o *AlertsCorrelationData) SetLimiterColumnsNil() {
+func (o *AlertDefinitionsCorrelationData) SetLimiterColumnsNil() {
 	o.LimiterColumns.Set(nil)
 }
 
 // UnSetLimiterColumns ensures that no value is present for LimiterColumns, not even an explicit nil.
-func (o *AlertsCorrelationData) UnSetLimiterColumns() {
+func (o *AlertDefinitionsCorrelationData) UnSetLimiterColumns() {
 	o.LimiterColumns.UnSet()
 }
 
 // GetActions returns the Actions field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetActions() Actions {
+func (o *AlertDefinitionsCorrelationData) GetActions() Actions {
 	if o == nil || o.Actions == nil {
 		var ret Actions
 		return ret
@@ -549,7 +549,7 @@ func (o *AlertsCorrelationData) GetActions() Actions {
 
 // GetActionsOk returns a tuple with the Actions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetActionsOk() (*Actions, bool) {
+func (o *AlertDefinitionsCorrelationData) GetActionsOk() (*Actions, bool) {
 	if o == nil || o.Actions == nil {
 		return nil, false
 	}
@@ -557,17 +557,17 @@ func (o *AlertsCorrelationData) GetActionsOk() (*Actions, bool) {
 }
 
 // HasActions returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasActions() bool {
+func (o *AlertDefinitionsCorrelationData) HasActions() bool {
 	return o != nil && o.Actions != nil
 }
 
 // SetActions gets a reference to the given Actions and assigns it to the Actions field.
-func (o *AlertsCorrelationData) SetActions(v Actions) {
+func (o *AlertDefinitionsCorrelationData) SetActions(v Actions) {
 	o.Actions = &v
 }
 
 // GetMaxSendCount returns the MaxSendCount field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetMaxSendCount() int64 {
+func (o *AlertDefinitionsCorrelationData) GetMaxSendCount() int64 {
 	if o == nil || o.MaxSendCount == nil {
 		var ret int64
 		return ret
@@ -577,7 +577,7 @@ func (o *AlertsCorrelationData) GetMaxSendCount() int64 {
 
 // GetMaxSendCountOk returns a tuple with the MaxSendCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetMaxSendCountOk() (*int64, bool) {
+func (o *AlertDefinitionsCorrelationData) GetMaxSendCountOk() (*int64, bool) {
 	if o == nil || o.MaxSendCount == nil {
 		return nil, false
 	}
@@ -585,19 +585,19 @@ func (o *AlertsCorrelationData) GetMaxSendCountOk() (*int64, bool) {
 }
 
 // HasMaxSendCount returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasMaxSendCount() bool {
+func (o *AlertDefinitionsCorrelationData) HasMaxSendCount() bool {
 	return o != nil && o.MaxSendCount != nil
 }
 
 // SetMaxSendCount gets a reference to the given int64 and assigns it to the MaxSendCount field.
-func (o *AlertsCorrelationData) SetMaxSendCount(v int64) {
+func (o *AlertDefinitionsCorrelationData) SetMaxSendCount(v int64) {
 	o.MaxSendCount = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetData() AlertsQueryData {
+func (o *AlertDefinitionsCorrelationData) GetData() AlertDefinitionsQueryData {
 	if o == nil || o.Data == nil {
-		var ret AlertsQueryData
+		var ret AlertDefinitionsQueryData
 		return ret
 	}
 	return *o.Data
@@ -605,7 +605,7 @@ func (o *AlertsCorrelationData) GetData() AlertsQueryData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetDataOk() (*AlertsQueryData, bool) {
+func (o *AlertDefinitionsCorrelationData) GetDataOk() (*AlertDefinitionsQueryData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -613,19 +613,19 @@ func (o *AlertsCorrelationData) GetDataOk() (*AlertsQueryData, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasData() bool {
+func (o *AlertDefinitionsCorrelationData) HasData() bool {
 	return o != nil && o.Data != nil
 }
 
-// SetData gets a reference to the given AlertsQueryData and assigns it to the Data field.
-func (o *AlertsCorrelationData) SetData(v AlertsQueryData) {
+// SetData gets a reference to the given AlertDefinitionsQueryData and assigns it to the Data field.
+func (o *AlertDefinitionsCorrelationData) SetData(v AlertDefinitionsQueryData) {
 	o.Data = &v
 }
 
 // GetCorrelationType returns the CorrelationType field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetCorrelationType() AlertsCorrelationType {
+func (o *AlertDefinitionsCorrelationData) GetCorrelationType() AlertDefinitionsCorrelationType {
 	if o == nil {
-		var ret AlertsCorrelationType
+		var ret AlertDefinitionsCorrelationType
 		return ret
 	}
 	return o.CorrelationType
@@ -633,7 +633,7 @@ func (o *AlertsCorrelationData) GetCorrelationType() AlertsCorrelationType {
 
 // GetCorrelationTypeOk returns a tuple with the CorrelationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetCorrelationTypeOk() (*AlertsCorrelationType, bool) {
+func (o *AlertDefinitionsCorrelationData) GetCorrelationTypeOk() (*AlertDefinitionsCorrelationType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -641,12 +641,12 @@ func (o *AlertsCorrelationData) GetCorrelationTypeOk() (*AlertsCorrelationType, 
 }
 
 // SetCorrelationType gets a reference to the given string and assigns it to the CorrelationType field.
-func (o *AlertsCorrelationData) SetCorrelationType(v AlertsCorrelationType) {
+func (o *AlertDefinitionsCorrelationData) SetCorrelationType(v AlertDefinitionsCorrelationType) {
 	o.CorrelationType = v
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetMessage() string {
+func (o *AlertDefinitionsCorrelationData) GetMessage() string {
 	if o == nil || o.Message == nil {
 		var ret string
 		return ret
@@ -656,7 +656,7 @@ func (o *AlertsCorrelationData) GetMessage() string {
 
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetMessageOk() (*string, bool) {
+func (o *AlertDefinitionsCorrelationData) GetMessageOk() (*string, bool) {
 	if o == nil || o.Message == nil {
 		return nil, false
 	}
@@ -664,17 +664,17 @@ func (o *AlertsCorrelationData) GetMessageOk() (*string, bool) {
 }
 
 // HasMessage returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasMessage() bool {
+func (o *AlertDefinitionsCorrelationData) HasMessage() bool {
 	return o != nil && o.Message != nil
 }
 
 // SetMessage gets a reference to the given string and assigns it to the Message field.
-func (o *AlertsCorrelationData) SetMessage(v string) {
+func (o *AlertDefinitionsCorrelationData) SetMessage(v string) {
 	o.Message = &v
 }
 
 // GetGroupedColumns returns the GroupedColumns field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetGroupedColumns() []string {
+func (o *AlertDefinitionsCorrelationData) GetGroupedColumns() []string {
 	if o == nil || o.GroupedColumns == nil {
 		var ret []string
 		return ret
@@ -684,7 +684,7 @@ func (o *AlertsCorrelationData) GetGroupedColumns() []string {
 
 // GetGroupedColumnsOk returns a tuple with the GroupedColumns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetGroupedColumnsOk() (*[]string, bool) {
+func (o *AlertDefinitionsCorrelationData) GetGroupedColumnsOk() (*[]string, bool) {
 	if o == nil || o.GroupedColumns == nil {
 		return nil, false
 	}
@@ -692,17 +692,17 @@ func (o *AlertsCorrelationData) GetGroupedColumnsOk() (*[]string, bool) {
 }
 
 // HasGroupedColumns returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasGroupedColumns() bool {
+func (o *AlertDefinitionsCorrelationData) HasGroupedColumns() bool {
 	return o != nil && o.GroupedColumns != nil
 }
 
 // SetGroupedColumns gets a reference to the given []string and assigns it to the GroupedColumns field.
-func (o *AlertsCorrelationData) SetGroupedColumns(v []string) {
+func (o *AlertDefinitionsCorrelationData) SetGroupedColumns(v []string) {
 	o.GroupedColumns = v
 }
 
 // GetGroupedColumnsOptions returns the GroupedColumnsOptions field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetGroupedColumnsOptions() []SelectedColumn {
+func (o *AlertDefinitionsCorrelationData) GetGroupedColumnsOptions() []SelectedColumn {
 	if o == nil || o.GroupedColumnsOptions == nil {
 		var ret []SelectedColumn
 		return ret
@@ -712,7 +712,7 @@ func (o *AlertsCorrelationData) GetGroupedColumnsOptions() []SelectedColumn {
 
 // GetGroupedColumnsOptionsOk returns a tuple with the GroupedColumnsOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetGroupedColumnsOptionsOk() (*[]SelectedColumn, bool) {
+func (o *AlertDefinitionsCorrelationData) GetGroupedColumnsOptionsOk() (*[]SelectedColumn, bool) {
 	if o == nil || o.GroupedColumnsOptions == nil {
 		return nil, false
 	}
@@ -720,17 +720,17 @@ func (o *AlertsCorrelationData) GetGroupedColumnsOptionsOk() (*[]SelectedColumn,
 }
 
 // HasGroupedColumnsOptions returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasGroupedColumnsOptions() bool {
+func (o *AlertDefinitionsCorrelationData) HasGroupedColumnsOptions() bool {
 	return o != nil && o.GroupedColumnsOptions != nil
 }
 
 // SetGroupedColumnsOptions gets a reference to the given []SelectedColumn and assigns it to the GroupedColumnsOptions field.
-func (o *AlertsCorrelationData) SetGroupedColumnsOptions(v []SelectedColumn) {
+func (o *AlertDefinitionsCorrelationData) SetGroupedColumnsOptions(v []SelectedColumn) {
 	o.GroupedColumnsOptions = v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *AlertsCorrelationData) GetVersion() float64 {
+func (o *AlertDefinitionsCorrelationData) GetVersion() float64 {
 	if o == nil || o.Version == nil {
 		var ret float64
 		return ret
@@ -740,7 +740,7 @@ func (o *AlertsCorrelationData) GetVersion() float64 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsCorrelationData) GetVersionOk() (*float64, bool) {
+func (o *AlertDefinitionsCorrelationData) GetVersionOk() (*float64, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -748,17 +748,17 @@ func (o *AlertsCorrelationData) GetVersionOk() (*float64, bool) {
 }
 
 // HasVersion returns a boolean if a field has been set.
-func (o *AlertsCorrelationData) HasVersion() bool {
+func (o *AlertDefinitionsCorrelationData) HasVersion() bool {
 	return o != nil && o.Version != nil
 }
 
 // SetVersion gets a reference to the given float64 and assigns it to the Version field.
-func (o *AlertsCorrelationData) SetVersion(v float64) {
+func (o *AlertDefinitionsCorrelationData) SetVersion(v float64) {
 	o.Version = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o AlertsCorrelationData) MarshalJSON() ([]byte, error) {
+func (o AlertDefinitionsCorrelationData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -840,31 +840,31 @@ func (o AlertsCorrelationData) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *AlertsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
+func (o *AlertDefinitionsCorrelationData) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		ID                    *string                     `json:"Id,omitempty"`
-		Enabled               *bool                       `json:"Enabled,omitempty"`
-		Name                  *string                     `json:"Name,omitempty"`
-		Description           common.NullableString       `json:"Description,omitempty"`
-		Tags                  common.NullableList[string] `json:"Tags,omitempty"`
-		FromMarket            *bool                       `json:"FromMarket,omitempty"`
-		FromModules           *bool                       `json:"FromModules,omitempty"`
-		HasUpdate             *bool                       `json:"HasUpdate,omitempty"`
-		ModuleID              common.NullableString       `json:"ModuleId,omitempty"`
-		ModuleGUID            common.NullableString       `json:"ModuleGuid,omitempty"`
-		RiskLevel             *int64                      `json:"RiskLevel,omitempty"`
-		MaxAlertCount         *int64                      `json:"MaxAlertCount,omitempty"`
-		LimiterTimeFrameType  common.NullableString       `json:"LimiterTimeFrameType,omitempty"`
-		LimiterTimeFrameValue common.NullableInt64        `json:"LimiterTimeFrameValue,omitempty"`
-		LimiterColumns        common.NullableList[string] `json:"LimiterColumns,omitempty"`
-		Actions               *Actions                    `json:"Actions,omitempty"`
-		MaxSendCount          *int64                      `json:"MaxSendCount,omitempty"`
-		Data                  *AlertsQueryData            `json:"Data,omitempty"`
-		CorrelationType       *AlertsCorrelationType      `json:"CorrelationType,omitempty"`
-		Message               *string                     `json:"Message,omitempty"`
-		GroupedColumns        []string                    `json:"GroupedColumns,omitempty"`
-		GroupedColumnsOptions []SelectedColumn            `json:"GroupedColumnsOptions,omitempty"`
-		Version               *float64                    `json:"Version,omitempty"`
+		ID                    *string                          `json:"Id,omitempty"`
+		Enabled               *bool                            `json:"Enabled,omitempty"`
+		Name                  *string                          `json:"Name,omitempty"`
+		Description           common.NullableString            `json:"Description,omitempty"`
+		Tags                  common.NullableList[string]      `json:"Tags,omitempty"`
+		FromMarket            *bool                            `json:"FromMarket,omitempty"`
+		FromModules           *bool                            `json:"FromModules,omitempty"`
+		HasUpdate             *bool                            `json:"HasUpdate,omitempty"`
+		ModuleID              common.NullableString            `json:"ModuleId,omitempty"`
+		ModuleGUID            common.NullableString            `json:"ModuleGuid,omitempty"`
+		RiskLevel             *int64                           `json:"RiskLevel,omitempty"`
+		MaxAlertCount         *int64                           `json:"MaxAlertCount,omitempty"`
+		LimiterTimeFrameType  common.NullableString            `json:"LimiterTimeFrameType,omitempty"`
+		LimiterTimeFrameValue common.NullableInt64             `json:"LimiterTimeFrameValue,omitempty"`
+		LimiterColumns        common.NullableList[string]      `json:"LimiterColumns,omitempty"`
+		Actions               *Actions                         `json:"Actions,omitempty"`
+		MaxSendCount          *int64                           `json:"MaxSendCount,omitempty"`
+		Data                  *AlertDefinitionsQueryData       `json:"Data,omitempty"`
+		CorrelationType       *AlertDefinitionsCorrelationType `json:"CorrelationType,omitempty"`
+		Message               *string                          `json:"Message,omitempty"`
+		GroupedColumns        []string                         `json:"GroupedColumns,omitempty"`
+		GroupedColumnsOptions []SelectedColumn                 `json:"GroupedColumnsOptions,omitempty"`
+		Version               *float64                         `json:"Version,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)

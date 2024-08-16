@@ -20,76 +20,76 @@ import (
 // @in header
 // @name Authorization
 
-// AlertsApi service type.
-type AlertsApi common.Service
+// AlertDefinitionsApi service type.
+type AlertDefinitionsApi common.Service
 
-// SearchAlertsOptionalParamters holds optional parameters for SearchAlerts.
-type SearchAlertsOptionalParameters struct {
-	Body *AlertsSearchRequest
+// SearchAlertDefinitionsOptionalParamters holds optional parameters for SearchAlertDefinitions.
+type SearchAlertDefinitionsOptionalParameters struct {
+	Body *AlertDefinitionsSearchRequest
 }
 
-// NewSearchAlertsOptionalParameters creates an empty struct for parameters.
-func NewSearchAlertsOptionalParameters() *SearchAlertsOptionalParameters {
-	this := SearchAlertsOptionalParameters{}
+// NewSearchAlertDefinitionsOptionalParameters creates an empty struct for parameters.
+func NewSearchAlertDefinitionsOptionalParameters() *SearchAlertDefinitionsOptionalParameters {
+	this := SearchAlertDefinitionsOptionalParameters{}
 	return &this
 }
 
 // WithBody sets the corresponding parameter name and returns the struct.
-func (r *SearchAlertsOptionalParameters) WithBody(body AlertsSearchRequest) *SearchAlertsOptionalParameters {
+func (r *SearchAlertDefinitionsOptionalParameters) WithBody(body AlertDefinitionsSearchRequest) *SearchAlertDefinitionsOptionalParameters {
 	r.Body = &body
 	return r
 }
 
-// SaveAlertsOptionalParamters holds optional parameters for SaveAlerts.
-type SaveAlertsOptionalParameters struct {
-	Body *AlertsSaveRequest
+// SaveAlertDefinitionsOptionalParamters holds optional parameters for SaveAlertDefinitions.
+type SaveAlertDefinitionsOptionalParameters struct {
+	Body *AlertDefinitionsSaveRequest
 }
 
-// NewSaveAlertsOptionalParameters creates an empty struct for parameters.
-func NewSaveAlertsOptionalParameters() *SaveAlertsOptionalParameters {
-	this := SaveAlertsOptionalParameters{}
+// NewSaveAlertDefinitionsOptionalParameters creates an empty struct for parameters.
+func NewSaveAlertDefinitionsOptionalParameters() *SaveAlertDefinitionsOptionalParameters {
+	this := SaveAlertDefinitionsOptionalParameters{}
 	return &this
 }
 
 // WithBody sets the corresponding parameter name and returns the struct.
-func (r *SaveAlertsOptionalParameters) WithBody(body AlertsSaveRequest) *SaveAlertsOptionalParameters {
+func (r *SaveAlertDefinitionsOptionalParameters) WithBody(body AlertDefinitionsSaveRequest) *SaveAlertDefinitionsOptionalParameters {
 	r.Body = &body
 	return r
 }
 
-// SearchAlerts searches alerts.
+// SearchAlertDefinitions searches alerts.
 //
-// @Summary Search Alerts
+// @Summary Search Alert Definitions
 // @Description Search for alerts based on a query.
-// @Tags Alerts
+// @Tags Alert Definitions
 // @Accept  json
 // @Produce  json
-// @Param body body AlertsSearchRequest true "Alerts Search Request"
-// @Success 200 {object} AlertsSearchResponse "Successful operation"
+// @Param body body AlertDefinitionsSearchRequest true "Alert Definitions Search Request"
+// @Success 200 {object} AlertDefinitionsSearchResponse "Successful operation"
 // @Failure 400 {object} ErrorResponse "Bad Request"
 // @Failure 403 {object} ErrorResponse "Forbidden"
 // @Failure 429 {object} ErrorResponse "Too Many Requests"
 // @Router /ICSiemManagerCorrelationAct/GetCorrelationList [post]
 // @Security ApiKeyAuth
-func (a *AlertsApi) SearchAlerts(ctx _context.Context, o ...SearchAlertsOptionalParameters) (AlertsSearchResponse, *_nethttp.Response, error) {
+func (a *AlertDefinitionsApi) SearchAlertDefinitions(ctx _context.Context, o ...SearchAlertDefinitionsOptionalParameters) (AlertDefinitionsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost
 		localVarPostBody      interface{}
-		localVarReturnValue   AlertsSearchResponse
-		optionalParams        SearchAlertsOptionalParameters
+		localVarReturnValue   AlertDefinitionsSearchResponse
+		optionalParams        SearchAlertDefinitionsOptionalParameters
 		localVarInterfaceCode = "ICSiemManagerCorrelationAct"
 		localVarMethodName    = "GetCorrelationList"
 	)
 
 	if len(o) > 1 {
-		return localVarReturnValue, nil, common.ReportError("only one argument of type SearchAlertsOptionalParameters is allowed")
+		return localVarReturnValue, nil, common.ReportError("only one argument of type SearchAlertDefinitionsOptionalParameters is allowed")
 	}
 
 	if len(o) == 1 {
 		optionalParams = o[0]
 	}
 
-	localBasePath, err := a.Client.Cfg.ServerURLWithContext(ctx, "AlertsApi.SearchAlerts")
+	localBasePath, err := a.Client.Cfg.ServerURLWithContext(ctx, "AlertDefinitionsApi.SearchAlertDefinitions")
 	if err != nil {
 		return localVarReturnValue, nil, common.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
@@ -155,39 +155,39 @@ func (a *AlertsApi) SearchAlerts(ctx _context.Context, o ...SearchAlertsOptional
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// SaveAlerts saves Alerts.
+// SaveAlertDefinitions saves AlertDefinitions.
 //
-// @Summary Save Alerts
-// @Description Save Alerts based on the provided data.
-// @Tags Alerts
+// @Summary Save Alert Definitions
+// @Description Save Alert Definitions based on the provided data.
+// @Tags Alert Definitions
 // @Accept  json
 // @Produce  json
-// @Param body body AlertsSaveRequest true "Alerts Save Request"
-// @Success 200 {object} AlertsSaveResponse "Successful operation"
+// @Param body body AlertDefinitionsSaveRequest true "Alert Definitions Save Request"
+// @Success 200 {object} AlertDefinitionsSaveResponse "Successful operation"
 // @Failure 400 {object} ErrorResponse "Bad Request"
 // @Failure 403 {object} ErrorResponse "Forbidden"
 // @Failure 429 {object} ErrorResponse "Too Many Requests"
 // @Router /ICSiemQueryAct/Save [post]
 // @Security ApiKeyAuth
-func (a *AlertsApi) SaveAlerts(ctx _context.Context, o ...SaveAlertsOptionalParameters) (AlertsSaveResponse, *_nethttp.Response, error) {
+func (a *AlertDefinitionsApi) SaveAlertDefinitions(ctx _context.Context, o ...SaveAlertDefinitionsOptionalParameters) (AlertDefinitionsSaveResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost
 		localVarPostBody      interface{}
-		localVarReturnValue   AlertsSaveResponse
-		optionalParams        SaveAlertsOptionalParameters
+		localVarReturnValue   AlertDefinitionsSaveResponse
+		optionalParams        SaveAlertDefinitionsOptionalParameters
 		localVarInterfaceCode = "ICSiemManagerCorrelationAct"
 		localVarMethodName    = "AddOrUpdateCorrelation"
 	)
 
 	if len(o) > 1 {
-		return localVarReturnValue, nil, common.ReportError("only one argument of type SaveAlertsOptionalParameters is allowed")
+		return localVarReturnValue, nil, common.ReportError("only one argument of type SaveAlertDefinitionsOptionalParameters is allowed")
 	}
 
 	if len(o) == 1 {
 		optionalParams = o[0]
 	}
 
-	localBasePath, err := a.Client.Cfg.ServerURLWithContext(ctx, "AlertsApi.SaveAlerts")
+	localBasePath, err := a.Client.Cfg.ServerURLWithContext(ctx, "AlertDefinitionsApi.SaveAlertDefinitions")
 	if err != nil {
 		return localVarReturnValue, nil, common.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
@@ -253,9 +253,9 @@ func (a *AlertsApi) SaveAlerts(ctx _context.Context, o ...SaveAlertsOptionalPara
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// NewAlertsApi returns AlertsApi.
-func NewAlertsApi(client *common.APIClient) *AlertsApi {
-	return &AlertsApi{
+// NewAlertDefinitionsApi returns AlertDefinitionsApi.
+func NewAlertDefinitionsApi(client *common.APIClient) *AlertDefinitionsApi {
+	return &AlertDefinitionsApi{
 		Client: client,
 	}
 }
