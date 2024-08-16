@@ -20,7 +20,7 @@ func init() {
 }
 
 func main() {
-	body := davudpasha.ActionDefinationsSearchRequest{
+	body := davudpasha.ActionDefinitionsSearchRequest{
 		Application:             common.PtrString("csiem"),
 		SearchFilter:            common.PtrString("test-actiondef"),
 		SmartRestRequestContext: common.PtrString("-<SmartRestRequestContext>-"),
@@ -30,15 +30,15 @@ func main() {
 	configuration := common.NewConfiguration()
 	configuration.SetHTTPClientWithInsecureSkipVerify()
 	apiClient := common.NewAPIClient(configuration)
-	api := davudpasha.NewActionDefinationsApi(apiClient)
-	resp, r, err := api.SearchActionDefinations(ctx, *davudpasha.NewSearchActionDefinationsOptionalParameters().WithBody(body))
+	api := davudpasha.NewActionDefinitionsApi(apiClient)
+	resp, r, err := api.SearchActionDefinitions(ctx, *davudpasha.NewSearchActionDefinitionsOptionalParameters().WithBody(body))
 
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionDefinationsApi.SearchActionDefinations`: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionDefinitionsApi.SearchActionDefinitions`: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 
 	responseContent, _ := json.MarshalIndent(resp, "", " ")
-	fmt.Fprintf(os.Stdout, "Response from `ActionDefinationsApi.SearchActionDefinations`:\n%s\n", responseContent)
+	fmt.Fprintf(os.Stdout, "Response from `ActionDefinitionsApi.SearchActionDefinitions`:\n%s\n", responseContent)
 
 }

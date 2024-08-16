@@ -20,59 +20,59 @@ import (
 // @in header
 // @name Authorization
 
-// ActionDefinationsApi service type.
-type ActionDefinationsApi common.Service
+// ActionDefinitionsApi service type.
+type ActionDefinitionsApi common.Service
 
-// SearchActionDefinationsOptionalParameters holds optional parameters for SearchActionDefinations.
-type SearchActionDefinationsOptionalParameters struct {
-	Body *ActionDefinationsSearchRequest
+// SearchActionDefinitionsOptionalParameters holds optional parameters for SearchActionDefinitions.
+type SearchActionDefinitionsOptionalParameters struct {
+	Body *ActionDefinitionsSearchRequest
 }
 
-// NewSearchActionDefinationsOptionalParameters creates an empty struct for parameters.
-func NewSearchActionDefinationsOptionalParameters() *SearchActionDefinationsOptionalParameters {
-	this := SearchActionDefinationsOptionalParameters{}
+// NewSearchActionDefinitionsOptionalParameters creates an empty struct for parameters.
+func NewSearchActionDefinitionsOptionalParameters() *SearchActionDefinitionsOptionalParameters {
+	this := SearchActionDefinitionsOptionalParameters{}
 	return &this
 }
 
 // WithBody sets the corresponding parameter name and returns the struct.
-func (r *SearchActionDefinationsOptionalParameters) WithBody(body ActionDefinationsSearchRequest) *SearchActionDefinationsOptionalParameters {
+func (r *SearchActionDefinitionsOptionalParameters) WithBody(body ActionDefinitionsSearchRequest) *SearchActionDefinitionsOptionalParameters {
 	r.Body = &body
 	return r
 }
 
-// SearchActionDefinations searches for action definitions.
+// SearchActionDefinitions searches for action definitions.
 //
 // @Summary Search Action Definitions
 // @Description Search for action definitions based on a query.
-// @Tags ActionDefinations
+// @Tags Action Definitions
 // @Accept  json
 // @Produce  json
-// @Param body body ActionDefinationsSearchRequest true "Action Definitions Search Request"
-// @Success 200 {array} ActionDefinationsSearchResponse "Successful operation"
+// @Param body body ActionDefinitionsSearchRequest true "Action Definitions Search Request"
+// @Success 200 {array} ActionDefinitionsSearchResponse "Successful operation"
 // @Failure 400 {object} ErrorResponse "Bad Request"
 // @Failure 403 {object} ErrorResponse "Forbidden"
 // @Failure 429 {object} ErrorResponse "Too Many Requests"
 // @Router /IAlertAct/GetActionDefinitions [post]
 // @Security ApiKeyAuth
-func (a *ActionDefinationsApi) SearchActionDefinations(ctx _context.Context, o ...SearchActionDefinationsOptionalParameters) ([]ActionDefinationsSearchResponse, *_nethttp.Response, error) {
+func (a *ActionDefinitionsApi) SearchActionDefinitions(ctx _context.Context, o ...SearchActionDefinitionsOptionalParameters) ([]ActionDefinitionsSearchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod    = _nethttp.MethodPost
 		localVarPostBody      interface{}
-		localVarReturnValue   []ActionDefinationsSearchResponse
-		optionalParams        SearchActionDefinationsOptionalParameters
+		localVarReturnValue   []ActionDefinitionsSearchResponse
+		optionalParams        SearchActionDefinitionsOptionalParameters
 		localVarInterfaceCode = "IAlertAct"
 		localVarMethodName    = "GetActionDefinitions"
 	)
 
 	if len(o) > 1 {
-		return localVarReturnValue, nil, common.ReportError("only one argument of type SearchActionDefinationsOptionalParameters is allowed")
+		return localVarReturnValue, nil, common.ReportError("only one argument of type SearchActionDefinitionsOptionalParameters is allowed")
 	}
 
 	if len(o) == 1 {
 		optionalParams = o[0]
 	}
 
-	localBasePath, err := a.Client.Cfg.ServerURLWithContext(ctx, "ActionDefinationsApi.SearchActionDefinations")
+	localBasePath, err := a.Client.Cfg.ServerURLWithContext(ctx, "ActionDefinitionsApi.SearchActionDefinitions")
 	if err != nil {
 		return localVarReturnValue, nil, common.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
@@ -138,9 +138,9 @@ func (a *ActionDefinationsApi) SearchActionDefinations(ctx _context.Context, o .
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// NewActionDefinationsApi returns ActionDefinationsApi.
-func NewActionDefinationsApi(client *common.APIClient) *ActionDefinationsApi {
-	return &ActionDefinationsApi{
+// NewActionDefinitionsApi returns ActionDefinitionsApi.
+func NewActionDefinitionsApi(client *common.APIClient) *ActionDefinitionsApi {
+	return &ActionDefinitionsApi{
 		Client: client,
 	}
 }

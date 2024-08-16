@@ -7,8 +7,8 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
-// SourceTypesClassificationDefination represents the classification definition structure for source types.
-type SourceTypesClassificationDefination struct {
+// SourceTypesClassificationDefinition represents the classification definition structure for source types.
+type SourceTypesClassificationDefinition struct {
 	// ID represents the identifier of the classification definition.
 	ID *string `json:"ID,omitempty"`
 	// DefID specifies the definition ID associated with the classification.
@@ -33,25 +33,25 @@ type SourceTypesClassificationDefination struct {
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
-// NewSourceTypesClassificationDefination creates a new SourceTypesClassificationDefination object.
+// NewSourceTypesClassificationDefinition creates a new SourceTypesClassificationDefinition object.
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed.
-func NewSourceTypesClassificationDefination() *SourceTypesClassificationDefination {
-	this := SourceTypesClassificationDefination{}
+func NewSourceTypesClassificationDefinition() *SourceTypesClassificationDefinition {
+	this := SourceTypesClassificationDefinition{}
 	return &this
 }
 
-// NewSourceTypesClassificationDefinationWithDefaults creates a new SourceTypesClassificationDefination object.
+// NewSourceTypesClassificationDefinitionWithDefaults creates a new SourceTypesClassificationDefinition object.
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set.
-func NewSourceTypesClassificationDefinationWithDefaults() *SourceTypesClassificationDefination {
-	this := SourceTypesClassificationDefination{}
+func NewSourceTypesClassificationDefinitionWithDefaults() *SourceTypesClassificationDefinition {
+	this := SourceTypesClassificationDefinition{}
 	return &this
 }
 
 // GetID returns the ID field value if set, zero value otherwise.
-func (o *SourceTypesClassificationDefination) GetID() string {
+func (o *SourceTypesClassificationDefinition) GetID() string {
 	if o == nil || o.ID == nil {
 		var ret string
 		return ret
@@ -61,7 +61,7 @@ func (o *SourceTypesClassificationDefination) GetID() string {
 
 // GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceTypesClassificationDefination) GetIDOk() (*string, bool) {
+func (o *SourceTypesClassificationDefinition) GetIDOk() (*string, bool) {
 	if o == nil || o.ID == nil {
 		return nil, false
 	}
@@ -69,17 +69,17 @@ func (o *SourceTypesClassificationDefination) GetIDOk() (*string, bool) {
 }
 
 // HasID returns a boolean if a field has been set.
-func (o *SourceTypesClassificationDefination) HasID() bool {
+func (o *SourceTypesClassificationDefinition) HasID() bool {
 	return o != nil && o.ID != nil
 }
 
 // SetID gets a reference to the given string and assigns it to the ID field.
-func (o *SourceTypesClassificationDefination) SetID(v string) {
+func (o *SourceTypesClassificationDefinition) SetID(v string) {
 	o.ID = &v
 }
 
 // GetDefID returns the DefID field value if set, zero value otherwise.
-func (o *SourceTypesClassificationDefination) GetDefID() int64 {
+func (o *SourceTypesClassificationDefinition) GetDefID() int64 {
 	if o == nil || o.DefID == nil {
 		var ret int64
 		return ret
@@ -89,7 +89,7 @@ func (o *SourceTypesClassificationDefination) GetDefID() int64 {
 
 // GetDefIDOk returns a tuple with the DefID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceTypesClassificationDefination) GetDefIDOk() (*int64, bool) {
+func (o *SourceTypesClassificationDefinition) GetDefIDOk() (*int64, bool) {
 	if o == nil || o.DefID == nil {
 		return nil, false
 	}
@@ -97,17 +97,17 @@ func (o *SourceTypesClassificationDefination) GetDefIDOk() (*int64, bool) {
 }
 
 // HasDefID returns a boolean if a field has been set.
-func (o *SourceTypesClassificationDefination) HasDefID() bool {
+func (o *SourceTypesClassificationDefinition) HasDefID() bool {
 	return o != nil && o.DefID != nil
 }
 
 // SetDefID gets a reference to the given string and assigns it to the DefID field.
-func (o *SourceTypesClassificationDefination) SetDefID(v int64) {
+func (o *SourceTypesClassificationDefinition) SetDefID(v int64) {
 	o.DefID = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *SourceTypesClassificationDefination) GetName() string {
+func (o *SourceTypesClassificationDefinition) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -117,7 +117,7 @@ func (o *SourceTypesClassificationDefination) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceTypesClassificationDefination) GetNameOk() (*string, bool) {
+func (o *SourceTypesClassificationDefinition) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -125,17 +125,17 @@ func (o *SourceTypesClassificationDefination) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *SourceTypesClassificationDefination) HasName() bool {
+func (o *SourceTypesClassificationDefinition) HasName() bool {
 	return o != nil && o.Name != nil
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *SourceTypesClassificationDefination) SetName(v string) {
+func (o *SourceTypesClassificationDefinition) SetName(v string) {
 	o.Name = &v
 }
 
 // GetSeverity returns the Severity field value if set, zero value otherwise.
-func (o *SourceTypesClassificationDefination) GetSeverity() string {
+func (o *SourceTypesClassificationDefinition) GetSeverity() string {
 	if o == nil || o.Severity == nil {
 		var ret string
 		return ret
@@ -145,7 +145,7 @@ func (o *SourceTypesClassificationDefination) GetSeverity() string {
 
 // GetSeverityOk returns a tuple with the Severity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceTypesClassificationDefination) GetSeverityOk() (*string, bool) {
+func (o *SourceTypesClassificationDefinition) GetSeverityOk() (*string, bool) {
 	if o == nil || o.Severity == nil {
 		return nil, false
 	}
@@ -153,19 +153,19 @@ func (o *SourceTypesClassificationDefination) GetSeverityOk() (*string, bool) {
 }
 
 // HasSeverity returns a boolean if a field has been set.
-func (o *SourceTypesClassificationDefination) HasSeverity() bool {
+func (o *SourceTypesClassificationDefinition) HasSeverity() bool {
 	return o != nil && o.Severity != nil
 }
 
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
-func (o *SourceTypesClassificationDefination) SetSeverity(v string) {
+func (o *SourceTypesClassificationDefinition) SetSeverity(v string) {
 	o.Severity = &v
 }
 
 // GetMitreTags returns a tuple with the MitreTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourceTypesClassificationDefination) GetMitreTags() (*[]MitreTag, bool) {
+func (o *SourceTypesClassificationDefinition) GetMitreTags() (*[]MitreTag, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -175,7 +175,7 @@ func (o *SourceTypesClassificationDefination) GetMitreTags() (*[]MitreTag, bool)
 // GetMitreTagsOk returns a tuple with the MitreTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourceTypesClassificationDefination) GetMitreTagsOk() (*[]MitreTag, bool) {
+func (o *SourceTypesClassificationDefinition) GetMitreTagsOk() (*[]MitreTag, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -183,27 +183,27 @@ func (o *SourceTypesClassificationDefination) GetMitreTagsOk() (*[]MitreTag, boo
 }
 
 // HasMitreTags returns a boolean if a MitreTags has been set.
-func (o *SourceTypesClassificationDefination) HasMitreTags() bool {
+func (o *SourceTypesClassificationDefinition) HasMitreTags() bool {
 	return o != nil && o.MitreTags.IsSet()
 }
 
 // SetMitreTags gets a reference to the given common.Nullable[]MitreTag and assigns it to the MitreTags field.
-func (o *SourceTypesClassificationDefination) SetMitreTags(v []MitreTag) {
+func (o *SourceTypesClassificationDefinition) SetMitreTags(v []MitreTag) {
 	o.MitreTags.Set(&v)
 }
 
 // SetMitreTagsNil sets the value for MitreTags to be an explicit nil.
-func (o *SourceTypesClassificationDefination) SetMitreTagsNil() {
+func (o *SourceTypesClassificationDefinition) SetMitreTagsNil() {
 	o.MitreTags.Set(nil)
 }
 
 // UnSetMitreTags ensures that no value is present for MitreTags, not even an explicit nil.
-func (o *SourceTypesClassificationDefination) UnSetMitreTags() {
+func (o *SourceTypesClassificationDefinition) UnSetMitreTags() {
 	o.MitreTags.UnSet()
 }
 
 // GetKillChainPhase returns the KillChainPhase field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourceTypesClassificationDefination) GetKillChainPhase() []string {
+func (o *SourceTypesClassificationDefinition) GetKillChainPhase() []string {
 	if o == nil || o.KillChainPhase.Get() == nil {
 		var ret []string
 		return ret
@@ -214,7 +214,7 @@ func (o *SourceTypesClassificationDefination) GetKillChainPhase() []string {
 // GetKillChainPhaseOk returns a tuple with the KillChainPhase field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourceTypesClassificationDefination) GetKillChainPhaseOk() (*[]string, bool) {
+func (o *SourceTypesClassificationDefinition) GetKillChainPhaseOk() (*[]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -222,27 +222,27 @@ func (o *SourceTypesClassificationDefination) GetKillChainPhaseOk() (*[]string, 
 }
 
 // HasKillChainPhase returns a boolean if a KillChainPhase has been set.
-func (o *SourceTypesClassificationDefination) HasKillChainPhase() bool {
+func (o *SourceTypesClassificationDefinition) HasKillChainPhase() bool {
 	return o != nil && o.KillChainPhase.IsSet()
 }
 
 // SetKillChainPhase gets a reference to the given common.Nullable[]string and assigns it to the KillChainPhase field.
-func (o *SourceTypesClassificationDefination) SetKillChainPhase(v []string) {
+func (o *SourceTypesClassificationDefinition) SetKillChainPhase(v []string) {
 	o.KillChainPhase.Set(&v)
 }
 
 // SetKillChainPhaseNil sets the value for KillChainPhase to be an explicit nil.
-func (o *SourceTypesClassificationDefination) SetKillChainPhaseNil() {
+func (o *SourceTypesClassificationDefinition) SetKillChainPhaseNil() {
 	o.KillChainPhase.Set(nil)
 }
 
 // UnSetKillChainPhase ensures that no value is present for KillChainPhase, not even an explicit nil.
-func (o *SourceTypesClassificationDefination) UnSetKillChainPhase() {
+func (o *SourceTypesClassificationDefinition) UnSetKillChainPhase() {
 	o.KillChainPhase.UnSet()
 }
 
 // GetMitreCreationDate returns the MitreCreationDate field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourceTypesClassificationDefination) GetMitreCreationDate() string {
+func (o *SourceTypesClassificationDefinition) GetMitreCreationDate() string {
 	if o == nil || o.MitreCreationDate.Get() == nil {
 		var ret string
 		return ret
@@ -253,7 +253,7 @@ func (o *SourceTypesClassificationDefination) GetMitreCreationDate() string {
 // GetMitreCreationDateOk returns a tuple with the MitreCreationDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourceTypesClassificationDefination) GetMitreCreationDateOk() (*string, bool) {
+func (o *SourceTypesClassificationDefinition) GetMitreCreationDateOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -261,27 +261,27 @@ func (o *SourceTypesClassificationDefination) GetMitreCreationDateOk() (*string,
 }
 
 // HasMitreCreationDate returns a boolean if a field has been set.
-func (o *SourceTypesClassificationDefination) HasMitreCreationDate() bool {
+func (o *SourceTypesClassificationDefinition) HasMitreCreationDate() bool {
 	return o != nil && o.MitreCreationDate.IsSet()
 }
 
 // SetMitreCreationDate gets a reference to the given common.NullableString and assigns it to the MitreCreationDate field.
-func (o *SourceTypesClassificationDefination) SetMitreCreationDate(v string) {
+func (o *SourceTypesClassificationDefinition) SetMitreCreationDate(v string) {
 	o.MitreCreationDate.Set(&v)
 }
 
 // SetMitreCreationDateNil sets the value for MitreCreationDate to be an explicit nil.
-func (o *SourceTypesClassificationDefination) SetMitreCreationDateNil() {
+func (o *SourceTypesClassificationDefinition) SetMitreCreationDateNil() {
 	o.MitreCreationDate.Set(nil)
 }
 
 // UnSetMitreCreationDate ensures that no value is present for MitreCreationDate, not even an explicit nil.
-func (o *SourceTypesClassificationDefination) UnSetMitreCreationDate() {
+func (o *SourceTypesClassificationDefinition) UnSetMitreCreationDate() {
 	o.MitreCreationDate.UnSet()
 }
 
 // GetFromMarket returns the FromMarket field value if set, zero value otherwise.
-func (o *SourceTypesClassificationDefination) GetFromMarket() bool {
+func (o *SourceTypesClassificationDefinition) GetFromMarket() bool {
 	if o == nil || o.FromMarket == nil {
 		var ret bool
 		return ret
@@ -291,7 +291,7 @@ func (o *SourceTypesClassificationDefination) GetFromMarket() bool {
 
 // GetFromMarketOk returns a tuple with the FromMarket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceTypesClassificationDefination) GetFromMarketOk() (*bool, bool) {
+func (o *SourceTypesClassificationDefinition) GetFromMarketOk() (*bool, bool) {
 	if o == nil || o.FromMarket == nil {
 		return nil, false
 	}
@@ -299,17 +299,17 @@ func (o *SourceTypesClassificationDefination) GetFromMarketOk() (*bool, bool) {
 }
 
 // HasFromMarket returns a boolean if a field has been set.
-func (o *SourceTypesClassificationDefination) HasFromMarket() bool {
+func (o *SourceTypesClassificationDefinition) HasFromMarket() bool {
 	return o != nil && o.FromMarket != nil
 }
 
 // SetFromMarket gets a reference to the given bool and assigns it to the FromMarket field.
-func (o *SourceTypesClassificationDefination) SetFromMarket(v bool) {
+func (o *SourceTypesClassificationDefinition) SetFromMarket(v bool) {
 	o.FromMarket = &v
 }
 
 // GetFromModules returns the FromModules field value if set, zero value otherwise.
-func (o *SourceTypesClassificationDefination) GetFromModules() bool {
+func (o *SourceTypesClassificationDefinition) GetFromModules() bool {
 	if o == nil || o.FromModules == nil {
 		var ret bool
 		return ret
@@ -319,7 +319,7 @@ func (o *SourceTypesClassificationDefination) GetFromModules() bool {
 
 // GetFromModulesOk returns a tuple with the FromModules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceTypesClassificationDefination) GetFromModulesOk() (*bool, bool) {
+func (o *SourceTypesClassificationDefinition) GetFromModulesOk() (*bool, bool) {
 	if o == nil || o.FromModules == nil {
 		return nil, false
 	}
@@ -327,17 +327,17 @@ func (o *SourceTypesClassificationDefination) GetFromModulesOk() (*bool, bool) {
 }
 
 // HasFromModules returns a boolean if a field has been set.
-func (o *SourceTypesClassificationDefination) HasFromModules() bool {
+func (o *SourceTypesClassificationDefinition) HasFromModules() bool {
 	return o != nil && o.FromModules != nil
 }
 
 // SetFromModules gets a reference to the given bool and assigns it to the FromModules field.
-func (o *SourceTypesClassificationDefination) SetFromModules(v bool) {
+func (o *SourceTypesClassificationDefinition) SetFromModules(v bool) {
 	o.FromModules = &v
 }
 
 // MarshalJSON serializes the struct using spec logic.
-func (o SourceTypesClassificationDefination) MarshalJSON() ([]byte, error) {
+func (o SourceTypesClassificationDefinition) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
@@ -377,7 +377,7 @@ func (o SourceTypesClassificationDefination) MarshalJSON() ([]byte, error) {
 }
 
 // UnMarshalJSON deserializes the given payload.
-func (o *SourceTypesClassificationDefination) UnMarshalJSON(bytes []byte) (err error) {
+func (o *SourceTypesClassificationDefinition) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
 		ID                *string                       `json:"ID,omitempty"`
 		DefID             *int64                        `json:"DefID,omitempty"`
