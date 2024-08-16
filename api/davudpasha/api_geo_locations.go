@@ -42,12 +42,12 @@ func (r *SearchGeoLocationsOptionalParameters) WithBody(body GeoLocationsSearchR
 
 // SearchGeoLocations searches for GeoLocations.
 //
-// @Summary Search GeoLocations
-// @Description Search for GeoLocations based on a query.
-// @Tags GeoLocations
+// @Summary Search Geo Locations
+// @Description Search for Geo Locations based on a query.
+// @Tags Geo Locations
 // @Accept  json
 // @Produce  json
-// @Param body body GeoLocationsSearchRequest true "GeoLocations Search Request"
+// @Param body body GeoLocationsSearchRequest true "Geo Locations Search Request"
 // @Success 200 {object} GeoLocationsSearchResponse "Successful operation"
 // @Failure 400 {object} ErrorResponse "Bad Request"
 // @Failure 403 {object} ErrorResponse "Forbidden"

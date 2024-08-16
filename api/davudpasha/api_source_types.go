@@ -159,7 +159,7 @@ func (a *SourceTypesApi) SearchSourceTypes(ctx _context.Context, o ...SearchSour
 //
 // @Summary Save Source Types
 // @Description Save Source Types based on the provided data.
-// @Tags SourceTypes
+// @Tags Source Types
 // @Accept  json
 // @Produce  json
 // @Param body body SourceTypesSaveRequest true "Source Types Save Request"

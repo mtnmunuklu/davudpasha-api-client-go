@@ -40,14 +40,14 @@ func (r *SearchElasticStatsOptionalParameters) WithBody(body ElasticStatsSearchR
 	return r
 }
 
-// SearchElasticStats searches for ElasticStats.
+// SearchElasticStats searches for Elastic Stats.
 //
-// @Summary Search ElasticStats
-// @Description Search for ElasticStats based on a query.
-// @Tags ElasticStats
+// @Summary Search Elastic Stats
+// @Description Search for Elastic Stats based on a query.
+// @Tags Elastic Stats
 // @Accept  json
 // @Produce  json
-// @Param body body ElasticStatsSearchRequest true "ElasticStats Search Request"
+// @Param body body ElasticStatsSearchRequest true "Elastic Stats Search Request"
 // @Success 200 {object} ElasticStatsSearchResponse "Successful operation"
 // @Failure 400 {object} ErrorResponse "Bad Request"
 // @Failure 403 {object} ErrorResponse "Forbidden"
