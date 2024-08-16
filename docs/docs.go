@@ -34,7 +34,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "ActionDefinations"
+                    "Action Definitions"
                 ],
                 "summary": "Search Action Definitions",
                 "parameters": [
@@ -44,7 +44,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/api_davudpasha.ActionDefinationsSearchRequest"
+                            "$ref": "#/definitions/api_davudpasha.ActionDefinitionsSearchRequest"
                         }
                     }
                 ],
@@ -54,7 +54,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/api_davudpasha.ActionDefinationsSearchResponse"
+                                "$ref": "#/definitions/api_davudpasha.ActionDefinitionsSearchResponse"
                             }
                         }
                     },
@@ -151,17 +151,17 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Alerts"
+                    "Alert Definitions"
                 ],
-                "summary": "Search Alerts",
+                "summary": "Search Alert Definitions",
                 "parameters": [
                     {
-                        "description": "Alerts Search Request",
+                        "description": "Alert Definitions Search Request",
                         "name": "body",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/api_davudpasha.AlertsSearchRequest"
+                            "$ref": "#/definitions/api_davudpasha.AlertDefinitionsSearchRequest"
                         }
                     }
                 ],
@@ -169,7 +169,7 @@ const docTemplate = `{
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/api_davudpasha.AlertsSearchResponse"
+                            "$ref": "#/definitions/api_davudpasha.AlertDefinitionsSearchResponse"
                         }
                     },
                     "400": {
@@ -200,7 +200,7 @@ const docTemplate = `{
                         "ApiKeyAuth": []
                     }
                 ],
-                "description": "Search for ElasticStats based on a query.",
+                "description": "Search for Elastic Stats based on a query.",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,12 +208,12 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "ElasticStats"
+                    "Elastic Stats"
                 ],
-                "summary": "Search ElasticStats",
+                "summary": "Search Elastic Stats",
                 "parameters": [
                     {
-                        "description": "ElasticStats Search Request",
+                        "description": "Elastic Stats Search Request",
                         "name": "body",
                         "in": "body",
                         "required": true,
@@ -257,7 +257,7 @@ const docTemplate = `{
                         "ApiKeyAuth": []
                     }
                 ],
-                "description": "Search for GeoLocations based on a query.",
+                "description": "Search for Geo Locations based on a query.",
                 "consumes": [
                     "application/json"
                 ],
@@ -265,12 +265,12 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "GeoLocations"
+                    "Geo Locations"
                 ],
-                "summary": "Search GeoLocations",
+                "summary": "Search Geo Locations",
                 "parameters": [
                     {
-                        "description": "GeoLocations Search Request",
+                        "description": "Geo Locations Search Request",
                         "name": "body",
                         "in": "body",
                         "required": true,
@@ -535,6 +535,63 @@ const docTemplate = `{
                 }
             }
         },
+        "/ICSiemQueryAct/Save": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Save Queries based on the provided data.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Queries"
+                ],
+                "summary": "Save Queries",
+                "parameters": [
+                    {
+                        "description": "Queries Save Request",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.QueriesSaveRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.QueriesSaveResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    },
+                    "429": {
+                        "description": "Too Many Requests",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/ICaseManagerAct/GetCaseGridPageData": {
             "post": {
                 "security": [
@@ -741,8 +798,65 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/api_davudpasha.ReportsSearchResponse"
+                                "$ref": "#/definitions/api_davudpasha.ReportsItem"
                             }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    },
+                    "429": {
+                        "description": "Too Many Requests",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/IDPReportScheduleAct/Save": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Save Source Types based on the provided data.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Source Types"
+                ],
+                "summary": "Save Source Types",
+                "parameters": [
+                    {
+                        "description": "Source Types Save Request",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.SourceTypesSaveRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "type": "string"
                         }
                     },
                     "400": {
@@ -1034,7 +1148,7 @@ const docTemplate = `{
                 }
             }
         },
-        "api_davudpasha.ActionDefinationsSearchRequest": {
+        "api_davudpasha.ActionDefinitionsSearchRequest": {
             "type": "object",
             "properties": {
                 "application": {
@@ -1042,7 +1156,7 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "searchFilter": {
-                    "description": "Filter for searching action definations.",
+                    "description": "Filter for searching action definitions.",
                     "type": "string"
                 },
                 "smartRestRequestContext": {
@@ -1051,7 +1165,7 @@ const docTemplate = `{
                 }
             }
         },
-        "api_davudpasha.ActionDefinationsSearchResponse": {
+        "api_davudpasha.ActionDefinitionsSearchResponse": {
             "type": "object",
             "properties": {
                 "Action": {
@@ -1133,7 +1247,7 @@ const docTemplate = `{
                 }
             }
         },
-        "api_davudpasha.AlertsCorrelationData": {
+        "api_davudpasha.AlertDefinitionsCorrelationData": {
             "type": "object",
             "properties": {
                 "Actions": {
@@ -1146,18 +1260,27 @@ const docTemplate = `{
                 },
                 "CorrelationType": {
                     "description": "Type of correlation.",
-                    "type": "string"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.AlertDefinitionsCorrelationType"
+                        }
+                    ]
                 },
                 "Data": {
                     "description": "Raw data in JSON format.",
-                    "type": "array",
-                    "items": {
-                        "type": "integer"
-                    }
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.AlertDefinitionsQueryData"
+                        }
+                    ]
                 },
                 "Description": {
                     "description": "Description of the correlation.",
-                    "type": "string"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                        }
+                    ]
                 },
                 "Enabled": {
                     "description": "Whether the correlation is enabled.",
@@ -1178,6 +1301,13 @@ const docTemplate = `{
                         "type": "string"
                     }
                 },
+                "GroupedColumnsOptions": {
+                    "description": "Options for columns that can be grouped.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/api_davudpasha.SelectedColumn"
+                    }
+                },
                 "HasUpdate": {
                     "description": "Whether the correlation has an update.",
                     "type": "boolean"
@@ -1196,11 +1326,19 @@ const docTemplate = `{
                 },
                 "LimiterTimeFrameType": {
                     "description": "Time frame type for limiter.",
-                    "type": "string"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                        }
+                    ]
                 },
                 "LimiterTimeFrameValue": {
                     "description": "Time frame value for limiter.",
-                    "type": "integer"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableInt64"
+                        }
+                    ]
                 },
                 "MaxAlertCount": {
                     "description": "Maximum alert count.",
@@ -1240,10 +1378,11 @@ const docTemplate = `{
                 },
                 "Tags": {
                     "description": "Tags associated with the correlation.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string"
+                        }
+                    ]
                 },
                 "Version": {
                     "description": "Version of the correlation.",
@@ -1251,7 +1390,20 @@ const docTemplate = `{
                 }
             }
         },
-        "api_davudpasha.AlertsItem": {
+        "api_davudpasha.AlertDefinitionsCorrelationType": {
+            "type": "string",
+            "enum": [
+                "Interface IQueryCorrelation",
+                "Interface IQueryCorrelationChain",
+                "Interface ILogSourceCorrelation"
+            ],
+            "x-enum-varnames": [
+                "CORRELATIONTYPE_INTERFACEIQUERYCORRELATION",
+                "CORRELATIONTYPE_INTERFACEIQUERYCORRELATIONCHAIN",
+                "CORRELATIONTYPE_INTERFACEILOGSOURCECORRELATION"
+            ]
+        },
+        "api_davudpasha.AlertDefinitionsItem": {
             "type": "object",
             "properties": {
                 "ActionMessage": {
@@ -1270,7 +1422,7 @@ const docTemplate = `{
                     "description": "Correlation data.",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/api_davudpasha.AlertsCorrelationData"
+                            "$ref": "#/definitions/api_davudpasha.AlertDefinitionsCorrelationData"
                         }
                     ]
                 },
@@ -1284,7 +1436,119 @@ const docTemplate = `{
                 }
             }
         },
-        "api_davudpasha.AlertsSearchRequest": {
+        "api_davudpasha.AlertDefinitionsQuery": {
+            "type": "object",
+            "properties": {
+                "Query": {
+                    "type": "string"
+                },
+                "QueryColumns": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/api_davudpasha.SelectedColumn"
+                    }
+                },
+                "QueryID": {
+                    "type": "string"
+                },
+                "TimeFrameType": {
+                    "type": "string"
+                },
+                "TimeFrameValue": {
+                    "type": "integer"
+                }
+            }
+        },
+        "api_davudpasha.AlertDefinitionsQueryCorrelationAlertType": {
+            "type": "string",
+            "enum": [
+                "WhenOneOrMoreRow",
+                "WhenNoRow",
+                "AlertForEachRow"
+            ],
+            "x-enum-varnames": [
+                "QUERYCORRELATIONALERTTYPE_WHENONEORMOREROW",
+                "QUERYCORRELATIONALERTTYPE_WHENNOROW",
+                "QUERYCORRELATIONALERTTYPE_ALERTFOREACHROW"
+            ]
+        },
+        "api_davudpasha.AlertDefinitionsQueryData": {
+            "type": "object",
+            "properties": {
+                "LastReadTime": {
+                    "type": "string"
+                },
+                "LgsID": {
+                    "type": "string"
+                },
+                "Queries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/api_davudpasha.AlertDefinitionsQuery"
+                    }
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "QueryCorrelationAlertType": {
+                    "$ref": "#/definitions/api_davudpasha.AlertDefinitionsQueryCorrelationAlertType"
+                },
+                "QueryID": {
+                    "type": "string"
+                },
+                "RuleType": {
+                    "$ref": "#/definitions/api_davudpasha.AlertDefinitionsRuleType"
+                },
+                "TimeFrameType": {
+                    "$ref": "#/definitions/api_davudpasha.AlertDefinitionsTimeFrameType"
+                },
+                "TimeFrameValue": {
+                    "type": "integer"
+                }
+            }
+        },
+        "api_davudpasha.AlertDefinitionsRuleType": {
+            "type": "string",
+            "enum": [
+                "any"
+            ],
+            "x-enum-varnames": [
+                "RULETYPE_ANY"
+            ]
+        },
+        "api_davudpasha.AlertDefinitionsSaveRequest": {
+            "type": "object",
+            "properties": {
+                "correlation": {
+                    "$ref": "#/definitions/api_davudpasha.AlertDefinitionsCorrelationData"
+                },
+                "smartRestRequestContext": {
+                    "description": "Context for the Smart REST request.",
+                    "type": "string"
+                }
+            }
+        },
+        "api_davudpasha.AlertDefinitionsSaveResponse": {
+            "type": "object",
+            "properties": {
+                "Data": {
+                    "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                },
+                "Status": {
+                    "type": "boolean"
+                },
+                "ValidationList": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "optErrorMsg": {
+                    "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                }
+            }
+        },
+        "api_davudpasha.AlertDefinitionsSearchRequest": {
             "type": "object",
             "properties": {
                 "filter": {
@@ -1297,7 +1561,7 @@ const docTemplate = `{
                 }
             }
         },
-        "api_davudpasha.AlertsSearchResponse": {
+        "api_davudpasha.AlertDefinitionsSearchResponse": {
             "type": "object",
             "properties": {
                 "FailedItems": {
@@ -1314,7 +1578,7 @@ const docTemplate = `{
                     "description": "List of alert items.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/api_davudpasha.AlertsItem"
+                        "$ref": "#/definitions/api_davudpasha.AlertDefinitionsItem"
                     }
                 },
                 "SuccessItems": {
@@ -1325,6 +1589,21 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "api_davudpasha.AlertDefinitionsTimeFrameType": {
+            "type": "string",
+            "enum": [
+                "minutes",
+                "hours",
+                "days",
+                "weeks"
+            ],
+            "x-enum-varnames": [
+                "TIMEFRAMETYPE_MINUTES",
+                "TIMEFRAMETYPE_HOURS",
+                "TIMEFRAMETYPE_DAYS",
+                "TIMEFRAMETYPE_WEEKS"
+            ]
         },
         "api_davudpasha.AssetsAsset": {
             "type": "object",
@@ -2133,6 +2412,7 @@ const docTemplate = `{
                 "ThisHour",
                 "Last6Hours",
                 "Last12Hours",
+                "Last24Hours",
                 "Last48Hours",
                 "Last72Hours",
                 "Today",
@@ -2152,10 +2432,11 @@ const docTemplate = `{
                 "DATETIMETYPE_LAST60MINUTES",
                 "DATETIMETYPE_LAST120MINUTES",
                 "DATETIMETYPE_THISHOUR",
-                "DATETIMETYPE_LAST6HOUR",
-                "DATETIMETYPE_LAST12HOUR",
-                "DATETIMETYPE_LAST48HOUR",
-                "DATETIMETYPE_LAST72HOUR",
+                "DATETIMETYPE_LAST6HOURS",
+                "DATETIMETYPE_LAST12HOURS",
+                "DATETIMETYPE_LAST24HOURS",
+                "DATETIMETYPE_LAST48HOURS",
+                "DATETIMETYPE_LAST72HOURS",
                 "DATETIMETYPE_TODAY",
                 "DATETIMETYPE_YESTERDAY",
                 "DATETIMETYPE_THISWEEK",
@@ -2343,6 +2624,14 @@ const docTemplate = `{
                 }
             }
         },
+        "api_davudpasha.FormRef": {
+            "type": "object",
+            "properties": {
+                "current": {
+                    "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                }
+            }
+        },
         "api_davudpasha.GeoLocationsData": {
             "type": "object",
             "properties": {
@@ -2433,7 +2722,7 @@ const docTemplate = `{
                 }
             }
         },
-        "api_davudpasha.LookupType": {
+        "api_davudpasha.LookupsLookupType": {
             "type": "string",
             "enum": [
                 "IP_Subnet",
@@ -2447,15 +2736,15 @@ const docTemplate = `{
                 "Active_List"
             ],
             "x-enum-varnames": [
-                "LookupType_IPSUBNET",
-                "LookupType_FILEJSON",
-                "LookupType_FILEJSV",
-                "LookupType_DATABASE",
-                "LookupType_STATIC",
-                "LookupType_BLACKLIST",
-                "LookupType_STATICURL",
-                "LookupType_ACTIVEDIRECTORY",
-                "LookupType_ACTIVELIST"
+                "LOOKUPTYPE_IPSUBNET",
+                "LOOKUPTYPE_FILEJSON",
+                "LOOKUPTYPE_FILEJSV",
+                "LOOKUPTYPE_DATABASE",
+                "LOOKUPTYPE_STATIC",
+                "LOOKUPTYPE_BLACKLIST",
+                "LOOKUPTYPE_STATICURL",
+                "LOOKUPTYPE_ACTIVEDIRECTORY",
+                "LOOKUPTYPE_ACTIVELIST"
             ]
         },
         "api_davudpasha.LookupsSearchRequest": {
@@ -2512,7 +2801,7 @@ const docTemplate = `{
                     "description": "Type of the lookup.",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/api_davudpasha.LookupType"
+                            "$ref": "#/definitions/api_davudpasha.LookupsLookupType"
                         }
                     ]
                 },
@@ -2533,6 +2822,9 @@ const docTemplate = `{
         "api_davudpasha.NullableCasesMitreData": {
             "type": "object"
         },
+        "api_davudpasha.NullableReportsLatestReportFile": {
+            "type": "object"
+        },
         "api_davudpasha.NullableReportsQueryExtData": {
             "type": "object"
         },
@@ -2541,27 +2833,6 @@ const docTemplate = `{
         },
         "api_davudpasha.NullableSourceTypesNormalization": {
             "type": "object"
-        },
-        "api_davudpasha.ParallelOptions": {
-            "type": "object",
-            "properties": {
-                "FileBlockSizeMb": {
-                    "description": "Size of file blocks for parallel processing, in megabytes.",
-                    "type": "integer"
-                },
-                "IsActive": {
-                    "description": "Indicates whether parallel processing is active.",
-                    "type": "boolean"
-                },
-                "TaskCount": {
-                    "description": "Number of tasks for parallel processing.",
-                    "type": "integer"
-                },
-                "TimeoutSec": {
-                    "description": "Timeout duration for parallel processing, in seconds.",
-                    "type": "integer"
-                }
-            }
         },
         "api_davudpasha.QueriesItem": {
             "type": "object",
@@ -2618,7 +2889,7 @@ const docTemplate = `{
                     "description": "Kill chain phase associated with the query.",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string"
                         }
                     ]
                 },
@@ -2660,7 +2931,11 @@ const docTemplate = `{
                 },
                 "QueryType": {
                     "description": "Type of the query.",
-                    "type": "string"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.QueriesQueryType"
+                        }
+                    ]
                 },
                 "SharedUsersAndGroups": {
                     "description": "Users and groups with whom the query is shared.",
@@ -2681,6 +2956,38 @@ const docTemplate = `{
                 "Version": {
                     "description": "Version of the query.",
                     "type": "number"
+                }
+            }
+        },
+        "api_davudpasha.QueriesQueryType": {
+            "type": "string",
+            "enum": [
+                "Normal"
+            ],
+            "x-enum-varnames": [
+                "QUERYTYPE_NORMAL"
+            ]
+        },
+        "api_davudpasha.QueriesSaveRequest": {
+            "type": "object",
+            "properties": {
+                "querySettings": {
+                    "$ref": "#/definitions/api_davudpasha.QueriesItem"
+                },
+                "smartRestRequestContext": {
+                    "description": "Context for the Smart REST request.",
+                    "type": "string"
+                }
+            }
+        },
+        "api_davudpasha.QueriesSaveResponse": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "$ref": "#/definitions/api_davudpasha.QueriesItem"
+                },
+                "status": {
+                    "type": "boolean"
                 }
             }
         },
@@ -3002,7 +3309,7 @@ const docTemplate = `{
                     ]
                 },
                 "ReportType": {
-                    "description": "Type of the report.",
+                    "description": "Type of the report. ReportType: csv",
                     "type": "string"
                 },
                 "Sections": {
@@ -3022,223 +3329,18 @@ const docTemplate = `{
                 }
             }
         },
-        "api_davudpasha.ReportsLatestReportFile": {
+        "api_davudpasha.ReportsEmailConfigs": {
             "type": "object",
             "properties": {
-                "Filename": {
-                    "description": "Filename of the latest report file.",
-                    "type": "string"
+                "Email": {
+                    "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
                 },
-                "ReportGridFSFileId": {
-                    "description": "ID of the latest report file in GridFS.",
-                    "type": "string"
-                },
-                "RunDate": {
-                    "description": "Run date of the latest report file.",
-                    "type": "string"
-                },
-                "Status": {
-                    "description": "Status of the latest report file.",
-                    "type": "string"
+                "Subject": {
+                    "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
                 }
             }
         },
-        "api_davudpasha.ReportsPage": {
-            "type": "object",
-            "properties": {
-                "BottomMargin": {
-                    "description": "Bottom margin of the page.",
-                    "type": "integer"
-                },
-                "FooterDistance": {
-                    "description": "Distance of the footer from the bottom of the page.",
-                    "type": "integer"
-                },
-                "HeaderDistance": {
-                    "description": "Distance of the header from the top of the page.",
-                    "type": "integer"
-                },
-                "IsA3": {
-                    "description": "Indicates if the page size is A3.",
-                    "type": "boolean"
-                },
-                "IsLandscape": {
-                    "description": "Indicates if the page orientation is landscape.",
-                    "type": "boolean"
-                },
-                "LeftMargin": {
-                    "description": "Left margin of the page.",
-                    "type": "integer"
-                },
-                "RightMargin": {
-                    "description": "Right margin of the page.",
-                    "type": "integer"
-                },
-                "TopMargin": {
-                    "description": "Top margin of the page.",
-                    "type": "integer"
-                }
-            }
-        },
-        "api_davudpasha.ReportsParameters": {
-            "type": "object",
-            "properties": {
-                "Datas": {
-                    "description": "Raw JSON message for the report data.",
-                    "type": "array",
-                    "items": {
-                        "type": "integer"
-                    }
-                },
-                "IsActive": {
-                    "description": "Indicates if the report is active.",
-                    "type": "boolean"
-                },
-                "Parameters": {
-                    "description": "List of parameters for the report.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
-        "api_davudpasha.ReportsQuery": {
-            "type": "object",
-            "properties": {
-                "ChartVisualization": {
-                    "description": "Visualization settings for the chart.",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/api_davudpasha.ReportsChartVisualization"
-                        }
-                    ]
-                },
-                "Data": {
-                    "description": "Data related to the query.",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/api_davudpasha.ReportsQueryData"
-                        }
-                    ]
-                },
-                "ExtData": {
-                    "description": "Extended data for the query.",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/api_davudpasha.NullableReportsQueryExtData"
-                        }
-                    ]
-                },
-                "Nane": {
-                    "description": "Name of the query.",
-                    "type": "string"
-                },
-                "ShowChart": {
-                    "description": "Indicates if the chart should be shown.",
-                    "type": "boolean"
-                },
-                "ShowTable": {
-                    "description": "Indicates if the table should be shown.",
-                    "type": "boolean"
-                },
-                "TableVisualization": {
-                    "description": "Visualization settings for the table.",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/api_davudpasha.ReportsTableVisualization"
-                        }
-                    ]
-                }
-            }
-        },
-        "api_davudpasha.ReportsQueryData": {
-            "type": "object",
-            "properties": {
-                "Code": {
-                    "description": "Code related to the query.",
-                    "type": "string"
-                },
-                "DateTimeRange": {
-                    "description": "Date-time range for the query.",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/api_davudpasha.DateTimeRange"
-                        }
-                    ]
-                },
-                "ItemType": {
-                    "description": "Type of the item.",
-                    "type": "string"
-                },
-                "MaxRowCount": {
-                    "description": "Maximum row count for the query data.",
-                    "type": "integer"
-                },
-                "QueryID": {
-                    "description": "ID of the query.",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
-                        }
-                    ]
-                },
-                "QueryStr": {
-                    "description": "Query string.",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
-                        }
-                    ]
-                },
-                "ScriptArguments": {
-                    "description": "Arguments for the script.",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string"
-                        }
-                    ]
-                },
-                "ScriptPath": {
-                    "description": "Path to the script related to the query.",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
-                        }
-                    ]
-                }
-            }
-        },
-        "api_davudpasha.ReportsSearchRequest": {
-            "type": "object",
-            "properties": {
-                "applicationName": {
-                    "description": "Name of the application.",
-                    "type": "string"
-                },
-                "searchFilter": {
-                    "description": "Filter for the search.",
-                    "type": "string"
-                },
-                "showPassive": {
-                    "description": "Indicates whether to show passive reports.",
-                    "type": "boolean"
-                },
-                "smartRestRequestContext": {
-                    "description": "Context for the Smart REST request.",
-                    "type": "string"
-                },
-                "startDate": {
-                    "description": "Start date for the search.",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
-                        }
-                    ]
-                }
-            }
-        },
-        "api_davudpasha.ReportsSearchResponse": {
+        "api_davudpasha.ReportsItem": {
             "type": "object",
             "properties": {
                 "Actions": {
@@ -3267,6 +3369,22 @@ const docTemplate = `{
                 },
                 "Description": {
                     "description": "Description of the report.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                        }
+                    ]
+                },
+                "EmailConfigs": {
+                    "description": "Email configuration for the report.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.ReportsEmailConfigs"
+                        }
+                    ]
+                },
+                "ID": {
+                    "description": "ID of the report.",
                     "type": "string"
                 },
                 "IsActive": {
@@ -3285,7 +3403,7 @@ const docTemplate = `{
                     "description": "Latest file associated with the report.",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/api_davudpasha.ReportsLatestReportFile"
+                            "$ref": "#/definitions/api_davudpasha.NullableReportsLatestReportFile"
                         }
                     ]
                 },
@@ -3378,10 +3496,11 @@ const docTemplate = `{
                 },
                 "Tags": {
                     "description": "Tags associated with the report.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string"
+                        }
+                    ]
                 },
                 "Username": {
                     "description": "Username associated with the report.",
@@ -3390,6 +3509,276 @@ const docTemplate = `{
                 "Version": {
                     "description": "Version of the report.",
                     "type": "number"
+                },
+                "chechboxWeekly": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "api_davudpasha.ReportsItemType": {
+            "type": "string",
+            "enum": [
+                "Query",
+                "PythonScript",
+                "Custom",
+                "Code"
+            ],
+            "x-enum-varnames": [
+                "ITEMTYPE_QUERY",
+                "ITEMTYPE_PYTHONSCRIPT",
+                "ITEMTYPE_CUSTOM",
+                "ITEMTYPE_CODE"
+            ]
+        },
+        "api_davudpasha.ReportsPage": {
+            "type": "object",
+            "properties": {
+                "BottomMargin": {
+                    "description": "Bottom margin of the page.",
+                    "type": "integer"
+                },
+                "FooterDistance": {
+                    "description": "Distance of the footer from the bottom of the page.",
+                    "type": "integer"
+                },
+                "HeaderDistance": {
+                    "description": "Distance of the header from the top of the page.",
+                    "type": "integer"
+                },
+                "IsA3": {
+                    "description": "Indicates if the page size is A3.",
+                    "type": "boolean"
+                },
+                "IsLandscape": {
+                    "description": "Indicates if the page orientation is landscape.",
+                    "type": "boolean"
+                },
+                "LeftMargin": {
+                    "description": "Left margin of the page.",
+                    "type": "integer"
+                },
+                "RightMargin": {
+                    "description": "Right margin of the page.",
+                    "type": "integer"
+                },
+                "TopMargin": {
+                    "description": "Top margin of the page.",
+                    "type": "integer"
+                }
+            }
+        },
+        "api_davudpasha.ReportsParameters": {
+            "type": "object",
+            "properties": {
+                "Datas": {
+                    "description": "Raw JSON message for the report data.",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "IsActive": {
+                    "description": "Indicates if the report is active.",
+                    "type": "boolean"
+                },
+                "Parameters": {
+                    "description": "List of parameters for the report.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "api_davudpasha.ReportsQuery": {
+            "type": "object",
+            "properties": {
+                "ChartVisualization": {
+                    "description": "Visualization settings for the chart.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.ReportsChartVisualization"
+                        }
+                    ]
+                },
+                "Data": {
+                    "description": "Data related to the query.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.ReportsQueryData"
+                        }
+                    ]
+                },
+                "ExtData": {
+                    "description": "Extended data for the query.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.NullableReportsQueryExtData"
+                        }
+                    ]
+                },
+                "FormRef": {
+                    "description": "Reference to the form used for generating the report.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.FormRef"
+                        }
+                    ]
+                },
+                "Key": {
+                    "description": "Represents a key value, possibly used as an identifier or index.",
+                    "type": "number"
+                },
+                "Nane": {
+                    "description": "Name of the query.",
+                    "type": "string"
+                },
+                "ShowChart": {
+                    "description": "Indicates if the chart should be shown.",
+                    "type": "boolean"
+                },
+                "ShowTable": {
+                    "description": "Indicates if the table should be shown.",
+                    "type": "boolean"
+                },
+                "TableVisualization": {
+                    "description": "Visualization settings for the table.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.ReportsTableVisualization"
+                        }
+                    ]
+                }
+            }
+        },
+        "api_davudpasha.ReportsQueryData": {
+            "type": "object",
+            "properties": {
+                "Code": {
+                    "description": "Code related to the query.",
+                    "type": "string"
+                },
+                "DateTimeRange": {
+                    "description": "Date-time range for the query.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.DateTimeRange"
+                        }
+                    ]
+                },
+                "ItemType": {
+                    "description": "Type of the item. ItemType: PythonScript, Query, Custom, Code",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.ReportsItemType"
+                        }
+                    ]
+                },
+                "MaxRowCount": {
+                    "description": "Maximum row count for the query data.",
+                    "type": "integer"
+                },
+                "QueryID": {
+                    "description": "ID of the query.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                        }
+                    ]
+                },
+                "QueryStr": {
+                    "description": "Query string.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                        }
+                    ]
+                },
+                "ScriptArguments": {
+                    "description": "Arguments for the script.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string"
+                        }
+                    ]
+                },
+                "ScriptPath": {
+                    "description": "Path to the script related to the query.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                        }
+                    ]
+                }
+            }
+        },
+        "api_davudpasha.ReportsSaveRequest": {
+            "type": "object",
+            "properties": {
+                "application": {
+                    "type": "string"
+                },
+                "report": {
+                    "$ref": "#/definitions/api_davudpasha.ReportsItem"
+                },
+                "schedule": {
+                    "$ref": "#/definitions/api_davudpasha.ScheduleConfig"
+                },
+                "smartRestRequestContext": {
+                    "description": "Context for the Smart REST request.",
+                    "type": "string"
+                }
+            }
+        },
+        "api_davudpasha.ReportsSaveResponse": {
+            "type": "object",
+            "properties": {
+                "Data": {
+                    "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                },
+                "Status": {
+                    "type": "boolean"
+                },
+                "ValidationList": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "optErrorMsg": {
+                    "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                }
+            }
+        },
+        "api_davudpasha.ReportsSearchRequest": {
+            "type": "object",
+            "properties": {
+                "applicationName": {
+                    "description": "Name of the application.",
+                    "type": "string"
+                },
+                "searchFilter": {
+                    "description": "Filter for the search.",
+                    "type": "string"
+                },
+                "showPassive": {
+                    "description": "Indicates whether to show passive reports.",
+                    "type": "boolean"
+                },
+                "smartRestRequestContext": {
+                    "description": "Context for the Smart REST request.",
+                    "type": "string"
+                },
+                "startDate": {
+                    "description": "Start date for the search.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                        }
+                    ]
                 }
             }
         },
@@ -3399,6 +3788,13 @@ const docTemplate = `{
                 "ChartType": {
                     "description": "Type of the chart.",
                     "type": "string"
+                },
+                "ColumnValues": {
+                    "description": "List of values corresponding to specific columns in a dataset.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "Columns": {
                     "description": "Columns for the visualization.",
@@ -3416,6 +3812,10 @@ const docTemplate = `{
         "api_davudpasha.ScheduleConfig": {
             "type": "object",
             "properties": {
+                "Date": {
+                    "description": "Date for the schedule.",
+                    "type": "string"
+                },
                 "DateStr": {
                     "description": "Date string for the schedule.",
                     "type": "string"
@@ -3705,7 +4105,7 @@ const docTemplate = `{
                 }
             }
         },
-        "api_davudpasha.SourceTypesClassificationDefination": {
+        "api_davudpasha.SourceTypesClassificationDefinition": {
             "type": "object",
             "properties": {
                 "DefID": {
@@ -3728,7 +4128,7 @@ const docTemplate = `{
                     "description": "KillChainPhase specifies the kill chain phase associated with the classification.",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString"
+                            "$ref": "#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string"
                         }
                     ]
                 },
@@ -3778,6 +4178,9 @@ const docTemplate = `{
                     "description": "ExcludeThisExpression indicates whether to exclude this expression.",
                     "type": "boolean"
                 },
+                "Key": {
+                    "type": "number"
+                },
                 "LogParserData": {
                     "description": "LogParserData contains the log parser data for the expression.",
                     "allOf": [
@@ -3787,7 +4190,7 @@ const docTemplate = `{
                     ]
                 },
                 "LogParserType": {
-                    "description": "LogParserType specifies the type of the log parser used.",
+                    "description": "LogParserType specifies the type of the log parser used. Example: Module csiem.parser.regex",
                     "type": "string"
                 },
                 "Mapping": {
@@ -3834,9 +4237,15 @@ const docTemplate = `{
                     "description": "EndIndex specifies the ending index for the expression field.",
                     "type": "integer"
                 },
+                "FormRef": {
+                    "$ref": "#/definitions/api_davudpasha.FormRef"
+                },
                 "Index": {
                     "description": "Index specifies if indexing is enabled for the expression field.",
                     "type": "boolean"
+                },
+                "Key": {
+                    "type": "number"
                 },
                 "Name": {
                     "description": "Name specifies the name of the expression field.",
@@ -3891,7 +4300,7 @@ const docTemplate = `{
                     "description": "ClassificationDefs contains classification definitions associated with the item.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/api_davudpasha.SourceTypesClassificationDefination"
+                        "$ref": "#/definitions/api_davudpasha.SourceTypesClassificationDefinition"
                     }
                 },
                 "ClassificationRules": {
@@ -3975,7 +4384,7 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "SourceReaderType": {
-                    "description": "SourceReaderType specifies the type of source reader used.",
+                    "description": "SourceReaderType specifies the type of source reader used. Example: FILE",
                     "type": "string"
                 },
                 "Version": {
@@ -4066,6 +4475,18 @@ const docTemplate = `{
             "properties": {
                 "Field": {
                     "description": "Field specifies the field for mapping.",
+                    "type": "string"
+                }
+            }
+        },
+        "api_davudpasha.SourceTypesSaveRequest": {
+            "type": "object",
+            "properties": {
+                "lgsDef": {
+                    "$ref": "#/definitions/api_davudpasha.SourceTypesItem"
+                },
+                "smartRestRequestContext": {
+                    "description": "Context for the Smart REST request.",
                     "type": "string"
                 }
             }
@@ -4241,7 +4662,7 @@ const docTemplate = `{
                     "description": "Parallel options for the source item.",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/api_davudpasha.ParallelOptions"
+                            "$ref": "#/definitions/api_davudpasha.SourcesParallelOptions"
                         }
                     ]
                 },
@@ -4315,6 +4736,27 @@ const docTemplate = `{
                 "Priority": {
                     "description": "Priority of the log operation.",
                     "type": "string"
+                }
+            }
+        },
+        "api_davudpasha.SourcesParallelOptions": {
+            "type": "object",
+            "properties": {
+                "FileBlockSizeMb": {
+                    "description": "Size of file blocks for parallel processing, in megabytes.",
+                    "type": "integer"
+                },
+                "IsActive": {
+                    "description": "Indicates whether parallel processing is active.",
+                    "type": "boolean"
+                },
+                "TaskCount": {
+                    "description": "Number of tasks for parallel processing.",
+                    "type": "integer"
+                },
+                "TimeoutSec": {
+                    "description": "Timeout duration for parallel processing, in seconds.",
+                    "type": "integer"
                 }
             }
         },

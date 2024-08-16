@@ -19,20 +19,20 @@ definitions:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Data associated with the action.
     type: object
-  api_davudpasha.ActionDefinationsSearchRequest:
+  api_davudpasha.ActionDefinitionsSearchRequest:
     properties:
       application:
         description: Specifies the application for which the action definitions are
           being searched.
         type: string
       searchFilter:
-        description: Filter for searching action definations.
+        description: Filter for searching action definitions.
         type: string
       smartRestRequestContext:
         description: Context for the Smart REST request.
         type: string
     type: object
-  api_davudpasha.ActionDefinationsSearchResponse:
+  api_davudpasha.ActionDefinitionsSearchResponse:
     properties:
       Action:
         allOf:
@@ -83,23 +83,24 @@ definitions:
           $ref: '#/definitions/api_davudpasha.Action'
         type: array
     type: object
-  api_davudpasha.AlertsCorrelationData:
+  api_davudpasha.AlertDefinitionsCorrelationData:
     properties:
       Actions:
         allOf:
         - $ref: '#/definitions/api_davudpasha.Actions'
         description: Actions related to the correlation.
       CorrelationType:
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.AlertDefinitionsCorrelationType'
         description: Type of correlation.
-        type: string
       Data:
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.AlertDefinitionsQueryData'
         description: Raw data in JSON format.
-        items:
-          type: integer
-        type: array
       Description:
+        allOf:
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Description of the correlation.
-        type: string
       Enabled:
         description: Whether the correlation is enabled.
         type: boolean
@@ -114,6 +115,11 @@ definitions:
         items:
           type: string
         type: array
+      GroupedColumnsOptions:
+        description: Options for columns that can be grouped.
+        items:
+          $ref: '#/definitions/api_davudpasha.SelectedColumn'
+        type: array
       HasUpdate:
         description: Whether the correlation has an update.
         type: boolean
@@ -125,11 +131,13 @@ definitions:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string'
         description: Columns used for limiting.
       LimiterTimeFrameType:
+        allOf:
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Time frame type for limiter.
-        type: string
       LimiterTimeFrameValue:
+        allOf:
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableInt64'
         description: Time frame value for limiter.
-        type: integer
       MaxAlertCount:
         description: Maximum alert count.
         type: integer
@@ -154,15 +162,24 @@ definitions:
         description: Risk level of the correlation.
         type: integer
       Tags:
+        allOf:
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string'
         description: Tags associated with the correlation.
-        items:
-          type: string
-        type: array
       Version:
         description: Version of the correlation.
         type: number
     type: object
-  api_davudpasha.AlertsItem:
+  api_davudpasha.AlertDefinitionsCorrelationType:
+    enum:
+    - Interface IQueryCorrelation
+    - Interface IQueryCorrelationChain
+    - Interface ILogSourceCorrelation
+    type: string
+    x-enum-varnames:
+    - CORRELATIONTYPE_INTERFACEIQUERYCORRELATION
+    - CORRELATIONTYPE_INTERFACEIQUERYCORRELATIONCHAIN
+    - CORRELATIONTYPE_INTERFACEILOGSOURCECORRELATION
+  api_davudpasha.AlertDefinitionsItem:
     properties:
       ActionMessage:
         allOf:
@@ -173,14 +190,89 @@ definitions:
         type: boolean
       CorrelationData:
         allOf:
-        - $ref: '#/definitions/api_davudpasha.AlertsCorrelationData'
+        - $ref: '#/definitions/api_davudpasha.AlertDefinitionsCorrelationData'
         description: Correlation data.
       LgsName:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: LGS name.
     type: object
-  api_davudpasha.AlertsSearchRequest:
+  api_davudpasha.AlertDefinitionsQuery:
+    properties:
+      Query:
+        type: string
+      QueryColumns:
+        items:
+          $ref: '#/definitions/api_davudpasha.SelectedColumn'
+        type: array
+      QueryID:
+        type: string
+      TimeFrameType:
+        type: string
+      TimeFrameValue:
+        type: integer
+    type: object
+  api_davudpasha.AlertDefinitionsQueryCorrelationAlertType:
+    enum:
+    - WhenOneOrMoreRow
+    - WhenNoRow
+    - AlertForEachRow
+    type: string
+    x-enum-varnames:
+    - QUERYCORRELATIONALERTTYPE_WHENONEORMOREROW
+    - QUERYCORRELATIONALERTTYPE_WHENNOROW
+    - QUERYCORRELATIONALERTTYPE_ALERTFOREACHROW
+  api_davudpasha.AlertDefinitionsQueryData:
+    properties:
+      LastReadTime:
+        type: string
+      LgsID:
+        type: string
+      Queries:
+        items:
+          $ref: '#/definitions/api_davudpasha.AlertDefinitionsQuery'
+        type: array
+      Query:
+        type: string
+      QueryCorrelationAlertType:
+        $ref: '#/definitions/api_davudpasha.AlertDefinitionsQueryCorrelationAlertType'
+      QueryID:
+        type: string
+      RuleType:
+        $ref: '#/definitions/api_davudpasha.AlertDefinitionsRuleType'
+      TimeFrameType:
+        $ref: '#/definitions/api_davudpasha.AlertDefinitionsTimeFrameType'
+      TimeFrameValue:
+        type: integer
+    type: object
+  api_davudpasha.AlertDefinitionsRuleType:
+    enum:
+    - any
+    type: string
+    x-enum-varnames:
+    - RULETYPE_ANY
+  api_davudpasha.AlertDefinitionsSaveRequest:
+    properties:
+      correlation:
+        $ref: '#/definitions/api_davudpasha.AlertDefinitionsCorrelationData'
+      smartRestRequestContext:
+        description: Context for the Smart REST request.
+        type: string
+    type: object
+  api_davudpasha.AlertDefinitionsSaveResponse:
+    properties:
+      Data:
+        $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+      Status:
+        type: boolean
+      ValidationList:
+        items:
+          type: string
+        type: array
+      optErrorMsg:
+        $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+    type: object
+  api_davudpasha.AlertDefinitionsSearchRequest:
     properties:
       filter:
         description: Filter for the search request.
@@ -189,7 +281,7 @@ definitions:
         description: Context for the Smart REST request.
         type: string
     type: object
-  api_davudpasha.AlertsSearchResponse:
+  api_davudpasha.AlertDefinitionsSearchResponse:
     properties:
       FailedItems:
         description: List of failed items in raw JSON format.
@@ -201,7 +293,7 @@ definitions:
       Items:
         description: List of alert items.
         items:
-          $ref: '#/definitions/api_davudpasha.AlertsItem'
+          $ref: '#/definitions/api_davudpasha.AlertDefinitionsItem'
         type: array
       SuccessItems:
         description: List of successful items.
@@ -209,6 +301,18 @@ definitions:
           $ref: '#/definitions/api_davudpasha.SuccessItem'
         type: array
     type: object
+  api_davudpasha.AlertDefinitionsTimeFrameType:
+    enum:
+    - minutes
+    - hours
+    - days
+    - weeks
+    type: string
+    x-enum-varnames:
+    - TIMEFRAMETYPE_MINUTES
+    - TIMEFRAMETYPE_HOURS
+    - TIMEFRAMETYPE_DAYS
+    - TIMEFRAMETYPE_WEEKS
   api_davudpasha.AssetsAsset:
     properties:
       _id:
@@ -738,6 +842,7 @@ definitions:
     - ThisHour
     - Last6Hours
     - Last12Hours
+    - Last24Hours
     - Last48Hours
     - Last72Hours
     - Today
@@ -757,10 +862,11 @@ definitions:
     - DATETIMETYPE_LAST60MINUTES
     - DATETIMETYPE_LAST120MINUTES
     - DATETIMETYPE_THISHOUR
-    - DATETIMETYPE_LAST6HOUR
-    - DATETIMETYPE_LAST12HOUR
-    - DATETIMETYPE_LAST48HOUR
-    - DATETIMETYPE_LAST72HOUR
+    - DATETIMETYPE_LAST6HOURS
+    - DATETIMETYPE_LAST12HOURS
+    - DATETIMETYPE_LAST24HOURS
+    - DATETIMETYPE_LAST48HOURS
+    - DATETIMETYPE_LAST72HOURS
     - DATETIMETYPE_TODAY
     - DATETIMETYPE_YESTERDAY
     - DATETIMETYPE_THISWEEK
@@ -887,6 +993,11 @@ definitions:
         description: TotalSize is the total number of events.
         type: integer
     type: object
+  api_davudpasha.FormRef:
+    properties:
+      current:
+        $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+    type: object
   api_davudpasha.GeoLocationsData:
     properties:
       city:
@@ -949,7 +1060,7 @@ definitions:
         description: Total quantity of results matching the search criteria.
         type: integer
     type: object
-  api_davudpasha.LookupType:
+  api_davudpasha.LookupsLookupType:
     enum:
     - IP_Subnet
     - File_JSON
@@ -962,15 +1073,15 @@ definitions:
     - Active_List
     type: string
     x-enum-varnames:
-    - LookupType_IPSUBNET
-    - LookupType_FILEJSON
-    - LookupType_FILEJSV
-    - LookupType_DATABASE
-    - LookupType_STATIC
-    - LookupType_BLACKLIST
-    - LookupType_STATICURL
-    - LookupType_ACTIVEDIRECTORY
-    - LookupType_ACTIVELIST
+    - LOOKUPTYPE_IPSUBNET
+    - LOOKUPTYPE_FILEJSON
+    - LOOKUPTYPE_FILEJSV
+    - LOOKUPTYPE_DATABASE
+    - LOOKUPTYPE_STATIC
+    - LOOKUPTYPE_BLACKLIST
+    - LOOKUPTYPE_STATICURL
+    - LOOKUPTYPE_ACTIVEDIRECTORY
+    - LOOKUPTYPE_ACTIVELIST
   api_davudpasha.LookupsSearchRequest:
     properties:
       filter:
@@ -1007,7 +1118,7 @@ definitions:
         type: string
       LookupType:
         allOf:
-        - $ref: '#/definitions/api_davudpasha.LookupType'
+        - $ref: '#/definitions/api_davudpasha.LookupsLookupType'
         description: Type of the lookup.
       Name:
         description: Name of the lookup.
@@ -1019,26 +1130,13 @@ definitions:
     type: object
   api_davudpasha.NullableCasesMitreData:
     type: object
+  api_davudpasha.NullableReportsLatestReportFile:
+    type: object
   api_davudpasha.NullableReportsQueryExtData:
     type: object
   api_davudpasha.NullableScheduleConfig:
     type: object
   api_davudpasha.NullableSourceTypesNormalization:
-    type: object
-  api_davudpasha.ParallelOptions:
-    properties:
-      FileBlockSizeMb:
-        description: Size of file blocks for parallel processing, in megabytes.
-        type: integer
-      IsActive:
-        description: Indicates whether parallel processing is active.
-        type: boolean
-      TaskCount:
-        description: Number of tasks for parallel processing.
-        type: integer
-      TimeoutSec:
-        description: Timeout duration for parallel processing, in seconds.
-        type: integer
     type: object
   api_davudpasha.QueriesItem:
     properties:
@@ -1074,7 +1172,7 @@ definitions:
         type: string
       KillChainPhase:
         allOf:
-        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string'
         description: Kill chain phase associated with the query.
       LastUpdateDate:
         description: Date of the last update to the query.
@@ -1098,8 +1196,9 @@ definitions:
         description: Query string.
         type: string
       QueryType:
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.QueriesQueryType'
         description: Type of the query.
-        type: string
       SharedUsersAndGroups:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string'
@@ -1111,6 +1210,27 @@ definitions:
       Version:
         description: Version of the query.
         type: number
+    type: object
+  api_davudpasha.QueriesQueryType:
+    enum:
+    - Normal
+    type: string
+    x-enum-varnames:
+    - QUERYTYPE_NORMAL
+  api_davudpasha.QueriesSaveRequest:
+    properties:
+      querySettings:
+        $ref: '#/definitions/api_davudpasha.QueriesItem'
+      smartRestRequestContext:
+        description: Context for the Smart REST request.
+        type: string
+    type: object
+  api_davudpasha.QueriesSaveResponse:
+    properties:
+      query:
+        $ref: '#/definitions/api_davudpasha.QueriesItem'
+      status:
+        type: boolean
     type: object
   api_davudpasha.QueriesSearchRequest:
     properties:
@@ -1310,7 +1430,7 @@ definitions:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Theme of the report.
       ReportType:
-        description: Type of the report.
+        description: 'Type of the report. ReportType: csv'
         type: string
       Sections:
         description: Sections included in the report.
@@ -1322,21 +1442,131 @@ definitions:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Theme of the report.
     type: object
-  api_davudpasha.ReportsLatestReportFile:
+  api_davudpasha.ReportsEmailConfigs:
     properties:
-      Filename:
-        description: Filename of the latest report file.
-        type: string
-      ReportGridFSFileId:
-        description: ID of the latest report file in GridFS.
-        type: string
-      RunDate:
-        description: Run date of the latest report file.
-        type: string
-      Status:
-        description: Status of the latest report file.
-        type: string
+      Email:
+        $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+      Subject:
+        $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
     type: object
+  api_davudpasha.ReportsItem:
+    properties:
+      Actions:
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.Actions'
+        description: Actions associated with the report.
+      ApplicationName:
+        description: Name of the application associated with the report.
+        type: string
+      Author:
+        allOf:
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+        description: Author of the report.
+      CreatedDate:
+        description: Date when the report was created.
+        type: string
+      Description:
+        allOf:
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+        description: Description of the report.
+      EmailConfigs:
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.ReportsEmailConfigs'
+        description: Email configuration for the report.
+      ID:
+        description: ID of the report.
+        type: string
+      IsActive:
+        description: Indicates if the report is active.
+        type: boolean
+      LastGenerationTime:
+        allOf:
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+        description: Date and time when the report was last generated.
+      LatestReportFile:
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.NullableReportsLatestReportFile'
+        description: Latest file associated with the report.
+      ModifiedDate:
+        description: Date when the report was last modified.
+        type: string
+      ModuleFilter:
+        description: Filter for the module.
+        type: string
+      Name:
+        description: Name of the report.
+        type: string
+      NextGenerationTime:
+        allOf:
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+        description: Date and time when the report is scheduled to be generated next.
+      PageSettings:
+        allOf:
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+        description: Page settings for the report.
+      Parameters:
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.ReportsParameters'
+        description: Parameters for the report.
+      RemoteInterfaceName:
+        description: Name of the remote interface.
+        type: string
+      RemoteMethodName:
+        description: Name of the remote method.
+        type: string
+      ReportData:
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.ReportsData'
+        description: Data related to the report.
+      ReportId:
+        description: ID of the report.
+        type: string
+      ReportLink:
+        description: Link to access the report.
+        type: string
+      ReportQuery:
+        description: Queries associated with the report.
+        items:
+          $ref: '#/definitions/api_davudpasha.ReportsQuery'
+        type: array
+      Schedule:
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.NullableScheduleConfig'
+        description: Schedule configuration for generating the report.
+      SharedUsersAndGroups:
+        allOf:
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string'
+        description: Users and groups with whom the report is shared.
+      SubExecutorModuleFilter:
+        description: Filter for the sub-executor module.
+        type: string
+      Tags:
+        allOf:
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string'
+        description: Tags associated with the report.
+      Username:
+        description: Username associated with the report.
+        type: string
+      Version:
+        description: Version of the report.
+        type: number
+      chechboxWeekly:
+        items:
+          type: string
+        type: array
+    type: object
+  api_davudpasha.ReportsItemType:
+    enum:
+    - Query
+    - PythonScript
+    - Custom
+    - Code
+    type: string
+    x-enum-varnames:
+    - ITEMTYPE_QUERY
+    - ITEMTYPE_PYTHONSCRIPT
+    - ITEMTYPE_CUSTOM
+    - ITEMTYPE_CODE
   api_davudpasha.ReportsPage:
     properties:
       BottomMargin:
@@ -1394,6 +1624,13 @@ definitions:
         allOf:
         - $ref: '#/definitions/api_davudpasha.NullableReportsQueryExtData'
         description: Extended data for the query.
+      FormRef:
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.FormRef'
+        description: Reference to the form used for generating the report.
+      Key:
+        description: Represents a key value, possibly used as an identifier or index.
+        type: number
       Nane:
         description: Name of the query.
         type: string
@@ -1418,8 +1655,9 @@ definitions:
         - $ref: '#/definitions/api_davudpasha.DateTimeRange'
         description: Date-time range for the query.
       ItemType:
-        description: Type of the item.
-        type: string
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.ReportsItemType'
+        description: 'Type of the item. ItemType: PythonScript, Query, Custom, Code'
       MaxRowCount:
         description: Maximum row count for the query data.
         type: integer
@@ -1440,6 +1678,31 @@ definitions:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Path to the script related to the query.
     type: object
+  api_davudpasha.ReportsSaveRequest:
+    properties:
+      application:
+        type: string
+      report:
+        $ref: '#/definitions/api_davudpasha.ReportsItem'
+      schedule:
+        $ref: '#/definitions/api_davudpasha.ScheduleConfig'
+      smartRestRequestContext:
+        description: Context for the Smart REST request.
+        type: string
+    type: object
+  api_davudpasha.ReportsSaveResponse:
+    properties:
+      Data:
+        $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+      Status:
+        type: boolean
+      ValidationList:
+        items:
+          type: string
+        type: array
+      optErrorMsg:
+        $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+    type: object
   api_davudpasha.ReportsSearchRequest:
     properties:
       applicationName:
@@ -1459,106 +1722,16 @@ definitions:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
         description: Start date for the search.
     type: object
-  api_davudpasha.ReportsSearchResponse:
-    properties:
-      Actions:
-        allOf:
-        - $ref: '#/definitions/api_davudpasha.Actions'
-        description: Actions associated with the report.
-      ApplicationName:
-        description: Name of the application associated with the report.
-        type: string
-      Author:
-        allOf:
-        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
-        description: Author of the report.
-      CreatedDate:
-        description: Date when the report was created.
-        type: string
-      Description:
-        description: Description of the report.
-        type: string
-      IsActive:
-        description: Indicates if the report is active.
-        type: boolean
-      LastGenerationTime:
-        allOf:
-        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
-        description: Date and time when the report was last generated.
-      LatestReportFile:
-        allOf:
-        - $ref: '#/definitions/api_davudpasha.ReportsLatestReportFile'
-        description: Latest file associated with the report.
-      ModifiedDate:
-        description: Date when the report was last modified.
-        type: string
-      ModuleFilter:
-        description: Filter for the module.
-        type: string
-      Name:
-        description: Name of the report.
-        type: string
-      NextGenerationTime:
-        allOf:
-        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
-        description: Date and time when the report is scheduled to be generated next.
-      PageSettings:
-        allOf:
-        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
-        description: Page settings for the report.
-      Parameters:
-        allOf:
-        - $ref: '#/definitions/api_davudpasha.ReportsParameters'
-        description: Parameters for the report.
-      RemoteInterfaceName:
-        description: Name of the remote interface.
-        type: string
-      RemoteMethodName:
-        description: Name of the remote method.
-        type: string
-      ReportData:
-        allOf:
-        - $ref: '#/definitions/api_davudpasha.ReportsData'
-        description: Data related to the report.
-      ReportId:
-        description: ID of the report.
-        type: string
-      ReportLink:
-        description: Link to access the report.
-        type: string
-      ReportQuery:
-        description: Queries associated with the report.
-        items:
-          $ref: '#/definitions/api_davudpasha.ReportsQuery'
-        type: array
-      Schedule:
-        allOf:
-        - $ref: '#/definitions/api_davudpasha.NullableScheduleConfig'
-        description: Schedule configuration for generating the report.
-      SharedUsersAndGroups:
-        allOf:
-        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string'
-        description: Users and groups with whom the report is shared.
-      SubExecutorModuleFilter:
-        description: Filter for the sub-executor module.
-        type: string
-      Tags:
-        description: Tags associated with the report.
-        items:
-          type: string
-        type: array
-      Username:
-        description: Username associated with the report.
-        type: string
-      Version:
-        description: Version of the report.
-        type: number
-    type: object
   api_davudpasha.ReportsTableVisualization:
     properties:
       ChartType:
         description: Type of the chart.
         type: string
+      ColumnValues:
+        description: List of values corresponding to specific columns in a dataset.
+        items:
+          type: string
+        type: array
       Columns:
         description: Columns for the visualization.
         items:
@@ -1570,6 +1743,9 @@ definitions:
     type: object
   api_davudpasha.ScheduleConfig:
     properties:
+      Date:
+        description: Date for the schedule.
+        type: string
       DateStr:
         description: Date string for the schedule.
         type: string
@@ -1777,7 +1953,7 @@ definitions:
         description: Value of the column.
         type: string
     type: object
-  api_davudpasha.SourceTypesClassificationDefination:
+  api_davudpasha.SourceTypesClassificationDefinition:
     properties:
       DefID:
         description: DefID specifies the definition ID associated with the classification.
@@ -1793,7 +1969,7 @@ definitions:
         type: string
       KillChainPhase:
         allOf:
-        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
+        - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableList-string'
         description: KillChainPhase specifies the kill chain phase associated with
           the classification.
       MitreCreationDate:
@@ -1826,12 +2002,15 @@ definitions:
       ExcludeThisExpression:
         description: ExcludeThisExpression indicates whether to exclude this expression.
         type: boolean
+      Key:
+        type: number
       LogParserData:
         allOf:
         - $ref: '#/definitions/api_davudpasha.SourceTypesLogParserData'
         description: LogParserData contains the log parser data for the expression.
       LogParserType:
-        description: LogParserType specifies the type of the log parser used.
+        description: 'LogParserType specifies the type of the log parser used. Example:
+          Module csiem.parser.regex'
         type: string
       Mapping:
         description: Mapping specifies the mappings associated with the expression.
@@ -1863,9 +2042,13 @@ definitions:
       EndIndex:
         description: EndIndex specifies the ending index for the expression field.
         type: integer
+      FormRef:
+        $ref: '#/definitions/api_davudpasha.FormRef'
       Index:
         description: Index specifies if indexing is enabled for the expression field.
         type: boolean
+      Key:
+        type: number
       Name:
         description: Name specifies the name of the expression field.
         type: string
@@ -1902,7 +2085,7 @@ definitions:
         description: ClassificationDefs contains classification definitions associated
           with the item.
         items:
-          $ref: '#/definitions/api_davudpasha.SourceTypesClassificationDefination'
+          $ref: '#/definitions/api_davudpasha.SourceTypesClassificationDefinition'
         type: array
       ClassificationRules:
         description: ClassificationRules contains classification rules associated
@@ -1961,7 +2144,8 @@ definitions:
         description: ReleaseDate specifies the release date of the item.
         type: string
       SourceReaderType:
-        description: SourceReaderType specifies the type of source reader used.
+        description: 'SourceReaderType specifies the type of source reader used. Example:
+          FILE'
         type: string
       Version:
         description: Version specifies the version number of the item.
@@ -2022,6 +2206,14 @@ definitions:
     properties:
       Field:
         description: Field specifies the field for mapping.
+        type: string
+    type: object
+  api_davudpasha.SourceTypesSaveRequest:
+    properties:
+      lgsDef:
+        $ref: '#/definitions/api_davudpasha.SourceTypesItem'
+      smartRestRequestContext:
+        description: Context for the Smart REST request.
         type: string
     type: object
   api_davudpasha.SourceTypesSearchRequest:
@@ -2132,7 +2324,7 @@ definitions:
         type: string
       ParallelOptions:
         allOf:
-        - $ref: '#/definitions/api_davudpasha.ParallelOptions'
+        - $ref: '#/definitions/api_davudpasha.SourcesParallelOptions'
         description: Parallel options for the source item.
       ScheduleConfig:
         allOf:
@@ -2182,6 +2374,21 @@ definitions:
       Priority:
         description: Priority of the log operation.
         type: string
+    type: object
+  api_davudpasha.SourcesParallelOptions:
+    properties:
+      FileBlockSizeMb:
+        description: Size of file blocks for parallel processing, in megabytes.
+        type: integer
+      IsActive:
+        description: Indicates whether parallel processing is active.
+        type: boolean
+      TaskCount:
+        description: Number of tasks for parallel processing.
+        type: integer
+      TimeoutSec:
+        description: Timeout duration for parallel processing, in seconds.
+        type: integer
     type: object
   api_davudpasha.SourcesSearchRequest:
     properties:
@@ -2611,7 +2818,7 @@ paths:
         name: body
         required: true
         schema:
-          $ref: '#/definitions/api_davudpasha.ActionDefinationsSearchRequest'
+          $ref: '#/definitions/api_davudpasha.ActionDefinitionsSearchRequest'
       produces:
       - application/json
       responses:
@@ -2619,7 +2826,7 @@ paths:
           description: Successful operation
           schema:
             items:
-              $ref: '#/definitions/api_davudpasha.ActionDefinationsSearchResponse'
+              $ref: '#/definitions/api_davudpasha.ActionDefinitionsSearchResponse'
             type: array
         "400":
           description: Bad Request
@@ -2637,7 +2844,7 @@ paths:
       - ApiKeyAuth: []
       summary: Search Action Definitions
       tags:
-      - ActionDefinations
+      - Action Definitions
   /IAssetAct/GetAllAsset2:
     post:
       consumes:
@@ -2680,19 +2887,19 @@ paths:
       - application/json
       description: Search for alerts based on a query.
       parameters:
-      - description: Alerts Search Request
+      - description: Alert Definitions Search Request
         in: body
         name: body
         required: true
         schema:
-          $ref: '#/definitions/api_davudpasha.AlertsSearchRequest'
+          $ref: '#/definitions/api_davudpasha.AlertDefinitionsSearchRequest'
       produces:
       - application/json
       responses:
         "200":
           description: Successful operation
           schema:
-            $ref: '#/definitions/api_davudpasha.AlertsSearchResponse'
+            $ref: '#/definitions/api_davudpasha.AlertDefinitionsSearchResponse'
         "400":
           description: Bad Request
           schema:
@@ -2707,16 +2914,16 @@ paths:
             $ref: '#/definitions/api_davudpasha.ErrorResponse'
       security:
       - ApiKeyAuth: []
-      summary: Search Alerts
+      summary: Search Alert Definitions
       tags:
-      - Alerts
+      - Alert Definitions
   /ICSiemManagerElasticIndexListAct/GetElasticStats:
     post:
       consumes:
       - application/json
-      description: Search for ElasticStats based on a query.
+      description: Search for Elastic Stats based on a query.
       parameters:
-      - description: ElasticStats Search Request
+      - description: Elastic Stats Search Request
         in: body
         name: body
         required: true
@@ -2743,16 +2950,16 @@ paths:
             $ref: '#/definitions/api_davudpasha.ErrorResponse'
       security:
       - ApiKeyAuth: []
-      summary: Search ElasticStats
+      summary: Search Elastic Stats
       tags:
-      - ElasticStats
+      - Elastic Stats
   /ICSiemManagerGeolocationAct/GetGeolocations:
     post:
       consumes:
       - application/json
-      description: Search for GeoLocations based on a query.
+      description: Search for Geo Locations based on a query.
       parameters:
-      - description: GeoLocations Search Request
+      - description: Geo Locations Search Request
         in: body
         name: body
         required: true
@@ -2779,9 +2986,9 @@ paths:
             $ref: '#/definitions/api_davudpasha.ErrorResponse'
       security:
       - ApiKeyAuth: []
-      summary: Search GeoLocations
+      summary: Search Geo Locations
       tags:
-      - GeoLocations
+      - Geo Locations
   /ICSiemManagerLogSourceAct/GetLogSourceList:
     post:
       consumes:
@@ -2926,6 +3133,42 @@ paths:
       summary: Search Queries
       tags:
       - Queries
+  /ICSiemQueryAct/Save:
+    post:
+      consumes:
+      - application/json
+      description: Save Queries based on the provided data.
+      parameters:
+      - description: Queries Save Request
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/api_davudpasha.QueriesSaveRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/api_davudpasha.QueriesSaveResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Save Queries
+      tags:
+      - Queries
   /ICaseManagerAct/GetCaseGridPageData:
     post:
       consumes:
@@ -3053,7 +3296,7 @@ paths:
           description: Successful operation
           schema:
             items:
-              $ref: '#/definitions/api_davudpasha.ReportsSearchResponse'
+              $ref: '#/definitions/api_davudpasha.ReportsItem'
             type: array
         "400":
           description: Bad Request
@@ -3072,6 +3315,42 @@ paths:
       summary: Search Reports
       tags:
       - Reports
+  /IDPReportScheduleAct/Save:
+    post:
+      consumes:
+      - application/json
+      description: Save Source Types based on the provided data.
+      parameters:
+      - description: Source Types Save Request
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/api_davudpasha.SourceTypesSaveRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successful operation
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Save Source Types
+      tags:
+      - Source Types
   /ILookupAct/GetLookupListWithDetails:
     post:
       consumes:
