@@ -1629,7 +1629,7 @@ definitions:
         - $ref: '#/definitions/api_davudpasha.FormRef'
         description: Reference to the form used for generating the report.
       Key:
-        description: Represents a key value, possibly used as an identifier or index.
+        description: Represents a key value, used as an identifier.
         type: number
       Nane:
         description: Name of the query.
@@ -2003,15 +2003,19 @@ definitions:
         description: ExcludeThisExpression indicates whether to exclude this expression.
         type: boolean
       Key:
+        description: Represents a key value, used as an identifier.
         type: number
       LogParserData:
         allOf:
         - $ref: '#/definitions/api_davudpasha.SourceTypesLogParserData'
         description: LogParserData contains the log parser data for the expression.
       LogParserType:
-        description: 'LogParserType specifies the type of the log parser used. Example:
-          Module csiem.parser.regex'
-        type: string
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.SourceTypesParserType'
+        description: |-
+          LogParserType specifies the type of the log parser used. Example: Module csiem.parser.regex,
+          Module csiem.parser.delimiter, Module csiem.parser.csv, Module csiem.parser.code, Module csiem.parser.static
+          Module csiem.parser.db, Module csiem.parser.none
       Mapping:
         description: Mapping specifies the mappings associated with the expression.
         items:
@@ -2043,11 +2047,14 @@ definitions:
         description: EndIndex specifies the ending index for the expression field.
         type: integer
       FormRef:
-        $ref: '#/definitions/api_davudpasha.FormRef'
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.FormRef'
+        description: FormRef references the related form structure.
       Index:
         description: Index specifies if indexing is enabled for the expression field.
         type: boolean
       Key:
+        description: Represents a key value, used as an identifier.
         type: number
       Name:
         description: Name specifies the name of the expression field.
@@ -2144,9 +2151,10 @@ definitions:
         description: ReleaseDate specifies the release date of the item.
         type: string
       SourceReaderType:
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.SourceTypesReaderType'
         description: 'SourceReaderType specifies the type of source reader used. Example:
-          FILE'
-        type: string
+          FILE, NOPARSER, DB, EVENTLOG'
       Version:
         description: Version specifies the version number of the item.
         type: number
@@ -2208,6 +2216,36 @@ definitions:
         description: Field specifies the field for mapping.
         type: string
     type: object
+  api_davudpasha.SourceTypesParserType:
+    enum:
+    - Module csiem.parser.regex
+    - Module csiem.parser.delimiter
+    - Module csiem.parser.csv
+    - Module csiem.parser.code
+    - Module csiem.parser.static
+    - Module csiem.parser.db
+    - Module csiem.parser.none
+    type: string
+    x-enum-varnames:
+    - PARSERTYPE_REGEX
+    - PARSERTYPE_DELIMITER
+    - PARSERTYPE_CSV
+    - PARSERTYPE_CODE
+    - PARSERTYPE_STATIC
+    - PARSERTYPE_DB
+    - PARSERTYPE_NONE
+  api_davudpasha.SourceTypesReaderType:
+    enum:
+    - FILE
+    - NOPARSER
+    - DB
+    - EVENTLOG
+    type: string
+    x-enum-varnames:
+    - READERTYPE_FILE
+    - READERTYPE_NOPARSER
+    - READERTYPE_DB
+    - READERTYPE_EVENTLOG
   api_davudpasha.SourceTypesSaveRequest:
     properties:
       lgsDef:
@@ -2798,12 +2836,16 @@ definitions:
     type: object
   github_com_mtnmunuklu_davudpasha-api-client-go_api_common.Optional:
     type: object
+host: localhost:5000
 info:
   contact:
     email: support@example.com
     name: API Support
     url: http://www.example.com/support
   description: Davudpasha API to demonstrate OpenAPI documentation for client-go
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
   title: Davudpasha API
   version: 1.0.0
 paths:

@@ -14,6 +14,10 @@ const docTemplate = `{
             "url": "http://www.example.com/support",
             "email": "support@example.com"
         },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
         "version": "{{.Version}}"
     },
     "host": "{{.Host}}",
@@ -3629,7 +3633,7 @@ const docTemplate = `{
                     ]
                 },
                 "Key": {
-                    "description": "Represents a key value, possibly used as an identifier or index.",
+                    "description": "Represents a key value, used as an identifier.",
                     "type": "number"
                 },
                 "Nane": {
@@ -4179,6 +4183,7 @@ const docTemplate = `{
                     "type": "boolean"
                 },
                 "Key": {
+                    "description": "Represents a key value, used as an identifier.",
                     "type": "number"
                 },
                 "LogParserData": {
@@ -4190,8 +4195,12 @@ const docTemplate = `{
                     ]
                 },
                 "LogParserType": {
-                    "description": "LogParserType specifies the type of the log parser used. Example: Module csiem.parser.regex",
-                    "type": "string"
+                    "description": "LogParserType specifies the type of the log parser used. Example: Module csiem.parser.regex,\nModule csiem.parser.delimiter, Module csiem.parser.csv, Module csiem.parser.code, Module csiem.parser.static\nModule csiem.parser.db, Module csiem.parser.none",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.SourceTypesParserType"
+                        }
+                    ]
                 },
                 "Mapping": {
                     "description": "Mapping specifies the mappings associated with the expression.",
@@ -4238,13 +4247,19 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "FormRef": {
-                    "$ref": "#/definitions/api_davudpasha.FormRef"
+                    "description": "FormRef references the related form structure.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.FormRef"
+                        }
+                    ]
                 },
                 "Index": {
                     "description": "Index specifies if indexing is enabled for the expression field.",
                     "type": "boolean"
                 },
                 "Key": {
+                    "description": "Represents a key value, used as an identifier.",
                     "type": "number"
                 },
                 "Name": {
@@ -4384,8 +4399,12 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "SourceReaderType": {
-                    "description": "SourceReaderType specifies the type of source reader used. Example: FILE",
-                    "type": "string"
+                    "description": "SourceReaderType specifies the type of source reader used. Example: FILE, NOPARSER, DB, EVENTLOG",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.SourceTypesReaderType"
+                        }
+                    ]
                 },
                 "Version": {
                     "description": "Version specifies the version number of the item.",
@@ -4478,6 +4497,42 @@ const docTemplate = `{
                     "type": "string"
                 }
             }
+        },
+        "api_davudpasha.SourceTypesParserType": {
+            "type": "string",
+            "enum": [
+                "Module csiem.parser.regex",
+                "Module csiem.parser.delimiter",
+                "Module csiem.parser.csv",
+                "Module csiem.parser.code",
+                "Module csiem.parser.static",
+                "Module csiem.parser.db",
+                "Module csiem.parser.none"
+            ],
+            "x-enum-varnames": [
+                "PARSERTYPE_REGEX",
+                "PARSERTYPE_DELIMITER",
+                "PARSERTYPE_CSV",
+                "PARSERTYPE_CODE",
+                "PARSERTYPE_STATIC",
+                "PARSERTYPE_DB",
+                "PARSERTYPE_NONE"
+            ]
+        },
+        "api_davudpasha.SourceTypesReaderType": {
+            "type": "string",
+            "enum": [
+                "FILE",
+                "NOPARSER",
+                "DB",
+                "EVENTLOG"
+            ],
+            "x-enum-varnames": [
+                "READERTYPE_FILE",
+                "READERTYPE_NOPARSER",
+                "READERTYPE_DB",
+                "READERTYPE_EVENTLOG"
+            ]
         },
         "api_davudpasha.SourceTypesSaveRequest": {
             "type": "object",
@@ -5365,7 +5420,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0.0",
-	Host:             "",
+	Host:             "localhost:5000",
 	BasePath:         "/api",
 	Schemes:          []string{},
 	Title:            "Davudpasha API",
