@@ -20,7 +20,7 @@ type SourceTypesItem struct {
 	// CatCode specifies the category code of the item.
 	CatCode *string `json:"CatCode,omitempty"`
 	// SourceReaderType specifies the type of source reader used. Example: FILE, NOPARSER, DB, EVENTLOG
-	SourceReaderType *string `json:"SourceReaderType,omitempty"`
+	SourceReaderType SourceTypesReaderType `json:"SourceReaderType,omitempty"`
 	// ReleaseDate specifies the release date of the item.
 	ReleaseDate *string `json:"ReleaseDate,omitempty"`
 	// Version specifies the version number of the item.
@@ -233,31 +233,26 @@ func (o *SourceTypesItem) SetCatCode(v string) {
 }
 
 // GetSourceReaderType returns the SourceReaderType field value if set, zero value otherwise.
-func (o *SourceTypesItem) GetSourceReaderType() string {
-	if o == nil || o.SourceReaderType == nil {
-		var ret string
+func (o *SourceTypesItem) GetSourceReaderType() SourceTypesReaderType {
+	if o == nil {
+		var ret SourceTypesReaderType
 		return ret
 	}
-	return *o.SourceReaderType
+	return o.SourceReaderType
 }
 
 // GetSourceReaderTypeOk returns a tuple with the SourceReaderType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceTypesItem) GetSourceReaderTypeOk() (*string, bool) {
-	if o == nil || o.SourceReaderType == nil {
+func (o *SourceTypesItem) GetSourceReaderTypeOk() (*SourceTypesReaderType, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SourceReaderType, true
-}
-
-// HasSourceReaderType returns a boolean if a field has been set.
-func (o *SourceTypesItem) HasSourceReaderType() bool {
-	return o != nil && o.SourceReaderType != nil
+	return &o.SourceReaderType, true
 }
 
 // SetSourceReaderType gets a reference to the given string and assigns it to the SourceReaderType field.
-func (o *SourceTypesItem) SetSourceReaderType(v string) {
-	o.SourceReaderType = &v
+func (o *SourceTypesItem) SetSourceReaderType(v SourceTypesReaderType) {
+	o.SourceReaderType = v
 }
 
 // GetReleaseDate returns the ReleaseDate field value if set, zero value otherwise.
@@ -670,7 +665,7 @@ func (o SourceTypesItem) MarshalJSON() ([]byte, error) {
 	if o.CatCode != nil {
 		toSerialize["CatCode"] = o.CatCode
 	}
-	if o.SourceReaderType != nil {
+	if o.SourceReaderType.IsValid() {
 		toSerialize["SourceReaderType"] = o.SourceReaderType
 	}
 	if o.ReleaseDate != nil {
@@ -727,7 +722,7 @@ func (o *SourceTypesItem) UnMarshalJSON(bytes []byte) (err error) {
 		Author              common.NullableString                 `json:"Author,omitempty"`
 		Icon                common.NullableString                 `json:"Icon,omitempty"`
 		CatCode             *string                               `json:"CatCode,omitempty"`
-		SourceReaderType    *string                               `json:"SourceReaderType,omitempty"`
+		SourceReaderType    *SourceTypesReaderType                `json:"SourceReaderType,omitempty"`
 		ReleaseDate         *string                               `json:"ReleaseDate,omitempty"`
 		Version             *float64                              `json:"Version,omitempty"`
 		Expressions         []SourceTypesExpression               `json:"Expression,omitempty"`
@@ -768,7 +763,12 @@ func (o *SourceTypesItem) UnMarshalJSON(bytes []byte) (err error) {
 	o.Author = all.Author
 	o.Icon = all.Icon
 	o.CatCode = all.CatCode
-	o.SourceReaderType = all.SourceReaderType
+	hasInvalidField := false
+	if !all.SourceReaderType.IsValid() {
+		hasInvalidField = true
+	} else {
+		o.SourceReaderType = *all.SourceReaderType
+	}
 	o.ReleaseDate = all.ReleaseDate
 	o.Version = all.Version
 	o.Expressions = all.Expressions
@@ -785,6 +785,10 @@ func (o *SourceTypesItem) UnMarshalJSON(bytes []byte) (err error) {
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties
+	}
+
+	if hasInvalidField {
+		return json.Unmarshal(bytes, &o.UnparsedObject)
 	}
 
 	return nil

@@ -18,7 +18,7 @@ type SourceTypesExpression struct {
 	// LogParserType specifies the type of the log parser used. Example: Module csiem.parser.regex,
 	// Module csiem.parser.delimiter, Module csiem.parser.csv, Module csiem.parser.code, Module csiem.parser.static
 	// Module csiem.parser.db, Module csiem.parser.none
-	LogParserType *string `json:"LogParserType,omitempty"`
+	LogParserType SourceTypesParserType `json:"LogParserType,omitempty"`
 	// LogParserData contains the log parser data for the expression.
 	LogParserData *SourceTypesLogParserData `json:"LogParserData,omitempty"`
 	// Mapping specifies the mappings associated with the expression.
@@ -131,31 +131,26 @@ func (o *SourceTypesExpression) SetExcludeThisExpression(v bool) {
 }
 
 // GetLogParserType returns the LogParserType field value if set, zero value otherwise.
-func (o *SourceTypesExpression) GetLogParserType() string {
-	if o == nil || o.LogParserType == nil {
-		var ret string
+func (o *SourceTypesExpression) GetLogParserType() SourceTypesParserType {
+	if o == nil {
+		var ret SourceTypesParserType
 		return ret
 	}
-	return *o.LogParserType
+	return o.LogParserType
 }
 
 // GetLogParserTypeOk returns a tuple with the LogParserType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceTypesExpression) GetLogParserTypeOk() (*string, bool) {
-	if o == nil || o.LogParserType == nil {
+func (o *SourceTypesExpression) GetLogParserTypeOk() (*SourceTypesParserType, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LogParserType, true
-}
-
-// HasLogParserType returns a boolean if a field has been set.
-func (o *SourceTypesExpression) HasLogParserType() bool {
-	return o != nil && o.LogParserType != nil
+	return &o.LogParserType, true
 }
 
 // SetLogParserType gets a reference to the given string and assigns it to the LogParserType field.
-func (o *SourceTypesExpression) SetLogParserType(v string) {
-	o.LogParserType = &v
+func (o *SourceTypesExpression) SetLogParserType(v SourceTypesParserType) {
+	o.LogParserType = v
 }
 
 // GetLogParserData returns the LogParserData field value if set, zero value otherwise.
@@ -229,7 +224,7 @@ func (o SourceTypesExpression) MarshalJSON() ([]byte, error) {
 	if o.ExcludeThisExpression != nil {
 		toSerialize["ExcludeThisExpression"] = o.ExcludeThisExpression
 	}
-	if o.LogParserType != nil {
+	if o.LogParserType.IsValid() {
 		toSerialize["LogParserType"] = o.LogParserType
 	}
 	if o.LogParserData != nil {
@@ -251,7 +246,7 @@ func (o *SourceTypesExpression) UnMarshalJSON(bytes []byte) (err error) {
 		Key                   *float64                  `json:"Key,omitempty"`
 		Name                  *string                   `json:"Name,omitempty"`
 		ExcludeThisExpression *bool                     `json:"ExcludeThisExpression,omitempty"`
-		LogParserType         *string                   `json:"LogParserType,omitempty"`
+		LogParserType         *SourceTypesParserType    `json:"LogParserType,omitempty"`
 		LogParserData         *SourceTypesLogParserData `json:"LogParserData,omitempty"`
 		Mapping               []SourceTypesMapping      `json:"Mapping,omitempty"`
 	}{}
@@ -265,7 +260,7 @@ func (o *SourceTypesExpression) UnMarshalJSON(bytes []byte) (err error) {
 	if all.ExcludeThisExpression == nil {
 		return fmt.Errorf("requiered field ExcludeThisExpression is missing")
 	}
-	if all.LogParserType == nil {
+	if all.LogParserType.IsValid() {
 		return fmt.Errorf("requiered field LogParserType is missing")
 	}
 
@@ -278,8 +273,12 @@ func (o *SourceTypesExpression) UnMarshalJSON(bytes []byte) (err error) {
 	o.Key = all.Key
 	o.Name = all.Name
 	o.ExcludeThisExpression = all.ExcludeThisExpression
-	o.LogParserType = all.LogParserType
 	hasInvalidField := false
+	if !all.LogParserType.IsValid() {
+		hasInvalidField = true
+	} else {
+		o.LogParserType = *all.LogParserType
+	}
 	if all.LogParserData != nil && all.LogParserData.UnparsedObject != nil && o.UnparsedObject == nil {
 		hasInvalidField = true
 	}
