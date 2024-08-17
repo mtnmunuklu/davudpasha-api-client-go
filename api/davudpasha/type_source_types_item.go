@@ -19,7 +19,7 @@ type SourceTypesItem struct {
 	Icon common.NullableString `json:"Icon,omitempty"`
 	// CatCode specifies the category code of the item.
 	CatCode *string `json:"CatCode,omitempty"`
-	// SourceReaderType specifies the type of source reader used.
+	// SourceReaderType specifies the type of source reader used. Example: FILE, NOPARSER, DB, EVENTLOG
 	SourceReaderType *string `json:"SourceReaderType,omitempty"`
 	// ReleaseDate specifies the release date of the item.
 	ReleaseDate *string `json:"ReleaseDate,omitempty"`
@@ -46,7 +46,7 @@ type SourceTypesItem struct {
 	// ModuleGGUID specifies the GUID of the module associated with the item.
 	ModuleGUID common.NullableString `json:"ModuleGuid,omitempty"`
 	// ClassificationDefs contains classification definitions associated with the item.
-	ClassificationDefs []SourceTypesClassificationDefination `json:"ClassificationDefs,omitempty"`
+	ClassificationDefs []SourceTypesClassificationDefinition `json:"ClassificationDefs,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
@@ -619,9 +619,9 @@ func (o *SourceTypesItem) UnSetModuleGUID() {
 }
 
 // GetClassificationDefs returns the ClassificationDefs field value if set, zero value otherwise.
-func (o *SourceTypesItem) GetClassificationDefs() []SourceTypesClassificationDefination {
+func (o *SourceTypesItem) GetClassificationDefs() []SourceTypesClassificationDefinition {
 	if o == nil || o.ClassificationDefs == nil {
-		var ret []SourceTypesClassificationDefination
+		var ret []SourceTypesClassificationDefinition
 		return ret
 	}
 	return o.ClassificationDefs
@@ -629,7 +629,7 @@ func (o *SourceTypesItem) GetClassificationDefs() []SourceTypesClassificationDef
 
 // GetClassificationDefsOk returns a tuple with the ClassificationDefs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceTypesItem) GetClassificationDefsOk() (*[]SourceTypesClassificationDefination, bool) {
+func (o *SourceTypesItem) GetClassificationDefsOk() (*[]SourceTypesClassificationDefinition, bool) {
 	if o == nil || o.ClassificationDefs == nil {
 		return nil, false
 	}
@@ -641,8 +641,8 @@ func (o *SourceTypesItem) HasClassificationDefs() bool {
 	return o != nil && o.ClassificationDefs != nil
 }
 
-// SetClassificationDefs gets a reference to the given []SourceTypesClassificationDefination and assigns it to the ClassificationDefs field.
-func (o *SourceTypesItem) SetClassificationDefs(v []SourceTypesClassificationDefination) {
+// SetClassificationDefs gets a reference to the given []SourceTypesClassificationDefinition and assigns it to the ClassificationDefs field.
+func (o *SourceTypesItem) SetClassificationDefs(v []SourceTypesClassificationDefinition) {
 	o.ClassificationDefs = v
 }
 
@@ -740,7 +740,7 @@ func (o *SourceTypesItem) UnMarshalJSON(bytes []byte) (err error) {
 		HasUpdate           *bool                                 `json:"HasUpdate,omitempty"`
 		ModuleID            common.NullableString                 `json:"ModuleId,omitempty"`
 		ModuleGUID          common.NullableString                 `json:"ModuleGuid,omitempty"`
-		ClassificationDefs  []SourceTypesClassificationDefination `json:"ClassificationDefs,omitempty"`
+		ClassificationDefs  []SourceTypesClassificationDefinition `json:"ClassificationDefs,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)

@@ -8,7 +8,7 @@ import (
 
 // ReportsQuery represents a report query.
 type ReportsQuery struct {
-	// Represents a key value, possibly used as an identifier or index.
+	// Represents a key value, used as an identifier.
 	Key *float64 `json:"Key,omitempty"`
 	// Name of the query.
 	Name *string `json:"Nane,omitempty"`
@@ -19,7 +19,7 @@ type ReportsQuery struct {
 	// Visualization settings for the table.
 	TableVisualization *ReportsTableVisualization `json:"TableVisualization,omitempty"`
 	// Reference to the form used for generating the report.
-	FormRef *ReportsFormRef `json:"FormRef"`
+	FormRef *FormRef `json:"FormRef"`
 	// Indicates if the chart should be shown.
 	ShowChart *bool `json:"ShowChart,omitempty"`
 	// Visualization settings for the chart.
@@ -190,9 +190,9 @@ func (o *ReportsQuery) SetTableVisualization(v ReportsTableVisualization) {
 }
 
 // GetFormRef returns the FormRef field value if set, zero value otherwise.
-func (o *ReportsQuery) GetFormRef() ReportsFormRef {
+func (o *ReportsQuery) GetFormRef() FormRef {
 	if o == nil || o.FormRef == nil {
-		var ret ReportsFormRef
+		var ret FormRef
 		return ret
 	}
 	return *o.FormRef
@@ -200,7 +200,7 @@ func (o *ReportsQuery) GetFormRef() ReportsFormRef {
 
 // GetFormRefOk returns a tuple with the FormRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReportsQuery) GetFormRefOk() (*ReportsFormRef, bool) {
+func (o *ReportsQuery) GetFormRefOk() (*FormRef, bool) {
 	if o == nil || o.FormRef == nil {
 		return nil, false
 	}
@@ -212,8 +212,8 @@ func (o *ReportsQuery) HasFormRef() bool {
 	return o != nil && o.FormRef != nil
 }
 
-// SetFormRef gets a reference to the given ReportsFormRef and assigns it to the FormRef field.
-func (o *ReportsQuery) SetFormRef(v ReportsFormRef) {
+// SetFormRef gets a reference to the given FormRef and assigns it to the FormRef field.
+func (o *ReportsQuery) SetFormRef(v FormRef) {
 	o.FormRef = &v
 }
 
@@ -360,7 +360,7 @@ func (o *ReportsQuery) UnMarshalJSON(bytes []byte) (err error) {
 		Data               *ReportsQueryData           `json:"Data,omitempty"`
 		ShowTable          *bool                       `json:"ShowTable,omitempty"`
 		TableVisualization *ReportsTableVisualization  `json:"TableVisualization,omitempty"`
-		FormRef            *ReportsFormRef             `json:"FormRef"`
+		FormRef            *FormRef                    `json:"FormRef"`
 		ShowChart          *bool                       `json:"ShowChart,omitempty"`
 		ChartVisualization *ReportsChartVisualization  `json:"ChartVisualization,omitempty"`
 		ExtData            NullableReportsQueryExtData `json:"ExtData,omitempty"`

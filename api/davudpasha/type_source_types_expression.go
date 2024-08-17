@@ -9,11 +9,15 @@ import (
 
 // SourceTypesExpression represents the structure for expressions in source types.
 type SourceTypesExpression struct {
+	// Represents a key value, used as an identifier.
+	Key *float64 `json:"Key,omitempty"`
 	// Name specifies the name of the expression.
 	Name *string `json:"Name,omitempty"`
 	// ExcludeThisExpression indicates whether to exclude this expression.
 	ExcludeThisExpression *bool `json:"ExcludeThisExpression,omitempty"`
-	// LogParserType specifies the type of the log parser used.
+	// LogParserType specifies the type of the log parser used. Example: Module csiem.parser.regex,
+	// Module csiem.parser.delimiter, Module csiem.parser.csv, Module csiem.parser.code, Module csiem.parser.static
+	// Module csiem.parser.db, Module csiem.parser.none
 	LogParserType *string `json:"LogParserType,omitempty"`
 	// LogParserData contains the log parser data for the expression.
 	LogParserData *SourceTypesLogParserData `json:"LogParserData,omitempty"`
@@ -40,6 +44,34 @@ func NewSourceTypesExpression() *SourceTypesExpression {
 func NewSourceTypesExpressionWithDefaults() *SourceTypesExpression {
 	this := SourceTypesExpression{}
 	return &this
+}
+
+// GetKey returns the Key field value if set, zero value otherwise.
+func (o *SourceTypesExpression) GetKey() float64 {
+	if o == nil || o.Key == nil {
+		var ret float64
+		return ret
+	}
+	return *o.Key
+}
+
+// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SourceTypesExpression) GetKeyOk() (*float64, bool) {
+	if o == nil || o.Key == nil {
+		return nil, false
+	}
+	return o.Key, true
+}
+
+// HasKey returns a boolean if a field has been set.
+func (o *SourceTypesExpression) HasKey() bool {
+	return o != nil && o.Key != nil
+}
+
+// SetKey gets a reference to the given float64 and assigns it to the Key field.
+func (o *SourceTypesExpression) SetKey(v float64) {
+	o.Key = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -188,6 +220,9 @@ func (o SourceTypesExpression) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
+	if o.Key != nil {
+		toSerialize["Key"] = o.Key
+	}
 	if o.Name != nil {
 		toSerialize["Name"] = o.Name
 	}
@@ -213,6 +248,7 @@ func (o SourceTypesExpression) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *SourceTypesExpression) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
+		Key                   *float64                  `json:"Key,omitempty"`
 		Name                  *string                   `json:"Name,omitempty"`
 		ExcludeThisExpression *bool                     `json:"ExcludeThisExpression,omitempty"`
 		LogParserType         *string                   `json:"LogParserType,omitempty"`
@@ -235,11 +271,11 @@ func (o *SourceTypesExpression) UnMarshalJSON(bytes []byte) (err error) {
 
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"Name", "ExcludeThisExpression", "LogParserType", "LogParserData", "Mapping"})
+		common.DeleteKeys(additionalProperties, &[]string{"Key", "Name", "ExcludeThisExpression", "LogParserType", "LogParserData", "Mapping"})
 	} else {
 		return err
 	}
-
+	o.Key = all.Key
 	o.Name = all.Name
 	o.ExcludeThisExpression = all.ExcludeThisExpression
 	o.LogParserType = all.LogParserType

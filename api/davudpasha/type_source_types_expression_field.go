@@ -9,6 +9,8 @@ import (
 
 // SourceTypesExpressionField represents the structure for expression fields in source types.
 type SourceTypesExpressionField struct {
+	// Represents a key value, used as an identifier.
+	Key *float64 `json:"Key,omitempty"`
 	// Name specifies the name of the expression field.
 	Name *string `json:"Name,omitempty"`
 	// ValueName indicates the value name associated with the expression field.
@@ -29,6 +31,8 @@ type SourceTypesExpressionField struct {
 	Used *bool `json:"Used,omitempty"`
 	// Index specifies if indexing is enabled for the expression field.
 	Index *bool `json:"Index,omitempty"`
+	// FormRef references the related form structure.
+	FormRef *FormRef `json:"FormRef,omitempty"`
 	// Normalization specifies the normalization settings for the expression field.
 	Normalization NullableSourceTypesNormalization `json:"Normalization,omitempty"`
 	// CorrectTwoDigitDayFormatPosition specifies the position for correcting two-digit day format.
@@ -54,6 +58,34 @@ func NewSourceTypesExpressionField() *SourceTypesExpressionField {
 func NeSourceTypesExpressionFieldWithDefaults() *SourceTypesExpressionField {
 	this := SourceTypesExpressionField{}
 	return &this
+}
+
+// GetKey returns the Key field value if set, zero value otherwise.
+func (o *SourceTypesExpressionField) GetKey() float64 {
+	if o == nil || o.Key == nil {
+		var ret float64
+		return ret
+	}
+	return *o.Key
+}
+
+// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SourceTypesExpressionField) GetKeyOk() (*float64, bool) {
+	if o == nil || o.Key == nil {
+		return nil, false
+	}
+	return o.Key, true
+}
+
+// HasKey returns a boolean if a field has been set.
+func (o *SourceTypesExpressionField) HasKey() bool {
+	return o != nil && o.Key != nil
+}
+
+// SetKey gets a reference to the given float64 and assigns it to the Key field.
+func (o *SourceTypesExpressionField) SetKey(v float64) {
+	o.Key = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -313,6 +345,34 @@ func (o *SourceTypesExpressionField) SetEndIndex(v int64) {
 	o.EndIndex = &v
 }
 
+// GetFormRef returns the FormRef field value if set, zero value otherwise.
+func (o *SourceTypesExpressionField) GetFormRef() FormRef {
+	if o == nil || o.FormRef == nil {
+		var ret FormRef
+		return ret
+	}
+	return *o.FormRef
+}
+
+// GetFormRefOk returns a tuple with the FormRef field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SourceTypesExpressionField) GetFormRefOk() (*FormRef, bool) {
+	if o == nil || o.FormRef == nil {
+		return nil, false
+	}
+	return o.FormRef, true
+}
+
+// HasFormRef returns a boolean if a field has been set.
+func (o *SourceTypesExpressionField) HasFormRef() bool {
+	return o != nil && o.FormRef != nil
+}
+
+// SetFormRef gets a reference to the given FormRef and assigns it to the FormRef field.
+func (o *SourceTypesExpressionField) SetFormRef(v FormRef) {
+	o.FormRef = &v
+}
+
 // GetUsed returns the Used field value if set, zero value otherwise.
 func (o *SourceTypesExpressionField) GetUsed() bool {
 	if o == nil || o.Used == nil {
@@ -442,6 +502,9 @@ func (o SourceTypesExpressionField) MarshalJSON() ([]byte, error) {
 	if o.UnparsedObject != nil {
 		return json.Marshal(o.UnparsedObject)
 	}
+	if o.Key != nil {
+		toSerialize["Key"] = o.Key
+	}
 	if o.Name != nil {
 		toSerialize["Name"] = o.Name
 	}
@@ -472,6 +535,9 @@ func (o SourceTypesExpressionField) MarshalJSON() ([]byte, error) {
 	if o.Index != nil {
 		toSerialize["Index"] = o.Index
 	}
+	if o.FormRef != nil {
+		toSerialize["FormRef"] = o.FormRef
+	}
 	if o.Normalization.IsSet() {
 		toSerialize["Normalization"] = o.Normalization.Get()
 	}
@@ -487,6 +553,7 @@ func (o SourceTypesExpressionField) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *SourceTypesExpressionField) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
+		Key                              *float64                         `json:"Key,omitempty"`
 		Name                             *string                          `json:"Name,omitempty"`
 		ValueName                        common.NullableString            `json:"ValueName,omitempty"`
 		Type                             *string                          `json:"Type,omitempty"`
@@ -497,6 +564,7 @@ func (o *SourceTypesExpressionField) UnMarshalJSON(bytes []byte) (err error) {
 		EndIndex                         *int64                           `json:"EndIndex,omitempty"`
 		Used                             *bool                            `json:"Used,omitempty"`
 		Index                            *bool                            `json:"Index,omitempty"`
+		FormRef                          *FormRef                         `json:"FormRef,omitempty"`
 		Normalization                    NullableSourceTypesNormalization `json:"Normalization,omitempty"`
 		CorrectTwoDigitDayFormatPosition *int64                           `json:"CorrectTwoDigitDayFormat_Position,omitempty"`
 	}{}
@@ -510,11 +578,11 @@ func (o *SourceTypesExpressionField) UnMarshalJSON(bytes []byte) (err error) {
 
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"Name", "ValueName", "Type", "DateFormat", "DateLang", "DateTrim", "StartIndex", "EndIndex", "Used", "Index", "Normalization", "CorrectTwoDigitDayFormatPosition"})
+		common.DeleteKeys(additionalProperties, &[]string{"Key", "Name", "ValueName", "Type", "DateFormat", "DateLang", "DateTrim", "StartIndex", "EndIndex", "Used", "Index", "FormRef", "Normalization", "CorrectTwoDigitDayFormatPosition"})
 	} else {
 		return err
 	}
-
+	o.Key = all.Key
 	o.Name = all.Name
 	o.ValueName = all.ValueName
 	o.Type = all.Type
@@ -525,6 +593,7 @@ func (o *SourceTypesExpressionField) UnMarshalJSON(bytes []byte) (err error) {
 	o.EndIndex = all.EndIndex
 	o.Used = all.Used
 	o.Index = all.Index
+	o.FormRef = all.FormRef
 	o.Normalization = all.Normalization
 	o.CorrectTwoDigitDayFormatPosition = all.CorrectTwoDigitDayFormatPosition
 
