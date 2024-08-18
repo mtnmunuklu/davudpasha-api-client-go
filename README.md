@@ -7,6 +7,7 @@ DavudPasha API Client is a Go library for interacting with the DavudPasha API.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [Swagger Documentation](#swagger-documentation)
 - [License](#license)
 
 
@@ -54,6 +55,15 @@ To use the DavudPasha API Client, follow these steps:
     ```
 
 For more examples, you can check the [examples](examples) folder in this repository.
+
+## Swagger Documentation
+
+To view the Swagger documentation for this API, follow these steps:
+
+1. Open [Swagger Editor](https://editor.swagger.io/).
+2. Copy the contents of the `docs/swagger.yml` file in this repository.
+3. Paste the copied content into the Swagger Editor to explore and interact with the API documentation.
+
 
 ## Contributing
 
