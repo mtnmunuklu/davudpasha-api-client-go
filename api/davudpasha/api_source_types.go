@@ -170,7 +170,7 @@ func (a *SourceTypesApi) SearchSourceTypes(ctx _context.Context, o ...SearchSour
 // @Failure 400 {object} ErrorResponse "Bad Request"
 // @Failure 403 {object} ErrorResponse "Forbidden"
 // @Failure 429 {object} ErrorResponse "Too Many Requests"
-// @Router /IDPReportScheduleAct/Save [post]
+// @Router /ICSiemManagerLogSourceDefAct/AddOrUpdateLogSourceDef [post]
 // @Security ApiKeyAuth
 func (a *SourceTypesApi) SaveSourceTypes(ctx _context.Context, o ...SaveSourceTypesOptionalParameters) (string, *_nethttp.Response, error) {
 	var (

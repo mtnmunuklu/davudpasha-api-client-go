@@ -170,7 +170,7 @@ func (a *AlertDefinitionsApi) SearchAlertDefinitions(ctx _context.Context, o ...
 // @Failure 400 {object} ErrorResponse "Bad Request"
 // @Failure 403 {object} ErrorResponse "Forbidden"
 // @Failure 429 {object} ErrorResponse "Too Many Requests"
-// @Router /ICSiemQueryAct/Save [post]
+// @Router /ICSiemManagerCorrelationAct/AddOrUpdateCorrelation [post]
 // @Security ApiKeyAuth
 func (a *AlertDefinitionsApi) SaveAlertDefinitions(ctx _context.Context, o ...SaveAlertDefinitionsOptionalParameters) (AlertDefinitionsSaveResponse, *_nethttp.Response, error) {
 	var (
