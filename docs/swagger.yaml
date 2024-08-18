@@ -2923,6 +2923,42 @@ paths:
       summary: Search Assets
       tags:
       - Assets
+  /ICSiemManagerCorrelationAct/AddOrUpdateCorrelation:
+    post:
+      consumes:
+      - application/json
+      description: Save Alert Definitions based on the provided data.
+      parameters:
+      - description: Alert Definitions Save Request
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/api_davudpasha.AlertDefinitionsSaveRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/api_davudpasha.AlertDefinitionsSaveResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Save Alert Definitions
+      tags:
+      - Alert Definitions
   /ICSiemManagerCorrelationAct/GetCorrelationList:
     post:
       consumes:
@@ -3067,6 +3103,42 @@ paths:
       summary: Search Sources
       tags:
       - Sources
+  /ICSiemManagerLogSourceDefAct/AddOrUpdateLogSourceDef:
+    post:
+      consumes:
+      - application/json
+      description: Save Source Types based on the provided data.
+      parameters:
+      - description: Source Types Save Request
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/api_davudpasha.SourceTypesSaveRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successful operation
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Save Source Types
+      tags:
+      - Source Types
   /ICSiemManagerLogSourceDefAct/GetLogSourceDefDataList:
     post:
       consumes:
@@ -3361,21 +3433,21 @@ paths:
     post:
       consumes:
       - application/json
-      description: Save Source Types based on the provided data.
+      description: Save Reports based on the provided data.
       parameters:
-      - description: Source Types Save Request
+      - description: Reports Save Request
         in: body
         name: body
         required: true
         schema:
-          $ref: '#/definitions/api_davudpasha.SourceTypesSaveRequest'
+          $ref: '#/definitions/api_davudpasha.ReportsSaveRequest'
       produces:
       - application/json
       responses:
         "200":
           description: Successful operation
           schema:
-            type: string
+            $ref: '#/definitions/api_davudpasha.ReportsSaveResponse'
         "400":
           description: Bad Request
           schema:
@@ -3390,9 +3462,9 @@ paths:
             $ref: '#/definitions/api_davudpasha.ErrorResponse'
       security:
       - ApiKeyAuth: []
-      summary: Save Source Types
+      summary: Save Reports
       tags:
-      - Source Types
+      - Reports
   /ILookupAct/GetLookupListWithDetails:
     post:
       consumes:

@@ -140,6 +140,63 @@ const docTemplate = `{
                 }
             }
         },
+        "/ICSiemManagerCorrelationAct/AddOrUpdateCorrelation": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Save Alert Definitions based on the provided data.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Alert Definitions"
+                ],
+                "summary": "Save Alert Definitions",
+                "parameters": [
+                    {
+                        "description": "Alert Definitions Save Request",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.AlertDefinitionsSaveRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.AlertDefinitionsSaveResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    },
+                    "429": {
+                        "description": "Too Many Requests",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/ICSiemManagerCorrelationAct/GetCorrelationList": {
             "post": {
                 "security": [
@@ -345,6 +402,63 @@ const docTemplate = `{
                         "description": "Successful operation",
                         "schema": {
                             "$ref": "#/definitions/api_davudpasha.SourcesSearchResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    },
+                    "429": {
+                        "description": "Too Many Requests",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/ICSiemManagerLogSourceDefAct/AddOrUpdateLogSourceDef": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Save Source Types based on the provided data.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Source Types"
+                ],
+                "summary": "Save Source Types",
+                "parameters": [
+                    {
+                        "description": "Source Types Save Request",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.SourceTypesSaveRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "type": "string"
                         }
                     },
                     "400": {
@@ -834,7 +948,7 @@ const docTemplate = `{
                         "ApiKeyAuth": []
                     }
                 ],
-                "description": "Save Source Types based on the provided data.",
+                "description": "Save Reports based on the provided data.",
                 "consumes": [
                     "application/json"
                 ],
@@ -842,17 +956,17 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Source Types"
+                    "Reports"
                 ],
-                "summary": "Save Source Types",
+                "summary": "Save Reports",
                 "parameters": [
                     {
-                        "description": "Source Types Save Request",
+                        "description": "Reports Save Request",
                         "name": "body",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/api_davudpasha.SourceTypesSaveRequest"
+                            "$ref": "#/definitions/api_davudpasha.ReportsSaveRequest"
                         }
                     }
                 ],
@@ -860,7 +974,7 @@ const docTemplate = `{
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/api_davudpasha.ReportsSaveResponse"
                         }
                     },
                     "400": {
