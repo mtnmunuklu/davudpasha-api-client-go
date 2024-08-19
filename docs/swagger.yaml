@@ -2344,8 +2344,9 @@ definitions:
           type: integer
         type: array
       LogReaderType:
+        allOf:
+        - $ref: '#/definitions/api_davudpasha.SourceTypesReaderType'
         description: Type of the log reader.
-        type: string
       LogRemoveFormat:
         allOf:
         - $ref: '#/definitions/github_com_mtnmunuklu_davudpasha-api-client-go_api_common.NullableString'
@@ -2427,6 +2428,14 @@ definitions:
       TimeoutSec:
         description: Timeout duration for parallel processing, in seconds.
         type: integer
+    type: object
+  api_davudpasha.SourcesSaveRequest:
+    properties:
+      lgs:
+        $ref: '#/definitions/api_davudpasha.SourcesItem'
+      smartRestRequestContext:
+        description: Context for the Smart REST request.
+        type: string
     type: object
   api_davudpasha.SourcesSearchRequest:
     properties:
@@ -3067,6 +3076,42 @@ paths:
       summary: Search Geo Locations
       tags:
       - Geo Locations
+  /ICSiemManagerLogSourceAct/AddOrUpdateLogSource:
+    post:
+      consumes:
+      - application/json
+      description: Save Sources based on the provided data.
+      parameters:
+      - description: Sources Save Request
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/api_davudpasha.SourcesSaveRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successful operation
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/api_davudpasha.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Save Sources
+      tags:
+      - Sources
   /ICSiemManagerLogSourceAct/GetLogSourceList:
     post:
       consumes:

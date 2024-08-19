@@ -368,6 +368,63 @@ const docTemplate = `{
                 }
             }
         },
+        "/ICSiemManagerLogSourceAct/AddOrUpdateLogSource": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Save Sources based on the provided data.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Sources"
+                ],
+                "summary": "Save Sources",
+                "parameters": [
+                    {
+                        "description": "Sources Save Request",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.SourcesSaveRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    },
+                    "429": {
+                        "description": "Too Many Requests",
+                        "schema": {
+                            "$ref": "#/definitions/api_davudpasha.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/ICSiemManagerLogSourceAct/GetLogSourceList": {
             "post": {
                 "security": [
@@ -4801,7 +4858,11 @@ const docTemplate = `{
                 },
                 "LogReaderType": {
                     "description": "Type of the log reader.",
-                    "type": "string"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/api_davudpasha.SourceTypesReaderType"
+                        }
+                    ]
                 },
                 "LogRemoveFormat": {
                     "description": "Format to remove logs.",
@@ -4926,6 +4987,18 @@ const docTemplate = `{
                 "TimeoutSec": {
                     "description": "Timeout duration for parallel processing, in seconds.",
                     "type": "integer"
+                }
+            }
+        },
+        "api_davudpasha.SourcesSaveRequest": {
+            "type": "object",
+            "properties": {
+                "lgs": {
+                    "$ref": "#/definitions/api_davudpasha.SourcesItem"
+                },
+                "smartRestRequestContext": {
+                    "description": "Context for the Smart REST request.",
+                    "type": "string"
                 }
             }
         },
