@@ -22,7 +22,7 @@ type SourcesItem struct {
 	// Code defining the log source.
 	LogSourceDefCode *string `json:"LogSourceDefCode,omitempty"`
 	// Type of the log reader.
-	LogReaderType *string `json:"LogReaderType,omitempty"`
+	LogReaderType SourceTypesReaderType `json:"LogReaderType,omitempty"`
 	// Tags associated with the source item.
 	Tags []string `json:"Tags,omitempty"`
 	// Timeout for alerts.
@@ -287,31 +287,26 @@ func (o *SourcesItem) SetLogSourceDefCode(v string) {
 }
 
 // GetLogReaderType returns the LogReaderType field value if set, zero value otherwise.
-func (o *SourcesItem) GetLogReaderType() string {
-	if o == nil || o.LogReaderType == nil {
-		var ret string
+func (o *SourcesItem) GetLogReaderType() SourceTypesReaderType {
+	if o == nil {
+		var ret SourceTypesReaderType
 		return ret
 	}
-	return *o.LogReaderType
+	return o.LogReaderType
 }
 
 // GetLogReaderTypeOk returns a tuple with the LogReaderType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItem) GetLogReaderTypeOk() (*string, bool) {
-	if o == nil || o.LogReaderType == nil {
+func (o *SourcesItem) GetLogReaderTypeOk() (*SourceTypesReaderType, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LogReaderType, true
-}
-
-// HasLogReaderType returns a boolean if a field has been set.
-func (o *SourcesItem) HasLogReaderType() bool {
-	return o != nil && o.LogReaderType != nil
+	return &o.LogReaderType, true
 }
 
 // SetLogReaderType gets a reference to the given string and assigns it to the LogReaderType field.
-func (o *SourcesItem) SetLogReaderType(v string) {
-	o.LogReaderType = &v
+func (o *SourcesItem) SetLogReaderType(v SourceTypesReaderType) {
+	o.LogReaderType = v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
@@ -1126,7 +1121,7 @@ func (o SourcesItem) MarshalJSON() ([]byte, error) {
 	if o.LogSourceDefCode != nil {
 		toSerialize["LogSourceDefCode"] = o.LogSourceDefCode
 	}
-	if o.LogReaderType != nil {
+	if o.LogReaderType.IsValid() {
 		toSerialize["LogReaderType"] = o.LogReaderType
 	}
 	if o.Tags != nil {
@@ -1223,7 +1218,7 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 		Group               common.NullableString       `json:"Group,omitempty"`
 		Author              common.NullableString       `json:"Author,omitempty"`
 		LogSourceDefCode    *string                     `json:"LogSourceDefCode,omitempty"`
-		LogReaderType       *string                     `json:"LogReaderType,omitempty"`
+		LogReaderType       *SourceTypesReaderType      `json:"LogReaderType,omitempty"`
 		Tags                []string                    `json:"Tags,omitempty"`
 		AlertTimeout        *int64                      `json:"AlertTimeout,omitempty"`
 		LogReaderData       *json.RawMessage            `json:"LogReaderData,omitempty"`
@@ -1274,7 +1269,12 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 	o.Group = all.Group
 	o.Author = all.Author
 	o.LogSourceDefCode = all.LogSourceDefCode
-	o.LogReaderType = all.LogReaderType
+	hasInvalidField := false
+	if !all.LogReaderType.IsValid() {
+		hasInvalidField = true
+	} else {
+		o.LogReaderType = *all.LogReaderType
+	}
 	o.Tags = all.Tags
 	o.AlertTimeout = all.AlertTimeout
 	o.LogReaderData = all.LogReaderData
@@ -1293,7 +1293,6 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 	o.AgentID = all.AgentID
 	o.WriteRawLogs = all.WriteRawLogs
 	o.UseSecondaryWriter = all.UseSecondaryWriter
-	hasInvalidField := false
 	if all.ParallelOptions != nil && all.ParallelOptions.UnparsedObject != nil && o.UnparsedObject == nil {
 		hasInvalidField = true
 	}
