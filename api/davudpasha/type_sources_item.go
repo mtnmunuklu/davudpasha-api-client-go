@@ -22,17 +22,17 @@ type SourcesItem struct {
 	// Code defining the log source.
 	LogSourceDefCode *string `json:"LogSourceDefCode,omitempty"`
 	// Type of the log reader.
-	LogReaderType SourceTypesReaderType `json:"LogReaderType,omitempty"`
+	LogReaderType SourcesLogReaderType `json:"LogReaderType,omitempty"`
 	// Tags associated with the source item.
-	Tags []string `json:"Tags,omitempty"`
+	Tags common.NullableList[string] `json:"Tags,omitempty"`
 	// Timeout for alerts.
 	AlertTimeout *int64 `json:"AlertTimeout,omitempty"`
 	// Data related to log reader.
-	LogReaderData *json.RawMessage `json:"LogReaderData,omitempty"`
+	LogReaderData *SourcesLogReaderData `json:"LogReaderData,omitempty"`
 	// Log operations associated with the source item.
 	LogOperations []SourcesLogOperation `json:"LogOperations,omitempty"`
-	// Configuration for discarded logs.
-	DiscardedLogsConfig *string `json:"DiscardedLogsConfig,omitempty"`
+	// Configuration for discarded logs. Example: ToDetails
+	DiscardedLogsConfig SourcesDiscardedLogsConfigType `json:"DiscardedLogsConfig,omitempty"`
 	// Value of the source item.
 	Value *string `json:"value,omitempty"`
 	// Label of the source item.
@@ -73,6 +73,8 @@ type SourcesItem struct {
 	StoreRawLogsLgs *string `json:"StoreRawLogsLgs,omitempty"`
 	// Indicates if the source item is editable.
 	IsEditable *bool `json:"IsEditable,omitempty"`
+	// List of filter conditions applied to sources.
+	FilterConditions []SourcesFilterConditions `json:"FilterConditions,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
@@ -287,9 +289,9 @@ func (o *SourcesItem) SetLogSourceDefCode(v string) {
 }
 
 // GetLogReaderType returns the LogReaderType field value if set, zero value otherwise.
-func (o *SourcesItem) GetLogReaderType() SourceTypesReaderType {
+func (o *SourcesItem) GetLogReaderType() SourcesLogReaderType {
 	if o == nil {
-		var ret SourceTypesReaderType
+		var ret SourcesLogReaderType
 		return ret
 	}
 	return o.LogReaderType
@@ -297,7 +299,7 @@ func (o *SourcesItem) GetLogReaderType() SourceTypesReaderType {
 
 // GetLogReaderTypeOk returns a tuple with the LogReaderType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItem) GetLogReaderTypeOk() (*SourceTypesReaderType, bool) {
+func (o *SourcesItem) GetLogReaderTypeOk() (*SourcesLogReaderType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -305,36 +307,47 @@ func (o *SourcesItem) GetLogReaderTypeOk() (*SourceTypesReaderType, bool) {
 }
 
 // SetLogReaderType gets a reference to the given string and assigns it to the LogReaderType field.
-func (o *SourcesItem) SetLogReaderType(v SourceTypesReaderType) {
+func (o *SourcesItem) SetLogReaderType(v SourcesLogReaderType) {
 	o.LogReaderType = v
 }
 
-// GetTags returns the Tags field value if set, zero value otherwise.
+// GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SourcesItem) GetTags() []string {
-	if o == nil || o.Tags == nil {
+	if o == nil || o.Tags.Get() == nil {
 		var ret []string
 		return ret
 	}
-	return o.Tags
+	return *o.Tags.Get()
 }
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned.
 func (o *SourcesItem) GetTagsOk() (*[]string, bool) {
-	if o == nil || o.Tags == nil {
+	if o == nil {
 		return nil, false
 	}
-	return &o.Tags, true
+	return o.Tags.Get(), o.Tags.IsSet()
 }
 
-// HasTags returns a boolean if a field has been set.
+// HasTags returns a boolean if a AgentIds has been set.
 func (o *SourcesItem) HasTags() bool {
-	return o != nil && o.Tags != nil
+	return o != nil && o.Tags.IsSet()
 }
 
-// SetTags gets a reference to the given []string and assigns it to the Tags field.
+// SetTags gets a reference to the given common.Nullable[]string and assigns it to the Tags field.
 func (o *SourcesItem) SetTags(v []string) {
-	o.Tags = v
+	o.Tags.Set(&v)
+}
+
+// SetTagsNil sets the value for Tags to be an explicit nil.
+func (o *SourcesItem) SetTagsNil() {
+	o.Tags.Set(nil)
+}
+
+// UnSetTags ensures that no value is present for Tags, not even an explicit nil.
+func (o *SourcesItem) UnSetTags() {
+	o.Tags.UnSet()
 }
 
 // GetAlertTimeout returns the AlertTimeout field value if set, zero value otherwise.
@@ -366,9 +379,9 @@ func (o *SourcesItem) SetAlertTimeout(v int64) {
 }
 
 // GetLogReaderData returns the LogReaderData field value if set, zero value otherwise.
-func (o *SourcesItem) GetLogReaderData() json.RawMessage {
+func (o *SourcesItem) GetLogReaderData() SourcesLogReaderData {
 	if o == nil || o.LogReaderData == nil {
-		var ret json.RawMessage
+		var ret SourcesLogReaderData
 		return ret
 	}
 	return *o.LogReaderData
@@ -376,7 +389,7 @@ func (o *SourcesItem) GetLogReaderData() json.RawMessage {
 
 // GetLogReaderDataOk returns a tuple with the LogReaderData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItem) GetLogReaderDataOk() (*json.RawMessage, bool) {
+func (o *SourcesItem) GetLogReaderDataOk() (*SourcesLogReaderData, bool) {
 	if o == nil || o.LogReaderData == nil {
 		return nil, false
 	}
@@ -388,8 +401,8 @@ func (o *SourcesItem) HasLogReaderData() bool {
 	return o != nil && o.LogReaderData != nil
 }
 
-// SetLogReaderData gets a reference to the given json.RawMessage and assigns it to the LogReaderData field.
-func (o *SourcesItem) SetLogReaderData(v json.RawMessage) {
+// SetLogReaderData gets a reference to the given SourcesLogReaderData and assigns it to the LogReaderData field.
+func (o *SourcesItem) SetLogReaderData(v SourcesLogReaderData) {
 	o.LogReaderData = &v
 }
 
@@ -422,31 +435,26 @@ func (o *SourcesItem) SetLogOperations(v []SourcesLogOperation) {
 }
 
 // GetDiscardedLogsConfig returns the DiscardedLogsConfig field value if set, zero value otherwise.
-func (o *SourcesItem) GetDiscardedLogsConfig() string {
-	if o == nil || o.DiscardedLogsConfig == nil {
-		var ret string
+func (o *SourcesItem) GetDiscardedLogsConfig() SourcesDiscardedLogsConfigType {
+	if o == nil {
+		var ret SourcesDiscardedLogsConfigType
 		return ret
 	}
-	return *o.DiscardedLogsConfig
+	return o.DiscardedLogsConfig
 }
 
 // GetDiscardedLogsConfigOk returns a tuple with the DiscardedLogsConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItem) GetDiscardedLogsConfigOk() (*string, bool) {
-	if o == nil || o.DiscardedLogsConfig == nil {
+func (o *SourcesItem) GetDiscardedLogsConfigOk() (*SourcesDiscardedLogsConfigType, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DiscardedLogsConfig, true
-}
-
-// HasDiscardedLogsConfig returns a boolean if a field has been set.
-func (o *SourcesItem) HasDiscardedLogsConfig() bool {
-	return o != nil && o.DiscardedLogsConfig != nil
+	return &o.DiscardedLogsConfig, true
 }
 
 // SetDiscardedLogsConfig gets a reference to the given string and assigns it to the DiscardedLogsConfig field.
-func (o *SourcesItem) SetDiscardedLogsConfig(v string) {
-	o.DiscardedLogsConfig = &v
+func (o *SourcesItem) SetDiscardedLogsConfig(v SourcesDiscardedLogsConfigType) {
+	o.DiscardedLogsConfig = v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
@@ -1097,6 +1105,34 @@ func (o *SourcesItem) SetIsEditable(v bool) {
 	o.IsEditable = &v
 }
 
+// GetFilterConditions returns the FilterConditions field value if set, zero value otherwise.
+func (o *SourcesItem) GetFilterConditions() []SourcesFilterConditions {
+	if o == nil || o.FilterConditions == nil {
+		var ret []SourcesFilterConditions
+		return ret
+	}
+	return o.FilterConditions
+}
+
+// GetFilterConditionsOk returns a tuple with the FilterConditions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SourcesItem) GetFilterConditionsOk() (*[]SourcesFilterConditions, bool) {
+	if o == nil || o.FilterConditions == nil {
+		return nil, false
+	}
+	return &o.FilterConditions, true
+}
+
+// HasFilterConditions returns a boolean if a field has been set.
+func (o *SourcesItem) HasFilterConditions() bool {
+	return o != nil && o.FilterConditions != nil
+}
+
+// SetFilterConditions gets a reference to the given []SourcesFilterConditions and assigns it to the FilterConditions field.
+func (o *SourcesItem) SetFilterConditions(v []SourcesFilterConditions) {
+	o.FilterConditions = v
+}
+
 // MarshalJSON serializes the struct using spec logic.
 func (o SourcesItem) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
@@ -1124,8 +1160,8 @@ func (o SourcesItem) MarshalJSON() ([]byte, error) {
 	if o.LogReaderType.IsValid() {
 		toSerialize["LogReaderType"] = o.LogReaderType
 	}
-	if o.Tags != nil {
-		toSerialize["Tags"] = o.Tags
+	if o.Tags.IsSet() {
+		toSerialize["Tags"] = o.Tags.Get()
 	}
 	if o.AlertTimeout != nil {
 		toSerialize["AlertTimeout"] = o.AlertTimeout
@@ -1136,7 +1172,7 @@ func (o SourcesItem) MarshalJSON() ([]byte, error) {
 	if o.LogOperations != nil {
 		toSerialize["LogOperations"] = o.LogOperations
 	}
-	if o.DiscardedLogsConfig != nil {
+	if o.DiscardedLogsConfig.IsValid() {
 		toSerialize["DiscardedLogsConfig"] = o.DiscardedLogsConfig
 	}
 	if o.Value != nil {
@@ -1202,6 +1238,9 @@ func (o SourcesItem) MarshalJSON() ([]byte, error) {
 	if o.IsEditable != nil {
 		toSerialize["IsEditable"] = o.IsEditable
 	}
+	if o.FilterConditions != nil {
+		toSerialize["FilterConditions"] = o.FilterConditions
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -1212,38 +1251,39 @@ func (o SourcesItem) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		ID                  *string                     `json:"Id,omitempty"`
-		Enabled             *bool                       `json:"Enabled,omitempty"`
-		Name                *string                     `json:"Name,omitempty"`
-		Group               common.NullableString       `json:"Group,omitempty"`
-		Author              common.NullableString       `json:"Author,omitempty"`
-		LogSourceDefCode    *string                     `json:"LogSourceDefCode,omitempty"`
-		LogReaderType       *SourceTypesReaderType      `json:"LogReaderType,omitempty"`
-		Tags                []string                    `json:"Tags,omitempty"`
-		AlertTimeout        *int64                      `json:"AlertTimeout,omitempty"`
-		LogReaderData       *json.RawMessage            `json:"LogReaderData,omitempty"`
-		LogOperations       []SourcesLogOperation       `json:"LogOperations,omitempty"`
-		DiscardedLogsConfig *string                     `json:"DiscardedLogsConfig,omitempty"`
-		Value               *string                     `json:"value,omitempty"`
-		Label               *string                     `json:"label,omitempty"`
-		IsDeleted           *bool                       `json:"IsDeleted,omitempty"`
-		IsAgentSource       *bool                       `json:"IsAgentSource,omitempty"`
-		AgentIDs            common.NullableList[string] `json:"AgentIds,omitempty"`
-		IndexGroupName      common.NullableString       `json:"IndexGroupName,omitempty"`
-		DashboardName       *string                     `json:"dashboardName,omitempty"`
-		DashboardID         common.NullableString       `json:"dashboardId,omitempty"`
-		AssetTags           common.NullableList[string] `json:"AssetTags,omitempty"`
-		LogRemoveTime       common.NullableString       `json:"LogRemoveTime,omitempty"`
-		LogRemoveFormat     common.NullableString       `json:"LogRemoveFormat,omitempty"`
-		AgentID             common.NullableString       `json:"AgentId,omitempty"`
-		WriteRawLogs        *bool                       `json:"WriteRawLogs,omitempty"`
-		UseSecondaryWriter  *bool                       `json:"UseSecondaryWriter,omitempty"`
-		ParallelOptions     *SourcesParallelOptions     `json:"ParallelOptions,omitempty"`
-		BlockCount          *int64                      `json:"BlockCount,omitempty"`
-		ScheduleConfig      NullableScheduleConfig      `json:"ScheduleConfig,omitempty"`
-		StoreRawLogs        *bool                       `json:"StoreRawLogs,omitempty"`
-		StoreRawLogsLgs     *string                     `json:"StoreRawLogsLgs,omitempty"`
-		IsEditable          *bool                       `json:"IsEditable,omitempty"`
+		ID                  *string                         `json:"Id,omitempty"`
+		Enabled             *bool                           `json:"Enabled,omitempty"`
+		Name                *string                         `json:"Name,omitempty"`
+		Group               common.NullableString           `json:"Group,omitempty"`
+		Author              common.NullableString           `json:"Author,omitempty"`
+		LogSourceDefCode    *string                         `json:"LogSourceDefCode,omitempty"`
+		LogReaderType       *SourcesLogReaderType           `json:"LogReaderType,omitempty"`
+		Tags                common.NullableList[string]     `json:"Tags,omitempty"`
+		AlertTimeout        *int64                          `json:"AlertTimeout,omitempty"`
+		LogReaderData       *SourcesLogReaderData           `json:"LogReaderData,omitempty"`
+		LogOperations       []SourcesLogOperation           `json:"LogOperations,omitempty"`
+		DiscardedLogsConfig *SourcesDiscardedLogsConfigType `json:"DiscardedLogsConfig,omitempty"`
+		Value               *string                         `json:"value,omitempty"`
+		Label               *string                         `json:"label,omitempty"`
+		IsDeleted           *bool                           `json:"IsDeleted,omitempty"`
+		IsAgentSource       *bool                           `json:"IsAgentSource,omitempty"`
+		AgentIDs            common.NullableList[string]     `json:"AgentIds,omitempty"`
+		IndexGroupName      common.NullableString           `json:"IndexGroupName,omitempty"`
+		DashboardName       *string                         `json:"dashboardName,omitempty"`
+		DashboardID         common.NullableString           `json:"dashboardId,omitempty"`
+		AssetTags           common.NullableList[string]     `json:"AssetTags,omitempty"`
+		LogRemoveTime       common.NullableString           `json:"LogRemoveTime,omitempty"`
+		LogRemoveFormat     common.NullableString           `json:"LogRemoveFormat,omitempty"`
+		AgentID             common.NullableString           `json:"AgentId,omitempty"`
+		WriteRawLogs        *bool                           `json:"WriteRawLogs,omitempty"`
+		UseSecondaryWriter  *bool                           `json:"UseSecondaryWriter,omitempty"`
+		ParallelOptions     *SourcesParallelOptions         `json:"ParallelOptions,omitempty"`
+		BlockCount          *int64                          `json:"BlockCount,omitempty"`
+		ScheduleConfig      NullableScheduleConfig          `json:"ScheduleConfig,omitempty"`
+		StoreRawLogs        *bool                           `json:"StoreRawLogs,omitempty"`
+		StoreRawLogsLgs     *string                         `json:"StoreRawLogsLgs,omitempty"`
+		IsEditable          *bool                           `json:"IsEditable,omitempty"`
+		FilterConditions    []SourcesFilterConditions       `json:"FilterConditions,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
@@ -1258,7 +1298,7 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 
 	additionalProperties := make(map[string]interface{})
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		common.DeleteKeys(additionalProperties, &[]string{"Id", "Enabled", "Name", "Group", "Author", "LogSourceDefCode", "LogReaderType", "Tags", "AlertTimeout", "LogReaderData", "LogOperations", "DiscardedLogsConfig", "Value", "Label", "IsDeleted", "IsAgentSource", "AgentIds", "IndexGroupName", "DashboardName", "DashboardID", "AssetTags", "LogRemoveTime", "LogRemoveFormat", "AgentId", "WriteRawLogs", "UseSecondaryWriter", "ParallelOptions", "BlockCount", "ScheduleConfig", "StoreRawLogs", "StoreRawLogsLgs", "IsEditable"})
+		common.DeleteKeys(additionalProperties, &[]string{"Id", "Enabled", "Name", "Group", "Author", "LogSourceDefCode", "LogReaderType", "Tags", "AlertTimeout", "LogReaderData", "LogOperations", "DiscardedLogsConfig", "Value", "Label", "IsDeleted", "IsAgentSource", "AgentIds", "IndexGroupName", "DashboardName", "DashboardID", "AssetTags", "LogRemoveTime", "LogRemoveFormat", "AgentId", "WriteRawLogs", "UseSecondaryWriter", "ParallelOptions", "BlockCount", "ScheduleConfig", "StoreRawLogs", "StoreRawLogsLgs", "IsEditable", "FilterConditions"})
 	} else {
 		return err
 	}
@@ -1277,9 +1317,16 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 	}
 	o.Tags = all.Tags
 	o.AlertTimeout = all.AlertTimeout
+	if all.LogReaderData != nil && all.LogReaderData.UnparsedObject != nil && o.UnparsedObject == nil {
+		hasInvalidField = true
+	}
 	o.LogReaderData = all.LogReaderData
 	o.LogOperations = all.LogOperations
-	o.DiscardedLogsConfig = all.DiscardedLogsConfig
+	if !all.DiscardedLogsConfig.IsValid() {
+		hasInvalidField = true
+	} else {
+		o.DiscardedLogsConfig = *all.DiscardedLogsConfig
+	}
 	o.Value = all.Value
 	o.Label = all.Label
 	o.IsDeleted = all.IsDeleted
@@ -1302,6 +1349,7 @@ func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 	o.StoreRawLogs = all.StoreRawLogs
 	o.StoreRawLogsLgs = all.StoreRawLogsLgs
 	o.IsEditable = all.IsEditable
+	o.FilterConditions = all.FilterConditions
 
 	if len(additionalProperties) > 0 {
 		o.AdditionalProperties = additionalProperties

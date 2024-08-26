@@ -7,7 +7,8 @@ import (
 )
 
 type SourcesSaveRequest struct {
-	Lgs *SourcesItem `json:"lgs,omitempty"`
+	Lgs           *SourcesItem `json:"lgs,omitempty"`
+	DashboardName *string      `json:"dashboardName,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.
