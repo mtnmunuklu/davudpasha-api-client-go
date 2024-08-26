@@ -135,6 +135,7 @@ func (o *SourceTypesSaveRequest) UnMarshalJSON(bytes []byte) (err error) {
 	if all.LgsDef != nil && all.LgsDef.UnparsedObject != nil && o.UnparsedObject == nil {
 		hasInvalidField = true
 	}
+	o.LgsDef = all.LgsDef
 	o.SmartRestRequestContext = all.SmartRestRequestContext
 
 	if len(additionalProperties) > 0 {
