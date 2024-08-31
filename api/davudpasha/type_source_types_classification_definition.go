@@ -198,8 +198,8 @@ func (o *SourceTypesClassificationDefinition) SetMitreTagsNil() {
 }
 
 // UnSetMitreTags ensures that no value is present for MitreTags, not even an explicit nil.
-func (o *SourceTypesClassificationDefinition) UnSetMitreTags() {
-	o.MitreTags.UnSet()
+func (o *SourceTypesClassificationDefinition) UnsetMitreTags() {
+	o.MitreTags.Unset()
 }
 
 // GetKillChainPhase returns the KillChainPhase field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -237,8 +237,8 @@ func (o *SourceTypesClassificationDefinition) SetKillChainPhaseNil() {
 }
 
 // UnSetKillChainPhase ensures that no value is present for KillChainPhase, not even an explicit nil.
-func (o *SourceTypesClassificationDefinition) UnSetKillChainPhase() {
-	o.KillChainPhase.UnSet()
+func (o *SourceTypesClassificationDefinition) UnsetKillChainPhase() {
+	o.KillChainPhase.Unset()
 }
 
 // GetMitreCreationDate returns the MitreCreationDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -276,8 +276,8 @@ func (o *SourceTypesClassificationDefinition) SetMitreCreationDateNil() {
 }
 
 // UnSetMitreCreationDate ensures that no value is present for MitreCreationDate, not even an explicit nil.
-func (o *SourceTypesClassificationDefinition) UnSetMitreCreationDate() {
-	o.MitreCreationDate.UnSet()
+func (o *SourceTypesClassificationDefinition) UnsetMitreCreationDate() {
+	o.MitreCreationDate.Unset()
 }
 
 // GetFromMarket returns the FromMarket field value if set, zero value otherwise.

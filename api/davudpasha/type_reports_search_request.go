@@ -132,8 +132,8 @@ func (o *ReportsSearchRequest) SetStartDateNil() {
 }
 
 // UnSetStartDate ensures that no value is present for StartDate, not even an explicit nil.
-func (o *ReportsSearchRequest) UnSetStartDate() {
-	o.StartDate.UnSet()
+func (o *ReportsSearchRequest) UnsetStartDate() {
+	o.StartDate.Unset()
 }
 
 // GetSmartRestRequestContext returns the SmartRestRequestContext field value if set, zero value otherwise.

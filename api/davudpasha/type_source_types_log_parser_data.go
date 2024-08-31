@@ -120,8 +120,8 @@ func (o *SourceTypesLogParserData) SetMustContainNil() {
 }
 
 // UnSetMustContain ensures that no value is present for MustContain, not even an explicit nil.
-func (o *SourceTypesLogParserData) UnSetMustContain() {
-	o.MustContain.UnSet()
+func (o *SourceTypesLogParserData) UnsetMustContain() {
+	o.MustContain.Unset()
 }
 
 // GetMustContainParts returns the MustContainParts field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -159,8 +159,8 @@ func (o *SourceTypesLogParserData) SetMustContainPartsNil() {
 }
 
 // UnSetMustContainParts ensures that no value is present for MustContainParts, not even an explicit nil.
-func (o *SourceTypesLogParserData) UnSetMustContainParts() {
-	o.MustContainParts.UnSet()
+func (o *SourceTypesLogParserData) UnsetMustContainParts() {
+	o.MustContainParts.Unset()
 }
 
 // GetQuery returns the Query field value if set, zero value otherwise.
@@ -310,8 +310,8 @@ func (o *SourceTypesLogParserData) SetLimitNil() {
 }
 
 // UnSetLimit ensures that no value is present for Limit, not even an explicit nil.
-func (o *SourceTypesLogParserData) UnSetLimit() {
-	o.Limit.UnSet()
+func (o *SourceTypesLogParserData) UnsetLimit() {
+	o.Limit.Unset()
 }
 
 // GetLimitID returns the LimitID field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -349,8 +349,8 @@ func (o *SourceTypesLogParserData) SetLimitIDNil() {
 }
 
 // UnSetLimitID ensures that no value is present for LimitID, not even an explicit nil.
-func (o *SourceTypesLogParserData) UnSetLimitID() {
-	o.LimitID.UnSet()
+func (o *SourceTypesLogParserData) UnsetLimitID() {
+	o.LimitID.Unset()
 }
 
 // GetIDDateTimeCustomFormat returns the IDDateTimeCustomFormat field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -388,8 +388,8 @@ func (o *SourceTypesLogParserData) SetIDDateTimeCustomFormatNil() {
 }
 
 // UnSetIDDateTimeCustomFormat ensures that no value is present for IDDateTimeCustomFormat, not even an explicit nil.
-func (o *SourceTypesLogParserData) UnSetIDDateTimeCustomFormat() {
-	o.IDDateTimeCustomFormat.UnSet()
+func (o *SourceTypesLogParserData) UnsetIDDateTimeCustomFormat() {
+	o.IDDateTimeCustomFormat.Unset()
 }
 
 // GetCodeStr returns the CodeStr field value if set, zero value otherwise.

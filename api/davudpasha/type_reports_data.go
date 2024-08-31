@@ -98,8 +98,8 @@ func (o *ReportsData) SetNameNil() {
 }
 
 // UnSetName ensures that no value is present for Name, not even an explicit nil.
-func (o *ReportsData) UnSetName() {
-	o.Name.UnSet()
+func (o *ReportsData) UnsetName() {
+	o.Name.Unset()
 }
 
 // GetFileName returns the FileName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -137,8 +137,8 @@ func (o *ReportsData) SetFileNameNil() {
 }
 
 // UnSetFileName ensures that no value is present for FileName, not even an explicit nil.
-func (o *ReportsData) UnSetFileName() {
-	o.FileName.UnSet()
+func (o *ReportsData) UnsetFileName() {
+	o.FileName.Unset()
 }
 
 // GetCreateDate returns the CreateDate field value if set, zero value otherwise.
@@ -232,8 +232,8 @@ func (o *ReportsData) SetHeaderNil() {
 }
 
 // UnSetHeader ensures that no value is present for Header, not even an explicit nil.
-func (o *ReportsData) UnSetHeader() {
-	o.Header.UnSet()
+func (o *ReportsData) UnsetHeader() {
+	o.Header.Unset()
 }
 
 // GetFooter returns the Footer field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -271,8 +271,8 @@ func (o *ReportsData) SetFooterNil() {
 }
 
 // UnSetFooter ensures that no value is present for Footer, not even an explicit nil.
-func (o *ReportsData) UnSetFooter() {
-	o.Footer.UnSet()
+func (o *ReportsData) UnsetFooter() {
+	o.Footer.Unset()
 }
 
 // GetCoverPage returns the CoverPage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -310,8 +310,8 @@ func (o *ReportsData) SetCoverPageNil() {
 }
 
 // UnSetCoverPage ensures that no value is present for CoverPage, not even an explicit nil.
-func (o *ReportsData) UnSetCoverPage() {
-	o.CoverPage.UnSet()
+func (o *ReportsData) UnsetCoverPage() {
+	o.CoverPage.Unset()
 }
 
 // GetSections returns the Sections field value if set, zero value otherwise.
@@ -405,8 +405,8 @@ func (o *ReportsData) SetThemeNil() {
 }
 
 // UnSetTheme ensures that no value is present for Theme, not even an explicit nil.
-func (o *ReportsData) UnSetTheme() {
-	o.Theme.UnSet()
+func (o *ReportsData) UnsetTheme() {
+	o.Theme.Unset()
 }
 
 // GetLanguage returns the Language field value if set, zero value otherwise.
@@ -500,8 +500,8 @@ func (o *ReportsData) SetFilePasswordNil() {
 }
 
 // UnSetFilePassword ensures that no value is present for FilePassword, not even an explicit nil.
-func (o *ReportsData) UnSetFilePassword() {
-	o.FilePassword.UnSet()
+func (o *ReportsData) UnsetFilePassword() {
+	o.FilePassword.Unset()
 }
 
 // GetReportID returns the ReportID field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -539,8 +539,8 @@ func (o *ReportsData) SetReportIDNil() {
 }
 
 // UnSetReportID ensures that no value is present for ReportID, not even an explicit nil.
-func (o *ReportsData) UnSetReportID() {
-	o.ReportID.UnSet()
+func (o *ReportsData) UnsetReportID() {
+	o.ReportID.Unset()
 }
 
 // GetReportTheme returns the ReportTheme field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -578,8 +578,8 @@ func (o *ReportsData) SetReportThemeNil() {
 }
 
 // UnSetReportTheme ensures that no value is present for ReportTheme, not even an explicit nil.
-func (o *ReportsData) UnSetReportTheme() {
-	o.ReportTheme.UnSet()
+func (o *ReportsData) UnsetReportTheme() {
+	o.ReportTheme.Unset()
 }
 
 // GetMaxRowCount returns the MaxRowCount field value if set, zero value otherwise.

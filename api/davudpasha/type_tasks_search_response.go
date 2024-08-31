@@ -380,8 +380,8 @@ func (o *TasksSearchResponse) SetLastExecutionStartTimeNil() {
 }
 
 // UnSetLastExecutionStartTime ensures that no value is present for LastExecutionStartTime, not even an explicit nil.
-func (o *TasksSearchResponse) UnSetLastExecutionStartTime() {
-	o.LastExecutionStartTime.UnSet()
+func (o *TasksSearchResponse) UnsetLastExecutionStartTime() {
+	o.LastExecutionStartTime.Unset()
 }
 
 // GetLastSuccesufulExecutionTime returns the LastSuccesufulExecutionTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -419,8 +419,8 @@ func (o *TasksSearchResponse) SetLastSuccesufulExecutionTimeNil() {
 }
 
 // UnSetLastSuccesufulExecutionTime ensures that no value is present for LastSuccesufulExecutionTime, not even an explicit nil.
-func (o *TasksSearchResponse) UnSetLastSuccesufulExecutionTime() {
-	o.LastSuccesufulExecutionTime.UnSet()
+func (o *TasksSearchResponse) UnsetLastSuccesufulExecutionTime() {
+	o.LastSuccesufulExecutionTime.Unset()
 }
 
 // GetLastFailedExecutionTime returns the LastFailedExecutionTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -458,8 +458,8 @@ func (o *TasksSearchResponse) SetLastFailedExecutionTimeNil() {
 }
 
 // UnSetLastFailedExecutionTime ensures that no value is present for LastFailedExecutionTime, not even an explicit nil.
-func (o *TasksSearchResponse) UnSetLastFailedExecutionTime() {
-	o.LastFailedExecutionTime.UnSet()
+func (o *TasksSearchResponse) UnsetLastFailedExecutionTime() {
+	o.LastFailedExecutionTime.Unset()
 }
 
 // GetCreatedDate returns the CreatedDate field value if set, zero value otherwise.
@@ -525,8 +525,8 @@ func (o *TasksSearchResponse) SetJwtLifeTimeSecondsNil() {
 }
 
 // UnSetJwtLifeTimeSeconds ensures that no value is present for JwtLifeTimeSeconds, not even an explicit nil.
-func (o *TasksSearchResponse) UnSetJwtLifeTimeSeconds() {
-	o.JwtLifeTimeSeconds.UnSet()
+func (o *TasksSearchResponse) UnsetJwtLifeTimeSeconds() {
+	o.JwtLifeTimeSeconds.Unset()
 }
 
 // GetModuleFilter returns the ModuleFilter field value if set, zero value otherwise.
@@ -648,8 +648,8 @@ func (o *TasksSearchResponse) SetDataNil() {
 }
 
 // UnSetData ensures that no value is present for Data, not even an explicit nil.
-func (o *TasksSearchResponse) UnSetData() {
-	o.Data.UnSet()
+func (o *TasksSearchResponse) UnsetData() {
+	o.Data.Unset()
 }
 
 // GetMicroserviceAddress returns the MicroserviceAddress field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -687,8 +687,8 @@ func (o *TasksSearchResponse) SetMicroserviceAddressNil() {
 }
 
 // UnSetMicroserviceAddress ensures that no value is present for MicroserviceAddress, not even an explicit nil.
-func (o *TasksSearchResponse) UnSetMicroserviceAddress() {
-	o.MicroserviceAddress.UnSet()
+func (o *TasksSearchResponse) UnsetMicroserviceAddress() {
+	o.MicroserviceAddress.Unset()
 }
 
 // GetResult returns the Result field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -726,8 +726,8 @@ func (o *TasksSearchResponse) SetResultNil() {
 }
 
 // UnSetResult ensures that no value is present for Result, not even an explicit nil.
-func (o *TasksSearchResponse) UnSetResult() {
-	o.Result.UnSet()
+func (o *TasksSearchResponse) UnsetResult() {
+	o.Result.Unset()
 }
 
 // GetDisableRetryIfFail returns the DisableRetryIfFail field value if set, zero value otherwise.
@@ -793,8 +793,8 @@ func (o *TasksSearchResponse) SetExtraObjectNil() {
 }
 
 // UnSetExtraObject ensures that no value is present for ExtraObject, not even an explicit nil.
-func (o *TasksSearchResponse) UnSetExtraObject() {
-	o.ExtraObject.UnSet()
+func (o *TasksSearchResponse) UnsetExtraObject() {
+	o.ExtraObject.Unset()
 }
 
 // GetExecutorName returns the ExecutorName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -832,8 +832,8 @@ func (o *TasksSearchResponse) SetExecutorNameNil() {
 }
 
 // UnSetExecutorName ensures that no value is present for ExecutorName, not even an explicit nil.
-func (o *TasksSearchResponse) UnSetExecutorName() {
-	o.ExecutorName.UnSet()
+func (o *TasksSearchResponse) UnsetExecutorName() {
+	o.ExecutorName.Unset()
 }
 
 // GetExecutorType returns the ExecutorType field value if set, zero value otherwise.
@@ -927,8 +927,8 @@ func (o *TasksSearchResponse) SetModuleGUIDNil() {
 }
 
 // UnSetModuleGUID ensures that no value is present for ModuleGUID, not even an explicit nil.
-func (o *TasksSearchResponse) UnSetModuleGUID() {
-	o.ModuleGUID.UnSet()
+func (o *TasksSearchResponse) UnsetModuleGUID() {
+	o.ModuleGUID.Unset()
 }
 
 // GetOwnerType returns the OwnerType field value if set, zero value otherwise.

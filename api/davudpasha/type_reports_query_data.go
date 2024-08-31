@@ -105,8 +105,8 @@ func (o *ReportsQueryData) SetQueryIDNil() {
 }
 
 // UnSetQueryID ensures that no value is present for QueryID, not even an explicit nil.
-func (o *ReportsQueryData) UnSetQueryID() {
-	o.QueryID.UnSet()
+func (o *ReportsQueryData) UnsetQueryID() {
+	o.QueryID.Unset()
 }
 
 // GetQueryStr returns the QueryStr field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -144,8 +144,8 @@ func (o *ReportsQueryData) SetQueryStrNil() {
 }
 
 // UnSetQueryStr ensures that no value is present for QueryStr, not even an explicit nil.
-func (o *ReportsQueryData) UnSetQueryStr() {
-	o.QueryStr.UnSet()
+func (o *ReportsQueryData) UnsetQueryStr() {
+	o.QueryStr.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -267,8 +267,8 @@ func (o *ReportsQueryData) SetScriptPathNil() {
 }
 
 // UnSetScriptPath ensures that no value is present for ScriptPath, not even an explicit nil.
-func (o *ReportsQueryData) UnSetScriptPath() {
-	o.ScriptPath.UnSet()
+func (o *ReportsQueryData) UnsetScriptPath() {
+	o.ScriptPath.Unset()
 }
 
 // GetScriptArguments returns a tuple with the ScriptArguments field value if set, nil otherwise
@@ -307,8 +307,8 @@ func (o *ReportsQueryData) SetScriptArgumentsNil() {
 }
 
 // UnSetScriptArguments ensures that no value is present for ScriptArguments, not even an explicit nil.
-func (o *ReportsQueryData) UnSetScriptArguments() {
-	o.ScriptArguments.UnSet()
+func (o *ReportsQueryData) UnsetScriptArguments() {
+	o.ScriptArguments.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

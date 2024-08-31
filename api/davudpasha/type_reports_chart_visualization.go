@@ -406,8 +406,8 @@ func (o *ReportsChartVisualization) SetColorSchemeNil() {
 }
 
 // UnSetColorScheme ensures that no value is present for ColorScheme, not even an explicit nil.
-func (o *ReportsChartVisualization) UnSetColorScheme() {
-	o.ColorScheme.UnSet()
+func (o *ReportsChartVisualization) UnsetColorScheme() {
+	o.ColorScheme.Unset()
 }
 
 // GetSettings returns the Settings field value if set, zero value otherwise.

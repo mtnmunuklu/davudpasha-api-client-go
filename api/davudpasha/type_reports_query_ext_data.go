@@ -625,8 +625,8 @@ func (o *ReportsQueryExtData) SetGroupByDateNil() {
 }
 
 // UnSetGroupByDate ensures that no value is present for GroupByDate, not even an explicit nil.
-func (o *ReportsQueryExtData) UnSetGroupByDate() {
-	o.GroupByDate.UnSet()
+func (o *ReportsQueryExtData) UnsetGroupByDate() {
+	o.GroupByDate.Unset()
 }
 
 // GetMaxRowCount returns the MaxRowCount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -664,8 +664,8 @@ func (o *ReportsQueryExtData) SetMaxRowCountNil() {
 }
 
 // UnSetMaxRowCount ensures that no value is present for MaxRowCount, not even an explicit nil.
-func (o *ReportsQueryExtData) UnSetMaxRowCount() {
-	o.MaxRowCount.UnSet()
+func (o *ReportsQueryExtData) UnsetMaxRowCount() {
+	o.MaxRowCount.Unset()
 }
 
 // GetShowOnlyFaultyFiles returns the ShowOnlyFaultyFiles field value if set, zero value otherwise.
@@ -787,8 +787,8 @@ func (o *ReportsQueryExtData) SetIncludesAnyNil() {
 }
 
 // UnSetIncludesAny ensures that no value is present for IncludesAny, not even an explicit nil.
-func (o *ReportsQueryExtData) UnSetIncludesAny() {
-	o.IncludesAny.UnSet()
+func (o *ReportsQueryExtData) UnsetIncludesAny() {
+	o.IncludesAny.Unset()
 }
 
 // GetIncludes returns a tuple with the Includes field value if set, nil otherwise
@@ -827,8 +827,8 @@ func (o *ReportsQueryExtData) SetIncludesNil() {
 }
 
 // UnSetIncludes ensures that no value is present for Includes, not even an explicit nil.
-func (o *ReportsQueryExtData) UnSetIncludes() {
-	o.Includes.UnSet()
+func (o *ReportsQueryExtData) UnsetIncludes() {
+	o.Includes.Unset()
 }
 
 // GetSize returns the Size field value if set, zero value otherwise.
@@ -923,8 +923,8 @@ func (o *ReportsQueryExtData) SetExcludesNil() {
 }
 
 // UnSetExcludes ensures that no value is present for Excludes, not even an explicit nil.
-func (o *ReportsQueryExtData) UnSetExcludes() {
-	o.Excludes.UnSet()
+func (o *ReportsQueryExtData) UnsetExcludes() {
+	o.Excludes.Unset()
 }
 
 // GetSearchOnRawLogs returns the SearchOnRawLogs field value if set, zero value otherwise.
@@ -991,8 +991,8 @@ func (o *ReportsQueryExtData) SetReportColNamesNil() {
 }
 
 // UnSetReportColNames ensures that no value is present for ReportColNames, not even an explicit nil.
-func (o *ReportsQueryExtData) UnSetReportColNames() {
-	o.ReportColNames.UnSet()
+func (o *ReportsQueryExtData) UnsetReportColNames() {
+	o.ReportColNames.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.
@@ -1212,7 +1212,7 @@ func (v NullableReportsQueryExtData) IsSet() bool {
 }
 
 // UnSet sets the value to nil and resets the set flag/
-func (v *NullableReportsQueryExtData) UnSet() {
+func (v *NullableReportsQueryExtData) Unset() {
 	v.value = nil
 	v.isSet = false
 }

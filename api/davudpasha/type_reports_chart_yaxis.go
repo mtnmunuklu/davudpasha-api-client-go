@@ -130,8 +130,8 @@ func (o *ReportsChartYAxis) SetMinValueNil() {
 }
 
 // UnSetMinValue ensures that no value is present for MinValue, not even an explicit nil.
-func (o *ReportsChartYAxis) UnSetMinValue() {
-	o.MinValue.UnSet()
+func (o *ReportsChartYAxis) UnsetMinValue() {
+	o.MinValue.Unset()
 }
 
 // GetMaxValue returns the MaxValue field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -169,8 +169,8 @@ func (o *ReportsChartYAxis) SetMaxValueNil() {
 }
 
 // UnSetMaxValue ensures that no value is present for MaxValue, not even an explicit nil.
-func (o *ReportsChartYAxis) UnSetMaxValue() {
-	o.MaxValue.UnSet()
+func (o *ReportsChartYAxis) UnsetMaxValue() {
+	o.MaxValue.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

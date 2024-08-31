@@ -163,8 +163,8 @@ func (o *QueriesItem) SetDescriptionNil() {
 }
 
 // UnSetDescription ensures that no value is present for Description, not even an explicit nil.
-func (o *QueriesItem) UnSetDescription() {
-	o.Description.UnSet()
+func (o *QueriesItem) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetColumns returns the Columns field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -202,8 +202,8 @@ func (o *QueriesItem) SetColumnsNil() {
 }
 
 // UnSetColumns ensures that no value is present for Columns, not even an explicit nil.
-func (o *QueriesItem) UnSetColumns() {
-	o.Columns.UnSet()
+func (o *QueriesItem) UnsetColumns() {
+	o.Columns.Unset()
 }
 
 // GetAuthor returns the Author field value if set, zero value otherwise.
@@ -376,8 +376,8 @@ func (o *QueriesItem) SetTagsNil() {
 }
 
 // UnSetTags ensures that no value is present for Tags, not even an explicit nil.
-func (o *QueriesItem) UnSetTags() {
-	o.Tags.UnSet()
+func (o *QueriesItem) UnsetTags() {
+	o.Tags.Unset()
 }
 
 // GetMitreTags returns the MitreTags field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -415,8 +415,8 @@ func (o *QueriesItem) SetMitreTagsNil() {
 }
 
 // UnSetMitreTags ensures that no value is present for MitreTags, not even an explicit nil.
-func (o *QueriesItem) UnSetMitreTags() {
-	o.MitreTags.UnSet()
+func (o *QueriesItem) UnsetMitreTags() {
+	o.MitreTags.Unset()
 }
 
 // GetKillChainPhase returns the KillChainPhase field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -454,8 +454,8 @@ func (o *QueriesItem) SetKillChainPhaseNil() {
 }
 
 // UnSetKillChainPhase ensures that no value is present for KillChainPhase, not even an explicit nil.
-func (o *QueriesItem) UnSetKillChainPhase() {
-	o.KillChainPhase.UnSet()
+func (o *QueriesItem) UnsetKillChainPhase() {
+	o.KillChainPhase.Unset()
 }
 
 // GetFromMarket returns the FromMarket field value if set, zero value otherwise.
@@ -577,8 +577,8 @@ func (o *QueriesItem) SetModuleIDNil() {
 }
 
 // UnSetModuleID ensures that no value is present for ModuleID, not even an explicit nil.
-func (o *QueriesItem) UnSetModuleID() {
-	o.ModuleID.UnSet()
+func (o *QueriesItem) UnsetModuleID() {
+	o.ModuleID.Unset()
 }
 
 // GetModuleGUID returns the ModuleGUID field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -616,8 +616,8 @@ func (o *QueriesItem) SetModuleGUIDNil() {
 }
 
 // UnSetModuleGUID ensures that no value is present for ModuleGUID, not even an explicit nil.
-func (o *QueriesItem) UnSetModuleGUID() {
-	o.ModuleGUID.UnSet()
+func (o *QueriesItem) UnsetModuleGUID() {
+	o.ModuleGUID.Unset()
 }
 
 // GetSharedUsersAndGroups returns the SharedUsersAndGroups field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -655,8 +655,8 @@ func (o *QueriesItem) SetSharedUsersAndGroupsNil() {
 }
 
 // UnSetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
-func (o *QueriesItem) UnSetSharedUsersAndGroups() {
-	o.SharedUsersAndGroups.UnSet()
+func (o *QueriesItem) UnsetSharedUsersAndGroups() {
+	o.SharedUsersAndGroups.Unset()
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.

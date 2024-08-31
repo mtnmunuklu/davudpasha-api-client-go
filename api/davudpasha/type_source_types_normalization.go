@@ -37,7 +37,7 @@ func (v NullableSourceTypesNormalization) IsSet() bool {
 }
 
 // UnSet sets the value to nil and resets the set flag/
-func (v *NullableSourceTypesNormalization) UnSet() {
+func (v *NullableSourceTypesNormalization) Unset() {
 	v.value = nil
 	v.isSet = false
 }

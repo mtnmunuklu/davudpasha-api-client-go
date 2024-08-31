@@ -194,8 +194,8 @@ func (o *ClassificationsItem) SetMitreTagsNil() {
 }
 
 // UnSetMitreTags ensures that no value is present for MitreTags, not even an explicit nil.
-func (o *ClassificationsItem) UnSetMitreTags() {
-	o.MitreTags.UnSet()
+func (o *ClassificationsItem) UnsetMitreTags() {
+	o.MitreTags.Unset()
 }
 
 // GetKillChainPhase returns the KillChainPhase field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -233,8 +233,8 @@ func (o *ClassificationsItem) SetKillChainPhaseNil() {
 }
 
 // UnSetKillChainPhase ensures that no value is present for KillChainPhase, not even an explicit nil.
-func (o *ClassificationsItem) UnSetKillChainPhase() {
-	o.KillChainPhase.UnSet()
+func (o *ClassificationsItem) UnsetKillChainPhase() {
+	o.KillChainPhase.Unset()
 }
 
 // GetFromMarket returns the FromMarket field value if set, zero value otherwise.

@@ -74,8 +74,8 @@ func (o *SourcesFileInfo) SetCredentialIdNil() {
 }
 
 // UnSetCredentialId ensures that no value is present for CredentialId, not even an explicit nil.
-func (o *SourcesFileInfo) UnSetCredentialId() {
-	o.CredentialId.UnSet()
+func (o *SourcesFileInfo) UnsetCredentialId() {
+	o.CredentialId.Unset()
 }
 
 // GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -113,8 +113,8 @@ func (o *SourcesFileInfo) SetHostNil() {
 }
 
 // UnSetHost ensures that no value is present for Host, not even an explicit nil.
-func (o *SourcesFileInfo) UnSetHost() {
-	o.Host.UnSet()
+func (o *SourcesFileInfo) UnsetHost() {
+	o.Host.Unset()
 }
 
 // GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -152,8 +152,8 @@ func (o *SourcesFileInfo) SetPortNil() {
 }
 
 // UnSetPort ensures that no value is present for Port, not even an explicit nil.
-func (o *SourcesFileInfo) UnSetPort() {
-	o.Port.UnSet()
+func (o *SourcesFileInfo) UnsetPort() {
+	o.Port.Unset()
 }
 
 // GetPath returns the Path field value if set, zero value otherwise.
@@ -247,8 +247,8 @@ func (o *SourcesFileInfo) SetFileNameFormatNil() {
 }
 
 // UnSetFileNameFormat ensures that no value is present for FileNameFormat, not even an explicit nil.
-func (o *SourcesFileInfo) UnSetFileNameFormat() {
-	o.FileNameFormat.UnSet()
+func (o *SourcesFileInfo) UnsetFileNameFormat() {
+	o.FileNameFormat.Unset()
 }
 
 // GetCodePage returns the CodePage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -286,8 +286,8 @@ func (o *SourcesFileInfo) SetCodePageNil() {
 }
 
 // UnSetCodePage ensures that no value is present for CodePage, not even an explicit nil.
-func (o *SourcesFileInfo) UnSetCodePage() {
-	o.CodePage.UnSet()
+func (o *SourcesFileInfo) UnsetCodePage() {
+	o.CodePage.Unset()
 }
 
 // GetFileNameStatic returns the FileNameStatic field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -325,8 +325,8 @@ func (o *SourcesFileInfo) SetFileNameStaticNil() {
 }
 
 // UnSetFileNameStatic ensures that no value is present for FileNameStatic, not even an explicit nil.
-func (o *SourcesFileInfo) UnSetFileNameStatic() {
-	o.FileNameStatic.UnSet()
+func (o *SourcesFileInfo) UnsetFileNameStatic() {
+	o.FileNameStatic.Unset()
 }
 
 // GetDeleteOldFile returns the DeleteOldFile field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -364,8 +364,8 @@ func (o *SourcesFileInfo) SetDeleteOldFileNil() {
 }
 
 // UnSetDeleteOldFile ensures that no value is present for DeleteOldFile, not even an explicit nil.
-func (o *SourcesFileInfo) UnSetDeleteOldFile() {
-	o.DeleteOldFile.UnSet()
+func (o *SourcesFileInfo) UnsetDeleteOldFile() {
+	o.DeleteOldFile.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

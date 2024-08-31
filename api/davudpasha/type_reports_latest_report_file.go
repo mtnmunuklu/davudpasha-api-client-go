@@ -227,7 +227,7 @@ func (v NullableReportsLatestReportFile) IsSet() bool {
 }
 
 // UnSet sets the value to nil and resets the set flag/
-func (v *NullableReportsLatestReportFile) UnSet() {
+func (v *NullableReportsLatestReportFile) Unset() {
 	v.value = nil
 	v.isSet = false
 }

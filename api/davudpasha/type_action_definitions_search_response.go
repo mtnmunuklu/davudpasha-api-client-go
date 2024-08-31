@@ -194,8 +194,8 @@ func (o *ActionDefinitionsSearchResponse) SetDescriptionNil() {
 }
 
 // UnSetDescription ensures that no value is present for Description, not even an explicit nil.
-func (o *ActionDefinitionsSearchResponse) UnSetDescription() {
-	o.Description.UnSet()
+func (o *ActionDefinitionsSearchResponse) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetIsPublic returns the IsPublic field value if set, zero value otherwise.

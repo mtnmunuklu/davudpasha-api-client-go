@@ -74,8 +74,8 @@ func (o *AlertDefinitionsItem) SetLgsNameNil() {
 }
 
 // UnSetLgsName ensures that no value is present for LgsName, not even an explicit nil.
-func (o *AlertDefinitionsItem) UnSetLgsName() {
-	o.LgsName.UnSet()
+func (o *AlertDefinitionsItem) UnsetLgsName() {
+	o.LgsName.Unset()
 }
 
 // GetCorrelationData returns the CorrelationData field value if set, zero value otherwise.

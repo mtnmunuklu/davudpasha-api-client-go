@@ -226,8 +226,8 @@ func (o *SystemLogsItem) SetTitleNil() {
 }
 
 // UnSetTitle ensures that no value is present for Title, not even an explicit nil.
-func (o *SystemLogsItem) UnSetTitle() {
-	o.Title.UnSet()
+func (o *SystemLogsItem) UnsetTitle() {
+	o.Title.Unset()
 }
 
 // GetApp returns the App field value if set, zero value otherwise.
@@ -293,8 +293,8 @@ func (o *SystemLogsItem) SetVersionNil() {
 }
 
 // UnSetVersion ensures that no value is present for Version, not even an explicit nil.
-func (o *SystemLogsItem) UnSetVersion() {
-	o.Version.UnSet()
+func (o *SystemLogsItem) UnsetVersion() {
+	o.Version.Unset()
 }
 
 // GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -332,8 +332,8 @@ func (o *SystemLogsItem) SetDataNil() {
 }
 
 // UnSetData ensures that no value is present for Data, not even an explicit nil.
-func (o *SystemLogsItem) UnSetData() {
-	o.Data.UnSet()
+func (o *SystemLogsItem) UnsetData() {
+	o.Data.Unset()
 }
 
 // GetEntityType returns the EntityType field value if set, zero value otherwise.
@@ -427,8 +427,8 @@ func (o *SystemLogsItem) SetEntityNameNil() {
 }
 
 // UnSetEntityName ensures that no value is present for EntityName, not even an explicit nil.
-func (o *SystemLogsItem) UnSetEntityName() {
-	o.EntityName.UnSet()
+func (o *SystemLogsItem) UnsetEntityName() {
+	o.EntityName.Unset()
 }
 
 // GetOptID1 returns the OptID1 field value if set, zero value otherwise.
@@ -522,8 +522,8 @@ func (o *SystemLogsItem) SetLinkNil() {
 }
 
 // UnSetLink ensures that no value is present for Link, not even an explicit nil.
-func (o *SystemLogsItem) UnSetLink() {
-	o.Link.UnSet()
+func (o *SystemLogsItem) UnsetLink() {
+	o.Link.Unset()
 }
 
 // GetProducer returns the Producer field value if set, zero value otherwise.
@@ -589,8 +589,8 @@ func (o *SystemLogsItem) SetReasonNil() {
 }
 
 // UnSetReason ensures that no value is present for Reason, not even an explicit nil.
-func (o *SystemLogsItem) UnSetReason() {
-	o.Reason.UnSet()
+func (o *SystemLogsItem) UnsetReason() {
+	o.Reason.Unset()
 }
 
 // GetDeviceName returns the DeviceName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -628,8 +628,8 @@ func (o *SystemLogsItem) SetDeviceNameNil() {
 }
 
 // UnSetDeviceName ensures that no value is present for DeviceName, not even an explicit nil.
-func (o *SystemLogsItem) UnSetDeviceName() {
-	o.DeviceName.UnSet()
+func (o *SystemLogsItem) UnsetDeviceName() {
+	o.DeviceName.Unset()
 }
 
 // GetDeviceIP returns the DeviceIP field value if set, zero value otherwise.
@@ -723,8 +723,8 @@ func (o *SystemLogsItem) SetStackTraceNil() {
 }
 
 // UnSetStackTrace ensures that no value is present for StackTrace, not even an explicit nil.
-func (o *SystemLogsItem) UnSetStackTrace() {
-	o.StackTrace.UnSet()
+func (o *SystemLogsItem) UnsetStackTrace() {
+	o.StackTrace.Unset()
 }
 
 // GetStackTraceJsonStyled returns the StackTraceJsonStyled field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -762,8 +762,8 @@ func (o *SystemLogsItem) SetStackTraceJsonStyledNil() {
 }
 
 // UnSetStackTraceJsonStyled ensures that no value is present for StackTraceJsonStyled, not even an explicit nil.
-func (o *SystemLogsItem) UnSetStackTraceJsonStyled() {
-	o.StackTraceJsonStyled.UnSet()
+func (o *SystemLogsItem) UnsetStackTraceJsonStyled() {
+	o.StackTraceJsonStyled.Unset()
 }
 
 // GetTenantID returns the TenantID field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -801,8 +801,8 @@ func (o *SystemLogsItem) SetTenantIDNil() {
 }
 
 // UnSetTenantID ensures that no value is present for TenantID, not even an explicit nil.
-func (o *SystemLogsItem) UnSetTenantID() {
-	o.TenantID.UnSet()
+func (o *SystemLogsItem) UnsetTenantID() {
+	o.TenantID.Unset()
 }
 
 // GetID returns the ID field value if set, zero value otherwise.
@@ -868,8 +868,8 @@ func (o *SystemLogsItem) SetTimestampNil() {
 }
 
 // UnSetTimestamp ensures that no value is present for Timestamp, not even an explicit nil.
-func (o *SystemLogsItem) UnSetTimestamp() {
-	o.Timestamp.UnSet()
+func (o *SystemLogsItem) UnsetTimestamp() {
+	o.Timestamp.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

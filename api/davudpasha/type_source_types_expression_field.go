@@ -151,8 +151,8 @@ func (o *SourceTypesExpressionField) SetValueNameNil() {
 }
 
 // UnSetValueName ensures that no value is present for ValueName, not even an explicit nil.
-func (o *SourceTypesExpressionField) UnSetValueName() {
-	o.ValueName.UnSet()
+func (o *SourceTypesExpressionField) UnsetValueName() {
+	o.ValueName.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -218,8 +218,8 @@ func (o *SourceTypesExpressionField) SetDateFormatNil() {
 }
 
 // UnSetDateFormat ensures that no value is present for DateFormat, not even an explicit nil.
-func (o *SourceTypesExpressionField) UnSetDateFormat() {
-	o.DateFormat.UnSet()
+func (o *SourceTypesExpressionField) UnsetDateFormat() {
+	o.DateFormat.Unset()
 }
 
 // GetDateLang returns the DateLang field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -257,8 +257,8 @@ func (o *SourceTypesExpressionField) SetDateLangNil() {
 }
 
 // UnSetDateLang ensures that no value is present for DateLang, not even an explicit nil.
-func (o *SourceTypesExpressionField) UnSetDateLang() {
-	o.DateLang.UnSet()
+func (o *SourceTypesExpressionField) UnsetDateLang() {
+	o.DateLang.Unset()
 }
 
 // GetDateTrim returns the DateTrim field value if set, zero value otherwise.
@@ -464,8 +464,8 @@ func (o *SourceTypesExpressionField) SetNormalizationNil() {
 }
 
 // UnSetNormalization ensures that no value is present for Normalization, not even an explicit nil.
-func (o *SourceTypesExpressionField) UnSetNormalization() {
-	o.Normalization.UnSet()
+func (o *SourceTypesExpressionField) UnsetNormalization() {
+	o.Normalization.Unset()
 }
 
 // GetCorrectTwoDigitDayFormatPosition returns the CorrectTwoDigitDayFormatPosition field value if set, zero value otherwise.

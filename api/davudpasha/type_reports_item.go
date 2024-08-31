@@ -263,8 +263,8 @@ func (o *ReportsItem) SetDescriptionNil() {
 }
 
 // UnSetDescription ensures that no value is present for Description, not even an explicit nil.
-func (o *ReportsItem) UnSetDescription() {
-	o.Description.UnSet()
+func (o *ReportsItem) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetIsActive returns the IsActive field value if set, zero value otherwise.
@@ -330,8 +330,8 @@ func (o *ReportsItem) SetAuthorNil() {
 }
 
 // UnSetAuthor ensures that no value is present for Author, not even an explicit nil.
-func (o *ReportsItem) UnSetAuthor() {
-	o.Author.UnSet()
+func (o *ReportsItem) UnsetAuthor() {
+	o.Author.Unset()
 }
 
 // GetReportLink returns the ReportLink field value if set, zero value otherwise.
@@ -398,8 +398,8 @@ func (o *ReportsItem) SetSharedUsersAndGroupsNil() {
 }
 
 // UnSetSharedUsersAndGroups ensures that no value is present for SharedUsersAndGroups, not even an explicit nil.
-func (o *ReportsItem) UnSetSharedUsersAndGroups() {
-	o.SharedUsersAndGroups.UnSet()
+func (o *ReportsItem) UnsetSharedUsersAndGroups() {
+	o.SharedUsersAndGroups.Unset()
 }
 
 // GetCreatedDate returns the CreatedDate field value if set, zero value otherwise.
@@ -521,8 +521,8 @@ func (o *ReportsItem) SetScheduleNil() {
 }
 
 // UnSetSchedule ensures that no value is present for Schedule, not even an explicit nil.
-func (o *ReportsItem) UnSetSchedule() {
-	o.Schedule.UnSet()
+func (o *ReportsItem) UnsetSchedule() {
+	o.Schedule.Unset()
 }
 
 // GetEmailConfigs returns the EmailConfigs field value if set, zero value otherwise.
@@ -588,8 +588,8 @@ func (o *ReportsItem) SetLastGenerationTimeNil() {
 }
 
 // UnSetLastGenerationTime ensures that no value is present for LastGenerationTime, not even an explicit nil.
-func (o *ReportsItem) UnSetLastGenerationTime() {
-	o.LastGenerationTime.UnSet()
+func (o *ReportsItem) UnsetLastGenerationTime() {
+	o.LastGenerationTime.Unset()
 }
 
 // GetNextGenerationTime returns the NextGenerationTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -627,8 +627,8 @@ func (o *ReportsItem) SetNextGenerationTimeNil() {
 }
 
 // UnSetNextGenerationTime ensures that no value is present for NextGenerationTime, not even an explicit nil.
-func (o *ReportsItem) UnSetNextGenerationTime() {
-	o.NextGenerationTime.UnSet()
+func (o *ReportsItem) UnsetNextGenerationTime() {
+	o.NextGenerationTime.Unset()
 }
 
 // GetLatestReportFile returns the LatestReportFile field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -666,8 +666,8 @@ func (o *ReportsItem) SetLatestReportFileNil() {
 }
 
 // UnSetLatestReportFile ensures that no value is present for LatestReportFile, not even an explicit nil.
-func (o *ReportsItem) UnSetLatestReportFile() {
-	o.LatestReportFile.UnSet()
+func (o *ReportsItem) UnsetLatestReportFile() {
+	o.LatestReportFile.Unset()
 }
 
 // GetPageSettings returns the PageSettings field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -705,8 +705,8 @@ func (o *ReportsItem) SetPageSettingsNil() {
 }
 
 // UnSetPageSettings ensures that no value is present for PageSettings, not even an explicit nil.
-func (o *ReportsItem) UnSetPageSettings() {
-	o.PageSettings.UnSet()
+func (o *ReportsItem) UnsetPageSettings() {
+	o.PageSettings.Unset()
 }
 
 // GetParameters returns the Parameters field value if set, zero value otherwise.
@@ -773,8 +773,8 @@ func (o *ReportsItem) SetTagsNil() {
 }
 
 // UnSetTags ensures that no value is present for Tags, not even an explicit nil.
-func (o *ReportsItem) UnSetTags() {
-	o.Tags.UnSet()
+func (o *ReportsItem) UnsetTags() {
+	o.Tags.Unset()
 }
 
 // GetActions returns the Actions field value if set, zero value otherwise.

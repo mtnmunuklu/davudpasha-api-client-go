@@ -156,8 +156,8 @@ func (o *DateTimeRange) SetFieldNil() {
 }
 
 // UnSetField ensures that no value is present for Field, not even an explicit nil.
-func (o *DateTimeRange) UnSetField() {
-	o.Field.UnSet()
+func (o *DateTimeRange) UnsetField() {
+	o.Field.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

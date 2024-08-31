@@ -180,8 +180,8 @@ func (o *SearchArchivesQuery) SetIncludesNil() {
 }
 
 // UnSetIncludes ensures that no value is present for Includes, not even an explicit nil.
-func (o *SearchArchivesQuery) UnSetIncludes() {
-	o.Includes.UnSet()
+func (o *SearchArchivesQuery) UnsetIncludes() {
+	o.Includes.Unset()
 }
 
 // GetExcludes returns the Excludes field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -219,8 +219,8 @@ func (o *SearchArchivesQuery) SetExcludesNil() {
 }
 
 // UnSetExcludes ensures that no value is present for Excludes, not even an explicit nil.
-func (o *SearchArchivesQuery) UnSetExcludes() {
-	o.Excludes.UnSet()
+func (o *SearchArchivesQuery) UnsetExcludes() {
+	o.Excludes.Unset()
 }
 
 // GetDateTimeRange returns the DateTimeRange field value if set, zero value otherwise.
@@ -286,8 +286,8 @@ func (o *SearchArchivesQuery) SetLgsIDsNil() {
 }
 
 // UnSetLgsIDs ensures that no value is present for LgsIDs, not even an explicit nil.
-func (o *SearchArchivesQuery) UnSetLgsIDs() {
-	o.LgsIDs.UnSet()
+func (o *SearchArchivesQuery) UnsetLgsIDs() {
+	o.LgsIDs.Unset()
 }
 
 // GetLgsNames returns the LgsNames field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -325,8 +325,8 @@ func (o *SearchArchivesQuery) SetLgsNamesNil() {
 }
 
 // UnSetLgsNames ensures that no value is present for LgsNames, not even an explicit nil.
-func (o *SearchArchivesQuery) UnSetLgsNames() {
-	o.LgsNames.UnSet()
+func (o *SearchArchivesQuery) UnsetLgsNames() {
+	o.LgsNames.Unset()
 }
 
 // GetSize returns the Size field value if set, zero value otherwise.
@@ -532,8 +532,8 @@ func (o *SearchArchivesQuery) SetReportColNamesNil() {
 }
 
 // UnSetReportColNames ensures that no value is present for ReportColNames, not even an explicit nil.
-func (o *SearchArchivesQuery) UnSetReportColNames() {
-	o.ReportColNames.UnSet()
+func (o *SearchArchivesQuery) UnsetReportColNames() {
+	o.ReportColNames.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

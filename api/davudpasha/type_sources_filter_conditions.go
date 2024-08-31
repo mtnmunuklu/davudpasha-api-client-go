@@ -126,8 +126,8 @@ func (o *SourcesFilterConditions) SetVariableNil() {
 }
 
 // UnSetVariable ensures that no value is present for Variable, not even an explicit nil.
-func (o *SourcesFilterConditions) UnSetVariable() {
-	o.Variable.UnSet()
+func (o *SourcesFilterConditions) UnsetVariable() {
+	o.Variable.Unset()
 }
 
 // GetValuable returns the Valuable field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -165,8 +165,8 @@ func (o *SourcesFilterConditions) SetValuableNil() {
 }
 
 // UnSetValuable ensures that no value is present for Valuable, not even an explicit nil.
-func (o *SourcesFilterConditions) UnSetValuable() {
-	o.Valuable.UnSet()
+func (o *SourcesFilterConditions) UnsetValuable() {
+	o.Valuable.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

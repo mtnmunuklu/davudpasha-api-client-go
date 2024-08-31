@@ -67,8 +67,8 @@ func (o *ReportsEmailConfigs) SetEmailNil() {
 }
 
 // UnSetEmail ensures that no value is present for Email, not even an explicit nil.
-func (o *ReportsEmailConfigs) UnSetEmail() {
-	o.Email.UnSet()
+func (o *ReportsEmailConfigs) UnsetEmail() {
+	o.Email.Unset()
 }
 
 // GetSubject returns the Subject field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -106,8 +106,8 @@ func (o *ReportsEmailConfigs) SetSubjectNil() {
 }
 
 // UnSetSubject ensures that no value is present for Subject, not even an explicit nil.
-func (o *ReportsEmailConfigs) UnSetSubject() {
-	o.Subject.UnSet()
+func (o *ReportsEmailConfigs) UnsetSubject() {
+	o.Subject.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

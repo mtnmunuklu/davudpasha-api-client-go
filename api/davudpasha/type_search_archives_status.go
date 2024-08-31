@@ -128,8 +128,8 @@ func (o *SearchArchivesStatus) SetMessageNil() {
 }
 
 // UnSetMessage ensures that no value is present for Message, not even an explicit nil.
-func (o *SearchArchivesStatus) UnSetMessage() {
-	o.Message.UnSet()
+func (o *SearchArchivesStatus) UnsetMessage() {
+	o.Message.Unset()
 }
 
 // GetExecutionStartTimeUtc returns the ExecutionStartTimeUtc field value if set, zero value otherwise.

@@ -308,8 +308,8 @@ func (o *ReportsQuery) SetExtDataNil() {
 }
 
 // UnSetExtData ensures that no value is present for ExtData, not even an explicit nil.
-func (o *ReportsQuery) UnSetExtData() {
-	o.ExtData.UnSet()
+func (o *ReportsQuery) UnsetExtData() {
+	o.ExtData.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

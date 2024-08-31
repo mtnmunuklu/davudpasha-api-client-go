@@ -338,8 +338,8 @@ func (o *GeoLocationsData) SetIPRangeNil() {
 }
 
 // UnSetIPRange ensures that no value is present for IPRange, not even an explicit nil.
-func (o *GeoLocationsData) UnSetIPRange() {
-	o.IPRange.UnSet()
+func (o *GeoLocationsData) UnsetIPRange() {
+	o.IPRange.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

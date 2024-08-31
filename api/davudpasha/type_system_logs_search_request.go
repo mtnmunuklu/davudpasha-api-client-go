@@ -115,8 +115,8 @@ func (o *SystemLogsSearchRequest) SetSeverityNil() {
 }
 
 // UnSetSeverity ensures that no value is present for Severity, not even an explicit nil.
-func (o *SystemLogsSearchRequest) UnSetSeverity() {
-	o.Severity.UnSet()
+func (o *SystemLogsSearchRequest) UnsetSeverity() {
+	o.Severity.Unset()
 }
 
 // GetFromIndex returns the FromIndex field value if set, zero value otherwise.

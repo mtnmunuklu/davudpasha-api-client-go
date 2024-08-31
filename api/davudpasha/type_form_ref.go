@@ -66,8 +66,8 @@ func (o *FormRef) SetCurrentNil() {
 }
 
 // UnSetCurrent ensures that no value is present for Current, not even an explicit nil.
-func (o *FormRef) UnSetCurrent() {
-	o.Current.UnSet()
+func (o *FormRef) UnsetCurrent() {
+	o.Current.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

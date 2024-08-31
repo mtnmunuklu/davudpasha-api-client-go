@@ -218,8 +218,8 @@ func (o *CasesComment) SetFilesNil() {
 }
 
 // UnSetFiles ensures that no value is present for Files, not even an explicit nil.
-func (o *CasesComment) UnSetFiles() {
-	o.Files.UnSet()
+func (o *CasesComment) UnsetFiles() {
+	o.Files.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

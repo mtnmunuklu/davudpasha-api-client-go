@@ -579,7 +579,7 @@ func (v NullableScheduleConfig) IsSet() bool {
 }
 
 // UnSet sets the value to nil and resets the set flag/
-func (v *NullableScheduleConfig) UnSet() {
+func (v *NullableScheduleConfig) Unset() {
 	v.value = nil
 	v.isSet = false
 }

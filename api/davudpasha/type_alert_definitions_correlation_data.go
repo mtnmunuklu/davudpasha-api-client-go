@@ -197,8 +197,8 @@ func (o *AlertDefinitionsCorrelationData) SetDescriptionNil() {
 }
 
 // UnSetDescription ensures that no value is present for Description, not even an explicit nil.
-func (o *AlertDefinitionsCorrelationData) UnSetDescription() {
-	o.Description.UnSet()
+func (o *AlertDefinitionsCorrelationData) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetTags returns a tuple with the Tags field value if set, nil otherwise
@@ -237,8 +237,8 @@ func (o *AlertDefinitionsCorrelationData) SetTagsNil() {
 }
 
 // UnSetTags ensures that no value is present for Tags, not even an explicit nil.
-func (o *AlertDefinitionsCorrelationData) UnSetTags() {
-	o.Tags.UnSet()
+func (o *AlertDefinitionsCorrelationData) UnsetTags() {
+	o.Tags.Unset()
 }
 
 // GetFromMarket returns the FromMarket field value if set, zero value otherwise.
@@ -360,8 +360,8 @@ func (o *AlertDefinitionsCorrelationData) SetModuleIDNil() {
 }
 
 // UnSetModuleID ensures that no value is present for ModuleID, not even an explicit nil.
-func (o *AlertDefinitionsCorrelationData) UnSetModuleID() {
-	o.ModuleID.UnSet()
+func (o *AlertDefinitionsCorrelationData) UnsetModuleID() {
+	o.ModuleID.Unset()
 }
 
 // GetModuleGUID returns the ModuleGUID field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -399,8 +399,8 @@ func (o *AlertDefinitionsCorrelationData) SetModuleGUIDNil() {
 }
 
 // UnSetModuleGUID ensures that no value is present for ModuleGUID, not even an explicit nil.
-func (o *AlertDefinitionsCorrelationData) UnSetModuleGUID() {
-	o.ModuleGUID.UnSet()
+func (o *AlertDefinitionsCorrelationData) UnsetModuleGUID() {
+	o.ModuleGUID.Unset()
 }
 
 // GetRiskLevel returns the RiskLevel field value if set, zero value otherwise.
@@ -494,8 +494,8 @@ func (o *AlertDefinitionsCorrelationData) SetLimiterTimeFrameTypeNil() {
 }
 
 // UnSetLimiterTimeFrameType ensures that no value is present for LimiterTimeFrameType, not even an explicit nil.
-func (o *AlertDefinitionsCorrelationData) UnSetLimiterTimeFrameType() {
-	o.LimiterTimeFrameType.UnSet()
+func (o *AlertDefinitionsCorrelationData) UnsetLimiterTimeFrameType() {
+	o.LimiterTimeFrameType.Unset()
 }
 
 // GetLimiterColumns returns a tuple with the LimiterColumns field value if set, nil otherwise
@@ -534,8 +534,8 @@ func (o *AlertDefinitionsCorrelationData) SetLimiterColumnsNil() {
 }
 
 // UnSetLimiterColumns ensures that no value is present for LimiterColumns, not even an explicit nil.
-func (o *AlertDefinitionsCorrelationData) UnSetLimiterColumns() {
-	o.LimiterColumns.UnSet()
+func (o *AlertDefinitionsCorrelationData) UnsetLimiterColumns() {
+	o.LimiterColumns.Unset()
 }
 
 // GetActions returns the Actions field value if set, zero value otherwise.

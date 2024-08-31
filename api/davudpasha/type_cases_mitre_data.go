@@ -100,8 +100,8 @@ func (o *CasesMitreData) SetKillChainPhaseNil() {
 }
 
 // UnSetKillChainPhase ensures that no value is present for KillChainPhase, not even an explicit nil.
-func (o *CasesMitreData) UnSetKillChainPhase() {
-	o.KillChainPhase.UnSet()
+func (o *CasesMitreData) UnsetKillChainPhase() {
+	o.KillChainPhase.Unset()
 }
 
 // GetMitreTags returns the MitreTags field value if set, zero value otherwise.
@@ -206,7 +206,7 @@ func (v NullableCasesMitreData) IsSet() bool {
 }
 
 // UnSet sets the value to nil and resets the set flag/
-func (v *NullableCasesMitreData) UnSet() {
+func (v *NullableCasesMitreData) Unset() {
 	v.value = nil
 	v.isSet = false
 }

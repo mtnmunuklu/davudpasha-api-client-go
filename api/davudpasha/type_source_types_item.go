@@ -161,8 +161,8 @@ func (o *SourceTypesItem) SetAuthorNil() {
 }
 
 // UnSetAuthor ensures that no value is present for Author, not even an explicit nil.
-func (o *SourceTypesItem) UnSetAuthor() {
-	o.Author.UnSet()
+func (o *SourceTypesItem) UnsetAuthor() {
+	o.Author.Unset()
 }
 
 // GetIcon returns the Icon field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -200,8 +200,8 @@ func (o *SourceTypesItem) SetIconNil() {
 }
 
 // UnSetIcon ensures that no value is present for Icon, not even an explicit nil.
-func (o *SourceTypesItem) UnSetIcon() {
-	o.Icon.UnSet()
+func (o *SourceTypesItem) UnsetIcon() {
+	o.Icon.Unset()
 }
 
 // GetCatCode returns the CatCode field value if set, zero value otherwise.
@@ -570,8 +570,8 @@ func (o *SourceTypesItem) SetModuleIDNil() {
 }
 
 // UnSetModuleID ensures that no value is present for ModuleID, not even an explicit nil.
-func (o *SourceTypesItem) UnSetModuleID() {
-	o.ModuleID.UnSet()
+func (o *SourceTypesItem) UnsetModuleID() {
+	o.ModuleID.Unset()
 }
 
 // GetModuleGUID returns the ModuleGUID field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -609,8 +609,8 @@ func (o *SourceTypesItem) SetModuleGUIDNil() {
 }
 
 // UnSetModuleGUID ensures that no value is present for ModuleGUID, not even an explicit nil.
-func (o *SourceTypesItem) UnSetModuleGUID() {
-	o.ModuleGUID.UnSet()
+func (o *SourceTypesItem) UnsetModuleGUID() {
+	o.ModuleGUID.Unset()
 }
 
 // GetClassificationDefs returns the ClassificationDefs field value if set, zero value otherwise.

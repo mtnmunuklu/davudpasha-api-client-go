@@ -130,8 +130,8 @@ func (o *ElasticStatsResult) SetDataNil() {
 }
 
 // UnSetData ensures that no value is present for Data, not even an explicit nil.
-func (o *ElasticStatsResult) UnSetData() {
-	o.Data.UnSet()
+func (o *ElasticStatsResult) UnsetData() {
+	o.Data.Unset()
 }
 
 // GetOptErrorMsg returns the OptErrorMsg field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -169,8 +169,8 @@ func (o *ElasticStatsResult) SetOptErrorMsgNil() {
 }
 
 // UnSetOptErrorMsg ensures that no value is present for OptErrorMsg, not even an explicit nil.
-func (o *ElasticStatsResult) UnSetOptErrorMsg() {
-	o.OptErrorMsg.UnSet()
+func (o *ElasticStatsResult) UnsetOptErrorMsg() {
+	o.OptErrorMsg.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

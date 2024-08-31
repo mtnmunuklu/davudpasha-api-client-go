@@ -57,7 +57,7 @@ func (v NullableBool) IsSet() bool {
 }
 
 // UnSet resets fields of the nullable bool.
-func (v *NullableBool) UnSet() {
+func (v *NullableBool) Unset() {
 	v.value = nil
 	v.isSet = false
 }
@@ -101,7 +101,7 @@ func (v NullableInt) IsSet() bool {
 }
 
 // UnSet resets fields of the nullable int.
-func (v *NullableInt) UnSet() {
+func (v *NullableInt) Unset() {
 	v.value = nil
 	v.isSet = false
 }
@@ -145,7 +145,7 @@ func (v NullableInt32) IsSet() bool {
 }
 
 // UnSet resets fields of the nullable int32.
-func (v *NullableInt32) UnSet() {
+func (v *NullableInt32) Unset() {
 	v.value = nil
 	v.isSet = false
 }
@@ -189,7 +189,7 @@ func (v NullableInt64) IsSet() bool {
 }
 
 // UnSet resets fields of the nullable int64.
-func (v *NullableInt64) UnSet() {
+func (v *NullableInt64) Unset() {
 	v.value = nil
 	v.isSet = false
 }
@@ -233,7 +233,7 @@ func (v NullableFloat32) IsSet() bool {
 }
 
 // UnSet resets fields of the nullable float32.
-func (v *NullableFloat32) UnSet() {
+func (v *NullableFloat32) Unset() {
 	v.value = nil
 	v.isSet = false
 }
@@ -277,7 +277,7 @@ func (v NullableFloat64) IsSet() bool {
 }
 
 // UnSet resets fields of the nullable float64.
-func (v *NullableFloat64) UnSet() {
+func (v *NullableFloat64) Unset() {
 	v.value = nil
 	v.isSet = false
 }
@@ -321,7 +321,7 @@ func (v NullableString) IsSet() bool {
 }
 
 // UnSet resets fields of the nullable string.
-func (v *NullableString) UnSet() {
+func (v *NullableString) Unset() {
 	v.value = nil
 	v.isSet = false
 }
@@ -365,7 +365,7 @@ func (v NullableTime) IsSet() bool {
 }
 
 // UnSet resets fields of the nullable time.Time.
-func (v *NullableTime) UnSet() {
+func (v *NullableTime) Unset() {
 	v.value = nil
 	v.isSet = false
 }
@@ -409,7 +409,7 @@ func (v NullableList[T]) IsSet() bool {
 }
 
 // UnSet resets fields of the nullable list.
-func (v *NullableList[T]) UnSet() {
+func (v *NullableList[T]) Unset() {
 	v.value = nil
 	v.isSet = false
 }
@@ -453,7 +453,7 @@ func (o Optional) IsSet() bool {
 }
 
 // UnSet resets fields of the Optional.
-func (o *Optional) UnSet() {
+func (o *Optional) Unset() {
 	o.value = nil
 	o.isSet = false
 }

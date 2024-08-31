@@ -146,8 +146,8 @@ func (o *AssetsAsset) SetTimestampNil() {
 }
 
 // UnSetTimestamp ensures that no value is present for Timestamp, not even an explicit nil.
-func (o *AssetsAsset) UnSetTimestamp() {
-	o.Timestamp.UnSet()
+func (o *AssetsAsset) UnsetTimestamp() {
+	o.Timestamp.Unset()
 }
 
 // GetParentGroupIDs returns a tuple with the ParentGroupIds field value if set, nil otherwise
@@ -186,8 +186,8 @@ func (o *AssetsAsset) SetParentGroupIDsNil() {
 }
 
 // UnSetParentGroupIDs ensures that no value is present for ParentGroupIDs, not even an explicit nil.
-func (o *AssetsAsset) UnSetParentGroupIDs() {
-	o.ParentGroupIDs.UnSet()
+func (o *AssetsAsset) UnsetParentGroupIDs() {
+	o.ParentGroupIDs.Unset()
 }
 
 // GetTenantID returns the TenantID field value if set, zero value otherwise.
@@ -281,8 +281,8 @@ func (o *AssetsAsset) SetCustomerIDNil() {
 }
 
 // UnSetCustomerID ensures that no value is present for CustomerID, not even an explicit nil.
-func (o *AssetsAsset) UnSetCustomerID() {
-	o.CustomerID.UnSet()
+func (o *AssetsAsset) UnsetCustomerID() {
+	o.CustomerID.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -544,8 +544,8 @@ func (o *AssetsAsset) SetCredentialNil() {
 }
 
 // UnSetCredential ensures that no value is present for Credential, not even an explicit nil.
-func (o *AssetsAsset) UnSetCredential() {
-	o.Credential.UnSet()
+func (o *AssetsAsset) UnsetCredential() {
+	o.Credential.Unset()
 }
 
 // GetGroupID returns the GroupID field value if set, zero value otherwise.
@@ -639,8 +639,8 @@ func (o *AssetsAsset) SetTagDataNil() {
 }
 
 // UnSetTagData ensures that no value is present for TagData, not even an explicit nil.
-func (o *AssetsAsset) UnSetTagData() {
-	o.TagData.UnSet()
+func (o *AssetsAsset) UnsetTagData() {
+	o.TagData.Unset()
 }
 
 // GetObjectGUID returns the ObjectGUID field value if set, zero value otherwise.

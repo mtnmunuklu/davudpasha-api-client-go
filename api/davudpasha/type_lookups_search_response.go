@@ -140,8 +140,8 @@ func (o *LookupsSearchResponse) SetDescriptionNil() {
 }
 
 // UnSetDescription ensures that no value is present for Description, not even an explicit nil.
-func (o *LookupsSearchResponse) UnSetDescription() {
-	o.Description.UnSet()
+func (o *LookupsSearchResponse) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetOtherValues returns the OtherValues field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -179,8 +179,8 @@ func (o *LookupsSearchResponse) SetOtherValuesNil() {
 }
 
 // UnSetOtherValues ensures that no value is present for OtherValues, not even an explicit nil.
-func (o *LookupsSearchResponse) UnSetOtherValues() {
-	o.OtherValues.UnSet()
+func (o *LookupsSearchResponse) UnsetOtherValues() {
+	o.OtherValues.Unset()
 }
 
 // GetData returns the Data field value if set, zero value otherwise.

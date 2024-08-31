@@ -130,8 +130,8 @@ func (o *Action) SetDataNil() {
 }
 
 // UnSetData ensures that no value is present for Data, not even an explicit nil.
-func (o *Action) UnSetData() {
-	o.Data.UnSet()
+func (o *Action) UnsetData() {
+	o.Data.Unset()
 }
 
 // GetActionRefID returns the ActionRefID field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -169,8 +169,8 @@ func (o *Action) SetActionRefIDNil() {
 }
 
 // UnSetActionRefID ensures that no value is present for ActionRefID, not even an explicit nil.
-func (o *Action) UnSetActionRefID() {
-	o.ActionRefID.UnSet()
+func (o *Action) UnsetActionRefID() {
+	o.ActionRefID.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

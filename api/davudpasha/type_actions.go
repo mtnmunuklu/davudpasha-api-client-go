@@ -99,8 +99,8 @@ func (o *Actions) SetActionRefIDsNil() {
 }
 
 // UnSetActionRefIDs ensures that no value is present for ActionRefIDs, not even an explicit nil.
-func (o *Actions) UnSetActionRefIDs() {
-	o.ActionRefIDs.UnSet()
+func (o *Actions) UnsetActionRefIDs() {
+	o.ActionRefIDs.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.

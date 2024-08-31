@@ -216,8 +216,8 @@ func (o *CasesItem) SetDescriptionNil() {
 }
 
 // UnSetDescription ensures that no value is present for Description, not even an explicit nil.
-func (o *CasesItem) UnSetDescription() {
-	o.Description.UnSet()
+func (o *CasesItem) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
@@ -367,8 +367,8 @@ func (o *CasesItem) SetReminderDateNil() {
 }
 
 // UnSetReminderDate ensures that no value is present for ReminderDate, not even an explicit nil.
-func (o *CasesItem) UnSetReminderDate() {
-	o.ReminderDate.UnSet()
+func (o *CasesItem) UnsetReminderDate() {
+	o.ReminderDate.Unset()
 }
 
 // GetExpectedFinishTime returns the ExpectedFinishTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -406,8 +406,8 @@ func (o *CasesItem) SetExpectedFinishTimeNil() {
 }
 
 // UnSetExpectedFinishTime ensures that no value is present for ExpectedFinishTime, not even an explicit nil.
-func (o *CasesItem) UnSetExpectedFinishTime() {
-	o.ExpectedFinishTime.UnSet()
+func (o *CasesItem) UnsetExpectedFinishTime() {
+	o.ExpectedFinishTime.Unset()
 }
 
 // GetRealFinishTime returns the RealFinishTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -445,8 +445,8 @@ func (o *CasesItem) SetRealFinishTimeNil() {
 }
 
 // UnSetRealFinishTime ensures that no value is present for RealFinishTime, not even an explicit nil.
-func (o *CasesItem) UnSetRealFinishTime() {
-	o.RealFinishTime.UnSet()
+func (o *CasesItem) UnsetRealFinishTime() {
+	o.RealFinishTime.Unset()
 }
 
 // GetLastSentReminderEmailDate returns the LastSentReminderEmailDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -484,8 +484,8 @@ func (o *CasesItem) SetLastSentReminderEmailDateNil() {
 }
 
 // UnSetLastSentReminderEmailDate ensures that no value is present for LastSentReminderEmailDate, not even an explicit nil.
-func (o *CasesItem) UnSetLastSentReminderEmailDate() {
-	o.LastSentReminderEmailDate.UnSet()
+func (o *CasesItem) UnsetLastSentReminderEmailDate() {
+	o.LastSentReminderEmailDate.Unset()
 }
 
 // GetPriorityValueLastCalculationDate returns the PriorityValueLastCalculationDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -523,8 +523,8 @@ func (o *CasesItem) SetPriorityValueLastCalculationDateNil() {
 }
 
 // UnSetPriorityValueLastCalculationDate ensures that no value is present for PriorityValueLastCalculationDate, not even an explicit nil.
-func (o *CasesItem) UnSetPriorityValueLastCalculationDate() {
-	o.PriorityValueLastCalculationDate.UnSet()
+func (o *CasesItem) UnsetPriorityValueLastCalculationDate() {
+	o.PriorityValueLastCalculationDate.Unset()
 }
 
 // GetCaseType returns the CaseType field value if set, zero value otherwise.
@@ -646,8 +646,8 @@ func (o *CasesItem) SetParentCaseIDNil() {
 }
 
 // UnSetParentCaseID ensures that no value is present for ParentCaseID, not even an explicit nil.
-func (o *CasesItem) UnSetParentCaseID() {
-	o.ParentCaseID.UnSet()
+func (o *CasesItem) UnsetParentCaseID() {
+	o.ParentCaseID.Unset()
 }
 
 // GetParentCaseName returns the ParentCaseName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -685,8 +685,8 @@ func (o *CasesItem) SetParentCaseNameNil() {
 }
 
 // UnSetParentCaseName ensures that no value is present for ParentCaseName, not even an explicit nil.
-func (o *CasesItem) UnSetParentCaseName() {
-	o.ParentCaseName.UnSet()
+func (o *CasesItem) UnsetParentCaseName() {
+	o.ParentCaseName.Unset()
 }
 
 // GetState returns the State field value if set, zero value otherwise.
@@ -808,8 +808,8 @@ func (o *CasesItem) SetAssignedUserIDNil() {
 }
 
 // UnSetAssignedUserID ensures that no value is present for AssignedUserID, not even an explicit nil.
-func (o *CasesItem) UnSetAssignedUserID() {
-	o.AssignedUserID.UnSet()
+func (o *CasesItem) UnsetAssignedUserID() {
+	o.AssignedUserID.Unset()
 }
 
 // GetAssignedUserName returns the AssignedUserName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -847,8 +847,8 @@ func (o *CasesItem) SetAssignedUserNameNil() {
 }
 
 // UnSetAssignedUserName ensures that no value is present for AssignedUserName, not even an explicit nil.
-func (o *CasesItem) UnSetAssignedUserName() {
-	o.AssignedUserName.UnSet()
+func (o *CasesItem) UnsetAssignedUserName() {
+	o.AssignedUserName.Unset()
 }
 
 // GetRoles returns the Roles field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -886,8 +886,8 @@ func (o *CasesItem) SetRolesNil() {
 }
 
 // UnSetRoles ensures that no value is present for Roles, not even an explicit nil.
-func (o *CasesItem) UnSetRoles() {
-	o.Roles.UnSet()
+func (o *CasesItem) UnsetRoles() {
+	o.Roles.Unset()
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
@@ -953,8 +953,8 @@ func (o *CasesItem) SetExtDataNil() {
 }
 
 // UnSetExtData ensures that no value is present for ExtData, not even an explicit nil.
-func (o *CasesItem) UnSetExtData() {
-	o.ExtData.UnSet()
+func (o *CasesItem) UnsetExtData() {
+	o.ExtData.Unset()
 }
 
 // GetLogs returns the Logs field value if set, zero value otherwise.
@@ -1048,8 +1048,8 @@ func (o *CasesItem) SetCommentsToAppendNil() {
 }
 
 // UnSetCommentsToAppend ensures that no value is present for CommentsToAppend, not even an explicit nil.
-func (o *CasesItem) UnSetCommentsToAppend() {
-	o.CommentsToAppend.UnSet()
+func (o *CasesItem) UnsetCommentsToAppend() {
+	o.CommentsToAppend.Unset()
 }
 
 // GetNumberOfRepetitions returns the NumberOfRepetitions field value if set, zero value otherwise.
@@ -1143,8 +1143,8 @@ func (o *CasesItem) SetTagsNil() {
 }
 
 // UnSetTags ensures that no value is present for Tags, not even an explicit nil.
-func (o *CasesItem) UnSetTags() {
-	o.Tags.UnSet()
+func (o *CasesItem) UnsetTags() {
+	o.Tags.Unset()
 }
 
 // GetFileAttachments returns the FileAttachments field value if set, zero value otherwise.
@@ -1210,8 +1210,8 @@ func (o *CasesItem) SetReminderPeriotsAsHourNil() {
 }
 
 // UnSetReminderPeriotsAsHour ensures that no value is present for ReminderPeriotsAsHour, not even an explicit nil.
-func (o *CasesItem) UnSetReminderPeriotsAsHour() {
-	o.ReminderPeriotsAsHour.UnSet()
+func (o *CasesItem) UnsetReminderPeriotsAsHour() {
+	o.ReminderPeriotsAsHour.Unset()
 }
 
 // GetReminderEmailCount returns the ReminderEmailCount field value if set, zero value otherwise.
@@ -1277,8 +1277,8 @@ func (o *CasesItem) SetDataVectorNil() {
 }
 
 // UnSetDataVector ensures that no value is present for DataVector, not even an explicit nil.
-func (o *CasesItem) UnSetDataVector() {
-	o.DataVector.UnSet()
+func (o *CasesItem) UnsetDataVector() {
+	o.DataVector.Unset()
 }
 
 // GetFilterTags returns the FilterTags field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1316,8 +1316,8 @@ func (o *CasesItem) SetFilterTagsNil() {
 }
 
 // UnSetFilterTags ensures that no value is present for FilterTags, not even an explicit nil.
-func (o *CasesItem) UnSetFilterTags() {
-	o.FilterTags.UnSet()
+func (o *CasesItem) UnsetFilterTags() {
+	o.FilterTags.Unset()
 }
 
 // GetMappedFields returns the MappedFields field value if set, zero value otherwise.
@@ -1383,8 +1383,8 @@ func (o *CasesItem) SetSourceTypeNil() {
 }
 
 // UnSetSourceType ensures that no value is present for SourceType, not even an explicit nil.
-func (o *CasesItem) UnSetSourceType() {
-	o.SourceType.UnSet()
+func (o *CasesItem) UnsetSourceType() {
+	o.SourceType.Unset()
 }
 
 // GetPriorityValue returns the PriorityValue field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1422,8 +1422,8 @@ func (o *CasesItem) SetPriorityValueNil() {
 }
 
 // UnSetPriorityValue ensures that no value is present for PriorityValue, not even an explicit nil.
-func (o *CasesItem) UnSetPriorityValue() {
-	o.PriorityValue.UnSet()
+func (o *CasesItem) UnsetPriorityValue() {
+	o.PriorityValue.Unset()
 }
 
 // GetRemainingTimeAsHour returns the RemainingTimeAsHour field value if set, zero value otherwise.
@@ -1517,8 +1517,8 @@ func (o *CasesItem) SetMitreDataNil() {
 }
 
 // UnSetMitreData ensures that no value is present for MitreData, not even an explicit nil.
-func (o *CasesItem) UnSetMitreData() {
-	o.MitreData.UnSet()
+func (o *CasesItem) UnsetMitreData() {
+	o.MitreData.Unset()
 }
 
 // GetAssetList returns the AssetList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1556,8 +1556,8 @@ func (o *CasesItem) SetAssetListNil() {
 }
 
 // UnSetAssetList ensures that no value is present for AssetList, not even an explicit nil.
-func (o *CasesItem) UnSetAssetList() {
-	o.AssetList.UnSet()
+func (o *CasesItem) UnsetAssetList() {
+	o.AssetList.Unset()
 }
 
 // GetApprovals returns the Approvals field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1595,8 +1595,8 @@ func (o *CasesItem) SetApprovalsNil() {
 }
 
 // UnSetApprovals ensures that no value is present for Approvals, not even an explicit nil.
-func (o *CasesItem) UnSetApprovals() {
-	o.Approvals.UnSet()
+func (o *CasesItem) UnsetApprovals() {
+	o.Approvals.Unset()
 }
 
 // GetTenantID returns the TenantID field value if set, zero value otherwise.

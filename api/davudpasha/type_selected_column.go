@@ -129,8 +129,8 @@ func (o *SelectedColumn) SetLookupNil() {
 }
 
 // UnSetLookup ensures that no value is present for Lookup, not even an explicit nil.
-func (o *SelectedColumn) UnSetLookup() {
-	o.Lookup.UnSet()
+func (o *SelectedColumn) UnsetLookup() {
+	o.Lookup.Unset()
 }
 
 // MarshalJSON serializes the struct using spec logic.
