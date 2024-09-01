@@ -21,7 +21,7 @@ const (
 	LOGREADERTYPE_FTP           SourcesLogReaderType = "Module csiem.reader.ftp"
 	LOGREADERTYPE_FILE          SourcesLogReaderType = "Module csiem.reader.file"
 	LOGREADERTYPE_MSGRAPH       SourcesLogReaderType = "Module csiem.reader.msgraph"
-	LOGREADERTYPE_MSB           SourcesLogReaderType = "Module csiem.reader.msb"
+	LOGREADERTYPE_SMB           SourcesLogReaderType = "Module csiem.reader.smb"
 	LOGREADERTYPE_FIXEDLENGTH   SourcesLogReaderType = "Module csiem.reader.static"
 	LOGREADERTYPE_DHCP          SourcesLogReaderType = "Module csiem.reader.dhcp"
 )
@@ -39,7 +39,7 @@ var allowedLogReaderEnumValues = []SourcesLogReaderType{
 	LOGREADERTYPE_FTP,
 	LOGREADERTYPE_FILE,
 	LOGREADERTYPE_MSGRAPH,
-	LOGREADERTYPE_MSB,
+	LOGREADERTYPE_SMB,
 	LOGREADERTYPE_DHCP,
 }
 

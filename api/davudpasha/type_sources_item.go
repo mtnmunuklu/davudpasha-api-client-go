@@ -32,7 +32,7 @@ type SourcesItem struct {
 	// Log operations associated with the source item.
 	LogOperations []SourcesLogOperation `json:"LogOperations,omitempty"`
 	// Configuration for discarded logs. Example: ToDetails
-	DiscardedLogsConfig SourcesDiscardedLogsConfigType `json:"DiscardedLogsConfig,omitempty"`
+	DiscardedLogsConfig SourcesDiscardedLogsConfig `json:"DiscardedLogsConfig,omitempty"`
 	// Value of the source item.
 	Value *string `json:"value,omitempty"`
 	// Label of the source item.
@@ -217,8 +217,8 @@ func (o *SourcesItem) SetGroupNil() {
 }
 
 // UnSetGroup ensures that no value is present for Group, not even an explicit nil.
-func (o *SourcesItem) UnSetGroup() {
-	o.Group.UnSet()
+func (o *SourcesItem) UnsetGroup() {
+	o.Group.Unset()
 }
 
 // GetAuthor returns the Author field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -256,8 +256,8 @@ func (o *SourcesItem) SetAuthorNil() {
 }
 
 // UnSetAuthor ensures that no value is present for Author, not even an explicit nil.
-func (o *SourcesItem) UnSetAuthor() {
-	o.Author.UnSet()
+func (o *SourcesItem) UnsetAuthor() {
+	o.Author.Unset()
 }
 
 // GetLogSourceDefCode returns the LogSourceDefCode field value if set, zero value otherwise.
@@ -346,8 +346,8 @@ func (o *SourcesItem) SetTagsNil() {
 }
 
 // UnSetTags ensures that no value is present for Tags, not even an explicit nil.
-func (o *SourcesItem) UnSetTags() {
-	o.Tags.UnSet()
+func (o *SourcesItem) UnsetTags() {
+	o.Tags.Unset()
 }
 
 // GetAlertTimeout returns the AlertTimeout field value if set, zero value otherwise.
@@ -435,9 +435,9 @@ func (o *SourcesItem) SetLogOperations(v []SourcesLogOperation) {
 }
 
 // GetDiscardedLogsConfig returns the DiscardedLogsConfig field value if set, zero value otherwise.
-func (o *SourcesItem) GetDiscardedLogsConfig() SourcesDiscardedLogsConfigType {
+func (o *SourcesItem) GetDiscardedLogsConfig() SourcesDiscardedLogsConfig {
 	if o == nil {
-		var ret SourcesDiscardedLogsConfigType
+		var ret SourcesDiscardedLogsConfig
 		return ret
 	}
 	return o.DiscardedLogsConfig
@@ -445,7 +445,7 @@ func (o *SourcesItem) GetDiscardedLogsConfig() SourcesDiscardedLogsConfigType {
 
 // GetDiscardedLogsConfigOk returns a tuple with the DiscardedLogsConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesItem) GetDiscardedLogsConfigOk() (*SourcesDiscardedLogsConfigType, bool) {
+func (o *SourcesItem) GetDiscardedLogsConfigOk() (*SourcesDiscardedLogsConfig, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -453,7 +453,7 @@ func (o *SourcesItem) GetDiscardedLogsConfigOk() (*SourcesDiscardedLogsConfigTyp
 }
 
 // SetDiscardedLogsConfig gets a reference to the given string and assigns it to the DiscardedLogsConfig field.
-func (o *SourcesItem) SetDiscardedLogsConfig(v SourcesDiscardedLogsConfigType) {
+func (o *SourcesItem) SetDiscardedLogsConfig(v SourcesDiscardedLogsConfig) {
 	o.DiscardedLogsConfig = v
 }
 
@@ -604,8 +604,8 @@ func (o *SourcesItem) SetAgentIDsNil() {
 }
 
 // UnSetAgentIds ensures that no value is present for AgentIds, not even an explicit nil.
-func (o *SourcesItem) UnSetAgentIds() {
-	o.AgentIDs.UnSet()
+func (o *SourcesItem) UnsetAgentIds() {
+	o.AgentIDs.Unset()
 }
 
 // GetIndexGroupName returns the IndexGroupName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -643,8 +643,8 @@ func (o *SourcesItem) SetIndexGroupNameNil() {
 }
 
 // UnSetIndexGroupName ensures that no value is present for IndexGroupName, not even an explicit nil.
-func (o *SourcesItem) UnSetIndexGroupName() {
-	o.IndexGroupName.UnSet()
+func (o *SourcesItem) UnsetIndexGroupName() {
+	o.IndexGroupName.Unset()
 }
 
 // GetDashboardName returns the DashboardName field value if set, zero value otherwise.
@@ -710,8 +710,8 @@ func (o *SourcesItem) SetDashboardIDNil() {
 }
 
 // UnSetDashboardID ensures that no value is present for DashboardID, not even an explicit nil.
-func (o *SourcesItem) UnSetDashboardID() {
-	o.DashboardID.UnSet()
+func (o *SourcesItem) UnsetDashboardID() {
+	o.DashboardID.Unset()
 }
 
 // GetAssetTags returns the AssetTags field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -749,8 +749,8 @@ func (o *SourcesItem) SetAssetTagsNil() {
 }
 
 // UnSetAssetTags ensures that no value is present for AssetTags, not even an explicit nil.
-func (o *SourcesItem) UnSetAssetTags() {
-	o.AssetTags.UnSet()
+func (o *SourcesItem) UnsetAssetTags() {
+	o.AssetTags.Unset()
 }
 
 // GetLogRemoveTime returns the LogRemoveTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -788,8 +788,8 @@ func (o *SourcesItem) SetLogRemoveTimeNil() {
 }
 
 // UnSetLogRemoveTime ensures that no value is present for LogRemoveTime, not even an explicit nil.
-func (o *SourcesItem) UnSetLogRemoveTime() {
-	o.LogRemoveTime.UnSet()
+func (o *SourcesItem) UnsetLogRemoveTime() {
+	o.LogRemoveTime.Unset()
 }
 
 // GetLogRemoveFormat returns the LogRemoveFormat field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -827,8 +827,8 @@ func (o *SourcesItem) SetLogRemoveFormatNil() {
 }
 
 // UnSetLogRemoveFormat ensures that no value is present for LogRemoveFormat, not even an explicit nil.
-func (o *SourcesItem) UnSetLogRemoveFormat() {
-	o.LogRemoveFormat.UnSet()
+func (o *SourcesItem) UnsetLogRemoveFormat() {
+	o.LogRemoveFormat.Unset()
 }
 
 // GetAgentID returns the AgentID field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -866,8 +866,8 @@ func (o *SourcesItem) SetAgentIDNil() {
 }
 
 // UnSetAgentID ensures that no value is present for AgentID, not even an explicit nil.
-func (o *SourcesItem) UnSetAgentID() {
-	o.AgentID.UnSet()
+func (o *SourcesItem) UnsetAgentID() {
+	o.AgentID.Unset()
 }
 
 // GetWriteRawLogs returns the WriteRawLogs field value if set, zero value otherwise.
@@ -1017,8 +1017,8 @@ func (o *SourcesItem) SetScheduleConfigNil() {
 }
 
 // UnSetScheduleConfig ensures that no value is present for ScheduleConfig, not even an explicit nil.
-func (o *SourcesItem) UnSetScheduleConfig() {
-	o.ScheduleConfig.UnSet()
+func (o *SourcesItem) UnsetScheduleConfig() {
+	o.ScheduleConfig.Unset()
 }
 
 // GetStoreRawLogs returns the StoreRawLogs field value if set, zero value otherwise.
@@ -1251,39 +1251,39 @@ func (o SourcesItem) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *SourcesItem) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		ID                  *string                         `json:"Id,omitempty"`
-		Enabled             *bool                           `json:"Enabled,omitempty"`
-		Name                *string                         `json:"Name,omitempty"`
-		Group               common.NullableString           `json:"Group,omitempty"`
-		Author              common.NullableString           `json:"Author,omitempty"`
-		LogSourceDefCode    *string                         `json:"LogSourceDefCode,omitempty"`
-		LogReaderType       *SourcesLogReaderType           `json:"LogReaderType,omitempty"`
-		Tags                common.NullableList[string]     `json:"Tags,omitempty"`
-		AlertTimeout        *int64                          `json:"AlertTimeout,omitempty"`
-		LogReaderData       *SourcesLogReaderData           `json:"LogReaderData,omitempty"`
-		LogOperations       []SourcesLogOperation           `json:"LogOperations,omitempty"`
-		DiscardedLogsConfig *SourcesDiscardedLogsConfigType `json:"DiscardedLogsConfig,omitempty"`
-		Value               *string                         `json:"value,omitempty"`
-		Label               *string                         `json:"label,omitempty"`
-		IsDeleted           *bool                           `json:"IsDeleted,omitempty"`
-		IsAgentSource       *bool                           `json:"IsAgentSource,omitempty"`
-		AgentIDs            common.NullableList[string]     `json:"AgentIds,omitempty"`
-		IndexGroupName      common.NullableString           `json:"IndexGroupName,omitempty"`
-		DashboardName       *string                         `json:"dashboardName,omitempty"`
-		DashboardID         common.NullableString           `json:"dashboardId,omitempty"`
-		AssetTags           common.NullableList[string]     `json:"AssetTags,omitempty"`
-		LogRemoveTime       common.NullableString           `json:"LogRemoveTime,omitempty"`
-		LogRemoveFormat     common.NullableString           `json:"LogRemoveFormat,omitempty"`
-		AgentID             common.NullableString           `json:"AgentId,omitempty"`
-		WriteRawLogs        *bool                           `json:"WriteRawLogs,omitempty"`
-		UseSecondaryWriter  *bool                           `json:"UseSecondaryWriter,omitempty"`
-		ParallelOptions     *SourcesParallelOptions         `json:"ParallelOptions,omitempty"`
-		BlockCount          *int64                          `json:"BlockCount,omitempty"`
-		ScheduleConfig      NullableScheduleConfig          `json:"ScheduleConfig,omitempty"`
-		StoreRawLogs        *bool                           `json:"StoreRawLogs,omitempty"`
-		StoreRawLogsLgs     *string                         `json:"StoreRawLogsLgs,omitempty"`
-		IsEditable          *bool                           `json:"IsEditable,omitempty"`
-		FilterConditions    []SourcesFilterConditions       `json:"FilterConditions,omitempty"`
+		ID                  *string                     `json:"Id,omitempty"`
+		Enabled             *bool                       `json:"Enabled,omitempty"`
+		Name                *string                     `json:"Name,omitempty"`
+		Group               common.NullableString       `json:"Group,omitempty"`
+		Author              common.NullableString       `json:"Author,omitempty"`
+		LogSourceDefCode    *string                     `json:"LogSourceDefCode,omitempty"`
+		LogReaderType       *SourcesLogReaderType       `json:"LogReaderType,omitempty"`
+		Tags                common.NullableList[string] `json:"Tags,omitempty"`
+		AlertTimeout        *int64                      `json:"AlertTimeout,omitempty"`
+		LogReaderData       *SourcesLogReaderData       `json:"LogReaderData,omitempty"`
+		LogOperations       []SourcesLogOperation       `json:"LogOperations,omitempty"`
+		DiscardedLogsConfig *SourcesDiscardedLogsConfig `json:"DiscardedLogsConfig,omitempty"`
+		Value               *string                     `json:"value,omitempty"`
+		Label               *string                     `json:"label,omitempty"`
+		IsDeleted           *bool                       `json:"IsDeleted,omitempty"`
+		IsAgentSource       *bool                       `json:"IsAgentSource,omitempty"`
+		AgentIDs            common.NullableList[string] `json:"AgentIds,omitempty"`
+		IndexGroupName      common.NullableString       `json:"IndexGroupName,omitempty"`
+		DashboardName       *string                     `json:"dashboardName,omitempty"`
+		DashboardID         common.NullableString       `json:"dashboardId,omitempty"`
+		AssetTags           common.NullableList[string] `json:"AssetTags,omitempty"`
+		LogRemoveTime       common.NullableString       `json:"LogRemoveTime,omitempty"`
+		LogRemoveFormat     common.NullableString       `json:"LogRemoveFormat,omitempty"`
+		AgentID             common.NullableString       `json:"AgentId,omitempty"`
+		WriteRawLogs        *bool                       `json:"WriteRawLogs,omitempty"`
+		UseSecondaryWriter  *bool                       `json:"UseSecondaryWriter,omitempty"`
+		ParallelOptions     *SourcesParallelOptions     `json:"ParallelOptions,omitempty"`
+		BlockCount          *int64                      `json:"BlockCount,omitempty"`
+		ScheduleConfig      NullableScheduleConfig      `json:"ScheduleConfig,omitempty"`
+		StoreRawLogs        *bool                       `json:"StoreRawLogs,omitempty"`
+		StoreRawLogsLgs     *string                     `json:"StoreRawLogsLgs,omitempty"`
+		IsEditable          *bool                       `json:"IsEditable,omitempty"`
+		FilterConditions    []SourcesFilterConditions   `json:"FilterConditions,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)

@@ -7,38 +7,38 @@ import (
 )
 
 type SourcesLogReaderData struct {
-	FileInfo                         *SourcesFileInfo      `json:"FileInfo,omitempty"`
-	MessageFieldType                 common.NullableString `json:"MessageFieldType,omitempty"`
-	TransformFrequencyInSeconds      *int64                `json:"TransformFrequencyInSeconds,omitempty"`
-	DeleteArchivedLogFileAfterNHours *int64                `json:"DeleteArchivedLogFileAfterNHours,omitempty"`
-	DeleteOutputFileAfterNHours      *int64                `json:"DeleteOutputFileAfterNHours,omitempty"`
-	MaxParallelProcessing            *int64                `json:"MaxParallelProcessing,omitempty"`
-	EventLogNameOrFileName           *int64                `json:"EventLogNameOrFileName,omitempty"`
-	Filter                           common.NullableString `json:"Filter,omitempty"`
-	DataFormat                       *string               `json:"DataFormat,omitempty"`
-	Credential                       *string               `json:"Credential,omitempty"`
-	IdColumnType                     *string               `json:"IdColumnType,omitempty"`
-	ParseJson                        *bool                 `json:"ParseJson,omitempty"`
-	IndexName                        *string               `json:"IndexName,omitempty"`
-	IdColumnName                     *string               `json:"IdColumnName,omitempty"`
-	IdColumnFormat                   *string               `json:"IdColumnFormat,omitempty"`
-	Source                           *string               `json:"Source,omitempty"`
-	LgsID                            *string               `json:"lgsID,omitempty"`
-	FirstStartDate                   common.NullableString `json:"FirstStartDate,omitempty"`
-	Partition                        *int64                `json:"Partition,omitempty"`
-	Topic                            *string               `json:"Topic,omitempty"`
-	ApiUrl                           *string               `json:"ApiUrl,omitempty"`
-	IdFieldType                      *string               `json:"IdFieldType,omitempty"`
-	IdFieldName                      *string               `json:"IdFieldName,omitempty"`
-	ReturnType                       *string               `json:"ReturnType,omitempty"`
-	TenantId                         *string               `json:"TenantId,omitempty"`
-	ClientId                         *string               `json:"ClientId,omitempty"`
-	ClientSecret                     *string               `json:"ClientSecret,omitempty"`
-	AccessToken                      common.NullableString `json:"AccessToken,omitempty"`
-	EventDateFieldName               common.NullableString `json:"EventDateFieldName,omitempty"`
-	LogCharLength                    *int64                `json:"LogCharLength,omitempty"`
-	DhcpFileNames                    *string               `json:"DhcpFileNames,omitempty"`
-	DhcpChangeTime                   *string               `json:"DhcpChangeTime,omitempty"`
+	FileInfo                         *SourcesFileInfo                `json:"FileInfo,omitempty"`
+	MessageFieldType                 NullableSourcesMessageFieldType `json:"MessageFieldType,omitempty"`
+	TransformFrequencyInSeconds      *int64                          `json:"TransformFrequencyInSeconds,omitempty"`
+	DeleteArchivedLogFileAfterNHours *int64                          `json:"DeleteArchivedLogFileAfterNHours,omitempty"`
+	DeleteOutputFileAfterNHours      *int64                          `json:"DeleteOutputFileAfterNHours,omitempty"`
+	MaxParallelProcessing            *int64                          `json:"MaxParallelProcessing,omitempty"`
+	EventLogNameOrFileName           *string                         `json:"EventLogNameOrFileName,omitempty"`
+	Filter                           common.NullableString           `json:"Filter,omitempty"`
+	DataFormat                       *SourcesDataFormat              `json:"DataFormat,omitempty"`
+	Credential                       *string                         `json:"Credential,omitempty"`
+	IdColumnType                     *SourcesIDColumnType            `json:"IdColumnType,omitempty"`
+	ParseJson                        *bool                           `json:"ParseJson,omitempty"`
+	IndexName                        *string                         `json:"IndexName,omitempty"`
+	IdColumnName                     *string                         `json:"IdColumnName,omitempty"`
+	IdColumnFormat                   *string                         `json:"IdColumnFormat,omitempty"`
+	Source                           *string                         `json:"Source,omitempty"`
+	LgsID                            *string                         `json:"lgsID,omitempty"`
+	FirstStartDate                   common.NullableString           `json:"FirstStartDate,omitempty"`
+	Partition                        *int64                          `json:"Partition,omitempty"`
+	Topic                            *string                         `json:"Topic,omitempty"`
+	ApiUrl                           *string                         `json:"ApiUrl,omitempty"`
+	IdFieldType                      *SourcesIDFieldType             `json:"IdFieldType,omitempty"`
+	IdFieldName                      *string                         `json:"IdFieldName,omitempty"`
+	ReturnType                       *SourcesReturnType              `json:"ReturnType,omitempty"`
+	TenantId                         *string                         `json:"TenantId,omitempty"`
+	ClientId                         *string                         `json:"ClientId,omitempty"`
+	ClientSecret                     *string                         `json:"ClientSecret,omitempty"`
+	AccessToken                      common.NullableString           `json:"AccessToken,omitempty"`
+	EventDateFieldName               common.NullableString           `json:"EventDateFieldName,omitempty"`
+	LogCharLength                    *int64                          `json:"LogCharLength,omitempty"`
+	DhcpFileNames                    *string                         `json:"DhcpFileNames,omitempty"`
+	DhcpChangeTime                   *string                         `json:"DhcpChangeTime,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
@@ -91,9 +91,9 @@ func (o *SourcesLogReaderData) SetFileInfo(v SourcesFileInfo) {
 }
 
 // GetMessageFieldType returns the MessageFieldType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SourcesLogReaderData) GetMessageFieldType() string {
+func (o *SourcesLogReaderData) GetMessageFieldType() SourcesMessageFieldType {
 	if o == nil || o.MessageFieldType.Get() == nil {
-		var ret string
+		var ret SourcesMessageFieldType
 		return ret
 	}
 	return *o.MessageFieldType.Get()
@@ -102,7 +102,7 @@ func (o *SourcesLogReaderData) GetMessageFieldType() string {
 // GetMessageFieldTypeOk returns a tuple with the MessageFieldType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned.
-func (o *SourcesLogReaderData) GetMessageFieldTypeOk() (*string, bool) {
+func (o *SourcesLogReaderData) GetMessageFieldTypeOk() (*SourcesMessageFieldType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +115,7 @@ func (o *SourcesLogReaderData) HasMessageFieldType() bool {
 }
 
 // SetMessageFieldType gets a reference to the given common.NullableString and assigns it to the MessageFieldType field.
-func (o *SourcesLogReaderData) SetMessageFieldType(v string) {
+func (o *SourcesLogReaderData) SetMessageFieldType(v SourcesMessageFieldType) {
 	o.MessageFieldType.Set(&v)
 }
 
@@ -125,8 +125,8 @@ func (o *SourcesLogReaderData) SetMessageFieldTypeNil() {
 }
 
 // UnSetMessageFieldType ensures that no value is present for MessageFieldType, not even an explicit nil.
-func (o *SourcesLogReaderData) UnSetMessageFieldType() {
-	o.MessageFieldType.UnSet()
+func (o *SourcesLogReaderData) UnsetMessageFieldType() {
+	o.MessageFieldType.Unset()
 }
 
 // GetTransformFrequencyInSeconds returns the TransformFrequencyInSeconds field value if set, zero value otherwise.
@@ -242,9 +242,9 @@ func (o *SourcesLogReaderData) SetMaxParallelProcessing(v int64) {
 }
 
 // GetEventLogNameOrFileName returns the EventLogNameOrFileName field value if set, zero value otherwise.
-func (o *SourcesLogReaderData) GetEventLogNameOrFileName() int64 {
+func (o *SourcesLogReaderData) GetEventLogNameOrFileName() string {
 	if o == nil || o.EventLogNameOrFileName == nil {
-		var ret int64
+		var ret string
 		return ret
 	}
 	return *o.EventLogNameOrFileName
@@ -252,7 +252,7 @@ func (o *SourcesLogReaderData) GetEventLogNameOrFileName() int64 {
 
 // GetEventLogNameOrFileNameOk returns a tuple with the EventLogNameOrFileName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesLogReaderData) GetEventLogNameOrFileNameOk() (*int64, bool) {
+func (o *SourcesLogReaderData) GetEventLogNameOrFileNameOk() (*string, bool) {
 	if o == nil || o.EventLogNameOrFileName == nil {
 		return nil, false
 	}
@@ -264,8 +264,8 @@ func (o *SourcesLogReaderData) HasEventLogNameOrFileName() bool {
 	return o != nil && o.EventLogNameOrFileName != nil
 }
 
-// SetEventLogNameOrFileName gets a reference to the given int64 and assigns it to the EventLogNameOrFileName field.
-func (o *SourcesLogReaderData) SetEventLogNameOrFileName(v int64) {
+// SetEventLogNameOrFileName gets a reference to the given string and assigns it to the EventLogNameOrFileName field.
+func (o *SourcesLogReaderData) SetEventLogNameOrFileName(v string) {
 	o.EventLogNameOrFileName = &v
 }
 
@@ -304,14 +304,14 @@ func (o *SourcesLogReaderData) SetFilterNil() {
 }
 
 // UnSetFilter ensures that no value is present for Filter, not even an explicit nil.
-func (o *SourcesLogReaderData) UnSetFilter() {
-	o.Filter.UnSet()
+func (o *SourcesLogReaderData) UnsetFilter() {
+	o.Filter.Unset()
 }
 
 // GetDataFormat returns the DataFormat field value if set, zero value otherwise.
-func (o *SourcesLogReaderData) GetDataFormat() string {
+func (o *SourcesLogReaderData) GetDataFormat() SourcesDataFormat {
 	if o == nil || o.DataFormat == nil {
-		var ret string
+		var ret SourcesDataFormat
 		return ret
 	}
 	return *o.DataFormat
@@ -319,7 +319,7 @@ func (o *SourcesLogReaderData) GetDataFormat() string {
 
 // GetDataFormatOk returns a tuple with the DataFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesLogReaderData) GetDataFormatOk() (*string, bool) {
+func (o *SourcesLogReaderData) GetDataFormatOk() (*SourcesDataFormat, bool) {
 	if o == nil || o.DataFormat == nil {
 		return nil, false
 	}
@@ -332,7 +332,7 @@ func (o *SourcesLogReaderData) HasDataFormat() bool {
 }
 
 // SetDataFormat gets a reference to the given string and assigns it to the DataFormat field.
-func (o *SourcesLogReaderData) SetDataFormat(v string) {
+func (o *SourcesLogReaderData) SetDataFormat(v SourcesDataFormat) {
 	o.DataFormat = &v
 }
 
@@ -365,9 +365,9 @@ func (o *SourcesLogReaderData) SetCredential(v string) {
 }
 
 // GetIdColumnType returns the IdColumnType field value if set, zero value otherwise.
-func (o *SourcesLogReaderData) GetIdColumnType() string {
+func (o *SourcesLogReaderData) GetIdColumnType() SourcesIDColumnType {
 	if o == nil || o.IdColumnType == nil {
-		var ret string
+		var ret SourcesIDColumnType
 		return ret
 	}
 	return *o.IdColumnType
@@ -375,7 +375,7 @@ func (o *SourcesLogReaderData) GetIdColumnType() string {
 
 // GetIdColumnTypeOk returns a tuple with the IdColumnType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesLogReaderData) GetIdColumnTypeOk() (*string, bool) {
+func (o *SourcesLogReaderData) GetIdColumnTypeOk() (*SourcesIDColumnType, bool) {
 	if o == nil || o.IdColumnType == nil {
 		return nil, false
 	}
@@ -387,8 +387,8 @@ func (o *SourcesLogReaderData) HasIdColumnType() bool {
 	return o != nil && o.IdColumnType != nil
 }
 
-// SetIdColumnType gets a reference to the given string and assigns it to the IdColumnType field.
-func (o *SourcesLogReaderData) SetIdColumnType(v string) {
+// SetIdColumnType gets a reference to the given SourcesIDColumnType and assigns it to the IdColumnType field.
+func (o *SourcesLogReaderData) SetIdColumnType(v SourcesIDColumnType) {
 	o.IdColumnType = &v
 }
 
@@ -595,8 +595,8 @@ func (o *SourcesLogReaderData) SetFirstStartDateNil() {
 }
 
 // UnSetFirstStartDate ensures that no value is present for FirstStartDate, not even an explicit nil.
-func (o *SourcesLogReaderData) UnSetFirstStartDate() {
-	o.FirstStartDate.UnSet()
+func (o *SourcesLogReaderData) UnsetFirstStartDate() {
+	o.FirstStartDate.Unset()
 }
 
 // GetPartition returns the Partition field value if set, zero value otherwise.
@@ -684,9 +684,9 @@ func (o *SourcesLogReaderData) SetApiUrl(v string) {
 }
 
 // GetIdFieldType returns the IdFieldType field value if set, zero value otherwise.
-func (o *SourcesLogReaderData) GetIdFieldType() string {
+func (o *SourcesLogReaderData) GetIdFieldType() SourcesIDFieldType {
 	if o == nil || o.IdFieldType == nil {
-		var ret string
+		var ret SourcesIDFieldType
 		return ret
 	}
 	return *o.IdFieldType
@@ -694,7 +694,7 @@ func (o *SourcesLogReaderData) GetIdFieldType() string {
 
 // GetIdFieldTypeOk returns a tuple with the IdFieldType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesLogReaderData) GetIdFieldTypeOk() (*string, bool) {
+func (o *SourcesLogReaderData) GetIdFieldTypeOk() (*SourcesIDFieldType, bool) {
 	if o == nil || o.IdFieldType == nil {
 		return nil, false
 	}
@@ -707,7 +707,7 @@ func (o *SourcesLogReaderData) HasIdFieldType() bool {
 }
 
 // SetIdFieldType gets a reference to the given string and assigns it to the IdFieldType field.
-func (o *SourcesLogReaderData) SetIdFieldType(v string) {
+func (o *SourcesLogReaderData) SetIdFieldType(v SourcesIDFieldType) {
 	o.IdFieldType = &v
 }
 
@@ -740,9 +740,9 @@ func (o *SourcesLogReaderData) SetIdFieldName(v string) {
 }
 
 // GetReturnType returns the ReturnType field value if set, zero value otherwise.
-func (o *SourcesLogReaderData) GetReturnType() string {
+func (o *SourcesLogReaderData) GetReturnType() SourcesReturnType {
 	if o == nil || o.ReturnType == nil {
-		var ret string
+		var ret SourcesReturnType
 		return ret
 	}
 	return *o.ReturnType
@@ -750,7 +750,7 @@ func (o *SourcesLogReaderData) GetReturnType() string {
 
 // GetReturnTypeOk returns a tuple with the ReturnType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourcesLogReaderData) GetReturnTypeOk() (*string, bool) {
+func (o *SourcesLogReaderData) GetReturnTypeOk() (*SourcesReturnType, bool) {
 	if o == nil || o.ReturnType == nil {
 		return nil, false
 	}
@@ -762,8 +762,8 @@ func (o *SourcesLogReaderData) HasReturnType() bool {
 	return o != nil && o.ReturnType != nil
 }
 
-// SetReturnType gets a reference to the given string and assigns it to the ReturnType field.
-func (o *SourcesLogReaderData) SetReturnType(v string) {
+// SetReturnType gets a reference to the given SourcesReturnType and assigns it to the ReturnType field.
+func (o *SourcesLogReaderData) SetReturnType(v SourcesReturnType) {
 	o.ReturnType = &v
 }
 
@@ -886,8 +886,8 @@ func (o *SourcesLogReaderData) SetAccessTokenNil() {
 }
 
 // UnSetAccessToken ensures that no value is present for AccessToken, not even an explicit nil.
-func (o *SourcesLogReaderData) UnSetAccessToken() {
-	o.AccessToken.UnSet()
+func (o *SourcesLogReaderData) UnsetAccessToken() {
+	o.AccessToken.Unset()
 }
 
 // GetEventDateFieldName returns the EventDateFieldName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -925,8 +925,8 @@ func (o *SourcesLogReaderData) SetEventDateFieldNameNil() {
 }
 
 // UnSetEventDateFieldName ensures that no value is present for EventDateFieldName, not even an explicit nil.
-func (o *SourcesLogReaderData) UnSetEventDateFieldName() {
-	o.EventDateFieldName.UnSet()
+func (o *SourcesLogReaderData) UnsetEventDateFieldName() {
+	o.EventDateFieldName.Unset()
 }
 
 // GetLogCharLength returns the LogCharLength field value if set, zero value otherwise.
@@ -1043,7 +1043,7 @@ func (o SourcesLogReaderData) MarshalJSON() ([]byte, error) {
 	if o.Filter.IsSet() {
 		toSerialize["Filter"] = o.Filter.Get()
 	}
-	if o.DataFormat != nil {
+	if o.DataFormat.IsValid() {
 		toSerialize["DataFormat"] = o.DataFormat
 	}
 	if o.Credential != nil {
@@ -1125,38 +1125,38 @@ func (o SourcesLogReaderData) MarshalJSON() ([]byte, error) {
 // UnMarshalJSON deserializes the given payload.
 func (o *SourcesLogReaderData) UnMarshalJSON(bytes []byte) (err error) {
 	all := struct {
-		FileInfo                         *SourcesFileInfo      `json:"FileInfo,omitempty"`
-		MessageFieldType                 common.NullableString `json:"MessageFieldType,omitempty"`
-		TransformFrequencyInSeconds      *int64                `json:"TransformFrequencyInSeconds,omitempty"`
-		DeleteArchivedLogFileAfterNHours *int64                `json:"DeleteArchivedLogFileAfterNHours,omitempty"`
-		DeleteOutputFileAfterNHours      *int64                `json:"DeleteOutputFileAfterNHours,omitempty"`
-		MaxParallelProcessing            *int64                `json:"MaxParallelProcessing,omitempty"`
-		EventLogNameOrFileName           *int64                `json:"EventLogNameOrFileName,omitempty"`
-		Filter                           common.NullableString `json:"Filter,omitempty"`
-		DataFormat                       *string               `json:"DataFormat,omitempty"`
-		Credential                       *string               `json:"Credential,omitempty"`
-		IdColumnType                     *string               `json:"IdColumnType,omitempty"`
-		ParseJson                        *bool                 `json:"ParseJson,omitempty"`
-		IndexName                        *string               `json:"IndexName,omitempty"`
-		IdColumnName                     *string               `json:"IdColumnName,omitempty"`
-		IdColumnFormat                   *string               `json:"IdColumnFormat,omitempty"`
-		Source                           *string               `json:"Source,omitempty"`
-		LgsID                            *string               `json:"lgsID,omitempty"`
-		FirstStartDate                   common.NullableString `json:"FirstStartDate,omitempty"`
-		Partition                        *int64                `json:"Partition,omitempty"`
-		Topic                            *string               `json:"Topic,omitempty"`
-		ApiUrl                           *string               `json:"ApiUrl,omitempty"`
-		IdFieldType                      *string               `json:"IdFieldType,omitempty"`
-		IdFieldName                      *string               `json:"IdFieldName,omitempty"`
-		ReturnType                       *string               `json:"ReturnType,omitempty"`
-		TenantId                         *string               `json:"TenantId,omitempty"`
-		ClientId                         *string               `json:"ClientId,omitempty"`
-		ClientSecret                     *string               `json:"ClientSecret,omitempty"`
-		AccessToken                      common.NullableString `json:"AccessToken,omitempty"`
-		EventDateFieldName               common.NullableString `json:"EventDateFieldName,omitempty"`
-		LogCharLength                    *int64                `json:"LogCharLength,omitempty"`
-		DhcpFileNames                    *string               `json:"DhcpFileNames,omitempty"`
-		DhcpChangeTime                   *string               `json:"DhcpChangeTime,omitempty"`
+		FileInfo                         *SourcesFileInfo                `json:"FileInfo,omitempty"`
+		MessageFieldType                 NullableSourcesMessageFieldType `json:"MessageFieldType,omitempty"`
+		TransformFrequencyInSeconds      *int64                          `json:"TransformFrequencyInSeconds,omitempty"`
+		DeleteArchivedLogFileAfterNHours *int64                          `json:"DeleteArchivedLogFileAfterNHours,omitempty"`
+		DeleteOutputFileAfterNHours      *int64                          `json:"DeleteOutputFileAfterNHours,omitempty"`
+		MaxParallelProcessing            *int64                          `json:"MaxParallelProcessing,omitempty"`
+		EventLogNameOrFileName           *string                         `json:"EventLogNameOrFileName,omitempty"`
+		Filter                           common.NullableString           `json:"Filter,omitempty"`
+		DataFormat                       *SourcesDataFormat              `json:"DataFormat,omitempty"`
+		Credential                       *string                         `json:"Credential,omitempty"`
+		IdColumnType                     *SourcesIDColumnType            `json:"IdColumnType,omitempty"`
+		ParseJson                        *bool                           `json:"ParseJson,omitempty"`
+		IndexName                        *string                         `json:"IndexName,omitempty"`
+		IdColumnName                     *string                         `json:"IdColumnName,omitempty"`
+		IdColumnFormat                   *string                         `json:"IdColumnFormat,omitempty"`
+		Source                           *string                         `json:"Source,omitempty"`
+		LgsID                            *string                         `json:"lgsID,omitempty"`
+		FirstStartDate                   common.NullableString           `json:"FirstStartDate,omitempty"`
+		Partition                        *int64                          `json:"Partition,omitempty"`
+		Topic                            *string                         `json:"Topic,omitempty"`
+		ApiUrl                           *string                         `json:"ApiUrl,omitempty"`
+		IdFieldType                      *SourcesIDFieldType             `json:"IdFieldType,omitempty"`
+		IdFieldName                      *string                         `json:"IdFieldName,omitempty"`
+		ReturnType                       *SourcesReturnType              `json:"ReturnType,omitempty"`
+		TenantId                         *string                         `json:"TenantId,omitempty"`
+		ClientId                         *string                         `json:"ClientId,omitempty"`
+		ClientSecret                     *string                         `json:"ClientSecret,omitempty"`
+		AccessToken                      common.NullableString           `json:"AccessToken,omitempty"`
+		EventDateFieldName               common.NullableString           `json:"EventDateFieldName,omitempty"`
+		LogCharLength                    *int64                          `json:"LogCharLength,omitempty"`
+		DhcpFileNames                    *string                         `json:"DhcpFileNames,omitempty"`
+		DhcpChangeTime                   *string                         `json:"DhcpChangeTime,omitempty"`
 	}{}
 	if err = json.Unmarshal(bytes, &all); err != nil {
 		return json.Unmarshal(bytes, &o.UnparsedObject)
