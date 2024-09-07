@@ -6,11 +6,16 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsSaveResponse represents the response structure when saving reports.
 type ReportsSaveResponse struct {
-	Status         *bool                 `json:"Status,omitempty"`
-	ValidationList []string              `json:"ValidationList,omitempty"`
-	Data           common.NullableString `json:"Data,omitempty"`
-	OptErrorMsg    common.NullableString `json:"optErrorMsg,omitempty"`
+	// Indicates whether the save operation was successful.
+	Status *bool `json:"Status,omitempty"`
+	// A list of validation messages, if any issues were encountered.
+	ValidationList []string `json:"ValidationList,omitempty"`
+	// Contains the data returned from the save operation, if applicable.
+	Data common.NullableString `json:"Data,omitempty"`
+	// An optional error message, if an error occurred during the operation.
+	OptErrorMsg common.NullableString `json:"optErrorMsg,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.

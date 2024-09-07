@@ -6,39 +6,72 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourcesLogReaderData represents the data configuration for reading logs from a source.
 type SourcesLogReaderData struct {
-	FileInfo                         *SourcesFileInfo                `json:"FileInfo,omitempty"`
-	MessageFieldType                 NullableSourcesMessageFieldType `json:"MessageFieldType,omitempty"`
-	TransformFrequencyInSeconds      *int64                          `json:"TransformFrequencyInSeconds,omitempty"`
-	DeleteArchivedLogFileAfterNHours *int64                          `json:"DeleteArchivedLogFileAfterNHours,omitempty"`
-	DeleteOutputFileAfterNHours      *int64                          `json:"DeleteOutputFileAfterNHours,omitempty"`
-	MaxParallelProcessing            *int64                          `json:"MaxParallelProcessing,omitempty"`
-	EventLogNameOrFileName           *string                         `json:"EventLogNameOrFileName,omitempty"`
-	Filter                           common.NullableString           `json:"Filter,omitempty"`
-	DataFormat                       *SourcesDataFormat              `json:"DataFormat,omitempty"`
-	Credential                       *string                         `json:"Credential,omitempty"`
-	IdColumnType                     *SourcesIDColumnType            `json:"IdColumnType,omitempty"`
-	ParseJson                        *bool                           `json:"ParseJson,omitempty"`
-	IndexName                        *string                         `json:"IndexName,omitempty"`
-	IdColumnName                     *string                         `json:"IdColumnName,omitempty"`
-	IdColumnFormat                   *string                         `json:"IdColumnFormat,omitempty"`
-	Source                           *string                         `json:"Source,omitempty"`
-	LgsID                            *string                         `json:"lgsID,omitempty"`
-	FirstStartDate                   common.NullableString           `json:"FirstStartDate,omitempty"`
-	Partition                        *int64                          `json:"Partition,omitempty"`
-	Topic                            *string                         `json:"Topic,omitempty"`
-	ApiUrl                           *string                         `json:"ApiUrl,omitempty"`
-	IdFieldType                      *SourcesIDFieldType             `json:"IdFieldType,omitempty"`
-	IdFieldName                      *string                         `json:"IdFieldName,omitempty"`
-	ReturnType                       *SourcesReturnType              `json:"ReturnType,omitempty"`
-	TenantId                         *string                         `json:"TenantId,omitempty"`
-	ClientId                         *string                         `json:"ClientId,omitempty"`
-	ClientSecret                     *string                         `json:"ClientSecret,omitempty"`
-	AccessToken                      common.NullableString           `json:"AccessToken,omitempty"`
-	EventDateFieldName               common.NullableString           `json:"EventDateFieldName,omitempty"`
-	LogCharLength                    *int64                          `json:"LogCharLength,omitempty"`
-	DhcpFileNames                    *string                         `json:"DhcpFileNames,omitempty"`
-	DhcpChangeTime                   *string                         `json:"DhcpChangeTime,omitempty"`
+	// File information related to the source file being processed.
+	FileInfo *SourcesFileInfo `json:"FileInfo,omitempty"`
+	// Type of the message field in the log source.
+	MessageFieldType NullableSourcesMessageFieldType `json:"MessageFieldType,omitempty"`
+	// Frequency, in seconds, to transform log data.
+	TransformFrequencyInSeconds *int64 `json:"TransformFrequencyInSeconds,omitempty"`
+	// Number of hours after which the archived log file should be deleted.
+	DeleteArchivedLogFileAfterNHours *int64 `json:"DeleteArchivedLogFileAfterNHours,omitempty"`
+	// Number of hours after which the output file should be deleted.
+	DeleteOutputFileAfterNHours *int64 `json:"DeleteOutputFileAfterNHours,omitempty"`
+	// Maximum number of parallel processing threads allowed.
+	MaxParallelProcessing *int64 `json:"MaxParallelProcessing,omitempty"`
+	// Name of the event log or the file being processed.
+	EventLogNameOrFileName *string `json:"EventLogNameOrFileName,omitempty"`
+	// Optional filter string to apply when processing logs.
+	Filter common.NullableString `json:"Filter,omitempty"`
+	// Format of the data being processed.
+	DataFormat *SourcesDataFormat `json:"DataFormat,omitempty"`
+	// Credential used to access the source.
+	Credential *string `json:"Credential,omitempty"`
+	// Type of the ID column in the log source.
+	IdColumnType *SourcesIDColumnType `json:"IdColumnType,omitempty"`
+	// Whether the log data should be parsed as JSON.
+	ParseJson *bool `json:"ParseJson,omitempty"`
+	// Name of the Elasticsearch index for log storage.
+	IndexName *string `json:"IndexName,omitempty"`
+	// Name of the ID column in the log data.
+	IdColumnName *string `json:"IdColumnName,omitempty"`
+	// Format of the ID column in the log data.
+	IdColumnFormat *string `json:"IdColumnFormat,omitempty"`
+	// The source of the log data.
+	Source *string `json:"Source,omitempty"`
+	// ID associated with the log source.
+	LgsID *string `json:"lgsID,omitempty"`
+	// The first start date for processing logs.
+	FirstStartDate common.NullableString `json:"FirstStartDate,omitempty"`
+	// Partition number used in the log source.
+	Partition *int64 `json:"Partition,omitempty"`
+	// Kafka topic associated with the log source.
+	Topic *string `json:"Topic,omitempty"`
+	// API URL used to access the log source.
+	ApiUrl *string `json:"ApiUrl,omitempty"`
+	// Type of the ID field in the log source.
+	IdFieldType *SourcesIDFieldType `json:"IdFieldType,omitempty"`
+	// Name of the ID field in the log source.
+	IdFieldName *string `json:"IdFieldName,omitempty"`
+	// Return type of the log data processing function.
+	ReturnType *SourcesReturnType `json:"ReturnType,omitempty"`
+	// Tenant ID used for authentication with the log source.
+	TenantId *string `json:"TenantId,omitempty"`
+	// Client ID used for authentication with the log source.
+	ClientId *string `json:"ClientId,omitempty"`
+	// Client secret used for authentication with the log source.
+	ClientSecret *string `json:"ClientSecret,omitempty"`
+	// Access token used for API calls.
+	AccessToken common.NullableString `json:"AccessToken,omitempty"`
+	// Field name for the event date in the log data.
+	EventDateFieldName common.NullableString `json:"EventDateFieldName,omitempty"`
+	// Maximum character length of the log entries.
+	LogCharLength *int64 `json:"LogCharLength,omitempty"`
+	// Names of DHCP files to be processed.
+	DhcpFileNames *string `json:"DhcpFileNames,omitempty"`
+	// Time of the last DHCP change.
+	DhcpChangeTime *string `json:"DhcpChangeTime,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.

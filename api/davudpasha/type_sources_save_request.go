@@ -6,9 +6,12 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourcesSaveRequest represents the request for saving a log source item.
 type SourcesSaveRequest struct {
-	Lgs           *SourcesItem `json:"lgs,omitempty"`
-	DashboardName *string      `json:"dashboardName,omitempty"`
+	// Log source item to be saved.
+	Lgs *SourcesItem `json:"lgs,omitempty"`
+	// Name of the dashboard associated with the request.
+	DashboardName *string `json:"dashboardName,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.

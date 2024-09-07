@@ -7,16 +7,26 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// AlertDefinitionsQueryData represents the data structure for querying alert definitions.
 type AlertDefinitionsQueryData struct {
-	TimeFrameValue            *int64                                    `json:"TimeFrameValue,omitempty"`
-	TimeFrameType             AlertDefinitionsTimeFrameType             `json:"TimeFrameType,omitempty"`
-	RuleType                  AlertDefinitionsRuleType                  `json:"RuleType,omitempty"`
+	// The value representing the time frame for the query.
+	TimeFrameValue *int64 `json:"TimeFrameValue,omitempty"`
+	// The type of time frame (e.g., hours, days) for the query.
+	TimeFrameType AlertDefinitionsTimeFrameType `json:"TimeFrameType,omitempty"`
+	// The type of rule (e.g., threshold, anomaly) for the alert.
+	RuleType AlertDefinitionsRuleType `json:"RuleType,omitempty"`
+	// The type of correlation alert for the query.
 	QueryCorrelationAlertType AlertDefinitionsQueryCorrelationAlertType `json:"QueryCorrelationAlertType,omitempty"`
-	QueryID                   *string                                   `json:"QueryID,omitempty"`
-	LgsID                     *string                                   `json:"LgsID,omitempty"`
-	Query                     *string                                   `json:"Query,omitempty"`
-	LastReadTime              *string                                   `json:"LastReadTime,omitempty"`
-	Queries                   []AlertDefinitionsQuery                   `json:"Queries,omitempty"`
+	// The identifier for the query.
+	QueryID *string `json:"QueryID,omitempty"`
+	// The LGS ID associated with the query.
+	LgsID *string `json:"LgsID,omitempty"`
+	// The query string used for the alert definitions.
+	Query *string `json:"Query,omitempty"`
+	// The last time the query was read or executed.
+	LastReadTime *string `json:"LastReadTime,omitempty"`
+	// A list of queries related to the alert definitions.
+	Queries []AlertDefinitionsQuery `json:"Queries,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.

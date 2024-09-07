@@ -7,7 +7,9 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// QueriesSaveRequest represents the request structure for saving queries.
 type QueriesSaveRequest struct {
+	// The query settings to be saved.
 	QuerySettings *QueriesItem `json:"querySettings,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`

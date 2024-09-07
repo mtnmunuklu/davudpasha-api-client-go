@@ -7,12 +7,18 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// AlertDefinitionsQuery represents the structure for querying alert definitions.
 type AlertDefinitionsQuery struct {
-	QueryID        *string          `json:"QueryID,omitempty"`
-	Query          *string          `json:"Query,omitempty"`
-	TimeFrameValue *int64           `json:"TimeFrameValue,omitempty"`
-	TimeFrameType  *string          `json:"TimeFrameType,omitempty"`
-	QueryColumns   []SelectedColumn `json:"QueryColumns,omitempty"`
+	// The identifier for the query.
+	QueryID *string `json:"QueryID,omitempty"`
+	// The query string used for the alert definitions.
+	Query *string `json:"Query,omitempty"`
+	// The value representing the time frame for the query.
+	TimeFrameValue *int64 `json:"TimeFrameValue,omitempty"`
+	// The type of time frame (e.g., hours, days) for the query.
+	TimeFrameType *string `json:"TimeFrameType,omitempty"`
+	// A list of columns to be included in the query results.
+	QueryColumns []SelectedColumn `json:"QueryColumns,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.

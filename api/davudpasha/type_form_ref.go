@@ -6,7 +6,9 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// FormRef represents a reference to a form, including its current state.
 type FormRef struct {
+	// The current state or identifier of the form.
 	Current common.NullableString `json:"current,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`

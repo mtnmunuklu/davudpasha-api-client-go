@@ -7,10 +7,14 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsSaveRequest represents the request structure for saving reports.
 type ReportsSaveRequest struct {
-	Application *string         `json:"application,omitempty"`
-	Report      *ReportsItem    `json:"report,omitempty"`
-	Schedule    *ScheduleConfig `json:"schedule,omitempty"`
+	// The application to which the report belongs.
+	Application *string `json:"application,omitempty"`
+	// The report item to be saved.
+	Report *ReportsItem `json:"report,omitempty"`
+	// The schedule configuration for the report.
+	Schedule *ScheduleConfig `json:"schedule,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
 	// Raw value if deserialization fails.

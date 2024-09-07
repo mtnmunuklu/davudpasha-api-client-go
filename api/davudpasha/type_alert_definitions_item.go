@@ -8,13 +8,13 @@ import (
 
 // AlertDefinitionsItem represents an item in alerts.
 type AlertDefinitionsItem struct {
-	// LGS name.
+	// The name of the Log Source associated with the alert.
 	LgsName common.NullableString `json:"LgsName,omitempty"`
-	// Correlation data.
+	// Correlation data related to the alert definitions.
 	CorrelationData *AlertDefinitionsCorrelationData `json:"CorrelationData,omitempty"`
-	// Indicates if action is required.
+	// Indicates whether action is required for this alert.
 	ActionRequired *bool `json:"ActionRequired,omitempty"`
-	// Message for the required action.
+	// Message describing the action required for this alert.
 	ActionMessage common.NullableString `json:"ActionMessage,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`

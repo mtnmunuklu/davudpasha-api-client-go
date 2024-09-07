@@ -7,7 +7,9 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// AlertDefinitionsSaveRequest represents the request structure for saving alert definitions.
 type AlertDefinitionsSaveRequest struct {
+	// Correlation data for the alert definitions.
 	Correlation *AlertDefinitionsCorrelationData `json:"correlation,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`

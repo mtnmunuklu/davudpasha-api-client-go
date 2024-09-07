@@ -7,9 +7,12 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// QueriesSaveResponse represents the response structure when saving queries.
 type QueriesSaveResponse struct {
-	Status *bool        `json:"status,omitempty"`
-	Query  *QueriesItem `json:"query,omitempty"`
+	// Indicates whether the save operation was successful.
+	Status *bool `json:"status,omitempty"`
+	// The query item that was saved.
+	Query *QueriesItem `json:"query,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.

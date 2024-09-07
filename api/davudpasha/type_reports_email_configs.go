@@ -6,8 +6,11 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// ReportsEmailConfigs represents the email configuration settings for reports.
 type ReportsEmailConfigs struct {
-	Email   common.NullableString `json:"Email,omitempty"`
+	// The email address to send the report to.
+	Email common.NullableString `json:"Email,omitempty"`
+	// The subject line for the report email.
 	Subject common.NullableString `json:"Subject,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`

@@ -7,10 +7,15 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourcesFilterConditions represents the filter conditions used for querying.
 type SourcesFilterConditions struct {
-	IsOr     *bool                 `json:"IsOr,omitempty"`
-	Operator *string               `json:"Operator,omitempty"`
+	// Specifies if the condition should be combined using OR logic.
+	IsOr *bool `json:"IsOr,omitempty"`
+	// The operator used for the condition (e.g., '=', '!=', '>', '<').
+	Operator *string `json:"Operator,omitempty"`
+	// The variable or field name to apply the condition on.
 	Variable common.NullableString `json:"Variable,omitempty"`
+	// The value to compare against the variable.
 	Valuable common.NullableString `json:"Valuable,omitempty"`
 	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`

@@ -7,16 +7,27 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourcesFileInfo represents the file-related information for processing log files.
 type SourcesFileInfo struct {
-	CredentialId   common.NullableString  `json:"CredentialId,omitempty"`
-	Host           common.NullableString  `json:"Host,omitempty"`
-	Port           common.NullableString  `json:"Port,omitempty"`
-	Path           *string                `json:"Path,omitempty"`
-	FileName       *string                `json:"FileName,omitempty"`
-	FileNameFormat common.NullableString  `json:"FileNameFormat,omitempty"`
-	CodePage       common.NullableString  `json:"CodePage,omitempty"`
-	FileNameStatic common.NullableBool    `json:"FileNameStatic,omitempty"`
-	DeleteOldFile  common.NullableBool    `json:"DeleteOldFile,omitempty"`
+	// ID of the credential used to access the file.
+	CredentialId common.NullableString `json:"CredentialId,omitempty"`
+	// Host address where the file is located.
+	Host common.NullableString `json:"Host,omitempty"`
+	// Port number used to connect to the host.
+	Port common.NullableString `json:"Port,omitempty"`
+	// Path to the directory where the file is located.
+	Path *string `json:"Path,omitempty"`
+	// Name of the file to be processed.
+	FileName *string `json:"FileName,omitempty"`
+	// Format pattern for the file name, if it follows a specific convention.
+	FileNameFormat common.NullableString `json:"FileNameFormat,omitempty"`
+	// Code page used for encoding the file content.
+	CodePage common.NullableString `json:"CodePage,omitempty"`
+	// Indicates if the file name is static (i.e., does not change).
+	FileNameStatic common.NullableBool `json:"FileNameStatic,omitempty"`
+	// Indicates if old files should be deleted after processing.
+	DeleteOldFile common.NullableBool `json:"DeleteOldFile,omitempty"`
+	// Raw value if deserialization fails.
 	UnparsedObject map[string]interface{} `json:"-"`
 	// Additional properties not defined in the struct.
 	AdditionalProperties map[string]interface{} `json:"-"`
