@@ -16,6 +16,23 @@ type QueryOptions struct {
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
+// NewQueryOptions creates a new QueryOptions object.
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed.
+func NewQueryOptions() *QueryOptions {
+	this := QueryOptions{}
+	return &this
+}
+
+// NewQueryOptionsWithDefaults creates a new QueryOptions object.
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set.
+func NewQueryOptionsWithDefaults() *QueryOptions {
+	this := QueryOptions{}
+	return &this
+}
+
 // GetShowHighlight returns the ShowHighlight field value if set, zero value otherwise.
 func (o *QueryOptions) GetShowHighlight() bool {
 	if o == nil || o.ShowHighlight == nil {

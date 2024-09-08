@@ -7,7 +7,9 @@ import (
 	"github.com/mtnmunuklu/davudpasha-api-client-go/api/common"
 )
 
+// SourceTypesSaveRequest represents the request structure for saving source types.
 type SourceTypesSaveRequest struct {
+	// Log source definition item to be saved.
 	LgsDef *SourceTypesItem `json:"lgsDef,omitempty"`
 	// Context for the Smart REST request.
 	SmartRestRequestContext *string `json:"smartRestRequestContext,omitempty"`
